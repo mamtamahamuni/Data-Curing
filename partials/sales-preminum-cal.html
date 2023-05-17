@@ -1,0 +1,107 @@
+<!-- Members---------------------------------------------------- --><div class="container member-section-sale" style="border-bottom: 1px solid #ded8d8;" ng-app=""><h3>Members</h3><table class="table"><thead class="tbl-Head-background-color"><tr><th>Relation</th><th>Age</th><th>Gender</th><!-- <th>Activ assure + Super topup</th> --><!-- <th>Activ Assure + ST</th> --><th>Activ Assure</th><th>Activ Health</th></tr></thead><tbody><tr ng-repeat="memberVal in sPC.memberListArray"><td><label ng-show="memberVal.RelationWithProposer == 'KID'">{{memberVal.RelationType}}</label> <label ng-show="memberVal.RelationWithProposer != 'KID'">{{memberVal.RelationWithProposer}}</label></td><td><input type="text" class="form-control" id="age" ng-model="memberVal.Age" ng-blur="sPC.addDeleteMembers('update', 'age', $index, memberVal)" valid-number maxlength="2" ng-blur="sPC.ageValidation(memberVal)"></td><td><select id="" class="form-control" ng-model="memberVal.Gender" ng-change="sPC.addDeleteMembers('update', 'Gender', $index, memberVal)"><option value="1">Male</option><option value="0">Female</option></select></td><td><select id="" class="form-control" ng-model="memberVal.activeAssureSelectedValue" ng-change="sPC.addDeleteMembers('addDelete', 'activeAssure', $index,  memberVal)" ng-show="memberVal.RelationType == 'S' || memberVal.RelationType == 'SPO' || memberVal.RelationWithProposer == 'KID' || memberVal.RelationWithProposer == 'Father' || memberVal.RelationWithProposer == 'Mother' || memberVal.RelationWithProposer == 'Father-in-law'|| memberVal.RelationWithProposer == 'Mother-in-law'"><option value="No">No</option><option value="Yes">Yes</option></select></td><td><select id="" class="form-control" ng-model="memberVal.activeHealthSelectedValue" ng-change="sPC.addDeleteMembers('addDelete', 'activeHealth', $index,  memberVal)" ng-hide="memberVal.RelationType =='KID4'"><option value="No">No</option><option value="Yes">Yes</option></select></td></tr></tbody></table></div><!--two  Active assure+ top Up && Active Assure --><!-- <div class="container " style="border-bottom: 1px solid #ded8d8;">
+    <div class="row">
+        <div class="col-xs-6">
+            <h3 style="padding-bottom: 15px;">Active assure + Super topup</h3>
+            <label style="padding-bottom: 10px;">
+                Click here to Unslect Super top up <input type="checkBox" name="" ng-disabled="sPC.prepareData.SuperTopup == null"  ng-checked="sPC.prepareData.SuperTopup == null" ng-click = "sPC.prepareData.SuperTopup = null ; sPC.getPremiumCal();sPC.resetSuparTopUP();">
+            </label>
+        
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>PolicyType</th>
+                        <td>
+                            <select id="" ng-model="sPC.STPolicyType" class="form-control" disabled="">
+                                <option value="FF">FF</option>
+                                <option value="MI">MI</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ST SI</th>
+                        <td>
+                            <select id="" ng-model="sPC.superTopUpSI" class="form-control"
+                                ng-change="(sPC.superTopUpSI === '9500000') ? sPC.stDeductable = '500000' :  sPC.stDeductable = '1000000'; sPC.updateSumInsuredVal('ST' , '')" >
+                                <option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.ST"
+                                    value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option>
+                            </select>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ST Deductable</th>
+                        <td>
+                            <select id="" ng-model="sPC.stDeductable " class="form-control" disabled="">
+                                <option value="1000000">10 Lac</option>
+                                <option value="500000">5 Lac</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <h3  style="padding-bottom: 44px;">Active assure</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>PolicyType</th>
+                        <td> <select id="" ng-model="sPC.DIPolicyType" class="form-control" disabled="">
+
+                                <option value="FF">FF</option>
+                                <option value="MI">MI</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th>DL SI</th>
+                        <td>
+                            <select id="" ng-model="sPC.diamondSI" class="form-control"
+                                ng-change="sPC.updateSumInsuredVal('Diamond' , '')">
+                                <option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.DIAMOND"
+                                    value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr ng-show="sPC.prepareData.SuperTopup == null">
+                        <th>Room Upgrade</th>
+                        <td>
+                            <select id=""  ng-model="sPC.CoverARU"  ng-change="sPC.updateOptionalCover('CoverARU')"
+                                class="form-control"> 
+                                <option value="N">No</option>
+                                <option value="Y">Yes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr ng-show="sPC.prepareData.SuperTopup == null">
+                        <th>Supar NCB</th>
+                        <td>
+                            <select id="" ng-model="sPC.CoverSNCB" ng-change="sPC.updateOptionalCover('CoverSNCB')"
+                                class="form-control">
+                                <option value="N">No</option>
+                                <option value="Y">Yes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr ng-show="sPC.prepareData.SuperTopup == null">
+                        <th>Unlimited SI</th>
+                        <td>
+                            <select id="" ng-model="sPC.CoverURSI" ng-change="sPC.updateOptionalCover('CoverURSI')"
+                                class="form-control">
+                                <option value="N">No</option>
+                                <option value="Y">Yes</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> --><!-- two end --><!-- active assure + super topup start --><div class="container" style="border-bottom: 1px solid #ded8d8"><h3 style="padding: 15px 0 15px 0;">Active assure + Super topup</h3><p></p><div class="row" style="padding: 0px 0 15px 0;"><div class="form-group"><div class="col-sm-6 col-md-2"><label class="control-label" for="company">PolicyType :</label></div><div class="col-sm-6 col-md-2"><select id="" ng-model="sPC.STPolicyType" class="form-control" disabled=""><option value="FF">FF</option><option value="MI">MI</option></select></div><div class="col-sm-6 col-md-2"><label class="control-label" for="company">ST SI :</label></div><div class="col-sm-6 col-md-2"><select id="" ng-model="sPC.superTopUpSI" class="form-control" ng-change="(sPC.superTopUpSI === '9500000') ? sPC.stDeductable = '500000' :  sPC.stDeductable = '1000000'; sPC.updateSumInsuredVal('ST' , '')"><option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.ST" value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option></select></div><div class="col-sm-6 col-md-2"><label class="control-label" for="company">ST Deductable :</label></div><div class="col-sm-6 col-md-2"><select id="" ng-model="sPC.stDeductable " class="form-control" disabled=""><option value="1000000">10 Lac</option><option value="500000">5 Lac</option></select></div></div></div><p></p></div><!-- active assure + super topup end --><!-- active Assure start --><div class="container" style="border-bottom: 1px solid #ded8d8"><h3 style="padding: 15px 0 15px 0;">Activ Assure</h3><p></p><div class="row" style="padding: 0px 0 15px 0;"><div class="form-group"><div class="col-sm-3 col-md-2"><label class="control-label" for="company">Policy Type:</label></div><div class="col-sm-4 col-md-4"><select id="" ng-model="sPC.DIPolicyType" ng-disabled="sPC.updateAssurePolice" ng-change="sPC.updateAssurePolicytype(sPC.DIPolicyType)" class="form-control"><option value="FF">FF</option><option value="MI">MI</option></select></div><div class="col-sm-3 col-md-2"><label class="control-label" for="company">DL SI :</label></div><div class="col-sm-4 col-md-4"><select id="" ng-model="sPC.diamondSI" class="form-control" ng-change="sPC.updateSumInsuredVal('Diamond' , '')"><option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.DIAMOND" value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option></select></div></div></div><p></p><table class="table"><thead class="tbl-Head-background-color"><tr><th ng-if="sPC.DIPolicyType == 'MI'">Relation</th><th ng-if="sPC.DIPolicyType == 'MI'">Age</th><th ng-if="sPC.DIPolicyType == 'MI'">SI</th><th>Room Upgrade</th><th>Super NCB</th><th>Unlimited SI</th></tr></thead><tbody ng-if="sPC.DIPolicyType == 'FF'"><tr ng-hide="sPC.prepareData.Diamond != null "><td colspan="4" style="font-size: 24px">No member present Yet</td></tr><tr ng-show="sPC.prepareData.Diamond != null "><td><select id="" ng-model="sPC.CoverARU" ng-change="sPC.updateOptionalCover()" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="sPC.CoverSNCB" ng-change="sPC.updateOptionalCover()" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="sPC.CoverURSI" ng-change="sPC.updateOptionalCover()" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td></tr></tbody><tbody ng-if="sPC.DIPolicyType == 'MI'"><tr ng-hide="sPC.prepareData.Diamond != null "><td colspan="4" style="font-size: 24px">No member present Yet</td></tr><tr ng-show="sPC.prepareData.Diamond != null " ng-repeat="membersDetailsPL in sPC.prepareData.Diamond.MemberDetails"><td>{{membersDetailsPL.RelationWithProposer}}</td><td><input type="text" ng-model="membersDetailsPL.Age" class="form-control" id="age" disabled=""></td><td><select id="" ng-model="membersDetailsPL.SumInsured" class="form-control" ng-change="sPC.updateOptionalCover(membersDetailsPL, $index)" ng-change="sPC.updateSumInsuredVal('platinum' , membersDetailsPL)"><option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.Enhanced" value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option></select></td><td><select id="" ng-model="membersDetailsPL.CoverARU" ng-change="sPC.updateOptionalCover(membersDetailsPL, $index)" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="membersDetailsPL.CoverSNCB" ng-change="sPC.updateOptionalCover(membersDetailsPL, $index)" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="membersDetailsPL.CoverURSI" ng-change="sPC.updateOptionalCover(membersDetailsPL, $index)" class="form-control"><option value="N">No</option><option value="Y">Yes</option></select></td></tr></tbody></table></div><!-- activ assure end --><!-- Active health --><div class="container"><h3 style="padding: 15px 0 15px 0;">Activ Health</h3><p></p><div class="row" style="padding: 0px 0 15px 0;"><div class="form-group"><div class="col-sm-3 col-md-2"><label class="control-label" for="company">Policy Type:</label></div><div class="col-sm-4 col-md-4"><select id="" ng-model="sPC.PLPolicyType" ng-disabled="sPC.validateAge" class="form-control" ng-change="sPC.updatePolicytype()"><option ng-disabled="sPC.updatePolicyType" class="ffdisable" value="FF">FF</option><option value="MI">MI</option></select></div><div class="col-sm-3 col-md-2"><label class="control-label" for="company">Sum insured:</label></div><div class="col-sm-4 col-md-4"><select id="" ng-model="sPC.platinumSI" class="form-control" ng-disabled="sPC.PLPolicyType == 'MI'" ng-change="sPC.updateSumInsuredVal('platinum' , '')"><option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.Enhanced" value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option></select></div></div></div><p></p><table class="table"><thead class="tbl-Head-background-color"><tr><!-- <th>Family</th> --><th>Relation</th><th>Age</th><th>SI</th><th>Hyper tension</th><th>Diabetes</th><th>Asthma</th><th>Hyperlipidemia</th><th>Room Type</th><th>PA</th><th>CI</th><th>ICMI</th></tr></thead><tbody><tr ng-hide="sPC.prepareData.Platinum != null "><td colspan="4" style="font-size: 24px">No member present Yet</td></tr><tr ng-show="sPC.prepareData.Platinum != null " ng-repeat="membersDetailsPL in sPC.prepareData.Platinum.MemberDetails"><!-- <td>Family</td> --><td>{{membersDetailsPL.RelationWithProposer}}</td><td><input type="text" ng-model="membersDetailsPL.Age" class="form-control" id="age" disabled=""></td><td><select id="" ng-model="membersDetailsPL.SumInsured" class="form-control" ng-disabled="sPC.PLPolicyType == 'FF'" ng-change="sPC.updateSumInsuredVal('platinum' , membersDetailsPL)"><option ng-repeat="sumInsuredObj in sPC.SumInsuredList" ng-if="sumInsuredObj.Enhanced" value="{{sumInsuredObj.amount}}">{{sumInsuredObj.value}}</option></select></td><td><select id="" ng-model="membersDetailsPL.hypertension" ng-disabled="sPC.PLPolicyType == 'FF'" ng-change="sPC.updateChronicDiseaseFlag(membersDetailsPL  , $index)" class="form-control"><option value="0">No</option><option value="1">Yes</option></select></td><td><select id="" ng-model="membersDetailsPL.diabetes" ng-disabled="sPC.PLPolicyType == 'FF'" ng-change="sPC.updateChronicDiseaseFlag(membersDetailsPL  , $index)" class="form-control"><option value="0">No</option><option value="1">Yes</option></select></td><td><select id="" ng-model="membersDetailsPL.asthma" ng-disabled="sPC.PLPolicyType == 'FF'" ng-change="sPC.updateChronicDiseaseFlag(membersDetailsPL  , $index)" class="form-control"><option value="0">No</option><option value="1">Yes</option></select></td><td><select id="" ng-model="membersDetailsPL.hyperlipidemia" ng-change="sPC.updateChronicDiseaseFlag(membersDetailsPL  , $index)" ng-disabled="sPC.PLPolicyType == 'FF'" class="form-control ng-pristine ng-valid ng-not-empty ng-touched"><option value="0">No</option><option value="1">Yes</option></select></td><td><label>{{membersDetailsPL.RoomType}}</label></td><td><select id="" ng-model="memberDetail.PaCoverFlag" ng-disabled="membersDetailsPL.Age >='65'" ng-init="memberDetail.PaCoverFlag = 'N'" class="form-control" ng-change="sPC.MemberDetailsObj(memberDetail , $index )"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="memberDetail.CiCoverFlag" ng-disabled="membersDetailsPL.Age >='65'" ng-init="memberDetail.CiCoverFlag = 'N'" class="form-control" ng-change="sPC.MemberDetailsObj(memberDetail , $index)"><option value="N">No</option><option value="Y">Yes</option></select></td><td><select id="" ng-model="memberDetail.IcmiCoverFlag" ng-disabled="membersDetailsPL.Age >='65'" ng-init="memberDetail.IcmiCoverFlag = 'N'" class="form-control" ng-change="sPC.MemberDetailsObj(memberDetail , $index)"><option value="N">No</option><option value="Y">Yes</option></select></td></tr></tbody></table><p></p><div class="form-group"><div class="col-sm-3 col-md-2"><label class="control-label" for="company">Zone:</label></div><div class="col-sm-4 col-md-4"><select id="" class="form-control" ng-model="sPC.prepareData.Platinum.Zone" ng-change="sPC.getPremiumCal()"><option>Select</option><option value="Z001">Zone 1</option><option value="Z002">Zone 2</option><option value="Z003">Zone 3</option></select></div></div><p></p></div><!-- Result --><div class="container" ng-app=""><h3 style="padding: 10px 0 15px 0;">Premium</h3><table class="table"><thead class="tbl-Head-background-color"><tr><th></th><th>1st Year</th><th>2 nd Year (Discount)</th><th>3 rd Year (Discount)</th></tr></thead><tbody><tr><th>Activ Assure</th><td>{{sPC.preminumDetailsObj.Diamond[0].Premium | INR}}</td><td>{{sPC.preminumDetailsObj.Diamond[1].Premium | INR }} ({{sPC.preminumDetailsObj.Diamond[1].TenureSaving}})</td><td>{{sPC.preminumDetailsObj.Diamond[2].Premium | INR }} ({{sPC.preminumDetailsObj.Diamond[2].TenureSaving}})</td></tr><tr><th>Super Topup</th><td>{{sPC.preminumDetailsObj.SuperTopup[0].Premium | INR}}</td><td>{{sPC.preminumDetailsObj.SuperTopup[1].Premium | INR}} ({{sPC.preminumDetailsObj.SuperTopup[1].TenureSaving}})</td><td>{{sPC.preminumDetailsObj.SuperTopup[2].Premium | INR}} ({{sPC.preminumDetailsObj.SuperTopup[2].TenureSaving}})</td></tr><tr><th>Activ Assure + superTopup</th><td>{{sPC.sumActivSuperTopup | INR}}</td><td>{{sPC.sumActivSuperTopup1 | INR}}</td><td>{{sPC.sumActivSuperTopup2 | INR}}</td></tr><tr><th>Essential</th><td>{{sPC.preminumDetailsObj.Platinum[3].Premium | INR}}</td><td>{{sPC.preminumDetailsObj.Platinum[4].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[4].TenureSaving}})</td><td>{{sPC.preminumDetailsObj.Platinum[5].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[5].TenureSaving}})</td></tr><tr><th>Enhance</th><td>{{sPC.preminumDetailsObj.Platinum[0].Premium | INR}}</td><td>{{sPC.preminumDetailsObj.Platinum[1].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[1].TenureSaving }})</td><td>{{sPC.preminumDetailsObj.Platinum[2].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[2].TenureSaving}})</td></tr><tr><th>Premier</th><td>{{sPC.preminumDetailsObj.Platinum[6].Premium | INR}}</td><td>{{sPC.preminumDetailsObj.Platinum[7].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[7].TenureSaving}})</td><td>{{sPC.preminumDetailsObj.Platinum[8].Premium | INR}} ({{sPC.preminumDetailsObj.Platinum[8].TenureSaving}})</td></tr></tbody></table></div>

@@ -1,0 +1,76 @@
+<!--
+    Page: Renewal Renew Policy
+    Author: Pandurang Sarje
+	Date: 01-09-2020
+--><style>.dvRenewalMethod{
+        display: flex; 
+        text-align: right;
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
+    @media (max-width:768px){
+        .checkmark {
+    right: 250px;
+    left: auto;
+        }
+        .dvRenewalMethod{
+            display: block;
+            padding-right: 0;
+        }
+        .checkmark_rg {
+        right: 250px;
+        left: auto;
+    }
+    }
+    .link-renew-method,
+    link-renew-method a,
+    .link-renew-method:hover {
+        font-family: 'PF Encore Sans Pro';
+        font-weight: 600;
+        color: #C7222A;
+    }
+
+
+    .method-align {
+        padding: 15px 0px 5px 0;
+        font-size: 16px;
+    }
+
+    .method-align a {
+        text-decoration: underline !important;
+    }
+
+    .app-modal button:hover {
+        color: white;
+    }
+
+    .normal-pointer {
+        cursor: default !important;
+    }</style><div class="container-fluid"><!-- <div ng-init="defaultRenewalMethod='mobile'" class="pull-right radio-option-set">
+        <input id="mobile" type="radio" name="methodSelection" ng-model="defaultRenewalMethod" value="mobile"
+            ng-change="toggleSelectionMethod('mobile')">
+        <label for="mobile">Renew Using Mobile Number</label>
+        <input id="policy" type="radio" name="methodSelection" ng-model="defaultRenewalMethod" value="policy"
+            ng-change="toggleSelectionMethod('policy')">
+        <label for="mobile mr-10">
+            Renew Using Policy Number</label>
+    </div> --><div class="col-lg-6 col-md-4 col-sm-4 col-xs-12"></div><div class="col-lg-6 col-md-8 col-sm-8 col-xs-12"><div class="dvRenewalMethod"><label class="container col-md-6 pad-l-r-0"><span>Renew Policy using your mobile number</span><br><input class="rInput" type="radio" name="login" ng-checked="auth.isMobileMethod" ng-click="toggleSelectionMethod('mobile')"> <span class="checkmark"></span></label> <label class="container col-md-6 pad-l-r-0"><span>Renew Policy using your policy number</span><br><input class="rInput" type="radio" id="PAC" name="login" ng-checked="!auth.isMobileMethod" ng-click="toggleSelectionMethod('policy')"> <span class="checkmark checkmark_rg"></span></label></div></div><div style="clear:both;"><div id="usingMobileNumber" ng-if="auth.isMobileMethod"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0"><div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"><img class="download-img-width new-illustration" src="assets/images/new-renew/renew-illustration-abc.svg"><div class="renew-policy-bg"><div class="renew-your-policy-txt">Renew your Policy</div></div></div><div class="col-lg-6 col-md-7 col-sm-7 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0 form-page"><div class="hidden-xs help-us-header-txt">Help us find your policy</div><div class="hidden-lg hidden-md hidden-sm col-xs-12 mob-white-bg"><div class="mob-renew-policy-txt">Renew your Policy</div><div class="help-us-header-txt">Help us find your policy</div></div><form name="mobileMethod" novalidate><div class="row"><div ng-if="!auth.showOTPField" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt">Mobile Number</label></div><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="group-coi-number">(Not applicable for Group Policy Renewa)</label></div><div class="col-lg-9 col-md-9 pad-l-r-0 pull-right"><input type="text" class="form-control textbox-style phone-group" ng-model="auth.onlyMobileNumber" id="byOnlyMobileNumber" name="onlyMobileNumber" minlength="10" maxlength="10" ng-pattern="/^[6789]\d{9}$/" required placeholder="Enter your mobile number"></div></div><div ng-if="auth.showOTPMessage && !mobileMethod.otpValue.$dirty && !auth.showProceedButton" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm text-success"><b>{{auth.showOTPMessage}}</b></div><div ng-if="auth.sendOTPButton" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right"><div class="col-lg-12 col-md-12 pad-l-r-0"><button class="btn proceed-btn" ng-click="triggerOTP('otp' , mobileMethod)" type="submit" class="btn btn-warning">Send OTP</button></div></div></div><div class="row" ng-if="auth.showOTPField"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt">Please enter OTP</label></div><div class="col-lg-9 col-md-9 pad-l-r-0 pull-right"><input autocomplete="nope" type="text" ng-disabled="auth.onlyMobileNumber? false : true" class="form-control textbox-style phone-group" name="otpValue" ng-model="auth.otpValue" placeholder="Enter OTP" maxlength="6" minlength="6" required><div class="text-danger font-weight-bold" ng-if="mobileMethod.otpValue.$dirty && mobileMethod.otpValue.$error.required">Please enter correct OTP no.</div><div class="text-danger font-weight-bold" ng-if="mobileMethod.otpValue.$dirty && mobileMethod.otpValue.$error.minlength">Please enter otp of 6 digit length.</div><div class="text-danger font-weight-bold">{{auth.OTPErrorMessage}}</div></div></div><div class="app-modal col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="text-danger font-weight-bold lbl-pad-btm" ng-if="otpTriggerTime == 3">You have exceeded your limit, Please retry after sometime</div><div class="col-lg-12 col-md-12 pad-l-r-0"><button ng-class="{'normal-pointer':otpTriggerTime ==3}" ng-disabled="otpTriggerTime == 3 || auth.showTimer" ng-click="triggerOTP('otp', mobileMethod, 'resend')" type="submit" class="btn btn-primary modal-save-btn text-center">Resend OTP <span ng-if="auth.showTimer">{{auth.countDown}}</span></button> <button ng-click="verifyOTP('otp', mobileMethod)" type="submit" class="btn btn-primary modal-save-btn text-center">Submit OTP</button></div></div></div><!-- <div class="row" ng-if="auth.showProceedButton">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right ">
+                            <button ng-click="loginWithMobileNumber(auth,mobileMethod)" type="submit"
+                                class="btn proceed-btn">Proceed to Renew</button>
+                        </div>
+                    </div> --></form><!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                    <div class="method-align ">
+                        <a class="link-renew-method" href="" ng-click="toggleSelectionMethod('policy')">
+                            Or Renew Policy using your policy number
+                        </a>
+                    </div>
+                </div> --></div></div></div><div id="usingPolicyNumber" ng-if="!auth.isMobileMethod"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0"><div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"><img class="download-img-width new-illustration" src="assets/images/new-renew/renew-illustration-abc.svg"><div class="renew-policy-bg"><div class="renew-your-policy-txt">Renew your Policy</div></div></div><div class="col-lg-6 col-md-7 col-sm-7 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0 form-page"><!-- <div class="hidden-xs help-us-header-txt">Help us find your policy by <span class="any-two-red-clr">entering ANY 2</span> from the below</div> --><div class="hidden-xs help-us-header-txt">Help us find your policy</div><div class="hidden-lg hidden-md hidden-sm col-xs-12 mob-white-bg"><div class="mob-renew-policy-txt">Renew your Policy</div><div class="help-us-header-txt">Help us find your policy</div><!-- <div class="help-us-header-txt">Help us find your policy by <span class="any-two-red-clr">entering ANY 2</span> from the below</div> --></div><form name="renewForm" class="renew-form" novalidate><div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt">Your Policy Number <span class="any-two-red-clr">*</span></label></div><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="group-coi-number">(Use COI Number for Group Policy Renewal)</label></div><div class="col-lg-9 col-md-9 pad-l-r-0 pull-right"><input type="text" class="form-control textbox-style text-uppercase phone-group" name="policynumber" id="policynum" ng-blur="checkPolicyNumber()" ng-model="auth.policynumber" minlength="9" maxlength="25" placeholder="00-00-0000000-00"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt">Proposer’s Date of Birth</label></div><div class="col-lg-9 col-md-9 pad-l-r-0 pull-right"><input class="form-control textbox-style phone-group" name="dob" type="tel" placeholder="DD/MM/YYYY" ng-model="auth.dob" date-directive maxlength="10" ng-pattern="/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{4})$/" ng-disabled="(auth.policynumber != '' && auth.txtMobileNumber != '') || auth.txtMobileNumber != ''"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt"><span class="any-two-red-clr">OR</span></label></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm"><div class="col-lg-12 col-md-12 pad-l-r-0"><label class="lbl-txt">Proposer’s Mobile Number</label></div><div class="col-lg-9 col-md-9 pad-l-r-0 pull-right"><input type="text" class="form-control textbox-style phone-group" ng-model="auth.txtMobileNumber" id="txtMobileNumber" name="txtMobileNumber" minlength="10" maxlength="10" ng-pattern="/^[6789]\d{9}$/" ng-disabled="(auth.policynumber != '' && auth.dob != '') || auth.dob != ''" placeholder="Mobile Number"></div></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right"><a href="javascript:void(0);" ng-click="checkLogin(auth,renewForm); gotoPageGAParam('click-button','proceed','renew')"><button type="submit" class="btn proceed-btn">Proceed to Renew</button></a></div><!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                            <div class="method-align ">
+                                <a class="link-renew-method method-align" href=""
+                                    ng-click="toggleSelectionMethod('mobile')">
+                                    Or Renew Policy using your mobile number
+                                </a>
+                            </div>
+                            <div>(Not applicable for Group Policy Renewal)</div>
+                        </div> --></div></form></div></div></div></div></div>
