@@ -1,0 +1,55 @@
+<style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        display: inline-block;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0)
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg)
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    .payment-loader {
+        display: inline-block;
+        position: relative
+    }
+
+    .payment-loader .num-count {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 42px
+    }
+</style>
+<section>
+    <div class="container text-center" style="padding-top: 60px;">
+        <div class="payment-loader">
+            <div class="loader"></div>
+            <div class="num-count">{{pAY.numCount}}</div>
+        </div>
+        <h3 style="padding-top: 30px">Processing your transaction please wait!</h3>
+        <h3>Do not refresh page!</h3>
+    </div>
+</section>

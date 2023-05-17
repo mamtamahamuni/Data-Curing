@@ -1,0 +1,56 @@
+<div class="app-modal modal" id="change-group-member" role="dialog">
+    <div class="modal-dialog modal-width">
+        <div class="modal-content">
+            <div class="modal-header modal-hdr"><button type="button" class="close" ng-click="aaM.closeACModel()"><img
+                        src="assets/images/close-white.svg"></button>
+                <div class="change-mem-group-txt">Change Group Members</div>
+                <div class="modal-txt">Activ Care care comes as a package for <span class="modal-txt-red">elderly
+                        individuals</span> as well as <span class="modal-txt-red">elderly couples</span></div>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid modal-pad-l-r-0 add-member-errors"
+                    ng-if="aaM.allErrors.allErrors.length > 0">
+                    <div class="col-sm-12 padding-btm-20">
+                        <h4>Please make following changes to proceed:</h4>
+                        <ul>
+                            <li ng-repeat="error in aaM.allErrors.allErrors">{{error.message}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="policy-type-txt">Pick either an individual or two individuals who are a couple.</div>
+                <div class="row pad-l-r-0 members unchecked-members">
+                    <div class="col-md-3 col-sm-6 col-xs-6 spouse-chk"
+                        ng-class="aaM.planName == 'activ-Care' ? pad-left-activ-care : pad-l-r-0 "
+                        ng-repeat="members in aaM.activeCareFamilyContruct"><label class="container-new protecting"
+                            for="add-ac-member-{{members.RelationType}}-chk">{{members.RelationWithProposer}} <input
+                                type="checkbox" name="check-{{members.RelationWithProposer}}" class="check"
+                                id="add-ac-member-{{members.RelationType}}-chk" ng-model="members.isSelected"
+                                ng-change="aaM.checkACMember(members , members.isSelected)"> <span
+                                class="checkmark"></span></label></div>
+                </div>
+                <div class="policy-type-txt">Age of selected members</div>
+                <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 pad-l-r-0 age-input-pad-btm">
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 pad-l-0-5 p_element ff-father"
+                        ng-repeat="member in aaM.aCSelectedMembers">
+                        <div class="box-txt">{{member.RelationWithProposer}}</div>
+                        <div class="age-input">
+                            <div class="input-group"><input type="text" class="form-control age-txt-box" valid-number
+                                    ng-model="member.Age" maxlength="2"> <span class="input-group-addon">yrs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 yellow-note-txt">Activ Care allows only
+                        individuals or spouses as members. To select other members among the ones you see disabled for
+                        you, uncheck your current selection.</div>
+                    <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left modal-btn"><button type="button"
+                            class="btn btn-save" ng-click="aaM.acValidations($event)">Save</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-modal-backdrop"></div>
+</div>

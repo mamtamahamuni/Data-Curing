@@ -1,0 +1,1834 @@
+<!--
+    Page: Renewal Edit Member Landing Page
+	Author: Pandurang Sarje 
+    Date: 11-07-2020
+-->
+
+<div class="container-fluid view-member-landing pad-l-r-0">
+    <!-- Desktop View -->
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs view-member-padding edit-member">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pad-l-r-0">
+            <div class="member-name-ttl" style="margin-bottom: 33px;">{{policyDetails.NameOfTheProposer}},</div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">
+                    <div class="edit-member-details-txt">View Members</div>
+                    <div class="edit-add-sml-txt">Add Member</div>
+                </a>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0 " ng-class="{'edit-member-mrgin-btm-zero': (upsellFlag=='N') || (upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured == 0)}">
+                <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                    <div class="edit-member-details-txt">View or Edit Member details</div>
+                </a>
+            </div>
+            <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0 && upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                    <div class="edit-member-details-txt">Increase Sum Insured</div>
+                </a>      
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="grey-horizontal-line"></div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-red-box pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-edit-optional-covers');gotoPageGAParam('click-button','option cover','renew')" >
+                    <div class="view-members-bold-txt">Optional Covers</div>
+                </a>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                    <div class="edit-member-details-txt">Tenure Change</div>
+                </a>
+                
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                    <div class="edit-member-details-txt">Edit Nominee Details</div>
+                </a>
+            </div>
+
+            <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                    <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                </a>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                    <div class="edit-member-details-txt">Change Address Details</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 pad-l-r-0">
+            
+            <header-details></header-details>
+
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-21-0 view-member-details-section" >
+
+            <form name="editMemberForm" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                        <div class="group-members-bold-txt">Edit Member Optional Cover
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="horizontal-border"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 edit-member-detail-tabs">
+                        <ul class="nav nav-tabs" ng-if="userpolicy.ProductCode == '4111'">
+                            <li ng-repeat="members in insuredMembers" ng-class="{'active' : activeMember == members.RelationWithProposer }" ng-click="editMemberDetails(members)" ng-if="parseIntString(members.SumInsured)>= 500000">
+                                <a data-toggle="tab" data-target="#slf" href="">{{members.RelationWithProposer}}</a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav nav-tabs" ng-if="userpolicy.ProductCode != '4111'">
+                            <li ng-repeat="members in insuredMembers" ng-class="{'active' : activeMember == members.RelationWithProposer }" ng-click="editMemberDetails(members)" ng-if="((platinumPlan =='Platinum - Premiere' || platinumPlan =='Platinum - Essential' || platinumPlan =='Platinum - Enhanced') && underAge) || platinumPlan !='Platinum - Premiere'">
+                                <a data-toggle="tab" data-target="#slf" href="">{{members.RelationWithProposer}}</a>
+                            </li>
+                            
+                        </ul>
+                        <div class="tab-content edit-detail-tab-cont view-member-add-user-section" style="padding-top:0px;">
+
+                            <div id="slf" class="tab-pane fade in active step-one-padding">
+                                <div class="bs-example">
+                                    
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 second-ques-pad-top harmful-substance-question radio-cover">
+                                    
+                                    <label class="container" ng-if="checkInclude('isPAC') && underAge" ng-style="{'cursor': optionalPayload.MemberDetails[0].PA_NB =='Y' ?  'default': 'pointer'}"><span>Personal Accident Cover</span><br/>
+                                        <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                            resulting from an accident</span>
+                                        <input class="rInput" type="checkbox" id="PAC" ng-click="selectCoverUpdate('PAC','PACoverFlag', 'PACoverSI', pAPL)" ng-checked="optionalPayload.MemberDetails[0].PACoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PACoverFlag =='Y' && optionalPayload.MemberDetails[0].PA_NB =='Y'">
+                                        <span class="checkmark"></span>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].PACoverFlag == 'Y'">
+                                            <br/>
+                                            <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.PACoverSI" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].PACoverSI ">
+                                                {{optionalPayload.MemberDetails[0].PACoverSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].PACoverSI == '' || optionalPayload.MemberDetails[0].PACoverSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'PAC' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('PACoverSI', sum.amount)"
+                                                data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.PAC_copy) <= parseIntString(sum.amount) && sum[pAPL] && insuredMember.Relation != 'KID'">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum.value}} </span></a>
+                                            </li>
+                                            <li ng-if="insuredMember.Relation == 'KID' && productCode != 'Premier'" class="li-item-text-change" ng-click="selectCoverSI('PAC','Personal Accident Cover (AD, PTD)', sumInsuredList[10].amount)"
+                                                data-val="{{sumInsuredList[10].amount}}">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">{{sumInsuredList[10].value}}</span></a>
+                                            </li>
+                                            <li ng-if="insuredMember.Relation == 'KID' && productCode == 'Premier'" class="li-item-text-change" ng-click="selectCoverSI('PAC','Personal Accident Cover (AD, PTD)', sumInsuredList[20].amount)"
+                                                data-val="{{sumInsuredList[20].amount}}">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">{{sumInsuredList[20].value}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+                                      </label>
+                                      
+                                  <label class="container" ng-if="checkInclude('isCIC') && underAge && userAge >= 18" ng-style="{'cursor': optionalPayload.MemberDetails[0].CI_NB =='Y'?  'default': 'pointer'}"><span>Critical Illness Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for up to 20 listed critical illnesses helps you overcome financial short comes.</span>
+                                    <input type="checkbox" class="rInput" id="CIC" ng-click="selectCoverUpdate('CIC','CICoverFlag','CICoverSI', cIPL)" ng-checked="optionalPayload.MemberDetails[0].CICoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].CICoverFlag =='Y' && optionalPayload.MemberDetails[0].CI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CICoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].CICoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CICoverSI">
+                                            {{optionalPayload.MemberDetails[0].CICoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CICoverSI == '' || optionalPayload.MemberDetails[0].CICoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CIC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CICoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.CIC_copy) <= parseIntString(sum.amount) && sum[cIPL]">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isCSC')"><span>Cancer secure cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for up to 20 listed critical illnesses helps you overcome financial short comes.</span>
+                                    <input type="checkbox" class="rInput" id="CIC" ng-click="selectCoverUpdate('CIC','CSCoverFlag','CSCoverSI', null)" ng-checked="optionalPayload.MemberDetails[0].CSCoverFlag =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CSCoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].CSCoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Cancer secure cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CSCoverSI">
+                                            {{optionalPayload.MemberDetails[0].CSCoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CSCoverSI == '' || optionalPayload.MemberDetails[0].CSCoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CIC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CSCoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.CSC_copy) <= parseIntString(sum.amount)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isICMI') && underAge" ng-style="{'cursor': optionalPayload.MemberDetails[0].ICMI_NB =='Y'?  'default': 'pointer'}"><span>International Coverage for Major Illness Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for international in-patient hospitalization expenses for 16 major listed illnesses</span>
+                                    <input type="checkbox" class="rInput" id="ICMI" ng-click="selectCoverUpdate('ICMI','ICMICoverFlag','ICMICoverSI', iCMIPL)" ng-checked="optionalPayload.MemberDetails[0].ICMICoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].ICMICoverFlag =='Y' && optionalPayload.MemberDetails[0].ICMI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].ICMICoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].ICMICoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].ICMICoverSI">
+                                            {{optionalPayload.MemberDetails[0].ICMICoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].ICMICoverSI == '' || optionalPayload.MemberDetails[0].ICMICoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'ICMI' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('ICMICoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.ICMI_copy) <= parseIntString(sum.amount) && sum[iCMIPL]">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isWMC')" ng-style="{'cursor': optionalPayload.MemberDetails[0].WOMCoPayment_NB =='Y'?  'default': 'pointer'}"><span>Waiver of Mandatory Co-payment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="WMC" ng-click="selectCoverUpdate('WMC','WOMCoPayment','',null)" ng-checked="optionalPayload.MemberDetails[0].WOMCoPayment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].WOMCoPayment =='Y' && optionalPayload.MemberDetails[0].WOMCoPayment_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isOPDC')" ng-style="{'cursor': optionalPayload.MemberDetails[0].OPDExpense_NB =='Y'?  'default': 'pointer'}"><span>OPD Expenses</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OPDC" ng-click="selectCoverUpdate('OPDC','OPDExpense','OPDExpenseSI', oPDArray[0].val)" ng-checked="optionalPayload.MemberDetails[0].OPDExpense =='Y'" ng-disabled="optionalPayload.MemberDetails[0].OPDExpense =='Y' && optionalPayload.MemberDetails[0].OPDExpense_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].OPDExpense == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].OPDExpense" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].OPDExpenseSI">
+                                            {{optionalPayload.MemberDetails[0].OPDExpenseSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].OPDExpenseSI == '' || optionalPayload.MemberDetails[0].OPDExpenseSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'OPDC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in oPDArray" class="li-item-text-change" ng-click="selectCoverSIupdate('OPDExpenseSI', sum.val)"
+                                            data-val="{{sum.val}}" ng-if="parseIntString(insuredMember.OPDC_copy) <= parseIntString(sum.val)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.val}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isHCB')" ng-style="{'cursor': optionalPayload.MemberDetails[0].HCB_NB =='Y'?  'default': 'pointer'}"><span>Hospital cash benefit Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized.</span>
+                                    <input type="checkbox" class="rInput" id="HCB" ng-click="selectCoverUpdate('HCB','HCB','HCBSI',null)" ng-checked="optionalPayload.MemberDetails[0].HCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].HCB =='Y' && optionalPayload.MemberDetails[0].HCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="row"  ng-if="optionalPayload.MemberDetails[0].HCB == 'Y'">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].HCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].HCBSI">
+                                                {{optionalPayload.MemberDetails[0].HCBSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].HCBSI == '' || optionalPayload.MemberDetails[0].HCBSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'HCB' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in CBHAmtList" class="li-item-text-change" ng-click="selectCoverSIupdate('HCBSI', sum)"
+                                                data-val="{{sum}}" ng-if="parseIntString(insuredMember.HCB_copy) <= parseIntString(sum)">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-0" ng-if="productSelected != 'ActivHealth' && productSelected != 'ActivHealthV2'">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].HCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days">
+                                                {{optionalPayload.MemberDetails[0].NO_Of_Days}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days == '' || optionalPayload.MemberDetails[0].NO_Of_Days == null ">
+                                                Choose No. of days</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                            </button>
+                                            <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'HCB' , true)"  -->
+                                            <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '30')"
+                                                    data-val="30">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">30 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '45')"
+                                                    data-val="45" >
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">45 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '60')"
+                                                    data-val="60">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">60 Days</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isDCB')" ng-style="{'cursor': optionalPayload.MemberDetails[0].DCB_NB =='Y'?  'default': 'pointer'}"><span>Days per Policy Year limit Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized.</span>
+                                    <input type="checkbox" class="rInput" id="DCB" ng-click="selectCoverUpdate('DCB','DCB','DCBSI',null)" ng-checked="optionalPayload.MemberDetails[0].DCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].DCB =='Y' && optionalPayload.MemberDetails[0].DCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="row"  ng-if="optionalPayload.MemberDetails[0].DCB == 'Y'">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].DCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].DCBSI">
+                                                {{optionalPayload.MemberDetails[0].DCBSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].DCBSI == '' || optionalPayload.MemberDetails[0].DCBSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'DCB' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in CBHAmtList" class="li-item-text-change" ng-click="selectCoverSIupdate('DCBSI', sum)"
+                                                data-val="{{sum}}" ng-if="parseIntString(insuredMember.DCB_copy) <= parseIntString(sum)">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].DCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days">
+                                                {{optionalPayload.MemberDetails[0].NO_Of_Days}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days == '' || optionalPayload.MemberDetails[0].NO_Of_Days == null ">
+                                                Choose No. of days</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                            </button>
+                                            <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'DCB' , true)"  -->
+                                            <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '30')"
+                                                    data-val="30">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">30 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '45')"
+                                                    data-val="45" >
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">45 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '60')"
+                                                    data-val="60">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">60 Days</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isME')" ng-style="{'cursor':optionalPayload.MemberDetails[0].MaternityExpense_NB =='Y'?  'default': 'pointer'}"><span>Maternity Expenses</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="ME" ng-click="selectCoverUpdate('ME','MaternityExpense','MaternityExpenseSI',null)" ng-checked="optionalPayload.MemberDetails[0].MaternityExpense =='Y'" ng-disabled="optionalPayload.MemberDetails[0].MaternityExpense =='Y' && optionalPayload.MemberDetails[0].MaternityExpense_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].MaternityExpense == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].MaternityExpense" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].MaternityExpenseSI">
+                                            {{optionalPayload.MemberDetails[0].MaternityExpenseSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].MaternityExpenseSI == '' || optionalPayload.MemberDetails[0].MaternityExpenseSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'ME' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('MaternityExpenseSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.ME_copy) <= parseIntString(sum.amount)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isPPN')" ng-style="{'cursor':optionalPayload.MemberDetails[0].PPNDiscount_NB =='Y'?  'default': 'pointer'}"><span>PPN Discount</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="PPN" ng-click="selectCoverUpdate('PPN','PPNDiscount','',null)" ng-checked="optionalPayload.MemberDetails[0].PPNDiscount =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PPNDiscount =='Y' && optionalPayload.MemberDetails[0].PPNDiscount_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isS-NCB')"  ng-style="{'cursor':optionalPayload.MemberDetails[0].SuperNCB_NB =='Y'?  'default': 'pointer'}"><span>Super NCB</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="S_NCB" ng-click="selectCoverUpdate('S_NCB','SuperNCB','',null)" ng-checked="optionalPayload.MemberDetails[0].SuperNCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].SuperNCB =='Y' && optionalPayload.MemberDetails[0].SuperNCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isURSI')" ng-style="{'cursor':optionalPayload.MemberDetails[0].UnlimitedReloadSI_NB =='Y'?  'default': 'pointer'}"><span>Unlimited Reload of SI</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="URSI" ng-click="selectCoverUpdate('URSI','UnlimitedReload','',null)" ng-checked="optionalPayload.MemberDetails[0].UnlimitedReload =='Y'" ng-disabled="optionalPayload.MemberDetails[0].UnlimitedReload =='Y' && optionalPayload.MemberDetails[0].UnlimitedReloadSI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isRU')" ng-style="{'cursor':optionalPayload.MemberDetails[0].RoomCover =='Y'?  'default': 'pointer'}"><span>Any Room upgrade</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="RU" ng-click="selectCoverUpdate('RU','RoomCover','',null)" ng-checked="optionalPayload.MemberDetails[0].RoomCover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].RoomCover =='Y' && optionalPayload.MemberDetails[0].RoomCover_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isAHB')" ng-style="{'cursor':optionalPayload.MemberDetails[0].AHB_NB =='Y'?  'default': 'pointer'}"><span>Accidental Hospitalization Booster</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="AHB" ng-click="selectCoverUpdate('AHB','AHB', 'AHBSI',null)" ng-checked="optionalPayload.MemberDetails[0].AHB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].AHB =='Y' && optionalPayload.MemberDetails[0].AHB_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].AHB == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.AHBSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].AHBSI ">
+                                            {{optionalPayload.MemberDetails[0].AHBSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].AHBSI == '' || optionalPayload.MemberDetails[0].AHBSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'AHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('AHBSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="(parseIntString(insuredMember.AHB_copy) <= parseIntString(sum.amount))&& (parseIntString(sum.amount) <= 10000000)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isCHB')" ng-style="{'cursor':optionalPayload.MemberDetails[0].CancerHospitalizationCover_NB == 'Y'?  'default': 'pointer'}"><span>Cancer hospitalization booster</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="CHB" ng-click="selectCoverUpdate('CHB','CancerHospitalizationCover', 'CancerHospitalizationCoverSI', null)" ng-checked="optionalPayload.MemberDetails[0].CancerHospitalizationCover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].CancerHospitalizationCover =='Y' && optionalPayload.MemberDetails[0].CancerHospitalizationCover_NB == 'Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCover == 'Y' && optionalPayload.MemberDetails[0].CancerHospitalization_NB == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.CancerHospitalizationCoverSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI ">
+                                            {{optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI == '' || optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CancerHospitalizationCoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="(parseIntString(insuredMember.CHB_copy) <= parseIntString(sum.amount))&& (parseIntString(sum.amount) <= 10000000)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-RU')" ng-style="{'cursor':optionalPayload.MemberDetails[0].RoomUpgrade_NB =='Y'?  'default': 'pointer'}"><span>Room upgrade</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-RU" ng-click="selectCoverUpdate('OC-RU','RoomUpgrade','', null)" ng-checked="optionalPayload.MemberDetails[0].RoomUpgrade =='Y'" ng-disabled="optionalPayload.MemberDetails[0].RoomUpgrade =='Y' && optionalPayload.MemberDetails[0].RoomUpgrade_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <!-- <label class="container" ng-if="checkInclude('OC-PN')"><span>Preferred Network Network</span><br/>
+                                    <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span>
+                                    <input type="checkbox" class="rInput" id="OC-PN" ng-click="selectCoverUpdate('OC-PN','PreferedNetwork','')" ng-checked="optionalPayload.MemberDetails[0].PreferedNetwork =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label> -->
+
+                                  <label class="container" ng-if="checkInclude('OC-NAH')" ng-style="{'cursor':optionalPayload.MemberDetails[0].NursingAtHome_NB =='Y'?  'default': 'pointer'}"><span>Nursing at Home</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-NAH" ng-click="selectCoverUpdate('OC-NAH','NursingAtHome','',null)" ng-checked="optionalPayload.MemberDetails[0].NursingAtHome =='Y'" ng-disabled="optionalPayload.MemberDetails[0].NursingAtHome =='Y' && optionalPayload.MemberDetails[0].NursingAtHome_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-LE')" ng-style="{'cursor':optionalPayload.MemberDetails[0].LifestyleQuipment_NB =='Y'?  'default': 'pointer'}"><span>Lifestyle Equipment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-LE" ng-click="selectCoverUpdate('OC-LE','LifestyleQuipment','',null)" ng-checked="optionalPayload.MemberDetails[0].LifestyleQuipment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].LifestyleQuipment =='Y' && optionalPayload.MemberDetails[0].LifestyleQuipment_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-PME')" ng-style="{'cursor':optionalPayload.MemberDetails[0].PortableMedicalEquipment_NB =='Y'?  'default': 'pointer'}"><span>Portable Medical Equipment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-PME" ng-click="selectCoverUpdate('OC-PME','PortableMedicalEquipment','',null)" ng-checked="optionalPayload.MemberDetails[0].PortableMedicalEquipment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PortableMedicalEquipment =='Y' && optionalPayload.MemberDetails[0].PortableMedicalEquipment_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AHC')" ng-style="{'cursor':optionalPayload.MemberDetails[0].AdvanceHealthCheckup_NB =='Y'?  'default': 'pointer'}"><span>Advance Health Checkup</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-AHC" ng-click="selectCoverUpdate('OC-AHC','AdvanceHealthCheckup','',null)" ng-checked="optionalPayload.MemberDetails[0].AdvanceHealthCheckup =='Y'" ng-disabled="optionalPayload.MemberDetails[0].AdvanceHealthCheckup =='Y' && optionalPayload.MemberDetails[0].AdvanceHealthCheckup_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isWaiting')" ng-style="{'cursor': optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y' ?  'default': 'pointer'}"><span>Waiting Period PED</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="waitingPeriod" ng-click="selectCoverUpdate('waitingPeriod','waitingPeriodFlag', 'Period', null)" ng-checked="optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y' && optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].waitingPeriodFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Period" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Period ">
+                                            {{optionalPayload.MemberDetails[0].Period}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Period == '' || optionalPayload.MemberDetails[0].Period == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'PAC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+
+                                        <li class="li-item-text-change" data-val="'24'"  ng-click="selectCoverSIupdate('waitingPeriod', '24')">
+                                            <a>
+                                                24 months
+                                            </a>
+                                        </li>
+                                        <li class="li-item-text-change" data-val="'36'"  ng-click="selectCoverSIupdate('waitingPeriod', '36')">
+                                            <a>
+                                                36 months
+                                            </a>
+                                        </li>
+                                        <li class="li-item-text-change" data-val="'48'"  ng-click="selectCoverSIupdate('waitingPeriod', '48')">
+                                            <a>
+                                                48 months
+                                            </a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  
+
+                                  <label class="container" ng-if="checkInclude('OC-TTDB')"><span>Temporary Total Disablement Benefit</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">WeeKly Benefit Limit</span>
+                                    <input type="checkbox" class="rInput" id="OC-TTDB" ng-click="selectCoverUpdate('OC-TTDB','Temporary_Total_Disablement','Temporary_Total_DisablementSI', TTDB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Temporary_Total_Disablement =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Temporary_Total_Disablement =='Y' && optionalPayload.MemberDetails[0].Temporary_Total_Disablement_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Temporary_Total_Disablement == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Temporary_Total_DisablementSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI ">
+                                            {{optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI == '' || optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in TTDB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Temporary_Total_DisablementSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_TTDB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AIH')"><span>Accidental In-Patient Hospitalization cover</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AIH" ng-click="selectCoverUpdate('OC-AIH','Accidental_in_patient','')" ng-checked="optionalPayload.MemberDetails[0].Accidental_in_patient =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Accidental_in_patient =='Y' && optionalPayload.MemberDetails[0].Accidental_in_patient_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-CB')"><span>Coma benefits</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-CB" ng-click="selectCoverUpdate('OC-CB','Coma_Benefit','')" ng-checked="optionalPayload.MemberDetails[0].Coma_Benefit =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Coma_Benefit =='Y' && optionalPayload.MemberDetails[0].Coma_Benefit_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-BBB')"><span>Broken bone benefits</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-BBB" ng-click="selectCoverUpdate('OC-BBB','Broken_Bones_Benefit','Broken_Bones_BenefitSI',BBB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Broken_Bones_Benefit =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Broken_Bones_Benefit =='Y' && optionalPayload.MemberDetails[0].Broken_Bones_Benefit_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Broken_Bones_Benefit == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Broken_Bones_BenefitSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI ">
+                                            {{optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI == '' || optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in BBB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Broken_Bones_BenefitSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_BBB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-BB')"><span>Burn benefit</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-BB" ng-click="selectCoverUpdate('OC-BB','Burns_Benefits','Burns_BenefitsSI',BBB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Burns_Benefits =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Burns_Benefits =='Y' && optionalPayload.MemberDetails[0].Burns_Benefits_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Burns_Benefits == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Burns_BenefitsSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Burns_BenefitsSI ">
+                                            {{optionalPayload.MemberDetails[0].Burns_BenefitsSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Burns_BenefitsSI == '' || optionalPayload.MemberDetails[0].Burns_BenefitsSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in BBB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Burns_BenefitsSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_BBB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AS')"><span>Adventure sports cover</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AS" ng-click="selectCoverUpdate('OC-AS','Adventure_Sports_Cover','')" ng-checked="optionalPayload.MemberDetails[0].Adventure_Sports_Cover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Adventure_Sports_Cover =='Y' && optionalPayload.MemberDetails[0].Adventure_Sports_Cover_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AME')"><span>Accidental medical expense</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AME" ng-click="selectCoverUpdate('OC-AME','Accidental_Medical_Expenses','')" ng-checked="optionalPayload.MemberDetails[0].Accidental_Medical_Expenses =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Accidental_Medical_Expenses =='Y' && optionalPayload.MemberDetails[0].Accidental_Medical_Expenses_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-WEA')"><span>Worldwide emergency assistance</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-WEA" ng-click="selectCoverUpdate('OC-WEA','Worldwide_Emergency_Assistance','')" ng-checked="optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance =='Y' && optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                  <label class="container" ng-if="checkInclude('OC-EMI-p')"><span>EMI protect</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-EMI-p" ng-click="selectCoverUpdate('OC-EMI-p','EMI_Protect','EMI_ProtectSI','pAEMI')" ng-checked="optionalPayload.MemberDetails[0].EMI_Protect =='Y'" ng-disabled="optionalPayload.MemberDetails[0].EMI_Protect =='Y' && optionalPayload.MemberDetails[0].EMI_Protect_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].EMI_Protect == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.EMI_ProtectSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].EMI_ProtectSI ">
+                                            {{optionalPayload.MemberDetails[0].EMI_ProtectSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].EMI_ProtectSI == '' || optionalPayload.MemberDetails[0].EMI_ProtectSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                    <li ng-repeat="sum in sumInsuredList" ng-if="sum['pAEMI'] && (parseIntString(insuredMember.OC_EMI_copy) <= parseIntString(sum.amount))" class="li-item-text-change" ng-click="selectCoverSIupdate('EMI_ProtectSI', sum.amount)"
+                                        data-val="{{sum.amount}}">
+                                       <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                             class="option-text">{{sum.value}}</span></a>
+                                    </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-loan-p')"><span>Loan Protect</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-loan-p" ng-click="selectCoverUpdate('OC-loan-p','Loan_Protect','Loan_ProtectSI','pALoan')" ng-checked="optionalPayload.MemberDetails[0].Loan_Protect =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Loan_Protect =='Y' && optionalPayload.MemberDetails[0].Loan_Protect_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Loan_Protect == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Loan_ProtectSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Loan_ProtectSI ">
+                                            {{optionalPayload.MemberDetails[0].Loan_ProtectSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Loan_ProtectSI == '' || optionalPayload.MemberDetails[0].Loan_ProtectSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                    <li ng-repeat="sum in sumInsuredList" ng-if="sum['pALoan'] && (parseIntString(insuredMember.OC_Loan_copy) <= parseIntString(sum.amount))" class="li-item-text-change" ng-click="selectCoverSIupdate('Loan_ProtectSI', sum.amount)"
+                                        data-val="{{sum.amount}}">
+                                       <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                             class="option-text">{{sum.value}}</span></a>
+                                    </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-SP')" ng-style="{'cursor':optionalPayload.MemberDetails[0].SecondOpinion_NB =='Y'?  'default': 'pointer'}"><span>Second opinion</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-SP" ng-click="selectCoverUpdate('OC-SP','SecondOpinion','', null)" ng-checked="optionalPayload.MemberDetails[0].SecondOpinion =='Y'" ng-disabled="optionalPayload.MemberDetails[0].SecondOpinion =='Y' && optionalPayload.MemberDetails[0].SecondOpinion_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-WC')" ng-style="{'cursor':optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'?  'default': 'pointer'}"><span>Wellness Coach</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-WC" ng-click="selectCoverUpdate('OC-WC','WellnessCoach','', null)" ng-checked="optionalPayload.MemberDetails[0].WellnessCoach =='Y'" ng-disabled="optionalPayload.MemberDetails[0].WellnessCoach =='Y' && optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <!-- <label class="container" ng-if="checkInclude('OC-WC')" ng-style="{'cursor':optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'?  'default': 'pointer'}"><span>Wellness Coach</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-WC" ng-click="selectCoverUpdate('OC-WC','WellnessCoach','')" ng-checked="optionalPayload.MemberDetails[0].WellnessCoach =='Y'" disabled="optionalPayload.MemberDetails[0].WellnessCoach =='Y'&& optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label> -->
+                                </div>
+
+                                <!-- <div class="dv-healthAddOn-Holder">
+                                    < !-- Future Secure -- >
+
+                                    <div class="dv-healthAddOn col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0 pad-l-r-0">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : pLV.FutureSecure == 'Y' }">
+                                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                                                <label class="container-new protecting" for="FS-chk">
+                                                    <img class="temp-total-dis-img img-responsive" src="assets/images/health_add_on/Future_Secure.png">
+                                                    <div class="box-checkbox dis-in">
+                                                        <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="FS-chk" ng-change="pLV.oCBProductLevel(pLV.FutureSecure , 'FutureSecure' , $event)"  ng-model="pLV.FutureSecure">
+                                                        <span class="checkmark"></span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                                                <div class="opt-cov-box-ttl">
+                                                    Future Secure 
+                                                </div>
+                                                <div class="opt-cov-box-txt">
+                                                    Secure you and your family's future with benefits like Non-Medical Expense waiver, Sum Insured Inflation protection and No Claim Bonus Protector. 
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top mem-box">
+                                                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0">
+                                                        <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="FutureSecure-{{memb.RelationType}}-chk" ng-model="memb.FutureSecure" ng-change="pLV.oCBMemberLevel(memb , memb.FutureSecure , 'FutureSecure')">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    < !-- ENd of Future Secure -- >
+                                </div> -->
+
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top ">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                        <a href="javascript:void(0);" ng-click="backbutton()" class="back-btn back-group-member" >BACK</a>
+                    </div> -->
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0 text-right">
+                        <a href="javascript:void(0);" ng-click="submitOptionalCovers(null,null)" class="proceed-btn">SAVE</a>
+                    </div>
+                </div>
+                </div>
+             </form>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End of Desktop View-->
+
+    <!-- Mobile View -->
+    <div class="col-xs-12 hidden-lg hidden-md hidden-sm pad-l-r-0 edit-member-mobile">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-padding">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 pad-l-r-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-name-bg pad-l-r-0">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 pad-l-r-0 ">
+                            <div class="plan-name-ttl">{{policyDetails.ProductName}}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Members -
+                                    <span class="years-txt">{{insuredMembers.length}}</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Tenure -
+                                    <span class="years-txt">{{policyDetails.Tenure}} <span ng-if="policyDetails.Tenure== '1'">yr</span><span ng-if="policyDetails.Tenure!= '1'">yrs</span></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Status -
+                                    <span class="years-txt">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 pad-l-r-0">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="premium-pa-txt">Premium</div>
+                        <div class="premium-amt-red-txt">₹ {{policyDetails.RenewalGrossPremium | INR}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel-group" id="accordion">
+                <!-- First Panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOnee">
+                            <div class="currently-on-txt">Currently On:
+                                <span class="edit-member-details-bold">Edit Member Optional Covers</span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseOnee" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">
+                                    <div class="edit-member-details-txt">View Members</div>
+                                    <div class="edit-add-sml-txt">Add Member</div>
+                                </a>
+                            </div>
+                           
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-class="{'edit-member-mrgin-btm-zero': upsellFlag=='N' || (upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured == 0)}">
+                                <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                                    <div class="edit-member-details-txt">View or Edit Member details</div>
+                                </a>
+                            </div>
+
+                            <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0 && upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                                    <div class="edit-member-details-txt">Increase Sum Insured</div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <div class="grey-horizontal-line"></div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-red-box pad-l-r-0" >
+                                <a ng-click="newRenewRouting('renewal-edit-optional-covers');gotoPageGAParam('click-button','edit member details','renew')">
+                                    <div class="view-members-bold-txt">Optional Covers</div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                                    <div class="edit-member-details-txt">Tenure Change</div>
+                                </a>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                                    <div class="edit-member-details-txt">Edit Nominee Details</div>
+                                </a>
+                            </div>
+
+                            <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                                    <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                                    <div class="edit-member-details-txt">Change Address Details</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!--View Member Details mobile view-->
+        <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-details-section">
+            <form name="editMemberFormMob" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-l-r-0">
+                        <div class="group-members-bold-txt">Edit Member Optional Cover
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <ul class="nav nav-tabs scroll-horizontal">
+                            <li ng-repeat="members in insuredMembers" ng-class="{'active' : activeMember == members.RelationWithProposer }" ng-click="editMemberDetails(members)">
+                                <a data-toggle="tab" data-target="#slf" href="">{{members.RelationWithProposer}}</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content edit-detail-tab-cont view-member-add-user-section" style="padding-top:0px;">
+
+                            <div id="slf" class="tab-pane fade in active step-one-padding">
+                                <div class="bs-example">
+                                    
+                                    <div
+                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 second-ques-pad-top harmful-substance-question radio-cover">
+                                    <label class="container" ng-if="checkInclude('isPAC') && underAge" ng-style="{'cursor': optionalPayload.MemberDetails[0].PA_NB =='Y' ?  'default': 'pointer'}"><span>Personal Accident Cover</span><br/>
+                                        <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                            resulting from an accident</span>
+                                        <input class="rInput" type="checkbox" id="PAC" ng-click="selectCoverUpdate('PAC','PACoverFlag', 'PACoverSI', pAPL)" ng-checked="optionalPayload.MemberDetails[0].PACoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PACoverFlag =='Y' && optionalPayload.MemberDetails[0].PA_NB =='Y'">
+                                        <span class="checkmark"></span>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].PACoverFlag == 'Y'">
+                                            <br/>
+                                            <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.PACoverSI" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].PACoverSI ">
+                                                {{optionalPayload.MemberDetails[0].PACoverSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].PACoverSI == '' || optionalPayload.MemberDetails[0].PACoverSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'PAC' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('PACoverSI', sum.amount)"
+                                                data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.PAC_copy) <= parseIntString(sum.amount) && sum[pAPL] && newMemberToInsure.Relation != 'KID'">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum.value}} </span></a>
+                                            </li>
+                                            <li ng-if="insuredMember.Relation == 'KID' && productCode != 'Premier'" class="li-item-text-change" ng-click="selectCoverSI('PAC','Personal Accident Cover (AD, PTD)', sumInsuredList[10].amount)"
+                                                data-val="{{sumInsuredList[10].amount}}">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">{{sumInsuredList[10].value}}</span></a>
+                                            </li>
+                                            <li ng-if="insuredMember.Relation == 'KID' && productCode == 'Premier'" class="li-item-text-change" ng-click="selectCoverSI('PAC','Personal Accident Cover (AD, PTD)', sumInsuredList[20].amount)"
+                                                data-val="{{sumInsuredList[20].amount}}">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">{{sumInsuredList[20].value}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+                                      </label>
+                                      
+                                  <label class="container" ng-if="checkInclude('isCIC') && underAge" ng-style="{'cursor': optionalPayload.MemberDetails[0].CI_NB =='Y'?  'default': 'pointer'}"><span>Critical Illness Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for up to 20 listed critical illnesses helps you overcome financial short comes.</span>
+                                    <input type="checkbox" class="rInput" id="CIC" ng-click="selectCoverUpdate('CIC','CICoverFlag','CICoverSI', cIPL)" ng-checked="optionalPayload.MemberDetails[0].CICoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].CICoverFlag =='Y' && optionalPayload.MemberDetails[0].CI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CICoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].CICoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CICoverSI">
+                                            {{optionalPayload.MemberDetails[0].CICoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CICoverSI == '' || optionalPayload.MemberDetails[0].CICoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CIC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CICoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.CIC_copy) <= parseIntString(sum.amount) && sum[cIPL]">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isCSC')"><span>Cancer secure cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for up to 20 listed critical illnesses helps you overcome financial short comes.</span>
+                                    <input type="checkbox" class="rInput" id="CIC" ng-click="selectCoverUpdate('CIC','CSCoverFlag','CSCoverSI',null)" ng-checked="optionalPayload.MemberDetails[0].CSCoverFlag =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CSCoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].CSCoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Cancer secure cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CSCoverSI">
+                                            {{optionalPayload.MemberDetails[0].CSCoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CSCoverSI == '' || optionalPayload.MemberDetails[0].CSCoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CIC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CSCoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.CSC_copy) <= parseIntString(sum.amount)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isICMI') && underAge" ng-style="{'cursor': optionalPayload.MemberDetails[0].ICMI_NB =='Y'?  'default': 'pointer'}"><span>International Coverage for Major Illness Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get cover for international in-patient hospitalization expenses for 16 major listed illnesses</span>
+                                    <input type="checkbox" class="rInput" id="ICMI" ng-click="selectCoverUpdate('ICMI','ICMICoverFlag','ICMICoverSI', iCMIPL)" ng-checked="optionalPayload.MemberDetails[0].ICMICoverFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].ICMICoverFlag =='Y' && optionalPayload.MemberDetails[0].ICMI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].ICMICoverFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26" ng-disabled ="productCode == 'Premier'"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].ICMICoverFlag" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].ICMICoverSI">
+                                            {{optionalPayload.MemberDetails[0].ICMICoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].ICMICoverSI == '' || optionalPayload.MemberDetails[0].ICMICoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'ICMI' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('ICMICoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.ICMI_copy) <= parseIntString(sum.amount) && sum[iCMIPL]">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isWMC')" ng-style="{'cursor': optionalPayload.MemberDetails[0].WOMCoPayment_NB =='Y'?  'default': 'pointer'}"><span>Waiver of Mandatory Co-payment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="WMC" ng-click="selectCoverUpdate('WMC','WOMCoPayment','')" ng-checked="optionalPayload.MemberDetails[0].WOMCoPayment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].WOMCoPayment =='Y' && optionalPayload.MemberDetails[0].WOMCoPayment_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isOPDC')" ng-style="{'cursor': optionalPayload.MemberDetails[0].OPDExpense_NB =='Y'?  'default': 'pointer'}"><span>OPD Expenses</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OPDC" ng-click="selectCoverUpdate('OPDC','OPDExpense','OPDExpenseSI',oPDArray[0].val)" ng-checked="optionalPayload.MemberDetails[0].OPDExpense =='Y'" ng-disabled="optionalPayload.MemberDetails[0].OPDExpense =='Y' && optionalPayload.MemberDetails[0].OPDExpense_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].OPDExpense == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].OPDExpense" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].OPDExpenseSI">
+                                            {{optionalPayload.MemberDetails[0].OPDExpenseSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].OPDExpenseSI == '' || optionalPayload.MemberDetails[0].OPDExpenseSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'OPDC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in oPDArray" class="li-item-text-change" ng-click="selectCoverSIupdate('OPDExpenseSI', sum.val)"
+                                            data-val="{{sum.val}}" ng-if="parseIntString(insuredMember.OPDC_copy) <= parseIntString(sum.val)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.val}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isHCB')" ng-style="{'cursor': optionalPayload.MemberDetails[0].HCB_NB =='Y'?  'default': 'pointer'}"><span>Hospital cash benefit Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized.</span>
+                                    <input type="checkbox" class="rInput" id="HCB" ng-click="selectCoverUpdate('HCB','HCB','HCBSI', null)" ng-checked="optionalPayload.MemberDetails[0].HCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].HCB =='Y' && optionalPayload.MemberDetails[0].HCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="row"  ng-if="optionalPayload.MemberDetails[0].HCB == 'Y'">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].HCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].HCBSI">
+                                                {{optionalPayload.MemberDetails[0].HCBSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].HCBSI == '' || optionalPayload.MemberDetails[0].HCBSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'HCB' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in CBHAmtList" class="li-item-text-change" ng-click="selectCoverSIupdate('HCBSI', sum)"
+                                                data-val="{{sum}}" ng-if="parseIntString(insuredMember.HCB_copy) <= parseIntString(sum)">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-0" ng-if="productSelected != 'ActivHealth' && productSelected != 'ActivHealthV2'">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].HCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days">
+                                                {{optionalPayload.MemberDetails[0].NO_Of_Days}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days == '' || optionalPayload.MemberDetails[0].NO_Of_Days == null ">
+                                                Choose No. of days</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                            </button>
+                                            <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'HCB' , true)"  -->
+                                            <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '30')"
+                                                    data-val="30">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">30 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '45')"
+                                                    data-val="45" >
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">45 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '60')"
+                                                    data-val="60">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">60 Days</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isDCB')" ng-style="{'cursor': optionalPayload.MemberDetails[0].DCB_NB =='Y'?  'default': 'pointer'}"><span>Days per Policy Year limit Cover</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized.</span>
+                                    <input type="checkbox" class="rInput" id="DCB" ng-click="selectCoverUpdate('DCB','DCB','DCBSI',null)" ng-checked="optionalPayload.MemberDetails[0].DCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].DCB =='Y' && optionalPayload.MemberDetails[0].DCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="row"  ng-if="optionalPayload.MemberDetails[0].DCB == 'Y'">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].DCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].DCBSI">
+                                                {{optionalPayload.MemberDetails[0].DCBSI}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].DCBSI == '' || optionalPayload.MemberDetails[0].DCBSI == null ">
+                                                Choose one</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                        </button>
+                                        <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'DCB' , true)"  -->
+                                        <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                            <li ng-repeat="sum in CBHAmtList" class="li-item-text-change" ng-click="selectCoverSIupdate('DCBSI', sum)"
+                                                data-val="{{sum}}" ng-if="parseIntString(insuredMember.DCB_copy) <= parseIntString(sum)">
+                                               <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                     class="option-text">{{sum}}</span></a>
+                                            </li>
+                                         </ul>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-0">
+                                            <br/>
+                                            <button tabindex="26"
+                                            class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                            type="button" button-dropdown="optionalPayload.MemberDetails[0].DCB" data-toggle="dropdown" aria-expanded="false"
+                                            ng-click="callGtag('click-dropdown','Renew Modification Add Member','Hospital cash benefit Cover')">
+                                            <span class="dropdown-placeholder-txt"
+                                                class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days">
+                                                {{optionalPayload.MemberDetails[0].NO_Of_Days}}
+                                            </span>
+                                            <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                                ng-if="optionalPayload.MemberDetails[0].NO_Of_Days == '' || optionalPayload.MemberDetails[0].NO_Of_Days == null ">
+                                                Choose No. of days</span>
+                                            <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                    src="assets/images/icon-chevron-down.png"></span>
+                                            </button>
+                                            <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'DCB' , true)"  -->
+                                            <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '30')"
+                                                    data-val="30">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">30 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '45')"
+                                                    data-val="45" >
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">45 Days</span></a>
+                                                </li>
+                                                <li class="li-item-text-change" ng-click="selectCoverSIupdate('NO_Of_Days', '60')"
+                                                    data-val="60">
+                                                <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                        class="option-text">60 Days</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isME')" ng-style="{'cursor':optionalPayload.MemberDetails[0].MaternityExpense_NB =='Y'?  'default': 'pointer'}"><span>Maternity Expenses</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="ME" ng-click="selectCoverUpdate('ME','MaternityExpense','MaternityExpenseSI', null)" ng-checked="optionalPayload.MemberDetails[0].MaternityExpense =='Y'" ng-disabled="optionalPayload.MemberDetails[0].MaternityExpense =='Y' && optionalPayload.MemberDetails[0].MaternityExpense_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].MaternityExpense == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.MemberDetails[0].MaternityExpense" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].MaternityExpenseSI">
+                                            {{optionalPayload.MemberDetails[0].MaternityExpenseSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].MaternityExpenseSI == '' || optionalPayload.MemberDetails[0].MaternityExpenseSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'ME' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('MaternityExpenseSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="parseIntString(insuredMember.ME_copy) <= parseIntString(sum.amount)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}}</span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  <label class="container" ng-if="checkInclude('isPPN')" ng-style="{'cursor':optionalPayload.MemberDetails[0].PPNDiscount_NB =='Y'?  'default': 'pointer'}"><span>PPN Discount</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="PPN" ng-click="selectCoverUpdate('PPN','PPNDiscount','', null)" ng-checked="optionalPayload.MemberDetails[0].PPNDiscount =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PPNDiscount =='Y' && optionalPayload.MemberDetails[0].PPNDiscount_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isS-NCB')"  ng-style="{'cursor':optionalPayload.MemberDetails[0].SuperNCB_NB =='Y'?  'default': 'pointer'}"><span>Super NCB</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="S_NCB" ng-click="selectCoverUpdate('S_NCB','SuperNCB','', null)" ng-checked="optionalPayload.MemberDetails[0].SuperNCB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].SuperNCB =='Y' && optionalPayload.MemberDetails[0].SuperNCB_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isURSI')" ng-style="{'cursor':optionalPayload.MemberDetails[0].UnlimitedReloadSI_NB =='Y'?  'default': 'pointer'}"><span>Unlimited Reload of SI</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="URSI" ng-click="selectCoverUpdate('URSI','UnlimitedReload','', null)" ng-checked="optionalPayload.MemberDetails[0].UnlimitedReload =='Y'" ng-disabled="optionalPayload.MemberDetails[0].UnlimitedReload =='Y' && optionalPayload.MemberDetails[0].UnlimitedReloadSI_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isRU')" ng-style="{'cursor':optionalPayload.MemberDetails[0].RoomCover_NB =='Y'?  'default': 'pointer'}"><span>Any Room upgrade</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="RU" ng-click="selectCoverUpdate('RU','RoomCover','', null)" ng-checked="optionalPayload.MemberDetails[0].RoomCover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].RoomCover =='Y'&& optionalPayload.MemberDetails[0].Room_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isAHB')" ng-style="{'cursor':optionalPayload.MemberDetails[0].AHB_NB =='Y'?  'default': 'pointer'}"><span>Accidental Hospitalization Booster</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="AHB" ng-click="selectCoverUpdate('AHB','AHB', 'AHBSI',null)" ng-checked="optionalPayload.MemberDetails[0].AHB =='Y'" ng-disabled="optionalPayload.MemberDetails[0].AHB =='Y' && optionalPayload.MemberDetails[0].AHB_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].AHB == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.AHBSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].AHBSI ">
+                                            {{optionalPayload.MemberDetails[0].AHBSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].AHBSI == '' || optionalPayload.MemberDetails[0].AHBSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'AHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('AHBSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="(parseIntString(insuredMember.AHB_copy) <= parseIntString(sum.amount))&& (parseIntString(sum.amount) <= 10000000)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isCHB')" ng-style="{'cursor':optionalPayload.MemberDetails[0].CancerHospitalization_NB =='Y'?  'default': 'pointer'}"><span>Cancer hospitalization booster</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="CHB" ng-click="selectCoverUpdate('CHB','CancerHospitalizationCover', 'CancerHospitalizationCoverSI', null)" ng-checked="optionalPayload.MemberDetails[0].CancerHospitalizationCover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].CancerHospitalizationCover =='Y' && optionalPayload.MemberDetails[0].SaveCover">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCover == 'Y' && optionalPayload.MemberDetails[0].CancerHospitalization_NB == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.CancerHospitalizationCoverSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI ">
+                                            {{optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI == '' || optionalPayload.MemberDetails[0].CancerHospitalizationCoverSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in sumInsuredList" class="li-item-text-change" ng-click="selectCoverSIupdate('CancerHospitalizationCoverSI', sum.amount)"
+                                            data-val="{{sum.amount}}" ng-if="(parseIntString(insuredMember.CHB_copy) <= parseIntString(sum.amount))&& (parseIntString(sum.amount) <= 10000000)">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum.value}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-RU')" ng-style="{'cursor':optionalPayload.MemberDetails[0].RoomUpgrade_NB =='Y'?  'default': 'pointer'}"><span>Room upgrade</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-RU" ng-click="selectCoverUpdate('OC-RU','RoomUpgrade','',null)" ng-checked="optionalPayload.MemberDetails[0].RoomUpgrade =='Y'" ng-disabled="optionalPayload.MemberDetails[0].RoomUpgrade =='Y' && optionalPayload.MemberDetails[0].RoomUpgrade_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <!-- <label class="container" ng-if="checkInclude('OC-PN')"><span>Preferred Network Network</span><br/>
+                                    <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span>
+                                    <input type="checkbox" class="rInput" id="OC-PN" ng-click="selectCoverUpdate('OC-PN','PreferedNetwork','')" ng-checked="optionalPayload.MemberDetails[0].PreferedNetwork =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label> -->
+
+                                  <label class="container" ng-if="checkInclude('OC-NAH')" ng-style="{'cursor':optionalPayload.MemberDetails[0].NursingAtHome_NB =='Y'?  'default': 'pointer'}"><span>Nursing at Home</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-NAH" ng-click="selectCoverUpdate('OC-NAH','NursingAtHome','', null)" ng-checked="optionalPayload.MemberDetails[0].NursingAtHome =='Y'" ng-disabled="optionalPayload.MemberDetails[0].NursingAtHome =='Y' && optionalPayload.MemberDetails[0].NursingAtHome_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-LE')" ng-style="{'cursor':optionalPayload.MemberDetails[0].LifestyleQuipment_NB =='Y'?  'default': 'pointer'}"><span>Lifestyle Equipment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-LE" ng-click="selectCoverUpdate('OC-LE','LifestyleQuipment','', null)" ng-checked="optionalPayload.MemberDetails[0].LifestyleQuipment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].LifestyleQuipment =='Y' && optionalPayload.MemberDetails[0].LifestyleQuipment_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-PME')" ng-style="{'cursor':optionalPayload.MemberDetails[0].PortableMedicalEquipment_NB =='Y'?  'default': 'pointer'}"><span>Portable Medical Equipment</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-PME" ng-click="selectCoverUpdate('OC-PME','PortableMedicalEquipment','', null)" ng-checked="optionalPayload.MemberDetails[0].PortableMedicalEquipment =='Y'" ng-disabled="optionalPayload.MemberDetails[0].PortableMedicalEquipment =='Y' && optionalPayload.MemberDetails[0].PortableMedicalEquipment_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AHC')" ng-style="{'cursor':optionalPayload.MemberDetails[0].AdvanceHealthCheckup_NB =='Y'?  'default': 'pointer'}"><span>Advance Health Checkup</span><br/>
+                                    <!-- <span class="checkInfo">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input type="checkbox" class="rInput" id="OC-AHC" ng-click="selectCoverUpdate('OC-AHC','AdvanceHealthCheckup','', null)" ng-checked="optionalPayload.MemberDetails[0].AdvanceHealthCheckup =='Y'" ng-disabled="optionalPayload.MemberDetails[0].AdvanceHealthCheckup =='Y' && optionalPayload.MemberDetails[0].AdvanceHealthCheckup_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-WC')" ng-style="{'cursor':optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'?  'default': 'pointer'}"><span>Wellness Coach</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-WC" ng-click="selectCoverUpdate('OC-WC','WellnessCoach','',null)" ng-checked="optionalPayload.MemberDetails[0].WellnessCoach =='Y'" disabled="optionalPayload.MemberDetails[0].WellnessCoach =='Y'&& optionalPayload.MemberDetails[0].WellnessCoach_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-TTDB')"><span>Temporary Total Disablement Benefit</span><br/>
+                                    <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">WeeKly Benefit Limit</span>
+                                    <input type="checkbox" class="rInput" id="OC-TTDB" ng-click="selectCoverUpdate('OC-TTDB','Temporary_Total_Disablement','Temporary_Total_DisablementSI', TTDB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Temporary_Total_Disablement =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Temporary_Total_Disablement =='Y' && optionalPayload.MemberDetails[0].Temporary_Total_Disablement_NB =='Y'">
+                                    <span class="checkmark"></span>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Temporary_Total_Disablement == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Temporary_Total_DisablementSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI ">
+                                            {{optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI == '' || optionalPayload.MemberDetails[0].Temporary_Total_DisablementSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in TTDB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Temporary_Total_DisablementSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_TTDB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AIH')"><span>Accidental In-Patient Hospitalization cover</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AIH" ng-click="selectCoverUpdate('OC-AIH','Accidental_in_patient','')" ng-checked="optionalPayload.MemberDetails[0].Accidental_in_patient =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Accidental_in_patient =='Y' && optionalPayload.MemberDetails[0].Accidental_in_patient_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-CB')"><span>Coma benefits</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-CB" ng-click="selectCoverUpdate('OC-CB','Coma_Benefit','')" ng-checked="optionalPayload.MemberDetails[0].Coma_Benefit =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Coma_Benefit =='Y' && optionalPayload.MemberDetails[0].Coma_Benefit_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-BBB')"><span>Broken bone benefits</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-BBB" ng-click="selectCoverUpdate('OC-BBB','Broken_Bones_Benefit','Broken_Bones_BenefitSI',BBB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Broken_Bones_Benefit =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Broken_Bones_Benefit =='Y' && optionalPayload.MemberDetails[0].Broken_Bones_Benefit_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Broken_Bones_Benefit == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Broken_Bones_BenefitSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI ">
+                                            {{optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI == '' || optionalPayload.MemberDetails[0].Broken_Bones_BenefitSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in BBB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Broken_Bones_BenefitSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_BBB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-BB')"><span>Burn benefit</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-BB" ng-click="selectCoverUpdate('OC-BB','Burns_Benefits','Burns_BenefitsSI',BBB_SIList[0])" ng-checked="optionalPayload.MemberDetails[0].Burns_Benefits =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Burns_Benefits =='Y' && optionalPayload.MemberDetails[0].Burns_Benefits_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Burns_Benefits == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Burns_BenefitsSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Burns_BenefitsSI ">
+                                            {{optionalPayload.MemberDetails[0].Burns_BenefitsSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Burns_BenefitsSI == '' || optionalPayload.MemberDetails[0].Burns_BenefitsSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                        <li ng-repeat="sum in BBB_SIList" class="li-item-text-change" ng-click="selectCoverSIupdate('Burns_BenefitsSI', sum)"
+                                            data-val="{{sum}}" ng-if="(parseIntString(insuredMember.OC_BBB_copy) <= parseIntString(sum))">
+                                           <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                                 class="option-text">{{sum}} </span></a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AS')"><span>Adventure sports cover</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AS" ng-click="selectCoverUpdate('OC-AS','Adventure_Sports_Cover','')" ng-checked="optionalPayload.MemberDetails[0].Adventure_Sports_Cover =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Adventure_Sports_Cover =='Y' && optionalPayload.MemberDetails[0].Adventure_Sports_Cover_NB =='Y'">
+                                    <span class="checkmark" ></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-AME')"><span>Accidental medical expense</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-AME" ng-click="selectCoverUpdate('OC-AME','Accidental_Medical_Expenses','')" ng-checked="optionalPayload.MemberDetails[0].Accidental_Medical_Expenses =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Accidental_Medical_Expenses =='Y' && optionalPayload.MemberDetails[0].Accidental_Medical_Expenses_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-WEA')"><span>Worldwide emergency assistance</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-WEA" ng-click="selectCoverUpdate('OC-WEA','Worldwide_Emergency_Assistance','')" ng-checked="optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance =='Y' && optionalPayload.MemberDetails[0].Worldwide_Emergency_Assistance_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                  <label class="container" ng-if="checkInclude('OC-EMI-p')"><span>EMI protect</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-EMI-p" ng-click="selectCoverUpdate('OC-EMI-p','EMI_Protect','EMI_ProtectSI','pAEMI')" ng-checked="optionalPayload.MemberDetails[0].EMI_Protect =='Y'" ng-disabled="optionalPayload.MemberDetails[0].EMI_Protect =='Y' && optionalPayload.MemberDetails[0].EMI_Protect_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].EMI_Protect == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.EMI_ProtectSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].EMI_ProtectSI ">
+                                            {{optionalPayload.MemberDetails[0].EMI_ProtectSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].EMI_ProtectSI == '' || optionalPayload.MemberDetails[0].EMI_ProtectSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                    <li ng-repeat="sum in sumInsuredList" ng-if="sum['pAEMI'] && (parseIntString(insuredMember.OC_EMI_copy) <= parseIntString(sum.amount))" class="li-item-text-change" ng-click="selectCoverSIupdate('EMI_ProtectSI', sum.amount)"
+                                        data-val="{{sum.amount}}">
+                                       <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                             class="option-text">{{sum.value}}</span></a>
+                                    </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-loan-p')"><span>Loan Protect</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-loan-p" ng-click="selectCoverUpdate('OC-loan-p','Loan_Protect','Loan_ProtectSI','pALoan')" ng-checked="optionalPayload.MemberDetails[0].Loan_Protect =='Y'" ng-disabled="optionalPayload.MemberDetails[0].Loan_Protect =='Y' && optionalPayload.MemberDetails[0].Loan_Protect_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].Loan_Protect == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Loan_ProtectSI" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Loan_ProtectSI ">
+                                            {{optionalPayload.MemberDetails[0].Loan_ProtectSI}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Loan_ProtectSI == '' || optionalPayload.MemberDetails[0].Loan_ProtectSI == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'CHB' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+                                    <li ng-repeat="sum in sumInsuredList" ng-if="sum['pALoan'] && (parseIntString(insuredMember.OC_Loan_copy) <= parseIntString(sum.amount))" class="li-item-text-change" ng-click="selectCoverSIupdate('Loan_ProtectSI', sum.amount)"
+                                        data-val="{{sum.amount}}">
+                                       <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                             class="option-text">{{sum.value}}</span></a>
+                                    </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('OC-SP')" ng-style="{'cursor':optionalPayload.MemberDetails[0].SecondOpinion_NB =='Y'?  'default': 'pointer'}"><span>Second opinion</span><br/>
+                                    <input type="checkbox" class="rInput" id="OC-SP" ng-click="selectCoverUpdate('OC-SP','SecondOpinion','', null)" ng-checked="optionalPayload.MemberDetails[0].SecondOpinion =='Y'" ng-disabled="optionalPayload.MemberDetails[0].SecondOpinion =='Y' && optionalPayload.MemberDetails[0].SecondOpinion_NB =='Y'">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                  <label class="container" ng-if="checkInclude('isWaiting')" ng-style="{'cursor': optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y' ?  'default': 'pointer'}"><span>Waiting Period PED</span><br/>
+                                    <!-- <span class="checkInfo col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">Get financial protection against uncertainties such as accidental death, and Permanent Total Disablement
+                                        resulting from an accident</span> -->
+                                    <input class="rInput" type="checkbox" id="waitingPeriod" ng-click="selectCoverUpdate('waitingPeriod','waitingPeriodFlag', 'Period', null)" ng-checked="optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y'" ng-disabled="optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y' && optionalPayload.MemberDetails[0].waitingPeriodFlag =='Y'">
+                                    <span class="checkmark"></span>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-l-r-0" ng-if="optionalPayload.MemberDetails[0].waitingPeriodFlag == 'Y'">
+                                        <br/>
+                                        <button tabindex="26"
+                                        class="btn btn-drop-down-width btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                        type="button" button-dropdown="optionalPayload.Period" data-toggle="dropdown" aria-expanded="false"
+                                        ng-click="callGtag('click-dropdown','Renew Modification Add Member','Personal accidental cover')">
+                                        <span class="dropdown-placeholder-txt"
+                                            class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Period ">
+                                            {{optionalPayload.MemberDetails[0].Period}}
+                                        </span>
+                                        <span class="dropdown-placeholder-txt" class="select-cover-dropdown-txt"
+                                            ng-if="optionalPayload.MemberDetails[0].Period == '' || optionalPayload.MemberDetails[0].Period == null ">
+                                            Choose one</span>
+                                        <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span>
+                                    </button>
+                                    <!-- ng-click="pLV.updateCoverSumInsured(sum , members , 'PAC' , true)"  -->
+                                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1" style="z-index: 100;">
+
+                                        <li class="li-item-text-change" data-val="'24'"  ng-click="selectCoverSIupdate('waitingPeriod', '24')">
+                                            <a>
+                                                24 months
+                                            </a>
+                                        </li>
+                                        <li class="li-item-text-change" data-val="'36'"  ng-click="selectCoverSIupdate('waitingPeriod', '36')">
+                                            <a>
+                                                36 months
+                                            </a>
+                                        </li>
+                                        <li class="li-item-text-change" data-val="'48'"  ng-click="selectCoverSIupdate('waitingPeriod', '48')">
+                                            <a>
+                                                48 months
+                                            </a>
+                                        </li>
+                                     </ul>
+                                    </div>
+                                  </label>
+                                  
+                                </div>
+
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top ">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                        <a href="javascript:void(0);" ng-click="backbutton()" class="back-btn back-group-member" >BACK</a>
+                    </div> -->
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0 text-right">
+                        <a href="javascript:void(0);" ng-click="submitOptionalCovers(null,null)" class="sav-btn">SAVE</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btns-pad-top btns-position btns-section">
+            <div ng-show="showHealthReturn" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0 helth-return-mobile-container">
+                <label class="container-new" style="left: 0;">Use Health Returns of <span class="checkbox-green-txt">₹ {{heathReturnAmt | INR}}</span>
+                    <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" name="healthreturn" ng-model="applyHealthReturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                    <span class="checkmark"></span>
+               </label> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0">
+                <a href="javascript:void(0);" ng-click="requestPgURL();gotoPageGAParam('click-button','pay premium','renew')">
+                    <span class="btn btn proceed-btn">Pay Premium
+                        <span style="font-size: inherit; margin-left: 40px;">₹ {{policyDetails.RenewalGrossPremium | INR}}</span>
+                        <img class="pull-right" src="assets/images/new-renew/right-arrow.svg">
+                    </span>
+                </a>
+            </div>
+            <div class="pre-btn-container pre-update-btn get-update-btn">
+                <a href="javascript:void(0);" ng-click="alertRevert(); gotoPageGAParam('click-button','get quote','renew')" class="premuim-btn"><img src="assets/images/refresh.png"></a>
+            </div>
+        </div>
+    </div>
+    <!-- End of Mobile View -->
+</div>
+
+<!------------------ Page Script -------------------------->
+
+<script>
+     $(document).ready(function () {
+            // Add minus icon for collapse element which is open by default
+            $(".collapse.in").each(function () {
+                $(this).siblings(".panel-heading").find(".arrow-right").addClass("rotate");
+            });
+
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse").on('show.bs.collapse', function () {
+                $(this).parent().find(".arrow-right").addClass("rotate");
+            }).on('hide.bs.collapse', function () {
+                $(this).parent().find(".arrow-right").removeClass("rotate");
+            });
+        });
+</script>
+
+<!------------------ End of Page Script -------------------------->

@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Akhand-Devanagari-Bold';
+    src: 
+        url('../fonts/hindifonts/AkhandDevanagari-Bold.woff2') format('woff2'),
+        url('../fonts/hindifonts/AkhandDevanagari-Bold.woff') format('woff'),
+        url('../fonts/hindifonts/AkhandDevanagari-Bold.ttf') format('truetype'),
+        url('../fonts/hindifonts/AkhandDevanagari-Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+ 
+@font-face {
+    font-family: 'Akhand-Devanagari-Semibold';
+    src: 
+        url('../fonts/hindifonts/AkhandDevanagari-Semibold.woff2') format('woff2'),
+        url('../fonts/hindifonts/AkhandDevanagari-Semibold.woff') format('woff'),
+        url('../fonts/hindifonts/AkhandDevanagari-Semibold.ttf') format('truetype'),
+        url('../fonts/hindifonts/AkhandDevanagari-Semibold.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+ 
+@font-face {
+    font-family: 'Akhand-Devanagari';
+    src: 
+        url('../fonts/hindifonts/AkhandDevanagari-Regular.woff2') format('woff2'),
+        url('../fonts/hindifonts/AkhandDevanagari-Regular.woff') format('woff'),
+        url('../fonts/hindifonts/AkhandDevanagari-Regular.ttf') format('truetype'),
+        url('../fonts/hindifonts/AkhandDevanagari-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+ 
+@font-face {
+    font-family: 'Akhand-Devanagari-Light';
+    src: url('../fonts/hindifonts/AkhandDevanagari-Light.woff2') format('woff2'),
+        url('../fonts/hindifonts/AkhandDevanagari-Light.woff') format('woff'),
+        url('../fonts/hindifonts/AkhandDevanagari-Light.ttf') format('truetype'),
+        url('../fonts/hindifonts/AkhandDevanagari-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+.P9Lang-hindi {
+    font-family: 'Akhand-Devanagari' !important;
+}
+ .P9Lang-hindi *{
+        font-family: Akhand-Devanagari !important;
+}
+.P9Lang-hindi p, .P9Lang-hindi a, .P9Lang-hindi div, .P9Lang-hindi h1, .P9Lang-hindi h2, .P9Lang-hindi h3, .P9Lang-hindi h4, .P9Lang-hindi h5, .P9Lang-hindi h6, .P9Lang-hindi li, .P9Lang-hindi span{
+        font-family: Akhand-Devanagari !important;
+}
+    .P9Lang-hindi .header-3 span, .P9Lang-hindi header .header-3 span {
+    font-size: 15px !important;
+    line-height: 26px !important;
+    }
+    .P9Lang-hindi .screen-full .q-box .q-heading{
+        font-size: 28px !important;
+    }
+    .P9Lang-hindi .screen-full .q-box .q-count span {
+        font-size: 26px !important;
+    }
+    .P9Lang-hindi .screen-full .q-box .q-name, .P9Lang-hindi .screen-full .q-box .q-next{
+        font-size: 35px !important;
+    }
+    .P9Lang-hindi .pre-quote-page input[type=number], .P9Lang-hindi .pre-quote-page input[type=tel], .P9Lang-hindi .pre-quote-page input[type=text]{
+        font-size: 25px !important;
+        padding-top: 0px !important;
+    }
+    .P9Lang-hindi .screen-full .q-static h5{
+        font-size: 18px !important;
+    }
+    .P9Lang-hindi .screen-full .q-static h3{
+        font-size: 30px !important;
+    }
+    .P9Lang-hindi .brief-info {
+        font-size: 13px !important;
+    }
+    .P9Lang-hindi .btn-previous-next{
+        font-size: 20px !important;
+    }
+    .P9Lang-hindi .screen-full .q-box .q-input .next-enter-btn{
+        height: 20px !important;
+    }
+    .P9Lang-hindi .screen-full .q-box .q-input .input-group-addon{
+        font-size: 25px !important;
+    }
+    .P9Lang-hindi .otp-label-style{
+        line-height: 23px !important;
+    }
+    .P9Lang-hindi .app-modal .modal-save-btn{
+        font-size: 14px !important;
+    }
+    .P9Lang-hindi .app-modal .modal-hdr-txt{
+        font-size: 20px !important;
+    }
+    .P9Lang-hindi .reco_q_names-span_policy-brochure a {
+        font-size: 12px !important;
+    }
+    .P9Lang-hindi .screen-reco-page .reco_price_panel p {
+    font-size: 12px !important;
+    color: #868686 !important;
+    line-height: 18px !important;
+    }
+    .P9Lang-hindi .screen-reco-page .reco_price_panel ul li {
+    line-height: 18px !important;
+    font-size: 12px !important;
+    color: #868686 !important;
+    }
+    .P9Lang-hindi .screen-reco-page .reco_q_subheading{
+        line-height: 18px !important;
+    }
+    .P9Lang-hindi .screen-reco-page .reco_panel .reco_panel_heading h4.sum-insured, .P9Lang-hindi .screen-reco-page .reco_price_panel .reco_price_heading h4.sum-insured{
+        line-height: 18px !important;
+    }
+    .P9Lang-hindi .screen-reco-page .reco_panel .reco_q_sublines li {
+    line-height: 18px !important;
+    font-size: 12px !important;
+    }
+    .P9Lang-hindi .yellow-note-txt {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    }

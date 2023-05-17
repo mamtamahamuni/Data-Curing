@@ -1,0 +1,374 @@
+<!-- 
+    Name: Platinum Quote Page
+    Author: Sunny Khattri
+    Date: 28/06/2018
+-->
+<!-- Platinum Quote Page head section -->
+<div class="container-fluid ttl-row">
+    <div class="row cont-pad">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="active-health-ttl-black">Activ Health -
+                Platinum </span><span class="active-health-ttl-black">| </span><span
+                class="main-header-text2">{{plA.platinumQuoteDetails.PlatinumQuote.PlanName}}</span></div>
+    </div>
+</div><!-- End of platinum quote page head section -->
+<!-- Platinum quote breadcrumb section -->
+<div class="container-fluid">
+    <div class="row cont-pad breadcrumb-row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="breadcrumb-cust">
+                <li class="breadcrumb-item-cust breadcrumb-item-cust-active"><a href="javascript:void(0)"
+                        ng-click="quoteNavigation()">Quotation</a></li>
+                <li class="breadcrumb-item-cust"><span class="clickable"><i
+                            class="glyphicon glyphicon-menu-right"></i></span></li>
+                <li class="breadcrumb-item-cust"><a href="javascript:void(0)" ng-class="{'active' : plA.pName != null}"
+                        class="unbold-fonts"
+                        ng-click="breadcrumbNavigation('breadcrumbs','proposer-details','Proposer_Details',4)">Proposal</a>
+                </li>
+                <li class="breadcrumb-item-cust"><span class="clickable"><i
+                            class="glyphicon glyphicon-menu-right"></i></span></li>
+                <li class="breadcrumb-item-cust"><a href="javascript:void(0)" class="unbold-fonts"
+                        ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div><!-- End of platinum quote breadcrumb section -->
+<!-- Platinum Quote premium display section -->
+<div class="container-fluid prem-panel sticky" sticky>
+    <div class="row prem-row">
+        <div class="col-md-12 col-xs-11 col-sm-12 prem-text-panel text-right pad-l-r-0">
+            <div class="dropdown dis-in"><a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown"
+                    type="button" data-toggle="dropdown" id=""
+                    ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')"><span
+                        class="prem-small-txt">Premium:&nbsp;&nbsp;</span> <span class="prem-big-txt"
+                        ng-if="plA.PremiumDetail.TotalPremium"><span class="prem-rupee-symbol">&#8377;</span> <span
+                            count-up end-val="plA.PremiumDetail.TotalPremium"></span> <span
+                            ng-show="plA.platinumQuoteDetails.PlatinumQuote.Tenure == '1'">pa </span>&nbsp; <span
+                            class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                src="assets/images/icon-chevron-down.png"> </span></span><span class="prem-big-txt"
+                        ng-if="!plA.PremiumDetail.TotalPremium"><i class="fa fa-spinner"
+                            aria-hidden="true"></i></span></a>
+                <ul class="dropdown-menu plan-dropdown-menubox">
+                    <li ng-repeat="premium in plA.PremiumDetail.ProductPremium">
+                        <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">{{premium.ProductName | productFilter}}</p>
+                        <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.PolicyBasePremium != null && premium.PolicyBasePremium != '' && premium.PolicyBasePremium != '0'">Base Amount : ₹ {{premium.PolicyBasePremium | INR}} </p>
+                        <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.GSTValue != null && premium.GSTValue != '' && premium.GSTValue != '0'">GST Amount : ₹ {{premium.GSTValue | INR}}  </p>
+                        <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.Discount != null && premium.Discount != '' && premium.Discount != '0'">Discount Amount: ₹ {{premium.Discount | INR}} </p>
+                        <p class="tooltip-grey-txt mar-rght-15 totalAmt">Total Amount : ₹ {{premium.Premium | INR}}  </p>
+                     </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><!-- End of platinum quote premium display section -->
+<!-- Sum insured display section -->
+<div class="container">
+    <div class="row quote-item-block">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+            <div class="item-block-number-border"><span class="item-block-number">1</span></div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-lg-10 col-xs-11">
+            <div class="quote-item-block-content">
+                <div class="item-block-content-header">SUM INSURED OF MEMBERS <span class="custom-popover"
+                        custom-popover><img class="img-responsive item-block-tool-tip-img"
+                            src="assets/images/tooltip_Premium.png"
+                            ng-click="callGtag('click-icon','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_sum-insured-i')">
+                        <span class="custom-tooltip-text">Higher the Sum Insured opted, lower is the effective per lac
+                            premium and better coverage. Choose a sum insured which covers your family adequately. <span
+                                class="pop-close">×</span></span></span></div>
+                <div class="item-block-content-desc">Please select the amount of insurance cover you would like</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 sum-insured-members-padding-initial">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="dropdown sum-insured-members-block-dropdown"><button tabindex="1"
+                        class="btn btn-default dropdown-toggle brand-dropdown grey self-insured-btn" type="button"
+                        button-dropdown="plA.selectedPrenium"
+                        ng-click="callGtag('click-dropdown','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_sum-insured_dropdown-open')"><span
+                            class="member-dropdown-text"
+                            ng-if="plA.platinumQuoteDetails.PlatinumQuote.SI != 0 && plA.platinumQuoteDetails.PlatinumQuote.SI != null "><span
+                                class="member-dropdown-text">&#8377;</span>
+                            {{plA.platinumQuoteDetails.PlatinumQuote.SI | INR}} </span><span
+                            class="member-dropdown-text"
+                            ng-if="plA.platinumQuoteDetails.PlatinumQuote.SI == 0 || plA.platinumQuoteDetails.PlatinumQuote.SI == null "><span
+                                class="member-dropdown-text">&#8377;</span> Select Sum Insured </span><span
+                            class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                src="assets/images/icon-chevron-down.png"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="li-item-text-change" ng-repeat="option in plA.SumInsuredList"
+                            ng-if="option[plA.platinumQuoteDetails.PlatinumQuote.PlanName]"
+                            data-val="{{option.amount}}"><a href="javascript:void(0)"
+                                ng-click="plA.calculatePlatPremium(option.amount)" class="li-item-text-change"><span
+                                    class="rupee-symbol">&#8377;</span> <span
+                                    class="option-text">{{option.value}}</span></a></li>
+                    </ul>
+                    <!-- <ul class="dropdown-menu" ng-if = "plA.membersDetails.length > 2">
+                                 <li class="li-item-text-change" ng-repeat="option in plA.SumInsuredList" ng-if="option[plA.platinumQuoteDetails.PlatinumQuote.PlanName] && plA.membersDetails.length > 2 " data-val="{{option.amount}}">
+                                    <a href="javascript:void(0)" ng-click="plA.calculatePlatPremium(option.amount)" class="li-item-text-change">
+                                        <span class="rupee-symbol">&#8377;</span> 
+                                        <span class="option-text">{{option.value}}</span>
+                                    </a>
+                                </li>
+                            </ul> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 member-selected"><span class="member-selected-grey-txt">Members
+                Selected: </span><span class="mbr-sel-txt-big member-selected-black-txt">{{plA.membersSelected}}</span>
+            <span data-target="#add-new-member-web" data-toggle="modal" tabindex="2"
+                ng-click="callGtag('click-icon','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_add-edit-members')"
+                data-backdrop="static" data-keyboard="false"><img class="img-responsive edit-tip-img"
+                    src="assets/images/edit_assure.png"></span></div>
+    </div>
+</div><!-- End of sum insured display section -->
+<!-- Tenure selection section -->
+<div class="container">
+    <div class="row quote-item-block">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+            <div class="item-block-number-border"><span class="item-block-number">2</span></div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-lg-10 col-xs-11">
+            <div class="tenure-section-padding">
+                <div class="item-block-content-header">TENURE</div>
+                <div class="item-block-content-dess">Duration in which benefits are payable under the policy.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+        <div
+            class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 tenure-box-bg mob-tenure-sec-pad-l-r-10">
+            <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad" id="tenure-year-act-bdr"
+                ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Tenure == '1'}">
+                <div class="pad-top-10">
+                    <div class="pretty circle danger margin-align-left-devices"><input type="radio" name="tenureRadio"
+                            tabindex="3" ng-change="plA.changeTenure()" id="tenureRadio"
+                            ng-model="plA.platinumQuoteDetails.PlatinumQuote.Tenure" value="1"> <label
+                            for="tenureRadio"><i class="default"></i>&nbsp;<span class="table-value"> 1
+                                Year</span></label></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad" id="tenure-year-act-bdr1"
+                ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Tenure == '2'}">
+                <div class="pad-top-10">
+                    <div class="pretty circle danger margin-align-left-devices"><input type="radio" name="tenureRadio"
+                            tabindex="4" ng-change="plA.changeTenure()" id="tenureRadio1"
+                            ng-model="plA.platinumQuoteDetails.PlatinumQuote.Tenure" value="2"> <label
+                            for="tenureRadio1"><i class="default"></i>&nbsp; <span class="table-value">2 Years</span>
+                            <div class="saving-tenure">You save: <span class="rupee-symbol">&#8377;</span> <span
+                                    count-up end-val="plA.savingForTwoYears"></span>
+                                <div class="saving-tenure-discount dis-in">(7.5% Off)</div>
+                            </div>
+                        </label></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad" id="tenure-year-act-bdr2"
+                ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Tenure == '3'}">
+                <div class="pad-top-10">
+                    <div class="pretty circle danger margin-align-left-devices"><input type="radio" name="tenureRadio"
+                            tabindex="5" ng-change="plA.changeTenure()" id="tenureRadio2"
+                            ng-model="plA.platinumQuoteDetails.PlatinumQuote.Tenure" value="3"> <label
+                            for="tenureRadio2"><i class="default"></i>&nbsp; <span class="table-value">3 Years</span>
+                            <div class="saving-tenure">You save: <span class="rupee-symbol">&#8377;</span><span count-up
+                                    end-val="plA.savingForThreeYears"></span>
+                                <div class="saving-tenure-discount dis-in">(10% Off)</div>
+                            </div>
+                        </label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End of tenure selection section -->
+<!-- Zone selection section -->
+<div class="container">
+    <div class="row quote-item-block">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+            <div class="item-block-number-border"><span class="item-block-number">3</span></div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-lg-10 col-xs-11">
+            <div class="tenure-section-padding">
+                <div class="item-block-content-header">ZONE OF COVER <span class="custom-popover" custom-popover><img
+                            class="img-responsive item-block-tool-tip-img" src="assets/images/tooltip_Premium.png"
+                            ng-click="callGtag('click-icon','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_zone-i')">
+                        <span class="custom-tooltip-text">You can avail treatment in a hospital in any zone, a co-pay is
+                            applicable in case you are hospitalised in a higher zone than opted at the time of proposal.
+                            <span class="pop-close">×</span></span></span></div>
+                <div class="item-block-content-desc hidden-xs">Zone where you are likely to avail medical treatment.
+                </div>
+                <div class="item-block-content-desc hidden-lg hidden-md hidden-sm">Tenure Definition goes here.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tenure-box-bg">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr"
+                    ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z001'}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices zone-div-click-1"><input type="radio"
+                                name="tenurezoneRadio" tabindex="6" id="tenurezoneRadio"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.Zone" value="Z001"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_zone-[1]')">
+                            <label for="tenurezoneRadio"><i class="default"></i>&nbsp;<span class="table-value"> ZONE
+                                    1</span></label></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr1"
+                    ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z002'}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenurezoneRadio" tabindex="7" id="tenurezoneRadio1"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.Zone" value="Z002"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_zone-[2]')">
+                            <label for="tenurezoneRadio1"><i class="default"></i>&nbsp; <span class="table-value">ZONE
+                                    2</span>
+                                <div class="saving-tenure hidden-xs" style="visibility: hidden;">Savings:<div
+                                        class="hidden-md hidden-lg"></div><span class="rupee-symbol">&#8377;</span>
+                                    78,000<div class="saving-tenure-discount dis-in">(7% Off)</div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr2"
+                    ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z003'}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenurezoneRadio" tabindex="8" id="tenurezoneRadio2"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.Zone" value="Z003"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_zone-[3]')">
+                            <label for="tenurezoneRadio2"><i class="default"></i>&nbsp; <span class="table-value">ZONE
+                                    3</span>
+                                <div class="saving-tenure hidden-xs" style="visibility: hidden;">Savings:<div
+                                        class="hidden-md hidden-lg"></div><span class="rupee-symbol">&#8377;</span>
+                                    1,56,000<div class="saving-tenure-discount dis-in">(15% Off)</div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 pad-l-r-0">
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z001'" class="zone-sec-gry-bold-txt desc">If
+                you currently reside in Bangalore, Gurgaon, Mumbai, Navi Mumbai, New Delhi, Thane</div>
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z002'" class="zone-sec-gry-bold-txt desc">If
+                you currently reside in Ahmedabad, Kolkata, Noida, Pune, Hyderabad, Chennai, Chandigarh, Mohali</div>
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.Zone == 'Z003'" class="zone-sec-gry-bold-txt desc">If
+                you currently reside in rest of India (other than zone 1 and 2)</div>
+        </div>
+    </div>
+</div><!-- End of zone selection section -->
+<!-- Room type selection section -->
+<div class="container">
+    <div class="row quote-item-block">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+            <div class="item-block-number-border"><span class="item-block-number">4</span></div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-lg-10 col-xs-11">
+            <div class="tenure-section-padding">
+                <div class="item-block-content-header">ROOM TYPE <span class="custom-popover" custom-popover><img
+                            class="img-responsive item-block-tool-tip-img" src="assets/images/tooltip_Premium.png"
+                            ng-click="callGtag('click-icon','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_room-type-i')">
+                        <span class="custom-tooltip-text">Upgrading room later will result in a co-payment. Similarly
+                            utilising a room lower than eligible will be transferred as health returns. <span
+                                class="pop-close">×</span></span></span></div>
+                <div class="item-block-content-desc hidden-xs">Room which you are most likely to take while you are
+                    under treatment.</div>
+                <div class="item-block-content-desc hidden-lg hidden-md hidden-sm">Tenure Definition goes here.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-checkbox-div mob-pad-l-r-0">
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tenure-box-bg">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr"
+                    ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.RoomType == plA.matchRoomTypeValue('any_')}"
+                    ng-hide="plA.appendedPlanName == 'essential'">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureroomRadio" tabindex="9" id="tenureroomRadio0"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.RoomType"
+                                value="any_{{plA.appendedPlanName}}"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_room-type_any')"
+                                ng-disabled="plA.platinumQuoteDetails.PlatinumQuote.SI <= 700000"> <label
+                                for="tenureroomRadio0"><i class="default"></i>&nbsp;<span class="table-value">
+                                    Any</span></label></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr"
+                    ng-class="{'activ': plA.platinumQuoteDetails.PlatinumQuote.RoomType == 'single'}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureroomRadio" tabindex="10" id="tenureroomRadio"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.RoomType"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_room-type_single')"
+                                value="single"> <label for="tenureroomRadio"><i class="default"></i>&nbsp;<span
+                                    class="table-value"> SINGLE</span></label></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tenure-box-pad pad-l-r-0" id="tenure-year-act-bdr1"
+                    ng-class="{'activ': plA.matchRoomTypeValue('shared_')}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureroomRadio" tabindex="11" id="tenureroomRadio1"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.RoomType"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_room-type_shared')"
+                                value="shared_{{plA.appendedPlanName}}"
+                                ng-disabled="plA.platinumQuoteDetails.PlatinumQuote.SI > 499999"> <label
+                                for="tenureroomRadio1"><i class="default"></i>&nbsp; <span
+                                    class="table-value">SHARED</span>
+                                <div class="saving-tenure hidden-xs" style="visibility: hidden;">Savings: <span
+                                        class="rupee-symbol">&#8377;</span> 78,000<div
+                                        class="saving-tenure-discount dis-in">(7% Off)</div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tenure-box-pad pad-l-r-0"
+                    ng-show="plA.appendedPlanName == 'essential'" id="tenure-year-act-bdr2"
+                    ng-class="{'activ': plA.matchRoomTypeValue('general_')}">
+                    <div class="pad-top-10">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureroomRadio" tabindex="12" id="tenureroomRadio2"
+                                ng-model="plA.platinumQuoteDetails.PlatinumQuote.RoomType"
+                                ng-change="plA.calculatePlatPremium(plA.platinumQuoteDetails.PlatinumQuote.SI);callGtag('click-radio','quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_room-type_general')"
+                                value="general_{{plA.appendedPlanName}}"> <label for="tenureroomRadio2"><i
+                                    class="default"></i>&nbsp; <span class="table-value">GENERAL</span>
+                                <div class="saving-tenure hidden-xs" style="visibility: hidden;">Savings: <span
+                                        class="rupee-symbol">&#8377;</span> 1,56,000<div
+                                        class="saving-tenure-discount dis-in">(15% Off)</div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 pad-l-r-0">
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.RoomType == 'any_enhanced'"
+                class="zone-sec-gry-bold-txt room-line">Available in Essential only for premium above 7 lacs.</div>
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.RoomType == 'single'"
+                class="zone-sec-gry-bold-txt room-line">Available with both plans, Essential and Enhanced.</div>
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.RoomType == 'shared_{{plA.appendedPlanName}}'"
+                class="zone-sec-gry-bold-txt room-line">Available across all sum insureds in Essential and for sum
+                insureds less than 5Lacs for Enhanced</div>
+            <div ng-show="plA.platinumQuoteDetails.PlatinumQuote.RoomType == 'general_{{plA.appendedPlanName}}'"
+                class="zone-sec-gry-bold-txt room-line">Available only with Essential plan</div>
+        </div>
+    </div>
+</div><!-- End of room type selection section -->
+<!-- Cross selection section -->
+<div class="container-fluid cross-sell-bg">
+    <cross-sell-quote cross="plA" ng-if="plA.membersDetails.length > 0"></cross-sell-quote>
+    <div class="row cross-sell-submit-btn">
+        <div class="col-md-12 pad-l-r-0">
+            <hr class="last-btn-width">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button"><button
+                class="btn btn-primary qq-save-btn proceed-to-application" ng-show="plA.hideSubmitButton" tabindex="13"
+                id="platinum-quote-submit"
+                ng-click="plA.submitPlatinumQuote($event) ; callGtag('click-button', 'quote','platinum-quote_'+plA.platinumQuoteDetails.PlatinumQuote.PlanName+'_submit_quote')">
+                Proceed
+                <img src="assets/images/arrow.png"></button></div>
+    </div>
+</div><!-- End of cross selection section -->
+<addmember addctrl="plA" childcount="3"></addmember><!-- End of platinum quote page -->

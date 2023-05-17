@@ -1,0 +1,957 @@
+body {
+    overflow-x: hidden;
+    font-family: PF-Handbook-Pro-Regular, PF-Encore-Sans-Pro-Regular;
+    background-color: #f1f3f6;
+}
+
+.btn.qq-save-btn img{
+    height: 50%;
+    position: relative;
+    top: 4px;
+    float: right;
+}
+
+.close-img-mar {
+    width: 10px;
+    height: 10px;
+    margin-left: 10%;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.pad-left-activ-care{
+    padding-left: 10px;
+}
+.member-section{
+    margin-right: 10px;
+}
+
+.health-care-worker-details-style{
+    font-size: 22px;
+    border: .5px solid #cdcece;
+    color: black;
+    font-weight: 500;
+}
+
+
+.btn.qq-save-btn {
+    letter-spacing: 0.2px;
+    text-align: left;
+    font-family: PF-Handbook-Pro-Regular;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #c7222a;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border-width: initial;
+    border-style: initial;
+    border-color: transparent;
+    border-image: initial;
+}
+
+.cont-pad {
+  padding-top: 21.5px!important;
+  padding: 0px 50px;
+}
+
+.main-header-text1 {
+    font-family: PF-Handbook-Pro-Thin;
+    font-size: 30px;
+    text-align: left;
+    color: #000000;  
+}
+.main-header-text2 {
+    font-family: PF-Handbook-Pro-Bold;
+    color: #c7222a;
+    font-size: 30px;
+}
+.dis-in {
+    display: inline-block;
+}
+.dis-block {
+    display: block;
+}
+.dis-in-imp {
+    display: inline-block !important;
+}
+.pad-l-r-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.btn-plan {
+    font-family: PF-Handbook-Pro-Bold;
+    font-weight: bold;
+    color: #c7222a;
+    background-color: transparent;
+    font-size: 30px;
+    margin-top: -7px;
+    margin-left: -6px;
+}
+
+.btn-plan:hover,.btn-plan:active,.btn-plan:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+
+#glyphicon-plan-section {
+    top: 0px;
+}
+
+.margin-top-tooltip{
+    margin-top: 5px;
+}
+
+.glyphicon.glyphicon-chevron-down {
+    font-size: 15px;
+}
+
+.caret-pos {
+    color: #c7222a;
+    float: right;
+    font-size: 20px;
+    margin-top: 18px;
+    margin-left: 6px;
+}
+
+
+.dropdown-menu li a {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 17px;
+    text-align: left;
+    color: #6c7174;
+}
+
+.mar-rght-15 {
+    margin-right: 15px;
+}
+
+
+/************ Policy details section *************/
+.quote-item-block {
+    padding-left: 14px;
+    padding-top: 38px;
+}
+.item-block-number {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 42px;
+    font-weight: bold;
+    text-align: left;
+    color: #c7222a;
+}
+.item-block-number-border {
+    border-right: solid;
+    margin-right: 27px;
+    border-color: #cdcece;
+    border-width: 2px;
+}
+.quote-item-block-content {
+    margin-left: -4%;
+    border-color: #cdcece;
+    border-width: 2px;
+    padding-left: 6.5px;
+    padding-bottom: 39px;
+}
+.item-block-content-header {
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+    vertical-align: text-bottom;
+    line-height: 27px;
+}
+.item-block-content-desc {
+    font-family: PF-Encore-Sans-Pro-Regular;
+    font-size: 15px;
+    text-align: left;
+    color: #6c7174;
+}
+.emi-option-text {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 13px;
+    line-height: 1.38;
+    text-align: left;
+    color: #6c7174;
+}
+.sum-insured-members-padding-initial {
+    padding-left: 81px;
+    padding-right: 33.5px;
+}
+.policy-type-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    padding-bottom: 11.5px;
+}
+.selected-yes-btn {
+    background-color: #c7222a;
+    border: solid 1px #c7222a;
+    padding: 4px 18px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: -4px;
+    border-radius: 4px;
+}
+.unselected-no-btn {
+    border: solid 1px #c7222a;
+    padding: 4px 17px;
+    margin-left: -4px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-radius: 4px;
+}
+.hide-selected-btn-sty {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.hide-unselected-btn-sty {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+.selected-yes-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
+}
+.unselected-no-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #a5b1b9;
+}
+.show-i {
+    visibility: visible;
+    color: #de8d87;
+}
+.remove-i {
+    visibility: hidden;
+}
+.tab-grey-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.07;
+    letter-spacing: normal;
+    text-align: right;
+    color: #6c7174;
+    padding-top: 10px;
+    padding-bottom: 29px;
+}
+.tab-content-mar-r {
+    margin-right: 60px;
+}
+.dropdown-lbl-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    padding-bottom: 0px;
+}
+.text-for-tenure{
+   font-family: PF-Handbook-Pro-Regular;
+    font-size: 12.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b; 
+}
+.dropdown-width-bdr {
+    width: 100%;
+    border-radius: 2px;
+    border: 0.5px solid #cdcece;
+    padding: 10px;
+    background-color: #ffffff;
+    text-align: right;
+}
+.dropdown-width-bdr:focus,.dropdown-width-bdr:active {
+    outline: none !important;
+    box-shadow: none;
+}
+.sum-insured-members-padding-initial .dropdown-menu {
+    width: 100%;
+    min-width: 100%;
+}
+.dropdown-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.56;
+    letter-spacing: normal;
+    text-align: right;
+    color: #000000;
+    margin-right: 10px;
+}
+.dropdown-red-drop-arrow {
+    font-size: 20px;
+    color: #c7222a;
+}
+.discount-btn-txt {
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #de8d87;
+    border-radius: 2px;
+    background-color: rgba(222, 141, 135, 0.05);
+    border: 0.5px solid #de8d87;
+    width: 124.5px;
+    height: 28.5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 6px 7px; 
+}
+.border-verticle-line {
+    background-color: #ffff;
+    border: 0.5px solid #979797;
+    height: 209px;
+    width: 1px;
+    margin-top: 30px;
+}
+.family-floater-div .border-verticle-line {
+    background-color: #ffff;
+    border: 0.5px solid #979797;
+    height: 300px;
+    width: 1px;
+    margin-top: 30px;
+}
+.width-collapse {
+    margin-right: -57px;
+}
+.members-in-group-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #684743;
+}
+.grey-horizontal-line {
+    width: 238px;
+    height: 1px;
+    border: 1px solid #979797;
+    margin-top: 12px;
+}
+.edit-group-mem-btn {
+    border-radius: 1.3px;
+    box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.12);
+    background-color: #684743;
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 16.9px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+    padding: 8px 18px;
+    margin-left: 16px;
+    margin-top: -5px;
+}
+.edit-group-mem-btn:hover,.edit-group-mem-btn:active,.edit-group-mem-btn:focus {
+    outline: none !important;
+    color: #ffffff;
+    box-shadow: none;
+}
+.mem-grp-row-pad-btm {
+    padding-bottom: 20px;
+}
+
+.sum-insured-members-block {
+    border-radius: 4px;
+    border: 0.5px solid #cdcece;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    background-color: #f9f9f9;
+    padding: 20px 20px 45px;
+    border-bottom: 5px solid #f7a500;
+}
+.box-txt-hd {
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.box-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    color: #666666;
+    padding-top: 15.5px;
+    padding-bottom: 5px;
+}
+.age-txt-box {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.56;
+    text-align: right;
+    letter-spacing: normal;
+    color: #000000;
+}
+.age-input .form-control {
+    height: 44px;
+    border: 0.5px solid #cdcece;
+    box-shadow: none;
+    border-right: 0px;
+}
+.age-input .input-group-addon {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #666666;
+    background-color: #ffffff;
+}
+
+.group-insured-pad-btm {
+    margin-bottom: 27px;
+}
+
+
+/************ Optional cover section ***************/
+.optional-cover-box {
+    border-radius: 4px;
+    box-shadow: 0 2.5px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+}
+.pad-top-optional-cover{
+    padding-top: 10px;
+}
+.optional-cover-box-img-pad-top {
+    padding-top: 15px;
+}
+.temp-disa-right-bdr {
+    border-right: 5px solid #f7a500;
+    margin-left: 0px;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.temp-total-dis-img {
+    margin-left: -25px;
+    margin-top: 25px;
+    width: 100px;
+    height: 81px;
+}
+.opt-cov-box-ttl {
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 15.5px;
+    margin-top: -22px;
+    padding-top: 15px;
+}
+.opt-cov-box-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 12.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #6c7174;
+}
+.box-mar-btm {
+    margin-bottom: 32px;
+}
+/************ checkbox css ****************/
+.container-new {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom:0px;
+    padding-top:3px;
+    cursor: pointer;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31px;
+    height: 31px;
+    border-radius: 20px;
+    border: 1.2px solid #de8d87;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+.checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+.container-new input:checked ~ .checkmark {
+    border-radius: 20px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #de8d87;
+    border: solid 2px #de8d87;
+    outline: none;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container-new input:checked ~ .checkmark:after {
+    display: block;
+}
+.container-new .checkmark:after {
+    left:10px;
+    top: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.protecting .checkmark:after {
+    left: 10px;
+    top: 4px;
+    width: 7px;
+    height: 16px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+/*************** Nursing home checkbox styling ************/
+.nursing-home-checkbox .container-new {
+    display: block;
+    position: relative;
+    padding-left: 29px;
+    margin-bottom:0px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.nursing-home-checkbox .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.nursing-home-checkbox .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 2.4px;
+    background-color: #ffffff;
+    border: solid 1.3px #b1b3b8;
+}
+.nursing-home-checkbox .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+.nursing-home-checkbox .container-new input:checked ~ .checkmark {
+    border-radius: 2.4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 1.3px #9b5e58;
+    outline: none;
+}
+.nursing-home-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.nursing-home-checkbox .container-new input:checked ~ .checkmark:after {
+    display: block;
+}
+.nursing-home-checkbox .container-new .checkmark:after {
+    left:7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.nursing-home-checkbox .protecting .checkmark:after {
+    left: 5.5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid #9b5e58;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.chk-row-pad-top {
+    padding-top: 18px;
+}
+
+/************* Employee discount section **************/
+.page-pad-btm {
+    padding-bottom: 100px;
+}
+
+.grey-box-pad-l-0 {
+    padding-left: 0px;
+}
+.grey-box-pad-r-0 {
+    padding-right: 0px;
+}
+/* Madd member model CSs */
+
+/************** Change Member Modal****************/
+
+
+/************** modal member checkbox **************/
+
+/******************************************/
+
+
+.age-input .form-control {
+    height: 44px;
+    border: 0.5px solid #cdcece;
+    box-shadow: none;
+    border-right: 0px;
+}
+.age-txt-box {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.56;
+    text-align: right;
+    letter-spacing: normal;
+    color: #000000;
+}
+.age-input .input-group-addon {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #666666;
+    background-color: #ffffff;
+    border: 0.5px solid #cdcece;
+    border-left: 0px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .selected-yes-btn {
+        padding: 4px 14px;
+    }
+    .unselected-no-btn {
+        padding: 4px 13px;
+    }
+    .tab-content-mar-r {
+        margin-right: 10px;
+    }
+    .members-in-group-txt {
+        font-size: 17px;
+    }
+    .grey-horizontal-line {
+        width: 165px;
+    }
+    .temp-disa-right-bdr {
+        height: 150px;
+    }
+    .temp-total-dis-img {
+        margin-left: -32px;
+        margin-top: 35px;
+        width: 70px;
+        height: 55px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .tab-content-mar-r {
+        margin-right: 25px;
+    }
+    .members-in-group-txt {
+        font-size: 18px;
+    }
+    .grey-horizontal-line {
+        margin-bottom: 20px;
+    }
+    .edit-group-mem-btn {
+        margin-left: 0px;
+    }
+    .discount-btn-txt {
+        width: 117px;
+    }
+
+    .cont-pad {
+        padding: 0 10px;
+    }
+    .item-block-number-border {
+        margin-right: 0px;
+    }
+    .sum-insured-members-padding-initial {
+        padding-left: 63px;
+        padding-right: 44.5px;
+    }
+    .sum-insured-members-block {
+        padding: 20px 12px 30px;
+    }
+    .nursing-home-checkbox .protecting .checkmark:after {
+        top: 2px;
+    }
+}
+
+@media(max-width: 768px){
+    .item-block-number-border {
+        border-right: solid;
+        border-color: #cdcece;
+        border-width: 2px;
+        padding-right: 10px;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .nursing-home-checkbox .protecting .checkmark:after {
+        top: 2px;
+    }
+    .pop-over-corona{
+        left: -65px!important;
+    }
+    .mob-pad-l-r-0 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .cont-pad {
+        padding: 0px 0px;
+    }
+    .main-header-text1 {
+        font-size: 25px;
+    }
+    .main-header-text2 {
+        font-size: 26px;
+    }
+    .caret-pos {
+        margin-top: 17px;
+        margin-left: 0px;
+    }
+
+    .item-block-number-border-mobile {
+        border-bottom: solid;
+        border-color: #cdcece;
+        border-width: 2px;
+    }
+
+    .quote-item-block {
+        padding-left: 0px;
+        padding-top: 22px;
+    }
+
+    .quote-item-block-content {
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-bottom: 20.5px;
+    }
+    .sum-insured-members-padding-initial {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .tab-content-mar-r {
+        margin-right: 0px;
+    }
+    .unselected-no-btn {
+        width: 50%;
+    }
+    .selected-yes-btn {
+        width: 50%;
+    }
+    .grey-horizontal-line {
+        margin-bottom: 20px;
+        width: 50%;
+    }
+    .edit-group-mem-btn {
+        margin-left: 0px;
+        width: 100%;
+        text-align: left;
+    }
+    .sum-insured-members-block {
+        margin-bottom: 23.5px;
+        padding: 11px 17px 20px;
+        border-bottom: none;
+    }
+    .temp-total-dis-img {
+        margin-left: -42px;
+        margin-top: 30px;
+        width: 70px;
+        height: 55px;
+    }
+    .temp-disa-right-bdr {
+        height: auto;
+    }
+    .optional-care-benefit-div .temp-disa-right-bdr {
+        height: auto;
+    }
+    .item-block-content-header {
+        font-size: 18px;
+    }
+    .item-block-number {
+        font-size: 42px;
+    }
+    .tab-grey-txt {
+        text-align: left;
+        padding-bottom: 18px;
+    }
+    .group-insured-pad-btm {
+        margin-bottom: 20px;
+    }
+    .discount-btn-txt {
+        margin-top: 6px;
+        margin-bottom: 22px;
+    }
+    .mem-grp-pad-l-5 {
+        padding-left: 5px;
+    }
+    .mem-grp-pad-r-5 {
+        padding-right: 5px;
+    }
+    .opt-cov-box-ttl {
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+    .opt-cov-box-txt {
+        font-size: 15px;
+    }
+    .box-mar-btm {
+        margin-bottom: 15px;
+    }
+    .block-with-text {       
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .mob-pad-l-r-0 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .grey-max-height {
+        max-height: 265px;
+        overflow-y: scroll;
+    }
+    
+    .enter-mem-img {
+        width: 20px;
+        float: right;
+        margin-top: 4px;
+    }
+    
+    .pad-r-0-5 {
+        padding-left: 0px;
+        padding-bottom: 10px;
+    }
+    
+}

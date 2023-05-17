@@ -1,0 +1,45 @@
+<!--
+
+    Page Name :- Alert Modal
+    Author: Pankaj Patil
+    Description: This component is used for alert configuration
+    Date: 21-06-2018
+
+-->
+<div class="app-modal modal {{aD.alertData.modalClass}}" id="alertBoxModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-hdr"><button type="button" class="close close-class-alert"
+                    data-dismiss="modal" ng-click="aD.closeModal()" ng-if="!aD.alertData.hideCloseBtn"><img
+                        src="assets/images/close-white.svg"></button>
+                <div class="modal-hdr-txt">{{aD.alertData.modalHeader}}</div>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="modal-bind-text" ng-bind-html="aD.alertData.modalBodyText | trustAsHTML"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="col-xs-12 dis-in text-right"><button
+                                class="btn btn-primary modal-save-btn bg-white text-center" id="cancelBtn"
+                                data-dismiss="modal" ng-if="aD.alertData.showCancelBtn"
+                                ng-click="aD.errorFunction()">{{aD.alertData.modalCancelText}}</button> <button
+                                class="btn btn-primary modal-save-btn text-center" ng-click="aD.successFunction()"
+                                id="doneBtn" data-dismiss="modal">{{aD.alertData.modalSuccessText}}</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-modal-backdrop"></div>
+</div>
+<!--
+    
+    End of Alert Modal
+    Page Name :- Alert Modal
+    Author: Pankaj Patil
+    Date: 21-06-2018
+
+-->

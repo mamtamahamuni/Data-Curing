@@ -1,0 +1,3348 @@
+.dropdown-menu,
+.name-text-width .input-text-box {
+    min-width: 100%
+}
+
+.checkbox,
+.container-new {
+    -webkit-user-select: none;
+    -ms-user-select: none
+}
+
+.checkbox .checkmark:after,
+.container-new .checkmark:after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg)
+}
+
+body {
+    overflow-x: hidden;
+    font-family: PF-Handbook-Pro-Regular, PF-Encore-Sans-Pro-Regular;
+    background-color: #f1f3f6;
+    counter-reset: postpaymentsection
+}
+
+#post-payment-form .errormsg {
+    display: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #c7222a;
+}
+
+#post-payment-form .form-errors .errormsg {
+    display: block
+}
+
+.post-payment-tooltip {
+    opacity: 1 !important
+}
+
+.yes-no-btn {
+    border: 1px solid #6a4742;
+    padding: 3px 30px;
+    border-radius: 2px 0 0 2px
+}
+
+.yes-no-btn.selected {
+    background: #6a4742
+}
+
+.yes-no-btn.selected .yes-no-btn-txt {
+    color: #fff
+}
+
+.yes-no-btn.no-answer {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px
+}
+
+.yes-no-btn.yes-answer {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.yes-no-btn .yes-no-btn-txt {
+    color: #6a4742;
+    font-family: PF-Handbook-Pro-Regular;
+    letter-spacing: .2px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.dropdown-placeholder-txt,
+.input-text-box {
+    line-height: 1;
+    letter-spacing: normal;
+    font-style: normal;
+    font-stretch: normal
+}
+
+.post-payment-answer-input {
+    margin-top: 25px;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    transition: all .3s ease
+}
+
+.post-payment-answer-input:active,
+.post-payment-answer-input:focus {
+    border-color: #000;
+    transition: all .3s ease
+}
+
+.collapse-label {
+    padding: 10px 15px
+}
+
+.post-payment-checkboxes {
+    padding-top: 30px
+}
+
+.post-payment-checkboxes .pretty {
+    width: 25%;
+    float: left;
+    margin: 0 0 15px
+}
+
+.accordian-numbering::before {
+    counter-increment: postpaymentsection;
+    content: counter(postpaymentsection)
+}
+
+.nav-tabs.wizard-new {
+    background-color: #f1f3f6;
+    padding: 0;
+    width: 100%;
+    border-radius: 0;
+    clear: both;
+    border-bottom: none
+}
+
+.nav-tabs.wizard-new li {
+    position: relative;
+    padding: 0;
+    margin: 0 4px 0 0;
+    width: 19.6%;
+    float: left;
+    text-align: center
+}
+
+.brand-dropdown,
+.dropdown-menu,
+.fixed {
+    width: 100%
+}
+
+.nav-tabs.wizard-new li>* {
+    position: relative;
+    color: #999;
+    border-color: #dedede
+}
+
+.nav-tabs.wizard-new li.completed a {
+    color: #747474 !important
+}
+
+header .header-3 {
+    background-color: #694744;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .29);
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+header .top-header {
+    padding-top: 10px;
+    padding-bottom: 0;
+    background: #fff
+}
+
+.header-2 .btn {
+    padding: 3px 12px !important
+}
+
+.header-2 .btn-quote {
+    margin-top: -8px
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: table
+}
+
+.sticky {
+    z-index: 1000;
+    position: sticky;
+    top: 0
+}
+
+.wizard .nav-tabs,
+.wizard .tab-pane,
+.wizard>div.wizard-inner {
+    position: relative
+}
+
+.cont-pad {
+    padding-top: 21.5px !important;
+    padding: 0 50px
+}
+
+.page-footer {
+    height: 59.8px;
+    background-color: #6c7174
+}
+
+.brand-dropdown.grey,
+.btn-default.active,
+.btn-default:active:focus,
+.btn-drop-down-width:focus,
+.input-text-box,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover {
+    background-color: #fff
+}
+
+.main-header-text1 {
+    height: 30px;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 30px;
+    text-align: left;
+    color: #000
+}
+
+.brand-dropdown.grey,
+.dropdown-menu li a,
+.main-header-text2 {
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.main-header-text2 {
+    color: #c7222a;
+    font-size: 30px
+}
+
+.dis-in {
+    display: inline-block
+}
+
+li a:focus,
+li a:hover {
+    outline: 0;
+    text-decoration: none
+}
+
+ol li a,
+ol li a:hover {
+    color: #000
+}
+
+.btn.dropdown-toggle.focus,
+.btn.dropdown-toggle:active,
+.btn.dropdown-toggle:focus,
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:visited {
+    outline: 0
+}
+
+.dropdown-toggle.brand-dropdown .caret {
+    float: right;
+    margin-top: 8px;
+    color: #C7222A
+}
+
+.brand-dropdown.grey {
+    border: 1px solid #cecece;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px
+}
+
+.dropdown-menu li a {
+    font-size: 17px
+}
+
+.btn-drop-down-width {
+    width: 100%;
+    text-align: left;
+    height: 44px
+}
+
+.btn-default:active,
+.btn-default:hover {
+    color: #fff;
+    background-color: #fff;
+    border-color: #6c7174
+}
+
+.breadcrumb-item-cust .unbold-fonts,
+.dropdown-placeholder-txt,
+.input-text-box {
+    font-family: PF-Handbook-Pro-Regular;
+    color: #000
+}
+
+.btn-drop-down-width:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: 1px solid #6c7174
+}
+
+.dropdown-placeholder-txt {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left
+}
+
+.temp-total-dis-sel-summ-select-cover {
+    margin-left: 14px
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.bootstrap-select.dropdown-toggle:focus,
+.btn-group.bootstrap-select:focus,
+.btn.dropdown-toggle:focus {
+    outline: 0 !important
+}
+
+.breadcrumb-item-cust .unbold-fonts {
+    font-size: 15px;
+    font-weight: 300
+}
+
+.form-control:focus {
+    outline: 0
+}
+
+.input-text-box {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    height: 44px;
+    border-radius: 4px !important;
+    border: 1px solid #cdcece;
+    box-shadow: none
+}
+
+.btn.qq-save-btn,
+.summary-btn {
+    letter-spacing: .2px;
+    text-align: left;
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.input-text-box:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: 1px solid #6c7174
+}
+
+.placeholder-right-addon,
+.placeholder-searchtext {
+    border: 1px solid #cdcece;
+    box-shadow: none;
+    color: #000
+}
+
+.placeholder-searchtext {
+    border-left: 0 !important;
+    padding-left: 0
+}
+
+.placeholder-right-addon {
+    border-right: 0 !important
+}
+
+.input-group .input-text-box:focus {
+    border: 1px solid #cdcece;
+    box-shadow: none
+}
+
+.search-dropdown-arrow {
+    padding-top: 4px
+}
+
+.summary-btn {
+    padding: 15px 21px;
+    border-radius: 2px;
+    background-color: #f2f3f6;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+    border: 1px solid #dbdbdb;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000
+}
+
+.header-txt-pad-btm {
+    padding-bottom: 22.5px
+}
+
+input[type=checkbox]:checked+label {
+    color: #c7222a
+}
+
+input[type=checkbox] {
+    border: 0;
+    width: 15%;
+    margin-left: -30px !important;
+    height: 2em;
+    font-size: 20px
+}
+
+input[type=checkbox] {
+    margin-left: -18px !important;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    outline: 0;
+    vertical-align: middle;
+    margin-top: -5px
+}
+
+input[type=checkbox]:checked {
+    border-color: #c7222a
+}
+
+input[type=checkbox]:focus {
+    outline: 0
+}
+
+input[type=checkbox]:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%
+}
+
+input[type=checkbox]:checked:before {
+    background: #d9534f !important;
+    width: 68%;
+    height: 68%;
+    margin-left: 3px;
+    margin-top: 2.8px
+}
+
+.btn.qq-save-btn {
+    color: #fff;
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 2px;
+    background-color: #694743;
+    border: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    margin-bottom: 20px
+}
+
+.btn.qq-save-btn:focus,
+.btn.qq-save-btn:hover {
+    outline: 0;
+    color: #fff;
+    background-color: #694743
+}
+
+.btn.qq-save-btn img {
+    float: right;
+    height: 50%;
+    position: relative;
+    top: 4px
+}
+
+.btn.qq-save-btn-left {
+    text-align: right !important
+}
+
+.bg-white {
+    color: #000 !important;
+    background-color: #f2f3f6 !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12) !important;
+    border: .5px solid #cfcfcf !important
+}
+
+.close {
+    background-color: #797979 !important;
+    color: #fff;
+    float: right;
+    opacity: 2;
+    text-shadow: none;
+    font-size: 21px;
+    font-weight: 700
+}
+
+.close:focus,
+.close:hover {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 2;
+    outline: 0
+}
+
+.modal-content {
+    border-radius: 2px
+}
+
+.modal-header .close {
+    margin: -13px -15px 0 0;
+    padding: 5px 11px 14px
+}
+
+.name-text-width .input-group {
+    width: 100%
+}
+
+.health-txtbox-wid .input-text-box,
+.height-text-width .input-text-box {
+    min-width: auto !important
+}
+
+.height-text-width .input-group {
+    width: 100% !important
+}
+
+@media (max-width:767px) {
+
+    .item-block-content-header,
+    .main-header-text1,
+    .main-header-text2 {
+        font-size: 21px
+    }
+
+    .caret-pos {
+        margin-top: 17px;
+        margin-right: -15px
+    }
+}
+
+.dropdown-caret {
+    float: right
+}
+
+.wizard {
+    background: #fff
+}
+
+.nav-tabs>li>a {
+    margin-right: 0;
+    border: 0 !important
+}
+
+.wizard .nav-tabs {
+    margin: 0 auto;
+    border-bottom: 0
+}
+
+.nav>li>a:hover {
+    background-color: transparent;
+    transition: none !important;
+    border: none
+}
+
+.tab-content,
+.wizard .tab-pane,
+.wizard>div.wizard-inner {
+    background-color: #f1f3f6
+}
+
+.nav-tabs>li>a:hover {
+    border: none !important;
+    transition: none !important
+}
+
+.wizard .nav-tabs>li.active>a,
+.wizard .nav-tabs>li.active>a:focus,
+.wizard .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+    background-color: #f1f3f6
+}
+
+.wizard .nav-tabs>li {
+    width: 25%
+}
+
+.wizard .tab-pane {
+    padding-top: 10px
+}
+
+.wizard h3 {
+    margin-top: 0
+}
+
+.nav-tabs>li.active>a {
+    border: none
+}
+
+.tab-pad-left {
+    padding-left: 100px;
+    padding-top: 17.5px
+}
+
+.nav>li.disabled>a {
+    opacity: .3
+}
+
+.inner-tab-bg-clr {
+    background-color: #fff
+}
+
+#health-lifestyle-member-details .tab-pane {
+    position: relative !important;
+    padding-top: 0 !important
+}
+
+#health-lifestyle-member-details .nav-tabs {
+    padding-left: 20px
+}
+
+#health-lifestyle-member-details .nav-tabs>li {
+    width: auto;
+    margin-right: 14px
+}
+
+#health-lifestyle-member-details .nav-tabs li a {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #e2e2e2
+}
+
+#health-lifestyle-member-details .nav-tabs>li>a:hover {
+    background-color: transparent;
+    border: none
+}
+
+#health-lifestyle-member-details .nav-tabs>li.active>a,
+#health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+#health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #353535;
+    border-bottom: 5px solid #f7a500 !important;
+    background-color: transparent
+}
+
+#sixheading .text-right {
+    text-align: right;
+    margin-left: 32px
+}
+
+.health-panel-padding {
+    padding: 20px 16px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px
+}
+
+.health-panel-number-header {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #696969;
+    display: inline-block;
+    height: 50px;
+    width: 2.8%;
+    padding-left: 6px;
+    margin-top: -6px
+}
+
+.health-panel-six-header,
+.mobile-addon-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 400;
+    color: #000
+}
+
+.health-panel-six-header {
+    font-size: 16.5px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: .91;
+    letter-spacing: normal
+}
+
+.form-lbl,
+.mobile-addon-txt {
+    opacity: .7;
+    line-height: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal
+}
+
+.mobile-addon-txt {
+    font-size: 18px;
+    background-color: #fff
+}
+
+.form-heading,
+.form-heading-mobile {
+    font-size: 20.5px;
+    font-weight: 700;
+    color: #585858;
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+.tab-arrow {
+    width: 20px;
+    vertical-align: baseline;
+    margin-left: 45px
+}
+
+.tab-arrow-mobile {
+    width: 12px;
+    vertical-align: super;
+    margin-left: 9px
+}
+
+.tab-arrow-tab3 {
+    width: 20px;
+    vertical-align: baseline;
+    margin-left: 75px
+}
+
+.tab-arrow-width {
+    width: 60px
+}
+
+.adhr-no .input-text-box {
+    min-width: 180px
+}
+
+.dob-pad .pad-left-15 {
+    padding-left: 15px
+}
+
+.form-background {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, .14)
+}
+
+.form-top-left-pad {
+    padding-top: 38px;
+    padding-left: 53px;
+    padding-right: 53px
+}
+
+.form-heading-mobile {
+    padding-bottom: 10px;
+    background-color: #f1f3f6
+}
+
+.form-lbl {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    color: #000;
+    padding-bottom: 5px
+}
+
+.pad-l-r-0 {
+    padding-right: 0;
+    padding-left: 0
+}
+
+.btn-pad-l-r-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important
+}
+
+.horizontal-pad {
+    padding-left: 31.5px;
+    padding-right: 31.5px
+}
+
+.horizontal-width {
+    width: 100%;
+    border: .5px solid rgba(0, 0, 0, .12);
+    margin-top: 0 !important
+}
+
+.post-payment-form-top-left-pad {
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.harmful-substance-btn,
+.harmful-substance-btn-white,
+.proposal-form-btn-white,
+.proposal-form-btn-yellow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12);
+    padding: 8px 30px;
+    border-radius: 2px
+}
+
+.health-father-form-number {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    color: #696969
+}
+
+.health-father-form-number-width {
+    width: 5%
+}
+
+.health-father-form-txt-hd {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #000
+}
+
+.proposal-form-btn-txt,
+.proposal-form-btn-txt-red {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 14px
+}
+
+.proposal-form-btn-white {
+    background-color: #fff
+}
+
+.proposal-form-btn-yellow {
+    background-color: #f7a500
+}
+
+.harmful-substance-btn {
+    background-color: #fff
+}
+
+.harmful-substance-btn-white {
+    background-color: #f7a500
+}
+
+.btn-bg-white {
+    background-color: #fff !important
+}
+
+.yes-btn-red,
+.yes-btn-red-initial {
+    background-color: #c7222a
+}
+
+.yes-btn-red {
+    color: #fff
+}
+
+.yes-btn-white {
+    background-color: #fff
+}
+
+.proposal-form-btn-txt-red {
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #fff
+}
+
+.proposal-form-btn-txt {
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #666
+}
+
+.selected-yes-btn-txt,
+.unselected-no-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px;
+    letter-spacing: .2px;
+    text-align: left;
+    font-weight: 700
+}
+
+.selected-yes-btn-txt {
+    color: #fff
+}
+
+.unselected-no-btn-txt {
+    color: #684743
+}
+
+.health-relative-dropdown,
+.health-selctive-txt {
+    font-size: 14px;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #666
+}
+
+.selected-yes-btn {
+    background-color: #6a4742;
+    border: 1px solid #6a4742;
+    padding: 3px 28px;
+    border-radius: 0 2px 2px 0;
+    margin-left: -6px
+}
+
+.unselected-no-btn {
+    border: 1px solid #6a4742;
+    padding: 3px 30px;
+    margin-left: -6px;
+    border-radius: 2px 0 0 2px
+}
+
+.hide-selected-btn-sty {
+    border-radius: 0 2px 2px 0 !important
+}
+
+.hide-unselected-btn-sty {
+    border-radius: 2px 0 0 2px !important
+}
+
+.dis-none {
+    display: none
+}
+
+.checkbox,
+.checkbox input:checked~.checkmark:after,
+.container-new {
+    display: block
+}
+
+.health-selctive-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    padding-bottom: 4px;
+    margin-left: 12px;
+    padding-top: 5px
+}
+
+.health-relative-dropdown {
+    font-weight: 700;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 2px;
+    background-color: #f4f4f4;
+    border: none
+}
+
+.health-dropdown-txt,
+.health-form-small-txt,
+.health-input-addon-txt {
+    font-weight: 400;
+    color: #000;
+    font-family: PF-Handbook-Pro-Regular;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    opacity: .7
+}
+
+.health-add-btn,
+.health-remove-btn {
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12)
+}
+
+.health-relative-padding {
+    padding: 10px
+}
+
+.health-relative-add-more-top-pad {
+    margin-top: 10px
+}
+
+.health-pad-l-r-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important
+}
+
+.health-remove-btn {
+    background-color: #f7a500;
+    padding: 3px 28px
+}
+
+.health-add-btn {
+    padding: 3px 25px
+}
+
+.mar-btm-10 {
+    margin-bottom: 10px
+}
+
+.health-dropdown-txt {
+    font-size: 18px;
+    line-height: normal;
+    padding-bottom: 10px
+}
+
+.health-form-small-txt {
+    font-size: 12px;
+    line-height: normal;
+    text-align: right;
+    padding-top: 6px
+}
+
+.health-form-small-txt-pad-btm {
+    padding-bottom: 26px
+}
+
+.health-form-small-txt-pad-top-btm {
+    padding-top: 6px
+}
+
+.health-input-addon-txt {
+    font-size: 18px;
+    line-height: 1.11;
+    text-align: right
+}
+
+.pad-left-15 {
+    padding-left: 15px;
+    padding-right: 0
+}
+
+.health-type-subtance .input-group {
+    width: 100%
+}
+
+.pad-btm-87 {
+    padding-bottom: 87px
+}
+
+#health-lifestyle-member-details .form-background {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, .14)
+}
+
+.pad-left-0 {
+    padding-left: 0
+}
+
+.pad-btm-0 {
+    padding-bottom: 0 !important
+}
+
+.health-pre-exist-pad-l-r-0 {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.health-pre-existing-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 20.5px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #585858;
+    padding-top: 37.5px;
+    padding-bottom: 9px
+}
+
+#accordionone .panel-heading,
+.health-pre-exist-sml-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #000
+}
+
+.health-pre-exist-sml-txt {
+    font-size: 15px;
+    line-height: 1.87;
+    text-align: left;
+    padding-bottom: 9px
+}
+
+.health-pre-exist-pad-l-r {
+    padding-left: 35px;
+    padding-right: 35px
+}
+
+a:focus,
+a:hover {
+    outline: 0;
+    text-decoration: none
+}
+
+#accordionone .panel {
+    border: 0;
+    box-shadow: none;
+    margin-top: 0
+}
+
+.aco-last-border {
+    border-bottom: 1px solid #ddd !important
+}
+
+.panel-default {
+    border-color: #fff
+}
+
+#accordionone .panel-heading {
+    padding: 0;
+    font-size: 20px;
+    line-height: normal;
+    background-color: transparent
+}
+
+#accordionone .panel-titleone a.collapsed,
+.btn-container {
+    background-color: #fff;
+    font-weight: 400;
+    letter-spacing: normal;
+    font-family: PF-Handbook-Pro-Regular;
+    font-style: normal;
+    font-stretch: normal
+}
+
+.panel-titleone {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit
+}
+
+#accordionone .panel-titleone a {
+    display: block;
+    position: relative;
+    background: #fff;
+    color: #c7222a;
+    padding: 20px 16px 41px 6px;
+    border: 0 solid #ddd;
+    transition: all .1s linear 0s;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    box-shadow: inset 0 1px 0 0 #c7c8ca;
+    border-left: 0 none;
+    border-right: 0 none;
+    text-align: left
+}
+
+.arrow-headingone [data-toggle=collapse].collapsed:after {
+    content: url(../images/arrow-right.svg);
+    float: right
+}
+
+.arrow-headingone [data-toggle=collapse]:after {
+    content: url(../images/arrow-up.svg);
+    float: right
+}
+
+.checkmark1:after,
+.checkmark:after {
+    content: ""
+}
+
+#accordionone .panel-titleone a.collapsed:before {
+    border: 0
+}
+
+#accordionone .panel-titleone a.collapsed:before,
+#accordionone .panel-titleone a:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 36px;
+    border-top: 7px solid #de4d4e
+}
+
+#accordionone .panel-body {
+    border-top: 0 none;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-left: 7px
+}
+
+.btn-container {
+    font-size: 18px;
+    line-height: normal;
+    color: #c7222a;
+    border: none;
+    padding-top: 19px;
+    outline: 0;
+    padding-left: 0
+}
+
+#accordionone .panel-titleone a.collapsed {
+    margin: 0;
+    border: 0 solid #ddd;
+    border-left: 0 none;
+    border-right: 0 none;
+    text-align: left;
+    font-size: 24px;
+    line-height: 1.17;
+    color: #000
+}
+
+#accordionone .panel-titleone a.collapsed .accordian-numbering {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #696969;
+    width: 2.3%
+}
+
+.accordian-ttl-sml-grey-txt,
+.accordian-ttl-sml-orange-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.87;
+    position: absolute;
+    text-align: right;
+    right: -20px;
+    font-weight: 400;
+    letter-spacing: normal
+}
+
+#accordionone .panel-titleone a .accordian-numbering {
+    color: #c7222a;
+    width: 2.3%
+}
+
+.first-point-box-shadow {
+    box-shadow: none !important
+}
+
+#toggle {
+    border: none;
+    background-color: transparent;
+    outline: 0
+}
+
+.accordian-ttl-sml-grey-txt {
+    font-stretch: normal;
+    color: #787878
+}
+
+.accordian-ttl-sml-orange-txt {
+    font-stretch: normal;
+    color: #f7a500
+}
+
+.chronic-disease-blck-txt,
+.text-info {
+    font-family: PF-Handbook-Pro-Regular;
+    font-style: normal;
+    font-stretch: normal
+}
+
+.panel-body-top-btm {
+    padding-top: 20px;
+    padding-bottom: 38px
+}
+
+.chronic-disease-blck-txt {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #000
+}
+
+.yes-brown-btn {
+    padding: 20px;
+    border-radius: 2px;
+    background-color: #6a4742;
+    border: 1px solid #6a4742
+}
+
+.health-disease-dropdown,
+.select-two-dropdown-bg {
+    background-color: #f4f4f4
+}
+
+.disease-btn-pad-btm {
+    padding-bottom: 12px
+}
+
+.panel-collapse .selected-yes-btn {
+    padding: 3px 28px;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-left: -4px;
+    border-radius: 2px
+}
+
+.panel-collapse .unselected-no-btn {
+    padding: 3px 30px;
+    margin-left: -4px;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-radius: 2px
+}
+
+.panel-collapse .hide-selected-btn-sty {
+    border-radius: 0 2px 2px 0 !important
+}
+
+.panel-collapse .hide-unselected-btn-sty {
+    border-radius: 2px 0 0 2px !important
+}
+
+.chr-dis-text-pad-r-15 {
+    padding-right: 15px
+}
+
+@media (max-width:991px) and (min-width:320px) {
+    #accordionone .panel-titleone a {
+        font-size: 20px;
+        padding: 20px 0 41px
+    }
+
+    #accordionone .panel-titleone a.collapsed {
+        font-size: 20px
+    }
+
+    #accordionone .panel-body {
+        font-size: 18px;
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    #accordionone .panel-titleone a.collapsed .accordian-numbering {
+        margin-top: -3px
+    }
+}
+
+.select-box-width {
+    width: 250px
+}
+
+.min-select-box-width {
+    min-width: 250px
+}
+
+.health-disease-dropdown {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #666;
+    border-radius: 4px;
+    border: 1px solid #cecece;
+    width: 100%
+}
+
+.bdr-radius-4,
+.checkmark {
+    border-radius: 4px
+}
+
+.health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+    top: 8px
+}
+
+.text-info {
+    opacity: .7;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6c7174
+}
+
+.text-info:focus {
+    outline: 0
+}
+
+.health-pad-top-18 {
+    padding-top: 5px
+}
+
+.health-pad-top-38 {
+    padding-top: 30px
+}
+
+.any-claim-pad-btm {
+    padding-bottom: 40px
+}
+
+.checkbox {
+    position: relative;
+    padding-left: 0;
+    cursor: pointer;
+    -moz-user-select: none;
+    user-select: none;
+    margin-top: 30.5px;
+    margin-bottom: 20px
+}
+
+.container-new,
+.container1 {
+    margin-bottom: 0;
+    cursor: pointer
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkbox-label,
+.container-new {
+    opacity: .7;
+    line-height: normal;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #000
+}
+
+.checkbox:hover input~.checkmark {
+    background-color: none
+}
+
+.checkbox input:checked~.checkmark,
+.checkmark,
+.checkmark1,
+.container1 input:checked~.checkmark1 {
+    background-color: #fff
+}
+
+.checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #dc2727;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg)
+}
+
+.checkbox-label {
+    padding-left: 30px !important
+}
+
+.declaration-pad-align {
+    padding-top: 20px;
+    padding-left: 22.5px;
+    padding-right: 22.5px
+}
+
+.desktop-pad-l-r-0 {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.container-new {
+    position: relative;
+    padding-left: 35px;
+    padding-top: 3px;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #cdcece
+}
+
+.checkmark:focus,
+.container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #fff;
+    border: 2px solid #cdcece;
+    outline: 0
+}
+
+.checkmark:after {
+    position: absolute;
+    display: none
+}
+
+.container-new .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg)
+}
+
+.protecting .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #660d0a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.checkbox label {
+    padding-left: 40px;
+    padding-bottom: 15px
+}
+
+.pad-l-0 {
+    padding-left: 0
+}
+
+.pad-r-0 {
+    padding-right: 0
+}
+
+.pad-btm-23 {
+    padding-bottom: 23.5px
+}
+
+.btn-pad-btm {
+    padding-bottom: 28px
+}
+
+.radio-lbl-pad-btm {
+    padding-bottom: 15px
+}
+
+.radio-text-line-height {
+    line-height: .83
+}
+
+.radio-two-line-height {
+    line-height: .97
+}
+
+.radio-text-pad-top {
+    padding-top: 10px
+}
+
+.second-radio-col-pad-btm {
+    padding-bottom: 21px
+}
+
+.first-radio-col-pad-btm {
+    padding-bottom: 41px
+}
+
+.container1 {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    padding-right: 30px;
+    padding-top: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkmark1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid #cdcece
+}
+
+.container1 input:checked~.checkmark1 {
+    border: 2px solid #cdcece;
+    box-shadow: 0 0 6px 0 #cdcece
+}
+
+.checkmark1:after {
+    position: absolute;
+    display: none
+}
+
+.container1 input:checked~.checkmark1:after {
+    display: block
+}
+
+.container1 .checkmark1:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c7222a
+}
+
+.financing .checkmark1:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #695934
+}
+
+.bottom-btn-pad-top {
+    padding-top: 50px
+}
+
+.txt-right-imp {
+    text-align: right !important
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    .textbox-width {
+        width: 137px
+    }
+
+    .textbox-mob-width {
+        width: 184px
+    }
+
+    .otp-textbox-width {
+        width: 180px
+    }
+
+    .adhr-no .input-text-box {
+        min-width: 143px
+    }
+
+    .sm-desk-pad-l-15 {
+        padding-left: 15px !important
+    }
+
+    .nav-tabs>li>a {
+        padding: 10px 13px
+    }
+
+    .select-box-width {
+        width: 200px !important
+    }
+
+    .sum-insured-members-padding-initial {
+        margin-left: 0;
+        padding-right: 0
+    }
+
+    .tab-header-text {
+        font-size: 14px
+    }
+
+    .wizard .nav-tabs>li {
+        margin-right: 0
+    }
+
+    .tab-pad-left {
+        padding-left: 60px
+    }
+
+    .form-lbl {
+        font-size: 13px
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0
+    }
+
+    .tab-arrow {
+        margin-left: 35px
+    }
+
+    .tab-arrow-tab3 {
+        margin-left: 65px
+    }
+
+    .panel-collapse .unselected-no-btn {
+        padding: 3px 23px
+    }
+
+    .panel-collapse .selected-yes-btn {
+        padding: 3px 24px
+    }
+
+    #progressbar li.active:before {
+        padding-left: 2px
+    }
+
+    .tab-health-pre-exist-pad-l-r {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .annual-income-input-txt .input-text-box,
+    .annual-income-radius .input-text-box {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important
+    }
+
+    #fiveheading .panel-titleone a {
+        padding: 20px 6px 20px 0 !important
+    }
+
+    .accordian-ttl-sml-grey-txt,
+    .accordian-ttl-sml-orange-txt {
+        right: 20px
+    }
+
+    .health-pre-exist-pad-l-r-0 {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px
+    }
+
+    #progressbar li:before {
+        margin-left: 38px
+    }
+
+    .tracker-pad-l-top {
+        padding-left: 50px;
+        padding-top: 7px
+    }
+
+    .health-disease-dropdown {
+        width: 100%
+    }
+
+    .date-tab-pad-l-0 {
+        padding-left: 0 !important
+    }
+
+    .city-tab-pad-l-15 {
+        padding-left: 15px !important
+    }
+
+    .city-tab-pad-r-15 {
+        padding-right: 0 !important
+    }
+
+    .sum-insured-txtbox-wid .input-text-box {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important
+    }
+
+    #health-lifestyle-member-details .nav-tabs {
+        padding-top: 10px;
+        padding-left: 20px
+    }
+
+    #insured-member-details .nav-tabs {
+        padding-top: 10px
+    }
+
+    .cont-pad {
+        padding: 0 21px
+    }
+
+    .wizard .nav-tabs>li {
+        width: 25%
+    }
+
+    .wizard .nav-tabs {
+        margin: 0 auto
+    }
+
+    .wizard .tab-pane {
+        padding-top: 10px
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px
+    }
+
+    .health-pad-l-r-0,
+    .pad-left-15 {
+        padding-bottom: 15px
+    }
+
+    .horizontal-pad {
+        padding-right: 31.5px;
+        padding-left: 31.5px
+    }
+
+    .input-group {
+        min-width: 100%
+    }
+
+    .health-txtbox-wid .input-text-box,
+    .health-type-subtance .input-text-box {
+        max-width: 100% !important
+    }
+
+    .pad-left-15 {
+        padding-left: 0
+    }
+
+    .health-form-small-txt {
+        padding-bottom: 5px
+    }
+
+    .health-form-small-txt-pad-top-btm {
+        padding-top: 0
+    }
+
+    .mar-btm-10 {
+        margin-bottom: 0
+    }
+
+    .add-another-btn-large {
+        padding: 9px 15px
+    }
+
+    .add-another-btn-large-txt {
+        font-size: 15.5px
+    }
+
+    .remove-btn-large {
+        padding: 10px 26px
+    }
+
+    .add-info-text textarea {
+        margin-bottom: 42px
+    }
+
+    .any-claim-section .pad-btm-80 {
+        padding-bottom: 20px
+    }
+
+    .any-claim-section .pad-l-r-0,
+    .any-claim-section .pad-l-r-5 {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .health-father-form-txt-hd {
+        padding-bottom: 26px !important
+    }
+
+    .pad-btm-40 {
+        padding-bottom: 16px
+    }
+
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .health-add-btn,
+    .health-remove-btn {
+        float: right
+    }
+
+    .select-box-width {
+        width: 500px !important
+    }
+
+    .tab-arrow-mobile {
+        margin-left: 37px
+    }
+
+    .tab-pad-left {
+        padding-left: 70px
+    }
+
+    .mobile-pad-l-r-0 {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .tab-arrow-width {
+        width: 100px
+    }
+
+    .tab-pad-l-r-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    #progressbar li.active:before {
+        padding-left: 2px
+    }
+
+    .wizard .nav-tabs li a {
+        text-align: center
+    }
+
+    #sixheading .text-right {
+        margin-left: 22px;
+        text-align: left;
+        padding-top: 10px
+    }
+
+    .state-mob-pad .pad-l-r-0 {
+        padding-left: 12px !important
+    }
+
+    .harmful-substance-question .text-right,
+    .professional-details-question .text-right,
+    .question .text-right {
+        text-align: left
+    }
+
+    .tab-health-pre-exist-pad-l-r {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .last-accordion-mar-btm {
+        margin-bottom: 10px !important
+    }
+}
+
+@media (min-width:600px) and (max-width:768px) {
+    .input-text-box {
+        max-width: 100% !important
+    }
+}
+
+@media (min-width:335px) and (max-width:580px) {
+    .health-disease-dropdown {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important
+    }
+
+    .health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+        top: 8px !important
+    }
+
+    .tab-arrow-mobile {
+        margin-left: 18px
+    }
+
+    .tab-pad-left {
+        padding-left: 20px !important
+    }
+}
+
+@media (min-width:581px) and (max-width:767px) {
+
+    .annual-income-input-txt .input-text-box,
+    .annual-income-radius .input-text-box {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important
+    }
+
+    .adhr-no .input-text-box,
+    .input-group {
+        min-width: 100%
+    }
+
+    .header-txt-pad-btm {
+        padding-bottom: 13.5px
+    }
+
+    .declr-checkbox-pad {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .sticky .pull-left {
+        float: right !important;
+        margin-bottom: 10px;
+        margin-top: 10px
+    }
+
+    .checkbox,
+    .item-block-content-header-mob {
+        margin-top: 0
+    }
+
+    #fiveheading .panel-titleone a {
+        padding: 20px 16px 20px 0 !important
+    }
+
+    .pad-btm-50 {
+        padding-bottom: 0
+    }
+
+    .tab-arrow-width {
+        width: 90px
+    }
+
+    .sum-insured-txtbox-wid .input-text-box {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important
+    }
+
+    .checkbox-label {
+        font-size: 12px
+    }
+
+    .insured-member-form-top-left-pad {
+        padding-top: 24px
+    }
+
+    #health-lifestyle-member-details .nav-tabs,
+    #insured-member-details .nav-tabs {
+        padding-top: 10px
+    }
+
+    .select-box-width {
+        width: 350px !important
+    }
+
+    .textbox-bg-pad,
+    .wizard {
+        width: 100%
+    }
+
+    .down-arew {
+        text-align: center;
+        margin-right: 0
+    }
+
+    .show-sel-text {
+        padding-top: 20px;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: #6c7174
+    }
+
+    .item-block,
+    .quote-item-block {
+        padding-top: 0
+    }
+
+    .harmful-substance-question .text-right,
+    .professional-details-question .text-right,
+    .question .text-right {
+        text-align: left
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17px
+    }
+
+    .btn-modal .mar-l-15,
+    .tooltip-top {
+        margin-left: 0
+    }
+
+    .quote-item-block-content {
+        padding-bottom: 25px
+    }
+
+    .pad-btm-25,
+    .pad-tb-100 {
+        padding-bottom: 0
+    }
+
+    .pad-l-r-0 {
+        padding-right: 12px !important;
+        padding-left: 12px !important
+    }
+
+    .form-top-left-pad,
+    .horizontal-pad {
+        padding-left: 9px;
+        padding-right: 9px
+    }
+
+    .pad-tb-100 {
+        padding-top: 20px
+    }
+
+    .form-top-left-pad {
+        padding-top: 22.5px
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .pad-top-18 {
+        padding-top: 18px
+    }
+
+    .wizard .nav-tabs {
+        margin: 0 auto
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px
+    }
+
+    .tab-pad-left {
+        padding-left: 45px
+    }
+
+    .form-background {
+        padding-bottom: 40px
+    }
+
+    .health-pad-l-r-0,
+    .pad-left-15 {
+        padding-bottom: 15px
+    }
+
+    .pre-pad {
+        padding-right: 18.5px
+    }
+
+    .pad-r-5 {
+        padding-left: 5px
+    }
+
+    .pad-l-r-0-mob {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .pad-left-15 {
+        padding-left: 0
+    }
+
+    .health-form-small-txt {
+        padding-bottom: 5px;
+        font-size: 12px
+    }
+
+    .health-form-small-txt-pad-top-btm {
+        padding-top: 0
+    }
+
+    .health-father-form-number {
+        margin-left: -14px;
+        font-size: 30px;
+        color: #3f3f3f
+    }
+
+    .mar-btm-10 {
+        margin-bottom: 0
+    }
+
+    .health-type-subtance .input-text-box {
+        max-width: 100% !important
+    }
+
+    .pad-btm-40 {
+        padding-bottom: 16px
+    }
+
+    .health-father-form-txt-hd {
+        padding-bottom: 26px !important
+    }
+
+    .any-claim-section .pad-btm-80 {
+        padding-bottom: 20px
+    }
+
+    .add-info-text textarea {
+        margin-bottom: 42px
+    }
+
+    .add-another-btn-large {
+        padding: 9px 15px
+    }
+
+    .add-another-btn-large-txt {
+        font-size: 15.5px
+    }
+
+    .remove-btn-large {
+        padding: 10px 26px
+    }
+
+    .name-txt-padding,
+    .pad-right-11 {
+        padding-right: 15px
+    }
+
+    .btn.qq-save-btn {
+        font-size: 15px
+    }
+
+    .send-otp-btn {
+        margin-top: 20px
+    }
+
+    .pad-top-39 {
+        padding-top: 20.5px
+    }
+
+    .pad-top-58,
+    .wizard .tab-pane {
+        padding-top: 0
+    }
+
+    .decl-summ-pad-bottom {
+        padding-bottom: 0
+    }
+
+    .declr-summary-btn {
+        width: 90%
+    }
+
+    .summary-product-btm-15 {
+        padding-bottom: 15px
+    }
+
+    .breadcrumb-menu-right-font-size {
+        font-size: 8px;
+        font-weight: 600
+    }
+
+    .name-txt-padding {
+        padding-left: 15px
+    }
+
+    .pad-left-7 {
+        padding-left: 7.5px
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li,
+    #insured-member-details .nav-tabs>li {
+        margin-right: 0
+    }
+
+    .health-disease-dropdown {
+        padding-top: 8px;
+        padding-bottom: 8px
+    }
+
+    .health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+        top: 8px
+    }
+
+    #health-lifestyle-member-details .form-background {
+        padding-bottom: 0
+    }
+
+    .pad-btm-87 {
+        padding-bottom: 40px
+    }
+
+    .health-father-form-txt-hd {
+        font-size: 14px
+    }
+
+    .health-father-form-pad-top {
+        padding-top: 5px
+    }
+
+    #additional-info-details .form-background {
+        padding-bottom: 0
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0
+    }
+
+    .summary-pad-btm-50 {
+        padding-bottom: 0;
+        padding-top: 0 !important
+    }
+
+    .health-remove-btn {
+        float: left
+    }
+
+    .health-add-btn,
+    .otp-recv-btn,
+    .send-otp-btn {
+        float: right
+    }
+
+    .tab-arrow-mobile {
+        margin-left: 45px
+    }
+
+    .item-block-number {
+        margin-right: 1px
+    }
+
+    .earn-text-pad {
+        margin-top: 5px;
+        margin-bottom: 10px
+    }
+
+    .health-relative-add-more-top-pad,
+    .otp-recv-btn {
+        margin-top: 15px
+    }
+
+    .table-responsive {
+        border: none !important
+    }
+
+    .declare-summary-bold-text,
+    .declare-summary-text {
+        font-size: 12px
+    }
+
+    .health-relative-padding {
+        padding: 0 0 10px
+    }
+
+    .any-claim-pad-btm {
+        padding-bottom: 20px
+    }
+
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px
+    }
+
+    .pad-btm-25-mobile {
+        padding-bottom: 25px
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0 !important
+    }
+
+    .form-heading {
+        color: #818181;
+        font-size: 24px
+    }
+
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    #progressbar li:before {
+        margin-left: 17px
+    }
+
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px
+    }
+
+    .health-pre-exist-pad-l-r {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px
+    }
+
+    .health-pre-exist-sml-txt,
+    .health-pre-existing-txt {
+        padding-left: 10px
+    }
+
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px
+    }
+
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0
+    }
+
+    #progressbar li.active:before {
+        line-height: 20px;
+        font-size: 33px;
+        padding-left: 2px
+    }
+
+    #progressbar li:after {
+        left: -85%
+    }
+
+    .otp-textbox-width {
+        width: 100%
+    }
+
+    .container-new {
+        font-size: 12px
+    }
+
+    .pad-btm-23 {
+        padding-bottom: 15px
+    }
+
+    .btn-pad-btm {
+        padding-bottom: 20px
+    }
+
+    .mob-second-radio-pad-btm {
+        padding-bottom: 15px
+    }
+
+    .first-radio-col-pad-btm,
+    .second-radio-col-pad-btm {
+        padding-bottom: 10px
+    }
+
+    .question .yes-no-btn-mob-pad-l {
+        padding-left: 15px !important
+    }
+
+    .date-div-mob .pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    .arrow-headingone [data-toggle=collapse]:after,
+    .mob-pad-l-r-10 {
+        padding-right: 10px
+    }
+
+    .mob-pad-l-r-10 {
+        padding-left: 10px
+    }
+
+    .last-accordion-mar-btm {
+        margin-bottom: 10px !important
+    }
+}
+
+@media(max-width :585px) {
+    .wizard {
+        width: 100%;
+        height: auto !important
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px
+    }
+
+    .wizard .nav-tabs>li a {
+        text-align: center;
+        padding-left: 0
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%
+    }
+
+    .wizard .nav-tabs>li {
+        margin-right: 0;
+        width: 25%
+    }
+
+    .form-lbl {
+        font-size: 12px
+    }
+
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px
+    }
+
+    .input-group {
+        min-width: 100%
+    }
+
+    .form-top-left-pad {
+        padding-left: 9px;
+        padding-right: 9px
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .pad-top-18 {
+        padding-top: 18px
+    }
+
+    .wizard .nav-tabs {
+        margin: 0 auto
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+}
+
+@media (min-width:320px) and (max-width:580px) {
+
+    .harmful-substance-question .text-right,
+    .professional-details-question .text-right,
+    .question .text-right {
+        text-align: left
+    }
+
+    .annual-income-input-txt .input-text-box,
+    .annual-income-radius .input-text-box {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important
+    }
+
+    .otp-recv-btn,
+    .send-otp-btn {
+        float: right
+    }
+
+    .header-txt-pad-btm {
+        padding-bottom: 13.5px
+    }
+
+    .last-accordion-mar-btm {
+        margin-bottom: 10px !important
+    }
+
+    .pad-btm-23 {
+        padding-bottom: 15px
+    }
+
+    .btn-pad-btm {
+        padding-bottom: 20px
+    }
+
+    .mob-second-radio-pad-btm {
+        padding-bottom: 15px
+    }
+
+    .first-radio-col-pad-btm,
+    .second-radio-col-pad-btm {
+        padding-bottom: 10px
+    }
+
+    .question .yes-no-btn-mob-pad-l {
+        padding-left: 15px !important
+    }
+
+    .date-div-mob .pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    .arrow-headingone [data-toggle=collapse]:after,
+    .mob-pad-l-r-10 {
+        padding-right: 10px
+    }
+
+    .mob-pad-l-r-10 {
+        padding-left: 10px
+    }
+
+    .otp-section-pad-btm {
+        padding-bottom: 12px !important
+    }
+
+    .agree-btn {
+        width: 100%
+    }
+
+    .declr-checkbox-pad {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .container-new {
+        font-size: 12px
+    }
+
+    .sticky .pull-left {
+        margin-bottom: 10px;
+        margin-top: 0
+    }
+
+    .textbox-mob-width,
+    .textbox-width {
+        width: 180px
+    }
+
+    .name-mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    .health-panel-number-header {
+        padding-left: 0
+    }
+
+    .pad-btm-50 {
+        padding-bottom: 0
+    }
+
+    #insured-member-details .nav-tabs>li.active>a,
+    #insured-member-details .nav-tabs>li.active>a:focus,
+    #insured-member-details .nav-tabs>li.active>a:hover {
+        padding-top: 15px;
+        padding-bottom: 10px
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0
+    }
+
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px;
+        font-size: 16.5px
+    }
+
+    .health-pre-exist-sml-txt,
+    .health-pre-existing-txt {
+        padding-left: 10px
+    }
+
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px
+    }
+
+    .grey-row-height {
+        bottom: -16px;
+        position: relative
+    }
+
+    .health-pre-exist-pad-l-r {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px
+    }
+
+    #progressbar li:before {
+        margin-left: 17px
+    }
+
+    #progressbar li.active:before {
+        padding-left: 2px
+    }
+
+    .popover {
+        top: -23.5px !important
+    }
+
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    .sum-insured-txtbox-wid .input-text-box {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important
+    }
+
+    .checkbox-label {
+        font-size: 12px
+    }
+
+    .checkbox {
+        margin-top: 0
+    }
+
+    .health-relative-add-more-top-pad,
+    .otp-recv-btn {
+        margin-top: 15px
+    }
+
+    .insured-member-form-top-left-pad {
+        padding-top: 24px
+    }
+
+    .mob-pad-new-l-r-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .form-heading {
+        font-size: 24px
+    }
+
+    .pad-btm-25-mobile {
+        padding-bottom: 25px
+    }
+
+    .any-claim-pad-btm {
+        padding-bottom: 20px
+    }
+
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px
+    }
+
+    .health-relative-padding {
+        padding: 0 0 10px
+    }
+
+    .declare-summary-bold-text,
+    .declare-summary-text {
+        font-size: 12px
+    }
+
+    .table-responsive {
+        border: none !important
+    }
+
+    .earn-text-pad {
+        margin-top: 5px;
+        margin-bottom: 10px
+    }
+
+    .item-block-number {
+        margin-right: 1px
+    }
+
+    .select-box-width {
+        width: 180px !important
+    }
+
+    .summary-pad-btm-50 {
+        padding-bottom: 0;
+        padding-top: 0 !important
+    }
+
+    .pad-top-58,
+    .wizard .tab-pane {
+        padding-top: 0
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0
+    }
+
+    #additional-info-details .form-background {
+        padding-bottom: 0
+    }
+
+    .health-father-form-txt-hd {
+        font-size: 20px
+    }
+
+    .pad-btm-87 {
+        padding-bottom: 40px
+    }
+
+    #health-lifestyle-member-details .form-background {
+        padding-bottom: 0
+    }
+
+    .health-remove-btn {
+        float: left
+    }
+
+    .health-add-btn {
+        float: right
+    }
+
+    .health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+        top: -14px
+    }
+
+    .health-disease-dropdown {
+        padding-left: 0;
+        padding-right: 6px
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li,
+    #insured-member-details .nav-tabs>li {
+        margin-right: 0
+    }
+
+    .pad-left-7 {
+        padding-left: 7.5px
+    }
+
+    .pad-right-11 {
+        padding-right: 15px
+    }
+
+    #gender-modal .select-cover-dropdown-txt {
+        color: #515151
+    }
+
+    .input-text-box {
+        border-radius: 4px !important
+    }
+
+    .otp-textbox-width {
+        width: 100%
+    }
+
+    .form-heading {
+        color: #818181
+    }
+
+    .breadcrumb-menu-right-font-size {
+        font-size: 8px;
+        font-weight: 600
+    }
+
+    .pad-left-0 {
+        padding-left: 15px
+    }
+
+    .imp-mob-pad-l-r-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .summary-product-btm-15 {
+        padding-bottom: 15px
+    }
+
+    .declr-summary-btn {
+        width: 80px;
+        font-size: 15px;
+        margin-left: 0
+    }
+
+    .decl-summ-pad-bottom {
+        padding-bottom: 0
+    }
+
+    .pad-top-39 {
+        padding-top: 20.5px
+    }
+
+    .send-otp-btn {
+        margin-top: 10px;
+        margin-bottom: 15px
+    }
+
+    .textbox-bg-pad {
+        width: 100%;
+        padding: 11px 6px 4px
+    }
+
+    .btn.qq-save-btn {
+        font-size: 13px
+    }
+
+    .add-another-btn-large {
+        padding: 9px 15px
+    }
+
+    .add-another-btn-large-txt {
+        font-size: 15.5px
+    }
+
+    .remove-btn-large {
+        padding: 10px 26px
+    }
+
+    .add-info-text textarea {
+        margin-bottom: 42px
+    }
+
+    .any-claim-section .pad-btm-80 {
+        padding-bottom: 20px
+    }
+
+    .health-father-form-txt-hd {
+        padding-bottom: 26px !important
+    }
+
+    .pad-btm-40 {
+        padding-bottom: 16px
+    }
+
+    #insured-member-details .nav-tabs {
+        padding-left: 0;
+        white-space: nowrap;
+        overflow-x: auto
+    }
+
+    #insured-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+        width: 28% !important
+    }
+
+    #insured-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto !important;
+        padding: 0;
+        text-align: center !important
+    }
+
+    #health-lifestyle-member-details .nav-tabs {
+        padding-left: 0;
+        white-space: nowrap;
+        overflow-x: auto
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+        background: 0 0
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+        width: 30% !important;
+        padding-top: 15px
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto !important;
+        padding: 0;
+        text-align: center !important
+    }
+
+    .mar-btm-10 {
+        margin-bottom: 0
+    }
+
+    .health-father-form-pad-top {
+        padding-top: 5px
+    }
+
+    .health-father-form-number {
+        margin-left: -14px;
+        font-size: 30px;
+        color: #3f3f3f
+    }
+
+    .health-form-small-txt {
+        padding-bottom: 5px;
+        font-size: 12px
+    }
+
+    .health-form-small-txt-pad-top-btm {
+        padding-top: 0
+    }
+
+    .pad-left-15 {
+        padding-left: 0;
+        padding-bottom: 15px
+    }
+
+    .pad-l-r-0-mob {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0 !important
+    }
+
+    .insured-member-form-horizontal-pad,
+    .insured-member-form-top-left-pad {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .pre-pad {
+        padding-right: 18.5px
+    }
+
+    .name-txt-padding {
+        padding-right: 12px;
+        padding-left: 15px
+    }
+
+    .form-background {
+        padding-bottom: 40px
+    }
+
+    .tab-pad-left {
+        padding-left: 6px;
+        margin-left: -3px;
+        padding-bottom: 10px
+    }
+
+    .pad-btm-25,
+    .pad-tb-100 {
+        padding-bottom: 0
+    }
+
+    .table-value {
+        font-size: 13px
+    }
+
+    .state-mob-pad .pad-l-r-0 {
+        padding-right: 0 !important;
+        padding-left: 10px !important
+    }
+
+    .pad-l-r-0 {
+        padding-right: 10px;
+        padding-left: 10px
+    }
+
+    .horizontal-pad,
+    .pad-r-5 {
+        padding-left: 5px
+    }
+
+    .pad-tb-100 {
+        padding-top: 20px
+    }
+
+    .form-lbl {
+        font-size: 16px
+    }
+
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px
+    }
+
+    .input-group {
+        min-width: 100%
+    }
+
+    .horizontal-pad {
+        margin-top: 28px;
+        padding-right: 5px
+    }
+
+    .form-top-left-pad {
+        padding-top: 22.5px;
+        padding-left: 8px;
+        padding-right: 8px
+    }
+
+    .dob-mob-pad-l-r-0 {
+        padding-left: 5px !important
+    }
+
+    .dob-row-pad-btm .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 0
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .wizard {
+        width: 100%
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0;
+        padding-left: 0
+    }
+
+    .pad-top-18 {
+        padding-top: 18px
+    }
+
+    .wizard .nav-tabs {
+        margin: 0 auto
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+
+    .modal-hdr {
+        height: auto
+    }
+
+    .proposal-btn {
+        font-size: 15px
+    }
+
+    .summary-btn {
+        width: 100%;
+        display: block;
+        font-size: 9px;
+        padding: 12px 15px
+    }
+
+    .back-btn1 {
+        display: block;
+        width: 100% !important
+    }
+
+    .done-btn1 {
+        width: 100%;
+        display: block
+    }
+
+    .mar-l-14 {
+        margin-left: 5px
+    }
+
+    .breadcrumb-item-cust-active {
+        padding-bottom: 12px
+    }
+
+    .main-header-text1 {
+        font-size: 21px
+    }
+
+    .mbr-sel-txt-big,
+    .mbr-sel-txt-sml {
+        font-size: 15px
+    }
+
+    .tenure-year {
+        font-size: 14px
+    }
+
+    .pretty {
+        margin: 0 !important
+    }
+
+    .dup-bene-btn-new {
+        font-size: 16px
+    }
+
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important
+    }
+
+    .item-block1 {
+        padding-left: 0;
+        padding-top: 0
+    }
+
+    .item-block-content {
+        padding-bottom: 0;
+        padding-top: 21px;
+        margin-left: -2%
+    }
+
+    .item-block {
+        padding-left: 0 !important
+    }
+
+    .temp-disa-left-bdr {
+        margin-left: -15px;
+        height: 175px
+    }
+
+    .pad-cont {
+        padding-left: 5px !important;
+        padding-right: 5px !important
+    }
+
+    .pad-mar-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .temp-total-dis-text1 {
+        padding-top: 20px
+    }
+
+    .btn.qq-save-btn {
+        width: 48% !important
+    }
+
+    .quote-item-block {
+        padding-top: 0
+    }
+
+    .sum-tenure-topmost-row {
+        padding-left: 0;
+        padding-top: 0 !important
+    }
+
+    .btn.modal-save-btn {
+        width: 100%
+    }
+
+    .temp-total-dis-img {
+        width: 50px;
+        height: 50px;
+        margin-left: 11px;
+        margin-top: 0
+    }
+
+    .mar-l-15 {
+        margin-left: 0
+    }
+
+    .btn-pad-box {
+        padding-left: 20px !important;
+        padding-right: 10px !important
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 14px
+    }
+
+    .earn-mem-bene-lbl-txt {
+        padding-left: 14px
+    }
+
+    .tooltip-top {
+        top: -10px;
+        right: -10px
+    }
+
+    .tooltip-bg {
+        background-color: transparent
+    }
+
+    .sum-insured-members-block {
+        box-shadow: none
+    }
+
+    .sticky-tooltip-pad-left {
+        padding-left: 0
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17.5px
+    }
+
+    .tooltip.bottom .tooltip-inner {
+        margin-right: 30px
+    }
+
+    .mob-mar-toggle {
+        margin-top: 15px
+    }
+
+    .item-block-content-header-mob {
+        margin-top: 0
+    }
+
+    .get-cover-line-float {
+        text-align: left;
+        float: left;
+        margin-top: 17.5px
+    }
+
+    .get-cover-line {
+        margin-right: 0;
+        font-size: 14px
+    }
+}
+
+@media (min-width:320px) and (max-width:379px) {
+    .breadcrumb-item-cust>a {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 11px !important;
+        font-weight: 700;
+        text-align: left;
+        color: #000
+    }
+}

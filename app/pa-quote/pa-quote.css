@@ -1,0 +1,1577 @@
+.add-mbr-btn,
+.box-txt-hd {
+    text-transform: uppercase
+}
+
+body {
+    overflow-x: hidden;
+    font-family: PF-Handbook-Pro-Regular, PF-Encore-Sans-Pro-Regular;
+    background-color: #f1f3f6
+}
+
+.main-header-text1,
+.main-header-text2 {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 30px
+}
+
+.pad-top-10 {
+    padding-top: 10px
+}
+
+.mar-top-3 {
+    margin-top: -3px
+}
+
+.cont-pad {
+    padding-top: 21.5px !important;
+    padding: 0 50px
+}
+
+.main-header-text1 {
+    height: 30px;
+    text-align: left;
+    color: #000
+}
+
+.main-header-text2 {
+    color: #c7222a
+}
+
+.dis-in {
+    display: inline-block
+}
+
+.dis-block {
+    display: block
+}
+
+.dis-in-imp {
+    display: inline-block !important
+}
+
+.dropdown-menu {
+    width: 100%;
+    min-width: 100%
+}
+
+.active {
+    color: #c7222a !important
+}
+
+.pre-pad {
+    padding: 20px 0
+}
+
+.mar-rght-15 {
+    margin-right: 15px
+}
+
+.glyphicon.glyphicon-chevron-down {
+    font-size: 15px
+}
+
+.panel-title a,
+.sum-tenure-insured-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px
+}
+
+.pa-quote-section input[type=radio]:checked+label {
+    color: #d9534f !important
+}
+
+.pa-quote-section input[type=radio]:checked+label>.plan-modal-txt,
+.pa-quote-section input[type=radio]:checked+label>.saving-tenure,
+.pa-quote-section input[type=radio]:checked+label>.saving-tenure-discount,
+.pa-quote-section input[type=radio]:checked+label>.table-value {
+    color: #c7222a
+}
+
+.dont-show {
+    display: none;
+    display: inline
+}
+
+.item-block-tool-tip-img {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
+
+.close-img-mar {
+    width: 12px;
+    height: 12px;
+    margin-left: 10%;
+    margin-top: -4px;
+    cursor: pointer
+}
+
+.sum-tenure-topmost-row {
+    padding-top: 15.5px !important;
+    padding-left: 50px;
+    padding-bottom: 15.5px !important
+}
+
+.arrow-switch input {
+    display: none
+}
+
+.arrow-switch span {
+    height: 22px;
+    width: 22px;
+    position: relative;
+    display: inline-block;
+    background-image: url(../images/drop_down_inv.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 5px;
+    left: 5px;
+    cursor: pointer
+}
+
+.arrow-switch input:checked+span {
+    background-image: url(../images/drop_down.svg)
+}
+
+.panel-default {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #f2f3f6 !important;
+    border-color: #f2f3f6 !important;
+    box-shadow: none
+}
+
+.panel-title a {
+    text-align: left;
+    color: #6c7174 !important;
+    background-color: #f2f3f6;
+    border: 0
+}
+
+#panel-heading-sum-tenure {
+    border-radius: 4px;
+    background-color: #f2f3f6;
+    padding-top: 20.5px;
+    padding-bottom: 20.5px
+}
+
+.panel-heading .accordion-toggle.ac-toggle:after {
+    content: "";
+    background: url(../images/icon-chevron-down.png) 7px 12px no-repeat;
+    width: 20px;
+    display: inline-block;
+    height: 20px
+}
+
+#collapseOne {
+    background-color: #fff
+}
+
+.change-earn-mem-bene-btn,
+.sum-tenure-insured-change-btn {
+    background-color: #f7a500;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12)
+}
+
+#panel-body-sum-tenure {
+    border-top: 0 !important
+}
+
+.margin-btn-0 {
+    margin-bottom: 0
+}
+
+.sum-tenure-row {
+    padding-top: 15px !important;
+    padding-left: 15px;
+    padding-bottom: 0 !important
+}
+
+.sum-tenure-insured-txt {
+    color: #6c7174
+}
+
+.box-txt {
+    padding-bottom: 10px
+}
+
+.brand-dropdown .glyphicon-chevron-down {
+    float: right
+}
+
+.sum-insured-members-block {
+    margin: 0 15px 0 0;
+    min-height: 200px
+}
+
+.sum-insured-members-block .remove-option {
+    position: absolute;
+    right: 25px;
+    color: #c7212a;
+    font-size: 18px;
+    top: 7px
+}
+
+#pa-hcb-insured-slider .sum-insured-members-block .remove-option {
+    right: 40px
+}
+
+.sum-tenure-insured-change-btn {
+    border-radius: 2px;
+    border: .5px solid #dbdbdb;
+    text-align: center
+}
+
+.change-earn-mem-bene-btn {
+    margin-left: 10px;
+    width: auto;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: .5px solid #cdcece;
+    font-weight: 700
+}
+
+.box-white,
+.temp-total-dis-box {
+    background-color: #fff
+}
+
+.change-earn-mem-bene-btn:focus {
+    border: none;
+    box-shadow: none;
+    outline: 0
+}
+
+.change-earn-mem-bene-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 13px;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #000;
+    padding: 6px 22px;
+    display: block
+}
+
+.mar-top-30 {
+    padding-top: 30.5px
+}
+
+.temp-disa-left-bdr {
+    border-left: 5px solid #f7a500;
+    margin-left: 0;
+    height: 85px
+}
+
+.sum-tenure-insured-change-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 13px;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #000;
+    padding: 6px 22px
+}
+
+.table-header,
+.table-value {
+    font-size: 15px;
+    line-height: 1.2;
+    padding-bottom: 12px;
+    text-align: left;
+    color: #6c7174
+}
+
+.table-header {
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.table-value {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 500
+}
+
+.saving-tenure,
+.saving-tenure-discount {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .2px
+}
+
+.saving-tenure {
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left;
+    color: #6c7174;
+    padding-left: 26.5px;
+    padding-top: 9px
+}
+
+.saving-tenure-discount {
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left;
+    color: #000
+}
+
+.breadcrumb-item-cust>a,
+.sec-summ-text {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 700;
+    text-align: left;
+    color: #000
+}
+
+.pad-btm-25 {
+    padding-bottom: 25.5px
+}
+
+.breadcrumb-item-cust-active {
+    color: #000;
+    display: inline;
+    border-bottom: 4px solid;
+    padding-bottom: 8;
+    line-height: 1.75em
+}
+
+.breadcrumb-item-cust>a {
+    font-size: 15px
+}
+
+.breadcrumb-row ul,
+li {
+    display: inline;
+    text-align: left;
+    margin: 0;
+    padding: 0
+}
+
+ol li a,
+ol li a:hover {
+    color: #000
+}
+
+.breadcrumb-row {
+    padding-top: 15.5px !important;
+    padding-bottom: 15.5px !important
+}
+
+hr.style2 {
+    width: 100%;
+    border-radius: 2px;
+    border: 2px solid #d8d8d8
+}
+
+.temp-total-dis-img {
+    width: 60px;
+    height: 60px;
+    margin-left: 55px;
+    margin-top: 15px
+}
+
+.temp-total-dis-text1 {
+    padding-top: 19px;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    text-align: left;
+    color: #000
+}
+
+#emi-protect .panel-group,
+#emi-protect1 .panel-group,
+#loan-protect .panel-group,
+#loan-protect1 .panel-group,
+#total-disablement-div .panel-group,
+#total-disablement-div1 .panel-group {
+    margin-bottom: 0
+}
+
+.sec-summ-text {
+    padding-top: 42px;
+    font-size: 18px
+}
+
+.panel-title .sec-summ-text {
+    font-family: PF-Handbook-Pro-Regular !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    color: #000 !important
+}
+
+.sec-summ-text-top-pad {
+    padding: 20px;
+    padding-bottom: 0 !important
+}
+
+.temp-total-dis-text2 {
+    padding-top: 14px;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: left;
+    color: #6c7174;
+    margin-bottom: 5px
+}
+
+.dup-bene-btn-new,
+.temp-total-dis-sel-summ-btn-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+#emi-protect-modal .temp-total-dis-text2,
+#loan-protect-modal .temp-total-dis-text2,
+#temp-total-dis .temp-total-dis-text2 {
+    padding-top: 1px
+}
+
+.temp-total-dis-row {
+    padding-top: 15.5px !important;
+    padding-left: 62px
+}
+
+.temp-total-dis-box {
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12);
+    border: .5px solid #cdcece
+}
+
+.box-grey {
+    background-color: #f2f3f6
+}
+
+.temp-total-dis-sel-summ-panel {
+    border-style: none;
+    webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-left: -18px
+}
+
+.temp-total-dis-sel-summ-btn-txt {
+    font-size: 13px;
+    letter-spacing: .2px;
+    color: #000
+}
+
+.temp-total-dis-sel-summ-panel-body {
+    padding-left: 23px
+}
+
+.mar-0-auto {
+    margin: 0 auto
+}
+
+.redColor {
+    color: #C7222A
+}
+
+.btn.dropdown-toggle.focus,
+.btn.dropdown-toggle:active,
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:visited {
+    outline: 0
+}
+
+.dropdown-toggle.brand-dropdown .caret {
+    float: right;
+    margin-top: 8px;
+    color: #C7222A
+}
+
+.brand-dropdown {
+    width: 100%
+}
+
+.brand-dropdown.grey {
+    font-family: PF-Handbook-Pro-Regular;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 14px;
+    background-color: #fff;
+    font-weight: 700
+}
+
+.temp-total-dis-sel-summ-select-cover {
+    margin-left: 14px
+}
+
+.pa-quote-section input::-webkit-inner-spin-button,
+.pa-quote-section input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.btn.dropdown-toggle:focus {
+    outline: 0 !important
+}
+
+.temp-total-dis-img-container {
+    padding-top: 19px
+}
+
+.pa-sum-insured .slick-list {
+    padding-bottom: 75px !important;
+    padding-left: 10px
+}
+
+.oc-switch {
+    margin-left: 10px
+}
+
+#optional-covers {
+    display: none
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 15.5px;
+    vertical-align: text-bottom;
+    margin-bottom: 5px
+}
+
+.slider,
+.slider:before {
+    position: absolute;
+    left: 0
+}
+
+.switch input {
+    display: none
+}
+
+.slider {
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d8d8d8;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+.slider:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    bottom: -2px;
+    background-color: #999;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+.pa-quote-section input:checked+.slider {
+    background-color: #f1979c
+}
+
+.pa-quote-section input:checked+.slider:before {
+    background-color: #c7222a;
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px)
+}
+
+.pa-quote-section input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3
+}
+
+.slider.round {
+    border-radius: 34px
+}
+
+.slider.round:before {
+    border-radius: 50%
+}
+
+.mar-l-15 {
+    margin-left: 15px
+}
+
+.mar-top-75 {
+    margin-top: 19px
+}
+
+.pa-quote-section input[type=text],
+.pa-quote-section input[type=tel] {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 44px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0
+}
+
+.pa-quote-section .app-modal input[type=text],
+.pa-quote-section .app-modal input[type=tel] {
+    border-right: 1px solid #ccc;
+    background: #fff;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px
+}
+
+.pa-quote-section .app-modal .input-group-addon {
+    background: #fff
+}
+
+.pa-quote-section .earn-mem-bene-mod-box-txt-rup-sym-clr {
+    border: 1px solid #ccc;
+    border-right: 0
+}
+
+.pa-quote-section .sum-assured-income-digit {
+    border: 1px solid #ccc;
+    border-left: 0
+}
+
+.app-modal .chk-sub-data label {
+    padding-bottom: 5px
+}
+
+.dup-bene-btn-new {
+    border-radius: 2px;
+    background-color: #f7a500;
+    box-shadow: 0 4.5px 7.5px 0 rgba(0, 0, 0, .14);
+    border: none;
+    font-size: 21px;
+    letter-spacing: .3px;
+    color: #000;
+    padding: 10px 15px
+}
+
+.item-block h1,
+.item-block-number {
+    font-weight: 700;
+    color: #c7222a;
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+.dup-bene-btn-new:focus {
+    outline: 0
+}
+
+.item-block {
+    padding-left: 14px;
+    padding-top: 38px
+}
+
+.quote-item-block {
+    padding-left: 14px;
+    padding-top: 20px
+}
+
+.item-block1 {
+    padding-left: 13px;
+    padding-top: 38px
+}
+
+.pad-left-105 {
+    padding-left: 80px
+}
+
+#padding-bottom-zero .item-block-content,
+.item-block-content,
+.quote-item-block-content {
+    margin-left: -4%;
+    border-color: #cdcece;
+    border-width: 2px;
+    padding-left: 6.5px
+}
+
+.item-block h1 {
+    font-size: 54px
+}
+
+.item-block-number {
+    font-size: 42px
+}
+
+#padding-bottom-zero .item-block-content {
+    padding-bottom: 0
+}
+
+.item-block-content {
+    padding-bottom: 47px
+}
+
+.quote-item-block-content {
+    padding-bottom: 25px
+}
+
+.sum-assured-income-digit {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: #666 !important;
+    border: 0;
+    background-color: #fff;
+    padding-top: 10px
+}
+
+.item-block-content-header,
+.item-block-content-header h3 {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    font-weight: 700;
+    text-align: left;
+    color: #000
+}
+
+.item-block-content-header h3 {
+    margin-left: 20px
+}
+
+.item-block-content-header {
+    vertical-align: text-bottom;
+    line-height: 27px
+}
+
+.item-block-content-desc,
+.item-block-content-desc h4 {
+    color: #6c7174;
+    font-size: 18px
+}
+
+.pad-top-15 {
+    padding-top: 15px
+}
+
+.glyphicon {
+    top: 4px
+}
+
+.item-block-content-desc h4 {
+    margin-left: 20px;
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+.box-txt,
+.box-txt-hd,
+.item-block-content-desc {
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+.sum-insured-members-padding-initial {
+    padding-left: 32px;
+    padding-right: 33.5px
+}
+
+.item-block-number-border {
+    border-right: solid;
+    margin-right: 27px;
+    border-color: #cdcece;
+    border-width: 2px
+}
+
+.item-block-number-border-mobile {
+    border-bottom: solid;
+    border-color: #cdcece;
+    border-width: 2px
+}
+
+.sum-insured-members-block {
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .09), 0 3px 6px rgba(0, 0, 0, .18);
+    border-bottom: 5px solid #f7a500;
+    padding: 20px 20px 45px
+}
+
+.box-txt-hd {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000
+}
+
+.box-txt {
+    font-size: 16px;
+    letter-spacing: .2px;
+    color: #666;
+    padding-top: 15.5px
+}
+
+.sum-insured-members-block-dropdown {
+    padding-top: 10px
+}
+
+.air-ambulane-text {
+    padding-bottom: 14.8px
+}
+
+.select-cover-panel {
+    padding-top: 11px;
+    padding-bottom: 10.5px
+}
+
+.inp-txt-bg-white {
+    background-color: #fff !important
+}
+
+.earn-mem-bene-mod-box-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 700;
+    border: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+    background-color: #f2f3f6;
+    border-radius: 0;
+    box-shadow: none
+}
+
+.earn-mem-bene-mod-box-txt-rup-sym-clr {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-align: left;
+    color: #666;
+    background-color: #fff
+}
+
+.earn-mem-bene-lbl-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: left;
+    color: #6c7174
+}
+
+.add-mbr-btn,
+.breadcrumb-item-cust .unbold-fonts,
+.btn.qq-save-btn,
+.mbr-sel-txt-sml {
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.form-control:focus {
+    box-shadow: none
+}
+
+.pad-btm-32 {
+    padding-bottom: 32px
+}
+
+.pad-top-50 {
+    padding-top: 50px
+}
+
+.mbr-sel-txt-sml {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6c7174;
+    line-height: 1
+}
+
+.mbr-sel-txt-big {
+    font-family: PF-Handbook-Pro-Regular, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    color: #000
+}
+
+.add-mbr-btn {
+    border-radius: 3px;
+    background-color: #f2f3f6;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .24);
+    border: 1px solid #cdcece;
+    color: #000 !important;
+    font-size: 18px;
+    padding: 12px 35px;
+    margin: 0 !important
+}
+
+a.add-mbr-btn {
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    display: inline-block
+}
+
+.pad-top-30 {
+    padding-top: 30px
+}
+
+.tenure-box-bg {
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .05), 0 3px 6px rgba(0, 0, 0, .08);
+    padding-top: 4px
+}
+
+#tenure-year-act-bdr {
+    vertical-align: top;
+    padding-bottom: 52px
+}
+
+#tenure-year-act-bdr1,
+#tenure-year-act-bdr2 {
+    padding-bottom: 30px
+}
+
+.tenure-box-pad {
+    display: table-cell;
+    float: none !important
+}
+
+.dropdown-caret,
+.sum-insured-members-block-dropdown .glyphicon-chevron-down {
+    float: right
+}
+
+.tenure-box-pad.activ {
+    border-bottom: 4px solid #f7a500
+}
+
+.btn.qq-save-btn {
+    letter-spacing: .2px;
+    color: #fff;
+    text-align: left;
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 2px;
+    background-color: #694743;
+    border: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    margin-bottom: 20px
+}
+
+.btn.qq-save-btn:focus,
+.btn.qq-save-btn:hover {
+    outline: 0;
+    color: #fff;
+    background-color: #694743
+}
+
+.btn.qq-save-btn img {
+    float: right;
+    height: 50%;
+    position: relative;
+    top: 4px
+}
+
+.btn.qq-save-btn-left {
+    text-align: right !important
+}
+
+.bg-white {
+    color: #000 !important;
+    background-color: #f2f3f6 !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12) !important;
+    border: .5px solid #cfcfcf !important
+}
+
+.drop-overflow {
+    overflow: auto
+}
+
+.sum-tenure-row #panel-heading-sum-tenure {
+    background-color: #fff
+}
+
+.sum-tenure-row .panel-title a {
+    font-weight: 700;
+    background: #fff
+}
+
+.rupee-symbol {
+    font-size: 12px
+}
+
+.mar-l-19 {
+    margin-left: 19px
+}
+
+.optional-cover-select-summ-panel {
+    background-color: #f2f3f6
+}
+
+.breadcrumb-item-cust .unbold-fonts {
+    font-size: 15px;
+    color: #6c7174
+}
+
+@media (max-width:767px) {
+
+    .main-header-text1,
+    .main-header-text2 {
+        font-size: 21px
+    }
+
+    .sec-summ-text-top-pad {
+        padding: 0
+    }
+
+    .res-pad-top-10 {
+        padding-top: 10px !important
+    }
+
+    .sum-tenure-row {
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .table-header,
+    .table-value {
+        font-size: 15px
+    }
+
+    .saving-tenure,
+    .saving-tenure-discount {
+        font-size: 12px
+    }
+
+    .saving-tenure {
+        padding-left: 11.5px;
+        padding-top: 9px
+    }
+
+    .temp-total-dis-text1 {
+        font-size: 17px;
+        padding-top: 10px;
+        display: inline-block
+    }
+
+    .temp-total-dis-box .switch-chk-div {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        width: 85px
+    }
+
+    .temp-total-dis-box .row {
+        margin: 0
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 14px
+    }
+
+    .temp-total-dis-img {
+        width: 46.5px;
+        height: 40px
+    }
+
+    .temp-total-dis-row {
+        padding-top: 15.5px !important;
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .temp-total-dis-sel-summ-select-cover {
+        margin-left: 14px
+    }
+
+    .temp-total-dis-sel-summ-btn-txt {
+        padding-bottom: 6px;
+        padding-right: 35px
+    }
+
+    .item-block {
+        padding-left: 16px;
+        padding-top: 20px
+    }
+
+    .item-block-number-border {
+        border-right: solid;
+        border-color: #cdcece;
+        border-width: 2px;
+        padding-right: 28px
+    }
+
+    .item-block-number {
+        font-size: 32x;
+        border-color: #cdcece;
+        border-width: 4px;
+        width: 50%
+    }
+
+    .item-block-content-header {
+        font-size: 21px
+    }
+
+    .item-block-content-desc {
+        font-size: 15px
+    }
+
+    .temp-dis-mod-hd {
+        padding-left: 20px;
+        padding-top: 20px
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    #tenure-year-act-bdr {
+        padding-bottom: 50px
+    }
+
+    #tenure-year-act-bdr1 {
+        vertical-align: top
+    }
+
+    #tenure-year-act-bdr2 {
+        padding-bottom: 16px
+    }
+
+    .change-earn-mem-bene-btn {
+        width: auto
+    }
+
+    #insure-dropdown input[type=text],
+    #insure-dropdown input[type=tel] {
+        min-width: 50px
+    }
+
+    .sum-insured-members-padding-initial {
+        margin-left: 0;
+        padding-right: 0
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .cont-pad {
+        padding: 0 21px
+    }
+
+    #tenure-year-act-bdr {
+        padding-bottom: 66px
+    }
+
+    #tenure-year-act-bdr1 {
+        vertical-align: top
+    }
+
+    .item-block-number-border {
+        margin-right: 0
+    }
+
+    .temp-total-dis-img {
+        margin-left: 25px
+    }
+
+    .sec-summ-text {
+        padding-top: 0
+    }
+}
+
+@media(max-width:768px) {
+    .sum-insured-members-padding-initial {
+        padding: 0 10px
+    }
+}
+
+@media (min-width:600px) and (max-width:768px) {
+
+    .pa-quote-section input[type=text],
+    .pa-quote-section input[type=tel] {
+        max-width: 100% !important
+    }
+}
+
+@media (min-width:581px) and (max-width:767px) {
+    .item-block1 {
+        padding-top: 0 !important
+    }
+
+    .margin-top-mob {
+        margin-top: 10px
+    }
+
+    .temp-total-dis-row {
+        padding-top: 15.5px !important;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .change-earn-mem-bene-btn {
+        margin-left: 0;
+        width: 110%
+    }
+
+    .sec-summ-text {
+        padding-top: 20px;
+        text-align: center
+    }
+
+    .temp-total-dis-sel-summ-panel-body {
+        padding-left: 15%
+    }
+
+    .temp-total-dis-sel-summ-select-cover {
+        margin-left: 0 !important
+    }
+
+    .breadcrumb-item-cust-active {
+        padding-bottom: 5px
+    }
+
+    #tenure-year-act-bdr {
+        padding-bottom: 70px
+    }
+
+    .cont-pad {
+        padding: 0 17px
+    }
+
+    .mbr-sel-txt-big,
+    .mbr-sel-txt-sml {
+        font-size: 15px
+    }
+
+    .item-block-content {
+        padding-bottom: 0;
+        padding-top: 0
+    }
+
+    .item-block {
+        padding-left: 13px !important
+    }
+
+    .temp-disa-left-bdr {
+        margin-left: -15px
+    }
+
+    .pad-cont {
+        padding-left: 8px !important;
+        padding-right: 8px !important
+    }
+
+    .btn.qq-save-btn {
+        width: 100% !important;
+        font-size: 15px
+    }
+
+    #tenure-year-act-bdr1 {
+        padding-bottom: 39px
+    }
+
+    .quote-item-block {
+        padding-top: 0;
+        padding-left: 0
+    }
+
+    #line-top-mar .pad-top-50 {
+        padding-top: 35px
+    }
+
+    .temp-total-dis-img {
+        width: 46.5px;
+        height: 40px;
+        margin-left: 32px
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 12px
+    }
+
+    #panel-body-sum-tenure .mar-l-19 {
+        margin-left: 0
+    }
+
+    #temp-total-dis .temp-total-dis-text2 {
+        padding-top: 10px
+    }
+
+    #temp-total-dis input[type=text],
+    #temp-total-dis input[type=tel] {
+        min-width: 135px;
+        padding-top: 15px;
+        padding-bottom: 15px
+    }
+
+    #temp-total-dis .brand-dropdown.grey {
+        padding-top: 7px;
+        padding-bottom: 7px
+    }
+
+    #temp-total-dis .sum-insured-members-block-dropdown,
+    .item-block {
+        padding-top: 0
+    }
+
+    #temp-total-dis .mod-radio-btn-pad,
+    #temp-total-dis .modal-radio-button-topmost-row {
+        padding-left: 41.5px
+    }
+
+    #temp-total-dis .earn-mem-bene-lbl-txt {
+        padding-left: 0
+    }
+
+    #panel-body-sum-tenure .table-header {
+        font-size: 11px;
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .quote-item-block-content {
+        padding-bottom: 25px;
+        padding-left: 0
+    }
+}
+
+@media (min-width:300px) and (max-width:390px) {
+
+    #tenure-year-act-bdr,
+    #tenure-year-act-bdr2 {
+        padding: 0 !important
+    }
+
+    #tenure-year-act-bdr1 {
+        padding: 0 !important;
+        height: 120px
+    }
+}
+
+@media(max-width:440px) {
+    .temp-total-dis-text1 {
+        width: 125px;
+        display: inline-block
+    }
+
+    .responsive-panel-group {
+        margin-right: -20px;
+        padding-top: 20px;
+        padding-bottom: 15px
+    }
+
+    .responsive-panel-group .panel-heading {
+        padding: 0 !important
+    }
+
+    .responsive-panel-group .panel-heading .panel-title {
+        padding: 0
+    }
+}
+
+@media (min-width:300px) and (max-width:330px) {
+    #tenure-combo-container {
+        padding: 0 !important
+    }
+}
+
+@media (min-width:320px) and (max-width:580px) {
+    .item-block {
+        padding-top: 0
+    }
+
+    .margin-top-mob {
+        margin-top: 10px
+    }
+
+    .quote-item-block-content {
+        padding-bottom: 25px;
+        padding-left: 0
+    }
+
+    .temp-total-dis-row {
+        padding-top: 15.5px !important;
+        padding-left: 10px;
+        padding-right: 10px
+    }
+
+    #temp-total-dis .temp-total-dis-text2 {
+        padding-top: 5px
+    }
+
+    #temp-total-dis input[type=text],
+    #temp-total-dis input[type=tel] {
+        min-width: 135px;
+        padding-top: 15px;
+        padding-bottom: 15px
+    }
+
+    #temp-total-dis .brand-dropdown.grey {
+        padding-top: 7px;
+        padding-bottom: 7px
+    }
+
+    #temp-total-dis .sum-insured-members-block-dropdown {
+        padding-top: 0
+    }
+
+    #temp-total-dis .modal-radio-button-topmost-row {
+        padding-left: 18.5px;
+        padding-top: 10px
+    }
+
+    #temp-total-dis .modal-radio-button-row {
+        padding-top: 10px
+    }
+
+    #temp-total-dis .pad-tb-100 {
+        padding-top: 20px;
+        padding-bottom: 0
+    }
+
+    #temp-total-dis .mod-radio-btn-pad {
+        padding-left: 20.5px
+    }
+
+    #temp-total-dis .earn-mem-bene-lbl-txt {
+        padding-left: 0
+    }
+
+    #panel-body-sum-tenure .table-header {
+        font-size: 11px;
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    #panel-body-sum-tenure .table-value {
+        font-size: 12px;
+        padding-left: 0
+    }
+
+    #panel-body-sum-tenure .mar-l-19 {
+        margin-left: 0
+    }
+
+    .sec-summ-text {
+        padding-top: 20px;
+        text-align: center
+    }
+
+    .temp-total-dis-sel-summ-select-cover {
+        margin-left: 39px !important
+    }
+
+    .breadcrumb-item-cust-active {
+        padding-bottom: 5px
+    }
+
+    #tenure-year-act-bdr {
+        padding-bottom: 72px
+    }
+
+    #tenure-year-act-bdr1 {
+        padding-bottom: 28px;
+        vertical-align: top
+    }
+
+    #tenure-year-act-bdr2 {
+        padding-bottom: 28px
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+
+    .main-header-text1 {
+        font-size: 19px
+    }
+
+    .mbr-sel-txt-big,
+    .mbr-sel-txt-sml {
+        font-size: 15px
+    }
+
+    .dup-bene-btn-new {
+        font-size: 16px
+    }
+
+    .sum-tenure-row {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important
+    }
+
+    .panel-heading {
+        padding-left: 12px !important
+    }
+
+    .item-block1 {
+        padding-left: 0;
+        padding-top: 0
+    }
+
+    .item-block-content {
+        padding-bottom: 0;
+        padding-top: 0;
+        margin-left: -2%
+    }
+
+    .item-block {
+        padding-left: 0 !important
+    }
+
+    .temp-disa-left-bdr {
+        margin-left: -15px;
+        height: 140px
+    }
+
+    .pad-cont {
+        padding-left: 5px !important;
+        padding-right: 5px !important
+    }
+
+    .btn.qq-save-btn {
+        width: 100% !important
+    }
+
+    .btn.qq-save-btn img {
+        top: 3px
+    }
+
+    .quote-item-block {
+        padding-top: 0;
+        padding-left: 0
+    }
+
+    .sum-tenure-topmost-row {
+        padding-left: 0;
+        padding-top: 0 !important
+    }
+
+    #line-top-mar .pad-top-50 {
+        padding-top: 23px
+    }
+
+    .temp-total-dis-img {
+        width: 50px;
+        height: 50px;
+        margin-left: 11px;
+        margin-top: 0
+    }
+
+    .mar-l-15 {
+        margin-left: 0
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 14px
+    }
+
+    .earn-mem-bene-lbl-txt {
+        padding-left: 14px
+    }
+
+    .sum-insured-members-block {
+        box-shadow: none
+    }
+}
+
+@media (min-width:320px) and (max-width:379px) {
+    .breadcrumb-item-cust>a {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 11px !important;
+        font-weight: 700;
+        text-align: left;
+        color: #000
+    }
+}
+
+#insured-forms .input-text-box, #nominee-forms .input-text-box{
+    border: 1px solid #ccc;
+}

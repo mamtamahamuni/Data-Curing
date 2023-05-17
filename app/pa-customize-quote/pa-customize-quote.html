@@ -1,0 +1,1242 @@
+<!--
+
+    Page Name :- PA customize quote page
+    Author: Pankaj Patil
+    Date: 09-07-2018
+
+-->
+<section class="pa-quote-section">
+    <!-- Page header section -->
+    <div class="container-fluid">
+        <div class="row cont-pad">
+            <div class="col-md-12"><span class="main-header-text1">Activ Secure Personal Accident | </span><span
+                    class="main-header-text2">Plan {{pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan}}</span></div>
+        </div>
+    </div><!-- End of page header section -->
+    <!-- Breadcrumb section -->
+    <div class="container-fluid">
+        <div class="row cont-pad breadcrumb-row">
+            <div class="col-md-12">
+                <ul class="breadcrumb-cust">
+                    <li class="breadcrumb-item-cust"><a href="#!/pa-quote"
+                            ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Quotation]')">Quotation</a>
+                    </li>
+                    <li class="breadcrumb-item-cust"><span class="clickable"><i
+                                class="glyphicon glyphicon-menu-right"></i></span></li>
+                    <li class="breadcrumb-item-cust breadcrumb-item-cust-active"><a ng-href="#!/pa-customize-quote"
+                            ng-class="{'active' : pAC.paCustomize != null}"
+                            ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Customization]')">Customization</a>
+                    </li>
+                    <li class="breadcrumb-item-cust"><span class="clickable"><i
+                                class="glyphicon glyphicon-menu-right"></i></span></li>
+                    <li class="breadcrumb-item-cust"><a href="javascript:void(0)"
+                            ng-class="{'active' : pAC.pName != null}" class="unbold-fonts"
+                            ng-click="breadcrumbNavigation('breadcrumbs','proposer-details','Proposer_Details',4)">Proposal</a>
+                    </li>
+                    <li class="breadcrumb-item-cust"><span class="clickable"><i
+                                class="glyphicon glyphicon-menu-right"></i></span></li>
+                    <li class="breadcrumb-item-cust"><a href="javascript:void(0)" class="unbold-fonts"
+                            ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- End of breadcrumb section -->
+    <!-- Premium display section sticky section -->
+    <div class="container-fluid prem-panel sticky" sticky>
+        <div class="row prem-row">
+            <div class="col-md-12 col-xs-11 col-sm-12 prem-text-panel text-right pad-l-r-0">
+                <div class="dropdown dis-in"><a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown"
+                        type="button" data-toggle="dropdown" href="javascript:void(0)" id=""
+                        ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')"><span
+                            class="prem-small-txt">Premium:&nbsp;&nbsp;</span> <span class="prem-big-txt"
+                            ng-if="pAC.quoteDetails.PremiumDetail.TotalPremium"><span
+                                class="prem-rupee-symbol">&#8377;</span> <span count-up
+                                end-val="pAC.quoteDetails.PremiumDetail.TotalPremium "></span> pa &nbsp; <span
+                                class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                    src="assets/images/icon-chevron-down.png"> </span></span><span class="prem-big-txt"
+                            ng-if="!pAC.quoteDetails.PremiumDetail.TotalPremium"><i class="fa fa-spinner"
+                                aria-hidden="true"></i></span></a>
+                    <ul class="dropdown-menu plan-dropdown-menubox">
+                        <li ng-repeat="premium in pAC.quoteDetails.PremiumDetail.ProductPremium">
+                            <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">
+                                {{premium.ProductName | productFilter}}</p>
+                            <p class="tooltip-grey-txt mar-rght-15">Amount : ₹{{premium.Premium | INR}} <span
+                                    class="incl-gst">(incl GST)</span></p>
+                            <!-- <p class="tooltip-grey-txt mar-rght-15">GST : ₹2000</p> -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of preminum display section -->
+    <!-- Sum Insured and Tenure display section -->
+    <div class="container">
+        <div class="row sum-tenure-row">
+            <div class="col-md-12 col-xs-12">
+                <div class="panel-group margin-btn-0" id="accordion">
+                    <div class="panel panel-default" accordion>
+                        <div class="panel-heading" id="panel-heading-sum-tenure">
+                            <h4 class="panel-title"><a class="accordion-toggle ac-toggle collapsed"
+                                    ng-click="callGtag('click-accordion', 'customize-quote' ,'pa-cust-quote_[sum-insured-tenure-accordion]')"
+                                    href="javascript:void(0)">SUM INSURED & TENURE</a></h4>
+                        </div>
+                        <div id="collapseOne" class="collapse panel-collapse">
+                            <div class="panel-body" id="panel-body-sum-tenure">
+                                <div class="row sum-tenure-topmost-row">
+                                    <div class="col-md-12"><span class="sum-tenure-insured-txt">SUM INSURED</span>
+                                        <button class="sum-tenure-insured-change-btn"><span
+                                                class="sum-tenure-insured-change-btn-txt"
+                                                ng-click="pAC.changeSI();callGtag('click-button', 'customize-quote' ,'pa-cust-quote_[change-SI]')">CHANGE</span></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-xs-12 sum-tenure-row mar-l-19">
+                                    <div class="col-md-4 col-sm-6"
+                                        ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                                        <div class="row">
+                                            <div class="col-xs-6 table-header"><span
+                                                    ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer | capitalize}}</span><span
+                                                    ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType | capitalize}}</span>
+                                            </div>
+                                            <div class="col-xs-6 table-value"><span
+                                                    class="rupee-symbol">&#8377;</span>{{member.suminsured}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sum-tenure-topmost-row"><span class="sum-tenure-insured-txt">TENURE :
+                                        {{pAC.quoteDetails.PAQuote.PAQuoteDetails[0].TENURE}} Years</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of Sum Insured and Tenure display section -->
+    <!-- Hospital Cash Benefit Section -->
+    <div class="container">
+        <div class="row item-block1 res-pad-top-10">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-2">
+                <div class="item-block-number-border"><span class="item-block-number">3</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-10" id="padding-bottom-zero">
+                <div class="item-block-content"><span class="item-block-content-header">HOSPITAL CASH BENEFIT</span>
+                    <span class="mar-l-15"><label class="switch mar-0-auto"><input type="checkbox" class="hcb-toggle"
+                                data-toggle="collapse" data-target="#content-hospital-cash-benefit"
+                                ng-model="pAC.hCBCollapse"
+                                ng-change="callGtag('click-radio','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB['+pAC.hCBCollapse+']')"
+                                ng-true-value="'Y'" ng-false-value="'N'"> <span
+                                class="slider round"></span></label></span>
+                    <div class="item-block-content-desc">Get a fixed cash amount daily in addition to your insurance
+                        benefits when you get hospitalized.<br>Daily Cash Benefit options from INR 500 to INR 10,000.
+                        <span class="custom-popover hcb-popover" custom-popover><img
+                                class="img-responsive item-block-tool-tip-img" src="assets/images/tooltip_Premium.png"
+                                ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-i')">
+                            <span class="custom-tooltip-text">Minimum entry age – 5 years, Maximum entry age - 65 years.
+                                Sum insured of earning member can be up to 12 times of their Annual gross income. <span
+                                    class="pop-close">×</span></span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="container collapse pad-top-10" id="content-hospital-cash-benefit">
+            <div id="pa-hcb-insured-slider" class="owl-carousel buy-owl-carousel" ng-if="pAC.hCBCollapse == 'Y'">
+                <div class="item" ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                    <div class="col-lg-12 col-md-12 col-sm-11">
+                        <div class="sum-insured-members-block hcb-self-section"><a href="javascript:void(0)"
+                                class="remove-option"
+                                ng-click="pAC.removeHCB(member);callGtag('click-icon-x','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_remove-hcb['+member.RelationType+']')"><img
+                                    class="close-img-mar self-close-mark" src="assets/images/shape.png"></a>
+                            <div class="dis-in box-txt-hd"><span
+                                    ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer}}</span>
+                                <span ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType}}</span>
+                                ({{$index + 1}}/{{pAC.quoteDetails.PAQuote.PAQuoteDetails.length}})</div>
+                            <div class="box-txt">Daily Cash Limit</div>
+                            <div class="dropdown"><button tabindex="10"
+                                    class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                    button-dropdown="member.PDL" placeholder="Select Cash Limit"
+                                    id="daily-cash-limit-{{$index}}"
+                                    ng-click="callGtag('click-dropdown','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB_daily-cash-limit_dropdown-open')"><span
+                                        class="select-hcb-dropdown-txt daily-cash-limit-self"><span
+                                            class="rupee-symbol">&#8377;</span> <span
+                                            ng-if="member.PDL != '' && member.PDL != '0'">{{member.PDL}}</span> <span
+                                            ng-if="member.PDL == '' || member.PDL == '0'">Select Cash Limit</span>
+                                    </span><span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                            src="assets/images/icon-chevron-down.png"></span></button>
+                                <ul class="dropdown-menu daily-cash-menu-self">
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL('',$index)"
+                                        data-val="Select Cash Limit"><a href="javascript:void(0)">Select Cash Limit</a>
+                                    </li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(500,$index)" data-val="500">
+                                        <a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> 500</a>
+                                    </li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(1000,$index)"
+                                        data-val="1000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 1000</a></li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(2000,$index)"
+                                        data-val="2000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 2000</a></li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(3000,$index)"
+                                        data-val="3000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 3000</a></li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(4000,$index)"
+                                        data-val="4000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 4000</a></li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(5000,$index)"
+                                        data-val="5000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 5000</a></li>
+                                    <li class="li-item-text-change" ng-click="pAC.changePDL(10000,$index)"
+                                        data-val="10000"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 10000</a></li>
+                                </ul>
+                            </div>
+                            <div id="hcb-self-income-div-{{$index}}">
+                                <div class="box-txt">No. of Days</div>
+                                <div class="dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                        id="no-of-days-{{$index}}" button-dropdown="member.no_of_days"
+                                        placeholder="Select Days"
+                                        ng-click="callGtag('click-dropdown','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB_no-of-days-open')"><span
+                                            class="select-cover-dropdown-txt no-days-limit-self"
+                                            ng-if="member.no_of_days !='' && member.no_of_days !='0'">{{member.no_of_days}}
+                                        </span><span class="select-cover-dropdown-txt no-days-limit-self"
+                                            ng-if="member.no_of_days =='' || member.no_of_days =='0'">Select Days
+                                        </span><span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu drop-overflow no-days-menu-self" id="self-income-menu">
+                                        <li class="li-item-text-change" data-val="Select Days"
+                                            ng-click="pAC.changeDays('',$index)"><a href="javascript:void(0)">Select
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="30"
+                                            ng-click="pAC.changeDays('30',$index)"><a href="javascript:void(0)">30
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="45"
+                                            ng-click="pAC.changeDays('45',$index)"><a href="javascript:void(0)">45
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="60"
+                                            ng-click="pAC.changeDays('60',$index)"><a href="javascript:void(0)">60
+                                                Days</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center" ng-if="pAC.quoteDetails.PAQuote.PAQuoteDetails.length > 1">
+                <div class=""><button data-toggle="modal" data-target="#hcb-modal" class="dup-bene-btn-new"
+                        ng-click="callGtag('click-button','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_duplicate-HCB')">DUPLICATE
+                        BENEFITS FOR ALL</button></div>
+            </div>
+        </div>
+    </div><!-- End of Hospital Cash Benefit Section -->
+    <!-- Horizontal HR section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12 pad-top-30">
+                <hr class="style2">
+            </div>
+        </div>
+    </div><!-- End of horizontal HR section -->
+    <!-- Optional Covers Section -->
+    <div class="container">
+        <!-- Optioanl Covers Header Section -->
+        <div class="row item-block">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-2">
+                <div class="item-block-number-border"><span class="item-block-number">4</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-10">
+                <div class="item-block-content"><span class="item-block-content-header">OPTIONAL COVERS</span> <label
+                        class="arrow-switch" for="optional-cover-label"><input type="checkbox" name="pAC.optionalCovers"
+                            ng-true-value="'Y'" ng-false-value="'N'" ng-model="pAC.optionalCovers"
+                            id="optional-cover-label" ng-change="pAC.selectOptionalCover()"> <span
+                            class="arrow-switch-bg"></span></label>
+                    <div class="item-block-content-desc">Optional Covers are like riders to your core insurance policy.
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of optional covers header section -->
+        <div id="optional-covers">
+            <!-- Temporary & Total Disablement section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.TTD == 'N','box-grey': pAC.TTD == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/TTD.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div class="col-md-12">
+                                        <div class="temp-total-dis-text1">Temporary & Total Disablement <span
+                                                class="custom-popover" custom-popover><img
+                                                    class="img-responsive item-block-tool-tip-img"
+                                                    src="assets/images/tooltip_Premium.png"
+                                                    ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_TTD-i')">
+                                                <span class="custom-tooltip-text">TTD cover is available only for
+                                                    earning members max up to lower of either 2 times the annual income
+                                                    or PA sum insured. <span class="pop-close">×</span></span></span>
+                                        </div>
+                                        <div class="temp-total-dis-text2">Temporary Total Disablement provides you
+                                            Protection in the event of a disability arising from the accident.</div>
+                                    </div>
+                                    <div id="total-disablement-div" class="row collapse">
+                                        <div class="col-md-12">
+                                            <div class="panel-group responsive-panel-group" id="accordion1">
+                                                <div class="panel panel-default temp-total-dis-sel-summ-panel"
+                                                    accordion>
+                                                    <div class="panel-heading" id="panel-heading-sum-tenure1">
+                                                        <div class="row optional-cover-select-summ-panel">
+                                                            <div class="col-md-12">
+                                                                <h4 class="panel-title sec-summ-text-top-pad"><a
+                                                                        class="accordion-toggle ac-toggle collapsed sec-summ-text"
+                                                                        href="javascript:void(0)">Selection
+                                                                        Summary</a><br
+                                                                        class="hidden-lg hidden-md hidden-sm"><button
+                                                                        class="change-earn-mem-bene-btn"
+                                                                        href="#temp-total-dis" data-toggle="modal"
+                                                                        data-target="#temp-total-dis"><span
+                                                                            class="change-earn-mem-bene-btn-txt hidden-xs">Choose
+                                                                            Earning Member's Benefits</span> <span
+                                                                            class="temp-total-dis-sel-summ-btn-txt hidden-md hidden-lg hidden-sm">CHANGE
+                                                                            MEMBERS</span></button></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="ttd-collapse" class="collapse panel-collapse">
+                                                        <div class="panel-body temp-total-dis-sel-summ-panel-body mar-top-30 pad-btm-25"
+                                                            id="panel-heading-sum-tenure1">
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-6"
+                                                                    ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6 table-header"><span
+                                                                                ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer | capitalize}}</span><span
+                                                                                ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType | capitalize}}</span>
+                                                                        </div>
+                                                                        <div class="col-xs-6 table-value"><span
+                                                                                class="rupee-symbol">&#8377;</span>{{member.TTD_Suminsured}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.ttd" ng-true-value="'Y'" ng-false-value="'N'"
+                                                    ng-model="pAC.TTD" data-toggle="collapse" class="slider-checkbox"
+                                                    ng-change="pAC.changeEarningBenefitCover(pAC.TTD,'TTD','TTD_Suminsured');"
+                                                    data-target="#total-disablement-div"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Temporary & Total Disablement section -->
+            <!-- Broken Bones Benefit section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/broken_bones.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div row>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Broken Bones Benefit <span
+                                                    class="custom-popover" custom-popover><img
+                                                        class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_BBB-i')">
+                                                    <span class="custom-tooltip-text">Upto 100% payout basis nature of
+                                                        injury. <span class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2">Additional lump sum payout in case of
+                                                sustaining broken bones due to an accident</div>
+                                        </div>
+                                    </div>
+                                    <div id="brk-bon-covr" class="row collapse select-cover-panel">
+                                        <div
+                                            class="col-md-4 col-sm-6 col-xs-9 temp-total-dis-text2 temp-total-dis-sel-summ-select-cover">
+                                            <label class="temp-total-dis-text2" for="">Choose Limits</label>
+                                            <div class="dropdown"><button tabindex="10"
+                                                    class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                                    id="select-cover"
+                                                    button-dropdown="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB_suminsured"><span
+                                                        id="select-cover-dropdown-id"
+                                                        class="select-cover-dropdown-txt brk-bon-covr-limit"><span
+                                                            class="rupee-symbol">&#8377;</span>
+                                                        {{pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB_suminsured}}
+                                                    </span><span class="pull-right" aria-hidden="true"><img
+                                                            src="assets/images/icon-chevron-down.png"></span></button>
+                                                <ul class="dropdown-menu" id="select-cover-drop-down">
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBBB('100000')"
+                                                        data-val="100000"><a href="javascript:void(0)" data-for="gstin"
+                                                            data-value="show"><span class="rupee-symbol">&#8377;</span>
+                                                            100000</a></li>
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBBB('300000')"
+                                                        data-val="300000"><a href="javascript:void(0)" data-for="gstin"
+                                                            data-value="showOnclick"><span
+                                                                class="rupee-symbol">&#8377;</span> 300000</a></li>
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBBB('500000')"
+                                                        data-val="500000"><a href="javascript:void(0)" data-for="gstin"
+                                                            data-value="showOnclick"><span
+                                                                class="rupee-symbol">&#8377;</span> 500000</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.BBB"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB"
+                                                    ng-change="pAC.optionalCoversChange('BBB',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BBB,false)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#brk-bon-covr"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Broken Bones Benefit section -->
+            <!-- Accidental In-Patient Hospitalization  -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCIP == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCIP == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/accidental_inPatient.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div row>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Accidental In-Patient Hospitalization
+                                                <span class="custom-popover" custom-popover><img
+                                                        class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_AIPH-i')">
+                                                    <span class="custom-tooltip-text">Covered up to 1% of Accidental
+                                                        Death Sum Insured or Rs. 1 Lakh whichever In-patient is higher.
+                                                        <span class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2">Cover your in-patient hospitalisation
+                                                medical expenses in case of an accident.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.HCIP"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCIP"
+                                                    ng-change="pAC.optionalCoversChange('HCIP',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCIP,true)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#acc-pat-hos"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Accidental In-Patient Hospitalization  -->
+            <!-- Accidental Medical Expenses Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCNIP == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCNIP == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/Accident_cover.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Accidental Medical Expenses</div>
+                                            <div class="temp-total-dis-text2">Get OPD benefit including Day Care incase
+                                                of an accident</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.HCNIP"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCNIP"
+                                                    ng-change="pAC.optionalCoversChange('HCNIP',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].HCNIP,true)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#acc-med-exp"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Accidental Medical Expenses Section -->
+            <!-- Burn Benefit Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/burn_benefit.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div row>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Burn Benefit <span class="custom-popover"
+                                                    custom-popover><img class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_BB-i')">
+                                                    <span class="custom-tooltip-text">Upto 100% payout basis nature of
+                                                        the burn. <span class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2">Additional lump sum payout in case of
+                                                suffering from burn injury</div>
+                                        </div>
+                                    </div>
+                                    <div id="burn-benefit" class="collapse row select-cover-panel">
+                                        <div
+                                            class="col-md-4 col-sm-6 col-xs-9 temp-total-dis-text2 temp-total-dis-sel-summ-select-cover">
+                                            <label class="temp-total-dis-text2" for="">Select Cover</label>
+                                            <div class="dropdown"><button tabindex="10"
+                                                    class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                                    type="button" id="select-cover"
+                                                    button-dropdown="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB_suminsured"><span
+                                                        id="select-cover-dropdown-id"
+                                                        class="select-cover-dropdown-txt"><span
+                                                            class="rupee-symbol">&#8377;</span>
+                                                        {{pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB_suminsured}}
+                                                    </span><span class="pull-right" aria-hidden="true"><img
+                                                            src="assets/images/icon-chevron-down.png"></span></button>
+                                                <ul class="dropdown-menu" id="select-cover-drop-down">
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBB('100000')"
+                                                        data-val="100000"><a href="javascript:void(0)"><span
+                                                                class="rupee-symbol">&#8377;</span> 100000</a></li>
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBB('200000')"
+                                                        data-val="200000"><a href="javascript:void(0)"><span
+                                                                class="rupee-symbol">&#8377;</span> 200000</a></li>
+                                                    <li class="li-item-text-change" ng-click="pAC.changeBB('300000')"
+                                                        data-val="300000"><a href="javascript:void(0)"><span
+                                                                class="rupee-symbol">&#8377;</span> 300000</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.BB"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB"
+                                                    ng-change="pAC.optionalCoversChange('BB',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].BB,false)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#burn-benefit"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Burn Benefit Section -->
+            <!-- Adventure Sports Cover Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].AS == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].AS == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/Adventure_sports.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Adventure Sports Cover <span
+                                                    class="custom-popover" custom-popover><img
+                                                        class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_ASC-i')">
+                                                    <span class="custom-tooltip-text">Benefit up to Accidental Death
+                                                        Cover Sum Insured, maximum up to Rs. 10 Lakh <span
+                                                            class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2">Get protection in the event of accidents
+                                                caused during adventure sports related activities.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.AS"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].AS"
+                                                    ng-change="pAC.optionalCoversChange('AS',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].AS,true)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#adv-sprt-cov"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Adventure Sports Cover Section -->
+            <!-- Coma Benefit Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].CB == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].CB == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/coma.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Coma Benefit <span class="custom-popover"
+                                                    custom-popover><img class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_CB-i')">
+                                                    <span class="custom-tooltip-text">Lumpsum payout will equal the
+                                                        amount you have opted for. <span
+                                                            class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2">Additional lump sum payout in case of coma
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.CB"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].CB"
+                                                    ng-change="pAC.optionalCoversChange('CB',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].CB,true)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="#coma-benefit"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Coma Benefit Section -->
+            <!-- Worldwide Emergency Assistance Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WWEAS == 'N','box-grey': pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WWEAS == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/Worldwide.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div row>
+                                        <div class="col-md-12">
+                                            <div class="temp-total-dis-text1">Worldwide Emergency Assistance Services
+                                                (including Air Ambulance) <span class="custom-popover"
+                                                    custom-popover><img class="img-responsive item-block-tool-tip-img"
+                                                        src="assets/images/tooltip_Premium.png"
+                                                        ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_WEAS-i')">
+                                                    <span class="custom-tooltip-text">This includes cost of Air
+                                                        Ambulance in case it is required. <span
+                                                            class="pop-close">×</span></span></span></div>
+                                            <div class="temp-total-dis-text2 air-ambulane-text">Get emergency worldwide
+                                                ambulance cover</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.WWEAS"
+                                                    ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WWEAS"
+                                                    ng-change="pAC.optionalCoversChange('WWEAS',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WWEAS,true)"
+                                                    ng-true-value="'Y'" ng-false-value="'N'" data-toggle="collapse"
+                                                    class="slider-checkbox" data-target="javascript:void(0)"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Worldwide Emergency Assistance Section -->
+            <!-- EMI Protect Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.EMIPCover == 'N','box-grey': pAC.EMIPCover == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/EMI_protect.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div class="col-md-12">
+                                        <div class="temp-total-dis-text1">EMI Protect (Total of 3 EMIs) <span
+                                                class="custom-popover" custom-popover><img
+                                                    class="img-responsive item-block-tool-tip-img"
+                                                    src="assets/images/tooltip_Premium.png"
+                                                    ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_EMIP-i')">
+                                                <span class="custom-tooltip-text">ABHI shall pay the upto 3 EMIs incase
+                                                    of  Accidental Death or Permanent Disabilities preventing the person
+                                                    from performing duty of employment or occupation for a minimum
+                                                    period of 1 month.  <span class="pop-close">×</span></span></span>
+                                        </div>
+                                        <div class="temp-total-dis-text2">Get protection for your existing EMIs for any
+                                            type of loans.</div>
+                                    </div>
+                                    <div id="emi-protect" class="row collapse">
+                                        <div class="col-md-12">
+                                            <div class="panel-group" id="accordion1">
+                                                <div class="panel panel-default temp-total-dis-sel-summ-panel"
+                                                    accordion>
+                                                    <div class="panel-heading" id="panel-heading-sum-tenure1">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h4 class="panel-title sec-summ-text-top-pad"><a
+                                                                        class="accordion-toggle ac-toggle collapsed sec-summ-text"
+                                                                        href="javascript:void(0)">Selection
+                                                                        Summary</a><br
+                                                                        class="hidden-lg hidden-md hidden-sm"><button
+                                                                        class="change-earn-mem-bene-btn"
+                                                                        href="#emi-protect-modal" data-toggle="modal"
+                                                                        data-target="#emi-protect-modal"><span
+                                                                            class="change-earn-mem-bene-btn-txt hidden-xs">Choose
+                                                                            Earning Member's Benefits</span> <span
+                                                                            class="temp-total-dis-sel-summ-btn-txt hidden-md hidden-lg hidden-sm">CHANGE
+                                                                            MEMBERS</span></button></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="emi-protect-collapse" class="collapse panel-collapse">
+                                                        <div class="panel-body temp-total-dis-sel-summ-panel-body mar-top-30 pad-btm-25"
+                                                            id="panel-heading-sum-tenure1">
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-6"
+                                                                    ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6 table-header"><span
+                                                                                ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer | capitalize}}</span><span
+                                                                                ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType | capitalize}}</span>
+                                                                        </div>
+                                                                        <div class="col-xs-6 table-value"><span
+                                                                                class="rupee-symbol">&#8377;</span>{{member.EMIP_Suminsured}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.EMIP" ng-model="pAC.EMIPCover" ng-true-value="'Y'"
+                                                    ng-false-value="'N'" data-toggle="collapse"
+                                                    ng-change="pAC.changeEarningBenefitCover(pAC.EMIPCover,'EMIP','EMIP_Suminsured')"
+                                                    class="slider-checkbox" data-target="#emi-protect"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of EMI Protect Section -->
+            <!-- Loan Protect Section -->
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-11 col-sm-11 col-xs-12 pad-cont">
+                        <div class="temp-total-dis-box box"
+                            ng-class="{'box-white': pAC.LoanProtectCover == 'N','box-grey': pAC.LoanProtectCover == 'Y'}">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="temp-total-dis-img-container">
+                                        <div class="temp-disa-left-bdr"><img class="temp-total-dis-img"
+                                                src="assets/images/loan_protect.png"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-xs-10">
+                                    <div class="col-md-12">
+                                        <div class="temp-total-dis-text1">Loan Protect <span class="custom-popover"
+                                                custom-popover><img class="img-responsive item-block-tool-tip-img"
+                                                    src="assets/images/tooltip_Premium.png"
+                                                    ng-click="callGtag('click-icon','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_LP-i')">
+                                                <span class="custom-tooltip-text">ABHI shall pay the outstanding loan
+                                                    amount incase of Accidental Death or Permanent Total Disabilities.
+                                                    <span class="pop-close">×</span></span></span></div>
+                                        <div class="temp-total-dis-text2">Get protection for your entire outstanding
+                                            loan amount</div>
+                                    </div>
+                                    <div id="loan-protect" class="row collapse">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="panel-group" id="accordion1">
+                                                <div class="panel panel-default temp-total-dis-sel-summ-panel"
+                                                    accordion>
+                                                    <div class="panel-heading" id="panel-heading-sum-tenure1">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                <h4 class="panel-title sec-summ-text-top-pad"><a
+                                                                        class="accordion-toggle ac-toggle collapsed sec-summ-text"
+                                                                        href="javascript:void(0)">Selection
+                                                                        Summary</a><br
+                                                                        class="hidden-lg hidden-md hidden-sm"><button
+                                                                        class="change-earn-mem-bene-btn"
+                                                                        href="#loan-protect-modal" data-toggle="modal"
+                                                                        data-target="#loan-protect-modal"><span
+                                                                            class="change-earn-mem-bene-btn-txt hidden-xs">Choose
+                                                                            Earning Members</span> <span
+                                                                            class="temp-total-dis-sel-summ-btn-txt hidden-md hidden-lg hidden-sm">CHANGE
+                                                                            MEMBERS</span></button></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="loan-protect-collapse" class="collapse panel-collapse">
+                                                        <div class="panel-body temp-total-dis-sel-summ-panel-body mar-top-30 pad-btm-25"
+                                                            id="panel-heading-sum-tenure1">
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-6"
+                                                                    ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6 table-header"><span
+                                                                                ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer | capitalize}}</span><span
+                                                                                ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType | capitalize}}</span>
+                                                                        </div>
+                                                                        <div class="col-xs-6 table-value"><span
+                                                                                class="rupee-symbol">&#8377;</span>{{member.LP_Suminsured}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 tenure-box-pad switch-chk-div">
+                                    <div class="mar-top-75">
+                                        <div class="mar-0-auto text-center"><label class="switch"><input type="checkbox"
+                                                    name="pAC.LP" ng-model="pAC.LoanProtectCover" ng-true-value="'Y'"
+                                                    ng-false-value="'N'" data-toggle="collapse" class="slider-checkbox"
+                                                    ng-change="pAC.changeEarningBenefitCover(pAC.LoanProtectCover,'LP','LP_Suminsured')"
+                                                    data-target="#loan-protect"> <span
+                                                    class="slider round"></span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Loan Protect Section -->
+        </div>
+    </div><!-- End of optioanl covers section -->
+    <!-- Horizontal HR section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-12">
+                <hr class="style2">
+            </div>
+        </div>
+    </div><!-- End of horizontal HR section -->
+    <!-- Wellness Coach Selection Section -->
+    <div class="container">
+        <div class="row item-block1">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-2">
+                <div class="item-block-number-border"><span class="item-block-number">5</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-10">
+                <div class="item-block-content"><span class="item-block-content-header">WELNESS COACH</span> <span
+                        class="mar-l-15"><label class="switch mar-0-auto"><input type="checkbox" name="pAC.WELL_Coach"
+                                ng-model="pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WELLNESS_COACH" ng-true-value="'Y'"
+                                ng-false-value="'N'"
+                                ng-change="pAC.optionalCoversChange('WELLNESS_COACH',pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WELLNESS_COACH,true);callGtag('click-radio','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_wellness-coach_['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].WELL_Coach+']')"
+                                id="well_coach-chekbox"> <span class="slider round"></span></label></span>
+                    <div class="item-block-content-desc">You can engage with experts in areas such as weight management,
+                        fitness, tobacco cessation and nutrition</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of wellness coach selection section -->
+    <!-- Cross selection section -->
+    <div class="container-fluid cross-sell-bg">
+        <cross-sell-quote cross="pAC" ng-if="pAC.membersDetails.length > 0"></cross-sell-quote>
+        <div class="row cross-sell-submit-btn">
+            <div class="col-md-12 pad-l-r-0">
+                <hr class="last-btn-width">
+            </div>
+            <div class="container">
+                <div class="col-md-12 col-xs-12">
+                    <div class="col-md-6"><button class="btn btn-primary qq-save-btn qq-save-btn-left"
+                            id="pa-back-to-quotation"
+                            ng-click="pAC.backFunction();callGtag('click-button', 'customize-quote' ,'pa-cust-quote_[pa-customize_back-quote]')">Back
+                            to Quotation <img
+                                src="http://d33wubrfki0l68.cloudfront.net/41425695ddcc6b87684485af5347544f81cdb945/b0fb3/images/arrow-back.png"
+                                class="pull-left"></button></div>
+                    <div class="col-md-6 text-right margin-top-mob"><button
+                            class="proceed-to-application btn btn-primary qq-save-btn" id="pa-customize-quote-submit"
+                            ng-click="pAC.pAQuoteSubmit($event);callGtag('click-button', 'customize-quote' ,'pa-cust-quote_[pa-customize_quote-submit]')">
+                            Proceed
+                             <img
+                                src="http://d33wubrfki0l68.cloudfront.net/480b8f26715697b0044b728e23d9e4f86ea0f998/e33c9/images/arrow.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of cross selection section -->
+    <!-- HCB Modal -->
+    <div class="app-modal modal" id="hcb-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-hdr"><button type="button" class="close" data-dismiss="modal"><img
+                            src="assets/images/close-w.png" class="modal-close-btn"
+                            ng-click="callGtag('click-icon-x','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-duplicate-popup-close')"></button>
+                    <div class="modal-hdr-txt">Duplicate Hospital Cash Benefits for all members</div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="modal-bind-text padding-btm-20">
+                            <p>Select the daily cash limit & days which you want to replicate for all members</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="modal-combo-txt-hcb">Daily Cash Limit</div>
+                                <div class="dropdown sum-insured-members-block-dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                        id="hcb-daily-cash-btn" button-dropdown="pAC.duplicatePDL"
+                                        ng-click="callGtag('click-dropdown','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-duplicate-popup_daily-cash-limit_dropdown-open')"><span
+                                            id="hcb-daily-cash-btn" class="dup-benefit-cash-limit"
+                                            ng-if="pAC.duplicatePDL != '0'"><span class="rupee-symbol">₹</span>
+                                            {{pAC.duplicatePDL}} </span><span id="hcb-daily-cash-btn"
+                                            class="dup-benefit-cash-limit" ng-if="pAC.duplicatePDL == '0'"><span
+                                                class="rupee-symbol">₹</span> Select Cash Limit </span><span
+                                            class="pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu dup-benefit-cash-limit-menu" id="self-insured-menu">
+                                        <li class="li-item-text-change" data-val="0"><a href="javascript:void(0)"><span
+                                                    class="rupee-symbol">&#8377;</span> Select Cash Limit</a></li>
+                                        <li class="li-item-text-change" data-val="500"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                500</a></li>
+                                        <li class="li-item-text-change" data-val="1000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                1000</a></li>
+                                        <li class="li-item-text-change" data-val="2000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                2000</a></li>
+                                        <li class="li-item-text-change" data-val="3000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                3000</a></li>
+                                        <li class="li-item-text-change" data-val="4000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                4000</a></li>
+                                        <li class="li-item-text-change" data-val="5000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                5000</a></li>
+                                        <li class="li-item-text-change" data-val="10000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                10000</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="modal-combo-txt-hcb">No. of Days</div>
+                                <div class="dropdown sum-insured-members-block-dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey" type="button"
+                                        id="self-insured-btn" button-dropdown="pAC.duplicatenNOD"
+                                        ng-click="callGtag('click-dropdown','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-duplicate-popup_no-of-days_dropdown-open')"><span
+                                            id="self-insured-txt" class="dup-benefit-no-days"
+                                            ng-if="pAC.duplicatenNOD != '0'">{{pAC.duplicatenNOD}} Days </span><span
+                                            id="self-insured-txt" class="dup-benefit-no-days"
+                                            ng-if="pAC.duplicatenNOD == '0'">Select No. of Days </span><span
+                                            class="pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu dup-benefit-no-days-menu" id="self-insured-menu">
+                                        <li class="li-item-text-change" data-val="0"><a href="javascript:void(0)">Select
+                                                No. of Days</a></li>
+                                        <li class="li-item-text-change" data-val="30"><a href="javascript:void(0)">30
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="45"><a href="javascript:void(0)">45
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="60"><a href="javascript:void(0)">60
+                                                Days</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="container-fluid"><button class="btn btn-primary modal-save-btn bg-white text-center"
+                            id="cancelHCBBtn" data-dismiss="modal"
+                            ng-click="callGtag('click-button','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-duplicate-popup_cancel')">Cancel</button>
+                        <button class="btn btn-primary modal-save-btn text-center" id="doneHCBBtn" data-dismiss="modal"
+                            ng-click="pAC.duplicateHCB();callGtag('click-button','customize-quote','pa-cust-quote_plan['+pAC.quoteDetails.PAQuote.PAQuoteDetails[0].plan+']_HCB-duplicate-popup_done')">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of HCB modal -->
+    <!-- Change Temporary and total disablement modal-->
+    <div class="modal app-modal" id="temp-total-dis" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-hdr"><button type="button" class="close" data-dismiss="modal"><img
+                            src="assets/images/close-w.png" class="modal-close-btn"></button>
+                    <div class="modal-hdr-txt">Temporary & Total Disablement</div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="chk-modal-data" ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                            <div class="pretty primary danger"><input type="checkbox" ng-model="member.TTD"
+                                    value="{{$index}}" name="check-{{$index}}" ng-true-value="'Y'" ng-false-value="'N'"
+                                    class="radio-checkbox"
+                                    ng-change="pAC.selectEarningMember(member,'TTD','TTD_Suminsured')"
+                                    id="earning-member-{{$index}}"> <label for="earning-member-{{$index}}"><i
+                                        class="default"></i> <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer}}</label>
+                                    <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType}}</label></label>
+                            </div>
+                            <div class="chk-sub-data" ng-if="member.TTD == 'Y'">
+                                <div class="row">
+                                    <div class="col-sm-6"><label class="earn-mem-bene-lbl-txt">Annual Income</label>
+                                        <div class="input-group"><span class="input-group-addon">₹</span> <input
+                                                type="text" class="form-control earn-mem-bene-mod-box-txt"
+                                                ng-model="member.AnnualIncome" maxlength="9"
+                                                ng-blur="pAC.calculateAnnualIncome(member)"></div>
+                                    </div>
+                                    <div class="col-sm-6 temp-total-dis-text2"><label class="temp-total-dis-text2"
+                                            for="">Weekly Benefit Limit</label>
+                                        <div class="dropdown"><button tabindex="10"
+                                                class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                                type="button" id="select-cover"
+                                                button-dropdown="member.TTD_Suminsured"><span
+                                                    id="select-cover-dropdown-id"
+                                                    class="select-cover-dropdown-txt"><span
+                                                        class="rupee-symbol">&#8377;</span> <span
+                                                        ng-if="member.TTD_Suminsured != '' && member.TTD_Suminsured != '0'">{{member.TTD_Suminsured}}</span><span
+                                                        ng-if="member.TTD_Suminsured == '' || member.TTD_Suminsured == '0'">Select
+                                                        Benefit</span></span> <span class="pull-right"
+                                                    aria-hidden="true"><img
+                                                        src="assets/images/icon-chevron-down.png"></span></button>
+                                            <ul class="dropdown-menu" id="select-cover-drop-down">
+                                                <li class="li-item-text-change" ng-repeat="ttd_cover in pAC.ttd_covers"
+                                                    ng-click="pAC.selectOCEarningMembers(ttd_cover,member,'TTD','TTD_Suminsured')"
+                                                    data-val="{{ttd_cover}}"
+                                                    ng-if="ttd_cover < (member.AnnualIncome * 2 /100)"><a
+                                                        href="javascript:void(0)">{{ttd_cover}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="container-fluid"><button class="btn btn-primary modal-save-btn bg-white text-center"
+                                id="cancelBtn" data-dismiss="modal">CANCEL</button> <button
+                                class="btn btn-primary modal-save-btn text-center" data-dismiss="modal">DONE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of change Temporary and total disablement modal-->
+    <!-- EMI Protect modal-->
+    <div class="modal app-modal" id="emi-protect-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-hdr"><button type="button" class="close" data-dismiss="modal"><img
+                            src="assets/images/close-w.png" class="modal-close-btn"></button>
+                    <div class="modal-hdr-txt">EMI Protect</div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="chk-modal-data" ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                            <div class="pretty primary danger"><input type="checkbox" ng-model="member.EMIP"
+                                    value="{{$index}}" name="check-{{$index}}" ng-true-value="'Y'" ng-false-value="'N'"
+                                    class="radio-checkbox"
+                                    ng-change="pAC.selectEarningMember(member,'EMIP','EMIP_Suminsured')"
+                                    id="ep-earning-member-{{$index}}"> <label for="ep-earning-member-{{$index}}"><i
+                                        class="default"></i> <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer}}</label>
+                                    <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType}}</label></label>
+                            </div>
+                            <div class="chk-sub-data" ng-if="member.EMIP == 'Y'">
+                                <div class="row">
+                                    <div class="col-sm-6"><label class="earn-mem-bene-lbl-txt">Annual Income</label>
+                                        <div class="input-group"><span class="input-group-addon">₹</span> <input
+                                                type="text" class="form-control earn-mem-bene-mod-box-txt"
+                                                ng-model="member.AnnualIncome" maxlength="9"
+                                                ng-blur="pAC.calculateAnnualIncome(member)"></div>
+                                    </div>
+                                    <div class="col-sm-6 temp-total-dis-text2"><label class="temp-total-dis-text2"
+                                            for="">Weekly Benefit Limit</label>
+                                        <div class="dropdown"><button tabindex="10"
+                                                class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                                type="button" id="select-cover"
+                                                button-dropdown="member.EMIP_Suminsured"><span
+                                                    id="select-cover-dropdown-id"
+                                                    class="select-cover-dropdown-txt"><span
+                                                        class="rupee-symbol">&#8377;</span> <span
+                                                        ng-if="member.EMIP_Suminsured != '' && member.EMIP_Suminsured != '0'">{{member.EMIP_Suminsured}}</span><span
+                                                        ng-if="member.EMIP_Suminsured == '' || member.EMIP_Suminsured == '0'">Select
+                                                        Benefit</span> </span><span class="pull-right"
+                                                    aria-hidden="true"><img
+                                                        src="assets/images/icon-chevron-down.png"></span></button>
+                                            <ul class="dropdown-menu" id="select-cover-drop-down">
+                                                <li class="li-item-text-change"
+                                                    ng-repeat="emi_cover in pAC.emi_protect_covers"
+                                                    ng-click="pAC.selectOCEarningMembers(emi_cover,member,'EMIP','EMIP_Suminsured')"
+                                                    data-val="{{emi_cover}}"><a
+                                                        href="javascript:void(0)">{{emi_cover}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="container-fluid"><button class="btn btn-primary modal-save-btn bg-white text-center"
+                                id="cancelBtn" data-dismiss="modal">CANCEL</button> <button
+                                class="btn btn-primary modal-save-btn text-center" data-dismiss="modal">DONE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of EMI Protect modal-->
+    <!-- Loan Protect modal-->
+    <div class="modal app-modal" id="loan-protect-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-hdr"><button type="button" class="close" data-dismiss="modal"><img
+                            src="assets/images/close-w.png" class="modal-close-btn"></button>
+                    <div class="modal-hdr-txt">Loan Protect</div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="chk-modal-data" ng-repeat="member in pAC.quoteDetails.PAQuote.PAQuoteDetails">
+                            <div class="pretty primary danger"><input type="checkbox" ng-model="member.LP"
+                                    value="{{$index}}" name="check-{{$index}}" ng-true-value="'Y'" ng-false-value="'N'"
+                                    class="radio-checkbox"
+                                    ng-change="pAC.selectEarningMember(member,'LP','LP_Suminsured')"
+                                    id="lp-earning-member-{{$index}}"> <label for="lp-earning-member-{{$index}}"><i
+                                        class="default"></i> <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer}}</label>
+                                    <label class="modal-radio-button-label ttd-modal-chk"
+                                        ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType}}</label></label>
+                            </div>
+                            <div class="chk-sub-data" ng-if="member.LP == 'Y'">
+                                <div class="row">
+                                    <div class="col-sm-6"><label class="earn-mem-bene-lbl-txt">Annual Income</label>
+                                        <div class="input-group"><span class="input-group-addon">₹</span> <input
+                                                type="text" class="form-control earn-mem-bene-mod-box-txt"
+                                                ng-model="member.AnnualIncome" maxlength="9"
+                                                ng-blur="pAC.calculateAnnualIncome(member)"></div>
+                                    </div>
+                                    <div class="col-sm-6 temp-total-dis-text2"><label class="temp-total-dis-text2"
+                                            for="">Weekly Benefit Limit</label>
+                                        <div class="dropdown"><button tabindex="10"
+                                                class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                                type="button" id="select-cover"
+                                                button-dropdown="member.LP_Suminsured"><span
+                                                    id="select-cover-dropdown-id"
+                                                    class="select-cover-dropdown-txt"><span
+                                                        class="rupee-symbol">&#8377;</span> <span
+                                                        ng-if="member.LP_Suminsured != '' && member.LP_Suminsured != '0'">{{member.LP_Suminsured}}</span><span
+                                                        ng-if="member.LP_Suminsured == '' || member.LP_Suminsured == '0'">Select
+                                                        Benefit</span></span>
+                                                <div class="dis-in dropdown-caret glyphicon glyphicon-chevron-down redColor"
+                                                    aria-hidden="true"></div>
+                                            </button>
+                                            <ul class="dropdown-menu" id="select-cover-drop-down">
+                                                <li class="li-item-text-change"
+                                                    ng-repeat="loan_cover in pAC.loan_protect_covers"
+                                                    ng-click="pAC.selectOCEarningMembers(loan_cover,member,'LP','LP_Suminsured')"
+                                                    data-val="{{loan_cover}}"
+                                                    ng-if="loan_cover < ((member.suminsured+loan_cover)*15)"><a
+                                                        href="javascript:void(0)">{{loan_cover}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="container-fluid"><button class="btn btn-primary modal-save-btn bg-white text-center"
+                                id="cancelBtn" data-dismiss="modal">CANCEL</button> <button
+                                class="btn btn-primary modal-save-btn text-center" data-dismiss="modal">DONE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of Loan Protect modal-->
+</section>
+<addmember addctrl="pAC" childcount="4"></addmember><!-- End of PA customize quote page section -->

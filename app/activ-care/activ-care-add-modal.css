@@ -1,0 +1,306 @@
+#change-group-member .modal-title,
+#change-group-member .modal-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal
+}
+
+#change-group-member {
+    z-index: 9999
+}
+
+#change-group-member .modal-width {
+    width: 900px
+}
+
+#change-group-member .modal-title {
+    font-size: 24px;
+    line-height: 1.17;
+    color: #000
+}
+
+#change-group-member.app-modal button.close {
+    margin: -16px -15px
+}
+
+#change-group-member .modal-header {
+    padding: 15px 15px 0;
+    border-bottom: none
+}
+
+#change-group-member .modal-txt {
+    font-size: 16px;
+    line-height: 1.25;
+    color: #6c7174;
+    padding-bottom: 5px
+}
+
+#change-group-member .modal-txt-red {
+    color: #d0021b
+}
+
+#change-group-member .modal-body {
+    background: #f6f6f6;
+    max-height: calc(100vh - 250px)
+}
+
+#change-group-member .pd-area {
+    background-color: #f6f6f6;
+    padding: 13px 16px 0 13px
+}
+
+#change-group-member .policy-type-txt {
+    font-family: PF-Handbook-Pro-Bold;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-bottom: 19.5px
+}
+
+#change-group-member .box-txt,
+#change-group-member .btn-save,
+#change-group-member .members .container-new {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal
+}
+
+#change-group-member .members .container-new {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: normal;
+    color: #000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: .7
+}
+
+#change-group-member .members .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+#change-group-member .members .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 2px solid #cdcece
+}
+
+#change-group-member .members .checkmark:focus,
+#change-group-member .members .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #fff;
+    border: 2px solid #cdcece;
+    outline: 0
+}
+
+#change-group-member .members .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+#change-group-member .members .container-new input:checked~.checkmark:after {
+    display: block
+}
+
+#change-group-member .members .container-new .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+#change-group-member .members .protecting .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #660d0a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+#change-group-member .btn-save {
+    font-size: 20px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    background-color: #c7222a;
+    width: 108px;
+    height: 44px;
+    box-shadow: none;
+    border: none
+}
+
+#change-group-member .btn-save:focus {
+    outline: 0
+}
+
+#change-group-member .grey-max-height::-webkit-scrollbar {
+    width: 10px
+}
+
+#change-group-member .grey-max-height::-webkit-scrollbar-track {
+    background: #f1f1f1
+}
+
+#change-group-member .grey-max-height::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+    border-radius: 50px
+}
+
+#change-group-member .grey-max-height::-webkit-scrollbar-thumb:hover {
+    background: #555
+}
+
+#change-group-member .mar-top-10 {
+    margin-top: 10px
+}
+
+#change-group-member .age-input-pad-btm {
+    padding-bottom: 16px
+}
+
+#change-group-member .pad-l-0-5 {
+    padding-left: 0;
+    padding-right: 5px
+}
+
+#change-group-member .box-txt {
+    font-size: 15px;
+    letter-spacing: .2px;
+    color: #666;
+    padding-bottom: 5px
+}
+
+#change-group-member .age-input .input-group-addon,
+#change-group-member .age-txt-box,
+#change-group-member .yellow-note-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal
+}
+
+#change-group-member .age-input .form-control {
+    height: 44px;
+    border: .5px solid #cdcece;
+    box-shadow: none;
+    border-right: 0
+}
+
+#change-group-member .age-txt-box {
+    font-size: 18px;
+    line-height: .56;
+    text-align: right;
+    color: #000
+}
+
+#change-group-member .age-input .input-group-addon {
+    font-size: 18px;
+    line-height: normal;
+    color: #666;
+    background-color: #fff;
+    border: .5px solid #cdcece;
+    border-left: 0
+}
+
+#change-group-member .grey-max-height {
+    max-height: 300px;
+    overflow-y: scroll
+}
+
+#change-group-member .yellow-note-txt {
+    font-size: 15px;
+    line-height: 1.13;
+    color: #f5a623;
+    padding-top: 7px
+}
+
+#change-group-member .modal-btn {
+    padding-top: 20px;
+    float: left
+}
+
+@media(max-width:991px) {
+    #change-group-member .modal-body {
+        max-height: calc(100vh - 330px)
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    #change-group-member .modal-width {
+        width: 95%
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    #change-group-member .mob-pad-l-r-0 {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    #change-group-member .grey-max-height {
+        max-height: 265px;
+        overflow-y: scroll
+    }
+
+    #change-group-member .modal-width {
+        width: 95%
+    }
+
+    #change-group-member .modal-header {
+        padding: 10px 10px 15px;
+        border-bottom: none
+    }
+
+    #change-group-member .members .container-new {
+        font-size: 16px
+    }
+
+    #change-group-member .btn-save {
+        width: 100%;
+        text-align: left
+    }
+
+    #change-group-member .modal-header .close {
+        margin: -10px
+    }
+
+    #change-group-member .pad-l-0-5 {
+        padding-bottom: 10px;
+        padding-right: 0
+    }
+}

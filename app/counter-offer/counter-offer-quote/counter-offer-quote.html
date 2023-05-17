@@ -1,0 +1,199 @@
+<section>
+    <div class="container-fluid pad-l-r-0">
+        <div class="offer-details-bg">
+            <div class="offer-details">
+                <div class="notification">
+                    <span><img src="assets/images/green-tick.png" class="not-img"> Our team has considered your request and
+                        created a new offer for you</span>
+                </div>
+                <div class="details-wrapper">
+                    <h2 class="details-title">Your plan details</h2>
+                    <div class="row mar-0">
+                        <div class="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5 col-xxl-5 pad-l-0">
+                            <div class="premium-payable">
+                                <p class="head">Additional Premium Payable</p>
+                                <!-- class="amount" -->
+                                <p ng-class="parseIntString(offerDetails[0].TotalLoadingAmount) > 0?'alter-amount':'amount'">₹{{offerDetails[0].TotalLoadingAmount | INR}}<span> (inclusive of GST)<span ng-if="parseIntString(offerDetails[0].TotalLoadingAmount) > 0">** </span></span></p>
+                                <!-- <p class="alter-amount">₹1,562/yr <span>(inclusive of GST)** </span></p> -->
+                            </div>
+                        </div>
+                        <!-- <div ng-if="parseIntString(offerDetails[0].RefundAmount) <= 0"
+                            class="col-4 col-sm-4 col-md-5 col-lg-5 col-xl-5 col-xxl-5 pad-l-0 mob-pad-r-0 mob-display">
+                            <div class="premium-payable">
+                                <p class="head">Refund Payable</p>
+                                <p class="amount">₹ {{offerDetails[0].RefundAmount | INR}}</p>
+                            </div>
+                        </div> -->
+                        <div ng-if="parseIntString(offerDetails[0].RefundAmount) > 0" class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 pad-l-0">
+                            <div class="premium-payable">
+                                <p class="head">Refund Amount Payable</p>
+                                <p class="amount">₹{{offerDetails[0].RefundAmount | INR}} <span>(inclusive of GST)</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-details-wrap">
+                        <h4 class="green-text" ng-if="parseIntString(offerDetails[0].TotalLoadingAmount) <= 0">Congratulations! Your premium has not changed</h4>
+                        <p class="content" ng-if="parseIntString(offerDetails[0].TotalLoadingAmount) <= 0">However, there are changes in your policy coverage details. Please view
+                            the premium breakdown before proceeding.</p>
+                        <h4 class="yellow-text" ng-if="parseIntString(offerDetails[0].TotalLoadingAmount) > 0">** Your premium has been altered</h4>
+                        <p class="content" ng-if="parseIntString(offerDetails[0].TotalLoadingAmount) > 0">There are changes in your policy coverage details. Please view the premium breakdown before proceeding.</p>
+                        <div class="custom-accordian">
+                            <h3 class="title">Members Details</h3>
+                            <div class="member" ng-repeat="member in offerDetails">
+                                <h4 class="name">{{member.MemberName}} ({{member.RelationWithProposer =='Self'?'Self/Proposer':member.RelationWithProposer}}) <span class="right-text" ng-class="{'rejected-text': member.AcceptRejectFlag == 'R'}">{{member.MemberSubStatus}}</span></h4>
+                                <p class="reason">REASON:</p>
+                                <p class="desc">{{member.UW_Remarks}}</p>
+                            </div>
+                        </div>
+                        
+                        <!-- <div class="member">
+                            <h4 class="name">Monal Sodawalla (Spouse) <span class="right-text">Accepted with
+                                    PED</span></h4>
+                            <p class="reason">REASON:</p>
+                            <p class="desc">Severe obesity; BMI</p>
+                        </div>
+                        <div class="member rejected">
+                            <h4 class="name">Mahesh Sodawalla (Son) <span
+                                    class="right-text rejected-text">Rejected</span></h4>
+                            <p class="reason">REASON:</p>
+                            <p class="desc">Severe obesity</p>
+                        </div> -->
+                        <div class="view-more" ng-click="showHideMember(0)" ng-class="{'hide': memberView[0].show}">View less <i class="fa fa-angle-up"></i></div>
+                        <div class="view-more" ng-click="showHideMember(0)" ng-class="{'hide': !memberView[0].show}">View more <i class="fa fa-angle-down"></i></div>
+                    </div>
+                </div>
+
+                <hr />
+                
+                <div class="details-wrapper">
+                    <div class="disclaimer">
+                        <!-- <input type="checkbox" id="dis" name="dis" value="dis">
+                        <label for="dis" class="dis-label"> Disclaimer</label> -->
+                        <label class="checkbox-label-grey feature-head">Disclaimer
+                            <input type="checkbox" ng-model="dis" >
+                            <span class="checkmark"></span>
+                        </label>
+                        <a class="show-details" ng-click="showHideMember(1)" >Show details 
+                            <i class="fa fa-angle-down" ng-class="{'hide': !memberView[1].show}"></i>
+                            <i class="fa fa-angle-up" ng-class="{'hide': memberView[1].show}"></i>
+                        </a>
+                    </div>
+                    <div class="custom-accordian">
+                        <div class="des-details">
+                            As per IRDAI issuance of e-Insurance Policy regulations of 2016, the proposal form for an
+                            insurance policy filled in an electronic form will carry an electronic signture. Please
+                            provide the details below for us to obtain your electronic signature using your Mobile no
+                            and OTP sent to your registered mobile number.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="pos-relative h-45">
+                    <input type="text" name="reject" class="condition-btn" placeholder="Specify your condition">
+                    <div class="specify-con"></div>
+                </div> -->
+
+                <!-- data-toggle="modal" data-target="#thankyouModal" -->
+
+                <div class="btn-class">
+                    <a class="accept-btn" ng-class="{'accept-btn-active':dis}"  ng-disabled="!dis" ng-click="paymentDone()">I accept this offer </a>
+                    <a class="reject-btn" data-toggle="modal" data-target="#rejectModal">I do not accept this
+                        offer</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade rejectmodal" id="rejectModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="assets/images/close-img.png" alt="close-img" class="reject-closeimg" data-dismiss="modal"/>
+                <div class="sorry-wrap">
+                <div class="text-center">
+                    <img src="assets/images/sorry-img.png" alt="image">
+                </div>
+                <h2 class="reject-title">We’re sorry to see you go, {{offerDetails[0].MemberName}}</h2>
+                <p class="reject-text">Please tell us why this offer was not acceptable to you. 
+                    <!-- <a class="reject-reconsider-link">Would you like to reconsider?</a> -->
+                    <!-- <img src="assets/images/arrow.png" alt="arrow" /> -->
+                </p>
+                <form class="reject-form">
+                    <div class="row mar-0">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-l-0 mob-pad-0">
+                            <label class="checkbox-label">Counter offer premium on higher side
+                                <input type="checkbox" ng-model="high_premium">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-r-0 mob-pad-0">
+                            <label class="checkbox-label">Alternate products available in market at the same premium
+                                <input type="checkbox" ng-model="alternate_products">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-l-0 mob-pad-0">
+                            <label class="checkbox-label">Product or Plan change
+                                <input type="checkbox" ng-model="plan_change">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-r-0 mob-pad-0">
+                            <label class="checkbox-label">Change of mind
+                                <input type="checkbox" ng-model="mind_change">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-l-0 mob-pad-0">
+                            <label class="checkbox-label">Not satisfied with the counter offer decision
+                                <input type="checkbox" ng-model="not_satisfied">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-r-0 mob-pad-0">
+                            <label class="checkbox-label">Wrong premium calculation
+                                <input type="checkbox" ng-model="wrong_premium">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pad-l-0 mob-pad-0">
+                            <label class="checkbox-label">Other
+                                <input type="checkbox" ng-model="other_fb" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class=" text-center" >
+                        <div class="w-100" ng-hide="!other_fb"><input type="text" name="reject" ng-model="other_reason" class="rejectinput"
+                                placeholder="Specify your condition"></div>
+                        <button type="button" class="reject-submit-btn" ng-click="submit_fb()">Submit</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade rejectmodal thankmodal" id="thankyouModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="thank-you-wrap text-center">
+                <div class="">
+                    <img src="assets/images/thank-you-img.png" alt="image">
+                </div>
+                <h2 class="thanks-title">Thank you</h2>
+                <p class="thanks-text"> This will help us make Aditya Birla Health Insurance better for you and others. Someone from our team will be in touch with you shortly.</p>
+                <!-- <img src="assets/images/close-img.png" alt="close-img" class="thanks-closeimg" /> -->
+            </div>
+        </div>
+    </div>
+</div>

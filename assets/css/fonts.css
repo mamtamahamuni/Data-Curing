@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-style: normal;
+    src: url('../fonts/PF-Handbook-Pro/pfhandbookpro-regular.woff');
+    src: local('PFHandbookPro Regular'), local('PFHandbookProRegular'), url('../fonts/PF-Handbook-Pro/pfhandbookpro-regular.woff') format('truetype');
+}
+@font-face {
+    font-family: 'PF-Handbook-Pro-Bold';
+    font-style: normal;
+    src: url('../fonts/PF-Handbook-Pro/PFHandbookPro-Bold_35433.ttf');
+    src: local('PFHandbookPro Bold'), local('PFHandbookProBold'), url('../fonts/PF-Handbook-Pro/PFHandbookPro-Bold_35433.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PF-Handbook-Pro-Thin';
+    font-style: normal;
+    src: url('../fonts/PF-Handbook-Pro/PFHandbookPro-Thin_35441.ttf');
+    src: local('PFHandbookPro Thin'), local('PFHandbookProThin'), url('../fonts/PF-Handbook-Pro/PFHandbookPro-Thin_35441.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PF-Encore-Sans-Pro-Regular';
+    font-style: normal;
+    src: url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Reg.otf');
+    src: local('PFEncoreSansPro Regular'), local('PFEncoreSansProRegular'), url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Reg.otf') format('truetype');
+}
+@font-face {
+    font-family: 'PF-Encore-Sans-Pro-Bold';
+    font-style: normal;
+    src: url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Bold.otf');
+    src: local('PFEncoreSansPro Bold'), local('PFEncoreSansProBold'), url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Bold.otf') format('truetype');
+}
+@font-face {
+    font-family: 'PF-Encore-Sans-Pro-Thin';
+    font-style: normal;
+    src: url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Thin.otf');
+    src: local('PFEncoreSansPro Thin'), local('PFEncoreSansProThin'), url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Thin.otf') format('truetype');
+}
+
+@font-face {
+  font-family: "PFEncoreSansPro-Book";
+  font-weight: 100;
+  src: url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Book.otf');
+}
+
+@font-face {
+  font-family: "PFEncoreSansPro-Medium";
+  font-weight: 100;
+  src: url('../fonts/PF-Encore-Sans-Pro/PFEncoreSansPro-Medium.otf');
+}
+

@@ -1,0 +1,505 @@
+<section id="new-page" class="screen-full pad-l-r-0" pre-calc="preC">
+	<div class="container-fluid mob-pad-l-r-0">
+		<div class="row">
+			<form name="preC.calcPrem" novalidate="" ng-class="{'form-errors': preC.showErrors}">
+				<div class="col-md-12 col-sm-12 col-xs-12 right-side-bg-top">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="header-txt">Premium Calculator <span class="hide-on-desktop move-top"
+								ng-click="preC.moveDown()">Know More</span></div>
+					</div>
+				</div>
+				<div class="col-md-1 col-sm-1 col-xs-12 hidden-xs rotate learn-more-txt"
+					ng-mouseenter="preC.imgUrl = 'assets/images/preminum-peach-Arrow.png'"
+					ng-mouseleave="preC.imgUrl = 'assets/images/preminum-yellow-arrow.png'" ng-click="preC.moveDown()">
+					<label class="learn-more">Learn more <img ng-src="{{preC.imgUrl}}" class="img-arrow"
+							style="margin-left: 8px; color: #da9089;" width="8"></label>
+					<!-- <span class="learn-more-txt"> Learn More </span> <img src="assets/images/chevron_right.png" width="16"> -->
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12 q-box right-sect">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="col-md-12 col-sm-12 col-xs-12 screen-box" data-section="question-2" data-cnt="3"
+							data-scroll="2">
+							<div class="form-pad-btm">
+								<div class="lbl-txt">Covers for*</div>
+								<div class="q-input cover-for"><input type="text" class="showOpt dropdown-width"
+										name="coverFor" id="q2showOpt" ng-model="preC.coverTo"
+										placeholder="Pick / choose members" ng-click="preC.coversChange()"
+										readonly="readonly" required> <span
+										class="showOptChevron dropdown-arrow-pos"><img class="hidden-xs"
+											src="assets/images/chevron.png" width="16"></span><span
+										class="showOptChevron"><img src="assets/images/chevron.png" width="16"> <i
+											class="fa fa-spinner" aria-hidden="true"
+											ng-if="preC.familyConsturcts.length == 0"></i></span>
+									<ul class="hide-on-load q2showOpt popOpt main-height" data-for="q2showOpt"
+										ng-show="preC.familyConsturcts.length != 0">
+										<li ng-repeat="member in preC.familyConsturcts" data-val="{{member.Key}}"
+											ng-click="preC.memberValues(member)">{{member.Value}} <span></span></li>
+									</ul>
+									<ul class="hide-on-load otherFamilyConstruct popOpt"
+										data-for="otherFamilyConstruct">
+										<div class="ofconst">Other family construct <img src="assets/images/close-w.png"
+												class="close-other-family-construct"></div>
+										<li ng-repeat="addMember in preC.additionalMembers" data-val="D">
+											<div class="pretty primary danger"><input autocomplete="nope"
+													type="checkbox" autocomplete="off"
+													ng-model="preC.selectedMembers[addMember]" tabindex="{{$index + 1}}"
+													value="{{addMember}}" name="check-{{addMember}}"
+													class="radio-checkbox" id="add-member-{{$index}}" data-for="">
+												<label for="add-member-{{$index}}"><i class="default"></i> <label
+														class="radio-label-spacing">{{addMember}}</label></label></div>
+										</li>
+										<div class="container-fluid"><button type="button"
+												class="btn btn-familyConstruct pull-right"
+												ng-click="preC.familyConstructSubmit(preC.selectedMembers)">DONE <img
+													src="assets/images/forward.png" width="12"></button></div>
+									</ul>
+									<div class="errormsg redColorClass"
+										ng-if="preC.calcPrem.coverFor.$error.required && preC.showErrors">Please Select
+										Cover For.</div>
+									<div class="body-overlay"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 form-pad-btm">
+						<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+							<div class="lbl-txt">What's your age?*</div>
+							<div class="q-input">
+								<div class="col-md-12 col-sm-12 col-xs-12 input-group"><input type="number"
+										class="form-control form-style" name="sAge" min="1" maxlength="2"
+										ng-model="preC.selfAge" required>
+									<div class="input-group-btn input-group-addon">yrs
+										<!-- <img src="assets/images/enter_web.png" class="hidden-xs hidden-sm q-enternextAge"  /> -->
+									</div>
+								</div>
+								<div class="errormsg redColorClass"
+									ng-if="preC.calcPrem.sAge.$error.required && preC.showErrors">Please enter Self age.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 form-pad-btm main-selection-wrapper">
+						<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+							<!-- Taking kids count section -->
+							<div class="screen-box screen-5" data-section="question-5" data-type="kids-no-change"
+								data-cnt="3" data-scroll="3" ng-if="preC.showKidsCount">
+								<div class="lbl-txt">I have</div>
+								<div class="q-input">
+									<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+											aria-describedby="basic-addon2" minlength="1" ng-model="preC.Kids"
+											maxlength="1" class="numeric pre-input" id="ques_5_age"
+											ng-blur="preC.kidsCountNo(preC.Kids)"> <span class="input-group-addon"
+											id="basic-addon2">kids</span></div>
+								</div>
+							</div><!-- Spouse Age enter section -->
+							<div class="screen-box screen-4 hide-on-load" data-section="question-4"
+								data-type="spouse-age-change" data-cnt="3" data-scroll="3">
+								<div class="lbl-txt other-members">and my Spouse's age is</div>
+								<div class="q-input">
+									<div class="input-group"><span class="input-group-addon" id="basic-addon2"><img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn backToPrevious rotate-Up"> </span><input
+											autocomplete="nope" type="text" autocomplete="off" valid-numbertext
+											aria-describedby="basic-addon2" ng-model="preC.spouseAge"
+											class="numeric pre-input" id="ques_4_age" minlength="1" maxlength="2"> <span
+											class="input-group-addon" id="basic-addon2">yrs <img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn q-sposeAge rotate right-side-arrow"
+												ng-show="preC.showForward">
+											<!-- <img src="assets/images/enter_mobile.png" class="next-enter-btn visible-xs q-sposeAge q-enternextAge-mobile" /> --></span>
+									</div>
+								</div>
+								<div class="q-help">Press arrows to change</div>
+							</div><!-- Father's Age enter section -->
+							<div class="screen-box screen-4_1 hide-on-load" data-section="question-4_1"
+								data-type="father-age-change" data-cnt="3" data-scroll="3">
+								<div class="lbl-txt other-members">and my Father's age is</div>
+								<div class="q-input">
+									<div class="input-group"><span class="input-group-addon" id="basic-addon2"><img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn backToPrevious rotate-Up"> </span><input
+											autocomplete="nope" type="text" autocomplete="off" valid-numbertext
+											aria-describedby="basic-addon2" ng-model="preC.fatherAge"
+											class="numeric pre-input" id="ques_4_1_age" minlength="1" maxlength="2">
+										<span class="input-group-addon" id="basic-addon2">yrs <img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn q-fatherAge rotate" ng-show="preC.showForward">
+											<!-- <img src="assets/images/enter_mobile.png" class="next-enter-btn visible-xs q-fatherAge q-enternextAge-mobile" /> --></span>
+									</div>
+								</div>
+								<div class="q-help">Press arrows to change</div>
+							</div><!-- Mother's Age enter section -->
+							<div class="screen-box screen-4_2 hide-on-load" data-section="question-4_2"
+								data-type="mother-age-change" data-cnt="3" data-scroll="3">
+								<div class="lbl-txt other-members">and my Mother's age is</div>
+								<div class="q-input">
+									<div class="input-group"><span class="input-group-addon" id="basic-addon2"><img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn backToPrevious rotate-Up"> </span><input
+											autocomplete="nope" type="text" autocomplete="off" valid-numbertext
+											aria-describedby="basic-addon2" class="numeric pre-input"
+											ng-model="preC.motherAge" id="ques_4_2_age" minlength="1" maxlength="2">
+										<span class="input-group-addon" id="basic-addon2">yrs <img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn q-motherAge rotate" ng-show="preC.showForward">
+											<!-- <img src="assets/images/enter_mobile.png" class="next-enter-btn visible-xs q-motherAge q-enternextAge-mobile" /> --></span>
+									</div>
+								</div>
+								<div class="q-help">Press arrows to change</div>
+							</div><!-- Father-in-law's Age enter section -->
+							<div class="screen-box screen-4_3 hide-on-load" data-section="question-4_3"
+								data-type="fil-age-change" data-cnt="3" data-scroll="3">
+								<div class="lbl-txt other-members">and my Father-in-law's age is</div>
+								<div class="q-input">
+									<div class="input-group"><span class="input-group-addon" id="basic-addon2"><img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn backToPrevious rotate-Up"> </span><input
+											autocomplete="nope" type="text" autocomplete="off" valid-numbertext
+											aria-describedby="basic-addon2" ng-model="preC.fILAge"
+											class="numeric pre-input" id="ques_4_3_age" minlength="1" maxlength="2">
+										<span class="input-group-addon" id="basic-addon2">yrs <img
+												src="assets/images/enter_web.png" class="next-enter-btn q-fILAge rotate"
+												ng-show="preC.showForward">
+											<!-- <img src="assets/images/enter_mobile.png" class="next-enter-btn visible-xs q-fILAge q-enternextAge-mobile" /> --></span>
+									</div>
+								</div>
+								<div class="q-help">Press arrows to change</div>
+							</div><!-- Mother-in-law's Age enter section -->
+							<div class="screen-box screen-4_4 hide-on-load" data-section="question-4_4"
+								data-type="mil-age-change" data-cnt="3" data-scroll="3">
+								<div class="lbl-txt other-members">and my Mother-in-law's age is</div>
+								<div class="q-input">
+									<div class="input-group"><span class="input-group-addon" id="basic-addon2"><img
+												src="assets/images/enter_web.png"
+												class="next-enter-btn backToPrevious rotate-Up"> </span><input
+											autocomplete="nope" type="text" autocomplete="off" valid-numbertext
+											aria-describedby="basic-addon2" ng-model="preC.mILAge"
+											class="numeric pre-input" id="ques_4_4_age" minlength="1" maxlength="2">
+										<span class="input-group-addon" id="basic-addon2">yrs <img
+												src="assets/images/enter_web.png" class="next-enter-btn q-mILage rotate"
+												ng-show="preC.showForward">
+											<!-- <img src="assets/images/enter_mobile.png" class="next-enter-btn visible-xs q-mILage q-enternextAge-mobile" /> --></span>
+									</div>
+								</div>
+								<div class="q-help">Press arrows to change</div>
+							</div><!-- Taking kids age section -->
+							<div class="screen-box screen-6 hide-on-load" data-section="question-6"
+								data-type="kids-age-change" data-cnt="4" data-scroll="3">
+								<div class="lbl-txt other-members">Aged</div>
+								<div class="q-input addKidsOnIHave"><span class="kids-uparrow"><img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn backToPrevious rotate-anticlock"
+											ng-show="preC.showForward"></span>
+									<div class="kids-repeat-div">
+										<div class="kids-age sonsdaugh-xs padResetL"
+											ng-repeat="child in preC.kidsObject">
+											<div class="input-group kid2"><input autocomplete="nope" type="text"
+													autocomplete="off" valid-numbertext aria-describedby="basic-addon2"
+													ng-model="child.age" class="numeric pre-input child-age-change"
+													placeholder="Kid-{{$index + 1}}" id="ques_kid_{{$index + 1}}_age"
+													min="1" maxlength="2"> <span class="input-group-addon"
+													id="basic-addon2">yrs</span></div>
+										</div>
+									</div>
+								</div><!-- <div class="q-help">Press arrows to change</div> -->
+							</div>
+							<div class="screen-box screen-4" data-section="question-4" ng-if="preC.kidsCountSec"
+								data-cnt="4" data-scroll="3">
+								<div class="lbl-txt">I have</div>
+								<div class="q-input">
+									<div class="col-md-12 col-sm-12 col-xs-12 input-group"><input type="text"
+											aria-describedby="basic-addon2" ng-model="preC.kidNo"
+											class="form-control form-style numeric" id="ques_5_age" minlength="1"
+											maxlength="1" valid-numbertext ng-blur="preC.updateKidsCount(preC.kidNo)">
+										<span class="input-group-addon" id="basic-addon2">kids</span></div>
+								</div>
+							</div>
+							<div class="screen-box screen-5" data-section="question-5" ng-if="preC.kidsAgeSec"
+								data-cnt="3" data-scroll="3">
+								<div class="lbl-txt">Aged</div>
+								<div class="q-input addKidsOnIHave">
+									<div class="row">
+										<div class="col-xs-6 col-sm-6 col-md-6 sonsdaugh-xs padtop-sondaugh"
+											ng-repeat="kids in preC.kidsObject">
+											<div class="input-group kid2"><input type="text"
+													aria-describedby="basic-addon2" valid-numbertext
+													class="form-control form-style numeric" id="ques_62_age"
+													minlength="1" ng-model="kids.age" maxlength="2"> <span
+													class="input-group-addon" id="basic-addon2">yrs</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-7 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 name-input">
+						<div class="lbl-txt">Name*</div>
+						<div class="q-input"><input type="text" placeholder="Enter your name" name="selfName"
+								ng-model="preC.selfName" required class="form-control form-style text-left" valid-name
+								minlength="2"></div>
+						<div class="errormsg redColorClass"
+							ng-show="preC.calcPrem.selfName.$error.required && preC.showErrors">Please enter name.</div>
+						<div class="errormsg redColorClass" ng-show="preC.calcPrem.selfName.$error.minlength ">Please
+							enter valid name.</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 email-input">
+						<div class="lbl-txt">Email*</div>
+						<div class="q-input"><input type="text" name="email"
+								ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+								placeholder="abc@gmail.com" required class="form-control form-style"
+								ng-model="preC.emailId"></div>
+						<div class="errormsg redColorClass"
+							ng-show="preC.calcPrem.email.$error.required && preC.showErrors">Please enter email.</div>
+						<div class="errormsg redColorClass"
+							ng-show="preC.calcPrem.email.$error.minlength || preC.calcPrem.email.$error.pattern">Please
+							enter valid email.</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 mob-input">
+						<div class="lbl-txt">Mobile Number*</div>
+						<div class="q-input"><input type="text" placeholder="Enter your mobile no." name="mobileNo"
+								class="form-control form-style" ng-pattern="/^[6-9]\d{9}$/" required maxlength="10"
+								minlength="10" valid-numbertext ng-model="preC.mobNo"></div>
+						<div class="errormsg redColorClass"
+							ng-show="preC.calcPrem.mobileNo.$error.required && preC.showErrors">Please enter Mobile No..
+						</div>
+						<div class="errormsg redColorClass"
+							ng-show="preC.calcPrem.mobileNo.$error.minlength || preC.calcPrem.mobileNo.$error.pattern">
+							Please enter valid Mobile name.</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 form-pad-btm screen-box q-box quote-name">
+						<div class="lbl-txt">What are you looking for, to help us give you the best quote ?</div>
+						<div class="q-input type-cover"><input type="text" class="showOpt" id="q3showOpt"
+								readonly="readonly" ng-model="preC.category.Category" value="Select"
+								ng-click="preC.typeCoverChange()" placeholder="Protection against.."> <span
+								class="showOptChevron dropdown-arrow-pos"><img class="hidden-xs"
+									src="assets/images/chevron.png" width="16"></span>
+							<ul class="hide-on-load q3showOpt popOpt catogory-type" data-for="q3showOpt">
+								<li ng-repeat="categoryType in preC.categories"
+									ng-click="preC.categoryTypeValues(categoryType)">{{categoryType.Category}}
+									<span></span></li>
+							</ul>
+							<div class="body-overlay" ng-click="preC.removeOverLayFalse()"></div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-11 cal-preminum-button">
+						<!-- <button type="button" class="btn btn-button">Calculate Premium <img src="assets/images/forward.png" width="12"></button> -->
+						<a class="pull-right" ng-class="preC.calcPrem.$valid ? 'btn-link-pre-back' : 'btn-link-pre'"
+							ng-click="preC.submitPreminumCalForm($event,preC.calcPrem.$valid)"
+							href="javascript:void(0);">Calculate Premium</a></div>
+				</div>
+				<!-- <div class="col-md-12 col-sm-12 col-xs-11 text-right btn-pad-top-btm">
+				<div class="col-md-12 col-sm-12 col-xs-11">
+					<button type="button" class="btn btn-button">Calculate Premium <img src="assets/images/forward.png" width="12"></button>
+					<a class="btn-link pull-right" ng-click="preC.submitPreminumCalForm($event,preC.calcPrem.$valid)" ng-disabled="preC.calcPrem.$dirty && preC.calcPrem.$invalid"   href="javascript:void(0);">Calculate Premium</a>
+				</div>
+			</div> -->
+			</form>
+		</div>
+		<section class="">
+			<div class="col-md-12 col-sm-12 col-xs-12 section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt preminum-calc">Premium Calculator</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">It is now possible to calculate health insurance premium online
+								and to choose the right health insurance policy for you and your family.</div>
+							<div class="header-sub-txt">Calculating the premium is a simple two-step process with our
+								innovative Health Insurance Premium Calculator. All you need to do is provide details
+								about</div>
+							<div class="header-sub-txt">1. Your Age, City, and Marital Status</div>
+							<div class="header-sub-txt">2. Further, you need to provide details about the Medical
+								history of your family and whether you have an existing insurance cover or not</div>
+							<div class="header-sub-txt">Based on this information, your coverage will be calculated. You
+								can use the information to decide whether you will be able to make the monthly payment
+								on time and if the cover is sufficient for your health requirements.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width img-pad-top"
+						src="assets/images/main-banner-new.jpg"></div>
+			</div>
+		</section>
+		<section class="">
+			<div class="col-md-12 col-sm-12 hidden-xs section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width img-pad-top"
+						src="assets/images/hhs-step-img.jpg"></div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Benefits of a health insurance premium calculator</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">There are a number of benefits of using a health insurance
+								calculator.</div>
+							<div class="header-sub-txt"><strong>1. Better planning of finances</strong><br>When you use
+								a calculator to determine the amount of premium you will be required to pay, you can
+								manage your finances in an easier manner. You will be able to adjust the monthly
+								expenses amount, which will be used to pay the premium.</div>
+							<div class="header-sub-txt"><strong>2. Make the right decision</strong><br>When you use the
+								health insurance premium calculator to determine the amount of premium for a particular
+								policy, you will be able to choose the most suitable health insurance policy for
+								yourself. You can use the various parameters in the calculator to determine the ideal
+								mix of the sum assured and the premium payment that fits your needs.</div>
+							<div class="header-sub-txt"><strong>3. Quick comparison</strong><br>With a number of medical
+								insurance premium calculators, you can easily compare the premium amount on different
+								policies and pick your favored product. This will ensure that you are making the right
+								choice and all your requirements are fulfilled.</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- Mobile view -->
+			<div class="hidden-lg hidden-md hidden-sm col-xs-12 section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Benefits of a health insurance premium calculator</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">There are a number of benefits of using a health insurance
+								calculator.</div>
+							<div class="header-sub-txt"><strong>1. Better planning of finances</strong><br>When you use
+								a calculator to determine the amount of premium you will be required to pay, you can
+								manage your finances in an easier manner. You will be able to adjust the monthly
+								expenses amount, which will be used to pay the premium.</div>
+							<div class="header-sub-txt"><strong>2. Make the right decision</strong><br>When you use the
+								health insurance premium calculator to determine the amount of premium for a particular
+								policy, you will be able to choose the most suitable health insurance policy for
+								yourself. You can use the various parameters in the calculator to determine the ideal
+								mix of the sum assured and the premium payment that fits your needs.</div>
+							<div class="header-sub-txt"><strong>3. Quick comparison</strong><br>With a number of medical
+								insurance premium calculators, you can easily compare the premium amount on different
+								policies and pick your favored product. This will ensure that you are making the right
+								choice and all your requirements are fulfilled.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width"
+						src="assets/images/hhs-step-img.jpg"></div>
+			</div>
+		</section>
+		<section class="">
+			<div class="col-md-12 col-sm-12 col-xs-12 section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Factors affecting your health insurance premium</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">Not many are aware of different factors that determine the
+								premium amount for an insurance policy.</div>
+							<div class="header-sub-txt"><strong>• Medical history</strong><br>Insurance companies look
+								at you and your family’s medical history. If there are certain medical ailments in the
+								family, the premium amount will be higher.</div>
+							<div class="header-sub-txt"><strong>• Pre-existing conditions</strong><br>You will have to
+								provide your health records in order to ensure that you do not suffer from any
+								pre-existing conditions. There are certain companies that allow such conditions in their
+								policies while there are many others who do not agree to cover it, hence, you will have
+								to cover for the costs and this could increase the premium amount.</div>
+							<div class="header-sub-txt"><strong>• Gender</strong><br>Insurance companies have different
+								rates for men and women. It is believed that women are more likely to visit doctors and
+								are subject to chronic illnesses; hence the premium will be higher for women.</div>
+							<div class="header-sub-txt"><strong>• Injurious substances</strong><br>If you have a habit
+								of chewing tobacco or smoking, the premium amount will be higher as compared to those
+								who have no such habits of injurious substances. This is because you are prone to
+								getting a chronic illness like cancer.</div>
+							<div class="header-sub-txt"><strong>• Previous insurance history</strong><br>If you are not
+								previously covered, you will have to pay a higher amount of premium. Insurers believe
+								that those individuals who have not been covered by a policy in the past would make
+								frequent trips to the doctors in order to reap the benefits of the policy. Hence, the
+								premium will be higher in order to cover all the expenses.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width img-pad-top"
+						src="assets/images/health_doctor_concept_2500.jpg"></div>
+			</div>
+		</section>
+		<section class="">
+			<div class="col-md-12 col-sm-12 hidden-xs section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width img-pad-top"
+						src="assets/images/HealthCare-System.jpg"></div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Why should one calculate health insurance premium before buying a
+							policy?</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">It is important to calculate premium before investing in a
+								health insurance policy.</div>
+							<div class="header-sub-txt"><strong>1. Compare policies</strong><br>One of the most
+								important reasons to use a medical insurance premium calculator is to compare the
+								policies available in the market. There are multiple online calculators that allow you
+								to compare the premium and make a well-informed decision.</div>
+							<div class="header-sub-txt"><strong>2. Make the right choice</strong><br>When you use the
+								health insurance premium calculator before buying a policy, you provide all the
+								information to the online calculator and are able to make the right decision. You do not
+								need to accept the premium amount mentioned by the insurance company. You can make the
+								right choice by comparing the products, features, and the health insurance premium
+								amount. One can also use the family floater mediclaim policy premium calculator to get a
+								quote for your loved ones.</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- Mobile view -->
+			<div class="hidden-lg hidden-md hidden-sm col-xs-12 section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Why should one calculate health insurance premium before buying a
+							policy?</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">It is important to calculate premium before investing in a
+								health insurance policy.</div>
+							<div class="header-sub-txt"><strong>1. Compare policies</strong><br>One of the most
+								important reasons to use a medical insurance premium calculator is to compare the
+								policies available in the market. There are multiple online calculators that allow you
+								to compare the premium and make a well-informed decision.</div>
+							<div class="header-sub-txt"><strong>2. Make the right choice</strong><br>When you use the
+								health insurance premium calculator before buying a policy, you provide all the
+								information to the online calculator and are able to make the right decision. You do not
+								need to accept the premium amount mentioned by the insurance company. You can make the
+								right choice by comparing the products, features, and the health insurance premium
+								amount. One can also use the family floater mediclaim policy premium calculator to get a
+								quote for your loved ones.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width"
+						src="assets/images/HealthCare-System.jpg"></div>
+			</div>
+		</section>
+		<section class="">
+			<div class="col-md-12 col-sm-12 col-xs-12 section-pad-top-btm mob-pad-l-r-0">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0">
+						<div class="header-txt">Choose Aditya Birla Health Insurance for your policy</div>
+						<div class="header-sub-txt">
+							<div class="header-sub-txt">With Aditya Birla Health Insurance, you will be able to get your
+								policy in three simple steps. It offers you a number of benefits through</div>
+							<div class="header-sub-txt"><strong>• Worldwide emergency assistance services</strong></div>
+							<div class="header-sub-txt"><strong>• Chronic management program</strong></div>
+							<div class="header-sub-txt"><strong>• Wellness coach</strong></div>
+							<div class="header-sub-txt"><strong>• Hospital cash benefits and recovery benefits</strong>
+							</div>
+							<div class="header-sub-txt"><strong>• Hospital room choice</strong></div>
+							<div class="header-sub-txt"><strong>• Second online e-opinion on critical illness</strong>
+							</div>
+							<div class="header-sub-txt"><strong>• Sum insured as high as INR 2 crore</strong></div>
+							<div class="header-sub-txt">You can choose from a number of plans based on your
+								requirements. It also offers day care treatment, domiciliary hospitalization, ambulance
+								hospitalization, a health checkup program, cumulative bonus, and much more.</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0"><img class="mob-img-width img-pad-top"
+						src="assets/images/oneabc-bannernew-4.jpg">
+					<div class="row">
+						<div class="col-xs-8"></div>
+						<div class="col-xs-4 move-top hide-on-desktop" ng-click="preC.moveUp()">Move To Top</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="scroll-to-top rotate-anticlock learn-more-txt move-to-top hidden-xs"
+		ng-mouseenter="preC.imgUrl = 'assets/images/preminum-peach-Arrow.png'"
+		ng-mouseleave="preC.imgUrl = 'assets/images/preminum-yellow-arrow.png'" ng-click="preC.moveUp()"><label
+			class="learn-more">Move to top <img ng-src="{{preC.imgUrl}}" class="img-arrow"
+				style="margin-left: 8px; color: #da9089;" width="8"></label>
+		<!-- <span class="learn-more-txt"> Learn More </span> <img src="assets/images/chevron_right.png" width="16"> -->
+	</div>
+</section>

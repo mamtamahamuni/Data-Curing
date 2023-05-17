@@ -1,0 +1,6128 @@
+/**
+    Renew Project Styles (For All Pages Except Renewal Renew Policy Page & Renew Thank You Page)
+    Author: Pandurang Sarje
+    Date: 07-07-2020
+**/
+
+/* import fonts */
+
+@font-face {
+    font-family: "PFHandbookPro-Regular";
+    src: url("../fonts/PFHandbookPro-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFHandbookPro-Bold";
+    src: url("../fonts/PFHandbookPro-Bold.ttf"),
+      url("../fonts/PFHandbookPro-Bold.otf"),
+      url("../fonts/pfhandbookpro-bold.svg"),
+      url("../fonts/pfhandbookpro-bold.woff") format('woff'),
+      url("../fonts/pfhandbookpro-bold.eot"),
+      url("../fonts/pfhandbookpro-bold.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFHandbookPro-Medium";
+    src: url("../fonts/pfhandbookpro-medium.eot"),
+      url("../fonts/pfhandbookpro-medium.otf"),
+      url("../fonts/pfhandbookpro-medium.woff"),
+      url("../fonts/pfhandbookpro-medium.svg");
+  }
+  
+  @font-face {
+    font-family: "PFHandbookPro-Light";
+    src: url("../fonts/PFHandbookPro-Light.eot"),
+      url("../fonts/PFHandbookPro-Light.otf"),
+      url("../fonts/PFHandbookPro-Light.svg"),
+      url("../fonts/PFHandbookPro-Light.ttf"),
+      url("../fonts/PFHandbookPro-Light.woff");
+  }
+  
+  @font-face {
+    font-family: "PFHandbookPro-Thin";
+    src: url("../fonts/pfhandbookpro-thin.eot"),
+      url("../fonts/pfhandbookpro-thin.svg"),
+      url("../fonts/pfhandbookpro-thin.woff"),
+      url("../fonts/pfhandbookpro-thin.woff2");
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-Regular";
+    src: url("../fonts/PFEncoreSansPro-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-Bold";
+    src: url("../fonts/pfencoresanspro-bold.otf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-Book";
+    src: url("../fonts/pfencoresanspro-book.otf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-BoldItalic";
+    src: url("../fonts/PFEncoreSansPro-BoldItalic.ttf"),
+      url("../fonts/PFEncoreSansPro-BoldItalic.woff"),
+      url("../fonts/PFEncoreSansPro-BoldItalic.svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-Light";
+    src: url("../fonts/pfencoresanspro-light.ttf"),
+      url("../fonts/pfencoresanspro-light.woff"),
+      url("../fonts/pfencoresanspro-light.svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PFEncoreSansPro-Medium";
+    src: url("../fonts/pfhandbookpro-medium.eot"),
+      url("../fonts/pfhandbookpro-medium.svg"),
+      url("../fonts/pfhandbookpro-medium.woff"),
+      url("../fonts/pfhandbookpro-medium.woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "FiraSans-Regular";
+    src: url("../fonts/FiraSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* End of import fonts */
+  
+  /************** Main Styles **************/
+  
+  .pad-l-r-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  input:checked~.checkmark {
+    border: none;
+  }
+  
+  /* Radio Switch Styling */
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 15.5px;
+    vertical-align: text-bottom;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d8d8d8;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    bottom: -2px;
+    background-color: #999;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch input:checked+.slider {
+    background-color: #f1979c;
+  }
+  
+  .switch input:checked+.slider:before {
+    background-color: #c7222a;
+  }
+  
+  .mandate-model-header{
+    background-color: #da9089 !important;
+  }
+  
+  .mandate-model-text {
+    color: #fff!important;
+  }
+  
+  .madate-model-label {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  .switch input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .switch input:checked+.slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /* End of radio switch styling */
+  
+  .view-member-landing .view-member-padding {
+    padding: 20px 48px 146px;
+  }
+  
+  .view-member-landing .member-name-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .member-details-txt {
+    opacity: 0.6;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 15px;
+  }
+  
+  .view-member-landing .click-to-copy-bg {
+    padding: 5px 8px;
+    border-radius: 4px;
+    border: solid 1px #e3eaf3;
+    background-color: #f7f9fc;
+    margin-bottom: 33px;
+  }
+  
+  .view-member-landing .last-saved-txt {
+    opacity: 0.52;
+    font-family: PFEncoreSansPro-BoldItalic;
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .one-link-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .view-member-red-box {
+    border-radius: 5.5px;
+    border: solid 1.1px #da9089;
+    padding: 5px 8px;
+    margin-bottom: 15px;
+  }
+  
+  .view-member-landing .add-delete-txt {
+    font-family: PFEncoreSansPro-Light;
+    font-size: 11px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+  }
+  
+  .view-member-landing .view-members-bold-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 15.4px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #da9089;
+  }
+  
+  .view-member-landing .edit-add-sml-txt {
+    font-family: PFEncoreSansPro-Light;
+    font-size: 10px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-left: 8px;
+  }
+  
+  .view-member-landing .edit-member-details-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-left: 8px;
+  }
+  
+  .view-member-landing .edit-member-pad-btm {
+    padding-bottom: 15px;
+  }
+  
+  .view-member-landing .grey-horizontal-line {
+    border-top: solid 1px #d8d8d8;
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
+  
+  .view-member-landing .plan-name-bg {
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    padding: 8px 15px;
+  }
+  
+  .view-member-landing .plan-name-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 15px;
+  }
+  
+  .view-member-landing .member-count-txt {
+    opacity: 0.36;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .member-insured-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .activ-up-green-txt {
+    background-color: #ededed;
+    padding: 5px 16px;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #46964e;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .view-member-landing .years-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .tenure-txt {
+    opacity: 0.36;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .premium-pa-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-align: right;
+  }
+  
+  .view-member-landing .premium-amt-red-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 33px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    text-align: right;
+    padding-bottom: 9px;
+  }
+  
+  .view-member-landing .refresh-btn {
+    background-color: #f7e9e8;
+    border-radius: 4px;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding: 5px 30px;
+  }
+  
+  .view-member-landing .premium-bdr-right {
+    border-right: solid 1px #e3eaf3;
+    margin-top: 20px;
+  }
+  
+  .view-member-landing .premuim-btn {
+    border-radius: 2px;
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 11px 15px;
+  }
+  
+  .view-member-landing .premuim-btn:hover {
+    text-decoration: none;
+  }
+  
+  .view-member-landing .btn-row-pad-r {
+    padding-right: 0px;
+    margin-top: 35px;
+  }
+  
+  .view-member-landing .plan-section-pad-lr {
+    padding-left: 21px;
+    padding-right: 0px;
+  }
+  
+  .view-member-landing .previous-sec-padding {
+    padding: 15px 0 15px 21px;
+  }
+  
+  .view-member-landing .previous-sec-padding .dd-menu {
+    padding: 0 15px 0;
+  }
+  
+  .view-member-landing .previous-sec-padding .dropdown-menu {
+    top: 27%;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+    border: solid 1px #f7e9e8;
+    background-color: #fff9f9;
+    padding: 11px 16px 0px;
+    min-width: 314px;
+  }
+  
+  .view-member-landing .previous-sec-padding .previuos-edited-dropdown-txt {
+    font-family: PFHandbookPro-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.19px;
+    color: #da9089;
+    padding-bottom: 36px;
+  }
+  
+  .view-member-landing .previous-sec-padding .dropdown-black-txt {
+    font-family: PFHandbookPro-Light;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.22px;
+    color: #000000;
+    padding-bottom: 21px;
+  }
+  
+  .view-member-landing .previous-sec-padding .dropdown-min-ago-txt {
+    font-family: PFHandbookPro-Thin;
+    font-size: 12px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 26px;
+    letter-spacing: 0.15px;
+    text-align: right;
+    color: #000000;
+  }
+  
+  .view-member-landing .previous-edited-txt {
+    font-family: PFEncoreSansPro-Medium;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    z-index: 1;
+    background-color: #ffffff;
+    padding-right: 11px;
+  }
+  
+  .view-member-landing .previous-edited-txt .pink-txt {
+    color: #da9089;
+  }
+  
+  .view-member-landing .group-member-bg {
+    border-radius: 4px;
+    background-color: #f7f9fc;
+    padding: 16px 16px 16px 23px;
+  }
+  
+  .view-member-landing .pad-l-21-0 {
+    padding-left: 21px;
+    padding-right: 0;
+  }
+  
+  .view-member-landing .group-members-bold-txt {
+    font-family: PFHandbookPro-Medium;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+  }
+  
+  .view-member-landing .insure-new-user-btn {
+    border: solid 0.9px #da9089;
+    background-color: #f7e9e8;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding: 8px 19px;
+  }
+  
+  .view-member-landing .horizontal-border {
+    border-top: solid 1px #e3eaf3;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  
+  .view-member-landing .details-box {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #e3eaf3;
+    background-color: #ffffff;
+  }
+  
+  .view-member-landing .insurer-name {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .insurer-relation-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .sum-insured-grey-txt {
+    opacity: 0.36;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .sum-amount-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .proposer-gry-txt {
+    opacity: 0.36;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-top: 13px;
+  }
+  
+  .view-member-landing .view-details-txt {
+    font-family: PFHandbookPro;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+  }
+  
+  .view-member-landing .view-details-btn {
+    border-radius: 2px;
+    background-color: #f7e9e8;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #da9089;
+    text-align: center;
+    text-transform: none;
+    padding: 1.6px 22px;
+    width: 100%;
+  }
+  
+  .view-member-landing .view-details-btn:focus {
+    outline: none;
+  }
+  
+  .view-member-landing .view-details-btn:active {
+    box-shadow: none;
+  }
+  
+  .view-member-landing .btn-pad-left {
+    padding-left: 6px;
+    padding-right: 0;
+  }
+  
+  .view-member-landing .btn-pad-right {
+    padding-right: 6px;
+    padding-left: 0;
+  }
+  
+  .view-member-landing .remove-btn {
+    border-radius: 2px;
+    border: solid 1px #da9089;
+    background-color: #ffffff;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding: 3px 22px;
+    text-align: center;
+    width: 100%;
+    text-transform: none;
+  }
+  
+  .view-member-landing .remove-btn:focus {
+    outline: none;
+  }
+  
+  .view-member-landing .remove-btn:active {
+    box-shadow: none;
+  }
+  
+  .view-member-landing .box-padd-r-7 {
+    padding-right: 7px;
+    padding-left: 0px;
+    padding-bottom: 7px;
+  }
+  
+  .view-member-landing .dropdown-bg-white {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .view-member-landing .previuos-edited-bdr::after {
+    content: "";
+    height: 4px;
+    width: 98%;
+    background-color: #f7e9e8;
+    position: absolute;
+    z-index: 1;
+    left: 22px;
+    top: 25px;
+    right: 20px;
+  }
+  
+  .view-member-landing .view-member-details-section .pad-l-0 {
+    padding-left: 0px;
+  }
+  
+  .view-member-landing .view-member-details-section .view-member-details-blck-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-landing .view-member-details-section .personal-details-ttl {
+    font-family: PFHandbookPro-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #585858;
+    padding-top: 25px;
+    padding-bottom: 17px;
+  }
+  
+  .view-member-landing .view-member-details-section .member-category-ttl {
+    font-family: PFHandbookPro-Light;
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #3b3b3b;
+  }
+  
+  .view-member-landing .view-member-details-section .member-name-txt {
+    font-family: PFHandbookPro-Medium;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .view-member-landing .back-btn {
+    border: solid 0.9px #c7222a;
+    background-color: #ffffff;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #c7222a;
+    text-transform: uppercase;
+    padding: 13px 62px;
+  }
+  
+  .view-member-landing .back-btn:hover {
+    text-decoration: none;
+  }
+  
+  .view-member-landing .back-btn:focus {
+    outline: none;
+  }
+  
+  .view-member-landing .proceed-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 13px 52px;
+  }
+  
+  .view-member-landing .proceed-btn:hover {
+    text-decoration: none;
+  }
+  
+  .view-member-landing .proceed-btn:focus {
+    outline: none;
+  }
+  
+  .view-member-landing .btns-pad-top {
+    padding-top: 31px;
+  }
+  
+  .remove-user-modal .modal-content {
+    padding: 12px 20px 23px;
+  }
+  
+  .remove-user-modal .modal-body {
+    padding: 0;
+  }
+  
+  .remove-user-modal .are-you-sure-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 5px;
+  }
+  
+  .remove-user-modal .are-you-sure-sub-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-bottom: 32px;
+  }
+  
+  .remove-user-modal .close-grey-bg {
+    border-radius: 2px;
+    background-color: #5a5a5a;
+    padding: 10px 14px;
+    color: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 1;
+  }
+  
+  .remove-user-modal .save-red-btn {
+    border-radius: 2px;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    padding: 11px 35px;
+    margin-right: 24px;
+  }
+  
+  .remove-user-modal .save-red-btn:active {
+    box-shadow: none;
+  }
+  
+  .remove-user-modal .cancel-red-bdr-btn {
+    border-radius: 2px;
+    border: solid 1px #c7222a;
+    background-color: #ffffff;
+    font-family: PFHandbookPro-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #c7222a;
+    padding: 11px 29px;
+  }
+  
+  .remove-user-modal .cancel-red-bdr-btn:active {
+    box-shadow: none;
+  }
+  
+  @media (min-width: 1401px) and (max-width: 1500px) {
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 31px;
+    }
+  
+    .view-member-landing .premuim-btn {
+      font-size: 16px;
+    }
+  
+    .view-member-landing .refresh-btn {
+      padding: 5px 20px;
+    }
+  }
+  
+  @media (min-width: 1301px) and (max-width: 1400px) {
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 19px;
+    }
+  
+    .view-member-landing .refresh-btn {
+      padding: 5px 20px;
+    }
+  
+    .view-member-landing .premuim-btn {
+      font-size: 16px;
+      padding: 11px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-menu {
+      min-width: 275px;
+    }
+  
+    .view-member-landing .previous-sec-padding .previuos-edited-dropdown-txt {
+      padding-bottom: 25px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-black-txt {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 1201px) and (max-width: 1300px) {
+    .view-member-landing .view-member-padding {
+      padding: 20px 50px 146px;
+    }
+  
+    .view-member-landing .premium-pa-txt {
+      font-size: 16px;
+    }
+  
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 24px;
+    }
+  
+    .view-member-landing .refresh-btn {
+      padding: 5px 22px;
+    }
+  
+    .view-member-landing .premuim-btn {
+      font-size: 15px;
+      padding: 11px 8px;
+    }
+  
+    .view-member-landing .years-txt {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .view-member-landing .activ-up-green-txt {
+      font-size: 15px;
+    }
+  
+    .view-member-landing .years-txt {
+      font-size: 15px;
+    }
+  
+    .view-member-landing .view-member-padding {
+      padding: 20px 50px 146px;
+    }
+  
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 24px;
+    }
+  
+    .view-member-landing .premium-pa-txt {
+      font-size: 16px;
+    }
+  
+    .view-member-landing .premuim-btn {
+      font-size: 14px;
+      padding: 11px;
+    }
+  
+    .view-member-landing .group-member-bg {
+      padding: 16px;
+    }
+  
+    .view-member-landing .view-details-btn {
+      font-size: 14px;
+      padding: 1.6px 6px;
+    }
+  
+    .view-member-landing .remove-btn {
+      padding: 3px 8px;
+    }
+  
+    .view-member-landing .refresh-btn {
+      padding: 5px 25px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-menu {
+      min-width: 260px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-black-txt {
+      font-size: 15px;
+    }
+  
+    .view-member-landing .previous-sec-padding .previuos-edited-dropdown-txt {
+      padding-bottom: 20px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .view-member-landing .view-member-padding {
+      padding: 19px 15px 146px;
+    }
+  
+    .view-member-landing .member-name-ttl {
+      font-size: 24px;
+    }
+  
+    .view-member-landing .activ-up-green-txt {
+      font-size: 12px;
+    }
+  
+    .view-member-landing .plan-name-ttl {
+      font-size: 16px;
+    }
+  
+    .view-member-landing .member-insured-txt {
+      font-size: 15px;
+    }
+  
+    .view-member-landing .years-txt {
+      font-size: 14px;
+    }
+  
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+  
+    .view-member-landing .premuim-btn {
+      font-size: 13px;
+      padding: 11px 6px;
+    }
+  
+    .view-member-landing .refresh-btn {
+      padding: 5px 8px;
+    }
+  
+    .view-member-landing .premium-pa-txt {
+      font-size: 14px;
+    }
+  
+    .view-member-landing .group-member-bg {
+      padding: 16px 16px 16px 11px;
+    }
+  
+    .view-member-landing .btn-pad-right {
+      padding-right: 0;
+    }
+  
+    .view-member-landing .btn-pad-left {
+      padding-left: 0;
+    }
+  
+    .view-member-landing .view-details-btn {
+      margin-bottom: 5px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-menu {
+      min-width: 250px;
+    }
+  
+    .view-member-landing .previous-sec-padding .dropdown-black-txt {
+      font-size: 15px;
+    }
+  
+    .view-member-landing .previous-sec-padding .previuos-edited-dropdown-txt {
+      padding-bottom: 25px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+    .remove-user-modal .are-you-sure-sub-txt {
+      padding-bottom: 18px;
+    }
+  
+    .remove-user-modal {
+      margin: 100px 10px;
+    }
+  
+    .view-member-landing .plan-name-bg {
+      box-shadow: 0 2px 15px -9px rgba(0, 0, 0, 0.2);
+      background-color: #f9f9f9;
+      border-radius: 0;
+      padding: 8px 15px 3px;
+    }
+  
+    .view-member-landing .view-member-padding {
+      padding: 0px 0px 15px;
+    }
+  
+    .view-member-landing .plan-section-pad-lr {
+      padding-left: 0;
+    }
+  
+    .view-member-landing .plan-name-ttl {
+      font-size: 14px;
+      font-family: PFHandbookPro-Bold;
+      padding-bottom: 11px;
+    }
+  
+    .view-member-landing .tenure-txt {
+      font-size: 12px;
+      opacity: 1;
+      color: #00000075;
+      padding-bottom: 8px;
+    }
+  
+    .view-member-landing .years-txt {
+      font-size: 12px;
+    }
+  
+    .view-member-landing .premium-pa-txt {
+      font-size: 10px;
+      padding-top: 10px;
+      text-align: right;
+    }
+  
+    .view-member-landing .premium-amt-red-txt {
+      font-size: 18px;
+      text-align: right;
+      padding-bottom: 6px;
+      font-weight: 500;
+      font-family: PFHandbookPro-Medium;
+      color: #000000;
+    }
+  
+    .view-member-landing .refresh-btn {
+      font-size: 14px;
+      padding: 3px 12px;
+    }
+  
+    .panel {
+      border-radius: 5px !important;
+      box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.25);
+      background-color: #ffffff;
+    }
+  
+    .panel-title {
+      position: relative;
+    }
+  
+    .panel-title::after {
+      content: "\f107";
+      color: #333;
+      top: -2px;
+      right: 0px;
+      position: absolute;
+      font-family: "FontAwesome";
+    }
+  
+    .panel-title[aria-expanded="true"]::after {
+      content: "\f106";
+    }
+  
+    .currently-on-txt {
+      font-family: FiraSans-Regular;
+      font-size: 13px;
+      color: #000000;
+    }
+  
+    .edit-member-details-bold {
+      font-family: PFHandbookPro-Bold;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .panel-default>.panel-heading {
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+  
+    .panel-group .panel-heading+.panel-collapse>.list-group,
+    .panel-group .panel-heading+.panel-collapse>.panel-body {
+      border-top: 0px;
+    }
+  
+    .view-member-landing .group-member-bg {
+      padding: 0px;
+      background-color: #f7f9fc;
+    }
+  
+    .view-member-landing .group-members-bold-txt {
+      padding: 10px 16px;
+      background-color: #f7f9fc;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      text-transform: capitalize;
+    }
+  
+    .view-member-landing .horizontal-border {
+      margin-top: 0px;
+      margin-bottom: 16px;
+    }
+  
+    .view-member-landing .insure-new-user-btn {
+      font-family: PFHandbookPro-Light;
+      font-size: 13px;
+      font-weight: 300;
+    }
+  
+    .view-member-landing .view-details-btn {
+      padding: 2.6px 22px;
+    }
+  
+    .add-new-member-pad-tb {
+      padding-top: 5px;
+      padding-bottom: 14px;
+      padding-left: 16px;
+    }
+  
+    .view-member-landing .box-padd-r-7 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .view-member-landing .remove-btn {
+      padding: 4px 22px;
+    }
+  
+    .view-member-landing .proposer-gry-txt {
+      padding-bottom: 5px;
+    }
+  
+    .view-member-landing .view-member-details-section .personal-details-ttl {
+      padding-top: 16px;
+      font-size: 16px;
+    }
+  
+    .view-member-landing .view-member-details-section .member-name-txt {
+      padding-bottom: 8px;
+    }
+  
+    .view-member-details-section {
+      margin-bottom: 131px;
+    }
+  
+    .view-member-landing .group-member-section {
+      margin-bottom: 30px;
+    }
+  
+    .btns-position {
+      position: sticky;
+      bottom: 0;
+      height: auto;
+      background-color: #ffffff;
+      box-shadow: 0 -16px 15px -9px rgba(0, 0, 0, 0.2);
+      padding: 16px;
+    }
+  
+    .view-member-landing .back-btn {
+      width: 100%;
+      padding: 8px 62px;
+    }
+  
+    .view-member-landing .proceed-btn {
+      width: 100%;
+      padding: 13px 15px;
+      text-align: left;
+      font-size: 18px;
+      border-radius: 0px;
+    }
+  
+    .view-member-landing .proceed-btn img {
+      margin-top: 3px;
+    }
+  
+    .view-member-landing .btns-pad-top {
+      padding-top: 16px;
+    }
+  
+    .mob-pad-l-r-0 {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  
+    .click-to-copy-txt {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: #c7222a;
+      padding-top: 5px;
+    }
+  
+    .view-member-details-section .scroll-horizontal {
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      width: 100%;
+      white-space: nowrap;
+      align-items: unset;
+      justify-content: unset;
+    }
+  
+    .view-member-details-section .nav-tabs {
+      background-color: #ffffff;
+      border-bottom: none;
+    }
+  
+    .view-member-details-section .nav-tabs>li.active>a,
+    .view-member-details-section .nav-tabs>li.active>a:focus,
+    .view-member-details-section .nav-tabs>li.active>a:hover {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c7222a;
+      border: none;
+      border-bottom: 4px solid #c7222a;
+    }
+  
+    .view-member-details-section .nav>li>a {
+      padding: 9px 15px;
+    }
+  
+    .view-member-details-section .nav-tabs>li>a,
+    .view-member-details-section .nav-tabs>li>a:focus,
+    .view-member-details-section .nav-tabs>li>a:hover {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #d8d8d8;
+    }
+  
+    .view-member-landing .view-member-details-section .view-member-details-blck-txt {
+      text-transform: capitalize;
+    }
+  }
+  
+  .dropdown-bg-white {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .previuos-edited-bdr::after {
+    content: "";
+    height: 4px;
+    width: 98%;
+    background-color: #f7e9e8;
+    position: absolute;
+    z-index: 1;
+    left: 22px;
+    top: 25px;
+    right: 20px;
+  }
+  
+  .view-member-add-user-section .add-new-user-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .view-member-add-user-section .add-user-cancel-btn {
+    border: solid 0.9px #c7222a;
+    background-color: #ffffff;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    padding: 7px 58px;
+    border-radius: 0;
+    text-transform: uppercase;
+    margin-right: 24px;
+  }
+  
+  .view-member-add-user-section .add-user-cancel-btn:active {
+    box-shadow: none;
+  }
+  
+  .view-member-add-user-section .add-user-proceed-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 7px 52px;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+  
+  .view-member-add-user-section .add-user-proceed-btn:active {
+    box-shadow: none;
+  }
+  
+  .view-member-add-user-section .progress-bar-bg {
+    padding: 7px 23px;
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .group-member-bg {
+    border-radius: 4px;
+    background-color: #f7f9fc;
+    padding: 0;
+  }
+  
+  .view-member-add-user-section .group-member-bg-header-pad {
+    padding: 16px 16px 16px 23px;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul {
+    padding-inline-start: 0;
+    margin-bottom: 0;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul li {
+    width: 40%;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .active-state-txt .dotted-line {
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: sub;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    /* position: relative; */
+    border-top: 2px dashed #660d0a;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .active-state-txt .dotted-line::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #660d0a;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .active-state-txt .dotted-line::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #660d0a;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    right: 0;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .disable-state-txt .dotted-line {
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: sub;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 10px;
+    /* position: relative; */
+    border-top: 2px dashed #f7f9fc;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .disable-state-txt .dotted-line::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #f7f9fc;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul .disable-state-txt .dotted-line::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #f7f9fc;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    right: 0;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul li:last-child {
+    width: auto;
+  }
+  
+  .view-member-add-user-section .progress-bar-section ul li:last-child:after {
+    display: none;
+  }
+  
+  .view-member-add-user-section .progress-bar-section .active-state-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    overflow: hidden;
+  }
+  
+  .view-member-add-user-section .progress-bar-section .disable-state-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #d8d8d8;
+    overflow: hidden;
+    padding-left: 10px;
+  }
+  
+  .view-member-add-user-section .step-one-padding {
+    padding: 30px 44px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .personal-details-ttl {
+    font-family: PFHandbookPro-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #585858;
+    padding-bottom: 23px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .label-text {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding-bottom: 10px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .placeholder-text {
+    opacity: 0.50;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #000000;
+    height: 44px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #cdcece;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .placeholder-text:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: solid 1px #6c7174;
+  }
+  
+  .view-member-add-user-section .step-one-padding .pad-l-0 {
+    padding-left: 0px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .glyphi-drop-down-style {
+    top: 4px;
+    font-size: 13px;
+    position: inherit;
+  }
+  
+  .view-member-add-user-section .step-one-padding .btn-drop-down-width {
+    width: 100%;
+    text-align: left;
+    height: 44px;
+    opacity: 0.50;
+  }
+  
+  .view-member-add-user-section .step-one-padding .btn-drop-down-width:hover,
+  .view-member-add-user-section .step-one-padding .btn-drop-down-width:focus {
+    color: #333;
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .dropdown-menu-width {
+    min-width: 100%;
+    padding: 0px 0px;
+    top: auto;
+  }
+  
+  .view-member-add-user-section .step-one-padding .dropdown-menu-item {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding: 8px 20px !important;
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .view-member-add-user-section .step-one-padding .dropdown-placeholder-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+  
+  .view-member-add-user-section .step-one-padding .pad-l-r-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .pad-r-8 {
+    padding-right: 8px;
+    padding-left: 0;
+  }
+  
+  .view-member-add-user-section .step-one-padding .second-ques-pad-top {
+    padding-top: 36px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .question-txt {
+    font-family: PFHandbookPro-Light;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.24px;
+    color: #666666;
+    padding-bottom: 12px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .proposal-form-btn-white {
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    padding: 6px 32px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .proposal-form-btn-yellow {
+    border-radius: 2.4px;
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+    background-color: #c7222a;
+    padding: 6px 32px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .harmful-substance-btn {
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    padding: 6px 32px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .harmful-substance-btn-white {
+    border-radius: 2.4px;
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+    background-color: #c7222a;
+    padding: 6px 32px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .btn-bg-white {
+    background-color: #ffffff !important;
+  }
+  
+  .view-member-add-user-section .step-one-padding .border-shadow-select2 {
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.12), 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.14);
+  }
+  
+  .view-member-add-user-section .step-one-padding .btn-bg-red {
+    background-color: #c7222a !important;
+  }
+  
+  .view-member-add-user-section .step-one-padding .yes-btn-red {
+    background-color: #c7222a;
+    color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .yes-btn-red-initial {
+    background-color: #c7222a;
+  }
+  
+  .view-member-add-user-section .step-one-padding .yes-btn-white {
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .yes-btn-white-clr {
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .proposal-form-btn-txt-red {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.19px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .proposal-form-btn-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.19px;
+    text-align: center;
+    color: #666666;
+  }
+  
+  .view-member-add-user-section .step-one-padding .proposal-form-btn-yellow .proposal-form-btn-txt {
+    color: #ffffff;
+  }
+  
+  .view-member-add-user-section .step-one-padding .health-dropdown-txt {
+    font-family: PFEncoreSansPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.19px;
+    color: #666666;
+    padding-bottom: 4px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .health-form-small-txt {
+    font-family: PFEncoreSansPro-Book;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: 0.12px;
+    color: #595959;
+    padding-bottom: 13px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .answer-row-pad-tb {
+    padding-top: 21px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .question-pad-btm {
+    padding-bottom: 46.8px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .health-form-small-txt-pad-top-btm {
+    padding-bottom: 12px;
+    padding-top: 24px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .health-form-small-txt-pad-btm {
+    padding-bottom: 26px;
+  }
+  
+  .view-member-add-user-section .step-one-padding .mar-r-19 {
+    margin-right: 19px;
+  }
+  
+  .view-member-add-user-section .btn-ad-member {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #660d0a;
+    width: 169px;
+    height: 37px;
+    border-radius: 0;
+    border: solid 1px #660d0a;
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .btn-ad-member:focus,
+  .view-member-add-user-section .btn-ad-member .active:focus {
+    outline: none;
+    box-shadow: none;
+    color: #660d0a;
+  }
+  
+  .view-member-add-user-section .btn-remove {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #660d0a;
+    width: 126px;
+    height: 37px;
+    border-radius: 0;
+    border: solid 1px #660d0a;
+    background-color: #ffffff;
+  }
+  
+  .view-member-add-user-section .btn-remove:focus {
+    color: #660d0a;
+  }
+  
+  .view-member-add-user-section .btn-rmove-pad-t {
+    margin-top: 33px;
+  }
+  
+  .view-member-add-user-section .form-group-p {
+    padding-bottom: 16px;
+  }
+  
+  .view-member-add-user-section .decrare-question-txt {
+    font-family: PFEncoreSansPro-Book;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #585858;
+    padding-bottom: 16px;
+  }
+  
+  .view-member-add-user-section .mail-her-sec-p {
+    padding: 30px 0px;
+  }
+  
+  .view-member-add-user-section .mail-box {
+    width: 204px;
+    height: 38px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 9px 16px;
+    margin-left: 16px;
+  }
+  
+  .view-member-add-user-section .mail-box .mail-to-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #585858;
+  }
+  
+  .view-member-add-user-section .mail-box .mail-to-txt .fa-edit {
+    float: right;
+    padding-top: 2px;
+  }
+  
+  .view-member-add-user-section .hereby-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #585858;
+  }
+  
+  .view-member-add-user-section .eia-acc-se-p .eia-ccount-ttl {
+    font-family: PFHandbookPro-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #585858;
+    padding-bottom: 16px;
+  }
+  
+  .view-member-add-user-section .res-otp {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #c7222a;
+  }
+  
+  .view-member-add-user-section .btn-otp-submit {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.19px;
+    text-align: center;
+    color: #ffffff;
+    width: 83px;
+    height: 44px;
+    border-radius: 2.4px;
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+    background-color: #c7222a;
+    margin-top: 30px;
+  }
+  
+  .view-member-add-user-section .palc-m-0 {
+    margin-bottom: 0px !important;
+  }
+  
+  .view-member-add-user-section .mobile-input::after {
+    content: "\f044";
+    font-family: 'FontAwesome';
+    position: absolute;
+  }
+  
+  .view-member-add-user-section .mob-num-input .input-group-btn {
+    display: block;
+  }
+  
+  .view-member-add-user-section .mob-num-input .edit-btn {
+    height: 44px;
+    border-left: 0;
+    background-color: #FFF;
+    opacity: 0.5;
+  }
+  
+  .view-member-add-user-section .mob-num-input .edit-btn:hover {
+    color: #000;
+  }
+  
+  .view-member-add-user-section .mob-num-input .mobile-input {
+    border-right: 0;
+  }
+  
+  .view-member-add-user-section .mob-num-input .mobile-input:focus {
+    box-shadow: none;
+    border-right: 0;
+  }
+  
+  .view-member-add-user-section .ques-pad-t-20 {
+    padding-top: 20px;
+  }
+  
+  .dropdown-toggle {
+    outline: 0 !important;
+  }
+  
+  .btn.active.focus,
+  .btn.active:focus,
+  .btn.focus,
+  .btn:active.focus,
+  .btn:active:focus,
+  .btn:focus {
+    outline: none;
+    outline-offset: -2px;
+  }
+  
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .view-member-add-user-section .progress-bar-section ul li {
+      width: 37%;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .view-member-add-user-section .progress-bar-section .disable-state-txt {
+      font-size: 13px;
+    }
+  
+    .view-member-add-user-section .progress-bar-section .active-state-txt {
+      font-size: 13px;
+    }
+  
+    .view-member-add-user-section .progress-bar-section ul li {
+      width: 37%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .tab-pl-0 {
+      padding-left: 0px;
+    }
+  
+    .tab-pr-0 {
+      padding-right: 0px;
+    }
+  
+    .tab-p-lr-0 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .tab-group-p {
+      padding-bottom: 16px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+  
+    .btn.active.focus,
+    .btn.active:focus,
+    .btn.focus,
+    .btn:active.focus,
+    .btn:active:focus,
+    .btn:focus {
+      outline: none;
+      outline-offset: -2px;
+    }
+  
+    .placeholder-text:focus {
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  
+    .view-member-landing .view-member-details-section .pad-l-0 {
+      padding-left: 0px;
+    }
+  
+    .pad-l-0 {
+      padding-left: 0;
+    }
+  
+    .tool-tip-img {
+      width: 16px;
+      height: 16px;
+    }
+  
+    .view-member-landing .view-member-details-section .personal-details-ttl {
+      padding-top: 16px;
+      font-size: 16px;
+      font-family: PFHandbookPro-Regular;
+    }
+  
+    .proposal-form-btn-white {
+      border-radius: 2px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+      padding: 6px 32px;
+      margin-right: 19px;
+    }
+  
+    .proposal-form-btn-yellow {
+      border-radius: 2.4px;
+      box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+      background-color: #c7222a;
+      padding: 6px 32px;
+    }
+  
+    .harmful-substance-btn {
+      border-radius: 2px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+      padding: 6px 32px;
+    }
+  
+    .harmful-substance-btn-white {
+      border-radius: 2.4px;
+      box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+      background-color: #c7222a;
+      padding: 6px 32px;
+    }
+  
+    .btn-bg-white {
+      background-color: #ffffff !important;
+    }
+  
+    .border-shadow-select2 {
+      box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.12), 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.14);
+    }
+  
+    .btn-bg-red {
+      background-color: #c7222a !important;
+    }
+  
+    .yes-btn-red {
+      background-color: #c7222a;
+      color: #ffffff;
+    }
+  
+    .yes-btn-red-initial {
+      background-color: #c7222a;
+    }
+  
+    .yes-btn-white {
+      background-color: #ffffff;
+    }
+  
+    .yes-btn-white-clr {
+      background-color: #ffffff;
+    }
+  
+    .proposal-form-btn-txt-red {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      text-align: center;
+      color: #ffffff;
+    }
+  
+    .proposal-form-btn-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      text-align: center;
+      color: #666666;
+    }
+  
+    .proposal-form-btn-yellow .proposal-form-btn-txt {
+      color: #ffffff;
+    }
+  
+    .question-txt {
+      font-family: PFHandbookPro-Light;
+      font-size: 16px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.6;
+      letter-spacing: 0.24px;
+      color: #666666;
+      padding-bottom: 10px;
+    }
+  
+    .harmful-substance {
+      padding-bottom: 25px;
+    }
+  
+    .health-dropdown-txt {
+      font-family: PFEncoreSansPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      color: #666666;
+      padding-bottom: 4px;
+    }
+  
+    .step-one-padding .form-control {
+      height: 44px;
+      margin-bottom: 16px;
+    }
+  
+    .yes-no-btn-group {
+      padding-bottom: 41px;
+    }
+  
+    .btn-drop-down-width {
+      height: 44px;
+    }
+  
+    .btn-ad-member {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #660d0a;
+      width: 169px;
+      height: 37px;
+      border-radius: 0;
+      border: solid 1px #660d0a;
+      background-color: #ffffff;
+    }
+  
+    .btn-ad-member:focus {
+      outline: none;
+      box-shadow: none;
+      color: #660d0a;
+    }
+  
+    .btn-remove {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #660d0a;
+      width: 126px;
+      height: 37px;
+      border-radius: 0;
+      border: solid 1px #660d0a;
+      background-color: #ffffff;
+      margin-bottom: 40px;
+    }
+  
+    .btn-remove:focus {
+      color: #660d0a;
+    }
+  
+    .form-group-p {
+      padding-bottom: 16px;
+    }
+  
+    .mail-her-sec-p {
+      padding: 0px 0px;
+    }
+  
+    .mail-box {
+      width: 204px;
+      height: 38px;
+      border-radius: 6px;
+      background-color: #ffffff;
+      padding: 9px 16px;
+    }
+  
+    .mail-box .mail-to-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #585858;
+    }
+  
+    .mail-box .mail-to-txt .fa-edit {
+      float: right;
+      padding-top: 2px;
+    }
+  
+    .hereby-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #585858;
+      padding-top: 16px;
+      padding-bottom: 8px;
+    }
+  
+    .eia-acc-se-p .eia-ccount-ttl {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #585858;
+      padding: 16px 0px;
+    }
+  
+    .res-otp {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: #c7222a;
+    }
+  
+    .btn-otp-submit {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.19px;
+      text-align: center;
+      color: #ffffff;
+      width: 83px;
+      height: 44px;
+      border-radius: 2.4px;
+      box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+      background-color: #c7222a;
+    }
+  
+    .palc-m-0 {
+      margin-bottom: 0px !important;
+    }
+  
+    .mobile-input::after {
+      content: "\f044";
+      font-family: 'FontAwesome';
+      position: absolute;
+    }
+  
+    .personal-details-ttl {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #585858;
+      padding: 16px 0px;
+    }
+  
+    .dec-pad-l {
+      padding-left: 72px;
+    }
+  
+    .decrare-question-txt {
+      font-family: PFHandbookPro-Light;
+      font-size: 16px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #585858;
+    }
+  
+    .decl-sec .label-text {
+      font-family: PFHandbookPro-Regular;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .eia-acc-m-15 {
+      margin-bottom: 15px;
+    }
+  
+    .view-member-details-blck-txt {
+      font-family: PFHandbookPro-Regular;
+      font-size: 20px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .decl-sec .bold-ttl-p-0 {
+      padding-left: 0 !important;
+      padding-right: 0px !important;
+    }
+  
+    .btn-drop-down-width {
+      height: 44px;
+      width: 100%;
+      text-align: left;
+    }
+  
+    .prior-txt-p-l {
+      padding-left: 34px;
+    }
+  
+    .label-text {
+      opacity: 0.7;
+      font-family: PFHandbookPro-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .decl-sec .form-control {
+      margin-bottom: 0;
+    }
+  
+    .mob-num-input .input-group-btn {
+      display: block;
+    }
+  
+    .mob-num-input .edit-btn {
+      height: 44px;
+      border-left: 0;
+      background-color: #FFF;
+      opacity: 0.5;
+    }
+  
+    .mob-num-input .mobile-input {
+      border-right: 0;
+    }
+  
+    .mobile-input:focus {
+      box-shadow: none;
+      border-right: 0;
+    }
+  }
+  
+  .save-btn {
+    display: inline-block;
+    width: 128px;
+    height: 32px;
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 8px 0px;
+  }
+  
+  .dropdown-bg-white {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .previuos-edited-bdr::after {
+    content: "";
+    height: 4px;
+    width: 98%;
+    background-color: #f7e9e8;
+    position: absolute;
+    z-index: 1;
+    left: 22px;
+    top: 25px;
+    right: 20px;
+  }
+  
+  .edit-member-detail-tabs .nav-tabs {
+    border: 0;
+    background-color: #FFF;
+  }
+  
+  .edit-member-detail-tabs .nav-tabs li {
+    padding-right: 40px;
+  }
+  
+  .edit-member-detail-tabs .nav-tabs>li.active>a,
+  .edit-member-detail-tabs .nav-tabs>li.active>a:focus,
+  .edit-member-detail-tabs .nav-tabs>li.active>a:hover {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    border: 1px solid transparent;
+    border-bottom: 4px solid #c52f2f;
+  }
+  
+  .edit-member-detail-tabs .nav-tabs>li>a {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #d8d8d8;
+  }
+  
+  .edit-member-detail-tabs .nav>li>a:focus,
+  .edit-member-detail-tabs .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+  
+  .edit-member-detail-tabs .nav-tabs>li>a:hover {
+    border-color: transparent;
+  }
+  
+  .edit-member-detail-tabs .personal-detail-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .edit-member-detail-tabs .edit-detail-tab-cont {
+    padding-top: 30px;
+  }
+  
+  .edit-member-detail-tabs .edit-detail-tab-cont .hr-pad-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .edit-member-detail-tabs .edit-detal-panl-default {
+    box-shadow: none;
+    border: 0;
+    background-color: #f7f9fc;
+    border-top-color: #f7f9fc;
+  }
+  
+  .edit-member-detail-tabs .edit-detal-panl-default .panel-heading {
+    color: #333;
+    background-color: #f7f9fc;
+    border-color: #f7f9fc;
+  }
+  
+  .edit-member-detail-tabs .edit-detal-panl-default .panel-body {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+  
+  .edit-member-detail-tabs .edit-detail-acc-ttl a {
+    text-decoration: none;
+  }
+  
+  .edit-member-detail-tabs .edit-detail-acc-ttl a:hover {
+    text-decoration: none;
+  }
+  
+  .edit-member-detail-tabs .acc-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .edit-member-detail-tabs .acc-ttl:hover {
+    text-decoration: none;
+  }
+  
+  .edit-member-detail-tabs .arrow-right {
+    float: right;
+  }
+  
+  .edit-member-detail-tabs .label-text {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding-bottom: 10px;
+  }
+  
+  .edit-member-detail-tabs .placeholder-text {
+    opacity: 1;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #000000;
+    height: 44px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #cdcece;
+    box-shadow: none;
+    margin-bottom: 0px;
+  }
+  
+  .edit-member-detail-tabs .placeholder-text:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: solid 1px #6c7174;
+  }
+  
+  .edit-member-detail-tabs .rotate {
+    -webkit-transform: rotate(-90deg);
+    /* Chrome, Safari, Opera */
+    -moz-transform: rotate(-90deg);
+    /* Firefox */
+    -ms-transform: rotate(-90deg);
+    /* IE 9 */
+    transform: rotate(-90deg);
+    /* Standard syntax */
+  }
+  
+  .pad-r-0 {
+    padding-right: 0px;
+  }
+  
+  .pad-input-l {
+    padding-left: 4px;
+  }
+  
+  .pad-input-r {
+    padding-right: 4px;
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+    .edit-member-detail-tabs .label-text {
+      font-size: 14px;
+      padding-bottom: 4px;
+    }
+  
+    .edit-member-detail-tabs .panel-title::after {
+      display: none;
+    }
+  
+    .edit-member-detail-tabs .acc-ttl {
+      font-size: 16px;
+      color: #585858;
+    }
+  
+    .edit-member-detail-tabs .placeholder-text {
+      margin-bottom: 8px;
+    }
+  
+    .edit-member-detail-tabs .arrow-right {
+      transform: rotate(90deg);
+    }
+  
+    .edit-member-detail-tabs .rotate {
+      transform: rotate(-360deg);
+    }
+  
+    .edit-member-detail-tabs .panel-group {
+      padding: 0px 16px;
+    }
+  
+    .edit-member-detail-tabs .edit-detal-panl-default .panel-heading {
+      padding: 20px 0px;
+    }
+  
+    .edit-member-detail-tabs .edit-detal-panl-default .panel-body {
+      padding: 0px 0px 15px 0px;
+    }
+  
+    .edit-member-detail-tabs .hr-pad-5 {
+      margin: 0px;
+    }
+  
+    .img-mr {
+      margin-left: 12px;
+    }
+  }
+  
+  .your-Sum-Insured-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  
+  .btn-drop-down-width {
+    width: 100%;
+    text-align: left;
+    height: 44px;
+    opacity: 0.5;
+  }
+  
+  .dropdown-toggle {
+    outline: 0 !important;
+  }
+  
+  .dropdown-placeholder-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+  }
+  
+  .glyphi-drop-down-style {
+    top: 4px;
+    font-size: 13px;
+  }
+  
+  .label-text {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding-bottom: 8px;
+  }
+  
+  .input-pad {
+    padding-bottom: 8px;
+  }
+  
+  .pad-input-bg {
+    padding: 0px 16px 40px 16px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .label-text {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+    .your-Sum-Insured-txt {
+      color: #585858;
+    }
+  
+    .label-text {
+      font-size: 14px;
+      padding-bottom: 4px;
+    }
+  
+    .input-pad {
+      padding-bottom: 12px;
+    }
+  
+    .radio-btn {
+      margin-right: 20px !important;
+    }
+  }
+  
+  .renewal-level-main {
+    padding: 37px 68px 100px 96px;
+  }
+  
+  .renewal-level-main .select-policy-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 38px;
+    line-height: normal;
+    color: #000000;
+  }
+  
+  .renewal-level-main .select-policy-sub-txt {
+    opacity: 0.8;
+    font-family: PFEncoreSansPro-Book;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+    margin-bottom: 40px;
+  }
+  
+  .renewal-level-main .p-0 {
+    padding: 0 !important;
+  }
+  
+  .renewal-level-main .m-0 {
+    margin: 0 !important;
+  }
+  
+  .renewal-level-main .mb-6 {
+    margin-bottom: 6px;
+  }
+  
+  .renewal-level-main .mb-1 {
+    margin-bottom: 1px;
+  }
+  
+  .renewal-level-main .d-none {
+    display: none;
+  }
+  
+  .renewal-level-main .active-secure-block {
+    margin-bottom: 37px;
+    border-radius: 3px;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.19);
+    border: solid 2px #da9089;
+    background-color: #ffffff;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading {
+    /* padding: 6px 0 9px 16px;*/
+    /*border-radius: 3px;*/
+    padding-right: 8px;
+    background-color: #da9089;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .active-secure-head-big-text {
+    padding: 4px 0 4px 16px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: PFHandbookPro-Regular;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .active-secure-head-big-text .active-secure-head-small-text {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #f1f3f6;
+    position: inherit;
+    margin-left: 6px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .checkbox-action-block {
+    padding-top: 8px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .checkbox-action-block .policy-CheckBox {
+    display: none;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .checkbox-action-block .policy-CheckBox+label:before {
+    content: "";
+    width: 22px;
+    display: inline-block;
+    background-image: url("../images/new-renew/unselected.png");
+    height: 22px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-heading .checkbox-action-block .selectedCheckBox+label:before {
+    background-image: url("../images/new-renew/selected.png");
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-title {
+    font-family: PFHandbookPro-Light;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #3b3b3b;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-data {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-data .rupee_icon {
+    font-size: 14px;
+    margin-right: 3px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-body {
+    padding: 8px 19px 8px 18px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-body .active-up-block {
+    border-radius: 1.6px;
+    background-color: #d2f3d6;
+    font-family: PFHandbookPro-Regular;
+    font-size: 14px;
+    width: max-content;
+    line-height: 12.8px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #43974b;
+    padding: 5px 19px 5px 19px;
+    display: inline-block;
+    margin-bottom: 39px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-body .reminder-for-ren {
+    font-family: PFHandbookPro-Bold;
+    font-size: 12px;
+    color: #f7a502;
+    text-decoration: underline;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-body .reminder-for-ren .clock-icon {
+    margin-left: 4px;
+  }
+  
+  .renewal-level-main .active-secure-block .active-secure-footer {
+    padding: 10px 19px 10px 18px;
+    border-radius: 3px;
+    background-color: #d4e1f2;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .renewal-level-main .active-secure-sub-block {
+    width: 95%;
+    margin-bottom: 37px;
+    border-radius: 3px;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.19);
+    border: solid 2px #da9089;
+    background-color: #ffffff;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading {
+    /* padding: 6px 0 9px 16px;*/
+    /*border-radius: 3px;*/
+    padding-right: 8px;
+    background-color: #da9089;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .active-secure-head-big-text {
+    padding: 4px 0 4px 16px;
+    font-size: 19px;
+    color: #ffffff;
+    font-family: PFHandbookPro-Regular;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .active-secure-head-big-text .active-secure-head-small-text {
+    font-size: 13.3px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #f1f3f6;
+    margin-left: 6px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .checkbox-action-block {
+    padding-top: 8px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .checkbox-action-block #myCheckbox2 {
+    display: none;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .checkbox-action-block #myCheckbox2+label:before {
+    content: "";
+    width: 22px;
+    display: inline-block;
+    background-image: url("../images/new-renew/unselected.png");
+    height: 22px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-heading .checkbox-action-block #myCheckbox2:checked+label:before {
+    background-image: url("../images/new-renew/selected.png");
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-title {
+    font-family: PFHandbookPro-Light;
+    font-size: 11.4px;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #3b3b3b;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-data {
+    font-family: PFHandbookPro-Regular;
+    font-size: 17.1px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-data .rupee_icon {
+    font-size: 14px;
+    margin-right: 3px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-data .data-value {
+    color: #da9089;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-body {
+    padding: 8px 19px 8px 18px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-body .active-up-block {
+    border-radius: 1.6px;
+    background-color: #d2f3d6;
+    font-family: PFHandbookPro-Regular;
+    font-size: 11.4px;
+    width: max-content;
+    line-height: 12.8px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #43974b;
+    padding: 5px 19px 5px 19px;
+    display: inline-block;
+    margin-bottom: 39px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-body .reminder-for-ren {
+    font-family: PFHandbookPro-Bold;
+    font-size: 11.4px;
+    color: #f7a502;
+    text-decoration: underline;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-body .reminder-for-ren .clock-icon {
+    margin-left: 4px;
+  }
+  
+  .renewal-level-main .active-secure-sub-block .active-secure-footer {
+    padding: 10px 19px 10px 18px;
+    border-radius: 3px;
+    background-color: #d4e1f2;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .renewal-level-main .right-side-pad-left {
+    padding-left: 45px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .left-large-bdr {
+    padding: 12px;
+    height: 502px;
+    border-radius: 5px;
+    border: dashed 1px #da9089;
+    border-right: 0;
+    position: absolute;
+    left: -24px;
+    top: 34px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .border-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #da9089;
+    position: absolute;
+    top: 30px;
+    left: -6px;
+    z-index: 1;
+  }
+  
+  .renewal-level-main .right-side-pad-left .border-dot-bottom {
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #da9089;
+    position: absolute;
+    bottom: 111px;
+    left: 41px;
+    z-index: 1;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg {
+    border-radius: 4px;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.08);
+    background-color: #f7f9fc;
+    padding: 19px 26px 25px 21px;
+    margin-bottom: 31px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .policy-tenure-ttl {
+    font-family: PFHandbookPro-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    padding-bottom: 11px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box {
+    border-radius: 2px;
+    background-color: #ffffff;
+    padding: 16px 24px 24px;
+    margin-bottom: 15px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box .question-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+    padding-bottom: 4px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box .pink-text {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding-bottom: 11px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box .current-group-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box .question-txt-btm {
+    padding-bottom: 11px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new .checkbox-pink-txt {
+    font-size: 16px;
+    color: #da9089;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .save-renew-btn {
+    width: 287px;
+    height: 48px;
+    padding: 13px 16px 15px 22px;
+    border-radius: 0;
+    background-color: #c91f23;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .policy-tenure-bg .save-renew-btn img {
+    float: right;
+    margin-top: 3px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+    width: 104%;
+    border-top: dashed 1px #da9089;
+    position: absolute;
+    top: -13px;
+    right: 0;
+  }
+  
+  .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box {
+    border-radius: 4px;
+    border: solid 1px #da9089;
+    padding: 18px 16px 21px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box .change-to-policy-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+  }
+  
+  .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box .remove-member-black-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+    padding-bottom: 16px;
+  }
+  
+  .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box .modify-policy-details-btn {
+    width: 287px;
+    height: 48px;
+    padding: 13px 16px 15px 22px;
+    border: solid 1px #c7222a;
+    background-color: #ffffff;
+    border-radius: 0;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    text-align: left;
+  }
+  
+  .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box .modify-policy-details-btn img {
+    float: right;
+    margin-top: 3px;
+  }
+  
+  #crosssalepopup .modal-content {
+    border-radius: 0;
+  }
+  
+  #crosssalepopup .close {
+    opacity: 1;
+    position: absolute;
+    top: -1px;
+    right: 0;
+  }
+  
+  #crosssalepopup .modal-padding {
+    padding: 24px 0 0;
+  }
+  
+  #crosssalepopup .text-section-padding {
+    padding: 0px 24px 0;
+  }
+  
+  #crosssalepopup .before-you-go-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #303d55;
+  }
+  
+  #crosssalepopup .maximum-protection-txt {
+    font-family: PFEncoreSansPro-Book;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #424242;
+    padding-bottom: 32px;
+  }
+  
+  #crosssalepopup .carousel-grey-bg {
+    background-color: #f7f9fc;
+    padding: 24px 0 24px 29px;
+    margin-bottom: 24px;
+  }
+  
+  #crosssalepopup .carousel-item-box-shadow {
+    padding: 14px 0 0 12px;
+    border-radius: 7px;
+    box-shadow: 0 2px 14px -4px rgba(0, 0, 0, 0.24);
+    border: solid 1px #da9089;
+    background-color: #ffffff;
+    margin-bottom: 14px;
+  }
+  
+  #crosssalepopup .container-new {
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    right: 30px;
+    top: 2px;
+  }
+  
+  #crosssalepopup .container-new .checkbox-pink-txt {
+    font-size: 16px;
+    color: #da9089;
+  }
+  
+  #crosssalepopup .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  #crosssalepopup .container-new .checkmark {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+  }
+  
+  #crosssalepopup .container-new .checkmark:focus {
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+    outline: none;
+  }
+  
+  #crosssalepopup .container-new input:checked~.checkmark {
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+    outline: none;
+  }
+  
+  #crosssalepopup .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  #crosssalepopup .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  #crosssalepopup .container-new .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #crosssalepopup .item-ttl {
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding-left: 4px;
+    padding-bottom: 0px;
+  }
+  
+  #crosssalepopup .item-small-text {
+    font-family: PFHandbookPro-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #868686;
+    padding-bottom: 8px;
+    padding-left: 4px;
+  }
+  
+  #crosssalepopup .premium-pink-bg {
+    background-color: #da9089;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #ffffff;
+    padding: 5px;
+    display: inline-block;
+    text-align: right;
+    float: right;
+    border-bottom-right-radius: 7px;
+    margin: -1px;
+  }
+  
+  #crosssalepopup .addon-product-btn {
+    width: 100%;
+    height: 48px;
+    background-color: #c91f23;
+    padding: 14px 16px 22px;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    border-radius: 0;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  
+  #crosssalepopup .addon-product-btn img {
+    float: right;
+    margin-top: 2px;
+  }
+  
+  #crosssalepopup .skip-renew-btn {
+    width: 100%;
+    height: 48px;
+    padding: 13px 16px 15px 22px;
+    border: solid 1px #c7222a;
+    background-color: #ffffff;
+    border-radius: 0;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  
+  #crosssalepopup .skip-renew-btn img {
+    float: right;
+    margin-top: 3px;
+  }
+  
+  #crosssalepopup .addon-product-btn {
+    text-transform: uppercase;
+  }
+  
+  @media (min-width: 1441px) and (max-width: 1500px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 535px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1397px) and (max-width: 1440px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 535px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1367px) and (max-width: 1396px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 569px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1301px) and (max-width: 1366px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 503px;
+    }
+  }
+  
+  @media (min-width: 1201px) and (max-width: 1300px) {
+    .white-bg-box .radio-btn {
+      margin-right: 6px;
+      padding-left: 30px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 520px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 106%;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .renewal-level-main {
+      padding: 37px 40px 100px 40px;
+    }
+  
+    .renewal-level-main .select-policy-txt {
+      font-size: 35px;
+    }
+  
+    .renewal-level-main .active-secure-block .active-secure-data {
+      font-size: 14px;
+    }
+  
+    .renewal-level-main .active-secure-sub-block .active-secure-data {
+      font-size: 14px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .policy-tenure-bg .policy-tenure-ttl {
+      font-size: 19px;
+    }
+  
+    .white-bg-box .lbl-txt {
+      font-size: 14px;
+    }
+  
+    .white-bg-box .radio-btn {
+      margin-right: 9px;
+      padding-left: 24px;
+    }
+  
+    .white-bg-box .checkmark {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .white-bg-box .radio-btn .checkmark:after {
+      top: 4px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 515px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 107%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .renewal-level-main {
+      padding: 37px 30px 89px 30px;
+    }
+  
+    .renewal-level-main .active-secure-block .active-secure-body .active-up-block {
+      font-size: 10px;
+      padding: 5px 10px 5px 10px;
+    }
+  
+    .renewal-level-main .active-secure-block .active-secure-data {
+      font-size: 15px;
+    }
+  
+    .renewal-level-main .active-secure-sub-block .active-secure-body .active-up-block {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 332px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 649px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .policy-tenure-bg .save-renew-btn {
+      width: 100%;
+    }
+  
+    .renewal-level-main .right-side-pad-left .other-change-pink-bdr-box .modify-policy-details-btn {
+      width: 100%;
+    }
+  
+    .renewal-level-main .right-side-pad-left .policy-tenure-bg .container-new {
+      font-size: 16px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .policy-tenure-bg .policy-tenure-ttl {
+      font-size: 18px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .policy-tenure-bg .white-bg-box .pink-text {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 851px) and (max-width: 991px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 582px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 373px;
+    }
+  }
+  
+  @media (min-width: 798px) and (max-width: 850px) {
+    .renewal-level-main .right-side-pad-left .left-large-bdr {
+      height: 616px;
+    }
+  
+    .renewal-level-main .right-side-pad-left .horizontal-pink-bdr {
+      width: 348px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+    .grey-page-background {
+      background-color: #f1f3f6;
+    }
+  
+    .page-padding {
+      padding: 11px 15px 18px;
+    }
+  
+    .header-ttl {
+      font-family: PFEncoreSansPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.79;
+      letter-spacing: normal;
+      color: #424242;
+      padding-bottom: 21px;
+    }
+  
+    .header-ttl .sml-txt {
+      font-family: PFEncoreSansPro-Book;
+      font-size: 14px;
+    }
+  
+    .activ-assure-box {
+      border-radius: 4px;
+      box-shadow: 0 3px 35px -9px rgba(0, 0, 0, 0.21);
+      background-color: #ffffff;
+      margin-bottom: 16px;
+    }
+  
+    .activ-assure-box .white-header-section {
+      padding: 16px 13px 11px;
+    }
+  
+    .activ-assure-box .white-header-section .activ-assure-ttl {
+      font-family: PFHandbookPro-Regular;
+      font-size: 20px;
+      color: #000000;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      padding-bottom: 10px;
+    }
+  
+    .activ-assure-box .white-header-section .activ-assure-ttl .ttl-pink-txt {
+      font-size: 14px;
+      color: #da9089;
+    }
+  
+    .activ-assure-box .white-header-section .active-renewal-btn {
+      padding: 5px 19px;
+      border-radius: 1.6px;
+      background-color: #d2f3d6;
+      font-family: PFHandbookPro-Regular;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.91;
+      letter-spacing: normal;
+      text-align: center;
+      color: #43974b;
+    }
+  
+    .activ-assure-box .grey-bg-section {
+      background-color: #f9f9f9;
+      padding: 8px 13px;
+    }
+  
+    .activ-assure-box .grey-bg-section .proposer-name-light-txt {
+      font-family: PFHandbookPro-Light;
+      font-size: 12px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      color: #3b3b3b;
+    }
+  
+    .activ-assure-box .grey-bg-section .propose-name-txt {
+      font-family: PFHandbookPro-Regular;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .activ-assure-box .grey-bg-section .txt-pad-btm-10 {
+      padding-bottom: 10px;
+    }
+  
+    .activ-assure-box .card-proceed-padding {
+      padding: 24px 13px 16px;
+    }
+  
+    .activ-assure-box .card-proceed-padding .card-proceed-btn {
+      width: 100%;
+      height: 48px;
+      padding: 14px 16px 22px;
+      border-radius: 0;
+      background-color: #c91f23;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      text-align: left;
+    }
+  
+    .activ-assure-box .card-proceed-padding .card-proceed-btn img {
+      float: right;
+      margin-top: 2px;
+    }
+  
+    .activ-assure-box .renewal-reminder-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 12px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #f7a502;
+      text-decoration: underline;
+      padding-top: 8px;
+    }
+  
+    .edit-new-choice-section .question-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #424242;
+      padding-bottom: 4px;
+    }
+  
+    .edit-new-choice-section .pink-text {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #da9089;
+      padding-bottom: 11px;
+    }
+  
+    .edit-new-choice-section .lbl-txt {
+      font-size: 14px;
+    }
+  
+    .edit-new-choice-section .current-group-txt {
+      opacity: 0.7;
+      font-family: PFHandbookPro-Bold;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .edit-new-choice-section .first-ques-pad-btm-28 {
+      padding-bottom: 28px;
+    }
+  
+    .edit-new-choice-section .second-question-pad-btm-35 {
+      padding-bottom: 35px;
+    }
+  
+    .proceed-to-pay-grey-btn {
+      width: 100%;
+      height: 48px;
+      padding: 14px 16px 22px;
+      background-color: #a4a4a4;
+      border-radius: 0px;
+      text-align: left;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+  
+    .proceed-to-pay-grey-btn img {
+      float: right;
+      margin-top: 2px;
+    }
+  
+    .modify-policy-details-btn {
+      width: 100%;
+      height: 48px;
+      padding: 13px 16px 15px 22px;
+      border: solid 1px #c7222a;
+      background-color: #ffffff;
+      border-radius: 0;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c7222a;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  
+    .modify-policy-details-btn img {
+      float: right;
+      margin-top: 3px;
+    }
+  
+    .edit-choice-cross-sale-section .text-section-padding {
+      padding: 18px 15px 0;
+    }
+  
+    .edit-choice-cross-sale-section .before-you-go-txt {
+      font-family: PFHandbookPro-Regular;
+      font-size: 24px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      color: #000000;
+    }
+  
+    .edit-choice-cross-sale-section .maximum-protection-txt {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: #6c7174;
+      padding-bottom: 16px;
+    }
+  
+    .edit-choice-cross-sale-section .carousel-grey-bg {
+      background-color: #f7f9fc;
+      padding: 24px 0 23px 15px;
+      margin-bottom: 45px;
+    }
+  
+    .edit-choice-cross-sale-section .carousel-item-box-shadow {
+      padding: 14px 0 0 12px;
+      border-radius: 7px;
+      box-shadow: 0 2px 14px -4px rgba(0, 0, 0, 0.24);
+      border: solid 1px #da9089;
+      background-color: #ffffff;
+    }
+  
+    .edit-choice-cross-sale-section .container-new {
+      cursor: pointer;
+      font-family: PFHandbookPro-Regular;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #4b4b4b;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      position: absolute;
+      right: 30px;
+      top: 2px;
+    }
+  
+    .edit-choice-cross-sale-section .container-new .checkbox-pink-txt {
+      font-size: 16px;
+      color: #da9089;
+    }
+  
+    .edit-choice-cross-sale-section .container-new input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    .edit-choice-cross-sale-section .container-new .checkmark {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+    }
+  
+    .edit-choice-cross-sale-section .container-new .checkmark:focus {
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+      outline: none;
+    }
+  
+    .edit-choice-cross-sale-section .container-new input:checked~.checkmark {
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+      outline: none;
+    }
+  
+    .edit-choice-cross-sale-section .container-new .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    .edit-choice-cross-sale-section .container-new input:checked~.checkmark:after {
+      display: block;
+    }
+  
+    .edit-choice-cross-sale-section .container-new .checkmark:after {
+      left: 6px;
+      top: 1px;
+      width: 6px;
+      height: 12px;
+      border: solid #c7222a;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  
+    .edit-choice-cross-sale-section .item-ttl {
+      font-family: PFHandbookPro-Bold;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #da9089;
+      padding-left: 4px;
+      padding-bottom: 8px;
+    }
+  
+    .edit-choice-cross-sale-section .item-small-text {
+      font-family: PFHandbookPro-Regular;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #868686;
+      padding-bottom: 8px;
+    }
+  
+    .edit-choice-cross-sale-section .premium-pink-bg {
+      background-color: #da9089;
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: right;
+      color: #ffffff;
+      padding: 5px;
+      display: inline-block;
+      text-align: right;
+      float: right;
+      border-bottom-right-radius: 7px;
+      margin: -1px;
+    }
+  
+    .edit-choice-cross-sale-section .addon-product-btn {
+      width: 100%;
+      height: 48px;
+      background-color: #c91f23;
+      padding: 14px 16px 22px;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      border-radius: 0;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+  
+    .edit-choice-cross-sale-section .addon-product-btn img {
+      float: right;
+      margin-top: 2px;
+    }
+  
+    .edit-choice-cross-sale-section .skip-renew-btn {
+      width: 100%;
+      height: 48px;
+      padding: 13px 16px 15px 22px;
+      border: solid 1px #c7222a;
+      background-color: #ffffff;
+      border-radius: 0;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #c7222a;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  
+    .edit-choice-cross-sale-section .skip-renew-btn img {
+      float: right;
+      margin-top: 3px;
+    }
+  }
+  
+  .question-ttl-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+  }
+  
+  .pink-text-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    padding-bottom: 12px;
+  }
+  
+  .add-new-member-btn {
+    padding: 8px 6px;
+    border-radius: 0;
+    border: solid 1px #660d0a;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #660d0a;
+  }
+  
+  .add-new-member-btn:hover {
+    color: #660d0a;
+  }
+  
+  .owl-carousel-section .owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    right: -27px;
+    background-color: #da9089;
+    top: 66px;
+    padding: 21px 6px !important;
+    color: #ffffff;
+  }
+  
+  .owl-carousel-section .owl-carousel .owl-nav button.owl-next:focus {
+    outline: none;
+  }
+  
+  .owl-carousel-section .owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    left: -23px;
+    background-color: #da9089;
+    top: 66px;
+    padding: 21px 6px !important;
+    color: #ffffff;
+  }
+  
+  .owl-carousel-section .owl-carousel .owl-nav button.owl-prev:focus {
+    outline: none;
+  }
+  
+  .carousel-item-white-bg {
+    padding: 9px 22px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.23);
+    background-color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-item-white-bg .self-pink-txt {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Medium;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #660d0a;
+    padding-bottom: 18px;
+  }
+  
+  .carousel-item-white-bg .sum-insured-txt {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 8px;
+  }
+  
+  .carousel-item-white-bg .radio-btn {
+    margin-right: 40px;
+  }
+  
+  .multiple-si-page .right-side-pad-left .left-large-bdr {
+    height: 603px;
+  }
+  
+  #editchoicesmodal .modal-content {
+    background-color: #f7f9fc;
+    border-radius: 0;
+  }
+  
+  #editchoicesmodal .close {
+    opacity: 1;
+    position: absolute;
+    top: -1px;
+    right: 0;
+  }
+  
+  #editchoicesmodal .modal-padding {
+    padding: 53px 45px 40px 46px;
+    width: 656px;
+  }
+  
+  #editchoicesmodal .hi-name-txt {
+    font-family: PFEncoreSansPro-Bold;
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.48;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  #editchoicesmodal .hi-name-txt .light-txt {
+    font-family: PFEncoreSansPro-Book;
+    font-weight: normal;
+    line-height: 1.28;
+  }
+  
+  #editchoicesmodal .modal-members-box {
+    border-radius: 5px;
+    box-shadow: 0 2px 9px -4px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+  
+  #editchoicesmodal .container-new {
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  #editchoicesmodal .container-new .checkbox-pink-txt {
+    font-size: 16px;
+    color: #da9089;
+  }
+  
+  #editchoicesmodal .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  #editchoicesmodal .container-new .checkmark {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+  }
+  
+  #editchoicesmodal .container-new .checkmark:focus {
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+    outline: none;
+  }
+  
+  #editchoicesmodal .container-new input:checked~.checkmark {
+    border-radius: 2px;
+    border: solid 1px #c91f23;
+    background-color: #ffffff;
+    outline: none;
+  }
+  
+  #editchoicesmodal .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  #editchoicesmodal .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  #editchoicesmodal .container-new .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #editchoicesmodal .member-bold-txt {
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #424242;
+    padding-bottom: 10px;
+  }
+  
+  #editchoicesmodal .add-delete-member-txt {
+    font-family: PFEncoreSansPro-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #424242;
+  }
+  
+  #editchoicesmodal .cash-mar-top {
+    margin-top: 3px;
+  }
+  
+  #editchoicesmodal .btns-div {
+    position: sticky;
+    bottom: 0;
+  }
+  
+  #editchoicesmodal .proceed-btn {
+    width: 287px;
+    height: 48px;
+    background-color: #c91f23;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    border-radius: 0;
+    margin-top: 40px;
+  }
+  
+  #editchoicesmodal .proceed-btn img {
+    float: right;
+    margin-top: 2px;
+  }
+  
+  @media (min-width: 1441px) and (max-width: 1500px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 570px;
+    }
+  
+    .multiple-si-pagen .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1397px) and (max-width: 1440px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 570px;
+    }
+  
+    .multiple-si-page .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1367px) and (max-width: 1396px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 604px;
+    }
+  
+    .multiple-si-pagen .right-side-pad-left .horizontal-pink-bdr {
+      width: 105%;
+    }
+  }
+  
+  @media (min-width: 1301px) and (max-width: 1366px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 636px;
+    }
+  }
+  
+  @media (min-width: 1201px) and (max-width: 1300px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 621px;
+    }
+  
+    .multiple-si-page .right-side-pad-left .horizontal-pink-bdr {
+      width: 106%;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 632px;
+    }
+  
+    .carousel-item-white-bg .radio-btn {
+      margin-right: 8px;
+    }
+  
+    .pink-text-ttl {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 897px) and (max-width: 991px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 650px;
+    }
+  
+    .multiple-si-page .right-side-pad-left .horizontal-pink-bdr {
+      width: 106%;
+    }
+  }
+  
+  @media (min-width: 851px) and (max-width: 896px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 668px;
+    }
+  }
+  
+  @media (min-width: 831px) and (max-width: 850px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 669px;
+    }
+  
+    .multiple-si-page .right-side-pad-left .horizontal-pink-bdr {
+      width: 363px;
+    }
+  }
+  
+  @media (min-width: 798px) and (max-width: 830px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 691px;
+    }
+  
+    .multiple-si-page .right-side-pad-left .horizontal-pink-bdr {
+      width: 348px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 797px) {
+    .multiple-si-page .right-side-pad-left .left-large-bdr {
+      height: 720px;
+    }
+  }
+  
+  @media (min-width: 767px) and (max-width: 991px) {
+    .carousel-item-white-bg .radio-btn {
+      margin-right: 35px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 767px) {
+    .owl-carousel-section .owl-carousel .owl-nav button.owl-next {
+      right: -15px;
+    }
+  
+    .owl-carousel-section .owl-carousel .owl-nav button.owl-prev {
+      left: -15px;
+    }
+  
+    .carousel-item-white-bg {
+      border-radius: 5px;
+      box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.23);
+      background-color: #ffffff;
+    }
+  
+    .owl-carousel-section .owl-carousel .owl-stage {
+      margin: 15px 7px;
+    }
+  
+    .add-new-member-btn {
+      width: 126px;
+      height: 37px;
+      border: solid 1px #da9089;
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #da9089;
+      margin-bottom: 28px;
+    }
+  
+    .current-group-txt {
+      opacity: 0.7;
+      font-family: PFHandbookPro-Bold;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000000;
+      padding-bottom: 35px;
+    }
+  
+    .mob-pad-top-11 {
+      padding-top: 11px;
+    }
+  
+    .edit-choices-modal .modal-members-box {
+      border-radius: 5px;
+      box-shadow: 0 2px 9px -4px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 12px;
+      margin-bottom: 8px;
+    }
+  
+    .edit-choices-modal .container-new {
+      cursor: pointer;
+      font-family: PFHandbookPro-Regular;
+      font-size: 18px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #4b4b4b;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  
+    .edit-choices-modal .container-new .checkbox-pink-txt {
+      font-size: 16px;
+      color: #da9089;
+    }
+  
+    .edit-choices-modal .container-new input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    .edit-choices-modal .container-new .checkmark {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+    }
+  
+    .edit-choices-modal .container-new .checkmark:focus {
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+      outline: none;
+    }
+  
+    .edit-choices-modal .container-new input:checked~.checkmark {
+      border-radius: 2px;
+      border: solid 1px #c91f23;
+      background-color: #ffffff;
+      outline: none;
+    }
+  
+    .edit-choices-modal .container-new .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    .edit-choices-modal .container-new input:checked~.checkmark:after {
+      display: block;
+    }
+  
+    .edit-choices-modal .container-new .checkmark:after {
+      left: 6px;
+      top: 1px;
+      width: 6px;
+      height: 12px;
+      border: solid #c7222a;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  
+    .edit-choices-modal .member-bold-txt {
+      font-family: PFHandbookPro-Bold;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: normal;
+      color: #424242;
+      padding-bottom: 10px;
+    }
+  
+    .edit-choices-modal .add-delete-member-txt {
+      font-family: PFEncoreSansPro-Regular;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #424242;
+    }
+  
+    .edit-choices-modal .cash-mar-top {
+      margin-top: 3px;
+    }
+  
+    .edit-choices-modal .btns-div {
+      position: sticky;
+      bottom: 0;
+    }
+  
+    .edit-choices-modal .proceed-btn-box-shadow {
+      box-shadow: 0 -16px 15px -9px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 16px 16px 0px;
+      height: 95px;
+    }
+  
+    .edit-choices-modal .proceed-btn-box-shadow .proceed-btn {
+      width: 100%;
+      height: 48px;
+      background-color: #c91f23;
+      font-family: PFHandbookPro-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+    }
+  
+    .edit-choices-modal .proceed-btn-box-shadow .proceed-btn img {
+      float: right;
+    }
+  
+    .edit-choices-modal .proceed-btn-box-shadow .click-to-copy-link {
+      font-family: PFHandbookPro-Regular;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: #c7222a;
+      padding-top: 5px;
+    }
+  }
+  
+  .succesfuly-added-modal {
+    width: 296px;
+    border-radius: 2px;
+    box-shadow: 0 11px 20px 6px rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.18);
+    background-color: #1f874c;
+    border: transparent;
+  }
+  
+  .succesfuly-added-modal .Succesful-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-top: 5px;
+  }
+  
+  .succesfuly-added-modal .got-it-txt a {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-top: 13px;
+    display: block;
+    text-decoration: underline;
+  }
+  
+  .succesfuly-added-modal .succ-modal-ttl {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  
+  .succesfuly-added-modal .close-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  
+  .succesfuly-added-modal .img-top {
+    margin-top: -5px;
+  }
+  
+  .save-prev-modal {
+    width: 296px;
+    border-radius: 2px;
+    box-shadow: 0 11px 20px 6px rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.18);
+    background-color: #f7a502;
+  }
+  
+  .save-prev-modal .modal-body {
+    padding: 18px 18px 23px;
+  }
+  
+  .save-prev-modal .close-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  
+  .save-prev-modal .switched-user-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-bottom: 17px;
+  }
+  
+  .save-prev-modal .save-draft-for-user-txt {
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .radio-btn {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    margin-right: 40px;
+    cursor: pointer;
+  }
+  
+  .radio-btn:last-child {
+    margin-right: 0px !important;
+  }
+  
+  .lbl-txt {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+  
+  /* Hide the browser's default radio button */
+  .radio-btn input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: 2px solid #e3eaf3;
+    border-radius: 50%;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .radio-btn input:checked~.checkmark {
+    background-color: #ffffff;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .radio-btn input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .radio-btn .checkmark:after {
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #650e09;
+    border: 2px solid #e3eaf3;
+  }
+  
+  /************** End of Main Styles **********/
+  
+  
+  /************** New Css by sunny **********/
+  
+  .policy-main-land-label label {
+    display: inline-block;
+    margin-bottom: 0px;
+    max-width: 100%;
+    font-weight: 700;
+    right: 8px;
+    cursor: pointer;
+    top: 5px;
+    display: contents !important;
+  }
+  
+  .tenure-radio {
+    left: 0px;
+  }
+  
+  .member-relation {
+    display: inline-block;
+    font-size: 18px;
+  }
+  
+  .member-suminsured {
+    display: inline-block;
+    font-size: 18px;
+  }
+  
+  .pad-top-bot-model {
+    padding-top: 10px;
+    padding-bottom: 10px
+  }
+  
+  form.form-errors .errormsg {
+    display: block;
+  }
+  
+  form .errormsg {
+    display: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #c7222a;
+  }
+  
+  .requiredFieldStyle {
+    color: red
+  }
+  
+  .slider-label {
+    float: right;
+  }
+  
+  .label-font-weight-heavy {
+    font-weight: 700;
+  }
+  
+  .zone-style {
+    padding-top: 10px;
+  }
+  
+  /************** End of New Css by sunny **********/
+  
+  /************** New Css Added By Sarje **********/
+  
+  .horizontal-pink-border {
+    border-top: solid 4px #f7e9e8;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .refresh-btn>img {
+    display: inline;
+  }
+  
+  .view-member-landing .previous-sec-padding .dd-menu {
+    border: none;
+  }
+  
+  .view-member-landing .dropdown-bg-white {
+    width: fit-content;
+  }
+  
+  /* Header Details Direcitve Css */
+  
+  .header-premium-section {
+    padding-left: 20px;
+    text-align: left;
+  }
+  
+  .header-premium-section .premium-text {
+    font-size: 18px;
+    color: #c7222a;
+  }
+  
+  .header-premium-section .health-return-container {
+    margin-top: -10px;
+    font-size: 16px;
+  }
+  
+  .header-premium-section .pre-btn-container {
+    margin-top: 5px;
+  }
+  
+  .headercheckbox .container-new {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 2px;
+    padding-top: 2px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .headercheckbox .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .headercheckbox .container-new .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .headercheckbox .container-new .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .headercheckbox .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .headercheckbox .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .headercheckbox .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .headercheckbox .container-new .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .headercheckbox .container-new .checkbox-green-txt {
+    color: #46964e;
+  }
+  
+  /* End of Header Details Direcitve Css */
+  
+  /* New Renewal Landing Page Css */
+  
+  .view-member-landing.container-fluid {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+  
+  .download-pdf-renewal {
+    opacity: .8;
+    font-family: PFEncoreSansPro-Book;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+    margin-bottom: 18px;
+  }
+  
+  .download-pdf-renewal a {
+    font-weight: 900;
+    color: #6A4742;
+  }
+  
+  .renewal-level-main .sum-ins-text {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    cursor: pointer;
+  }
+  
+  .renewal-level-main .product-block-width {
+    width: 100%;
+  }
+  
+  .renewal-level-main .content-health-return {
+    margin-top: 107px;
+  }
+  
+  
+  .renewal-level-main .pay-premium-button {
+    width: 100%;
+    height: 48px;
+    padding: 13px 16px 15px 22px;
+    border-radius: 0;
+    background-color: #c91f23;
+    font-family: PFHandbookPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .new-renewal-landing-mobile .sum-ins-text {
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #da9089;
+    cursor: pointer;
+  }
+  
+  .new-renewal-landing-mobile .container-new {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .new-renewal-landing-mobile .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .new-renewal-landing-mobile .container-new .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .new-renewal-landing-mobile .container-new .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .new-renewal-landing-mobile .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .new-renewal-landing-mobile .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .new-renewal-landing-mobile .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .new-renewal-landing-mobile .container-new .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .new-renewal-landing-mobile .container-new .checkbox-pink-txt {
+    font-size: 16px;
+    color: #da9089;
+  }
+  
+  .slick-slider-new-mob {
+    width: 295px;
+  }
+  
+  .slick-member {
+    padding: 5px 15px 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.23);
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .member-sum-insured-text {
+    opacity: 0.7;
+    font-family: PFHandbookPro-Medium;
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #660d0a;
+    padding-bottom: 5px;
+  }
+  .emandate-button{
+    width: 100%;
+   height: 48px;
+   padding: 13px 16px 15px 0px;
+   border-radius: 0;
+   /*background-color: #ffffff;*/
+   font-family: PFHandbookPro-Bold;
+   font-size: 18px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color:  #c91f23;
+   text-align: left;
+  }
+  
+  /* End of New Renewal Landing Page Css */
+  
+  /* Renewal View Member Landing Page Css */
+  
+  .details-box .btn {
+    height: auto;
+    box-shadow: none;
+  }
+  
+  .view-member-landing .dd-menu .fa-angle-up {
+    display: none;
+  }
+  
+  .view-member-mobile .container-new,
+  .add-user-mobile .container-new,
+  .upgrade-zone-room-mobile .container-new,
+  .increase-sum-insured-mobile .container-new,
+  .increase-policy-tenure-mobile .container-new,
+  .edit-nominee-details-mobile .container-new,
+  .edit-member-mobile .container-new,
+  .change-address-details-mobile .container-new {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0px;
+    padding-top: 1px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .view-member-mobile .container-new input,
+  .add-user-mobile .container-new input,
+  .upgrade-zone-room-mobile .container-new input,
+  .increase-sum-insured-mobile .container-new input,
+  .increase-policy-tenure-mobile .container-new input,
+  .edit-nominee-details-mobile .container-new input,
+  .edit-member-mobile .container-new input,
+  .change-address-details-mobile .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .view-member-mobile .container-new .checkmark,
+  .add-user-mobile .container-new .checkmark,
+  .upgrade-zone-room-mobile .container-new .checkmark,
+  .increase-sum-insured-mobile .container-new .checkmark,
+  .increase-policy-tenure-mobile .container-new .checkmark,
+  .edit-nominee-details-mobile .container-new .checkmark,
+  .edit-member-mobile .container-new .checkmark,
+  .change-address-details-mobile .container-new .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .view-member-mobile .container-new .checkmark:focus,
+  .add-user-mobile .container-new .checkmark:focus,
+  .upgrade-zone-room-mobile .container-new .checkmark:focus,
+  .increase-sum-insured-mobile .container-new .checkmark:focus,
+  .increase-policy-tenure-mobile .container-new .checkmark:focus,
+  .edit-nominee-details-mobile .container-new .checkmark:focus,
+  .edit-member-mobile .container-new .checkmark:focus,
+  .change-address-details-mobile .container-new .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .view-member-mobile .container-new input:checked~.checkmark,
+  .add-user-mobile .container-new input:checked~.checkmark,
+  .upgrade-zone-room-mobile .container-new input:checked~.checkmark,
+  .increase-sum-insured-mobile .container-new input:checked~.checkmark,
+  .increase-policy-tenure-mobile .container-new input:checked~.checkmark,
+  .edit-nominee-details-mobile .container-new input:checked~.checkmark,
+  .edit-member-mobile .container-new input:checked~.checkmark,
+  .change-address-details-mobile .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .view-member-mobile .container-new .checkmark:after,
+  .add-user-mobile .container-new .checkmark:after,
+  .upgrade-zone-room-mobile .container-new .checkmark:after,
+  .increase-sum-insured-mobile .container-new .checkmark:after,
+  .increase-policy-tenure-mobile .container-new .checkmark:after,
+  .edit-nominee-details-mobile .container-new .checkmark:after,
+  .edit-member-mobile .container-new .checkmark:after,
+  .change-address-details-mobile .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .view-member-mobile .container-new input:checked~.checkmark:after,
+  .add-user-mobile .container-new input:checked~.checkmark:after,
+  .upgrade-zone-room-mobile .container-new input:checked~.checkmark:after,
+  .increase-sum-insured-mobile .container-new input:checked~.checkmark:after,
+  .increase-policy-tenure-mobile .container-new input:checked~.checkmark:after,
+  .edit-nominee-details-mobile .container-new input:checked~.checkmark:after,
+  .edit-member-mobile .container-new input:checked~.checkmark:after,
+  .change-address-details-mobile .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .view-member-mobile .container-new .checkmark:after,
+  .add-user-mobile .container-new .checkmark:after,
+  .upgrade-zone-room-mobile .container-new .checkmark:after,
+  .increase-sum-insured-mobile .container-new .checkmark:after,
+  .increase-policy-tenure-mobile .container-new .checkmark:after,
+  .edit-nominee-details-mobile .container-new .checkmark:after,
+  .edit-member-mobile .container-new .checkmark:after,
+  .change-address-details-mobile .container-new .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .view-member-mobile .container-new .checkbox-green-txt,
+  .add-user-mobile .container-new .checkbox-green-txt,
+  .upgrade-zone-room-mobile .container-new .checkbox-green-txt,
+  .increase-sum-insured-mobile .container-new .checkbox-green-txt,
+  .increase-policy-tenure-mobile .container-new .checkbox-green-txt,
+  .edit-nominee-details-mobile .container-new .checkbox-green-txt,
+  .edit-member-mobile .container-new .checkbox-green-txt,
+  .change-address-details-mobile .container-new .checkbox-green-txt {
+    color: #46964e;
+  }
+  
+  .view-member-mobile .helth-return-mobile-container,
+  .add-user-mobile .helth-return-mobile-container,
+  .upgrade-zone-room-mobile .helth-return-mobile-container,
+  .increase-sum-insured-mobile .helth-return-mobile-container,
+  .increase-policy-tenure-mobile .helth-return-mobile-container,
+  .edit-nominee-details-mobile .helth-return-mobile-container,
+  .edit-member-mobile .helth-return-mobile-container,
+  .change-address-details-mobile .helth-return-mobile-container {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* End of Renewal View Member Landing Page Css */
+  
+  /* Renewal Edit Member Landing Page Css */
+  
+  .view-member-landing .edit-member-mrgin-btm-zero {
+    margin-bottom: 0px;
+  }
+  
+  .view-member-details-section img {
+    display: inline;
+  }
+  
+  .edit-member input[type=text][readonly=readonly] {
+    border-bottom: 1px solid #cdcece;
+    background-color: #eee;
+  }
+  
+  .edit-member .dropdown-menu>li>a,
+  .edit-member-mobile .dropdown-menu>li>a {
+    color: #000 !important;
+  }
+  
+  .edit-member .panel-group button,
+  .edit-member-mobile .panel-group button {
+    border: 1px solid #cdcece !important;
+    box-shadow: none;
+  }
+  
+  .edit-member .glyphi-drop-down-style,
+  .edit-member-mobile .glyphi-drop-down-style {
+    position: inherit;
+  }
+  
+  .edit-member-mobile input[type=text][readonly=readonly] {
+    border-bottom: 1px solid #cdcece;
+    background-color: #eee;
+  }
+  
+  .edit-member-mobile .sav-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px 62px;
+    width: 100%;
+  }
+  
+  /* End of Renewal Edit Member Landing Page Css */
+  
+  /* Renewal View Member Add User Page Css */
+  
+  .view-member-add-user-section img {
+    display: inline;
+  }
+  
+  .view-member-add-user-section .btn {
+    height: auto;
+    width: auto;
+    box-shadow: none;
+  }
+  
+  .view-member-add-user-section .dropdown-menu {
+    margin-top: 0px;
+    border-radius: 0px;
+    padding: 12px 12px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.18);
+  }
+  
+  .view-member-add-user-section .dropdown-menu>li>a {
+    color: #000 !important;
+  }
+  
+  .view-member-add-user-section .btn-remove {
+    width: 126px;
+    height: 37px;
+  }
+  
+  .view-member-add-user-section .btn-otp-submit {
+    width: 100px;
+    height: 44px;
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.22);
+  }
+  
+  .view-member-add-user-section .mob-num-input .edit-btn {
+    color: inherit;
+  }
+  
+  .view-member-add-user-section input[type=text][readonly=readonly] {
+    background-color: #eee;
+  }
+  
+  .view-member-add-user-section .container-new {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .view-member-add-user-section .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .view-member-add-user-section .container-new .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .view-member-add-user-section .container-new .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .view-member-add-user-section .container-new input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .view-member-add-user-section .container-new .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .view-member-add-user-section .container-new input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .view-member-add-user-section .container-new .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .add-user-mobile .dropdown-menu {
+    margin-top: 0px;
+    border-radius: 0px;
+    padding: 12px 12px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.18);
+  }
+  
+  .add-user-mobile .dropdown-menu>li>a {
+    color: #000 !important;
+  }
+  
+  
+  .add-user-mobile img {
+    display: inline;
+  }
+  
+  .add-user-mobile .btn {
+    box-shadow: none;
+  }
+  
+  .add-user-mobile .mobile {
+    height: auto;
+  }
+  
+  .add-user-mobile input[type=text][readonly=readonly] {
+    border-bottom: 1px solid #cdcece;
+    background-color: #eee;
+  }
+  
+  .add-user-mobile .harmful-substance .btn {
+    height: auto;
+    width: auto;
+  }
+  
+  .add-user-mobile .yes-no-btn-group .btn {
+    height: auto;
+    width: auto;
+  }
+  
+  .add-user-mobile .decrare-question-txt {
+    margin-bottom: 16px;
+  }
+  
+  .add-user-mobile .sav-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px 62px;
+    width: 100%;
+  }
+  
+  /* End of Renewal View Member Add User Page Css */
+  
+  /* Renewal Edit Nominee Details Landing Page Css */
+  
+  .edit-member-detail-tabs .input-pad .btn {
+    box-shadow: none;
+  }
+  
+  
+  .edit-member-detail-tabs .input-pad .dropdown-menu {
+    left: inherit;
+    border-radius: 0px;
+    margin-top: 0px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.18);
+    height: 190px;
+    overflow-y: scroll;
+  }
+  
+  .edit-member-detail-tabs .input-pad .dropdown-menu>li>a {
+    color: #000 !important;
+  }
+  
+  .edit-member-detail-tabs .input-pad .glyphi-drop-down-style {
+    position: inherit;
+  }
+  
+  .edit-nominee-details-mobile .sav-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px 62px;
+    width: 100%;
+  }
+  
+  /* End of Renewal Edit Nominee Details Landing Page Css */
+  
+  /* Renewal Increase Sum Insured Landing Page Css */
+  
+  .group-member-section .input-pad .btn {
+    box-shadow: none;
+  }
+  
+  .group-member-section .input-pad .dropdown-menu {
+    left: inherit;
+    border-radius: 0px;
+    margin-top: 0px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.18);
+    min-width: 226px;
+  }
+  
+  .group-member-section .input-pad .dropdown-menu>li>a {
+    color: #000 !important;
+  }
+  
+  .group-member-section .input-pad .check-btn {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-family: PFHandbookPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4b4b4b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .group-member-section .input-pad .check-btn input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .group-member-section .input-pad .check-btn .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+  }
+  
+  .group-member-section .input-pad .check-btn .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .group-member-section .input-pad .check-btn input:checked~.checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+  }
+  
+  .group-member-section .input-pad .check-btn .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .group-member-section .input-pad .check-btn input:checked~.checkmark:after {
+    display: block;
+  }
+  
+  .group-member-section .input-pad .check-btn .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  /* End of Renewal Increase Sum Insured Landing Page Css */
+  
+  /* Renewal Change Address Details Page Css */
+  
+  .change-address-details input[type=text][readonly=readonly] {
+    border-bottom: 1px solid #cdcece;
+    background-color: #eee;
+  }
+  
+  .change-address-details-mobile input[type=text][readonly=readonly] {
+    border-bottom: 1px solid #cdcece;
+    background-color: #eee;
+  }
+  
+  .change-address-details .input-pad {
+    margin-bottom: 8px;
+  }
+  
+  .change-address-details-mobile .input-pad {
+    margin-bottom: 8px;
+  }
+  
+  .change-address-details-mobile .sav-btn {
+    border: solid 1px #c7222a;
+    background-color: #c7222a;
+    font-family: PFHandbookPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 8px 62px;
+    width: 100%;
+  }
+  
+  /* End of Renewal Change Address Details Page Css */
+  
+  /* Modal Used In New Renewal Landing Page & Header Details Directive Css */
+  
+  .modal {
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 200000;
+  }
+  
+  .modal.fade {
+    display: none;
+  }
+  
+  .modal.fade.in {
+    display: block;
+  }
+  
+  .modal .btn {
+    height: fit-content;
+    width: fit-content;
+    box-shadow: none;
+  }
+  
+  .modal .close {
+    visibility: visible;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: 700;
+    transition: none;
+    transform: none;
+    text-shadow: 0 1px 0 #fff;
+  }
+  
+  .modal .content {
+    border-bottom: 1px dotted gray;
+  }
+  
+  .modal .cancel-red-bdr-btn {
+    margin-top: 20px;
+  }
+  
+  .remove-user-modal .member-panel-margin {
+    margin-top: 20px;
+  }
+  
+  /* End of Modal Used In New Renewal Landing Page & Header Details Directive Css */
+  
+  /************** End of New Css Added By Sarje **********/
+  
+  /***** Start - Discount in Tenure ******/
+  .discount {
+    margin-left: 2px;
+    font-size: 14px;
+    background-color: #c7222a;
+    color: #fff;
+    font-weight: 300;
+    padding: 0 4px 2px;
+    border-radius: 0 5px;
+  }
+  /***** End - Discount in Tenure ******/
+  
+  /***** Start - Emandate button ******/
+  .emandate-button{
+    width: 100%;
+   height: 48px;
+   padding: 13px 16px 15px 0px;
+   border-radius: 0;
+   font-family: PFHandbookPro-Bold;
+   font-size: 18px;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color:  #c91f23;
+   text-align: left;
+  }
+  /***** End - Emandate button ******/
+  
+  .active {
+    color: #c7222a!important;
+  }
+  .remove-user-modal.dv-selectPayment  .modal-content{
+    margin-top: 100px;
+  }
+  .dv-selectPayment .radio-btn{
+  display: block;
+  }
+  .custom-popover .custom-tooltip-text{
+  left: -150px;
+  width: 450px;
+  }
+  .usingCC .custom-tooltip-text{
+  width: 290px;
+  }
+  .dv-selectPayment .custom-popover .custom-tooltip-text:after, .dv-selectPayment .custom-popover .custom-tooltip-text:before {
+    left: 160px;
+  }
+  @media (max-width: 767px){
+    .custom-popover.large-tooltip .custom-tooltip-text {
+      width: 290px;
+  }
+  .dv-selectPayment .custom-popover .custom-tooltip-text:after, .dv-selectPayment .custom-popover .custom-tooltip-text:before {
+    left: 120px;
+  }
+
+  .renewal-level-main{
+      padding: 37px 0px;
+  }
+    
+  }
+  .dv-member .lblMemberName{
+    font-size: 20px;
+  }
+  .dv-member .checkmark, .dv-member .radio-btn .checkmark:after {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #da9089;
+  }
+  .dv-member .radio-btn .checkmark:after{
+    background-color: #da9089;
+  }
+  .dv-member .active-secure-title{
+    font-size: 13px;
+  }
+  .dv-member .d-none, .dv-ghd .d-none{
+    display: none;
+  }
+  .dv-memberCard {
+    margin-bottom: 20px;
+      box-shadow: 0px 5px 10px -5px rgb(0, 0, 0, 0.23);
+      background-color: #fff;
+      padding: 15px 10px 0;
+  }
+  .dv-memberCard:last-child {
+    box-shadow: none;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+  }
+  .btnGhd{
+    border-radius: 0;
+    background-color: #da9089;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+    font-family: 'PFHandbookPro-Light';
+    letter-spacing: 0.85px;
+    padding-top: 4px;
+  }
+  .btnGhd img{
+    width: 12px;
+  }
+  @media (max-width: 767px){
+  .dv-ghd{
+    border:1px solid #da9089;
+  }
+  .active-secure-head-big-text{
+    padding: 7px 0 7px 0px !important;
+    font-size: 19px !important;
+    color: #da9089;
+  }
+  .dv-ghd .select-policy-sub-txt, .dv-ghd .active-secure-body{
+    padding-left: 0px !important;
+  }
+  }

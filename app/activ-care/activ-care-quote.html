@@ -1,0 +1,835 @@
+<div class="container-fluid">
+   <div class="row cont-pad">
+      <div class="col-md-12 col-xs-12"><span class="main-header-text1">Activ Care </span><span
+            class="main-header-text1">&nbsp;|</span>
+         <div class="dropdown dis-in hidden-xs"><button class="btn btn-plan" type="button" data-toggle="dropdown"
+               id=""><span class="main-header-text2">{{aC.planNameVal}} Plan &nbsp;</span>
+               <!-- <div class="dis-in glyphicon glyphicon-chevron-down caret-pos" id="glyphicon-plan-section"></div> --></button>
+            <!-- <ul class="dropdown-menu plan-dropdown-menubox" id="plan-drop-down-menu">
+               <li><a >Plan</a></li>
+               <li><a >Premier Plan</a></li>
+               </ul> -->
+         </div>
+         <div class="dropdown dis-in hidden-md hidden-sm hidden-lg"><button
+               class="btn btn-plan dropdown-toggle dropdown-plan plan-dropdown" type="button" href="#plan-modal"
+               data-toggle="modal" data-target="#plan-modal"><span class="main-header-text2">{{aC.planNameVal}} Plan
+                  &nbsp;</span>
+               <!-- <div class="glyphicon glyphicon-chevron-down caret-pos" id="glyphicon-plan-section"></div> --></button>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="row cont-pad breadcrumb-row">
+      <div class="col-md-12">
+         <ul class="breadcrumb-cust">
+            <li class="breadcrumb-item-cust breadcrumb-item-cust-active"><a href="javascript:void(0)"
+                  ng-click="quoteNavigation()">Quotation</a></li>
+            <li class="breadcrumb-item-cust"><span class="clickable"><i
+                     class="glyphicon glyphicon-menu-right"></i></span></li>
+            <li class="breadcrumb-item-cust"><a href="javascript:void(0)" class="unbold-fonts">Proposal</a></li>
+            <li class="breadcrumb-item-cust"><span class="clickable"><i
+                     class="glyphicon glyphicon-menu-right"></i></span></li>
+            <li class="breadcrumb-item-cust"><a href="javascript:void(0)" class="unbold-fonts"
+                  ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="container-fluid prem-panel sticky" sticky>
+   <div class="row prem-row">
+      <div class="col-md-12 col-xs-12 col-sm-12 prem-text-panel text-right pad-l-r-0">
+         <div class=" dropdown dis-in" ng-class="aC.activCarePreminumObj.AddonGSTPremium == '0' || aC.activCarePreminumObj.AddonGSTPremium == '0.00' ? 'zeroAmt' : 'addonAmt'">
+            <a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown" type="button" data-toggle="dropdown" id=""
+               ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')">
+               <span class="prem-small-txt">Premium:&nbsp;&nbsp;</span> 
+               <span class="prem-big-txt" ng-if="aC.activCarePreminumObj.TotalPremium">
+                  <span class="prem-rupee-symbol">&#8377;</span> 
+                  <span count-up end-val="aC.activCarePreminumObj.TotalPremium"></span> 
+                  <span ng-show="aC.activCareQuoteDetails.PolicyTenure == '1'">pa </span>&nbsp; 
+                  <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+                     <img src="assets/images/icon-chevron-down.png"> 
+                  </span>
+               </span>
+               <span class="prem-big-txt" ng-if="!aC.activCarePreminumObj.TotalPremium">
+                  <i class="fa fa-spinner" aria-hidden="true"></i>
+               </span>
+               <span class="span-addon">
+               <span class="tooltip-text-hd mar-rght-15">Health Add on premium: ₹{{aC.activCarePreminumObj.AddonGSTPremium | INR}} <span
+                  class="incl-gst">(incl GST)</span> </span></span>
+            </a>
+            <ul class="dropdown-menu plan-dropdown-menubox">
+               <li ng-repeat="premium in aC.activCarePreminumObj.ProductPremium">
+                  <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">
+                     {{premium.ProductName | productFilter}}</p>
+                  <!-- <p class="tooltip-grey-txt mar-rght-15">Amount : ₹{{premium.Premium | INR}} <span
+                        class="incl-gst">(incl GST)</span></p> -->
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.PolicyBasePremium != null && premium.PolicyBasePremium != '' && premium.PolicyBasePremium != '0'">Base Amount : ₹ {{premium.PolicyBasePremium | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.GSTValue != null && premium.GSTValue != '' && premium.GSTValue != '0'">GST Amount : ₹ {{premium.GSTValue | INR}}  </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.Discount != null && premium.Discount != '' && premium.Discount != '0'">Discount Amount : ₹ {{premium.Discount | INR}}  </p>
+                  <p class="tooltip-grey-txt mar-rght-15 totalAmt">Total Amount : ₹ {{premium.Premium | INR}}  </p>
+               </li>
+               <li class="dv-Addon">
+                  <p class="tooltip-text-hd mar-rght-15">Health Add on premium: ₹{{aC.activCarePreminumObj.AddonGSTPremium | INR}} <span
+                        class="incl-gst">(incl GST)</span> </p>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right"><span class="emi-option-text">
+            <!-- EMI options available starting at ₹3,000 pm --></span></div>
+   </div>
+</div>
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number">1</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span
+               class="item-block-number">1</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">POLICY DETAILS AND SUM INSURED</div>
+            <div class="item-block-content-desc">Please select your policy type, tenure and the details of the
+               participating members.
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 sum-insured-members-padding-initial">
+         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 question">
+            <div class="policy-type-txt">Policy type <span class="custom-popover large-tooltip" custom-popover><img
+                     class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                     class="custom-tooltip-text">In a family floater plan, more than one member can be covered under the
+                     same plan,<br>Multi-individual is when the policy coverage is different for each member . <span
+                        class="pop-close">×</span></span></span></div><a href="javascript:void(0);"
+               class="btn show-answer"
+               ng-class="aC.activCareQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn' : 'unselected-no-btn'"><span
+                  ng-class="aC.activCareQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'">Family
+                  Floater&nbsp;<i class="fa fa-check-circle"
+                     ng-class="aC.activCareQuoteDetails.PolicyType == 'FF' ? 'show-i' : 'remove-i'"></i></span> </a><a
+               href="javascript:void(0);" class="btn hide-answer"
+               ng-class="aC.activCareQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn' : 'unselected-no-btn'"><span
+                  ng-class="aC.activCareQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'">&nbsp;
+                  Individual&nbsp; &nbsp;&nbsp;<i class="fa fa-check-circle"
+                     ng-class="aC.activCareQuoteDetails.PolicyType == 'MI' ? 'show-i' : 'remove-i'"></i></span></a>
+            <div class="tab-content-mar-r" ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+               <div class="tab-grey-txt">
+                  <!-- In the Multi Individual Policy individual members have their separate Sum Insured. -->
+               </div>
+               <div class="dropdown-lbl-txt">Tenure <span class="custom-popover large-tooltip" custom-popover><img
+                        class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                        class="custom-tooltip-text">Duration in which benefits are payable under the policy . <span
+                           class="pop-close">×</span></span></span></div><span
+                  ng-show="aC.activCareQuoteDetails.PolicyTenure == '1'" class="text-for-tenure"><b>(Get Discount of
+                     7.5% on preminum for 2 year tenure )</b></span>
+               <div class="dropdown sum-insured-members-block-dropdown"><button class="btn dropdown-width-bdr"
+                     type="button" data-toggle="dropdown" aria-haspopup="true" ng-click="aC.setTenure()"
+                     aria-expanded="false"><span class="dropdown-txt">{{aC.activCareQuoteDetails.PolicyTenure}}
+                        years</span>
+                     <div class="dis-in dropdown-red-drop-arrow"><i class="fa fa-angle-down"></i></div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li><a href="javascript:void(0)" ng-click="aC.updateTenure('1')">1 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="aC.updateTenure('2')">2 years</a></li>
+                  </ul>
+               </div>
+               <div class="text-right"><a href="javascript:void(0);" class="btn discount-btn-txt"
+                     ng-show="aC.activCareQuoteDetails.PolicyTenure == '2'">Discount : 7.5% &nbsp;<i
+                        class="fa fa-check-circle"></i></a></div>
+            </div>
+            <div class="tab-content-mar-r" ng-if="aC.activCareQuoteDetails.PolicyType == 'FF'">
+               <div class="tab-grey-txt">
+                  <!-- The Family Floater policy has a joint Sum Insured meant for the both of them together -->
+                  <!--  Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+               </div>
+               <div class="dropdown-lbl-txt">Sum Insured <span class="custom-popover large-tooltip" custom-popover><img
+                        class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                        class="custom-tooltip-text">Higher the Sum Insured opted, lower is the effective per lac premium
+                        and better coverage. Choose the sum insured which covers your family adequately . <span
+                           class="pop-close">×</span></span></span></div>
+               <div class="dropdown sum-insured-members-block-dropdown group-insured-pad-btm"><button
+                     class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="aC.sumInusred"><span
+                        class="dropdown-txt">₹ {{aC.sumInusred | INR}}</span>
+                     <div class="dis-in dropdown-red-drop-arrow"><i class="fa fa-angle-down"></i></div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li ng-repeat="sum in aC.sumAmounts" class="li-item-text-change"
+                        ng-if="sum[aC.activCareQuoteDetails.PlanType]" ng-click="aC.updateSumInsured(sum.amount, '')"
+                        data-val="{{sum.amount}}"><a href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                           <span class="option-text">{{sum.value}}</span></a></li>
+                  </ul>
+               </div>
+               <div class="dropdown-lbl-txt">Tenure <span class="custom-popover large-tooltip" custom-popover><img
+                        class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                        class="custom-tooltip-text">Duration in which benefits are payable under the policy . <span
+                           class="pop-close">×</span></span></span></div><span
+                  ng-show="aC.activCareQuoteDetails.PolicyTenure == '1'" class="text-for-tenure"><b>(Get Discount of
+                     7.5% on preminum for 2 year tenure )</b></span>
+               <div class="dropdown sum-insured-members-block-dropdown"><button class="btn dropdown-width-bdr"
+                     type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                        class="dropdown-txt">{{aC.activCareQuoteDetails.PolicyTenure}} years</span>
+                     <div class="dis-in dropdown-red-drop-arrow"><i class="fa fa-angle-down"></i></div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li><a href="javascript:void(0)" ng-click="aC.updateTenure('1')">1 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="aC.updateTenure('2')">2 years</a></li>
+                  </ul>
+               </div>
+               <div class="text-right" ng-show="aC.activCareQuoteDetails.PolicyTenure == '2'"><a
+                     href="javascript:void(0);" class="btn discount-btn-txt">Discount : 7.5% &nbsp;<i
+                        class="fa fa-check-circle"></i></a></div>
+            </div>
+         </div><!-- multi-individual Div start-->
+         <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0"
+            ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+            <div class="border-verticle-line text-right"></div>
+         </div>
+         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0"
+            ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+               <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">
+                  Select Members</div>
+               <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md">
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0"><a class="btn edit-group-mem-btn"
+                     ng-click="aC.openAddMemberModel()">EDIT GROUP MEMBERS</a></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+               <div class="col-md-6 col-md-6 col-sm-6 col-xs-6 mem-grp-pad-r-5"
+                  ng-repeat="members in aC.selectedMember">
+                  <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                     <div class="dis-in box-txt-hd">{{members.RelationWithProposer}}</div><span class="pull-right"
+                        ng-if="aC.selectedMember.length > 1"><img class="close-img-mar self-close-mark"
+                           src="assets/images/shape.png"
+                           ng-click="aC.updateDeleteMemebers('DeleteMember' , members , $index )"></span>
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">Sum Insured <span class="custom-popover large-tooltip" custom-popover><img
+                                 class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text">Higher the Sum Insured opted, lower is the effective per
+                                 lac premium and better coverage. Choose the sum insured which covers your family
+                                 adequately . <span class="pop-close">×</span></span></span></div>
+                        <div class="dropdown"><button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                              button-dropdown="members.SumInsured"><span class="dropdown-txt">₹
+                                 {{members.SumInsured | INR}} </span><span class="dis-in dropdown-red-drop-arrow"><i
+                                    class="fa fa-angle-down" aria-hidden="true"></i></span></button>
+                           <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                              <li ng-repeat="sum in aC.sumAmounts" class="li-item-text-change"
+                                 ng-if="sum[aC.activCareQuoteDetails.PlanType]"
+                                 ng-click="aC.updateSumInsured(sum.amount, members)" data-val="{{sum.amount}}"><a
+                                    href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                       class="option-text">{{sum.value}}</span></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">Age</div>
+                        <div class="age-input">
+                           <div class="input-group"><input type="text" class="form-control age-txt-box"
+                                 ng-model="members.Age"
+                                 ng-change="aC.updateDeleteMemebers('UpdateMember' , members , $index )"
+                                 ng-model-options="{debounce:2000}" valid-number> <span
+                                 class="input-group-addon">yrs</span></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12"><a class="btn edit-group-mem-btn"
+                  ng-click="aC.openAddMemberModel()">EDIT GROUP MEMBERS</a></div>
+         </div><!-- multi-individual Div end-->
+         <!-- Family Floater Div start-->
+         <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0"
+            ng-if="aC.activCareQuoteDetails.PolicyType == 'FF'">
+            <div class="border-verticle-line text-right"></div>
+         </div>
+         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0"
+            ng-if="aC.activCareQuoteDetails.PolicyType == 'FF'">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+               <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">
+                  Select Members</div>
+               <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md">
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0"><a class="btn edit-group-mem-btn"
+                     ng-click="aC.openAddMemberModel()">EDIT GROUP MEMBERS</a></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+               <div class="col-md-6 col-md-6 col-sm-6 col-xs-6 mem-grp-pad-r-5"
+                  ng-repeat="members in aC.selectedMember">
+                  <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                     <div class="dis-in box-txt-hd">{{members.RelationWithProposer}}</div><span class="pull-right"
+                        ng-if="aC.selectedMember.length > 1"><img class="close-img-mar self-close-mark"
+                           src="assets/images/shape.png"
+                           ng-click="aC.updateDeleteMemebers('DeleteMember' , members , $index )"></span>
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">Age</div>
+                        <div class="age-input">
+                           <div class="input-group"><input type="text" class="form-control age-txt-box" valid-number
+                                 maxlength="2" ng-change="aC.updateDeleteMemebers('UpdateMember' , members , $index )"
+                                 ng-model-options="{debounce:2000}" ng-model="members.Age"> <span
+                                 class="input-group-addon">yrs</span></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12"><a class="btn edit-group-mem-btn"
+                  ng-click="aC.openAddMemberModel()">EDIT GROUP MEMBERS</a></div>
+         </div><!-- Family Floater Div end-->
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number">2</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span
+               class="item-block-number">2</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">OPTIONAL COVERS <span
+                  class="custom-popover large-tooltip margin-top-tooltip" custom-popover><img
+                     class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                     class="custom-tooltip-text">Optional Covers under family floater policies, if chosen, will be
+                     applicable to all members in the Policy. For Multi Individual policy, any optional cover may be
+                     selected for any member
+                     <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                     <span class="pop-close">×</span></span></span></div>
+            <div class="item-block-content-desc">Optional Covers are like riders on your core policy. Add these covers
+               to broaden your benefits.
+               <!-- Optional Covers are like riders on your core policy. Range of comprehensive covers to broaden your benefits. -->
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container sum-insured-members-padding-initial">
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+               <div
+                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover"
+                     ng-class="{'selected-check-box-width' : aC.ARU == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top"><label
+                           class="container-new protecting" for="ARU-chk"><img class="temp-total-dis-img"
+                              src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in"><input type="checkbox" ng-true-value="'Y'"
+                                 ng-false-value="'N'" id="ARU-chk"
+                                 ng-change="aC.oCBProductLevel(aC.ARU , 'ARU' , $event)" ng-model="aC.ARU"> <span
+                                 class="checkmark"></span></div>
+                        </label></div>
+                     <div
+                        class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Room Upgrade <span
+                              class="custom-popover large-tooltip margin-top-tooltip" custom-popover
+                              ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'"><img
+                                 class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text">For Mutli-Individual option this cover can be availed at
+                                 member level offline.
+                                 <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span></span></span></div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room --> During the time of illness being comfortable &
+                           having your privacy in the hospital room aid your recovery. You have the option to upgrade
+                           {{aC.roomUpgradeText}}</div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top"
+                           ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0"
+                              ng-repeat="memb in aC.selectedMember"><label
+                                 class="container-new protecting">{{memb.RelationWithProposer | uppercase}} <input
+                                    type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    id="ARU-{{memb.RelationType}}-chk" ng-model="memb.ARU"
+                                    ng-change="aC.oCBMemberLevel(memb , memb.ARU , 'ARU')"> <span
+                                    class="checkmark"></span></label></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div><!-- PPN optional covers */ -->
+            <!-- <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : aC.PPN == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="PPN-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="PPN-chk" ng-change="aC.oCBProductLevel(aC.PPN , 'PPN' , $event)"  ng-model="aC.PPN">
+                              <span class="checkmark"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">PPN Discount 
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                 For Mutli-Individual option this cover can be availed at member level offline. 
+                                 
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           
+                           During the time of illness being comfortable & having your privacy in the hospital room aid your recovery. You have the option to upgrade {{aC.roomUpgradeText}} 
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in aC.selectedMember">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="PPN-{{memb.RelationType}}-chk" ng-model="memb.PPN" ng-change="aC.oCBMemberLevel(memb , memb.PPN , 'PPN')">
+                              <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>  -->
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number">3</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span
+               class="item-block-number">3</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">OPTIONAL CARE BENEFITS <span
+                  class="custom-popover large-tooltip margin-top-tooltip" custom-popover><img
+                     class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png"> <span
+                     class="custom-tooltip-text">Optional Care Benefits under family floater policies, if chosen, will
+                     be applicable to all members in the Policy. For Multi Individual policy, any optional benefit may
+                     be selected for any member .
+                     <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                     <span class="pop-close">×</span></span></span></div>
+            <div class="item-block-content-desc">
+               <!-- Optional covers are like riders to your core insurance policy - -->
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+            </div>
+         </div>
+      </div>
+   </div><!-- Multiindividual optional care benefit start-->
+   <div class="container sum-insured-members-padding-initial optional-care-benefit-div">
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm grey-box-pad-l-0 mob-pad-l-r-0">
+               <div
+                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover"
+                     ng-class="{'selected-check-box-width' : aC.QNH == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top"><label
+                           class="container-new protecting" for="QNH-chk"><img class="temp-total-dis-img"
+                              src="assets/images/ac_images/nurse-at-home@2x.png">
+                           <div class="box-checkbox dis-in"><input type="checkbox" ng-true-value="'Y'"
+                                 ng-false-value="'N'" id="QNH-chk"
+                                 ng-change="aC.oCBProductLevel(aC.QNH , 'QNH' , $event)" ng-model="aC.QNH"> <span
+                                 class="checkmark"></span></div>
+                        </label></div>
+                     <div
+                        class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Nursing at Home</div>
+                        <div class="opt-cov-box-txt">Day-to-day personal and customized care after hospitalization in
+                           the comfort of your home helps patients recovery faster. We cover expenses of qualified nurse
+                           at home as per written recommendation of your doctor.</div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top"
+                           ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0"
+                              ng-repeat="memb in aC.selectedMember"><label
+                                 class="container-new protecting">{{memb.RelationWithProposer | uppercase}} <input
+                                    type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    id="QNH-{{memb.RelationType}}-chk" ng-model="memb.QNH"
+                                    ng-change="aC.oCBMemberLevel(memb , memb.QNH , 'QNH')"> <span
+                                    class="checkmark"></span></label></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm grey-box-pad-r-0 mob-pad-l-r-0">
+               <div
+                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover"
+                     ng-class="{'selected-check-box-width' : aC.LSE == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top"><label
+                           class="container-new protecting"><img class="temp-total-dis-img"
+                              src="assets/images/ac_images/lifestyle-equipment@2x.png">
+                           <div class="box-checkbox dis-in"><input type="checkbox" ng-true-value="'Y'"
+                                 ng-false-value="'N'" id="LSE-chk" ng-model="aC.LSE"
+                                 ng-change="aC.oCBProductLevel(aC.LSE , 'LSE' , $event)"> <span
+                                 class="checkmark"></span></div>
+                        </label></div>
+                     <div
+                        class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Lifestyle Support Equipment <span
+                              class="custom-popover large-tooltip margin-top-tooltip" custom-popover><img
+                                 class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text">We cover expenses of Lifestyle support equipment like
+                                 ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your
+                                 doctor subsequent to hospitalisation.
+                                 <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span></span></span></div>
+                        <div class="opt-cov-box-txt">We understand the necessity to get your own lifestyle support
+                           equipment to aid your recovery. However, these are often expensive to buy after your
+                           subsequent hospitalization.</div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top"
+                           ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0"
+                              ng-repeat="memb in aC.selectedMember"><label
+                                 class="container-new protecting">{{memb.RelationWithProposer | uppercase}} <input
+                                    type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    id="LSE-{{memb.RelationType}}-chk" ng-model="memb.LSE"
+                                    ng-change="aC.oCBMemberLevel(memb , memb.LSE , 'LSE')"> <span
+                                    class="checkmark"></span></label></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm grey-box-pad-l-0 mob-pad-l-r-0">
+               <div
+                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover"
+                     ng-class="{'selected-check-box-width' :  aC.PME == 'Y' } ">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top"><label
+                           class="container-new protecting"><img class="temp-total-dis-img"
+                              src="assets/images/ac_images/medical-equipment@2x.png">
+                           <div class="box-checkbox dis-in"><input type="checkbox" ng-true-value="'Y'"
+                                 ng-false-value="'N'" id="PME-chk" ng-model="aC.PME"
+                                 ng-change="aC.oCBProductLevel(aC.PME , 'PME' , $event)"> <span
+                                 class="checkmark"></span></div>
+                        </label></div>
+                     <div
+                        class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Portable Medical Equipment <span
+                              class="custom-popover large-tooltip margin-top-tooltip" custom-popover><img
+                                 class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text">We cover expenses of Portable medical equipment like
+                                 oxygen cylinders, ventilators, CPAP etc as per written recommendation of your doctor
+                                 subsequent to hospitalisation.
+                                 <!-- Portable medical equipment like oxygen cylinders, ventilators, CPAP etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span></span></span></div>
+                        <div class="opt-cov-box-txt">Advances in technology have led to more medical equipment becoming
+                           portable. We understand the necessity when it comes to certain illnesses which need the
+                           presence of portable medical equipment at home.</div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top"
+                           ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0"
+                              ng-repeat="memb in aC.selectedMember"><label
+                                 class="container-new protecting">{{memb.RelationWithProposer | uppercase}} <input
+                                    type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    id="PME-{{memb.RelationType}}-chk" ng-model="memb.PME"
+                                    ng-change="aC.oCBMemberLevel(memb , memb.PME , 'PME')"> <span
+                                    class="checkmark"></span></label></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm grey-box-pad-r-0 mob-pad-l-r-0">
+               <div
+                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover"
+                     ng-class="{'selected-check-box-width' :  aC.AHC == 'Y' } ">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top"><label
+                           class="container-new protecting"><img class="temp-total-dis-img"
+                              src="assets/images/ac_images/lab-test@2x.png">
+                           <div class="box-checkbox dis-in"><input type="checkbox" ng-true-value="'Y'"
+                                 ng-false-value="'N'" id="AHC-chk" ng-model="aC.AHC"
+                                 ng-change="aC.oCBProductLevel(aC.AHC , 'AHC' , $event)"> <span
+                                 class="checkmark"></span></div>
+                        </label></div>
+                     <div
+                        class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Advanced Health Check-up <span
+                              class="custom-popover large-tooltip margin-top-tooltip" custom-popover><img
+                                 class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text">Tests like Thyroid function tests, mammography, abdomen
+                                 sonography etc <span class="pop-close">×</span></span></span></div>
+                        <div class="opt-cov-box-txt">We provide advance diagnostic tests like Thyroid function tests,
+                           mammography, abdomen sonography etc for each and every insured member once in a policy year.
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top"
+                              ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                              <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0"
+                                 ng-repeat="memb in aC.selectedMember"><label
+                                    class="container-new protecting">{{memb.RelationWithProposer | uppercase}} <input
+                                       type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                       id="AHC-{{memb.RelationType}}-chk" ng-model="memb.AHC"
+                                       ng-change="aC.oCBMemberLevel(memb , memb.AHC , 'AHC')"> <span
+                                       class="checkmark"></span></label></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div><!-- Multiindividual optional care benefit start-->
+   </div>
+</div>
+
+<!-- Health Add On Section -->
+
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number"> 4</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span class="item-block-number">4</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">
+               Health Add On
+               <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                     Health Add On under family floater policies, if chosen, will be applicable to all members in the Policy. For Multi Individual policy, any health add on may be selected for any member
+                     <span class="pop-close">×</span>
+                  </span>
+               </span>
+            </div>
+            <div class="item-block-content-desc">
+               Health Add On like riders on your core policy. Add these add on to broaden your benefits.
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container sum-insured-members-padding-initial">
+      <div class="row">
+
+         <!-- Future Secure -->
+
+         <div class="dv-healthAddOn col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : aC.Future_Secure_YN == 'Y' }">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="FS-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Future_Secure.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="FS-chk" ng-change="aC.oCBProductLevel(aC.Future_Secure_YN , 'Future_Secure_YN' , $event)"  ng-model="aC.Future_Secure_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Future Secure 
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        Secure you and your family's future with benefits like Non-Medical Expense waiver, Sum Insured Inflation protection and No Claim Bonus Protector. 
+                        <!-- <br />
+                        <span>a) Non- Medical Expense waiver</span> &nbsp; &nbsp; &nbsp;
+                             <span> b) Sum Insured Inflation protection</span><br />
+                              <span>c)  No Claim Bonus protector</span> -->
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in aC.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="FutureSecure-{{memb.RelationType}}-chk" ng-model="memb.Future_Secure_YN" ng-change="aC.oCBMemberLevel(memb , memb.Future_Secure_YN , 'Future_Secure_YN')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ENd of Future Secure -->
+
+         <!-- Cancer Hospitalization Booster -->
+
+         <div class="dv-healthAddOn col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0" ng-if="aC.productPlanName != 'Premier'">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : aC.Cancer_H_Booster_YN == 'Y' }">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="CHB-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Cancer_Hospitalization_Booster.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="CHB-chk" ng-change="aC.oCBProductLevel(aC.Cancer_H_Booster_YN , 'Cancer_H_Booster_YN' , $event)"  ng-model="aC.Cancer_H_Booster_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Cancer Hospitalization Booster 
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for pre and post-hospitalization medical expenses and day care treatment for Cancer care.
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in aC.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="CancerHospitalizationBooster-{{memb.RelationType}}-chk" ng-model="memb.Cancer_H_Booster_YN" ng-change="aC.oCBMemberLevel(memb , memb.Cancer_H_Booster_YN , 'Cancer_H_Booster_YN')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ENd of Cancer Hospitalization Booster -->
+      </div>
+      
+      <!-- Vaccine Cover -->
+      <div class="row">
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : aC.Vaccine_Cover_YN == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="VC-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Vaccine_Cover.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="VC-chk" ng-change="aC.vaccineCoverProductLevel(aC.Vaccine_Cover_YN , 'Vaccine_Cover_YN' , $event)"  ng-model="aC.Vaccine_Cover_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox pad-l-r-0">
+                     <div class="opt-cov-box-ttl">Vaccine Cover 
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for vaccination against any diseases(s) which has been declared as pandemic or epidemic.
+                        <br />
+                        Below Limit option is applicable on Individual Basis i.e. Rs.XXX / Insured Person / Per Policy Year
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 dv-vcCard" ng-repeat="memb in aC.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           </label>
+                           
+                           <div class="dropdown">
+                              <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                                 button-dropdown="members.Vaccine_Cover_YN">
+                                 <span class="dropdown-txt"> {{(memb.Vaccine_Cover_SI == '') ? '--Select--' : memb.Vaccine_Cover_SI}}</span>
+                                 <span class="dis-in dropdown-red-drop-arrow">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                 </span>
+                              </button>
+                              <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">
+                                 <li ng-repeat="amount in aC.vaccineAmount" class="li-item-text-change"
+                                    ng-click="aC.vaccineCoverMemberLevel(memb, memb.Vaccine_Cover_YN, amount, 'Vaccine_Cover_YN')" data-val="{{amount}}"
+                                    ><a href="javascript:void(0)"> <span
+                                          class="option-text">{{amount}}</span></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ENd of Vaccine Cover -->
+
+      <!-- Tele-OPD Consultation -->
+      <div class="row">
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : aC.Tele_OPD_YN == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="TOPDC-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Tele_OPD_Consultation.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="TOPDC-chk" ng-change="aC.oCBProductLevel(aC.Tele_OPD_YN , 'Tele_OPD_YN' , $event)"  ng-model="aC.Tele_OPD_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Tele-OPD Consultation
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="aC.activCareQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for tele-consultation from medical practitioners within our network. 
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in aC.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="TeleOPDConsultation-{{memb.RelationType}}-chk" ng-model="memb.Tele_OPD_YN" ng-change="aC.oCBMemberLevel(memb , memb.Tele_OPD_YN , 'Tele_OPD_YN')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ENd of Tele-OPD Consultation -->
+
+   </div>
+</div>
+
+<!-- End of Health Add On Section -->
+
+<!-- Cross selection section -->
+<div class="container-fluid cross-sell-bg" ng-show="aC.showCrossSell">
+   <cross-sell-quote cross="aC"></cross-sell-quote>
+   <div class="row cross-sell-submit-btn">
+      <div class="col-md-12 pad-l-r-0">
+         <hr class="last-btn-width">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button"><button class="btn btn-primary qq-save-btn"
+            tabindex="13" id="activ-care-quote-submit"
+            ng-click="aC.submitActivCareQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[activCare]')">Proceed <img src="assets/images/arrow.png"></button></div>
+   </div>
+</div>
+<div class="container-fluid" ng-show="!aC.showCrossSell">
+   <div class="row">
+      <div class="col-md-12 pad-l-r-0">
+         <hr class="last-btn-width">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button"><button class="btn btn-primary qq-save-btn"
+            tabindex="13" id="activ-care-quote-submit"
+            ng-click="aC.submitActivCareQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[activCare]')">Proceed <img src="assets/images/arrow.png"></button></div>
+   </div>
+</div>
+<acaddmember acaddctrl="aC" ng-if="aC.membersDetails.length > 0"></acaddmember>

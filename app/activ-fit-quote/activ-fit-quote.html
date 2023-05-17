@@ -1,0 +1,1126 @@
+<div class="container-fluid">
+    <div class="row cont-pad">
+       <div class="col-md-12 col-xs-12">
+          <span class="main-header-text1">
+             Activ Health {{aFV.productPlanName}}
+          </span>
+ 
+       </div>
+    </div>
+ </div>
+ <div class="container-fluid">
+    <div class="row cont-pad breadcrumb-row">
+       <div class="col-md-12">
+          <ul class="breadcrumb-cust">
+             <li class="breadcrumb-item-cust breadcrumb-item-cust-active">
+                <a href="javascript:void(0)" ng-click="quoteNavigation()">Quotation</a>
+             </li>
+             <li class="breadcrumb-item-cust">
+                <span class="clickable">
+                   <i class="glyphicon glyphicon-menu-right"></i>
+                </span>
+             </li>
+             <li class="breadcrumb-item-cust">
+                <a href="javascript:void(0)" class="unbold-fonts">
+                   Proposal
+                </a>
+             </li>
+             <li class="breadcrumb-item-cust">
+                <span class="clickable">
+                   <i class="glyphicon glyphicon-menu-right"></i>
+                </span>
+             </li>
+             <li class="breadcrumb-item-cust">
+                <a href="javascript:void(0)" class="unbold-fonts"
+                   ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+             </li>
+          </ul>
+       </div>
+    </div>
+ </div>
+ <div class="container-fluid prem-panel sticky" sticky>
+    <div class="row prem-row">
+       <div class="col-md-12 col-xs-12 col-sm-12 prem-text-panel text-right pad-l-r-0">
+          <div class=" dropdown dis-in">
+             <a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown" type="button" data-toggle="dropdown"
+                id="" ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')">
+                <span class="prem-small-txt">Premium:&nbsp;&nbsp;</span>
+                <span class="prem-big-txt" ng-if="aFV.aFVplatinumPreminumObj.TotalPremium">
+                   <span class="prem-rupee-symbol">&#8377;</span>
+                   <span count-up end-val="aFV.aFVplatinumPreminumObj.TotalPremium"> </span>
+                   <span ng-show="aFV.fitQuoteDetails.PolicyTenure == '1'">pa </span> &nbsp;
+                   <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+                      <img src="assets/images/icon-chevron-down.png">
+                   </span>
+                </span>
+                <span class="prem-big-txt" ng-if="!aFV.aFVplatinumPreminumObj.TotalPremium">
+                   <i class="fa fa-spinner" aria-hidden="true"></i>
+                </span>
+             </a>
+             <ul class="dropdown-menu plan-dropdown-menubox">
+                <li ng-repeat="premium in aFV.aFVplatinumPreminumObj.ProductPremium">
+                  <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">{{premium.ProductName |
+                      productFilter}}</p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.PolicyBasePremium != null && premium.PolicyBasePremium != '' && premium.PolicyBasePremium != '0'">Base Amount : ₹ {{premium.PolicyBasePremium | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.GSTValue != null && premium.GSTValue != '' && premium.GSTValue != '0'">GST Amount: ₹ {{premium.GSTValue | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.Discount != null && premium.Discount != '' && premium.Discount != '0'">Discount Amount: ₹ {{premium.Discount | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15 totalAmt">Total Amount : ₹ {{premium.Premium | INR}} 
+                     <!-- <span class="incl-gst">(incl GST)</span>  -->
+                  </p>
+                </li>
+             </ul>
+          </div>
+       </div>
+       <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+          <span class="emi-option-text">
+             <!-- EMI options available starting at ₹3,000 pm -->
+          </span>
+       </div>
+    </div>
+ </div>
+ <div class="container">
+    <div class="row quote-item-block">
+       <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+          <div class="item-block-number-border hidden-xs"><span class="item-block-number index-ref"> 1</span></div>
+          <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span
+                class="item-block-number index-ref">1</span></div>
+       </div>
+       <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+          <div class="quote-item-block-content">
+             <div class="item-block-content-header">POLICY DETAILS AND SUM INSURED</div>
+             <div class="item-block-content-desc">
+                Please select your policy type, tenure and the details of the participating members.
+                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 sum-insured-members-padding-initial">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 question">
+             <div class="policy-type-txt">Policy type
+                <span class="custom-popover large-tooltip" custom-popover>
+                   <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                   <span class="custom-tooltip-text">
+                      In a family floater plan, more than one member can be covered under the same plan,<br>
+                      Multi-individual is when the policy coverage is different for each member .
+                      <span class="pop-close">×</span>
+                   </span>
+                </span><br/>
+                <span ng-if="aFV.fitPlanName == 'prefered'" class="text-for-tenure " style="position: absolute; top:16px"> <b>Multi-individual is not applicable for "Prefered plan"</b> </span>
+             </div>
+             <a href="javascript:void(0);" class="btn show-answer"
+                ng-class="aFV.fitQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn' : 'unselected-no-btn'">
+                <span
+                   ng-class="aFV.fitQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'" ng-click="aFV.reSetCovers('FF')">Family
+                   Floater&nbsp;<i class="fa fa-check-circle"
+                      ng-class="aFV.fitQuoteDetails.PolicyType == 'FF' ? 'show-i' : 'remove-i'"></i></span>
+             </a>
+             <a href="javascript:void(0);" class="btn hide-answer" ng-disabled="aFV.fitPlanName == 'prefered'"
+                ng-class="aFV.fitQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn' : 'unselected-no-btn'">
+                <span
+                   ng-class="aFV.fitQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'" ng-click="aFV.reSetCovers('MI')">&nbsp;Multi-individual&nbsp;
+                   &nbsp;&nbsp;<i class="fa fa-check-circle"
+                      ng-class="aFV.fitQuoteDetails.PolicyType == 'MI' ? 'show-i' : 'remove-i'"></i></span>
+             </a>
+             <div class="tab-content-mar-r " ng-if="aFV.fitQuoteDetails.PolicyType == 'MI'">
+                <div class="tab-grey-txt">
+                   <!-- In the Multi Individual Policy individual members have their separate Sum Insured. -->
+                </div>
+                <div class="dropdown-lbl-txt">Tenure
+                   <span class="custom-popover large-tooltip" custom-popover>
+                      <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                      <span class="custom-tooltip-text">
+                         Duration in which benefits are payable under the policy .
+                         <span class="pop-close">×</span>
+                      </span>
+                   </span>
+                </div>
+                <span ng-show="aFV.fitQuoteDetails.PolicyTenure == '1'" class="text-for-tenure "> <b>(Get Discount
+                      of 7.5% on preminum for 2 year tenure )</b> </span>
+                <div class="dropdown sum-insured-members-block-dropdown">
+                   <button class="btn dropdown-width-bdr" type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <span class="dropdown-txt">{{aFV.fitQuoteDetails.PolicyTenure}} year</span>
+                      <div class="dis-in dropdown-red-drop-arrow">
+                         <i class="fa fa-angle-down"></i>
+                      </div>
+                   </button>
+                   <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('1')">1 year</a></li>
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('2')">2 year</a></li>
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('3')">3 year</a></li>
+                   </ul>
+                </div>
+                <div class="text-right" ng-show="aFV.fitQuoteDetails.PolicyTenure == '2'">
+                   <a href="javascript:void(0);" class="btn discount-btn-txt">
+                      You Save <span class="rupee-symbol">&#8377;&nbsp;</span><span count-up
+                         end-val="aFV.secondYearSaving"></span> &nbsp;(7.5% Off)
+                   </a>
+                </div>
+                <div class="text-right" ng-show="aFV.fitQuoteDetails.PolicyTenure == '3'">
+                   <a href="javascript:void(0);" class="btn discount-btn-txt">
+                      You Save <span class="rupee-symbol">&#8377;&nbsp;</span><span count-up
+                         end-val="aFV.threeYearSaving"></span> &nbsp;(10% Off)
+                   </a>
+                </div>
+             </div>
+             <div class="tab-content-mar-r" ng-if="aFV.fitQuoteDetails.PolicyType == 'FF'">
+                <div class="tab-grey-txt">
+                   <!-- The Family Floater policy has a joint Sum Insured meant for the both of them together -->
+                   <!--  Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+                </div>
+                <div class="dropdown-lbl-txt">Sum Insured
+                   <span class="custom-popover large-tooltip" custom-popover>
+                      <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                      <span class="owl-carousel-i-size custom-tooltip-text">
+                         Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose
+                         the sum insured which covers your family adequately .
+                         <span class="pop-close">×</span>
+                      </span>
+                   </span>
+                </div>
+                <div class="dropdown sum-insured-members-block-dropdown group-insured-pad-btm">
+                   <button class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="aFV.sumInusred">
+                      <span class="dropdown-txt">₹ {{aFV.sumInusred | INR}} </span>
+                      <div class="dis-in dropdown-red-drop-arrow">
+                         <i class="fa fa-angle-down"></i>
+                      </div>
+                   </button>
+                   <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                      <li ng-repeat="sum in aFV.sumAmounts" class="li-item-text-change" ng-if="sum[aFV.productPlanName]"
+                         ng-click="aFV.updateSumInsured(sum.amount, '')" data-val="{{sum.amount}}"><a
+                            href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                               class="option-text">{{sum.value}}</span></a></li>
+                   </ul>
+                </div>
+                <div class="dropdown-lbl-txt">Tenure
+                   <span class="custom-popover large-tooltip" custom-popover>
+                      <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                      <span class="custom-tooltip-text">
+                         Duration in which benefits are payable under the policy .
+                         <span class="pop-close">×</span>
+                      </span>
+                   </span>
+                </div>
+                <span ng-show="aFV.fitQuoteDetails.PolicyTenure == '1'" class="text-for-tenure "> <b>(Get Discount
+                      of 7.5% on preminum for 2 year tenure )</b> </span>
+                <div class="dropdown sum-insured-members-block-dropdown">
+                   <button class="btn dropdown-width-bdr" type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <span class="dropdown-txt">{{aFV.fitQuoteDetails.PolicyTenure}} year</span>
+                      <div class="dis-in dropdown-red-drop-arrow">
+                         <i class="fa fa-angle-down"></i>
+                      </div>
+                   </button>
+                   <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('1')">1 year</a></li>
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('2')">2 year</a></li>
+                      <li><a href="javascript:void(0)" ng-click="aFV.updateTenure('3')">3 year</a></li>
+                   </ul>
+                </div>
+                <div class="text-right" ng-show="aFV.fitQuoteDetails.PolicyTenure == '2'">
+                   <a href="javascript:void(0);" class="btn discount-btn-txt">
+                      You Save <span class="rupee-symbol">&#8377; &nbsp;</span><span count-up
+                         end-val="aFV.secondYearSaving"></span> &nbsp;(7.5% Off)
+                   </a>
+                </div>
+                <div class="text-right" ng-show="aFV.fitQuoteDetails.PolicyTenure == '3'">
+                   <a href="javascript:void(0);" class="btn discount-btn-txt">
+                      You Save <span class="rupee-symbol">&#8377;&nbsp;</span><span count-up
+                         end-val="aFV.threeYearSaving"></span> &nbsp;(10% Off)
+                   </a>
+                </div>
+             </div>
+          </div>
+          <!-- multi-individual Div start-->
+          <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0"
+             ng-if="aFV.fitQuoteDetails.PolicyType == 'MI'">
+             <div class="border-verticle-line text-right"></div>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0"
+             ng-if="aFV.fitQuoteDetails.PolicyType == 'MI'">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+                <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">
+                   Select Members</div>
+                <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0">
+                   <a class="btn edit-group-mem-btn" data-target="#add-new-member-web" class="member-select-span"
+                      data-toggle="modal" data-backdrop="static" data-keyboard="false" class="add-mbr-btn"
+                      ng-click="callGtag('quote','click-icon','diamond-quote_add-edit-members')">
+                      EDIT GROUP MEMBERS
+                   </a>
+                </div>
+             </div>
+             <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12  pad-l-r-0 family-floater-platinum">
+ 
+                <div id="ci-sum-isnured-slider11" class="owl-carousel buy-owl-carousel cK-carousel"
+                ng-if="aFV.initSlider">
+                   <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+                      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                         <div class="dis-in box-txt-hd" ng-show="members.RelationWithProposer != 'KID'">
+                            {{members.RelationWithProposer}}</div>
+                         <div class="dis-in box-txt-hd" ng-show="members.RelationWithProposer == 'KID'">
+                            {{members.RelationType}}</div>
+                         <span class="pull-right" ng-if="aFV.selectedMember.length > 1">
+                            <img class="close-img-mar self-close-mark" src="assets/images/shape.png"
+                               ng-click="aFV.cKUpdateDeleteMember(members , $index , 'deleteMember' )">
+                         </span>
+                         <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="box-txt">
+                               Sum Insured
+                               <span class="custom-popover large-tooltip" custom-popover>
+                                  <img class="img-responsive question-tooltip-img"
+                                     src="assets/images/tooltip_Premium.png">
+                                  <span class="owl-carousel-i-size custom-tooltip-text">
+                                     Higher the Sum Insured opted, lower is the effective per lac premium and better
+                                     coverage. Choose the sum insured which covers your family adequately .
+                                     <span class="pop-close">×</span>
+                                  </span>
+                               </span>
+                            </div>
+                            <div class="dropdown">
+                               <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                                  button-dropdown="members.SumInsured">
+                                  <span class="dropdown-txt">₹ {{members.SumInsured | INR}} </span>
+                                  <span class="dis-in dropdown-red-drop-arrow">
+                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                  </span>
+                               </button>
+                               <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                                  <li ng-repeat="sum in aFV.sumAmounts" class="li-item-text-change"
+                                     ng-if="sum[aFV.productPlanName]"
+                                     ng-click="aFV.updateSumInsured(sum.amount, members)" data-val="{{sum.amount}}"><a
+                                        href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                           class="option-text">{{sum.value}}</span></a></li>
+                               </ul>
+                            </div>
+                         </div>
+                         <div 
+                            ng-class="{'col-md-6': members.RelationWithProposer == 'SELF' , 'col-md-12': members.RelationWithProposer != 'SELF'}">
+                            <div class="box-txt">
+                               Age
+                            </div>
+                            <div class="age-input">
+                               <div class="input-group">
+                                  <input type="text" class="form-control age-txt-box" ng-model="members.Age"
+                                     ng-change="aFV.cKUpdateDeleteMember(members , $index , 'updateMember' )"
+                                     ng-model-options="{debounce:2000}" valid-number>
+                                  <span class="input-group-addon"> yrs </span>
+                               </div>
+                            </div>
+                         </div>
+                         <div id="gender-toggle" class="col-md-6 pad-r-0" ng-if="members.RelationWithProposer == 'SELF'">
+                            <div class="">
+                               <div class="box-txt">
+                                  Gender
+                               </div>
+                               <div class="gender-text-pad">
+                                  <span class="gender-text male-gender">Male</span>
+                                  <label class="switch">
+                                     <input type="checkbox" ng-true-value="'0'" ng-false-value="'1'" name="gender"
+                                        ng-change="aFV.changeGender(members,$index)" ng-model="members.Gender"
+                                        class="gender-check">
+                                     <span class="slider round"></span>
+                                  </label>
+                                  <span class="gender-text female-gender">Female</span>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+ 
+                <a class="btn edit-group-mem-btn" data-target="#add-new-member-web" class="member-select-span"
+                   data-toggle="modal" data-backdrop="static" data-keyboard="false" class="add-mbr-btn"
+                   ng-click="callGtag('quote','click-icon','diamond-quote_add-edit-members')">
+                   EDIT GROUP MEMBERS
+                </a>
+ 
+             </div>
+          </div>
+          <!-- multi-individual Div end-->
+          <!-- Family Floater Div start-->
+          <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0 "
+             ng-if="aFV.fitQuoteDetails.PolicyType == 'FF'">
+             <div class="border-verticle-line text-right"></div>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0 "
+             ng-if="aFV.fitQuoteDetails.PolicyType == 'FF'">
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+                <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">
+                   Select Members</div>
+                <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0">
+                   <a class="btn edit-group-mem-btn" data-target="#add-new-member-web" class="member-select-span"
+                      data-toggle="modal" data-backdrop="static" data-keyboard="false" class="add-mbr-btn"
+                      ng-click="callGtag('quote','click-icon','diamond-quote_add-edit-members')">
+                      EDIT GROUP MEMBERS
+                   </a>
+                </div>
+             </div>
+             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 family-floater-platinum">
+                <div id="ci-sum-isnured-slider" class="owl-carousel buy-owl-carousel cK-carousel" ng-if="aFV.initSlider">
+                   <div class=" mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+                      <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                         <div class="dis-in box-txt-hd" ng-show="members.RelationWithProposer != 'KID'">
+                            {{members.RelationWithProposer}}</div>
+                         <div class="dis-in box-txt-hd" ng-show="members.RelationWithProposer == 'KID'">
+                            {{members.RelationType}}</div>
+                         <span class="pull-right" ng-if="aFV.selectedMember.length > 1">
+                            <img class="close-img-mar self-close-mark" src="assets/images/shape.png"
+                               ng-click="aFV.cKUpdateDeleteMember(members , $index , 'deleteMember' )">
+                         </span>
+                         <div class="col-md-12" ng-if="members.RelationWithProposer == 'SELF'"></div>
+                         <div class="pad-l-0"
+                            ng-class="{'col-md-6': members.RelationWithProposer == 'SELF' , 'col-md-12': members.RelationWithProposer != 'SELF'}">
+                            <div class="box-txt">
+                               Age
+                            </div>
+                            <div class="age-input">
+                               <div class="input-group">
+                                  <input type="text" class="form-control age-txt-box" valid-number maxlength="2"
+                                     ng-change="aFV.cKUpdateDeleteMember(members , $index , 'updateMember')"
+                                     ng-model-options="{debounce:2000}" ng-model="members.Age">
+                                  <span class="input-group-addon"> yrs </span>
+                               </div>
+                            </div>
+                         </div>
+                         <div id="gender-toggle" class="col-md-6 pad-r-0" ng-if="members.RelationWithProposer == 'SELF'">
+                            <div class="">
+                               <div class="box-txt">
+                                  Gender
+                               </div>
+                               <div class="gender-text-pad">
+                                  <span class="gender-text male-gender">Male</span>
+                                  <label class="switch">
+                                     <input type="checkbox" ng-true-value="'0'" ng-false-value="'1'" name="gender"
+                                        ng-change="aFV.changeGender(members,$index)" ng-model="members.Gender"
+                                        class="gender-check">
+                                     <span class="slider round"></span>
+                                  </label>
+                                  <span class="gender-text female-gender">Female</span>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+                <a class="btn edit-group-mem-btn" ng-click="aFV.openAddMemberModel()">
+                   EDIT GROUP MEMBERS
+                </a>
+             </div>
+          </div>
+          <!-- Family Floater Div end-->
+       </div>
+    </div>
+ </div>
+ 
+ 
+ <!-- Zone selection section -->
+ 
+ <!-- End of zone selection section -->
+
+ <div class="container platinum-v2-quote-section">
+ 
+   <!-- Travel Protect header section -->
+
+   <div class="row quote-item-block" ng-If="aFV.d_dis || aFV.f_dis">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border">
+            <span class="item-block-number index-ref"> 2</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> Discounts </span>
+            <div class="item-block-content-desc">
+               Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized.
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                 <img class="disImg" ng-If="aFV.d_dis" src="assets/images/red_checkbox.png"/>
+                 <img class="disImg" ng-If="!aFV.d_dis" src="assets/images/shape@2x.png"/>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+               <div>
+                  <span class="item-block-content-header"> Direct Purchase discount. </span>
+                  <span class="custom-popover large-tooltip" custom-popover>
+                     <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                     <span class="custom-tooltip-text critical-illness-ibtn ">
+                        1.10% discount if the insured member opts to purchase the policy directly from the Company’s website without the involvement of any intermediary.<br>
+                        2.This discount is only applicable for Customer portal, hence ‘Direct purchase discount’ should be selected and applicable by default and should not be editable for customer<br>
+                        3.Direct discount should not the applicable for the requests of partner where we expose the ‘Buy journey’ by embedding their Intermediary codes. Hence, this discount will not be shown in such cases i.e ‘Direct Purchase’ discount will NOT apply where embedded IMD codes of intermediaries/distributors are used.<br>
+                        <span class="pop-close">×</span>
+                     </span>
+                  </span>
+                  <!-- <div class="item-block-content-desc">
+                     Early Bird discount.
+                  </div> -->
+               </div>
+            </div>
+         </div>
+
+         <div class="row" style="margin-top: 40px;">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+               <img class="disImg" ng-If="aFV.f_dis" src="assets/images/red_checkbox.png"/>
+               <img class="disImg" ng-If="!aFV.f_dis" src="assets/images/shape@2x.png"/>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+               <div>
+                  <span class="item-block-content-header"> Family discount. </span>
+                  <span class="custom-popover large-tooltip" custom-popover>
+                     <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                     <span class="custom-tooltip-text critical-illness-ibtn ">
+                        1.2 members in a policy – 5% discount on applicable premium.<br>
+                        2.3 or more members in a policy – 10% discount on applicable premium.<br>
+                        3.Applicable only to Multi individual policy.<br>
+                        <span class="pop-close">×</span>
+                     </span>
+                  </span>
+                  <!-- <div class="item-block-content-desc">
+                     Family discount.
+                  </div> -->
+               </div>
+            </div>
+         </div>
+         <!-- <div class="row" style="margin-top: 40px;">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                 <img class="disImg" src="assets/images/shape@2x.png"/>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+               <div>
+                  <span class="item-block-content-header"> Standing Instruction discount. </span>
+                  <span class="custom-popover large-tooltip" custom-popover>
+                     <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                     <span class="custom-tooltip-text critical-illness-ibtn ">
+                        2.5% Discount on the premium from next renewal, if the premium is received through NACH or standing instruction (where payment is made either by direct debit of bank account or credit card).<br>
+                        <span class="pop-close">×</span>
+                     </span>
+                  </span>
+                                </div>
+            </div>
+         </div>
+         <div class="row" style="margin-top: 40px;">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                 <img class="disImg" src="assets/images/shape@2x.png"/>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+               <div>
+                  <span class="item-block-content-header"> Online Intermediary Discount. </span>
+                  <span class="custom-popover large-tooltip" custom-popover>
+                     <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                     <span class="custom-tooltip-text critical-illness-ibtn ">
+                        1.10% discount if the insured member opts to purchase the policy using an online intermediary.<br>
+                        2.This discount will be applicable only for the listed online intermediaries. List of such intermediaries to be shared when enabled. Applicable whenever request for Buy and Renewal journey with embedded online intermediary code is received.<br>
+                        <span class="pop-close">×</span>
+                     </span>
+                  </span>
+                  
+               </div>
+            </div>
+         </div> -->
+      </div>
+   </div>
+
+</div>
+ 
+ <br/>
+ <br/>
+ <div class="container platinum-v2-quote-section" >
+    <div class="row quote-item-block">
+       <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+          <div class="item-block-number-border"><span class="item-block-number"> </span></div>
+       </div>
+       <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+          <div class="quote-item-block-content" style="padding-bottom: 0px;">
+             <span class="item-block-content-header">Optional Cover </span>
+             <div class="item-block-content-desc">
+                Optional Covers are like riders on your core policy. Range of comprehensive covers to broaden your
+                benefits.
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ <!-- Travel Protect Cover section -->
+ 
+ <div class="container platinum-v2-quote-section">
+ 
+   <!-- Travel Protect header section -->
+
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+         <div class="item-block-number-border">
+            <span class="item-block-number index-ref"> 3</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> Travel Protect Cover</span>
+            <span class="mar-l-15">
+               <label class="switch ">
+                  <input type="checkbox" class="hcb-toggle" ng-model="aFV.travelCollapse" ng-true-value="'Y'"
+                     ng-false-value="'N'" ng-checked="aFV.travelCollapse == 'Y'"
+                     ng-change="callGtag('click-radio','quote','PL-quote_plan_HPC['+aFV.travelCollapse+']'); aFV.coverShowHide(aFV.travelCollapse , 'TC' , 'tc-cover')"
+                     data-toggle="collapse" data-target="#content-tc-coverage" id="chk-hpc-coverage">
+                  <span class="slider round"></span>
+               </label>
+            </span>
+            <div class="item-block-content-desc">
+               Get fixed benefit pay-out once in a policy year irrespective of the claim amount, when the Insured Person travels by a common Carrier within the territory of India.
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- End of Hospital cash benefit benefit header section -->
+
+
+   <!-- Hospital cash benefit benefit slider section -->
+  
+
+   <div class="container collapse personal-accident-box sum-insured-members-padding-initial critical-illness-style"
+      id="content-tc-coverage">
+      <div id="tc-cover" class="'owl-carousel buy-owl-carousel cK-carousel"
+         ng-if="aFV.travelCollapse == 'Y' && aFV.TCcoverSlider">
+         <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+            <div
+            class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section cover-block-size">
+            <div class="dis-in box-txt-hd">
+               {{members.RelationWithProposer}}</div>
+
+               <span class="mar-l-15">
+                  <label class="switch mar-0-auto" ng-hide="aFV.selectedMember.length == 1 ">
+                     <input type="checkbox" class="hcb-toggle" ng-model="members.TravelProtect" ng-true-value="'Y'"
+                        ng-false-value="'N'"
+                        ng-change="callGtag('click-radio','quote','ci-quote_plan_HPC['+aFV.oPDCollapse+']'); aFV.updateCoverSumInsured(sum , members , 'TC' , true, $index)"
+                       >
+                     <span class="slider round"></span>
+                  </label>
+            
+               </span>
+               
+               <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-show="members.TravelProtect == 'Y' || aFV.selectedMember.length == 1">
+                  <div class="dropdown">
+                     <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                        button-dropdown="members.TravelCoverSumInsured">
+                        <span class="dropdown-txt">{{members.TravelCoverSumInsured}}</span>
+                        <span class="dis-in dropdown-red-drop-arrow">
+                           <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                     </button>
+                     <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">
+                        <li  class="li-item-text-change"
+                           ng-click="aFV.updateCoverSumInsured('10000' , members , 'TC' , true, $index)" ng-model="members.TravelCoverSumInsured" data-val="10000"><a
+                              href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                 class="option-text">Plan 1- SI10000</span></a></li>
+                        <li  class="li-item-text-change"
+                           ng-click="aFV.updateCoverSumInsured('20000' , members , 'TC' , true, $index)" ng-model="members.TravelCoverSumInsured"  data-val="20000"><a
+                              href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                 class="option-text">Plan 2- SI20000</span></a></li>
+                     </ul>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <!-- End of Hospital cash benefit slider section -->
+
+   </div>
+
+<!-- End of Travel Protect Section -->
+
+  <!-- Premium Waiver Cover section -->
+ 
+  <div class="container platinum-v2-quote-section">
+ 
+   <!-- Premium Waiver benefit header section -->
+
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+         <div class="item-block-number-border">
+            <span class="item-block-number index-ref"> 4</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> Premium Waiver Cover </span>
+            <span class="mar-l-15">
+               <label class="switch ">
+                  <input type="checkbox" class="hcb-toggle" ng-model="aFV.pwcCollapse" ng-true-value="'Y'"
+                     ng-false-value="'N'"  ng-checked="aFV.pwcCollapse == 'Y'"
+                     ng-change="callGtag('click-radio','quote','fit-quote_plan['+aFV.quoteDetails.FITQuote.FITQuoteDetails[0].plan+']_PWC['+aFV.pwcCollapse+']'); aFV.coverShowHide(aFV.pwcCollapse , 'PWC' , 'pcw-cover')"
+                     data-toggle="collapse" data-target="#premium-waiver-cover">
+                  <span class="slider round"></span>
+               </label>
+            </span>
+            <div class="item-block-content-desc">
+               <!-- Get cover for up to 20 listed critical illnesses helps you overcome financial short comes. -->
+               Get 1 year premium waiver in case of detection of listed critical illness or injury due to an accident resulting in Permanent Total Disablement 
+               <!-- <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text critical-illness-ibtn ">
+                     1.Cancer of Specified Severity<br>
+                     2.Myocardial Infarction (First Heart Attack of specific severity)<br>
+                     3.Open Chest CABG<br>
+                     4.Open Heart Replacement Or Repair Of Heart Valves<br>
+                     5.Kidney Failure Requiring Regular Dialysis<br>
+                     6.Stroke Resulting In Permanent Symptoms<br>
+                     7.Major Organ / Bone Marrow Transplant<br>
+                     8.Permanent Paralysis Of Limbs<br>
+                     9.Multiple Sclerosis With Persisting Symptoms<br>
+                     10.Coma of Specified Severity<br>
+                     11.Motor Neuron Disease With Permanent Symptoms<br>
+                     12.Third Degree Burns<br>
+                     13.Deafness<br>
+                     14.Loss of Speech<br>
+                     15.Aplastic Anaemia<br>
+                     16.End Stage Liver Failure<br>
+                     17.End Stage Lung Failure<br>
+                     18.Bacterial Meningitis<br>
+                     19.Fulminant Hepatitis<br>
+                     20.Muscular Dystrophy<br>
+                     <span class="pop-close">×</span>
+                  </span>
+               </span> -->
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- End of Premium Waiver benefit header section -->
+
+   <!-- Premium Waiver benefit slider section -->
+  
+
+   <div class="container collapse personal-accident-box sum-insured-members-padding-initial critical-illness-style"
+      id="premium-waiver-cover" ng-if="aFV.fitQuoteDetails.PolicyType =='MI'">
+      <div id="pcw-cover" class="owl-carousel buy-owl-carousel cK-carousel" >
+         <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+            <div ng-if="members.RelationWithProposer != 'KID'"
+            class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section cover-block-size">
+            <div class="dis-in box-txt-hd">
+               {{members.RelationWithProposer}}</div> 
+               
+               <span class="mar-l-15">
+                  <label class="switch mar-0-auto" >
+                     <input type="checkbox" class="hcb-toggle" ng-model="members.PremiumWaiver" ng-true-value="'Y'"
+                        ng-false-value="'N'" ng-checked="members.PremiumWaiver=='Y'"
+                        ng-change="callGtag('click-radio','quote','ci-quote_plan_HPC['+aFV.nonCollapse+']'); aFV.updateCoverSumInsured(null , members , 'PWC' , true, $index)">
+                     <span class="slider round"></span>
+                  </label>
+            
+               </span>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <!-- End oPremium Waiver slider section -->
+
+   </div>
+
+<!-- End of Premium Waiver Section -->
+
+
+<!-- EMI Coverage for Major Illness Cover section -->
+
+<div class="container platinum-v2-quote-section">
+
+   <!-- EMI Coverage benefit header section -->
+
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+         <div class="item-block-number-border">
+            
+            <span class="item-block-number index-ref"> 5</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> EMI Protection Cover </span>
+            <span class="mar-l-15">
+               <label class="switch " >
+                  <input type="checkbox" class="hcb-toggle" ng-model="aFV.emiCollapse" ng-true-value="'Y'"
+                     ng-false-value="'N'" ng-checked="aFV.emiCollapse == 'Y'"
+                     ng-change="callGtag('click-radio','quote','ci-quote_plan['+aFV.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB['+aFV.emiCollapse+']'); aFV.coverShowHide(aFV.emiCollapse , 'EMI' , 'emi-cover')"
+                     data-toggle="collapse" data-target="#content-emi-coverage"
+                     id="chk-international-coverage">
+                  <span class="slider round"></span>
+               </label>
+            </span>
+            <div class="item-block-content-desc">
+               3 EMIs for an existing loan amount will be paid by us if Insured Person is hospitalized due to any illness/injury in excess of 6 consecutive days in the policy year. EMIs will be paid as lump sum amount post discharge from the hospital.
+               <!-- <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                     1.Cancer Treatment<br>
+                     2.Coronary Artery By-Pass Surgery<br>
+                     3.Heart Valve Replacement<br>
+                     4.Major Organ Transplantation<br>
+                     5.Bone Marrow Transplant<br>
+                     6.Neurosurgery<br>
+                     7.Pulmonary Artery Graft Surgery<br>
+                     8.Aorta Graft Surgery<br>
+                     9.Coronary Artery By-Pass Surgery Post Occurrence of Myocardial Infraction<br>
+                     10.Surgical treatment for Stroke<br>
+                     11. Surgical Treatment for Benign Brain Tumour<br>
+                     12.Lung Transplant Surgery in case of End Stage Lung Disease<br>
+                     13.Kidney Transplant Surgery in case of End Stage Renal Failure<br>
+                     14.Skin Grafting Surgery for Major Burns<br>
+                     15.Surgical Treatment of Coma<br>
+                     16.Surgery for Pheochromocytoma<br>
+                     <span class="pop-close">×</span>
+                  </span>
+               </span> -->
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- End of EMI Coverage benefit header section -->
+
+
+
+   <!-- EMI Coverage  benefit slider section -->
+
+   <div class="container collapse personal-accident-box sum-insured-members-padding-initial critical-illness-style"
+      id="content-emi-coverage">
+      <div id="emi-cover" class="owl-carousel buy-owl-carousel "
+         ng-if="aFV.emiCollapse == 'Y' && aFV.EMIcoverSlider">
+         <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember" ng-if="members.RelationWithProposer != 'KID'">
+           <div ng
+           class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section cover-block-size">
+           <div class="dis-in box-txt-hd">
+              {{members.RelationWithProposer}}</div>
+              
+              <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" >
+                 <div class="dropdown">
+                    <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                       button-dropdown="members.EMIProtectCoverSuminsured">
+                       <span class="dropdown-txt">₹ {{members.EMIProtectCoverSuminsured | INR}} </span>
+                       <span class="dis-in dropdown-red-drop-arrow">
+                          <i class="fa fa-angle-down" aria-hidden="true"></i>
+                       </span>
+                    </button>
+                    <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">  
+                       <li ng-repeat="sum in aFV.emiCashArray" class="li-item-text-change"
+                          ng-click="aFV.updateCoverSumInsured(sum , members , 'EMI' , true, $parent.$index)" data-val="{{sum.key}}"><a
+                             href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                class="option-text">{{sum.key | INR}}</span></a></li>
+                    </ul>
+                 </div>
+              </div>
+  
+           </div>
+        </div>
+      </div>
+   </div>
+
+   <!-- End of International Coverage for Major Illness slider section -->
+
+</div>
+
+<!-- End of International Coverage for Major Illness Section -->
+
+
+<!-- OPD expense benefit Cover section -->
+
+<div class="container platinum-v2-quote-section">
+
+   <!-- OPD expense benefit benefit header section -->
+
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+         <div class="item-block-number-border">
+            <span class="item-block-number index-ref"> 6</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> Super No Claim Bonus Cover </span>
+            <span class="mar-l-15">
+               <label class="switch ">
+                  <input type="checkbox" class="hcb-toggle"  ng-model="aFV.SuperNoClaimBonus" ng-true-value="'Y'"
+                     ng-false-value="'N'" ng-checked="aFV.SuperNoClaimBonus =='Y'" ng-disabled="true"
+                     ng-change="callGtag('click-radio','quote','PL-quote_plan_HPC['+aFV.SuperCcollapse+']'); aFV.updateCoverSumInsured(null , null , 'No-Claim' , true, null)">
+                  <span class="slider round" style="cursor: default;"></span>
+               </label>
+            </span>
+            <div class="item-block-content-desc">
+               Double your Sum Insured in 2 claim free years 
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- End of OPD expense benefit benefit header section -->
+
+</div>
+
+<!-- End of OPD expense benefit Section -->
+
+ 
+ <!-- Non- Medical Expense waiver Cover section -->
+ 
+ <div class="container platinum-v2-quote-section">
+ 
+   <!-- Non- Medical Expense waiver benefit header section -->
+
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+         <div class="item-block-number-border">
+            
+            <span class="item-block-number index-ref"> 7</span>
+         </div>
+      </div>
+      <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+         <div class="quote-item-block-content">
+            <span class="item-block-content-header"> Non- Medical Expense waiver </span>
+            <span class="mar-l-15">
+               <label class="switch ">
+                  <input type="checkbox" class="hcb-toggle" ng-model="aFV.nonCollapse" ng-true-value="'Y'"
+                     ng-false-value="'N'"
+                     ng-change="callGtag('click-radio','quote','PL-quote_plan_HPC['+aFV.nonCollapse+']'); aFV.coverShowHide(aFV.nonCollapse , 'NON' , 'non-cover')"
+                     data-toggle="collapse" data-target="#content-non-coverage" id="chk-opd-coverage">
+                  <span class="slider round"></span>
+               </label>
+            </span>
+            <div class="item-block-content-desc">
+               We will cover the cost of Non-Medical Items, which are necessarily incurred towards Hospitalization of the Insured Person, arising out of same Illness or Injury contracted or sustained during the Policy Period.
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- End of Non- Medical Expense waiver benefit header section -->
+
+   <!-- Non- Medical Expense waiver benefit slider section -->
+  
+
+   <div class="container collapse personal-accident-box sum-insured-members-padding-initial critical-illness-style"
+      id="content-non-coverage"  ng-if="aFV.fitQuoteDetails.PolicyType =='MI'">
+      <div id="non-cover" class="'owl-carousel buy-owl-carousel cK-carousel"
+         ng-if="aFV.nonCollapse == 'Y' && aFV.NONcoverSlider">
+         <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+            <div ng-if="members.RelationWithProposer != 'KID'"
+            class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section cover-block-size">
+            <div class="dis-in box-txt-hd">
+               {{members.RelationWithProposer}}</div>
+
+               <span class="mar-l-15">
+                  <label class="switch mar-0-auto" >
+                     <input type="checkbox" class="hcb-toggle" ng-model="members.NonMedicalExpensesWaiver" ng-true-value="'Y'"
+                        ng-false-value="'N'" ng-checked = "members.NonMedicalExpensesWaiver == 'Y'"
+                        ng-change="callGtag('click-radio','quote','ci-quote_plan_HPC['+aFV.nonCollapse+']'); aFV.updateCoverSumInsured(null , members , 'NON' , true, $index)">
+                     <span class="slider round"></span>
+                  </label>
+               </span>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <!-- End of Hospital cash benefit slider section -->
+
+</div>
+
+<!-- End of Room type Section -->
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- OPD expense benefit Cover section -->
+ 
+ <div class="container platinum-v2-quote-section">
+ 
+    <!-- OPD expense benefit benefit header section -->
+ 
+    <div class="row quote-item-block">
+       <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+          <div class="item-block-number-border">
+             <span class="item-block-number index-ref"> 8</span>
+            
+          </div>
+       </div>
+       <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+          <div class="quote-item-block-content">
+             <span class="item-block-content-header"> OPD expense benefit Cover </span>
+             <span class="mar-l-15">
+                <label class="switch ">
+                   <input type="checkbox" class="hcb-toggle" ng-model="aFV.oPDCollapse" ng-true-value="'Y'"
+                      ng-false-value="'N'"
+                      ng-change="callGtag('click-radio','quote','PL-quote_plan_HPC['+aFV.oPDCollapse+']'); aFV.coverShowHide(aFV.oPDCollapse , 'OPD' , 'opd-cover')"
+                      data-toggle="collapse" data-target="#content-opd-coverage" id="chk-opd-coverage">
+                   <span class="slider round"></span>
+                </label>
+             </span>
+             <div class="item-block-content-desc">
+               Cover medical expenses incurred during the policy period for Physical Outpatient Consultation and Teleconsultation by General Medical Practitioner or AYUSH Medical Practitioner in relation to any illness/injury occurred during the policy period. These services can be availed unlimited times in a policy year on cashless basis only.
+             </div>
+          </div>
+       </div>
+    </div>
+ 
+    <!-- End of OPD expense benefit benefit header section -->
+ 
+ 
+    <!-- OPD expense benefit benefit slider section -->
+ 
+    <div class="container collapse personal-accident-box sum-insured-members-padding-initial critical-illness-style"
+       id="content-opd-coverage">
+       <div id="opd-cover" class="owl-carousel buy-owl-carousel" ng-if="aFV.oPDCollapse == 'Y' && aFV.OPDcoverSlider">
+          <div class="mem-grp-pad-r-5" ng-repeat="members in aFV.selectedMember">
+             <div 
+                class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section cover-block-size">
+                <div class="dis-in box-txt-hd">{{members.RelationWithProposer}}</div>
+                <span class="mar-l-15">
+                   <label class="switch mar-0-auto" >
+                      <input type="checkbox" class="hcb-toggle" ng-model="members.OPDExpenses" ng-true-value="'Y'"
+                         ng-false-value="'N'" ng-checked="members.OPDExpenses =='Y'"
+                         ng-change="callGtag('click-radio','quote','ci-quote_plan_HPC['+aFV.oPDCollapse+']'); aFV.updateCoverSumInsured(null , members , 'OPD' , false, $index)">
+                      <span class="slider round"></span>
+                   </label>
+ 
+                </span>
+                <!-- <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-show="members.opdExpense == 'Y'">
+                   <div class="box-txt">
+                      OPD expense benefit Sum Insured
+                   </div>
+                   <div class="dropdown">
+                      <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                         button-dropdown="members.opdExpense_SI">
+                         <span class="dropdown-txt">₹ {{members.opdExpense_SI | INR}} </span>
+                         <span class="dis-in dropdown-red-drop-arrow">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                         </span>
+                      </button>
+                      <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">
+                         <li ng-repeat="sum in aFV.oPDArray" class="li-item-text-change"
+                            ng-click="aFV.updateCoverSumInsured(sum , members , 'OPD' , true, $index)" data-val="{{sum.key}}"><a
+                               href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span
+                                  class="option-text">{{sum.key | INR}}</span></a></li>
+                      </ul>
+                   </div>
+                </div>
+  -->
+             </div>
+          </div>
+       </div>
+    </div>
+ 
+    <!-- End of OPD expense benefit slider section -->
+ 
+ </div>
+ 
+ <!-- End of OPD expense benefit Section -->
+ 
+ 
+ 
+ <!-- Wavier Copay Cover section -->
+ 
+ <div class="container platinum-v2-quote-section" ng-show="aFV.fitPlanName == 'prefered' && aFV.fMember">
+ 
+    <!-- Wavier Copay benefit header section -->
+ 
+    <div class="row quote-item-block">
+       <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+          <div class="item-block-number-border">
+             <span class="item-block-number index-ref"> 9</span>
+          </div>
+       </div>
+       <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+          <div class="quote-item-block-content">
+             <span class="item-block-content-header"> Reduction in Maternity Waiting Period Cover </span>
+             <span class="mar-l-15">
+                <label class="switch">
+                   <input type="checkbox" class="hcb-toggle" ng-model="aFV.maternity" ng-true-value="'Y'"
+                      ng-false-value="'N'" ng-checked="aFV.maternity == 'Y'"
+                      ng-change="callGtag('click-radio','quote','PL-quote_plan_HPC['+aFV.wavierCopay+']'); aFV.coverShowHide(aFV.maternity , 'M' , null)"
+                      data-toggle="collapse" data-target="#content-opdfd-coverage" id="chk-opd-coverage"
+                      ng-disabled="aFV.productPlanName == 'Premier'">
+                   <span class="slider round" ng-class="{ 'lesser-opacity' : aFV.productPlanName == 'Premier'  }"></span>
+                </label>
+             </span>
+             <div class="item-block-content-desc">
+               Waiting period will be reduced from 36 months to 24 months from the inception of first policy with us.
+                <!-- Get a fixed cash amount daily in addition to your insurance benefits when you get hospitalized. -->
+             </div>
+          </div>
+       </div>
+    </div>
+ 
+    <!-- End of Wavier Copay benefit header section -->
+ 
+ 
+    <!-- Wavier Copay benefit slider section -->
+ 
+ 
+ 
+    <!-- End of Wavier Copay slider section -->
+ 
+ </div>
+ 
+ <!-- End of Wavier Copay Section -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- Cross selection section -->
+ <div class="container-fluid cross-sell-bg" ng-show="aFV.showCrossSell">
+    <cross-sell-quote cross="aC"></cross-sell-quote>
+    <div class="row cross-sell-submit-btn">
+       <div class="col-md-12 pad-l-r-0">
+          <hr class="last-btn-width">
+       </div>
+       <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+          <button class="btn btn-primary qq-save-btn" tabindex="13" id="activ-care-quote-submit"
+             ng-click="aFV.submitplatinumQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[platinum]')">
+             Proceed
+             <img src="assets/images/arrow.png">
+          </button>
+       </div>
+    </div>
+ </div>
+ <div class="container-fluid " ng-show="!aFV.showCrossSell">
+    <div class="row ">
+       <div class="col-md-12 pad-l-r-0">
+          <hr class="last-btn-width">
+       </div>
+       <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+          <button class="btn btn-primary qq-save-btn" tabindex="13" id="activ-care-quote-submit"
+             ng-click="aFV.submitplatinumQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[platinum]')">
+             Proceed
+             <img src="assets/images/arrow.png">
+          </button>
+       </div>
+    </div>
+ </div>
+ 
+ <addMember addctrl="aFV" childcount="4" ng-if="aFV.fitQuoteDetails.PolicyType == 'FF'"></addMember>
+ <addMember addctrl="aFV" childcount="4" ng-if="aFV.fitQuoteDetails.PolicyType == 'MI'"></addMember>

@@ -1,0 +1,1339 @@
+.pad-top-10,
+.tooltip-second-pad-top {
+    padding-top: 10px
+}
+
+body {
+    overflow-x: hidden;
+    font-family: PF-Handbook-Pro-Regular, PF-Encore-Sans-Pro-Regular;
+    background-color: #f1f3f6
+}
+
+.btn:focus {
+    outline: 0
+}
+
+.active-health-ttl-black {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 30px;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000
+}
+
+.tooltip-grey-txt,
+.tooltip-text-hd {
+    font-family: PF-Handbook-Pro-Regular;
+    color: #6c7174;
+    margin-left: 16.5px;
+    letter-spacing: normal;
+    font-style: normal;
+    font-stretch: normal
+}
+
+.btn-plan:active,
+.btn-plan:focus {
+    outline: 0 !important;
+    box-shadow: none
+}
+
+.tooltip-text-hd {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5px
+}
+
+.tooltip-grey-txt {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.45
+}
+
+.breadcrumb-item-cust>a,
+.tooltip-btn {
+    font-weight: 700;
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.caret-pos,
+.number-cnt-col-mar-l {
+    margin-left: 10px
+}
+
+.tooltip-btn {
+    color: #c7222a;
+    background-color: transparent;
+    font-size: 30px;
+    padding-bottom: 0
+}
+
+.tooltip-btn:active,
+.tooltip-btn:focus,
+.tooltip-btn:hover {
+    box-shadow: none;
+    outline: 0
+}
+
+.plan-drop-web-txt {
+    margin-right: 10px
+}
+
+.breadcrumb-item-cust>a {
+    font-size: 15px;
+    text-align: left;
+    color: #000;
+    text-decoration: none
+}
+
+.member-selected-black-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #000
+}
+
+.emi-option-text {
+    margin-right: 30px
+}
+
+.question-tooltip-img {
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    display: inline-block
+}
+
+.item-block-content-header {
+    margin-bottom: 7px
+}
+
+.brand-dropdown.grey {
+    font-family: PF-Handbook-Pro-Regular;
+    border: 1px solid #ccc;
+    padding-top: 11px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    width: 375px;
+    border-radius: 4px;
+    transition: all .3s ease
+}
+
+.brand-dropdown.grey:hover {
+    background: #fff;
+    border-color: #8c8c8c;
+    transition: all .3s ease
+}
+
+.member-dropdown-text {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: .88;
+    color: #6c7174
+}
+
+.tenure-section-padding {
+    margin-left: -4%;
+    border-color: #cdcece;
+    border-width: 2px;
+    padding-left: 6.5px;
+    padding-bottom: 20px
+}
+
+.tenure-box-bg {
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .05), 0 3px 6px rgba(0, 0, 0, .08);
+    padding-left: 21px
+}
+
+.tenure-box-pad.activ {
+    border-bottom: 3px solid #f7a500
+}
+
+input[type=radio]:checked+label>.saving-tenure>.saving-tenure-amt {
+    color: #c7222a
+}
+
+.saving-tenure-amt,
+.table-value,
+.zone-sec-gry-bold-txt {
+    font-weight: 500;
+    color: #6c7174;
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.table-value {
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: left;
+    padding-bottom: 12px
+}
+
+.saving-tenure-amt {
+    font-size: 14px;
+    letter-spacing: .2px;
+    text-align: left;
+    padding-top: 9px
+}
+
+.zone-sec-gry-bold-txt {
+    font-size: 16px;
+    padding-top: 19.5px
+}
+
+.checkbox-label {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #bdbdbd;
+    padding-left: 51px !important
+}
+
+.btn-plan,
+.main-header-text2 {
+    font-size: 30px;
+    font-family: PF-Handbook-Pro-Regular
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkbox input:checked~.checkmark {
+    background-color: #fff;
+    border: 1px solid #dc2727 !important;
+    margin-left: 19px
+}
+
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    margin-left: 19px
+}
+
+.checkbox input:checked~.checkmark:after {
+    display: block
+}
+
+.checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #dc2727;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.dis-in,
+.edit-tip-img {
+    display: inline-block
+}
+
+.checkbox-right-bdr {
+    margin-left: 13.5px;
+    border-left: 1px solid #979797;
+    margin-bottom: 0
+}
+
+.active-checbox-clr {
+    color: #000
+}
+
+.room-type-tooltip-img-mar-top {
+    margin-top: 8px
+}
+
+.btn.qq-save-btn {
+    font-family: PF-Handbook-Pro-Regular;
+    color: #fff;
+    width: 180px;
+    background-color: #694743;
+    border: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    margin-bottom: 20px
+}
+
+.btn.qq-save-btn:active,
+.btn.qq-save-btn:focus,
+.btn.qq-save-btn:hover {
+    outline: 0;
+    background-color: #694743
+}
+
+.pad-btm-32 {
+    padding-bottom: 32px
+}
+
+.edit-tip-img {
+    cursor: pointer;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px
+}
+
+.dropdown-menu {
+    width: 100%;
+    min-width: 100%
+}
+
+.member-selected {
+    top: 23px !important
+}
+
+.sum-insured-members-padding-initial {
+    padding-left: 66px;
+    padding-right: 33.5px
+}
+
+.cont-pad {
+    padding-top: 21.5px !important;
+    padding: 0 50px
+}
+
+.main-header-text2 {
+    color: #c7222a
+}
+
+.dis-in-imp {
+    display: inline-block !important
+}
+
+.btn-plan {
+    font-weight: 700;
+    color: #c7222a;
+    background-color: transparent;
+    margin-top: -7px;
+    margin-left: -6px
+}
+
+.caret-pos {
+    color: #c7222a;
+    float: right;
+    font-size: 20px;
+    margin-top: 14px
+}
+
+.mar-rght-15 {
+    margin-right: 15px
+}
+
+.glyphicon.glyphicon-chevron-down {
+    font-size: 15px
+}
+
+.plan-dropdown-menubox {
+    width: 269.5px;
+    height: auto;
+    background-color: #fff;
+    padding-top: 10px;
+    border: none;
+    box-shadow: 0 12.5px 20px 0 rgba(0, 0, 0, .13);
+    border-radius: 0
+}
+
+.brand-dropdown,
+hr.style2 {
+    width: 100%
+}
+
+.plan-drop-web-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 10px;
+    line-height: 1.45;
+    text-align: left;
+    color: #6c7174;
+    margin-left: 22px
+}
+
+.plan-dropdown-menubox>li>a:hover {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: left;
+    color: #c7222a;
+    background-color: transparent
+}
+
+#glyphicon-plan-section {
+    top: 0
+}
+
+.plan-dropdown-menubox>li>a {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    text-align: left;
+    color: #6c7174
+}
+
+.saving-tenure,
+.saving-tenure-discount {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    font-family: PF-Handbook-Pro-Regular;
+    text-align: left
+}
+
+.active {
+    color: #c7222a !important
+}
+
+input[type=radio]:checked+label {
+    color: #d9534f !important
+}
+
+input[type=radio]:checked+label>.plan-modal-txt {
+    color: #d9534f
+}
+
+input[type=radio]:checked+label>.saving-tenure,
+input[type=radio]:checked+label>.saving-tenure-discount,
+input[type=radio]:checked+label>.table-value {
+    color: #c7222a
+}
+
+.saving-tenure {
+    color: #6c7174;
+    padding-left: 26.5px;
+    padding-top: 9px
+}
+
+.saving-tenure-discount {
+    color: #000
+}
+
+.emi-option-text {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 13px;
+    line-height: 1.38;
+    text-align: left;
+    color: #6c7174
+}
+
+.pad-btm-25 {
+    padding-bottom: 25.5px
+}
+
+.breadcrumb-item-cust-active {
+    color: #000;
+    display: inline;
+    border-bottom: 4px solid;
+    padding-bottom: 10px;
+    line-height: 1.75em
+}
+
+.breadcrumb-row ul,
+li {
+    display: inline;
+    text-align: left;
+    margin: 0;
+    padding: 0
+}
+
+ol li a,
+ol li a:hover {
+    color: #000
+}
+
+.breadcrumb>li+li:before {
+    color: #000;
+    content: ">\00a0"
+}
+
+.breadcrumb>.active {
+    color: #000;
+    text-decoration: underline
+}
+
+.breadcrumb-row {
+    padding-top: 15.5px !important;
+    padding-bottom: 15.5px !important
+}
+
+hr.style2 {
+    border-radius: 2px;
+    border: 2px solid #d8d8d8
+}
+
+.sum-assured-age-txtbox {
+    border: 0;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.redColor {
+    color: #C7222A
+}
+
+.btn.dropdown-toggle.focus,
+.btn.dropdown-toggle:active,
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:visited {
+    outline: 0
+}
+
+.dropdown-toggle.brand-dropdown .caret {
+    float: right;
+    margin-top: 8px;
+    color: #C7222A
+}
+
+.brand-dropdown.transparent {
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: right;
+    background-color: transparent;
+    padding-bottom: 3px
+}
+
+.item-block h1,
+.item-block-number {
+    font-family: PF-Handbook-Pro-Regular;
+    font-weight: 700;
+    text-align: left;
+    color: #c7222a
+}
+
+.brand-dropdown.transparent span {
+    margin-right: 10px;
+    margin-left: 15px
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.btn.dropdown-toggle:focus {
+    outline: 0 !important
+}
+
+.lightseagreenColor {
+    background-color: #20b2aa !important
+}
+
+.sticky {
+    z-index: 1000
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+    vertical-align: text-bottom
+}
+
+input[type=text],
+input[type=tel] {
+    font-size: 14px
+}
+
+.item-block,
+.quote-item-block {
+    padding-left: 14px;
+    padding-top: 38px
+}
+
+.item-block1 {
+    padding-left: 13px;
+    padding-top: 38px
+}
+
+.pad-left-105 {
+    padding-left: 78px
+}
+
+.item-block h1 {
+    font-size: 54px
+}
+
+.item-block-number {
+    font-size: 42px
+}
+
+.item-block-content-header,
+.item-block-content-header h3 {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    text-align: left;
+    color: #000;
+    font-weight: 700
+}
+
+.item-block-content,
+.quote-item-block-content {
+    margin-left: -4%;
+    border-color: #cdcece;
+    border-width: 2px;
+    padding-left: 6.5px;
+    padding-bottom: 10px
+}
+
+.item-block-content-header h3 {
+    margin-left: 20px
+}
+
+.item-block-content-header {
+    margin-top: 0;
+    vertical-align: text-bottom;
+    line-height: 27px
+}
+
+.item-block-content-desc,
+.item-block-content-desc h4 {
+    font-size: 15px;
+    color: #6c7174;
+    text-align: left;
+    font-family: PF-Handbook-Pro-Regular
+}
+
+#tenure-year-act-bdr,
+#tenure-year-act-bdr1,
+.tool-tip-img {
+    vertical-align: top
+}
+
+.pad-top-15 {
+    padding-top: 15px
+}
+
+.glyphicon {
+    top: 4px
+}
+
+.item-block-content-desc h4 {
+    margin-left: 20px
+}
+
+.sum-insured-members-padding {
+    padding-top: 33.5px;
+    padding-bottom: 72px
+}
+
+.item-block-number-border {
+    border-right: solid;
+    margin-right: 27px;
+    border-color: #cdcece;
+    border-width: 2px
+}
+
+.item-block-number-border-mobile {
+    border-bottom: solid;
+    border-color: #cdcece;
+    border-width: 2px
+}
+
+#self-pad .sum-insured-members-block,
+.sum-insured-members-block {
+    border-radius: 4px;
+    background-color: #f2f3f6;
+    box-shadow: 0 4px 3.5px 0 rgba(0, 0, 0, .24);
+    border-bottom: 5px solid #f7a500
+}
+
+.sum-insured-members-block {
+    padding: 20px 20px 45px
+}
+
+#self-pad .sum-insured-members-block {
+    padding: 20px 0 45px 20px
+}
+
+.sum-insured-members-block-dropdown {
+    padding-top: 10px
+}
+
+.pad-l-r-0 {
+    padding-left: 8px !important;
+    padding-right: 0 !important
+}
+
+.tooltip-bg a {
+    border-radius: 50%;
+    color: #f7a500
+}
+
+.tooltip-top {
+    margin-left: 2px
+}
+
+.tool-tip-img {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
+
+.tooltip-inner {
+    height: 50px;
+    background-color: #585858;
+    box-shadow: 0 12.5px 20px 0 rgba(0, 0, 0, .13);
+    line-height: 1.5;
+    padding-bottom: 60px;
+    padding-top: 20px;
+    border-radius: 0;
+    text-align: left;
+    padding-left: 20px;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 14px;
+    font-weight: 700;
+    right: 20%
+}
+
+.tooltip.left .tooltip-arrow {
+    visibility: hidden
+}
+
+.tooltip.top .tooltip-inner {
+    right: 0;
+    bottom: 1px
+}
+
+.bck-quo-btn {
+    padding: 15px 21px;
+    border-radius: 4px;
+    background-color: #f2f3f6;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+    border: 1px solid #dbdbdb;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #000
+}
+
+.bck-quo-btn:hover,
+a .bck-quo-btn:active,
+a .bck-quo-btn:focus {
+    background-color: #f2f3f6;
+    color: #000;
+    text-decoration: none
+}
+
+.pad-top-50 {
+    padding-top: 50px
+}
+
+.pad-top-30 {
+    padding-top: 30px
+}
+
+input[type=checkbox]:checked+label {
+    color: #c7222a
+}
+
+input[type=checkbox] {
+    border: 0;
+    width: 15%;
+    margin-left: -30px !important;
+    height: 2em;
+    font-size: 20px
+}
+
+input[type=checkbox] {
+    margin-left: -18px !important;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    outline: 0;
+    vertical-align: middle;
+    margin-top: -5px
+}
+
+input[type=checkbox]:checked {
+    border-color: #f11924
+}
+
+input[type=checkbox]:focus {
+    outline: 0
+}
+
+input[type=checkbox]:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%
+}
+
+input[type=checkbox]:checked:before {
+    background: #d9534f !important;
+    width: 68%;
+    height: 68%;
+    margin-left: 3px;
+    margin-top: 2.8px
+}
+
+.pad-top-20 {
+    padding-top: 20px
+}
+
+#reduce-spacing-in-plan-modal {
+    padding-top: 0
+}
+
+.mar-top-16 {
+    margin-top: 16px
+}
+
+.tenure-box-pad {
+    display: table-cell;
+    float: none !important
+}
+
+.pre-pad {
+    padding: 20px 0
+}
+
+.sum-insured-members-block-dropdown .glyphicon-chevron-down {
+    float: right
+}
+
+.btn.qq-save-btn {
+    height: 40px;
+    border-radius: 2px;
+    font-size: 16px;
+    letter-spacing: .2px;
+    text-align: left
+}
+
+.btn.qq-save-btn:focus,
+.btn.qq-save-btn:hover {
+    outline: 0;
+    color: #fff;
+    background-color: #694743
+}
+
+.btn.qq-save-btn img {
+    float: right;
+    height: 50%;
+    position: relative;
+    top: 4px
+}
+
+.rupee-symbol {
+    font-size: 12px
+}
+
+.rupee-symbol-mid {
+    font-size: 19px
+}
+
+.rupee-symbol-15 {
+    font-size: 15px;
+    font-weight: 500
+}
+
+@media (min-width:1200px) and (max-width:1440px) {
+    .brand-dropdown.grey {
+        width: 100%
+    }
+}
+
+@media (min-width:1025px) and (max-width:1199px) {
+    .item-block-number-border {
+        margin-right: 20px
+    }
+}
+
+@media (min-width:992px) and (max-width:1024px) {
+    .item-block-number-border {
+        margin-right: 5px
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    .brand-dropdown.grey {
+        width: 100%
+    }
+
+    .sum-insured-members-padding-initial {
+        padding-left: 78px
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .cont-pad {
+        padding: 0 10px
+    }
+
+    .number-cnt-col-mar-l {
+        margin-left: 0
+    }
+
+    .item-block-number-border {
+        margin-right: 0
+    }
+
+    .sum-insured-members-padding-initial {
+        padding-left: 61px
+    }
+
+    .brand-dropdown.grey {
+        width: 100%
+    }
+}
+
+@media (max-width:767px) {
+    #tenure-year-act-bdr {
+        padding-bottom: 25px
+    }
+
+    .margin-align-left-devices {
+        margin-left: -20px !important
+    }
+
+    .main-header-text2 {
+        font-size: 21px
+    }
+
+    .quote-item-block {
+        margin-top: 25px
+    }
+
+    .caret-pos {
+        margin-top: 17px;
+        margin-right: -15px
+    }
+
+    .table-value {
+        font-size: 15px
+    }
+
+    .saving-tenure,
+    .saving-tenure-discount {
+        font-size: 12px
+    }
+
+    .saving-tenure {
+        padding-left: 11.5px;
+        padding-top: 9px
+    }
+
+    .item-block {
+        padding-left: 16px;
+        padding-top: 20px
+    }
+
+    .item-block-number-border {
+        border-right: solid;
+        border-color: #cdcece;
+        border-width: 2px;
+        padding-right: 10px;
+        margin-right: 0
+    }
+
+    .item-block-number {
+        font-size: 32px;
+        border-color: #cdcece;
+        border-width: 4px;
+        width: 50%
+    }
+
+    .item-block-content-header {
+        font-size: 21px
+    }
+
+    .item-block-content-desc {
+        font-size: 15px;
+        padding-bottom: 15px
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+
+    .caret-pos,
+    .number-cnt-col-mar-l {
+        margin-left: 0
+    }
+
+    .mob-pad-l-r-0,
+    .sum-insured-members-padding-initial {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+
+    .brand-dropdown.grey {
+        width: 100%
+    }
+
+    .btn.qq-save-btn {
+        width: 100% !important;
+        font-size: 17px
+    }
+
+    .active-health-ttl-black,
+    .main-header-text2 {
+        font-size: 21px
+    }
+
+    .caret-pos {
+        margin-top: 19px
+    }
+
+    .emi-option-text {
+        margin-right: 13px;
+        font-size: 11.5px
+    }
+
+    .item-block-number {
+        font-size: 42px
+    }
+
+    .quote-item-block-content {
+        padding-left: 0;
+        padding-bottom: 26.5px
+    }
+
+    .member-selected .member-selected-grey-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #6c7174
+    }
+
+    .tenure-section-padding {
+        padding-bottom: 15.2px
+    }
+
+    .table-value {
+        font-size: 13px
+    }
+
+    .pretty {
+        margin: 0 0 5px !important
+    }
+
+    .saving-tenure-discount {
+        font-size: 13px;
+        margin-top: 8.5px
+    }
+
+    .quote-item-block {
+        padding-top: 30px
+    }
+
+    .cont-pad {
+        padding-top: 0 !important
+    }
+
+    .zone-sec-gry-bold-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 13px
+    }
+
+    .question-tooltip-img {
+        width: 16.5px;
+        height: 16.5px
+    }
+
+    .saving-tenure {
+        font-size: 12px
+    }
+
+    .tenure-box-bg {
+        padding-left: 15px
+    }
+
+    .member-dropdown-text {
+        font-size: 17.5px
+    }
+
+    .checkbox-label,
+    .item-block-content-header {
+        font-size: 18px
+    }
+
+    .ttl-row .cont-pad {
+        padding-top: 21.5px !important
+    }
+
+    .edit-tip-img {
+        margin-left: 0
+    }
+}
+
+@media (min-width:320px) and (max-width:359px) {
+    .saving-tenure {
+        padding-left: 19.5px
+    }
+
+    .mob-tenure-sec-pad-l-r-10 {
+        padding-left: 10px;
+        padding-right: 10px
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    #tenure-year-act-bdr {
+        padding-bottom: 50px
+    }
+
+    #tenure-year-act-bdr1 {
+        vertical-align: top
+    }
+
+    #tenure-year-act-bdr2 {
+        padding-bottom: 16px
+    }
+
+    .member-selected {
+        left: 60px
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .temp-total-dis-row {
+        padding-bottom: 0
+    }
+
+    .member-selected {
+        left: 60px
+    }
+
+    .brand-dropdown.grey {
+        width: 280px
+    }
+
+    .cont-pad {
+        padding: 0 21px
+    }
+
+    #tenure-year-act-bdr {
+        padding-bottom: 66px
+    }
+
+    #tenure-year-act-bdr1 {
+        vertical-align: top
+    }
+
+    .item-block-number-border {
+        margin-right: 0
+    }
+
+    .pad-l-r-0 {
+        padding-left: 8px !important;
+        padding-right: 30px !important
+    }
+}
+
+@media (min-width:600px) and (max-width:768px) {
+
+    input[type=text],
+    input[type=tel] {
+        max-width: 100% !important
+    }
+}
+
+@media (min-width:580px) and (max-width:768px) {
+    .pad-l-r-0 {
+        padding-left: 8px !important;
+        padding-right: 15px !important
+    }
+}
+
+@media (min-width:581px) and (max-width:767px) {
+    .breadcrumb-item-cust-active {
+        padding-bottom: 8px
+    }
+
+    .btn-plan {
+        margin-left: -12px
+    }
+
+    .cont-pad {
+        padding: 0 17px
+    }
+
+    .mbr-sel-txt-big {
+        font-size: 15px
+    }
+
+    .tenure-year {
+        font-size: 14px
+    }
+
+    .item-block-content {
+        padding-bottom: 0;
+        padding-top: 21px
+    }
+
+    .item-block {
+        padding-left: 0 !important
+    }
+
+    .btn.qq-save-btn {
+        width: 100% !important;
+        font-size: 15px
+    }
+
+    .quote-item-block {
+        padding-top: 20px;
+        padding-left: 0
+    }
+
+    .quote-item-block-content {
+        margin-left: -2%
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17px
+    }
+
+    .tooltip-top {
+        margin-left: 0
+    }
+}
+
+@media (min-width:320px) and (max-width:580px) {
+    .pad-top-43 {
+        padding-top: 43px
+    }
+
+    .brand-dropdown.grey {
+        width: 100%;
+        border-radius: 4px;
+        background-color: #fff;
+        margin: auto
+    }
+
+    .sum-insured-members-block-dropdown {
+        padding-top: 0;
+        padding-bottom: 10px
+    }
+
+    .sum-insured-members-padding-initial {
+        margin-left: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .member-selected {
+        top: 15px !important;
+        left: 0;
+        padding-bottom: 20px
+    }
+
+    .breadcrumb-item-cust-active {
+        padding-bottom: 8px
+    }
+
+    .btn-plan {
+        margin-left: -12px
+    }
+
+    #tenure-year-act-bdr1 {
+        vertical-align: top
+    }
+
+    .cont-pad {
+        padding: 0
+    }
+
+    .mbr-sel-txt-big {
+        font-size: 15px
+    }
+
+    .tenure-year {
+        font-size: 14px;
+        padding-top: 10px
+    }
+
+    .pretty {
+        margin: 0 !important
+    }
+
+    .item-block-content {
+        padding-bottom: 0;
+        padding-top: 21px;
+        margin-left: -2%
+    }
+
+    .item-block {
+        padding-left: 0 !important
+    }
+
+    .btn.qq-save-btn {
+        width: 100% !important;
+        font-size: 17px
+    }
+
+    .btn.qq-save-btn img {
+        top: 3px
+    }
+
+    .quote-item-block {
+        padding-top: 0
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17px
+    }
+
+    .quote-item-block-content {
+        margin-left: -2%;
+        padding-bottom: 10px
+    }
+
+    .edit-tip-img {
+        margin-left: 1px
+    }
+}
+
+.breadcrumb-item-cust .unbold-fonts {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 15px;
+    color: #6c7174
+}

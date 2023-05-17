@@ -1,0 +1,787 @@
+<!--
+
+	Page Name :- Pre Quote Page for campaign/aggregators/moenytool
+	Author: Pankaj Patil
+	Date: 10-09-2018
+
+-->
+<section class="screen-full pre-quote-page" pre-quote="ePQA">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 col-sm-6 col-xs-12 left-side-bg hidden-sm hidden-xs">
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Activ-Secure-PA'"><img
+						src="assets/images/personal-accident-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Secure</div>
+					<div class="pa-fnt">Personal Accident</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Health'"><img
+						src="assets/images/platinum-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Health</div>
+					<div class="pa-fnt">Platinum</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-show="ePQA.productName == 'Super-topup'">
+					<img src="assets/images/super-top-up-1.png" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Super Health Plus Top Up </div>
+					<div class="pa-fnt"> Activ Assure Diamond </div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Activ-Assure'"><img
+						src="assets/images/diamond-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Assure</div>
+					<div class="pa-fnt">Diamond</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-show="ePQA.CK">
+					<img src="assets/images/corona-kavach.png" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Corona Kavach </div>
+					<!-- <div class="pa-fnt"> Covid 19 Cover </div> -->
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Activ-Secure-CS'"><img
+						src="assets/images/cancer-secure-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Secure</div>
+					<div class="pa-fnt">Cancer Secure</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Activ-Secure-CI'"><img
+						src="assets/images/critical-illness-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Secure</div>
+					<div class="pa-fnt">Critical Illness</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Care'"><img
+						src="assets/images/senior-citizen-cover.svg" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Care</div>
+					<div class="pa-fnt">Senior Citizen</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-show="ePQA.productName == 'Arogya-Sanjeevani'">
+					<img src="assets/images/arogya-sanjeevani.png" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Arogya Sanjeevani</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+				<div class="q-static left-side-bg-top" ng-if="ePQA.productName == 'Activ Fit'"><img
+						src="assets/images/activ-fit-cover.png" class="img-responsive new-product-img">
+					<div class="active-assure-fnt">Activ Fit</div>
+					<div class="pa-fnt">Health Insurance</div>
+					<div class="get-free-quote">Get your free quote here.</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12" ng-if="ePQA.productName !== 'Activ-Secure-PA'">
+				<form name="ePQA.preQuoteForm" novalidate="" autocomplete="nope">
+					<div class="q-box text-right">
+						<div class="q-heading">Let's get you a quote - it only takes a few minutes</div>
+						<div class="q-count"><img src="assets/images/if-arrow-up.svg" class="backToPrevious"
+								ng-hide="ePQA.count == '2'"> <span>2/4</span> <img src="assets/images/if-arrow-down.svg"
+								class="backToNext"></div><!-- I like to cover dropdown section -->
+						<div class="screen-box screen-2 screen-Active prequote-dropdown" data-section="question-2"
+							data-cnt="3" data-scroll="2">
+							<div class="q-name">I'd like to cover</div>
+							<div class="q-input" ng-show="ePQA.productName != 'Care'"><input autocomplete="nope"
+									type="text" class="showOpt pre-input" ng-model="ePQA.coverTo"
+									dropdown="ePQA.preQuote.Cover"
+									ng-click="callGtag('click-input', 'product_pre-quote',ePQA.productName+'_prequote_liketo-cover')"
+									id="q3showOpt" placeholder="Pick / choose members" readonly="readonly"> <span
+									class="showOptChevron"><img src="assets/images/chevron.png" width="16"> <i
+										class="fa fa-spinner" aria-hidden="true"
+										ng-if="ePQA.familyConsturcts.length == 0"></i></span>
+								<ul class="hide-on-load q3showOpt popOpt" data-for="q3showOpt"
+									ng-show="ePQA.familyConsturcts.length != 0">
+									<li ng-repeat="member in ePQA.familyConsturcts" data-val="{{member.Key}}"
+										ng-if="!(member.Key == 'D' && ePQA.productName == 'Activ-Assure' && ePQA.rblIMDCode == '2110895') && !(member.Key == 'PK' && ePQA.productName == 'Activ-Secure-PA') && !(member.Key == 'PK' && (ePQA.productName == 'Activ-Assure'|| ePQA.productName == 'Super-topup') && ePQA.rblIMDCode != '2110895')"
+										ng-click="callGtag('click-input', 'product_pre-quote',ePQA.productName+'_prequote_member-selected-'+member.Value)">
+										{{member.Value}}<span></span></li>
+								</ul>
+								<ul class="hide-on-load otherFamilyConstruct popOpt" data-for="otherFamilyConstruct">
+									<div class="ofconst">Other family construct <img src="assets/images/close-w.png"
+											class="close-other-family-construct"></div>
+									<li ng-repeat="addMember in ePQA.additionalMembers" data-val="D">
+										<div class="pretty primary danger"><input autocomplete="nope" type="checkbox"
+												ng-model="ePQA.selectedMembers[addMember]"
+												ng-if=" !(member.Key == 'D' && ePQA.productName == 'Activ-Assure' && ePQA.rblIMDCode == '2110895')"
+												ng-init="(ePQA.productName == 'Activ-Assure' ? ePQA.selectedMembers['Self'] = true : ePQA.selectedMembers['Self'] = false) || (ePQA.productName == 'Super-topup' ? ePQA.selectedMembers['Self'] = true : ePQA.selectedMembers['Self'] = false) "
+												value="{{addMember}}" name="check-{{addMember}}" class="radio-checkbox"
+												id="add-member-{{$index}}" data-for=""> <label
+												for="add-member-{{$index}}"><i class="default"></i> <label
+													class="radio-label-spacing">{{addMember}}</label></label></div>
+									</li>
+									<div class="container-fluid"><button type="button"
+											class="btn btn-familyConstruct pull-right"
+											ng-click="ePQA.familyConstructSubmit(ePQA.selectedMembers)">DONE <img
+												src="assets/images/forward.png" width="12"></button></div>
+								</ul>
+								<div class="body-overlay" ng-show="ePQA.familyConsturcts.length != 0"></div>
+							</div>
+							<div class="q-input activ-care" ng-show="ePQA.productName == 'Care'"><input
+									autocomplete="nope" type="text" autocomplete="off" class="showOpt pre-input"
+									ng-model="ePQA.coverTo" placeholder="Pick / choose members"
+									dropdown="ePQA.preQuote.Cover" id="q3showOpt" readonly="readonly"> <span
+									class="showOptChevron"><img src="assets/images/chevron.png" width="16"><i
+										class="fa fa-spinner" aria-hidden="true"
+										ng-if="ePQA.activeCareFamilyContruct.length == 0"></i></span>
+								<ul class="hide-on-load q3showOpt otherFamilyConstruct popOpt sizeActiveCare"
+									data-for="otherFamilyConstruct" ng-show="ePQA.activeCareFamilyContruct.length != 0">
+									<div class="ofconst">Activ Care care comes as a package for elderly individuals as
+										well as elderly couples.</div>
+									<div class="member-containers">
+										<li data-val="SC" ng-repeat="addMember in ePQA.activeCareFamilyContruct">
+											<div class="pretty primary danger"><input autocomplete="nope"
+													type="checkbox" autocomplete="off"
+													ng-model="ePQA.selectedMembers[addMember.RelationWithProposer]"
+													tabindex="{{$index + 1}}" value="{{addMember.RelationWithProposer}}"
+													name="check-{{addMember.RelationWithProposer}}"
+													class="radio-checkbox"
+													id="add-member-{{addMember.RelationWithProposer}}"
+													ng-change="ePQA.chooseActiveCareMember(ePQA.selectedMembers[addMember.RelationWithProposer] , ePQA.selectedMembers , addMember)"
+													data-for=""> <label
+													for="add-member-{{addMember.RelationWithProposer}}"><i
+														class="default"></i> <label
+														class="radio-label-spacing">{{addMember.RelationWithProposer}}</label></label>
+											</div>
+										</li>
+									</div>
+									<div class="active-care-footer">
+										<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 yellow-note-txt">Activ Care
+											allows only individuals or spouses as members. To select other members among
+											the ones you see disabled for you, uncheck your current selection.</div>
+										<div class="container-fluid"><button type="button"
+												class="btn btn-familyConstruct pull-right"
+												ng-click="ePQA.submitActiveCareFamilycontruct(ePQA.selectedMembers)">DONE
+												<img src="assets/images/forward.png" width="12"></button></div>
+									</div>
+								</ul>
+								<div class="body-overlay ac-overlay"
+									ng-show="ePQA.activeCareFamilyContruct.length != 0"></div>
+							</div>
+						</div><!-- Self Age enter section -->
+						<div class="screen-box screen-3 hide-on-load" data-section="question-3"
+							data-type="self-age-change" data-cnt="4" data-scroll="3">
+							<div class="q-name">My age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" name="age"
+										ng-model="ePQA.preQuote.Age" aria-describedby="basic-addon2"
+										ng-bind="{{ePQA.preQuote.Age}}" class="numeric pre-input" id="ques_1_age"
+										valid-number minlength="1"
+										ng-disabled="(ePQA.rblIMDCode == '2110895' && ePQA.preQuote.preAge != undefined) || ePQA.isIDFCPasa"
+										maxlength="2"> <span class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-enternextAge"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-enternextAge q-enternextAge-mobile"></span>
+								</div>
+							</div>
+						</div><!-- Spouse Age enter section -->
+						<div class="screen-box screen-4 hide-on-load" data-section="question-4"
+							data-type="spouse-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Spouse's age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" valid-number
+										aria-describedby="basic-addon2" ng-model="ePQA.preQuote.spouseAge"
+										class="numeric pre-input" id="ques_4_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-sposeAge"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-sposeAge q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Father's Age enter section -->
+						<div class="screen-box screen-4_1 hide-on-load" data-section="question-4_1"
+							data-type="father-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Father's age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" valid-number
+										aria-describedby="basic-addon2" ng-model="ePQA.preQuote.fatherAge"
+										class="numeric pre-input" id="ques_4_1_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-fatherAge"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-fatherAge q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Mother's Age enter section -->
+						<div class="screen-box screen-4_2 hide-on-load" data-section="question-4_2"
+							data-type="mother-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Mother's age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" valid-number
+										aria-describedby="basic-addon2" class="numeric pre-input"
+										ng-model="ePQA.preQuote.motherAge" id="ques_4_2_age" minlength="1"
+										maxlength="2"> <span class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-motherAge"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-motherAge q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Father-in-law's Age enter section -->
+						<div class="screen-box screen-4_3 hide-on-load" data-section="question-4_3"
+							data-type="fil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Father-in-law's age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" valid-number
+										aria-describedby="basic-addon2" ng-model="ePQA.preQuote.fILAge"
+										class="numeric pre-input" id="ques_4_3_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-fILAge">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-fILAge q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Mother-in-law's Age enter section -->
+						<div class="screen-box screen-4_4 hide-on-load" data-section="question-4_4"
+							data-type="mil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Mother-in-law's age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" valid-number
+										aria-describedby="basic-addon2" ng-model="ePQA.preQuote.mILAge"
+										class="numeric pre-input" id="ques_4_4_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-mILage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-mILage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Brother Age enter section -->
+						<div class="screen-box screen-4_5 hide-on-load" data-section="question-4_5"
+							data-type="bro-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Brother age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.broAge"
+										class="numeric pre-input" id="ques_4_5_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-broage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-broage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Sister-In-Law Age enter section -->
+						<div class="screen-box screen-4_6 hide-on-load" data-section="question-4_6"
+							data-type="sisl-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Sister-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.sislAge"
+										class="numeric pre-input" id="ques_4_6_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-sislage"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-sislage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Sister enter section -->
+						<div class="screen-box screen-4_7 hide-on-load" data-section="question-4_7"
+							data-type="sis-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Sister age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.sisAge"
+										class="numeric pre-input" id="ques_4_7_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-sisage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-sisage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Brother-In-Law Age enter section -->
+						<div class="screen-box screen-4_8 hide-on-load" data-section="question-4_8"
+							data-type="bil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Brother-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.bilAge"
+										class="numeric pre-input" id="ques_4_8_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-bilage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-bilage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Grandfather Age enter section -->
+						<div class="screen-box screen-4_9 hide-on-load" data-section="question-4_9"
+							data-type="gf-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Grandfather age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gfAge"
+										class="numeric pre-input" id="ques_4_9_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gfage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gfage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Grandmother Age enter section -->
+						<div class="screen-box screen-4_10 hide-on-load" data-section="question-4_10"
+							data-type="gm-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Grandmother age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gmAge"
+										class="numeric pre-input" id="ques_4_10_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gmage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gmage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Uncle Age enter section -->
+						<div class="screen-box screen-4_11 hide-on-load" data-section="question-4_11"
+							data-type="un-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Uncle age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.unAge"
+										class="numeric pre-input" id="ques_4_11_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-unage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-unage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Aunt Age enter section -->
+						<div class="screen-box screen-4_12 hide-on-load" data-section="question-4_12"
+							data-type="au-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Aunt age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.auAge"
+										class="numeric pre-input" id="ques_4_12_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-auage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-auage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Son Age enter section -->
+						<div class="screen-box screen-4_13 hide-on-load" data-section="question-4_13"
+							data-type="so-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Son age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.soAge"
+										class="numeric pre-input" id="ques_4_13_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-soage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-soage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Daughter-In-Law Age enter section -->
+						<div class="screen-box screen-4_14 hide-on-load" data-section="question-4_14"
+							data-type="dil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Daughter-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.dilAge"
+										class="numeric pre-input" id="ques_4_14_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-dilage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-dilage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Daughter Age enter section -->
+						<div class="screen-box screen-4_15 hide-on-load" data-section="question-4_15"
+							data-type="dul-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Daughter age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.dulAge"
+										class="numeric pre-input" id="ques_4_15_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-dulage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-dulage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Son-In-Law Age enter section -->
+						<div class="screen-box screen-4_16 hide-on-load" data-section="question-4_16"
+							data-type="sil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Son-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.silAge"
+										class="numeric pre-input" id="ques_4_16_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-silage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-silage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Nephew Age enter section -->
+						<div class="screen-box screen-4_17 hide-on-load" data-section="question-4_17"
+							data-type="np-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Nephew age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.npAge"
+										class="numeric pre-input" id="ques_4_17_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-npage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-npage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Niece-In-Law Age enter section -->
+						<div class="screen-box screen-4_18 hide-on-load" data-section="question-4_18"
+							data-type="nil-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Niece-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.nilAge"
+										class="numeric pre-input" id="ques_4_18_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-nilage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-nilage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Niece Age enter section -->
+						<div class="screen-box screen-4_19 hide-on-load" data-section="question-4_19"
+							data-type="ni-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Niece age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.niAge"
+										class="numeric pre-input" id="ques_4_19_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-niage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-niage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Nephew-In-Law Age enter section -->
+						<div class="screen-box screen-4_20 hide-on-load" data-section="question-4_20"
+							data-type="npl-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Nephew-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.nplAge"
+										class="numeric pre-input" id="ques_4_20_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-nplage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-nplage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Grandson Age enter section -->
+						<div class="screen-box screen-4_21 hide-on-load" data-section="question-4_21"
+							data-type="gs-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Grandson age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gsAge"
+										class="numeric pre-input" id="ques_4_21_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gsage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gsage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Granddaughter-In-Law Age enter section -->
+						<div class="screen-box screen-4_22 hide-on-load" data-section="question-4_22"
+							data-type="gdl-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Granddaughter-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gdlAge"
+										class="numeric pre-input" id="ques_4_22_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gdlage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gdlage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Granddaughter Age enter section -->
+						<div class="screen-box screen-4_23 hide-on-load" data-section="question-4_23"
+							data-type="gd-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Granddaughter age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gdAge"
+										class="numeric pre-input" id="ques_4_23_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gdage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gdage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Grandson-In-Law Age enter section -->
+						<div class="screen-box screen-4_24 hide-on-load" data-section="question-4_24"
+							data-type="gsl-age-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">and my Grandson-In-Law age is</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text" autocomplete="off"
+										valid-number aria-describedby="basic-addon2" ng-model="ePQA.preQuote.gslAge"
+										class="numeric pre-input" id="ques_4_24_age" minlength="1" maxlength="2"> <span
+										class="input-group-addon" id="basic-addon2">yrs <img
+											src="assets/images/enter_web.png" class="next-enter-btn hidden-xs q-gslage">
+										<img src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-gslage q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Taking kids count section -->
+						<div class="screen-box screen-5 hide-on-load" data-section="question-5"
+							data-type="kids-no-change" data-cnt="3" data-scroll="3">
+							<div class="q-name">I have</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text"
+										aria-describedby="basic-addon2" minlength="1" ng-model="ePQA.preQuote.Kids"
+										maxlength="1" class="numeric pre-input" id="ques_5_age"> <span
+										class="input-group-addon" id="basic-addon2">kids <img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs kidsChange"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs kidsChange q-enternextAge-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Taking kids age section -->
+						<div class="screen-box screen-6 hide-on-load" data-section="question-6"
+							data-type="kids-age-change" data-cnt="4" data-scroll="3">
+							<div class="q-name">Aged</div>
+							<div class="q-input addKidsOnIHave">
+								<div class="row">
+									<div class="col-xs-3 col-sm-3 col-md-4 sonsdaugh-xs padResetL"
+										ng-repeat="child in ePQA.kidsObject"
+										ng-class="{'col-xs-offset-9 col-sm-offset-9 col-md-offset-8': ePQA.kidsObject.length == 1 || (ePQA.kidsObject.length == 3 && $index == 2),'col-xs-offset-6 col-sm-offset-6 col-md-offset-4': $even && ePQA.kidsObject.length != 1 && ($index != 2 || ePQA.kidsObject.length == 4)}">
+										<div class="input-group kid2"><input autocomplete="nope" type="text"
+												valid-number aria-describedby="basic-addon2" ng-model="child.age"
+												class="numeric pre-input child-age-change"
+												id="ques_kid_{{$index + 1}}_age" min="1" maxlength="2"> <span
+												class="input-group-addon" id="basic-addon2">yrs <img
+													src="assets/images/enter_web.png"
+													class="next-enter-btn hidden-xs q-kidsAge"
+													ng-show="$index == ePQA.kidsObject.length - 1"> <img
+													src="assets/images/enter_mobile.png"
+													class="visible-xs q-kidsAge q-enternextAge-mobile"
+													ng-show="$index == ePQA.kidsObject.length - 1"></span></div>
+									</div>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Taking mobile number section -->
+						<div class="screen-box screen-7 hide-on-load" data-section="question-7"
+							data-type="mobile-no-change" data-cnt="4" data-scroll="4"><br><br class="hidden-xs">
+							<div class="q-label">My Mobile No</div>
+							<div class="q-input">
+								<div class="input-group"><input autocomplete="nope" type="text"
+										class="text-right pre-input screen-7-question" valid-number
+										ng-model="ePQA.preQuote.MobileNo" id="ques_7_mobile" maxlength="10"> <span
+										class="input-group-addon" id="basic-addon2"><img
+											src="assets/images/enter_web.png"
+											class="next-enter-btn hidden-xs q-mobileNo"> <img
+											src="assets/images/enter_mobile.png"
+											class="next-enter-btn visible-xs q-mobileNo q-enternext-mobile"></span>
+								</div>
+							</div>
+							<div class="q-help">Press enter for next question</div>
+						</div><!-- Taking email section -->
+						<div class="screen-box screen-8 hide-on-load" data-section="question-8" data-cnt="4"
+							data-scroll="4"><br><br class="hidden-xs">
+							<div class="q-label">My Email</div>
+							<div class="q-input">
+								<div class="input-group"><input type="text"
+										class="text-right pre-input screen-7-question" name="myEmail"
+										ng-model="ePQA.preQuote.EmailId" placeholder="abc@gmail.com" id="ques_7_email">
+									<span class="input-group-addon" id="basic-addon2"></span>
+								</div>
+								<div class="q-button emailShow" ng-if="ePQA.showBuyBtn">
+									<button type="button"
+									class="btn btn-button" id="check-products" ng-if="!ePQA.membersDetails.length"
+									ng-click="ePQA.checkActivAssureProducts($event);callGtag('click-input', 'product_pre-quote',ePQA.productName+'_prequote_buy-product')">Buy Product
+									<img src="assets/images/forward.png" width="12"></button>
+									<button type="button"
+									class="btn btn-button" id="check-products" ng-click="ePQA.buyProduct($event)"
+									ng-if="ePQA.membersDetails.length > 0">Buy Product <img
+										src="assets/images/forward.png" width="12"></button></div>
+							</div>
+						</div><!-- Brief Info Section -->
+						<div class="brief-info" ng-if="ePQA.coverTo"><span ng-if="ePQA.selectCategory">I am looking for
+								<span>{{ePQA.selectCategory}}.</span></span> <span ng-if="ePQA.coverTo">And I'd like to
+								cover <span>{{ePQA.coverTo}}.</span></span> <span ng-if="ePQA.preQuote.Age">My Age is
+								<span>{{ePQA.preQuote.Age}}</span></span> <span ng-if="ePQA.preQuote.spouseAge">and my
+								Spouse's Age is <span>{{ePQA.preQuote.spouseAge}}</span></span> <span
+								ng-if="ePQA.preQuote.fatherAge">and my Father's Age is
+								<span>{{ePQA.preQuote.fatherAge}}</span></span> <span
+								ng-if="ePQA.preQuote.motherAge">and my Mother's Age is
+								<span>{{ePQA.preQuote.motherAge}}</span></span> <span ng-if="ePQA.preQuote.fILAge">and
+								my Father-In-Law's Age is <span>{{ePQA.preQuote.fILAge}}</span></span> <span
+								ng-if="ePQA.preQuote.mILAge">and my Mother-In-Law's Age is
+								<span>{{ePQA.preQuote.mILAge}}</span></span> <span ng-if="ePQA.kidsObject[0].age">and my
+								first kid's Age is <span>{{ePQA.kidsObject[0].age}}</span></span> <span
+								ng-if="ePQA.kidsObject[1].age">and my second kid's Age is
+								<span>{{ePQA.kidsObject[1].age}}</span></span> <span ng-if="ePQA.kidsObject[2].age">and
+								my third kid's Age is <span>{{ePQA.kidsObject[2].age}}</span></span> <span
+								ng-if="ePQA.kidsObject[3].age">and my forth kid's Age is
+								<span>{{ePQA.kidsObject[3].age}}.</span></span> <span ng-if="ePQA.kidsObject[3].age">and
+								my forth kid's Age is <span>{{ePQA.kidsObject[3].age}}</span></span> <span
+								ng-if="ePQA.preQuote.MobileNo">. My Mobile No. is
+								<span>{{ePQA.preQuote.MobileNo}}.</span></span> <span ng-if="ePQA.preQuote.EmailId">My
+								Email is <span>{{ePQA.preQuote.EmailId}}.</span></span></div>
+								<div class="row get-quote-whatsapp mr-0">
+									<div class="col-lg-8 col-sm-8 col-md-11 col-xs-12 pr-0">
+										<label class="whatsapp-label" for="checkWhatsapp">
+											<input type="checkbox" id="checkWhatsapp"  ng-true-value="'Y'" ng-false-value="'N'" ng-model="ePQA.whatsappconcent" ng-init="ePQA.whatsappconcent ='Y'"/>									
+											<span class="checkmark"></span>Get Quote on <img
+											src="assets/images/WhatsApp.svg" alt=""/>WhatsApp
+										</label>
+									</div>
+								</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-5 col-md-offset-2 col-sm-12 col-xs-12 pa-journey-form" ng-if="ePQA.productName == 'Activ-Secure-PA'">
+				<form name="ePQA.preQuoteForm" novalidate="" autocomplete="nope">
+				   <div class="q-box text-right">
+					  <div class="q-heading">Let's get you a quote - it only takes a few minutes</div>
+					  <!-- Taking mobile number section -->
+					  <div class="screen-box screen-7" data-section="question-7"
+						 data-type="mobile-no-change" data-cnt="4" data-scroll="4">
+						 <div class="q-label">Mobile:</div>
+						 <div class="q-input">
+							<div class="input-group">
+								<input autocomplete="nope" placeholder="Enter Mobile Number" type="text"
+							   class="text-right pre-input screen-7-question" valid-number
+							   ng-model="ePQA.preQuote.MobileNo" id="ques_7_mobile" maxlength="10">
+							</div>
+						 </div>
+					  </div>
+					  <!-- Taking email section -->
+					  <div class="screen-box screen-8" data-section="question-8" data-cnt="4"
+						 data-scroll="4">
+						 <div class="q-label">Email:</div>
+						 <div class="q-input">
+							<div class="input-group"><input type="text"
+							   class="text-right pre-input screen-7-question" name="myEmail"
+							   ng-model="ePQA.preQuote.EmailId" placeholder="abc@gmail.com" id="ques_7_email">
+							</div>
+						 </div>
+					  </div>
+					  <!-- Self Age enter section -->
+					  <div class="screen-box screen-3" data-section="question-3"
+						 data-type="self-age-change" data-cnt="4" data-scroll="3">
+						 <div class="q-name">Age:</div>
+						 <div class="q-input">
+							<div class="input-group"><input autocomplete="nope" placeholder="Enter Age" type="text" name="age"
+							   ng-model="ePQA.preQuote.Age" aria-describedby="basic-addon2"
+							   ng-bind="{{ePQA.preQuote.Age}}" class="numeric pre-input" id="ques_1_age"
+							   valid-number minlength="1"
+							   ng-disabled="(ePQA.rblIMDCode == '2110895' && ePQA.preQuote.preAge != undefined) || ePQA.isIDFCPasa"
+							   maxlength="2"> 
+							</div>
+						 </div>
+					  </div>
+					  <div class="q-button emailShow">
+						<button type="button"
+						   class="btn btn-button" id="check-products" ng-if="!ePQA.membersDetails.length"
+						   ng-click="ePQA.checkActivAssureProducts($event);callGtag('click-input', 'product_pre-quote',ePQA.productName+'_prequote_buy-product')">Buy Product
+						<img src="assets/images/forward.png" width="12"></button>
+						<button type="button"
+						   class="btn btn-button" id="check-products" ng-click="ePQA.buyProduct($event)"
+						   ng-if="ePQA.membersDetails.length > 0">Buy Product <img
+						   src="assets/images/forward.png" width="12"></button>
+					 </div>
+				   </div>
+				</form>
+			 </div>
+		</div>
+	</div>
+</section>
+
+<!-- rbl pasa lgcode validation popup -->
+<div class="modal app-modal" id="pan-card-modal" role="dialog" ng-if="ePQA.validateLGcode">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form name="ePQA.pancard">
+				<div class="modal-header modal-hdr model-head-banner-otp">
+					<button type="button" class="close close-class-alert" data-dismiss="modal"><img
+							src="assets/images/close-white.svg"></button>
+					<div class="modal-hdr-txt model-head-otp">Activ Assure changes </div>
+				</div>
+				<div class="modal-body">
+					<div>
+						<!-- <label class="otp-label-style color-change">Just one step away from your quote! <br>
+
+							We are here to make health insurance simpler for you!</label><br> -->
+
+						<label class="otp-label-style">Please enter branch code</label><span
+							class="requiredFieldStyle">( optional )</span>
+
+						<input autocomplete="nope" type="text" class="form-control input-text-box pancardtensform"
+							valid-number name="branchcode" placeholder="Please enter branch code" ng-model="ePQA.rblPincode"
+							ng-value={{ePQA.rblPincode}} ng-pattern="" maxlength="6" minlength="6" ng-readonly ="ePQA.rblIMDCode == '2110895' && ePQA.ePQA.rblPincode != ''">
+
+						<div class="red-color-error"
+							ng-if="ePQA.pancard.branchcode.$dirty && ePQA.pancard.branchcode.$valid">
+							Please enter branch code </div>
+						<div class="red-color-error"
+							ng-if='ePQA.pancard.branchcode.$dirty && ePQA.pancard.branchcode.$valid'>Please
+							Please enter valid branch code</div>
+					</div>
+					<br>
+					<div>
+						<label class="otp-label-style">Please enter LG code</label><span class="requiredFieldStyle">(
+							optional )</span>
+
+						<input autocomplete="nope" type="text" class="form-control input-text-box pancardtensform"
+							valid-number name="lgcode" placeholder="Please enter lg code" ng-model="ePQA.lgCodeValue"
+							ng-pattern="" maxlength="6" minlength="6">
+
+						<!-- <div class="red-color-error" ng-show=" ePQA.pancard.lgcode.$touched && ePQA.pancard.lgcode.$required" style="color: red;">
+							Please enter LG code</div> -->
+						<div class="red-color-error" ng-show="!ePQA.pancard.lgcode.$valid" style="color: red;">
+							Please enter valid LG code</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="container-fluid">
+							<button class="btn btn-primary modal-save-btn text-center" data-dismiss="modal"
+								ng-click="ePQA.checkProducts($event)">Cancel </button>
+							<button class="btn btn-primary modal-save-btn text-center"
+								ng-disabled="(pancard.branchcode.$error.pattern || pancard.lgcode.$error.pattern)"
+								ng-click="ePQA.checkProducts($event)">Submit</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<!-- rbl pasa lgcode popup validation end -->
+<addmember addctrl="ePQA" childcount="ePQA.childCount" allowadd="no" ng-if="ePQA.loadAddMemberSection"></addmember>
+<!-- End of Pre Quote Page -->

@@ -1,0 +1,517 @@
+<!--
+    Page: Renewal Renew Thank You Page
+	Author: Pandurang Sarje 
+    Date: 11-07-2020
+-->
+
+<div class="thank-you-section" ng-if="ty_api == 'https://mtpre.adityabirlahealth.com/healthinsurance/buy-insurance-online/obServicesV2/api/CFRAcceptReject/TY'">
+    <div class="container-fluid mob-pad-l-r-0 tab-pad-l-r-0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0" style="display: flex; justify-content: center; flex-direction: column;">
+                <br/>
+                <br/>
+                <br/>
+                <div class="thank-you-style-new thank-you-user-name-txt" style="text-align: center; color: #000; margin-bottom: 15px;">Thank you, {{offerDetails[0].MemberName}}!
+                </div>
+                <p style="font-size: 20px;
+                color: #808080;
+                text-align: center;
+                margin-bottom: 35px;">Your Aditya Birla Health Insurance policy will be issued shortly</p>
+                
+                <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10"  style="margin: 0px auto; padding: 30px; border: solid 2px #ccc; border-radius: 5px;">
+                    <div style="border-bottom: solid 2px #ccc;">
+                        <h4>Details Of Your Proposal</h4><br/>
+                        <p style="color: #1F874C; margin-bottom: 15px; font-size: 15px;">Your policy document with complete details will be sent on your registered email ID and WhatsApp number (if provided) once issued.</p>
+                    </div>
+                    <div >
+                        <p style="color: #808080; margin-top: 25px; font-size: 15px;">You can now check your policy issuance status on WhatsApp. Send 'Hi' to '8828800035' from registered phone number to start conversation.</p>
+
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+<!-- ng-if="ty_api != 'https://mtpre.adityabirlahealth.com/PartPayment/api/CFRAcceptReject/TY'" -->
+<div ng-if="ty_api != 'https://mtpre.adityabirlahealth.com/healthinsurance/buy-insurance-online/obServicesV2/api/CFRAcceptReject/TY'" class="thank-you-section" >
+    <div class="container-fluid mob-pad-l-r-0 tab-pad-l-r-0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 column-padding">
+                <div class="thank-you-style-new thank-you-user-name-txt">Thank you {{renewDetails[0].FirstName}} {{renewDetails[0].LastName}} !</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-if="renewDetails.length != 0">
+                    <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs pad-l-r-0">
+                        <img src="assets/images/new-renew/green-tick.svg">
+                    </div>
+                    <div class="col-lg-7 col-md-11 col-sm-11 col-xs-11 pad-l-r-0">
+                        <div class="we-received-payment-txt">We received your payment and renewed your policy</div>
+                    </div>
+                </div>
+                <img class="download-img-width" src="assets/images/new-renew/header-bg.png">
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
+                <div class="thank-you-section-mar-right"></div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pad-l-r-0">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column-padding-new">
+                    <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 thank-you-page-grey-bg">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thank-you-white-bg">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="activ-health-brown-clr-txt">{{renewDetails[0].ProductName}}</div>
+                                <div class="premium-enhanced-txt">{{renewDetails[0].PlanName}}</div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="premium-blck-txt">Premium</div>
+                                <div class="premium-amt-brown">₹ {{renewDetails[0].Premium | INR}}</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 policy-date-section-pad-top">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-start-date-txt">Policy Start Date</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-date-txt-brown">{{newDateFormat | date : "fullDate"}}</div>
+                            </div>
+                        </div>
+                        
+                        <div ng-if="renewDetails[0].StpFlag=='STP'" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 policy-date-section-pad-top">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-start-date-txt">New Policy Number</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-date-txt-brown">{{renewDetails[0].PolicyNumber}}</div>
+                            </div>
+                        </div>
+
+                        <div ng-if="PartPay && renewDetails[0].NewPolicyNumber" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 policy-date-section-pad-top">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-start-date-txt">New Policy Number</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-date-txt-brown">{{renewDetails[0].NewPolicyNumber}}</div>
+                            </div>
+                        </div>
+
+                        <div ng-if="renewDetails[0].StpFlag=='NSTP' || (PartPay && !renewDetails[0].NewPolicyNumber)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 policy-date-section-pad-top">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-start-date-txt">Proposal Number</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-date-txt-brown">{{renewDetails[0].ProposalNumber}}</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 policy-date-section-pad-top">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-start-date-txt">Receipt ID</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="policy-date-txt-brown">{{renewDetails[0].ReceiptNo}}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-if="renewDetails.length != 0">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 pad-l-r-0 pull-right">
+                                <a href="javascript:void(0);" class="download-recepit-btn" ng-click="downloadReceipt()">Download Receipt <img src="assets/images/new-renew/square-download.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Emandate Message -->
+                       <!-- <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 pad-l-r-0 rate-your-experience-sec-pad-top" ng-show="renewDetails.length != 0 && autodebit == 'N' && (tyDetails.EmandateRegistrationURL != null || tyDetails.EmandateRegistrationURL != '')">
+                             <p class="rate-your-experience-txt">Please complete your emandate registration by just <a class="emandate-Link" href="{{thankYouPage.EmandateRegistrationURL}}" target="_blank"> clicking here </a></p>
+                        </div>
+                     -->
+               
+
+                         <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 thank-you-page-grey-bg" ng-if="renewPaymentTS == 'pending' && RenewPolicyGeneratedFlag == 'no'">
+                           <div class="pending-text">
+                               Thank you for renewing your policy. We have received your payment, however presently we are unable to generate new policy because of some technical issue. 
+                               Your policy details and payment is safe with us, we shall generate your new policy  and communicate the details of the same with you soon.
+                           </div>
+                       </div>
+                       <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 thank-you-page-grey-bg" ng-if="renewPaymentTS == 'success' && RenewPolicyGeneratedFlag == 'no'">
+                           <div class="pending-text">
+                               Thank you for renewing your policy. We have received your payment, however presently we are unable to generate new policy because of some technical issue. 
+                               Your policy details and payment is safe with us, we shall generate your new policy  and communicate the details of the same with you soon.  
+                           </div>
+                       </div>
+                       <!-- Emandate Message -->
+                       <!-- <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 pad-l-r-0 rate-your-experience-sec-pad-top" ng-show="renewDetails.length != 0 && autodebit == 'N' && (tyDetails.EmandateRegistrationURL != null || tyDetails.EmandateRegistrationURL != '')">
+                           <p class="rate-your-experience-txt">Please complete your emandate registration by just <a class="emandate-Link" href="{{tyDetails.EmandateRegistrationURL}}" target="_blank"> clicking here </a></p>
+                       </div> -->
+                       <!-- Emandate Message -->
+                    <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 pad-l-r-0 rate-your-experience-sec-pad-top" ng-show="renewDetails.length != 0 && autodebit == 'N' && (tyDetails.EmandateRegistrationURL != null || tyDetails.EmandateRegistrationURL != '')">
+                        <p class="rate-your-experience-txt">Please complete your Auto Payments through Netbanking/Cards registration by just <a class="emandate-Link" href="{{thankYouPage.EmandateRegistrationURL}}" target="_blank"> clicking here </a></p>
+                    </div>
+   
+                       <!-- cross sell for other offerings -->
+                       <div ng-if="thankYouPage.OneCRMApplicable == 0" class="col-lg-10 col-md-11 col-sm-12 col-xs-12 pad-l-r-0 rate-your-experience-sec-pad-top" >
+                           <p class="rate-your-experience-txt"> Don't miss other offerings from Aditya Birla Capital.<a class="emandate-Link"  ng-click="naviageteTOCrossSell(); otherofferingSubmit();"> Click to discover.</a><button type="button" data-toggle="modal" data-target="#pif-solution" style="font-size: 12px;border: none;background: transparent;margin: 0;">View t&c</button></p>
+                       </div>
+   
+                       <!-- End of Emandate Message -->
+                       <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12 pad-l-r-0 rate-your-experience-sec-pad-top">
+                           <div class="rate-your-experience-txt">Rate your Renewal Experience</div>
+   
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 star-section-pad-top">
+                               <!-- <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pad-l-r-0">
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star star-filled-icon"></i>
+                                   <i class="fa fa-star-o star-border-icon"></i>
+                                   <i class="fa fa-star-o star-border-icon"></i>
+                               </div> -->
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pad-l-r-0">
+                                   <fieldset class="rating">
+                                       <input type="radio" id="star10" name="rating" value="10" />
+                                       <label class = "full" for="star10"  title="10 stars" ng-click="selectStar('10');gtagparam('click-icon','thank you – rate [10]')"></label>
+                                       <input type="radio" id="star10half" name="rating" value="9 and a half" /><label class="half" for="star10half" title="9 and a half" ng-click="selectStar('9.5');gtagparam('click-icon','thank you – rate [9.5]')"></label>
+   
+                                       <input type="radio" id="star9" name="rating" value="9" />
+                                       <label class = "full" for="star9" title="9 stars" ng-click="selectStar('9');gtagparam('click-icon','thank you – rate [9]')"></label>
+                                       <input type="radio" id="star9half" name="rating" value="8 and a half" /><label class="half" for="star9half" title="8 and a half" ng-click="selectStar('8.5');gtagparam('click-icon','thank you – rate [8.5]')"></label>
+   
+                                       <input type="radio" id="star8" name="rating" value="8" />
+                                       <label class = "full" for="star8"  title="8 stars" ng-click="selectStar('8');gtagparam('click-icon','thank you – rate [8]')"></label>
+                                       <input type="radio" id="star8half" name="rating" value="7 and a half" /><label class="half" for="star8half" title="7 and a half" ng-click="selectStar('7.5');gtagparam('click-icon','thank you – rate [7.5]')"></label>
+   
+                                       <input type="radio" id="star7" name="rating" value="7" />
+                                       <label class = "full" for="star7"  title="7 stars" ng-click="selectStar('7');gtagparam('click-icon','thank you – rate [7]')"></label>
+                                       <input type="radio" id="star7half" name="rating" value="6 and a half" /><label class="half" for="star7half" title="6 and a half" ng-click="selectStar('6.5');gtagparam('click-icon','thank you – rate [6.5]')"></label>
+   
+                                       <input type="radio" id="star6" name="rating" value="6" />
+                                       <label class = "full" for="star6"  title="6 stars" ng-click="selectStar('6');gtagparam('click-icon','thank you – rate [6]')"></label>
+                                       <input type="radio" id="star6half" name="rating" value="5 and a half" /><label class="half" for="star6half" title="5 and a half" ng-click="selectStar('5.5');gtagparam('click-icon','thank you – rate [5.5]')"></label>
+   
+                                       <input type="radio" id="star5" name="rating" value="5" />
+                                       <label class = "full" for="star5" title="5 stars" ng-click="selectStar('5');gtagparam('click-icon','thank you – rate [5]')"></label>
+                                       <input type="radio" id="star5half" name="rating" value="4 and a half" /><label class="half" for="star5half" title="4 and a half" ng-click="selectStar('4.5');gtagparam('click-icon','thank you – rate [4.5]')"></label>
+   
+                                       <input type="radio" id="star4" name="rating" value="4" />
+                                       <label class = "full" for="star4" title="4 stars" ng-click="selectStar('4');gtagparam('click-icon','thank you – rate [4]')"></label>
+                                       <input type="radio" id="star4half" name="rating" value="3 and a half" /><label class="half" for="star4half" title="3 and a half" ng-click="selectStar('3.5');gtagparam('click-icon','thank you – rate [3.5]')"></label>
+   
+                                       <input type="radio" id="star3" name="rating" value="3" />
+                                       <label class = "full" for="star3" title="3 stars" ng-click="selectStar('3');gtagparam('click-icon','thank you – rate [3]')"></label>
+                                       <input type="radio" id="star3half" name="rating" value="2 and a half" /><label class="half" for="star3half" title="2 and a half" ng-click="selectStar('2.5');gtagparam('click-icon','thank you – rate [2.5]')"></label>
+   
+                                       <input type="radio" id="star2" name="rating" value="2" />
+                                       <label class = "full" for="star2" title="2 stars" ng-click="selectStar('2');gtagparam('click-icon','thank you – rate [2]')"></label>
+                                       <input type="radio" id="star2half" name="rating" value="1 and a half" /><label class="half" for="star2half" title="1 and a half stars" ng-click="selectStar('1.5');gtagparam('click-icon','thank you – rate [1.5]')"></label>
+   
+                                       <input type="radio" id="star1" name="rating" value="1" />
+                                       <label class = "full" for="star1" title="1 stars" ng-click="selectStar('1');gtagparam('click-icon','thank you – rate [1]')"></label>
+                                       <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="half stars" ng-click="selectStar('0.5');gtagparam('click-icon','thank you – rate [0.5]')"></label>
+                                   </fieldset>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-right pad-l-r-0">
+                                   <div class="it-was-good-txt">It was good!</div>
+                               </div>
+                           </div>
+   
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                               <textarea class="form-control experience-textarea" rows="5" id="comment" placeholder="Tell us more about your experience" ng-model="description" ng-change="gtagparam('fill-text','thank you – feedback')"></textarea>
+   
+                               <a href="javascript:void(0);" class="btn thank-you-submit-btn" ng-click="submitReview();gtagparam('click-button','thank you – rate submit')">Submit</a>
+                           </div>
+                       </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
+        <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10 mob-pad-l-r-0 tab-pad-l-r-0">
+            <div class="container-fluid">
+                <!-- AABHA TY -->
+                   <section class="abha-wrapper">
+                       <div class="inner-wrapper">
+                           <div class="container" >
+                               <div class="abha-content">
+                                   <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 pad-l-r-0">
+                                       <h4 class="abha-heading">Setup your ABHA ID in just 3 simple steps!</h4>
+                                       <p class="text-con">ABHA ID allows you to share their health records digitally with
+                                           hospitals, clinics, insurance providers and others.</p>
+                                       <div class="abha-feature-wrap">
+                                           <div class="feature">
+                                               <div class="image blue">
+                                                   <img src="https://marketingcontet.azureedge.net/assets/img/abha/feature-img1.png" width="24" height="24" alt="feature image" />
+                                               </div>
+                                               <div class="text">
+                                                   <p class="text-p">Quick Healthcare<br /> Access</p>
+                                               </div>
+                                           </div>
+                                           <div class="feature">
+                                               <div class="image orange">
+                                                   <img src="https://marketingcontet.azureedge.net/assets/img/abha/feature-img2.png" width="24" height="24" alt="feature image" />
+                                               </div>
+                                               <div class="text">
+                                                   <p class="text-p" >24/7<br /> Accessibility</p>
+                                               </div>
+                                           </div>
+                                           <div class="feature">
+                                               <div class="image pink">
+                                                   <img src="https://marketingcontet.azureedge.net/assets/img/abha/feature-img3.png" width="24" height="24" alt="feature image" />
+                                               </div>
+                                               <div class="text">
+                                                   <p class="text-p">Highly<br /> Secure</p>
+                                               </div>
+                                           </div>
+                                           <div class="feature">
+                                               <div class="image orange">
+                                                   <img src="https://marketingcontet.azureedge.net/assets/img/abha/feature-img5.png" width="24" height="24" alt="feature image" />
+                                               </div>
+                                               <div class="text">
+                                                   <p class="text-p">Organized<br /> Medical Record</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="approved">
+                                           <div class="row mar-0">
+                                               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 pad-r-0">
+                                                   <div class="create-abha-btn">
+                                                       <button type="button" class="btn-class"
+                                                           ng-click="CreateABHAID(); callGtag('click-button', 'thank-you' , tY.thankYouPageType+'_[create-abha-id]')">Create ABHA ID</button>
+                                                   </div>
+                                               </div>
+                                               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 pad-l-r-0">
+                                                   <div class="approved-by text-right">
+                                                       <span>Approved by</span><img class="img-app"
+                                                           src="https://marketingcontet.azureedge.net/assets/img/abha/abha-new-logo.png" width="80" height="80"
+                                                           alt="abha logo" />
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                   </div>
+                                   <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-l-r-0">
+                                       <div class="slider-wrap">
+                                           <div id="ci-sum-isnured-slider11" class="owl-carousel buy-owl-carousel cK-carousel">
+                                            
+                                                   <div class="step-img">
+                                                       <img src="https://marketingcontet.azureedge.net/assets/img/abha/Step1-sliderimg-new.png" alt="verify aadhaar" />
+                                                   </div>
+                                               
+                                                   <div class="step-img">
+                                                       <img src="https://marketingcontet.azureedge.net/assets/img/abha/Step2-sliderimg.png" alt="setup abha handle" />
+                                                   </div>
+                                              
+                                                   <div class="step-img">
+                                                       <img src="https://marketingcontet.azureedge.net/assets/img/abha/Step3-sliderimg.png" alt="verify mobile number" />
+                                                   </div>
+                                              
+                                                   <div class="step-img">
+                                                       <img src="https://marketingcontet.azureedge.net/assets/img/abha/Step4-sliderimg.png" width="323"
+                                                           height="275" alt="abha id" />
+                                                   </div>
+                                               
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </section>
+                <!-- AABHA TY -->
+            </div>
+            <br/><br/><br/>
+            <section ng-if="thankYouPage.OneCRMApplicable == 0" id= "cross-sell-section">
+                <div class=" flaot-center"><span class="cross-sell-click-text">Choose The Best You Need</span></div>
+                <div>
+                   <!-- <label class="otp-label-style color-change">Our Protecting, Investing and Financing Solution
+                      enable you to live the life you have imagined for yourself <br>
+ 
+                      <b>Please tick (&#10003) the solutions you are interested in: </b> </label> --><br>
+ 
+                   <div class=" mt-2">
+                     
+                      <div class="row">
+                         <div class="col-md-4 col-sm-6 item">
+                            <div class="card item-card card-block">
+                               <div class="card-header">
+                                  <h4 class="card-title text-right">PROTECTING Solutions</h4>
+                               </div>
+                               <div class="card-body">
+                                  <div class="enable-individuals hidden-xs">
+                                     <h4><b>Enable individuals to protect <br>
+                                           what they value.</b></h4>
+                                  </div>
+                                  <div class="life-insurence">
+                                     <div class="life-insurence-div input-wrapper">
+                                        
+                                           <input class="styled-checkbox" id="styled-checkbox-1" ng-model="otheroffering[0].val" type="checkbox" value="Life Insurance">
+                                           <label for="styled-checkbox-1" id="two"></label>
+                                     
+                                        <label for="life-insurence">LIFE INSURANCE <span class="hidden-xs"> offered by
+                                           </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Sun Life Insurance company Ltd.</h5>
+                                     </div>
+ 
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="Health-insurence" type="checkbox" ng-model="otheroffering[1].val" name="Health-insurence" value="Health Insurence">
+                                        <label for="Health-insurence" ></label>
+                                        <label for="Health-insurence"> HEALTH INSURANCE <span class="hidden-xs"> offered by
+                                           </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Sun Life Insurance company Ltd.</h5>
+                                     </div>
+ 
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="insurence-advisory"  ng-model="otheroffering[2].val" type="checkbox" name="insurence-advisory" value="Insurence Advisory">
+                                        <label for="insurence-advisory" ></label>
+                                     
+                                        <label for="insurence-advisory">INSURANCE ADVISORY <span class="hidden-xs"> offered by
+                                           </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Sun Life Insurance company Ltd.</h5>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="card-footer">
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-md-4 col-sm-6 item">
+                            <div class="card item-card card-block">
+                               <div class="card-header-investing">
+                                  <h4 class="card-title text-right">INVESTING Solutions</h4>
+                               </div>
+                               <div class="card-body">
+                                  <div class="enable-individuals hidden-xs">
+                                     <h4><b>Enable individuals to realize their aspirations <br>
+                                           by making their money work for them.</b></h4>
+                                  </div>
+                                  <div class="life-insurence">
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="mutual-funds" type="checkbox"  ng-model="otheroffering[3].val" name="mutual-funds" value="Mutual Funds">
+                                        <label for="mutual-funds" ></label>
+                                        <label for="mutual-funds">MUTUAL FUNDS/PMS/REAL ESTATE INVESTMENT
+                                        </label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Sun Life Insurance AMC Ltd.</h5>
+                                     </div>
+ 
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="pension-funds"  ng-model="otheroffering[4].val" type="checkbox" name="pension-funds" value="Pension Funds">
+                                        <label for="pension-funds" ></label>
+                                        
+                                        <label for="pension-funds"> PENSION FUNDS <span class="hidden-xs"> offered by
+                                           </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Sun Life Pension Fund Management Ltd.</h5>
+                                     </div>
+ 
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="stocks-broking" type="checkbox" ng-model="otheroffering[5].val" name="stocks-broking" value="Stocks & Security Broking">
+                                        <label for="stocks-broking" ></label>
+                                     
+                                        <label for="stocks-broking"> STOCKS & SECURITIES BROKING <span class="hidden-xs">
+                                              offered by </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Money Ltd.</h5>
+                                     </div>
+                                  </div>
+                               </div>
+                               <div class="card-footer card-footer-financing">
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-md-4 col-sm-6 item">
+                            <div class="card item-card card-block">
+                               <div class="card-header-financing">
+                                  <h4 class="card-title text-right">FINANCING Solutions</h4>
+                               </div>
+                               <div class="card-body">
+                                 <div class="enable-individuals hidden-xs">
+                                     <h4><b>Enable individuals to fulfil their needs and <br>
+                                           desires without delay.</b></h4>
+                                  </div>
+                               <div class="life-insurence">
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="home-loan" type="checkbox" ng-model="otheroffering[6].val"  name="home-loan" value="Home Loan">
+                                        <label for="home-loan" ></label>
+                                  
+                                        <label for="home-loan"> HOME LOANS <span class="hidden-xs"> offered by
+                                           </span></label><br>
+                                        <h5 class="hidden-xs">Aditya Birla Housing Finance Ltd.</h5>
+                                     </div>
+                                     <div class="life-insurence-div input-wrapper">
+                                        <input class="styled-checkbox" id="personal-loan"  ng-model="otheroffering[7].val" type="checkbox" name="personal-loan" value="Personal Loan">
+                                        <label for="personal-loan" ></label>
+                                        <label for="personal-loan">PERSONAL LOANS/SME LOANS/LOANS AGAINST
+                                           SECURITIES</label><span class="hidden-xs">and other financing products offered by
+                                           Aditya Birla Finance Ltd. </span><br>
+                                        <!-- <h5>Aditya Birla Sun Life Insurance company Ltd.</h5> -->
+                                  </div>
+                                  <div class="life-insurence-div input-wrapper">
+                                        
+                                  </div>
+                                </div>
+                               </div>                              
+                                  <div class="card-footer card-footer-individuals">
+                                 </div>
+                                </div>
+                           </div>
+                        </div>
+                        <div class="cross-sell-button">
+                             <button type="button"  ng-click="validateCrossSellData() ;callGtag('click-button', 'quote' ,'quote-submit_[activCare]')" class="btn btn-primary qq-save-btn" tabindex="13" id="activ-care-quote-submit">
+                              Submit
+                             </button>
+                        </div>
+                   </div>
+                </div>
+            </section>
+        </div>
+       
+
+        <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
+        
+    </div>
+</div>
+
+<!-- terms and condition  -->
+
+<div class="modal app-modal abc-offering" id="pif-solution" role="dialog">
+    <div class="modal-dialog model-Width">
+       <div class="modal-content">
+          <form name="pif-solution">
+             <div class="modal-header modal-hdr model-head-banner-otp">
+                <button type="button" class="close close-class-alert" data-dismiss="modal"><img
+                      src="assets/images/close-white.svg"></button>
+                <div class="modal-hdr-txt model-head-otp">Terms and Conditions</div>
+             </div>
+ 
+             <div class="modal-body ">
+               <div class="terms-para">
+                <p>
+                    
+                Please reach out to me with regard to various financial products and services (‘Purpose’) offered by the subsidiaries of Aditya 
+                Birla Capital Ltd. (‘ABC Companies’).</p> <br>
+                <p>
+                I hereby authorise the respective ABC Companies and their authorised agents/service providers to contact me to inform me 
+                about their product offerings/services from time to time and also to conduct checks on my credit information with any of the 
+                credit bureaus in order to provide relevant products/services. </p><br>
+                <p>
+                I confirm that this authorisation shall override my NDNC registration and I can be contacted through any channel of 
+                communication including but not limited to email, telephone, sms, whatsapp or any other similar mode for the above Purpose. </p><br>   
+                <p>This consent /authorisation is provided by me voluntarily and shall remain valid and subsisting until withdrawn by me.</p>
+               </div>
+             </div>
+           
+             <div class="modal-footer">
+                <div class="row">
+                   <div class="container-fluid">
+                      <button type="button" data-dismiss="modal"  ng-click="naviageteTOCrossSell(); otherofferingSubmit();" class="btn btn-primary modal-save-btn text-center"> Agree </button>
+                      <!-- <button type="button" data-dismiss="modal" class="btn btn-primary modal-save-btn text-center">Cancel</button> -->
+                   </div>
+                </div>
+             </div>
+          </form>
+       </div>
+    </div>
+ </div>
+ 
+ 
+
+<!-- terms and condition end -->
+    
+
+    

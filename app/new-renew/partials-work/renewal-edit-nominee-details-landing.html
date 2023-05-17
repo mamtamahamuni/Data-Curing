@@ -1,0 +1,441 @@
+<!--
+    Page: Renewal Edit Nominee Details Landing Page
+	Author: Pandurang Sarje 
+    Date: 11-07-2020
+-->
+
+<div class="container-fluid view-member-landing pad-l-r-0">
+    <!-- Desktop View -->
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs view-member-padding">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pad-l-r-0">
+            <div class="member-name-ttl" style="margin-bottom: 33px;">{{policyDetails.NameOfTheProposer}},</div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">  
+                    <div class="edit-member-details-txt">View Members</div>
+                    <div class="edit-add-sml-txt">Add Member</div>
+                </a>    
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-class="{'edit-member-pad-btm': upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured != 0}">
+                <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                    <div class="edit-member-details-txt">View or Edit Member details</div>
+                </a>    
+            </div>
+            <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0 && upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                    <div class="edit-member-details-txt">Increase Sum Insured</div>
+                </a>    
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="grey-horizontal-line"></div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="ModificationProduct !='Super Top Up' && ModificationProduct !='Arogya Sanjeevani Policy' && platinumPlan !='Platinum - Premiere' && AS_PAPlan">
+                <a ng-click="newRenewRouting('renewal-edit-optional-covers');gotoPageGAParam('click-button','option cover','renew')">
+                    <div class="edit-member-details-txt">Optional Covers</div>
+                </a>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="policyDetails.ProductName != 'Arogya Sanjeevani Policy'">
+                <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                    <div class="edit-member-details-txt">Tenure Change</div>
+                </a>    
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-red-box pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                    <div class="view-members-bold-txt">Edit Nominee Details</div>
+                </a>    
+            </div>
+            <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                    <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                </a>    
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                    <div class="edit-member-details-txt">Change Address Details</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 pad-l-r-0">
+           
+            <header-details></header-details>
+           
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-21-0 group-member-section">
+                <form name="editNomineeDetailsForm" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                            <div class="group-members-bold-txt">Edit Nominee Details</div>
+                        </div>
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="horizontal-border"></div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 pad-l-r-0 edit-member-detail-tabs">
+                            <p class="your-Sum-Insured-txt">
+                                Edit Nominee Details in order to decide who receives the benefits in case of a health emergency
+                            </p>
+                            
+                            <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0 input-pad">
+                                <div class="label-text">First Name <span class="requiredFieldStyle">*</span></div>
+                                <input ng-model="nomineeDetails.NomineeFirstName" type="text" class="form-control placeholder-text" 
+                                placeholder="Enter First Name"
+                                name="firstname"
+                                minlength="1" required="" maxlength="50" valid-name
+                                >
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.firstname.$error.required">
+                                    Please enter First name.
+                                </div>
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.firstname.$error.minlength">
+                                    Please enter valid first name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0 input-pad">
+                                <div class="label-text">Middle Name</div>
+                                <input ng-model="nomineeDetails.NomineeMiddleName" type="text" class="form-control placeholder-text" 
+                                placeholder="Enter Middle Name"
+                                name="middlename"
+                                minlength="1" maxlength="50" valid-name
+                                >
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.middlename.$error.required">
+                                    Please enter Middle name.
+                                </div>
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.middlename.$error.minlength">
+                                    Please enter valid middle name.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0 input-pad">
+                                    <div class="label-text">Last Name</div>
+                                    <input ng-model="nomineeDetails.NomineeLastName" type="text" class="form-control placeholder-text" 
+                                    placeholder="Enter Last Name"
+                                    name="lastname"
+                                    minlength="1" maxlength="50" valid-name
+                                    >
+                                    <div class="errormsg redColorClass"
+                                        ng-if="editNomineeDetailsForm.lastname.$error.required">
+                                        Please enter Last name.
+                                    </div>
+                                    <div class="errormsg redColorClass"
+                                        ng-if="editNomineeDetailsForm.lastname.$error.minlength">
+                                        Please enter valid Last name.
+                                    </div>
+                            </div>
+                        </div>
+                                
+                        <div class="col-lg-12 col-md-12 col-sm-12 pad-l-r-0 edit-member-detail-tabs">
+                            <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0 input-pad">
+                                <div class="label-text">Nominee Relation <span class="requiredFieldStyle">*</span></div>
+                                <button tabindex="10" class="btn btn-default dropdown-toggle btn-drop-down-width" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <span ng-if="nomineeDetails.NomineeRelation == ''" class="dropdown-placeholder-txt">Select Relation</span>
+                                    <span ng-if="nomineeDetails.NomineeRelation != ''" class="dropdown-placeholder-txt">{{nomineeDetails.NomineeRelation}}</span>
+                                    <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+                                        <img src="assets/images/new-renew/chevron-down.png">
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-width" aria-labelledby="dropdownMenu1">
+                                    <li ng-repeat="rel in nomineeRel">
+                                        <a  ng-click="changeNomineeRel(rel)" class="dropdown-menu-item">{{rel}}</a>
+                                    </li>
+                                </ul>
+                                <div class="errormsg redColorClass"
+                                    ng-if="nomineeDetails.NomineeRelation == ''">
+                                    Please select Nominee Relation
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0 input-pad">
+                                <div class="label-text">Contact Number <span class="requiredFieldStyle">*</span></div>
+                                <input type="text" ng-model="nomineeDetails.NomineeContactNo" class="form-control placeholder-text" 
+                                placeholder="Enter Mobile No." id="cobrowsing-input-21"
+                                name="mobile"
+                                minlength="10" required="" maxlength="10" valid-number
+                                ng-pattern="/^[6-9]\d{9}$/"
+                                >
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.mobile.$error.required">
+                                    Please enter mobile no.
+                                </div>
+                                <div class="errormsg redColorClass"
+                                    ng-if="editNomineeDetailsForm.mobile.$error.minlength || editNomineeDetailsForm.mobile.$error.pattern">
+                                    Please enter valid mobile no.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 text-right">
+                            <a ng-click="updateNomineeDetails(event, editNomineeDetailsForm.$valid);gotoPageGAParam('click-button','edit nominee details - save','renew')" class="proceed-btn">SAVE</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End of Desktop View -->
+
+    <!-- Mobile View -->
+    <div class="col-xs-12 hidden-lg hidden-md hidden-sm pad-l-r-0 edit-nominee-details-mobile">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-padding">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 pad-l-r-0">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-name-bg pad-l-r-0">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 pad-l-r-0 ">
+                                <div class="plan-name-ttl">{{policyDetails.ProductName}}</div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                    <div class="tenure-txt">Members -
+                                        <span class="years-txt">{{insuredMembers.length}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                    <div class="tenure-txt">Tenure -
+                                        <span class="years-txt">{{policyDetails.Tenure}} <span ng-if="policyDetails.Tenure== '1'">yr</span><span ng-if="policyDetails.Tenure!= '1'">yrs</span></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                    <div class="tenure-txt">Status -
+                                        <span class="years-txt">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 pad-l-r-0">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="premium-pa-txt">Premium</div>
+                            <div class="premium-amt-red-txt">₹ {{policyDetails.RenewalGrossPremium | INR}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel-group" id="accordion">
+                    <!-- First Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
+                                <div class="currently-on-txt">Currently On:
+                                    <span class="edit-member-details-bold">Edit Nominee Details</span>
+                                </div>
+                            </h4> 
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                    <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">  
+                                        <div class="edit-member-details-txt">View Members</div>
+                                        <div class="edit-add-sml-txt">Add Member</div>
+                                    </a>    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-class="{'edit-member-pad-btm': upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured != 0}">
+                                    <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                                        <div class="edit-member-details-txt">View or Edit Member details</div>
+                                    </a>    
+                                </div>
+                                <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0&& upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                    <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                                        <div class="edit-member-details-txt">Increase Sum Insured</div>
+                                    </a>    
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                    <div class="grey-horizontal-line"></div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="policyDetails.ProductName != 'Arogya Sanjeevani Policy'">
+                                    <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                                        <div class="edit-member-details-txt">Tenure Change</div>
+                                    </a>    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 view-member-red-box">
+                                    <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                                        <div class="view-members-bold-txt">Edit Nominee Details</div>
+                                    </a>    
+                                </div>
+                                <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                    <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                                        <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                                    </a>    
+                                </div>                 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                    <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                                        <div class="edit-member-details-txt">Change Address Details</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-section">
+                <form name="editNomineeDetailsFormMob" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-l-r-0">
+                            <div class="group-members-bold-txt">Edit Nominee Details</div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="horizontal-border"></div>
+                        </div>
+                    
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 edit-member-detail-tabs pad-input-bg">
+                                <p class="your-Sum-Insured-txt">
+                                    Edit Nominee Details in order to decide who receives the benefits in case of a health emergency
+                                </p>
+                                <div>
+                                    <div class="col-xs-12 pad-l-r-0 input-pad">
+                                        <div class="label-text">First Name <span class="requiredFieldStyle">*</span></div>
+                                        <input ng-model="nomineeDetails.NomineeFirstName" type="text" class="form-control placeholder-text" 
+                                        placeholder="Enter First Name"
+                                        name="firstname"
+                                        minlength="1" required="" maxlength="50" valid-nme
+                                        >
+                                        <div class="errormsg redColorClass"
+                                            ng-if="editNomineeDetailsFormMob.firstname.$error.required">
+                                            Please enter First name.
+                                        </div>
+                                        <div class="errormsg redColorClass"
+                                            ng-if="editNomineeDetailsFormMob.firstname.$error.minlength">
+                                            Please enter valid first name.
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 pad-l-r-0 input-pad">
+                                            <div class="label-text">Middle Name</div>
+                                            <input ng-model="nomineeDetails.NomineeMiddleName" type="text" class="form-control placeholder-text" 
+                                            placeholder="Enter Middle Name"
+                                            name="middlename"
+                                            minlength="1" maxlength="50" valid-nme
+                                            >
+                                            <div class="errormsg redColorClass"
+                                                ng-if="editNomineeDetailsFormMob.middlename.$error.required">
+                                                Please enter Middle name.
+                                            </div>
+                                            <div class="errormsg redColorClass"
+                                                ng-if="editNomineeDetailsFormMob.middlename.$error.minlength">
+                                                Please enter valid middle name.
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 pad-l-r-0 input-pad">
+                                                <div class="label-text">Last Name</div>
+                                                <input ng-model="nomineeDetails.NomineeLastName" type="text" class="form-control placeholder-text" 
+                                                placeholder="Enter Last Name"
+                                                name="lastname"
+                                                minlength="1" maxlength="50" valid-nme
+                                                >
+                                                <div class="errormsg redColorClass"
+                                                    ng-if="editNomineeDetailsFormMob.lastname.$error.required">
+                                                    Please enter Last name.
+                                                </div>
+                                                <div class="errormsg redColorClass"
+                                                    ng-if="editNomineeDetailsFormMob.lastname.$error.minlength">
+                                                    Please enter valid Last name.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 pad-l-r-0 input-pad">
+                                            <div class="label-text">Nominee Relation <span class="requiredFieldStyle">*</span></div>
+                                            <button tabindex="10" class="btn btn-default dropdown-toggle btn-drop-down-width" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                <span ng-if="nomineeDetails.NomineeRelation == ''" class="dropdown-placeholder-txt">Select Relation</span>
+                                                <span ng-if="nomineeDetails.NomineeRelation != ''" class="dropdown-placeholder-txt">{{nomineeDetails.NomineeRelation}}</span>
+                                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+                                                    <img src="assets/images/new-renew/chevron-down.png">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-width" aria-labelledby="dropdownMenu1">
+                                                <li ng-repeat="rel in nomineeRel">
+                                                    <a ng-click="changeNomineeRel(rel)" class="dropdown-menu-item">{{rel}}</a>
+                                                </li>
+                                            </ul>
+                                            <div class="errormsg redColorClass" ng-if="nomineeDetails.NomineeRelation == ''">
+                                                Please select Nominee Relation
+                                            </div>
+                                    </div>
+                                
+
+                                    <div class="col-xs-12 pad-l-r-0 input-pad">
+                                        <div class="label-text">Contact Number <span class="requiredFieldStyle">*</span></div>
+                                        <input type="text" ng-model="nomineeDetails.NomineeContactNo" class="form-control placeholder-text" 
+                                        placeholder="Enter Mobile No." id="cobrowsing-input-22"
+                                        name="mobile"
+                                        minlength="10" required="" maxlength="10" valid-number
+                                        ng-pattern="/^[6-9]\d{9}$/"
+                                        >
+                                        <div class="errormsg redColorClass"
+                                            ng-if="editNomineeDetailsFormMob.mobile.$error.required">
+                                            Please enter mobile no.
+                                        </div>
+                                        <div class="errormsg redColorClass"
+                                            ng-if="editNomineeDetailsFormMob.mobile.$error.minlength || editNomineeDetailsFormMob.mobile.$error.pattern">
+                                            Please enter valid mobile no.
+                                        </div>
+                                    </div>
+                                            
+                                    
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top ">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 text-right" style="margin-bottom: 16px;">
+                            <a ng-click="updateNomineeDetails(event, editNomineeDetailsFormMob.$valid);gotoPageGAParam('click-button','edit nominee details - save','renew')" class="sav-btn">SAVE</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btns-pad-top btns-position btns-section">
+                <div ng-show="showHealthReturn" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0 helth-return-mobile-container">
+                    <label class="container-new" style="left: 0;">Use Health Returns of <span class="checkbox-green-txt">₹ {{heathReturnAmt | INR}}</span>
+                        <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" name="healthreturn" ng-model="applyHealthReturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                        <span class="checkmark"></span>
+                   </label> 
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0">
+                    <a href="javascript:void(0);" ng-click="requestPgURL();gotoPageGAParam('click-button','pay premium','renew')">
+                        <span class="btn btn proceed-btn">Pay Premium
+                            <span style="font-size: inherit; margin-left: 40px;">₹ {{policyDetails.RenewalGrossPremium | INR}}</span>
+                            <img class="pull-right" src="assets/images/new-renew/right-arrow.svg">
+                        </span>
+                    </a>
+                </div>
+                <div class="pre-btn-container pre-update-btn get-update-btn">
+                    <a href="javascript:void(0);" ng-click="alertRevert(); gotoPageGAParam('click-button','get quote','renew')" class="premuim-btn"><img src="assets/images/refresh.png"></a>
+                </div>
+            </div>
+    </div>
+    <!-- End of Mobile View -->
+</div>
+
+<!------------- Page Script ----------------->
+<script>
+    $(".view-member-details-section").hide();
+
+    $(document).ready(function () {
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.in").each(function () {
+            $(this).siblings(".panel-heading").find(".arrow-right").addClass("rotate");
+        });
+
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function () {
+            $(this).parent().find(".arrow-right").addClass("rotate");
+        }).on('hide.bs.collapse', function () {
+            $(this).parent().find(".arrow-right").removeClass("rotate");
+        });
+    });
+</script>
+<!------------- End of Page Script ----------------->
+    
+
+

@@ -1,0 +1,549 @@
+<!--
+
+    Page Name :- CI quote page
+    Author: Pankaj Patil
+    Date: 09-07-2018
+
+-->
+<section class="ci-quote-section">
+    <!-- CI Quote Header Section -->
+    <div class="container-fluid">
+        <div class="row cont-pad">
+            <div class="col-md-12"><span class="main-header-text1">Activ Secure - Critical Illness Cover </span><span
+                    class="main-header-text1">|</span> <span class="main-header-text2">Plan
+                    {{cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan}}</span></div>
+        </div>
+    </div><!-- End of CI Quote Header Section -->
+    <!-- CI Quote page breadcrumb section -->
+    <div class="container-fluid">
+        <div class="row cont-pad breadcrumb-row">
+            <div class="col-md-12">
+                <ul class="breadcrumb-cust">
+                    <li class="breadcrumb-item-cust breadcrumb-item-cust-active"><a href="javascript:void(0)"
+                            ng-click="quoteNavigation()">Quotation</a></li>
+                    <li class="breadcrumb-item-cust"><span class="clickable"><i
+                                class="glyphicon glyphicon-menu-right"></i></span></li>
+                    <li class="breadcrumb-item-cust"><a href="javascript:void(0)"
+                            ng-click="breadcrumbNavigation('breadcrumbs','proposer-details','Proposer_Details',4)"
+                            ng-class="{'active' : cI.pName != null}" class="unbold-fonts">Proposal</a></li>
+                    <li class="breadcrumb-item-cust"><span class="clickable"><i
+                                class="glyphicon glyphicon-menu-right"></i></span></li>
+                    <li class="breadcrumb-item-cust"><a href="javascript:void(0)"
+                            ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')"
+                            class="unbold-fonts">Payment</a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- End of CI quote page breadcrumb section -->
+    <!-- Premium display section sticky section -->
+    <div class="container-fluid prem-panel sticky" sticky>
+        <div class="row prem-row">
+            <div class="col-md-12 col-xs-11 col-sm-12 prem-text-panel text-right pad-l-r-0">
+                <div class="dropdown dis-in"><a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown"
+                        type="button" data-toggle="dropdown" href="javascript:void(0)" id=""
+                        ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')"><span
+                            class="prem-small-txt">Premium:&nbsp;&nbsp;</span> <span class="prem-big-txt"
+                            ng-if="cI.quoteDetails.PremiumDetail.TotalPremium"><span
+                                class="prem-rupee-symbol">&#8377;</span> <span count-up
+                                end-val="cI.quoteDetails.PremiumDetail.TotalPremium "></span> <span
+                                ng-show="cI.tenureSelect == '1'">pa </span>&nbsp; <span
+                                class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                    src="assets/images/icon-chevron-down.png"> </span></span><span class="prem-big-txt"
+                            ng-if="!cI.quoteDetails.PremiumDetail.TotalPremium"><i class="fa fa-spinner"
+                                aria-hidden="true"></i></span></a>
+                    <ul class="dropdown-menu plan-dropdown-menubox">
+                        <li ng-repeat="premium in cI.quoteDetails.PremiumDetail.ProductPremium">
+                            <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">{{premium.ProductName | productFilter}}</p>
+                            <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.PolicyBasePremium != null && premium.PolicyBasePremium != '' && premium.PolicyBasePremium != '0'">Base Amount : ₹ {{premium.PolicyBasePremium | INR}} </p>
+                            <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.GSTValue != null && premium.GSTValue != '' && premium.GSTValue != '0'">GST Amount : ₹ {{premium.GSTValue | INR}}  </p>
+                            <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.Discount != null && premium.Discount != '' && premium.Discount != '0'">Discount Amount: ₹ {{premium.Discount | INR}} </p>
+                            <p class="tooltip-grey-txt mar-rght-15 totalAmt">Total Amount : ₹ {{premium.Premium | INR}}  </p>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of Premium display section sticky section -->
+    <!-- Sum Insured Of Member section -->
+    <div class="container">
+        <!-- Sum insured header section -->
+        <div class="row quote-item-block pad-top-15">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                <div class="item-block-number-border"><span class="item-block-number">1</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                <div class="quote-item-block-content">
+                    <div class="item-block-content-header">SUM INSURED OF MEMBERS <span class="custom-popover"
+                            custom-popover><img class="img-responsive item-block-tool-tip-img"
+                                src="assets/images/tooltip_Premium.png"
+                                ng-click="callGtag('click-icon','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_sum-insured-i')">
+                            <span class="custom-tooltip-text">Maximum Sum Insured eligibility is 12 times of member
+                                Annual Income <span class="pop-close">×</span></span></span></div>
+                    <div class="item-block-content-desc">The lump sum payout insured will be paid in case of a claim
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of sum insured of header section -->
+        <!-- Sum Insured Slider Section -->
+        <div class="container sum-insured-members-padding-initial sum-insured-section" id="insure-dropdown">
+            <div class="col-lg-12 col-md-12 sum-insured-members-padding-initial">
+                <div id="ci-sum-isnured-slider" class="owl-carousel buy-owl-carousel ci-carousel" ng-if="cI.initSlider">
+                    <div class="sum-insured-members-block self-spouse-section"
+                        ng-repeat="insuredMember in cI.quoteDetails.CIQuote.CIQuoteDetails"
+                        ng-init="insuredMember.objIndex = $index"><a href="javascript:void(0)" class="remove-option"
+                            ng-click="cI.cIDeleteMember(insuredMember,$index)"><img
+                                class="close-img-mar self-close-mark" src="assets/images/shape.png"></a>
+                        <div class="self-section">
+                            <div class="dis-in box-txt-hd" ng-if="insuredMember.RelationWithProposer != 'KID'">
+                                {{insuredMember.RelationWithProposer}}</div>
+                            <div class="dis-in box-txt-hd" ng-if="insuredMember.RelationWithProposer == 'KID'">
+                                {{insuredMember.RelationType}}</div>
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <div class="col-md-8 sum-insured-dropdown-pad-l-r">
+                                        <div class="box-txt">Sum Insured</div>
+                                        <div class="dropdown"><button tabindex="10"
+                                                class="btn btn-default dropdown-toggle brand-dropdown grey self-insured-btn"
+                                                button-dropdown="insuredMember.suminsured"
+                                                ng-click="callGtag('click-dropdown','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_'+insuredMember.RelationType+'_sum-insured_dropdown-open')"><span
+                                                    class="self-insured-txt" class="select-cover-dropdown-txt"><span
+                                                        class="rupee-symbol">&#8377;</span>
+                                                    {{insuredMember.suminsured | INR}} </span><span
+                                                    class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                        src="assets/images/icon-chevron-down.png"></span></button>
+                                            <ul ng-if="(insuredMember.RelationWithProposer =='SELF' && insuredMember.RelationWithProposer != 'KID')"
+                                                class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                                                <li ng-repeat="sum in cI.sumAmounts" class="li-item-text-change"
+                                                    ng-if="sum[cI.currentPlan]"
+                                                    ng-click="cI.calculateSumInsured(insuredMember.RelationWithProposer,sum.amount,insuredMember.objIndex);cI.kidSumInsureddropdown(sum.amount)"
+                                                    data-val="{{sum.amount}}"><a href="javascript:void(0)"><span
+                                                            class="rupee-symbol">&#8377;</span> <span
+                                                            class="option-text">{{sum.value}} {{cI.currentPlan}}</span></a></li>
+                                            </ul>
+                                            <ul ng-if="(insuredMember.RelationWithProposer!='SELF' && cI.otherMember.length!='0')"
+                                                class="dropdown-menu self-insured-menu">
+                                                <li ng-repeat="sum in cI.otherFamilyConstruct"
+                                                    class="li-item-text-change" ng-if="sum[cI.currentPlan]"
+                                                    ng-click="cI.calculateSumInsured(insuredMember.RelationWithProposer,sum.amount,insuredMember.objIndex)"
+                                                    data-val="{{sum.amount}}"><a tabindex="1"
+                                                        href="javascript:void(0)"><span
+                                                            class="rupee-symbol">&#8377;</span> <span
+                                                            class="option-text">{{sum.value}}</span></a></li>
+                                            </ul>
+                                            <ul ng-if="insuredMember.RelationWithProposer == 'KID'"
+                                                class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                                                <li ng-repeat="sum in cI.kidAmount" class="li-item-text-change"
+                                                    ng-if="sum[cI.currentPlan]"
+                                                    ng-click="cI.calculateSumInsured(insuredMember.RelationWithProposer,sum.amount,insuredMember.objIndex)"
+                                                    data-val="{{sum.amount}}"><a href="javascript:void(0)"><span
+                                                            class="rupee-symbol">&#8377;</span> <span
+                                                            class="option-text">{{sum.value}}</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 sum-assured-age-mar">
+                                        <div class="">
+                                            <div class="box-txt">Age</div>
+                                            <div class="dropdown">
+                                                <div class="dropdown self-income-txtbox sum-assured-age-txtbox">
+                                                    <div class="input-group txt"><input type="text"
+                                                            class="form-control earn-mem-bene-mod-box-txt" valid-number
+                                                            maxlength="2" ng-blur="cI.updateAge(insuredMember,$index)"
+                                                            ng-model="insuredMember.AGE"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 income-l-r-0"
+                                        ng-show="insuredMember.showAnnualIncome || insuredMember.EarningNonEarning == 'Earning'">
+                                        <div class="self-income-div">
+                                            <div class="box-txt">Income</div>
+                                            <div class="dropdown">
+                                                <div class="dropdown self-income-txtbox">
+                                                    <div class="input-group"><span
+                                                            class="input-group-addon earn-mem-bene-mod-box-txt-rup-sym">&#8377;</span>
+                                                        <input type="text"
+                                                            class="form-control earn-mem-bene-mod-box-txt sum-assured-income-digit inp-txt-bg-white"
+                                                            ng-model="insuredMember.AnnualIncome" maxlength="9"
+                                                            ng-blur="cI.changeAnnualIncome(insuredMember)"> <span
+                                                            class="input-group-addon sum-assured-income-digit text-right"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of Sum Insured Slider Section -->
+        <!-- Selected Member and add member btn section -->
+        <div class="row text-center">
+            <div class="col-md-12">
+                <div class=""><span class="mbr-sel-txt-sml">Members Selected:</span> <span class="mbr-sel-txt-big"
+                        ng-if="cI.membersSelected != ''">{{cI.membersSelected}}</span> <span class="mbr-sel-txt-big"
+                        ng-if="cI.membersSelected == ''"><i class="fa fa-spinner" aria-hidden="true"></i></span></div>
+                <div class="pad-top-30"><button data-toggle="modal" data-target="#add-new-member-web"
+                        data-backdrop="static" data-keyboard="false" class="add-mbr-btn"
+                        ng-click="callGtag('click-button','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_add-edit-members')">Add
+                        Members</button></div>
+            </div>
+            <div id="line-top-mar" class="container">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="pad-top-15">
+                        <hr class="style2">
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of Selected Member and add member btn section -->
+    </div><!-- End of sum insured of members section -->
+    <!-- Tenure Select section -->
+    <div class="container">
+        <!-- Tenure header section -->
+        <div class="row quote-item-block">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                <div class="item-block-number-border"><span class="item-block-number">2</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                <div class="quote-item-block-content">
+                    <div class="item-block-content-header">TENURE</div>
+                    <div class="item-block-content-desc">Duration in which benefits are payable under the policy</div>
+                </div>
+            </div>
+        </div><!-- End of tenure header section -->
+        <!-- Tenure select radio button section -->
+        <div class="col-md-12">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 tenure-box-bg tenure-combo-container">
+                <div class="col-xs-4" ng-class="{'activ':cI.tenureSelect == 1}" id="tenure-year-act-bdr">
+                    <div class="pre-pad">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureRadio" value="1" id="tenureRadio1" checked="checked"
+                                ng-model="cI.tenureSelect" ng-change="cI.tenureChange()"> <label for="tenureRadio1"><i
+                                    class="default"></i>&nbsp;<span class="table-value"> 1 Year</span></label></div>
+                    </div>
+                </div>
+                <div class="col-xs-4" ng-class="{'activ':cI.tenureSelect == 2}" id="tenure-year-act-bdr1">
+                    <div class="pre-pad">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureRadio" value="2" id="tenureRadio2" ng-model="cI.tenureSelect"
+                                ng-change="cI.tenureChange()"> <label for="tenureRadio2"><i class="default"></i>&nbsp;
+                                <span class="table-value">2 Years</span>
+                                <div class="saving-tenure">
+                                    <div class="saving-tenure-discount dis-in">You save: &#8377;<span count-up
+                                            end-val="cI.tenureSaving.TotalTwoYearSaving"></span>
+                                        <div class="saving-tenure-discount dis-in">(7.5% Off)</div>
+                                    </div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+                <div class="col-xs-4" ng-class="{'activ':cI.tenureSelect == 3}" id="tenure-year-act-bdr2">
+                    <div class="pre-pad">
+                        <div class="pretty circle danger margin-align-left-devices"><input type="radio"
+                                name="tenureRadio" id="tenureRadio3" value="3" ng-model="cI.tenureSelect"
+                                ng-change="cI.tenureChange()"> <label for="tenureRadio3"><i class="default"></i>&nbsp;
+                                <span class="table-value">3 Years</span>
+                                <div class="saving-tenure">
+                                    <div class="saving-tenure-discount dis-in">You save: &#8377;<span count-up
+                                            end-val="cI.tenureSaving.TotalThreeYearSaving"></span>
+                                        <div class="saving-tenure-discount dis-in">(10% Off)</div>
+                                    </div>
+                                </div>
+                            </label></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of Tenure select radio button section -->
+    </div><!-- End of tenure select section -->
+    <!-- After tenure HR section -->
+    <div class="container">
+        <div class="row text-center">
+            <div id="line-top-mar" class="container">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="pad-top-15">
+                        <hr class="style2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of after tenure HR section -->
+    <!-- Hospital Cash benefit section -->
+    <div class="container">
+        <!-- Hospital Cash benefit header section -->
+        <div class="row quote-item-block">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                <div class="item-block-number-border"><span class="item-block-number">3</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                <div class="quote-item-block-content"><span class="item-block-content-header">HOSPITAL CASH BENEFIT
+                    </span><span class="mar-l-15"><label class="switch mar-0-auto"><input type="checkbox"
+                                class="hcb-toggle" ng-model="cI.hCBCollapse" ng-true-value="'Y'" ng-false-value="'N'"
+                                ng-change="callGtag('click-radio','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB['+cI.hCBCollapse+']')"
+                                data-toggle="collapse" data-target="#content-hospital-cash-benefit"
+                                id="chk-hospital-cash-benefit"> <span class="slider round"></span></label></span>
+                    <div class="item-block-content-desc">Get a fixed cash amount daily in addition to your insurance
+                        benefits when you get hospitalized.</div>
+                </div>
+            </div>
+        </div><!-- End of hospital cash benefit header section -->
+        <!-- Hospital cash benefit slider section -->
+        <div class="container collapse" id="content-hospital-cash-benefit">
+            <div id="ci-hcb-isnured-slider" class="owl-carousel buy-owl-carousel cust-hcb"
+                ng-if="cI.hCBCollapse == 'Y' && cI.initSlider">
+                <div class="item" ng-repeat="member in cI.quoteDetails.CIQuote.CIQuoteDetails">
+                    <div class="col-lg-12 col-md-12 col-sm-11">
+                        <div class="sum-insured-members-block hcb-self-section"><a href="javascript:void(0)"
+                                class="remove-option"
+                                ng-click="cI.removeHCB(member);callGtag('click-icon-x','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_remove-hcb['+member.RelationType+']')"><img
+                                    class="close-img-mar self-close-mark" src="assets/images/shape.png"></a>
+                            <div class="dis-in box-txt-hd"><span
+                                    ng-if="member.RelationWithProposer != 'KID'">{{member.RelationWithProposer}}</span>
+                                <span ng-if="member.RelationWithProposer == 'KID'">{{member.RelationType}}</span>
+                                ({{$index + 1}}/{{cI.quoteDetails.CIQuote.CIQuoteDetails.length}})
+                            </div>
+                            <div class="box-txt">Daily Cash Limit</div>
+                            <div class="dropdown"><button tabindex="10"
+                                    class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                    button-dropdown="member.PDL"
+                                    ng-click="callGtag('click-dropdown','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB_daily-cash-limit_dropdown-open')"><span
+                                        class="select-hcb-dropdown-txt daily-cash-limit-self"><span
+                                            class="rupee-symbol">&#8377;</span> <span
+                                            ng-if="member.PDL != '' && member.PDL != '0'">{{member.PDL}}</span><span
+                                            ng-if="member.PDL == '' || member.PDL == '0'">Select Cash Limit</span>
+                                    </span><span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                            src="assets/images/icon-chevron-down.png"></span></button>
+                                <ul class="dropdown-menu daily-cash-menu-self">
+                                    <li class="li-item-text-change" ng-click="cI.changePDL('',$index)"
+                                        data-val="Select Cash Limit"><a href="javascript:void(0)">Select Cash Limit</a>
+                                    </li>
+                                    <li class="li-item-text-change" data-val="500"
+                                        ng-click="cI.changePDL('500',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 500</a></li>
+                                    <li class="li-item-text-change" data-val="1000"
+                                        ng-click="cI.changePDL('1000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 1000</a></li>
+                                    <li class="li-item-text-change" data-val="2000"
+                                        ng-click="cI.changePDL('2000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 2000</a></li>
+                                    <li class="li-item-text-change" data-val="3000"
+                                        ng-click="cI.changePDL('3000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 3000</a></li>
+                                    <li class="li-item-text-change" data-val="4000"
+                                        ng-click="cI.changePDL('4000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 4000</a></li>
+                                    <li class="li-item-text-change" data-val="5000"
+                                        ng-click="cI.changePDL('5000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 5000</a></li>
+                                    <li class="li-item-text-change" data-val="10000"
+                                        ng-click="cI.changePDL('10000',$index)"><a href="javascript:void(0)"><span
+                                                class="rupee-symbol">&#8377;</span> 10000</a></li>
+                                </ul>
+                            </div>
+                            <div id="hcb-self-income-div">
+                                <div class="box-txt">No. of Days</div>
+                                <div class="dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey" id="self-icome-btn"
+                                        button-dropdown="member.No_Of_days"
+                                        ng-click="callGtag('click-dropdown','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB_no-of-days_dropdown-open')"><span
+                                            class="select-cover-dropdown-txt no-d.ays-limit-self"
+                                            ng-if="member.No_Of_days !='' && member.No_Of_days !='0'">{{member.No_Of_days}}
+                                        </span><span class="select-cover-dropdown-.txt no-days-limit-self"
+                                            ng-if="member.No_Of_days == '' || member.No_Of_days == '0'">Select Days
+                                        </span><span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu drop-overflow no-days-menu-self" id="self-income-menu">
+                                        <li class="li-item-text-change" data-val="Select Days"
+                                            ng-click="cI.changeDays('',$index)"><a href="javascript:void(0)">Select
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="30"
+                                            ng-click="cI.changeDays('30',$index)"><a href="javascript:void(0)">30
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="45"
+                                            ng-click="cI.changeDays('45',$index)"><a href="javascript:void(0)">45
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="60"
+                                            ng-click="cI.changeDays('60',$index)"><a href="javascript:void(0)">60
+                                                Days</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center" ng-if="cI.quoteDetails.CIQuote.CIQuoteDetails.length > 1">
+                <div><button data-toggle="modal" data-target="#hcb-modal"
+                        ng-click="callGtag('click-button','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_duplicate-HCB')"
+                        class="dup-bene-btn">DUPLICATE BENEFITS FOR ALL</button></div>
+            </div>
+        </div><!-- End of HCB slider section -->
+    </div><!-- End of HCB Section -->
+    <!-- After HCB HR section -->
+    <div class="container">
+        <div class="row text-center">
+            <div id="line-top-mar" class="container">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="pad-top-15">
+                        <hr class="style2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End After HCB HR section -->
+    <!-- OPTIONAL COVERS: SECOND E OPINION section -->
+    <div class="container">
+        <div class="row quote-item-block">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                <div class="item-block-number-border"><span class="item-block-number">4</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                <div class="quote-item-block-content"><span class="item-block-content-header">OPTIONAL COVERS: SECOND E
+                        OPINION</span> <span class="mar-l-15"><label class="switch mar-0-auto"><input type="checkbox"
+                                name="cI.SEO" ng-model="cI.quoteDetails.CIQuote.CIQuoteDetails[0].SEO"
+                                ng-true-value="'Y'" ng-false-value="'N'"
+                                ng-change="cI.changeSection(cI.quoteDetails.CIQuote.CIQuoteDetails[0].SEO,'SEO');callGtag('click-radio','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_second-e-opinion_['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].SEO+']')"
+                                id="seo-chekbox"> <span class="slider round"></span></label></span>
+                    <div class="item-block-content-desc">In case of a critical illness, we will help you with a second
+                        e-opinion with our panel of experts and specialist doctors.</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of OPTIONAL COVERS: SECOND E OPINION section -->
+    <!-- After OPTIONAL COVERS: SECOND E OPINION HR section -->
+    <div class="container">
+        <div class="row text-center">
+            <div id="line-top-mar" class="container">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="pad-top-15">
+                        <hr class="style2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End After OPTIONAL COVERS: SECOND E OPINION HR section -->
+    <!-- Wellness Coach Selection Section -->
+    <div class="container">
+        <div class="row quote-item-block">
+            <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                <div class="item-block-number-border"><span class="item-block-number">5</span></div>
+            </div>
+            <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                <div class="quote-item-block-content"><span class="item-block-content-header">WELNESS COACH</span> <span
+                        class="mar-l-15"><label class="switch mar-0-auto"><input type="checkbox" name="cI.WELL_Coach"
+                                ng-model="cI.quoteDetails.CIQuote.CIQuoteDetails[0].WELL_Coach" ng-true-value="'Y'"
+                                ng-false-value="'N'"
+                                ng-change="cI.changeSection(cI.quoteDetails.CIQuote.CIQuoteDetails[0].WELL_Coach,'WELL_Coach');callGtag('click-radio','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_wellness-coach_['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].WELL_Coach+']')"
+                                id="well_coach-chekbox"> <span class="slider round"></span></label></span>
+                    <div class="item-block-content-desc">You can engage with experts in areas such as weight management,
+                        fitness, tobacco cessation and nutrition</div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of wellness coach selection section -->
+    <!-- Cross selection section -->
+    <div class="container-fluid cross-sell-bg">
+        <cross-sell-quote cross="cI" ng-if="cI.membersDetails.length > 0"></cross-sell-quote>
+        <div class="row cross-sell-submit-btn">
+            <div class="col-md-12 pad-l-r-0">
+                <hr class="last-btn-width">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button"><button
+                    class="btn btn-primary qq-save-btn proceed-to-application" ng-show="cI.hideSubmitButton"
+                    id="ci-quote-submit"
+                    ng-click="cI.cIQuoteSubmit();callGtag('click-button','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_quote-submit')">Proceed
+                    <img
+                        src="http://d33wubrfki0l68.cloudfront.net/480b8f26715697b0044b728e23d9e4f86ea0f998/e33c9/images/arrow.png"></button>
+            </div>
+        </div>
+    </div><!-- End of cross selection section -->
+    <!-- HCB Modal -->
+    <div class="app-modal modal" id="hcb-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-hdr"><button type="button" class="close" data-dismiss="modal"
+                        ng-click="callGtag('click-icon-x','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB-duplicate-popup-close')"><img
+                            src="assets/images/close-w.png" class="modal-close-btn"></button>
+                    <div class="modal-hdr-txt">Duplicate Hospital Cash Benefits for all members</div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="modal-bind-text padding-btm-20">
+                            <p>Select the daily cash limit & days which you want to replicate for all members</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="modal-combo-txt-hcb">Daily Cash Limit</div>
+                                <div class="dropdown sum-insured-members-block-dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey"
+                                        id="hcb-daily-cash-btn" button-dropdown="cI.duplicatePDL"
+                                        ng-click="callGtag('click-dropdown','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB-duplicate-popup_daily-cash-limit_dropdown-open')"><span
+                                            id="hcb-daily-cash-btn" class="dup-benefit-cash-limit"><span
+                                                class="rupee-symbol">₹</span> <span
+                                                ng-if="cI.duplicatePDL != ''">{{cI.duplicatePDL}}</span> <span
+                                                ng-if="cI.duplicatePDL == ''">Select Cash Limit</span> </span><span
+                                            class="pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu dup-benefit-cash-limit-menu" id="self-insured-menu">
+                                        <li class="li-item-text-change" data-val="500"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                500</a></li>
+                                        <li class="li-item-text-change" data-val="1000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                1000</a></li>
+                                        <li class="li-item-text-change" data-val="2000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                2000</a></li>
+                                        <li class="li-item-text-change" data-val="3000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                3000</a></li>
+                                        <li class="li-item-text-change" data-val="4000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                4000</a></li>
+                                        <li class="li-item-text-change" data-val="5000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                5000</a></li>
+                                        <li class="li-item-text-change" data-val="10000"><a
+                                                href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span>
+                                                10000</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="modal-combo-txt-hcb">No. of Days</div>
+                                <div class="dropdown sum-insured-members-block-dropdown"><button tabindex="10"
+                                        class="btn btn-default dropdown-toggle brand-dropdown grey" type="button"
+                                        id="self-insured-btn" button-dropdown="cI.duplicatenNOD"
+                                        ng-click="callGtag('click-dropdown','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB-duplicate-popup_no-of-days_dropdown-open')"><span
+                                            id="self-insured-txt" class="dup-benefit-no-days"><span
+                                                ng-if="cI.duplicatenNOD != ''">{{cI.duplicatenNOD}}</span> <span
+                                                ng-if="cI.duplicatenNOD == ''">Select Days</span> Days </span><span
+                                            class="pull-right" aria-hidden="true"><img
+                                                src="assets/images/icon-chevron-down.png"></span></button>
+                                    <ul class="dropdown-menu dup-benefit-no-days-menu" id="self-insured-menu">
+                                        <li class="li-item-text-change" data-val="30"><a href="javascript:void(0)">30
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="45"><a href="javascript:void(0)">45
+                                                Days</a></li>
+                                        <li class="li-item-text-change" data-val="60"><a href="javascript:void(0)">60
+                                                Days</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="container-fluid"><button class="btn btn-primary modal-save-btn bg-white text-center"
+                            id="cancelHCBBtn" data-dismiss="modal"
+                            ng-click="callGtag('click-button','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB-duplicate-popup_cancel')">Cancel</button>
+                        <button class="btn btn-primary modal-save-btn text-center" id="doneHCBBtn" data-dismiss="modal"
+                            ng-click="cI.duplicateHCB();callGtag('click-button','quote','ci-quote_plan['+cI.quoteDetails.CIQuote.CIQuoteDetails[0].plan+']_HCB-duplicate-popup_done')">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- HCB Modal -->
+</section>
+<addmember addctrl="cI" childcount="4"></addmember><!-- End of CI Quote Page -->

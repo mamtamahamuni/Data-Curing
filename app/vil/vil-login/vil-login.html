@@ -1,0 +1,83 @@
+<!--
+    Page: Vil Login
+    Author: Pandurang Sarje
+	Date: 12-01-2021
+-->
+
+<div class="container-fluid mob-pad-l-r-0 tab-pad-l-r-0">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0">
+        <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs">
+            <img class="download-img-width new-illustration" src="assets/images/vil/renew-illustration-abc.svg">
+            <div class="renew-policy-bg">
+                <div class="renew-your-policy-txt">VIL Claims</div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0 form-page">
+            <div class="hidden-xs help-us-header-txt">Help us find your claim</div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12 mob-white-bg">
+                <div class="mob-renew-policy-txt">VIL Claims</div>
+                <div class="help-us-header-txt">Help us find your claim</div>
+            </div>
+            <form name="vilForm" class="vil-form" ng-submit="validateDetails(auth,vilForm)" novalidate>
+                <div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Certificate Number <span class="any-two-red-clr">*</span></label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control textbox-style phone-group" name="certificateNumber" id="certificateNumber" ng-model="auth.certificateNumber" minlength="4" placeholder="Enter Certificate Number" ng-readonly="OTPSent==true">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Mobile Number <span class="any-two-red-clr">*</span></label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control textbox-style phone-group" ng-model="auth.txtMobileNumber"  id="txtMobileNumber" name="txtMobileNumber" minlength="10" maxlength="10" ng-pattern="/^[6789]\d{9}$/" placeholder="Enter Mobile Number" ng-readonly="OTPSent==true">
+                        </div>
+                    </div>
+                    <div ng-hide="OTPSent" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control captcha-design" ng-model="mainCaptcha" id="mainCaptcha" name="mainCaptcha" readonly>
+                            <img src="assets/images/vil/speaker.png" class="audio-captcha-design" id="speak">
+                            <span class="glyphicon glyphicon-refresh referesh-captcha-design" ng-click="GenerateCaptcha()"></span>
+                        </div>
+                    </div>
+                    <div ng-hide="OTPSent" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input autocomplete="nope" type="text" style="text-transform: uppercase;" class="form-control textbox-style phone-group" id="enteredCaptcha" ng-model="enteredCaptcha" name="enteredCaptcha" maxlength="10" placeholder="Please Enter Captcha">
+                            <label style="color: red ; padding-top: 5px;" ng-show="errorCaptcha">Please enter correct Captcha</label>
+                        </div>
+                    </div>
+                    <div ng-hide="OTPSent" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right proceed-btn-pad-btm">
+                        <a href="javascript:void(0);">
+                            <button type="submit" class="btn proceed-btn">PROCEED</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+            <div ng-if="OTPSent"> 
+                <form name="vilFormOTP" class="vil-form-otp" novalidate>       
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Enter the OTP you received <span class="any-two-red-clr">*</span></label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input autocomplete="nope" type="tel" class="form-control textbox-style phone-group" ng-model="OTPValue" id="otp" name="otpvalue" minlength="4" maxlength="4" placeholder="Eg. 1234" ng-pattern="/^[0-9]+$/">
+                            <label style="color: brown ; padding-top: 5px;">{{OTPText}}</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">                    
+                        <a href="javascript:void(0);" ng-click="generateOTP(true)">
+                            <button type="button" class="btn resend-opt-btn">Resend OTP</button>
+                        </a>
+                        <a href="javascript:void(0);">
+                            <button type="button" ng-click="validateOTP(OTPValue,vilFormOTP)" class="btn verify-otp-btn">Verify OTP</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    

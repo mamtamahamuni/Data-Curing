@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="11px" viewBox="0 0 17 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54 (76480) - https://sketchapp.com -->
+    <title>ACC32818-CCF8-459D-881A-112BCDF7F74D</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M928.385647,775.699447 C928.656069,775.418264 929.097905,775.421795 929.373595,775.708456 L929.801727,776.153624 C930.076934,776.439782 930.080131,776.900411 929.803482,777.188069 L922.248117,785.044081 C921.973879,785.329231 921.531664,785.331738 921.255014,785.044081 L913.699649,777.188069 C913.425412,776.902919 913.425714,776.440284 913.701405,776.153624 L914.129536,775.708456 C914.404743,775.422297 914.848853,775.420125 915.117485,775.699447 L921.751566,782.597514 L928.385647,775.699447 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="RFB_quick_renewal" transform="translate(-913.000000, -775.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Chev" fill="#6B4641" transform="translate(921.750000, 780.375000) scale(-1, 1) translate(-921.750000, -780.375000) " xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

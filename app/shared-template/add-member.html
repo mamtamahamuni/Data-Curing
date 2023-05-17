@@ -1,0 +1,83 @@
+<div class="modal" id="add-new-member-web" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-mob-pad-l-r-0">
+                <div class="col-md-12 col-sm-12 col-xs-12"><button type="button" class="close"
+                        ng-click="aM.modalClosebtn()"><img src="assets/images/close-white.svg"></button>
+                    <div class="change-mem-group-txt">Change members to be covered</div>
+                    <div class="add-remove-group-txt">Add or remove members from your policy here.</div>
+                </div>
+            </div>
+            <div class="modal-body modal-mob-pad-l-r-0">
+                <div class="container-fluid modal-pad-l-r-0 add-member-errors"
+                    ng-if="aM.allErrors.allErrors.length > 0">
+                    <div class="col-sm-12 padding-btm-20 text-danger">
+                        <h4>Please make following changes to proceed:</h4>
+                        <ul>
+                            <li ng-repeat="error in aM.allErrors.allErrors">{{error.message}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid modal-pad-l-r-0">
+                    <div class="col-md-4 col-sm-4 col-xs-12 member-row-pad-btm mobile-pad-l-r-10"
+                        ng-if="aM.allowAdd != 'no'">
+                        <div class="add-member-to-group hidden-xs">Add members to be covered</div>
+                        <div class="col-md-12 add-mem-to-group-bg res-padding-0"><button type="button"
+                                href="javascript:void(0);" class="mem-grey-bdr-btn fatherinlaw-div"
+                                ng-repeat="memberTag in aM.membersList.members"
+                                ng-if="!memberTag.isSelected && memberTag.display"
+                                ng-click="aM.selectMember(memberTag)">{{memberTag.memberType | capitalize}}<i
+                                    class="fa fa-plus pull-right plus-icon"></i></button></div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-12 mobile-pad-l-r-10 member-table">
+                        <div class="col-md-12 col-sm-12 col-xs-12 modal-pad-l-r-0">
+                            <div class="col-xs-12 add-member-to-group modal-pad-l-r-0" >Members covered</div>
+                        </div>
+                        <div id="son-group" class="col-md-12 col-xs-12 modal-pad-l-r-0">
+                            <div class="col-md-12 col-xs-12 modal-pad-l-r-0 modal-mob-pad-l-r-0">
+                                <div class="col-md-12 col-xs-12 col-sm-12 modal-pad-l-r-0 add-mem-mod-pad-top-30 self-show-div add-son-row add-mem-to-group-bg"
+                                    ng-repeat="details in aM.membersDetails" ng-if="$index != 0">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-center modal-pad-l-r-0">
+                                        <div class="add-member-header dis-in"
+                                            ng-if="details.RelationWithProposer != 'KID'">
+                                            {{details.RelationWithProposer | capitalize}}</div>
+                                        <div class="add-member-header dis-in"
+                                            ng-if="details.RelationWithProposer == 'KID'">
+                                            {{details.RelationType | capitalize}}</div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="">
+                                            <div class="self-income-txtbox">
+                                                <div class="input-group add-mem-mod-age-txt-bg input-txt-wid-mob"><input
+                                                        type="text" valid-number
+                                                        class="form-control input-text-box placeholder-addon-left add-memb-mod-age-txt pad-top-btm-19"
+                                                        maxlength="2" valid-number ng-model="details.Age"
+                                                        ng-blur="aM.updateMemeberAge(details)"> <span
+                                                        class="input-group-addon addon-yrs-txt text-right">yrs</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4" style="display: inline-flex;"><button
+                                            ng-if="details.newestAdded && details.Age" ng-hide=""
+                                            class="btn remove-div-btn hide-div-on-click-self"
+                                            ng-click="aM.addUpdateMember(details,($index - 1),'{{details.Age}}')">Save</button>
+                                        <span ng-if="details.newestAdded"
+                                            class="glyphicon glyphicon-remove-circle add-remove-glyphion"
+                                            aria-hidden="true" ng-click="aM.deleteMemberDir(details,$index)"></span>
+                                        <button ng-if="!details.newestAdded"
+                                            class="btn remove-div-btn hide-div-on-click-self"
+                                            ng-click="aM.deleteMemberDir(details,$index)">Remove</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="text-left"><button class="btn btn-primary modal-save-btn1 text-left"
+                        ng-click="aM.closeAddMemberModal()">Close</button></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1257 @@
+/** 
+	Renewal Policy Part Payment Page & Part Payment Thank You Page Styles
+	Author: Ravikant Gaud
+	Date: 16-05-2022
+**/
+
+/* import fonts */
+
+@font-face {
+	font-family: 'PFHandbookPro-Regular';
+	src: url('../fonts/PFHandbookPro-Regular.eot');
+	src: url('../fonts/PFHandbookPro-Regular.woff') format('woff'), url('../fonts/PFHandbookPro-Regular.ttf') format('truetype'), url('../fonts/PFHandbookPro-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pf_handbook_proregular';
+	src: url("../fonts/pfhandbookpro-regular.eot");
+	src: url("../fonts/pfhandbookpro-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/pfhandbookpro-regular.woff2") format("woff2"), url("../fonts/pfhandbookpro-regular.woff") format("woff"), url("../fonts/pfhandbookpro-regular.svg#pf_handbook_proregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PFHandbookPro-Light';
+	src: url(../fonts/PFHandbookPro-Light.eot);
+	src: url(../fonts/PFHandbookPro-Light.woff2) format('woff2'), url(../fonts/PFHandbookPro-Light.woff) format('woff'), url(../fonts/PFHandbookPro-Light.ttf) format('truetype'), url(../fonts/PFHandbookPro-Light.svg#PFHandbookPro-Light) format('svg'), url(../fonts/PFHandbookPro-Light.eot?#iefix) format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* End of import fonts */
+
+.grey-background img,
+.renewals-grey-background img {
+	display: inline-block;
+}
+
+.pad-l-r-0 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.dis-in {
+	display: inline-block;
+}
+
+.pad-r-0 {
+	padding-right: 0px;
+}
+
+.pad-l-0 {
+	padding-left: 0px;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.change-error {
+	line-height: 1;
+}
+
+.grey-background {
+	background-color: #f2f3f6;
+	background: linear-gradient(to right, #fff 0%, #fff 50%, #fff 30%, #f2f3f6 30%, #f2f3f6 100%);
+}
+
+.pending-text {
+	font-size: 20px;
+}
+
+.member-insured-sec-tbl-pad .individual-single:last-child .member-insured-hori-bdr {
+	display: none;
+}
+
+.help-us-header-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 23px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.28;
+	letter-spacing: normal;
+	text-align: right;
+	color: #000000;
+	padding: 25px 10px 20px 114px;
+}
+
+.any-two-red-clr {
+	color: #d0021b;
+}
+
+.lbl-pad-btm {
+	padding-bottom: 30px;
+}
+
+.download-img-width {
+	width: 89%;
+	padding-top: 16%;
+}
+
+label.lbl-txt {
+	position: static;
+}
+
+.lbl-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.6px;
+	color: #6c7174;
+	margin-bottom: 10px;
+}
+
+.textbox-style {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1.3px solid #504d4d;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	box-shadow: none;
+	font-family: 'PFHandbookPro-Light';
+	font-size: 20px;
+	font-weight: 100;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.6px;
+	text-align: right;
+	color: #111111;
+}
+
+.textbox-style:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.cover-names li {
+	padding-left: 0;
+}
+
+.review-this-policy-txt span {
+	cursor: pointer;
+}
+
+.policy-list {
+	margin-left: 0;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 300px;
+	background-color: #6a4742;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 6px;
+	position: absolute;
+	z-index: 1;
+	top: -95px;
+	left: 50%;
+	margin-left: -150px;
+	opacity: 0;
+	font-size: 14px;
+	transition: opacity 0.3s;
+	font-family: 'PFHandbookPro-Regular';
+	min-height: 80px;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+.proceed-btn {
+	background: #f7a501;
+	border: 1px solid #f7a501;
+	color: #fff;
+	padding: 10px 40px 10px 120px;
+	min-width: 250px;
+	font-family: 'pf_handbook_proregular';
+	font-size: 20px;
+	display: inline-table;
+	transition: all 0.30s ease 0s;
+	position: relative;
+	height: auto;
+}
+
+.proceed-btn::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 25px;
+	left: 10px;
+	width: 30px;
+	border-top: 2px solid #fff;
+	-webkit-transition: width 4s;
+	transition: width 4s;
+}
+
+.proceed-btn:hover,
+.proceed-btn:focus {
+	background: #fff;
+	color: #da9089;
+	border: 1px solid #da9089;
+	text-decoration: none;
+}
+
+.proceed-btn:hover:before,
+.proceed-btn:focus::before {
+	border-color: #da9089;
+	width: 70px;
+	border: 1px solid #da9089;
+}
+
+.proceed-btn-pad-btm {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.renew-your-policy-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 35px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.5px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.renew-policy-bg {
+	background-color: #df8e88;
+	padding: 20px 50px;
+	position: absolute;
+	left: -33px;
+	top: 350px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	.download-img-width {
+		width: 100%;
+		padding-top: 70px;
+	}
+
+	.renew-your-policy-txt {
+		font-size: 50px;
+	}
+
+	.renew-policy-bg {
+		padding: 15px 30px;
+		top: 320px;
+	}
+
+	.help-us-header-txt {
+		padding: 33px 0 40px 90px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.download-img-width {
+		width: 100%;
+		padding-top: 70px;
+	}
+
+	.help-us-header-txt {
+		font-size: 25px;
+		padding: 33px 15px 40px 87px;
+	}
+
+	.renew-policy-bg {
+		padding: 15px 13px;
+		top: 216px;
+		left: 0px;
+	}
+
+	.renew-your-policy-txt {
+		font-size: 35px;
+	}
+
+	.tab-pad-l-r-0 {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.proceed-btn {
+		width: 260px;
+	}
+
+	.lbl-txt {
+		font-size: 22px;
+	}
+
+	.textbox-style {
+		font-size: 23px;
+	}
+
+	.lbl-pad-btm {
+		padding-bottom: 30px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.mob-pad-l-r-0 {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.pending-text {
+		font-size: 18px;
+	}
+
+	.proceed-btn {
+		margin-right: 0;
+	}
+
+	.mob-proceed-pay-btn {
+		width: 100%;
+	}
+
+	.mobile-btn {
+		width: 100%;
+		min-width: auto;
+		float: none;
+		padding: 10px;
+		font-size: 17px;
+		text-align: right;
+	}
+
+	.mobile-btn::before {
+		width: 20px;
+		top: 22px;
+	}
+
+	.mobile-btn:focus::before,
+	.mobile-btn:hover:before {
+		width: 30px;
+	}
+
+	.tooltip .tooltiptext {
+		left: auto;
+		right: 0;
+	}
+
+	.tooltip .tooltiptext::after {
+		left: auto;
+		right: 5px;
+	}
+
+	.selected-card-mar-top .selected-plan-txt {
+		font-size: 20px !important;
+	}
+
+	.mob-pad-l-r-5 {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.mob-pad-l-r-15 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.help-us-header-txt {
+		padding: 0px 15px 14px 32px;
+		font-size: 18px;
+	}
+
+	.grey-background {
+		background: linear-gradient(to right, #fff 0%, #fff 0%, #fff 0%, #f2f3f6 3%, #f2f3f6 100%);
+	}
+
+	.mob-white-bg {
+		background-color: #ffffff;
+	}
+
+	.mob-renew-policy-txt {
+		font-family: 'PFHandbookPro-Regular';
+		font-size: 30px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0.3px;
+		text-align: right;
+		color: #da9089;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	.lbl-txt {
+		font-size: 16px;
+	}
+
+	.textbox-style {
+		font-size: 22px;
+	}
+
+	.lbl-pad-btm {
+		padding-bottom: 30px;
+		padding-top: 20px;
+	}
+}
+
+
+/*********** Thank you page styling *************/
+
+.thank-you-section img {
+	display: inline-block;
+}
+
+.thank-you-section {
+	background-color: #ffffff;
+}
+
+.column-padding {
+	padding: 60px 20px 60px 102px;
+}
+
+.thank-you-user-name-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 30px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6c7174;
+	text-align: left;
+	padding-bottom: 8px;
+}
+
+.we-received-payment-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 17px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6c7174;
+	padding-left: 7px;
+}
+
+.thank-you-page-grey-bg {
+	border-radius: 3px;
+	background-color: #f8f8f8;
+	padding: 20px 30px;
+}
+
+.thank-you-white-bg {
+	border-radius: 3.8px;
+	background-color: #ffffff;
+	padding: 10px 12px;
+}
+
+.activ-health-brown-clr-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6b4641;
+}
+
+.premium-enhanced-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6b4641;
+}
+
+.premium-blck-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #343434;
+	text-align: right;
+}
+
+.premium-amt-brown {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 25px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: right;
+	color: #6b4641;
+}
+
+.policy-date-section-pad-top {
+	padding-top: 20px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.policy-start-date-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 17px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #000000;
+}
+
+.policy-date-txt-brown {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 17px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6b4641;
+	text-align: right;
+}
+
+.terms-small-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #626262;
+}
+
+.mail-txt-pad-top {
+	padding-top: 35px;
+}
+
+.mail-txt-grey-txt {
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 15px;
+	font-weight: normal;
+	font-style: italic;
+	font-stretch: normal;
+	line-height: 1.35;
+	letter-spacing: normal;
+	color: #6c7174;
+}
+
+.download-recepit-btn {
+	border-radius: 1.5px;
+	border: solid 0.8px #694744;
+	background-color: rgba(105, 71, 68, 0.25);
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 13px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #6b4641;
+	padding: 2px 6px;
+	float: right;
+	margin-top: 2px;
+}
+
+.download-recepit-btn:hover {
+	text-decoration: none;
+	color: #6b4641;
+}
+
+.rate-your-experience-sec-pad-top {
+	padding-top: 23px;
+}
+
+.rate-your-experience-txt {
+	opacity: 0.7;
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #000000;
+}
+
+.star-filled-icon {
+	font-size: 22px;
+	color: #f7a500;
+	padding-right: 16px;
+}
+
+.star-border-icon {
+	font-size: 22px;
+	color: #f7a500;
+	background-color: #ffffff;
+	padding-right: 16px;
+}
+
+.star-section-pad-top {
+	padding-top: 15px;
+	padding-bottom: 16px;
+}
+
+.it-was-good-txt {
+	opacity: 0.7;
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2;
+	letter-spacing: normal;
+	color: #417505;
+}
+
+.experience-textarea {
+	border-radius: 1.5px;
+	border: solid 0.8px #dfdfdf;
+	background-color: #ffffff;
+	opacity: 0.7;
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 18px;
+	font-weight: 300;
+	font-style: italic;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #646363;
+	margin-bottom: 12px;
+}
+
+.experience-textarea:focus {
+	outline: none;
+	border: solid 0.8px #dfdfdf;
+	box-shadow: none;
+}
+
+.thank-you-submit-btn {
+	width: 163.5px;
+	height: 37.5px;
+	padding: 10px;
+	background-color: #6a4845;
+	font-family: 'PFHandbookPro-Regular';
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 0.93;
+	letter-spacing: normal;
+	text-align: center;
+	color: #ffffff;
+}
+
+.thank-you-submit-btn:hover,
+.thank-you-submit-btn:active,
+.thank-you-submit-btn:visited {
+	color: #ffffff;
+}
+
+.thank-you-section-mar-right {
+	background-color: #ddd;
+	height: 380px;
+	width: 1px;
+	margin-top: 60px;
+}
+
+.column-padding-new {
+	padding: 60px 20px 60px 0px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+	.column-padding,
+	.column-padding-new {
+		padding: 60px 20px 60px 50px;
+	}
+
+	.star-filled-icon {
+		padding-right: 10px;
+	}
+
+	.star-border-icon {
+		padding-right: 10px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.column-padding,
+	.column-padding-new {
+		padding: 60px 20px 60px 19px;
+	}
+
+	.download-recepit-btn {
+		font-size: 11px;
+	}
+
+	.thank-you-page-grey-bg {
+		padding: 20px;
+	}
+
+	.star-filled-icon {
+		padding-right: 5px;
+	}
+
+	.star-border-icon {
+		padding-right: 5px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+	.column-padding,
+	.column-padding-new {
+		padding: 20px 20px 30px 15px;
+	}
+
+	.thank-you-user-name-txt {
+		font-size: 26px;
+		text-align: center;
+	}
+
+	.we-received-payment-txt {
+		font-size: 13.6px;
+		text-align: center;
+	}
+
+	.download-img-width {
+		width: 100%;
+	}
+
+	.thank-you-page-grey-bg {
+		padding: 14px 12px;
+	}
+
+	.activ-health-brown-clr-txt {
+		font-size: 16px;
+	}
+
+	.premium-enhanced-txt {
+		font-size: 11.2px;
+	}
+
+	.premium-blck-txt {
+		font-size: 11.2px;
+	}
+
+	.premium-amt-brown {
+		font-size: 20px;
+	}
+
+	.policy-start-date-txt {
+		font-size: 13.6px;
+	}
+
+	.policy-date-txt-brown {
+		font-size: 13.6px;
+	}
+
+	.terms-small-txt {
+		font-size: 9px;
+	}
+
+	.download-recepit-btn {
+		font-size: 10px;
+	}
+
+	.mail-txt-pad-top {
+		padding-top: 15px;
+	}
+
+	.mail-txt-grey-txt {
+		font-size: 12px;
+	}
+
+	.star-filled-icon {
+		padding-right: 5px;
+	}
+
+	.star-border-icon {
+		padding-right: 5px;
+	}
+
+	.it-was-good-txt {
+		text-align: left;
+		padding-top: 10px;
+	}
+
+	.experience-textarea {
+		font-size: 14px;
+	}
+
+	.thank-you-submit-btn {
+		width: 100%;
+		border-radius: 0px;
+	}
+}
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.rating {
+	border: none;
+	float: left;
+}
+
+.rating>input {
+	display: none;
+}
+
+.rating>label:before {
+	margin: 0px 5px;
+	font-size: 22px;
+	font-family: 'FontAwesome';
+	display: inline-block;
+	content: "\f005";
+}
+
+.rating>.half:before {
+	content: "\f089";
+	position: absolute;
+}
+
+.rating>label {
+	color: #ddd;
+	float: right;
+	position: static;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+/* show gold star when clicked */
+.rating:not(:checked)>label:hover,
+/* hover current star */
+.rating:not(:checked)>label:hover~label {
+	color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+/* hover current star when changing rating */
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+/* lighten current selection */
+.rating>input:checked~label:hover~label {
+	color: #FFD700;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.rating>label:before {
+		font-size: 18px;
+	}
+}
+/* thank-you page popup start */
+.modal-hdr{
+	background-color: #c7222a !important;
+}
+.model-head-banner-otp {
+    background-color: #c7222a!important;
+	color: #fff;
+}
+.app-modal .modal-hdr-txt{
+	color: #fff;
+}
+.app-modal {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 9999999;
+}
+.terms-para{
+	padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.model-Width{
+    width: auto !important;
+}
+  .item{
+    padding-left:0px;
+    padding-right:0px;
+    display: flex;
+    justify-content: center;
+  }
+  .item-card{
+    transition: .5s;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+  }
+  .item-card-title{  
+    font-size:15px;
+    transition:1s;
+    cursor:pointer;
+  }
+  .item-card-title i{  
+    font-size:15px;
+    transition:1s;
+    cursor:pointer;
+    color:#ffa710
+  }
+  .card-title i:hover{
+    transform: scale(1.25) rotate(100deg); 
+    color:#18d4ca;
+    
+  }
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  }
+  .card-text{
+    height:80px;  
+  }
+  .card::before, .card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+  }
+  .card::before {
+    transform-origin: left top;
+  }
+  .card::after {
+    transform-origin: right bottom;
+  }
+  .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+    transform: scale3d(1, 1, 1);
+  }
+  .card-header{
+    display: flex;
+    justify-content: center;
+    background-color:#cf8983;
+    color: #fff;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.card-header-investing{
+    display: flex;
+    justify-content: center;
+    background-color:#8d9b6e;
+    color: #fff;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.card-header-financing{
+    display: flex;
+    justify-content: center;
+    background-color:#c3a166;
+    color: #fff;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.enable-individuals{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ccc;
+    /* margin: 10px; */
+    /* border-bottom: 2px solid #ccc;*/
+}
+.enable-individuals h4{
+    margin: 10px 0px;
+}
+.life-insurence{
+    margin: 20px 0px;
+}
+.input-wrapper{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 40px;
+  }
+  .styled-checkbox {
+    position: absolute;
+    opacity: 0;
+  }
+  .styled-checkbox + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0;
+  }
+  .styled-checkbox + label:before {
+    content: "";
+    /* margin-right: 10px; */
+    display: inline-block;
+    border: 2px solid #cdcece;
+    border-radius: 5px;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+  }
+  /* .styled-checkbox:hover + label:before {
+    background: #f35429;
+  } */
+  /* .styled-checkbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+  .styled-checkbox:checked + label:before {
+    background: #f35429;
+  } */
+  .styled-checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+  .styled-checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+  .styled-checkbox:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 11px;
+    background: #c7222a;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 #c7222a, 4px 0 0 #c7222a, 4px -2px 0 #c7222a, 4px -4px 0 #c7222a, 4px -6px 0 #c7222a, 4px -8px 0 #c7222a;
+    transform: rotate(45deg);
+  }
+ .sort-by{
+    position: fixed;
+    bottom: 0 !important;
+    right: 0 !important;
+    top: unset;
+    z-index: 100;
+    width: 360px;
+    height: 283px;
+    margin: 26px 0 0;
+    box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  
+ }
+/* .life-insurence .life-insurence-div input:checked~.checkmark{
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #fff;
+    border: solid 2px #cdcece;
+    outline: 0;
+}
+.life-insurence .life-insurence-div .checkmark::after{
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #660d0a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} */
+
+.life-insurence-div{
+    margin: 15px 5px;
+}
+.cross-sell{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.card-footer{
+    display: flex;
+    justify-content: center;
+    background-color: #cf8983;
+    color: #fff;
+    align-items: center;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    /* left: 2px; */
+    right: 10px;
+    width: 95%;
+}
+.card-footer-financing{
+    background-color: #8d9b6e !important;
+}
+.card-footer-individuals{
+    background-color: #c3a166 !important;
+}
+/* .card-height{
+    height: 100%;
+} */
+.card-body{
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+}
+.thank-you-step1{
+    display: flex;
+    justify-content: center;
+}
+.main-content h5{
+    font-size: 16px;
+    letter-spacing: 0.02em;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.styled-radio {
+    position: absolute;
+    opacity: 0;
+  }
+  .styled-radio-label{
+    line-height: 20px;
+    font-size: 16px;
+    color: #979797;
+    font-family: 'PFHandbookPro-Regular';
+    text-align: left;
+  }
+  .styled-radio-label1{
+    line-height: 20px;
+    font-size: 16px;
+    
+    font-family: 'PFHandbookPro-Regular';
+    text-align: left;
+  }
+  .styled-radio + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0;
+  }
+  .styled-radio + label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    border: 2px solid #c7222a;
+    border-radius: 50px;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+  }
+  /* .styled-checkbox:hover + label:before {
+    background: #f35429;
+  } */
+  /* .styled-checkbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+  .styled-checkbox:checked + label:before {
+    background: #f35429;
+  } */
+  .styled-radio:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+  .styled-radio:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+  .styled-radio:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    background-color: #c7222a;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* box-shadow: 2px 0 0 #c7222a, 4px 0 0 #c7222a, 4px -2px 0 #c7222a, 4px -4px 0 #c7222a, 4px -6px 0 #c7222a, 4px -8px 0 #c7222a; */
+    /* transform: rotate(45deg); */
+  }
+  .flaot-center {
+    text-align: center;
+    margin-top: 25px;
+}
+.cross-sell-click-text {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 21.5px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    color: #8f8f8f;
+    padding-top: 15px;
+}
+.cross-sell-button {
+    text-align: center;
+    margin-top: 15px;
+}
+.btn.focus, .btn:focus, .btn:hover {
+    color: #333;
+    text-decoration: none;
+}
+.btn.qq-save-btn {
+    letter-spacing: .2px;
+    text-align: left;
+    font-family: PF-Handbook-Pro-Regular;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 3px;
+    background-color: #694743;
+    border: transparent;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+    margin-bottom: 20px;
+}
+.emandate-Link, .emandate-Link:focus, .emandate-Link:hover {
+    font-weight: 700;
+    color: #333;
+}
+.group-coi-number{
+	color: #6c7174;
+    margin-bottom: 10px;
+	font-size: 14px;
+    letter-spacing: .6px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+}
+/* thank-you page popup end */

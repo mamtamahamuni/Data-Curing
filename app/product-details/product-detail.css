@@ -1,0 +1,2130 @@
+body {
+    background-color: #f1f3f6;
+}
+.product-white-box .plus-sign-pos {
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+.requiredFieldStyle {
+    color: red
+}
+
+.cont-pad {
+    padding-top: 21.5px!important;
+    padding: 0px 50px;
+}
+
+.main-header-text1 {
+    height: 30px;
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 30px;
+    text-align: left;
+    color: #000000;
+}
+
+.dis-in {
+    display: inline-block;
+}
+
+/* mail tip CSS */
+
+    ul.mailtip {
+  zoom: 1; /* for IE6 IE7 clear float */
+  background-color: #fff;
+  list-style: none;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  text-align: left;
+  font: italic 13px/1.5 Consolas, "Liberation Mono", Menlo, Courier, monospace, sans-serif;
+}
+ul.mailtip:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+ul.mailtip li p {
+  height: 28px;
+  text-align: inherit;
+  line-height: 28px;
+  cursor: pointer;
+  margin: 0 9px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ul.mailtip li.active {
+  color: #c7222a;
+  background: #eaeaea;
+}
+ul.mailtip li.hover {
+  background: #e7f6ff;
+}
+
+
+/* mail tip css ends */
+.redColorClass{
+  color: #c7222a;
+  
+}
+
+
+.pancardtensform {
+    text-transform: uppercase;
+}
+
+.pad-btm-25 {
+    padding-bottom: 25.5px;
+}
+
+.dropdown-menu {
+    min-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.btn.dropdown-toggle.focus {
+    outline: none;
+}
+
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:focus,
+.btn.dropdown-toggle:active,
+.btn.dropdown-toggle:visited {
+    outline: none;
+}
+
+.dropdown-toggle.brand-dropdown .caret {
+    float: right;
+    margin-top: 8px;
+    color: #C7222A;
+}
+
+.brand-dropdown {
+    width: 100%;
+}
+.breadcrumb-cust li a{
+    -webkit-user-drag: none;
+}
+.brand-dropdown.grey {
+    font-family: 'PF-Handbook-Pro-Regular';
+    border: 1px solid #cecece;
+    text-align: left;
+    font-size: 14px;
+    background-color: #ffffff;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 17px;
+}
+
+.btn-drop-down-width {
+    width: 100%;
+    text-align: left;
+    height: 44px;
+}
+
+.btn-default:active,
+.btn-default:hover {
+    color: #fff;
+    background-color: #fff;
+    border-color: #6c7174;
+}
+
+.btn-drop-down-width:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 1px #6c7174;
+}
+
+.btn-default:active:focus,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default:hover,
+.open>.dropdown-toggle.btn-default:focus {
+    background-color: #ffffff;
+}
+
+.dropdown-placeholder-txt {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn.dropdown-toggle:focus {
+    outline: none !important;
+}
+
+input:checked+.slider {
+    background-color: #f85e66;
+}
+
+input:checked+.slider:before {
+    background-color: #c7222a;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.input-text-box {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    height: 44px;
+    border-radius: 4px !important;
+    background-color: #ffffff;
+    border: solid 1px #cdcece;
+    color: #000000;
+    box-shadow: none;
+}
+
+.input-text-box:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: solid 1px #6c7174;
+}
+
+.placeholder-searchtext {
+    border: solid 1px #cdcece;
+    color: #000000;
+    box-shadow: none;
+    border-left: 0px !important;
+    padding-left: 0px;
+}
+
+.input-group .input-text-box:focus {
+    border: solid 1px #cdcece;
+    box-shadow: none;
+}
+
+
+.tab-content {
+    background-color: #f1f3f6;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+.nav-tabs>li.active>a {
+    border: none;
+}
+
+.tab-pad-left {
+    padding-left: 100px;
+    padding-top: 17.5px;
+}
+
+.nav>li.disabled>a {
+    opacity: 0.3;
+}
+
+
+
+/*************Form Structure***************/
+
+.adhr-no .input-text-box {
+    min-width: 180px;
+}
+
+.dob-pad .pad-left-15 {
+    padding-left: 15px;
+}
+
+.form-background {
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.14);
+}
+
+.form-top-left-pad {
+    padding-top: 38px;
+    padding-left: 31.5px;
+    padding-right: 31.5px;
+}
+
+.form-heading {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 26.5px;
+    font-weight: 500;
+    text-align: left;
+    color: #694743;
+    opacity: 1;
+}
+
+.form-lbl {
+    opacity: 0.7;
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding-bottom: 5px;
+}
+
+.pad-r-0{
+    padding-right: 0 !important;
+}
+
+.pad-l-r-0 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.btn-pad-l-r-0 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+form .errormsg {
+    display: none;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+form.form-errors .errormsg {
+    display: block;
+}
+
+.horizontal-pad {
+    padding-left: 31.5px;
+    padding-right: 31.5px;
+}
+
+.horizontal-width {
+    width: 100%;
+    border: solid 0.5px rgba(0, 0, 0, 0.12);
+    margin-top: 0px !important;
+}
+
+.select-cover-dropdown-txt {
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #000000;
+    float: left;
+}
+
+.insured-dob .pad-r-5 {
+    padding-right: 10px;
+}
+
+.pad-left-15 {
+    padding-left: 15px;
+    padding-right: 0px;
+}
+
+.pad-left-0 {
+    padding-left: 0px;
+}
+
+
+/**************Additional info tab***********/
+
+.pad-btm-30 {
+    padding-bottom: 30px;
+}
+
+.pad-btm-40 {
+    padding-bottom: 40px;
+}
+
+.pad-right-11 {
+    padding-right: 11px;
+}
+
+.pad-left-0 {
+    padding-left: 0px;
+}
+
+.btn-padding-top {
+    padding-top: 34px;
+}
+
+.btn-background-clr {
+    background-color: #f1f3f6;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.annual-income-input-txt .input-text-box {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.pin-code-pad-l {
+    padding-left: 0px;
+}
+
+
+/* #### Mobile Phones Portrait #### */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .adhr-no .input-text-box {
+        min-width: 143px;
+    }
+    .sm-desk-pad-l-15 {
+        padding-left: 15px !important;
+    }
+    .nav-tabs>li>a {
+        padding: 10px 13px;
+    }
+    .wizard .nav-tabs>li {
+        margin-right: 0px;
+    }
+    .tab-pad-left {
+        padding-left: 60px;
+    }
+    .form-lbl {
+        font-size: 13px;
+    }
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .date-tab-pad-l-0 {
+        padding-left: 0px !important;
+    }
+    .city-tab-pad-r-15 {
+        padding-right: 0px !important;
+    }
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    .cont-pad {
+        padding: 0 21px;
+    }
+    .wizard .nav-tabs>li {
+        width: 25%;
+    }
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+    .wizard .tab-pane {
+        padding-top: 10px;
+    }
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+    .pad-l-r-0 {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+    .horizontal-pad {
+        padding-right: 31.5px;
+        padding-left: 31.5px;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .tab-pad-left {
+        padding-left: 70px;
+    }
+    .tab-pad-l-r-0 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+   
+    .wizard .nav-tabs li a {
+        text-align: center;
+        margin-left: -50px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .input-text-box {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 335px) and (max-width:580px) {
+    .tab-pad-left {
+        padding-left: 20px !important;
+    }
+}
+
+@media (min-width: 581px) and (max-width:767px) {
+    .pad-btm-50 {
+        padding-bottom: 0px;
+    }
+    .adhr-no .input-text-box {
+        min-width: 100%;
+    }
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .btn.qq-save-btn {
+        font-size: 15px;
+    }
+    .prem-small-txt {
+        font-size: 20px;
+    }
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17px;
+    }
+    .tooltip-top {
+        margin-left: 0px;
+    }
+    .pad-l-r-0 {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .horizontal-pad {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+    .form-top-left-pad {
+        padding-top: 22.5px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .wizard {
+        width: 100%;
+    }
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+    .cont-pad {
+        padding: 0px 0px;
+    }
+    .pad-btm-25 {
+        padding-bottom: 0px;
+    }
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+    .tab-pad-left {
+        padding-left: 45px;
+    }
+    .form-background {
+        padding-bottom: 40px;
+    }
+    .pre-pad {
+        padding-right: 18.5px;
+    }
+    .pad-r-5 {
+        padding-left: 5px;
+    }
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+    .btn.qq-save-btn {
+        font-size: 15px;
+    }
+    .textbox-bg-pad {
+        width: 100%;
+    }
+    .wizard .tab-pane {
+        padding-top: 0px;
+    }
+    
+    .form-heading {
+        color: #818181;
+    }
+    .pad-right-11 {
+        padding-right: 15px;
+    }
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .pad-left-7 {
+        padding-left: 7.5px;
+    }
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+    /* Till Heere */
+    .any-claim-pad-btm {
+        padding-bottom: 20px;
+    }
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px;
+    }
+    .health-relative-add-more-top-pad {
+        margin-top: 15px;
+    }
+    .send-otp-btn {
+        float: right;
+    }
+    .otp-recv-btn {
+        float: right;
+    }
+    .pad-btm-25-mobile {
+        padding-bottom: 25px;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .form-heading {
+        font-size: 24px;
+    }
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+   
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px;
+    }
+    .health-pre-exist-pad-l-r {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px;
+    }
+    .health-pre-existing-txt {
+        padding-left: 10px;
+    }
+    .health-pre-exist-sml-txt {
+        padding-left: 10px;
+    }
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px;
+    }
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px;
+    }
+    /*.grey-row-height {
+        height: 215px;
+    }*/
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0px;
+    }
+}
+
+@media(max-width: 585px) {
+    .wizard {
+        width: 100%;
+        height: auto !important;
+    }
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .wizard .nav-tabs>li a {
+        text-align: center;
+        padding-left: 0px;
+    }
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+    .wizard .nav-tabs>li {
+        margin-right: 0px;
+        width: 25%;
+    }
+    .form-lbl {
+        font-size: 12px;
+    }
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px;
+    }
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .horizontal-pad {
+        /*padding-left: 17px;
+        padding-right: 17px;*/
+    }
+    .form-top-left-pad {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .pad-top-18 {
+        padding-top: 18px;
+    }
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+    .cont-pad {
+        padding: 0px 0px;
+    }
+    /*.pad-btm-25 {
+        padding-bottom: 0px;
+    }*/
+}
+
+@media (min-width: 320px) and (max-width:580px) {
+    .pad-btm-50 {
+        padding-bottom: 0px;
+    }
+    #insured-member-details .nav-tabs>li.active>a,
+    #insured-member-details .nav-tabs>li.active>a:focus,
+    #insured-member-details .nav-tabs>li.active>a:hover {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0px;
+    }
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px;
+    }
+    .health-pre-existing-txt {
+        padding-left: 10px;
+    }
+    .health-pre-exist-sml-txt {
+        padding-left: 10px;
+    }
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px;
+    }
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px;
+    }
+    .grey-row-height {
+        bottom: -16px;
+        position: relative;
+    }
+    .health-pre-exist-pad-l-r {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px;
+    }
+   
+    .popover {
+        top: -23.5px !important;
+    }
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    .sum-insured-txtbox-wid .input-text-box {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+    .annual-income-radius .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+    .checkbox-label {
+        font-size: 12px;
+    }
+    .checkbox {
+        margin-top: 0px;
+    }
+    .insured-member-form-top-left-pad {
+        padding-top: 24px;
+    }
+    .mob-pad-new-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .form-heading {
+        font-size: 24px;
+    }
+    .pad-btm-25-mobile {
+        padding-bottom: 25px;
+    }
+    .send-otp-btn {
+        float: right;
+    }
+    .otp-recv-btn {
+        float: right;
+        margin-top: 15px;
+    }
+    .health-relative-add-more-top-pad {
+        margin-top: 15px;
+    }
+    .any-claim-pad-btm {
+        padding-bottom: 20px;
+    }
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px;
+    }
+    .health-relative-padding {
+        padding: 0px 0px 10px 0px;
+    }
+    .declare-summary-text {
+        font-size: 12px;
+    }
+    .declare-summary-bold-text {
+        font-size: 12px;
+    }
+    .table-responsive {
+        border: none !important;
+    }
+    .earn-text-pad {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .item-block-number {
+        margin-right: 1px;
+    }
+    .select-box-width {
+        width: 180px !important;
+    }
+    .summary-pad-btm-50 {
+        padding-bottom: 0px;
+        padding-top: 0px !important;
+    }
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+    #additional-info-details .form-background {
+        padding-bottom: 0px;
+    }
+    .health-father-form-txt-hd {
+        font-size: 14px;
+    }
+    .pad-btm-87 {
+        padding-bottom: 40px;
+    }
+    #health-lifestyle-member-details .form-background {
+        padding-bottom: 0px;
+    }
+    .health-remove-btn {
+        float: left;
+    }
+    .health-add-btn {
+        float: right;
+    }
+    .health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+        top: -14px;
+    }
+    .health-disease-dropdown {
+        /* padding-top: 0px;
+        padding-bottom: 0px;*/
+        padding-left: 0px;
+        padding-right: 6px;
+    }
+    #insured-member-details .nav-tabs>li {
+        margin-right: 0px;
+    }
+    #health-lifestyle-member-details .nav-tabs>li {
+        margin-right: 0px;
+    }
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .pad-left-7 {
+        padding-left: 7.5px;
+    }
+    .pad-right-11 {
+        padding-right: 15px;
+    }
+    #gender-modal .select-cover-dropdown-txt {
+        color: #515151;
+    }
+    .input-text-box {
+        border-radius: 4px !important;
+    }
+    .form-heading {
+        color: #818181;
+    }
+    
+    .pad-left-0 {
+        padding-left: 15px;
+    }
+    .imp-mob-pad-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .wizard .tab-pane {
+        padding-top: 0px;
+    }
+    .summary-product-btm-15 {
+        padding-bottom: 15px;
+    }
+    .declr-summary-btn {
+        width: 135px;
+    }
+    .pad-top-58 {
+        padding-top: 0px;
+    }
+    .decl-summ-pad-bottom {
+        padding-bottom: 0px;
+    }
+    .pad-top-39 {
+        padding-top: 20.5px;
+    }
+    .send-otp-btn {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .textbox-bg-pad {
+        width: 100%;
+        /*margin-top: 20px;*/
+    }
+    .btn.qq-save-btn {
+        font-size: 13px;
+    }
+    .add-another-btn-large {
+        padding: 9px 15px;
+    }
+    .add-another-btn-large-txt {
+        font-size: 15.5px;
+    }
+    .remove-btn-large {
+        padding: 10px 26px;
+    }
+    .add-info-text textarea {
+        margin-bottom: 42px;
+    }
+    .any-claim-section .pad-btm-80 {
+        padding-bottom: 20px;
+    }
+    .health-father-form-txt-hd {
+        padding-bottom: 26px !important;
+    }
+    .pad-btm-40 {
+        padding-bottom: 16px;
+    }
+    #insured-member-details .nav-tabs {
+        padding-left: 0px;
+    }
+    #insured-member-details .nav-tabs {
+        padding-left: 0px;
+        white-space: nowrap;
+        overflow-x: auto;
+        /*    padding-top: 10px;*/
+    }
+     ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+    #insured-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+    }
+    #insured-member-details .nav-tabs>li {
+        width: 28% !important;
+    }
+    #insured-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto!important;
+        padding: 0px 0px;
+        text-align: center !important;
+    }
+    #health-lifestyle-member-details .nav-tabs {
+        padding-left: 0px;
+    }
+    #health-lifestyle-member-details .nav-tabs {
+        padding-left: 0px;
+        white-space: nowrap;
+        overflow-x: auto;
+        /*    padding-top: 10px;*/
+    }
+     ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+    #health-lifestyle-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+    }
+    #health-lifestyle-member-details .nav-tabs>li {
+        width: 30% !important;
+        padding-top: 15px;
+    }
+    #health-lifestyle-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto!important;
+        padding: 0px 0px;
+        text-align: center !important;
+    }
+    .mar-btm-10 {
+        margin-bottom: 0px;
+    }
+    .health-father-form-pad-top {
+        padding-top: 5px;
+    }
+    .health-father-form-number {
+        margin-left: -14px;
+        font-size: 30px;
+        color: #3f3f3f;
+    }
+    .health-pad-l-r-0 {
+        /*padding-bottom: 15px;*/
+    }
+    .health-form-small-txt {
+        padding-bottom: 5px;
+        font-size: 12px;
+    }
+    .health-form-small-txt-pad-top-btm {
+        padding-top: 0px;
+    }
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+    .pad-l-r-0-mob {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+    .insured-member-form-top-left-pad {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .insured-member-form-horizontal-pad {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .pre-pad {
+        padding-right: 18.5px;
+    }
+    .name-txt-padding {
+        padding-right: 12px;
+        padding-left: 15px;
+    }
+    .form-background {
+        padding-bottom: 40px;
+    }
+    .tab-pad-left {
+        padding-left: 6px;
+        margin-left: -3px;
+        /*margin-right: -57px;*/
+        padding-bottom: 10px;
+    }
+    .table-value {
+        font-size: 13px;
+    }
+    .btn.modal-save-btn {
+        width: 100%;
+    }
+    .state-mob-pad .pad-l-r-0 {
+        padding-right: 0px !important;
+        padding-left: 10px !important;
+    }
+    .pad-l-r-0 {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+    .pad-tb-100 {
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+    .pad-btm-25 {
+        padding-bottom: 0px;
+    }
+    .form-lbl {
+        font-size: 12px;
+    }
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px;
+    }
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+    .pad-r-5 {
+        padding-left: 5px;
+    }
+    .input-group {
+        min-width: 100%;
+    }
+    .horizontal-pad {
+        margin-top: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .form-top-left-pad {
+        padding-top: 22.5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .dob-mob-pad-l-r-0 {
+        padding-left: 5px !important;
+    }
+    .dob-row-pad-btm .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .wizard {
+        width: 100%;
+    }
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .pad-top-18 {
+        padding-top: 18px;
+    }
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+    .cont-pad {
+        padding: 0px 0px;
+    }
+    .modal-hdr {
+        height: auto;
+    }
+    .proposal-btn {
+        font-size: 15px;
+    }
+    .summary-btn {
+        width: 100%;
+        display: block;
+        font-size: 9px;
+        padding: 12px 15px;
+    }
+    .back-btn1 {
+        width: 100%;
+        display: block;
+        width: 100% !important;
+    }
+    .done-btn1 {
+        width: 100%;
+        display: block;
+    }
+    .mar-l-14 {
+        margin-left: 5px;
+    }
+    
+    .main-header-text1 {
+        font-size: 21px;
+    }
+    .mbr-sel-txt-big {
+        font-size: 15px;
+    }
+    .mbr-sel-txt-sml {
+        font-size: 15px;
+    }
+    .tenure-year {
+        font-size: 14px;
+    }
+    .pretty {
+        margin: 0px 0px 0px 0px !important;
+    }
+    .dup-bene-btn-new {
+        font-size: 16px;
+    }
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+    .item-block1 {
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+    .item-block-content {
+        padding-bottom: 0px;
+        padding-top: 21px;
+        margin-left: -2%;
+    }
+    .item-block {
+        padding-left: 0px !important;
+    }
+    .temp-disa-left-bdr {
+        margin-left: -15px;
+        height: 175px;
+    }
+    .pad-cont {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    .pad-mar-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .temp-total-dis-text1 {
+        padding-top: 20px;
+    }
+    .btn.qq-save-btn {
+        width: 140px !important;
+    }
+    .quote-item-block {
+        padding-top: 0px;
+    }
+    .sum-tenure-topmost-row {
+        padding-left: 0px;
+        padding-top: 0px !important;
+    }
+    .btn.modal-save-btn {
+        width: 100%;
+    }
+    .prem-small-txt {
+        font-size: 20px;
+    }
+    .prem-rupee-symbol {
+        font-size: 20px;
+    }
+    .temp-total-dis-img {
+        width: 50px;
+        height: 50px;
+        margin-left: 11px;
+        margin-top: 0px;
+    }
+    .temp-total-dis-text2 {
+        font-size: 12px;
+    }
+    .mar-l-15 {
+        margin-left: 0px;
+    }
+    .btn-pad-box {
+        padding-left: 20px !important;
+        padding-right: 10px !important;
+    }
+    .temp-total-dis-text2 {
+        font-size: 14px;
+    }
+    .earn-mem-bene-lbl-txt {
+        padding-left: 14px;
+    }
+    .tooltip-top {
+        top: -10px;
+        right: -10px;
+    }
+    .tooltip-bg {
+        background-color: transparent;
+    }
+    .sum-insured-members-block {
+        box-shadow: none;
+    }
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -18.5px;
+    }
+    .tooltip.bottom .tooltip-inner {
+        margin-right: 30px;
+    }
+    .mob-mar-toggle {
+        margin-top: 15px;
+    }
+    .item-block-content-header-mob {
+        margin-top: 0px;
+    }
+    .get-cover-line-float {
+        text-align: left;
+        float: left;
+        margin-top: 17.5px;
+    }
+    .get-cover-line {
+        margin-right: 0px;
+        font-size: 14px;
+    }
+
+}
+.container-alignment {
+	margin: 50px 0px 0px 0px;
+}
+
+
+.dropdown {
+	display: inline-block;
+	position: relative;
+  }
+  
+  .dd-button {
+	 border-bottom: 1.3px solid gray;
+		/* border-radius: 4px; */
+		width: 300px;
+		padding: 10px 30px 10px 20px;
+		background-color: #fff;
+		/* width: 100%; */
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 20.5px;
+		font-weight: 400;
+		text-align: left;
+		opacity: .7;
+  }
+  
+  .dd-button:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+  }
+  
+  .dd-button:hover {
+	background-color: #eeeeee;
+	width: 300px;
+  }
+  
+  
+  .dd-input {
+	display: none;
+  }
+  
+  .dd-menu {
+	position: absolute;
+	top: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0;
+	margin: 2px 0 0 0;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+	background: none repeat scroll 0 0 #ffffff;
+	list-style-type: none;
+    z-index: 99999;
+  }
+  
+  .dd-input + .dd-menu {
+	display: none;
+  } 
+  
+  .dd-input:checked + .dd-menu {
+	display: block;
+	display: block;
+    width: 300px;
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 20.5px;
+    font-weight: 400;
+    text-align: left;
+    opacity: .7;
+  } 
+  
+  .dd-menu li {
+	padding: 5px 20px;
+	cursor: pointer;
+	white-space: nowrap;
+  }
+  
+  .dd-menu li:hover {
+	background-color: #f6f6f6;
+  }
+  
+  .dd-menu li a {
+	display: block;
+	margin: -10px -20px;
+	padding: 10px 20px;
+  }
+  
+  .dd-menu li.divider{
+	padding: 0;
+	border-bottom: 1px solid #cccccc;
+  }
+
+  .textbox-style {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1.7px solid gray;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	width: 300px;
+	box-shadow: none;
+	font-family: 'PFHandbookPro-Light';
+	font-size: 18px;
+	font-weight: 100;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.6px;
+	/* text-align: right; */
+	color: #585858;
+}
+
+.textbox-style:focus {
+	outline: none;
+	box-shadow: none;
+}
+.bank-detail-field{
+	padding: 10px 5px 15px 5px;
+}
+.form-label{
+	font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 20.5px;
+    font-weight: 400;
+    text-align: left;
+    font-stretch: normal;
+    line-height: normal;
+    color: #585858;
+    letter-spacing: 0px;
+    opacity: .9;
+}
+.product-white-box {
+	border-radius: 6px;
+	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.12);
+	background-color: #fff;
+	margin-bottom: 25px;
+}
+.product-white-box {
+	margin-bottom: 20px;
+}
+.white-box-left-sec-pad {
+	padding: 20px 0px 23px 30px;
+}
+.tabs-section .product-name {
+	font-family: 'PF-Handbook-Pro-Regular';
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	color: #000;
+	padding-bottom: 12px;
+}
+.tabs-section .product-name.all-plan-h2 {
+	padding-bottom: 12px;
+	margin-bottom: 0px;
+}
+.tabs-section .product-plan-name {
+	font-family: 'PF-Handbook-Pro-Regular';
+	font-size: 16px;
+	padding-bottom: 15px;
+}
+.key-features-pad-tb .col-lg-4.col-md-4.col-sm-6.col-xs-4.pad-l-r-0, .key-features-pad-tb .col-lg-4.col-md-4.col-sm-6.col-xs-12.pad-l-r-0 {
+	text-indent: -28px;
+	padding-left: 28px !important;
+	padding-right: 10px !important;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+	.product-white-box img {
+		padding-right: 10px;
+   }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	/* .product-white-box img {
+		width: auto;
+		display: inline;
+		margin-bottom: 10px;
+   } */
+}
+ .key-features-pad-tb {
+	padding: 24px 20px 34px;
+}
+
+ .key-features-pad-tb img {
+	padding-right: 0;
+}
+ .key-feature-txt {
+	font-family: 'PF-Handbook-Pro-Regular';
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	color: #000;
+	padding-bottom: 12px;
+}
+.tick-txt {
+	font-family: 'PF-Handbook-Pro-Regular';
+	font-size: 16px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	color: #4c4c4c;
+	padding-left: 15px;
+}
+ .tick-txt-pad-btm {
+    padding-bottom: 18px;
+}
+ .border-div-right {
+	border-right: solid 1px #e6e6e6;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	right: 0;
+}
+ .view-plan-section-pad {
+	padding: 24px 38px;
+}
+.premium-starting-txt {
+	font-family: 'PF-Handbook-Pro-Thin';
+	font-size: 19.4px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 0.22px;
+	color: #4c4c4c;
+	padding-bottom: 7px;
+	text-align: center;
+}
+.premium-amt-txt {
+	font-family: 'PF-Handbook-Pro-Regular';
+	font-size: 33.9px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 0.93;
+	letter-spacing: 0.38px;
+	color: #000;
+	padding-bottom: 55px;
+	text-align: center;
+}
+.premium-amt-txt .annum-txt {
+	font-size: 21.8px;
+	font-weight: 300;
+	letter-spacing: 0.24px;
+}
+ .quick-quote-btn {
+	width: 100%;
+	height: 44px;
+	padding: 7px;
+	border-radius: 2px;
+	border: solid 1px #c7222a;
+	font-family: 'PFHandbookPro-Medium';
+	font-size: 20px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: #c7222a;
+	margin-bottom: 12px;
+	background-color: #fff;
+}
+.view-plan-btn {
+	 width: 100%;
+	 height: 44px;
+	 padding: 7px;
+	 border-radius: 2px;
+	 border: solid 1px #c7222a;
+	 background-color: #c7222a;
+	 font-family: 'PFHandbookPro-Medium';
+	 font-size: 20px;
+	 font-weight: 500;
+	 font-stretch: normal;
+	 font-style: normal;
+	 line-height: normal;
+	 letter-spacing: normal;
+	 text-align: center;
+	 color: #fff;
+}
+.container-dcb .view-plan-btn {
+    border-radius: 2px;
+    border: 1px solid #c7222a;
+    background-color: #c7222a;
+    font-family: 'PFEncoreSansPro-Medium' !important;
+    color: #fff;
+}
+.tabs-section .key-feature-txt{
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 12
+px
+;
+}
+.buy-btn{
+	position: relative;
+    top: 76px;
+    left: 0;
+}
+.reco_q_names-span_policy-brochure{
+    float: right;
+    /*font-size: 15px;
+    background: #f3f3f3;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #df8e88;
+    margin-top: -5px;
+    position: relative;*/
+    width: 122px;
+    height: 28px;
+    border-radius: 4px;
+    background-color: rgba(223, 142, 136, 0.16);
+    padding: 5px 5px 5px 5px; 
+}
+.reco_q_names-span_policy-brochure a{
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #df8e88;
+  width: 85px;
+  height: 19px;
+  padding-left: 4px;
+}
+.glaficon-style{
+        width: 16.7px !important;
+    height: 10.6px !important;
+    object-fit: contain !important;
+    display: inherit !important;
+    padding-top: 2px;
+}
+
+.reco_q_names-span{
+    float: right;
+    width: 114px;
+    height: 28px;
+    border-radius: 4px;
+    background-color: rgba(223, 142, 136, 0.16);
+}
+.reco_q_names-span a{
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #df8e88;
+  width: 85px;
+  height: 19px;
+  padding-left: 4px;
+} 
+.sum-insured-members-block-dropdown input {
+    font-size: 14px;
+    background-color: #f2f3f6 !important;
+    padding: 5px 10px;
+    border: none !important;
+    border-left: solid 0.5px #e5e5e5 !important;
+    border-top: solid 0.5px #e5e5e5 !important;
+    border-bottom: solid 0.5px #e5e5e5 !important;
+    box-shadow: none !important;
+    border-radius: 0;
+}
+.dropdown-width-bdr{
+    width: 300px;
+    background: #fff;
+    border-radius: unset;
+    border-bottom: 1.3px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+.dropdown-width-bdr .dropdown-txt{
+    background-color: transparent;
+	border: none;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	font-family: 'PFHandbookPro-Light';
+	font-size: 18px;
+	font-weight: 100;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 0.6px;
+	color: #585858;
+}
+ .product-detail-list{
+    position: absolute;
+    left: 14px;
+    width: 300px;
+    min-width: 300px;
+ }
+.dropdown-menu li a {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 17px;
+ }
+ .d-renewal-btn{
+    display: flex;
+    justify-content: end;
+}
+.d-renewal-btn .renewal-btn{
+    height: 25px;
+        font-family: 'PFHandbookPro-Medium';
+        font-size: 15px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000;
+        padding: 0!important;
+        width: 75px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        background-color: #fff;
+        margin: 2px 10px 2px 10px;
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+	.tabs-section .product-name {
+		padding-left: 30px;
+   }
+   .tabs-section .product-plan-name {
+	padding-left: 30px;
+	}
+	 .border-div-right {
+		border-right: solid 1px #e6e6e6;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		right: 0;
+   }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	 .border-div-right {
+		height: 100% !important;
+   }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.tabbable-panel .nav-tabs li a {
+		margin-right: 22px;
+   }
+	 .border-div-right {
+		height: 368px;
+   }
+	.tabs-section .product-name {
+		font-size: 23px;
+		padding-top: 10px;
+   }
+	.tick-txt-pad-btm {
+		padding-bottom: 0px;
+   }
+	 .tick-txt-pad-btm div {
+		margin-bottom: 15px;
+		height: auto;
+   }
+	.tabbable-panel .nav-tabs {
+		align-items: unset;
+		justify-content: unset;
+   }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.lets-get-insured-section {
+		padding: 30px 15px;
+   }
+	.lets-get-insured-section .looking-for-txt {
+		font-size: 20.5px;
+   }
+	.lets-get-insured-section .who-would-like-ensure-box .select-looking {
+		font-size: 15.4px;
+   }
+	.lets-get-insured-section .who-would-like-ensure-box {
+		padding: 0;
+   }
+	.lets-get-insured-section .next-btn {
+		margin-top: 30px;
+   }
+	.lets-get-insured-section .get-insured-bdr-right {
+		border-right: 0px;
+   }
+	.lets-get-insured-section .padding-l-45 {
+		padding-left: 0px;
+		padding-top: 20px;
+   }
+	.lets-get-insured-section .who-would-like-ensure-box .icon-dropdown {
+		margin-left: 8px;
+		margin-top: 0;
+   }
+	.tabs-section {
+		padding: 20px 15px 25px;
+   }
+	.tabs-section .white-box-left-sec-pad {
+		padding: 20px 15px 20px 15px;
+   }
+  .tick-txt-pad-btm {
+		padding-bottom: 0px;
+   }
+	.tabs-section .product-name {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 22px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: normal;
+		text-align: left;
+		color: #000;
+		padding-bottom: 0;
+   }
+	.tabs-section .product-plan-name {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 16px;
+		padding-bottom: 15px;
+   }
+	 .view-plan-section-pad {
+		padding: 0 15px 24px;
+   }
+	.View-Details-txt {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.6;
+		letter-spacing: normal;
+		color: #c7222a;
+   }
+	.View-Details-txt .fa {
+		vertical-align: text-bottom;
+   }
+	.gray-bg {
+		height: 26px;
+		border-radius: 13.5px;
+		background-color: #f9f8f8;
+		padding: 7px !important;
+   }
+	.tabs-section .wellness-coach-txt {
+		font-family: 'PFHandbookPro-Light';
+		font-size: 13px;
+		font-weight: 300;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: 0.16px;
+		text-align: left;
+		color: #000;
+   }
+	.prem-start-from-txt {
+		font-family: 'PFHandbookPro-Light';
+		font-size: 16px;
+		font-weight: 300;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 0.7;
+		letter-spacing: normal;
+		text-align: left;
+		color: #000;
+   }
+	.rs-num {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 21px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.1;
+		letter-spacing: normal;
+		text-align: left;
+		color: #000;
+   }
+	.anum-txt {
+		font-size: 18px;
+		color: #4c4c4c;
+		font-family: 'PFHandbookPro-Light';
+   }
+	.key-features-pad-tb {
+		padding: 0px 0 24px;
+   }
+	.down-arrow-img {
+		width: 15px;
+		margin-top: -3px;
+		padding-left: 3px;
+   }
+	.lets-get-insured-section {
+		margin-top: 40px;
+   }
+	.tabs-section .product-white-box {
+		margin-bottom: 20px;
+   }
+	.view-plan-btn {
+		font-family: 'PF-Handbook-Pro-Bold' !important;
+		font-size: 18.4px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 0.98;
+		letter-spacing: normal;
+		text-align: center;
+		color: #fff;
+   }
+	.quick-quote-btn {
+		font-family: 'PFHandbookPro-Medium';
+		font-size: 18px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: normal;
+		text-align: center;
+		color: #c7222a;
+   }
+	.pad-b-0 {
+		padding-bottom: 0px !important;
+   }
+	.key-featured-pad {
+		padding: 21px 0px 15px;
+   }
+	.key-featured-pad .key-featured-txt {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 17px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.29;
+		letter-spacing: normal;
+		text-align: left;
+		color: #000;
+		padding-bottom: 13px;
+   }
+	.key-featured-pad img {
+		padding-right: 14px;
+   }
+	.key-featured-pad .key-featured-sml-txt {
+		font-family: 'PFHandbookPro-Light';
+		font-size: 16px;
+		font-weight: 300;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.38;
+		letter-spacing: normal;
+		text-align: left;
+		color: #4c4c4c;
+		padding-bottom: 14px;
+   }
+	.key-featured-pad .not-included-txt {
+		font-family: 'PF-Handbook-Pro-Regular';
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.13;
+		letter-spacing: normal;
+		text-align: left;
+		color: #000;
+   }
+	.key-featured-pad .not-included-content {
+		font-family: 'PFHandbookPro-Light';
+		font-size: 16px;
+		font-weight: 300;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.13;
+		letter-spacing: normal;
+		text-align: left;
+		color: #4c4c4c;
+   }
+   .dropdown-width-bdr {
+    width: 268px;
+    }
+    .textbox-style {
+        width: 235px;
+        font-size: 16px;
+      }
+      .dropdown-width-bdr .dropdown-txt{
+          font-size: 16px;
+     }
+
+}
+@media (min-width: 300px) and (max-width: 330px) {
+    .dropdown-width-bdr {
+        width: 235px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+.buy-btn {
+    position: relative;
+    top: 0px;
+    left: 0;
+  }
+}
+/* hdhjfce cn */
+/* IDFC */
+.idfc-container .modalmainbox{
+        border-radius: 0px;
+        border-left: 10px solid #9D1F2A;
+        border-right: 10px solid #9D1F2A;
+    }
+
+    .idfc-container .desc{
+        padding: 20px;
+    }
+
+    .idfc-container .logosbx img{
+        margin: auto;
+    }
+
+    .idfc-container .mainbox{
+        padding: 0px 0px;
+    }
+
+    .idfc-container .insured-btn{
+        background-color: #ffca08;
+      border-color: #ffca08;
+      color: #000;
+      border-radius: 8px;
+      font-size: 22px;
+      padding: 8px 30px 8px 30px;
+      margin-top: 30px;
+    }
+
+    .idfc-container p{
+        color: #000;    
+        font-size: 25px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .idfc-container .logosbx{
+        background-color: #dcdde1;
+        padding: 20px 20px;
+      margin: 30px 0px 10px;
+    }
+    .idfc-container .modal-desclaimer p{
+        font-size: 11px;
+        padding: 0px 20px 15px;
+        margin-bottom: 0;
+        text-align: justify;
+    }
+
+    .idfc-container .logosbx p{
+        color:#9D1F2A;
+        line-height: 1;
+    }
+
+    .idfc-container .logosbx h4{
+        color:#000;
+        font-weight: bold;
+        margin-top: 7px;
+    }
+
+    .idfc-container .closebtn{
+            background: #9d1f2a!important;
+          opacity: 1;
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          border-radius: 0px 0px 0px 10px;
+    }
+    .idfc-container .idfcLogo{
+        height: 72px;
+    }
+    .idfc-container .abhiLogo{
+        height: 95px;
+    }

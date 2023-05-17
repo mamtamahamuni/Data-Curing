@@ -1,0 +1,1065 @@
+.cross-sell-bg {
+    background-color: #ffffff;
+    box-shadow: 0 -0.5px 4px 0 rgba(0, 0, 0, 0.09);
+}
+.cross-sell-bg .cross-sell-ttl {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-left: 12.5px;
+    padding-right: 16px;
+}
+.cross-sell-bg .star-img-width {
+    width: 20px;
+    height: 20px;
+    vertical-align: text-top;
+}
+
+.cross-sell-bg a:hover,
+.cross-sell-bg a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.cross-sell-bg #accordionone .panel {
+    border:0px none;
+    box-shadow:none;
+}
+
+.cross-sell-bg .panel-default {
+    border-color: #fff;
+}
+
+.cross-sell-bg #accordionone .panel-heading {
+    padding: 0;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.cross-sell-bg .panel-titleone {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.cross-sell-bg .arrow-headingone [data-toggle="collapse"]:after {
+    content: url(../../img/arrow-down.svg);
+}
+
+.cross-sell-bg .arrow-headingone [data-toggle="collapse"].collapsed:after {
+    content: url(../../img/arrow-up.svg);
+}
+
+.cross-sell-bg #accordionone .panel-titleone a {
+    display: block;
+    position: relative;
+    background: transparent;
+    color: #c7222a;
+    padding: 9.5px 16px;
+    border: solid 0px #dddddd;
+    transition: all 0.10s linear 0s;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    border-left: 0 none;
+    border-right: 0 none;
+    background-color: #fff;
+    padding-left: 6px;
+}
+
+.cross-sell-bg #accordionone .panel-titleone a.collapsed:before {
+    content: "";
+    border: 0px none;
+}
+
+.cross-sell-bg #accordionone .panel-titleone a:before, #accordionone .panel-titleone a.collapsed:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 36px;
+    border-top: 7px solid #de4d4e;
+}
+
+.cross-sell-bg #accordionone .panel-body {
+    border-top: 0 none;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-left: 40px;
+    background-color: #ffffff;
+}
+
+.cross-sell-bg #accordionone .panel-titleone a.collapsed {
+    color: #000000;
+    border-bottom: 0px solid #d3d3d3;
+    margin: 0;
+    background-color: #fff;
+    border: solid 0px #dddddd;
+    border-left: 0 none;
+    border-right: 0 none;
+}
+
+.cross-sell-bg .accordion-grey-ttl {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #6c7174;
+    background-color: #fff;
+    padding-left: 42px;
+}
+
+.cross-sell-bg .cross-sell-grey-box {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #d7d7d7;
+}
+
+.cross-sell-bg .cross-sell-gry-box-ttl-bg {
+    background-color: #f1f3f6;
+    height: 77px;
+}
+
+.cross-sell-bg .cr-sell-box-ttl {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.cross-sell-bg .cr-sell-know-more-txt {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 12.6px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #030303;
+    text-decoration: underline;
+    padding-left: 14.4px;
+}
+
+.cross-sell-bg .cr-sell-know-more-txt:hover,
+.cross-sell-bg .cr-sell-know-more-txt:focus,
+.cross-sell-bg .cr-sell-know-more-txt:active {
+    color: #030303;
+    text-decoration: underline;
+}
+
+.cross-sell-bg .box-pad-l-r-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.cross-sell-bg .cr-sell-txt-pad {
+    padding: 5px 14px;
+    padding-left: 0px;
+}
+
+.cross-sell-bg .red-premium-txt {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c7222a;
+}
+
+.cross-sell-bg .cr-sell-box-grey-txt {
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #6c7174;
+}
+
+.cross-sell-bg .cr-box-mar-left {
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+
+.cross-sell-bg .selected-cross-sell {
+    background-color: rgba(222, 141, 135, 0.15);
+}
+
+.cross-sell-bg .selected-check-box-width {
+    border-radius: 4px;
+    background-color: #f9e0db !important;
+    border: solid 1px #de8d87 !important;
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    left: -15px;
+}
+
+.cross-sell-bg .premium-pad-top {
+    padding-top: 15px;
+}
+
+.cross-sell-bg .selected-cross-sell-grey-box {
+    background-color: #ffffff;
+    border: solid 1px #de8d87 !important;
+}
+
+.cross-sell-bg .eligible-mem-div .arrow-heading [data-toggle="collapse"]:after {
+    content: url(../../img/icon-chevron-down.png);
+}
+
+.cross-sell-bg .eligible-mem-div .arrow-heading [data-toggle="collapse"].collapsed:after {
+    content: url(../../img/icon-chevron-up.png);   
+}
+
+.cross-sell-bg .cross-sell-grey-box .panel-title {
+    background-color: #fff;
+    margin-top: 15px;
+    padding-bottom: 12px;
+}
+
+.cross-sell-bg .cross-sell-grey-box .panel-title a {
+    background-color: #fff;
+}
+
+.cross-sell-bg .cross-sell-grey-box .panel {
+    margin-left: 90px;
+}
+
+.cross-sell-bg #accordionone .cross-sell-grey-box .panel-body {
+    padding-left: 0px;
+}
+
+.cross-sell-bg .eligible-member-box-bg {
+    border-radius: 2px;
+    background-color: #f1f3f6 !important;
+}
+
+.cross-sell-bg .cross-sell-grey-box input[type="checkbox"] {
+    display: none;
+}
+
+.cross-sell-bg .eligible-member-width {
+    width: 20%;
+}
+
+.cross-sell-bg .eligible-member-pad-right {
+    padding-right: 0px;
+}
+
+.cross-sell-bg .eligible-mem-div .panel-group {
+    margin-bottom: 0px;
+}
+.cross-sell-bg .eligible-panel-group-pad-btm {
+    margin-bottom: 30px;
+}
+/********************** Inner Accordion ********************/
+.cross-sell-bg #accordion .panel {
+    border:0px none;
+    box-shadow:none;
+}
+.cross-sell-bg #accordion .panel-heading {
+    padding: 0;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+.cross-sell-bg #accordion .panel-titleone a {
+    display: block;
+    position: relative;
+    background: transparent;
+    color: #c7222a;
+    padding: 9.5px 16px;
+    border: solid 0px #dddddd;
+    transition: all 0.10s linear 0s;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    border-left: 0 none;
+    border-right: 0 none;
+    background-color: #fff;
+    padding-left: 6px;
+}
+.cross-sell-bg #accordion .panel-titleone a.collapsed:before {
+    content: "";
+    border: 0px none;
+}
+.cross-sell-bg #accordion .panel-titleone a:before, #accordion .panel-titleone a.collapsed:before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 36px;
+    border-top: 7px solid #de4d4e;
+}
+.cross-sell-bg #accordion .panel-body {
+    border-top: 0 none;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #6c7174;
+    padding-left: 40px;
+    background-color: #ffffff;
+}
+.cross-sell-bg #accordion .panel-titleone a.collapsed {
+    color: #000000;
+    border-bottom: 0px solid #d3d3d3;
+    margin: 0;
+    background-color: #fff;
+    border: solid 0px #dddddd;
+    border-left: 0 none;
+    border-right: 0 none;
+}
+/**************** checkbox *******************/
+.cross-sell-bg .check-box-width .container-new {
+    text-align: center;
+    display: block;
+    position: relative;
+    padding-left: 0px;
+    margin-bottom:0px;
+    padding-top:3px;
+    cursor: pointer;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.cross-sell-bg .check-box-width .container-new input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.cross-sell-bg .check-box-width .checkmark {
+    position: absolute;
+    /*top: 0;
+    left: 0;*/
+    bottom: -24px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+}
+.cross-sell-bg .check-box-width .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+.cross-sell-bg .check-box-width .container-new input:checked ~ .checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+.cross-sell-bg .check-box-width .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cross-sell-bg .check-box-width .container-new input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.cross-sell-bg .check-box-width .container-new .checkmark:after {
+    left:7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #c7222a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cross-sell-bg .check-box-width .protecting .checkmark:after {
+    left:7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #660d0a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cross-sell-bg .check-box-width {
+    border-radius: 4px;
+    background-color: #f1f3f6;
+    border: solid 1px rgba(215, 215, 215, 0.38);
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    left: -15px;
+}
+
+.cross-sell-bg .panel-pad-top {
+    padding-top: 50px;
+}
+
+.cross-sell-bg .last-btn-width {
+    opacity: 0.17;
+    border: solid 1px #979797;
+    margin-top: 0px;
+}
+/******************************************************/
+.cross-sell-bg .eligible-mem-div .container-new {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom:0px;
+    padding-top:3px;
+    cursor: pointer;
+    font-family: "PF-Handbook-Pro-Regular";
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cross-sell-bg .eligible-mem-div .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+}
+
+.cross-sell-bg .eligible-mem-div .checkmark:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+
+.cross-sell-bg .eligible-mem-div .container-new input:checked ~ .checkmark {
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 2px #cdcece;
+    outline: none;
+}
+
+.cross-sell-bg .eligible-mem-div .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cross-sell-bg .eligible-mem-div .container-new input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.cross-sell-bg .eligible-mem-div .container-new .checkmark:after {
+    left:7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid #660d0a;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cross-sell-bg .full-width {
+    width: 100%;
+}
+
+.cross-sell-bg .half-width {
+    width: 75%;
+}
+
+.cross-sell-bg .half-wdth-imp {
+    width: 75% !important;
+}
+
+.cross-sell-bg .cross-section-div-tb {
+    padding-top: 30px;
+}
+
+@media (max-width: 991px) and (min-width: 320px){
+    .cross-sell-bg #accordionone .panel-titleone a {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+
+    .cross-sell-bg #accordionone .panel-body {
+        font-size:18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .cross-sell-bg .cross-sell-gry-box-ttl-bg {
+        height: auto;
+    }
+    .cross-sell-bg .eligible-member-width {
+        width: 50%;
+    }
+    .cross-sell-bg .eligible-mem-div .container-new {
+        font-size: 16px;
+        padding-bottom: 20.5px;
+    }
+
+    .cross-sell-bg .eligible-mem-col-pad {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .cross-sell-bg .tooltip-btn {
+        padding-right: 0px;
+    }
+}
+
+@media (min-width: 581px) and (max-width:767px){
+    .cross-sell-bg .add-son-bg {
+        width:95%;
+        margin-left: -13px;
+        padding-left: 22px;
+        padding-right: 7px;
+    }
+
+    .cross-sell-bg .add-daughter-bg1 {
+        width:95%;
+        margin-left: -13px;
+        padding-left: 22px;
+        padding-right: 7px;
+    }
+
+    .cross-sell-bg .add-mem-mod-pad-top-30 {
+      padding-left: 0px;
+    }
+
+    .cross-sell-bg .input-group-addon {
+      padding: 9px 8px;
+    }
+
+    .cross-sell-bg .modal-radio-button-topmost-row {
+        padding-left: 55.5px;
+    }
+
+    .cross-sell-bg .temp-total-dis-row {
+        padding-bottom: 0px;
+    }
+
+    .cross-sell-bg .pad-top-82{
+        padding-top: 20px;
+    }
+
+    .cross-sell-bg .sum-insured-members-padding-initial {
+        padding-left: 58px;
+    }
+
+    .cross-sell-bg .modal-body{
+        overflow-y: auto;
+    }
+
+    .cross-sell-bg .temp-total-dis-row{  
+        padding-top:15.5px!important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cross-sell-bg .change-earn-mem-bene-btn {
+        width: 100%;
+    }
+
+    .cross-sell-bg .sec-summ-text {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .cross-sell-bg .down-arew {
+        text-align: center;
+        margin-right: 0px;
+    }
+
+    .cross-sell-bg .show-sel-text {
+        padding-top: 20px;
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #6c7174;
+    }
+
+   .cross-sell-bg .mob-togg-btn {
+        margin-right: 10px;
+    }
+
+    .cross-sell-bg .temp-total-dis-sel-summ-panel-body {
+        padding-left: 15%;
+    }
+
+    .cross-sell-bg .modal-hdr {
+        height: auto;
+    }
+
+    .cross-sell-bg .pad-btm-15 {
+        padding-bottom: 15px;
+    }
+
+    .cross-sell-bg .temp-total-dis-sel-summ-select-cover {
+        margin-left: 39px !important;
+    }
+
+    .cross-sell-bg .bck-quo-btn {
+        font-size: 15px;
+    }
+
+    .cross-sell-bg .proposal-btn {
+        font-size: 15px;
+    }
+
+    .cross-sell-bg .summary-btn {
+        font-size: 9px;
+        padding: 15px 15px;
+    }
+
+    .cross-sell-bg .customize-btn {
+        font-size: 9px;
+        padding: 15px 11px;
+    }
+
+    .cross-sell-bg .mar-l-14 {
+        margin-left: 5px;
+    }
+
+    .cross-sell-bg .breadcrumb-item-cust-active {
+        padding-bottom: 18px;
+    }
+
+    .cross-sell-bg .btn-plan {
+        margin-left: -12px;
+    }
+
+    .cross-sell-bg #tenure-year-act-bdr {
+        padding-bottom: 70px;
+    }
+
+    .cross-sell-bg .cont-pad {
+        padding: 0 17px;
+    }
+
+    .cross-sell-bg .mbr-sel-txt-big {
+        font-size: 15px;
+    }
+
+   .cross-sell-bg .mbr-sel-txt-sml {
+        font-size: 15px;
+    }
+
+   .cross-sell-bg .tenure-year {
+        font-size: 14px;
+    }
+
+   .cross-sell-bg .item-block-content {
+        padding-bottom: 0px;
+        padding-top: 21px;
+    }
+
+   .cross-sell-bg .item-block {
+        padding-left: 0px !important;
+    }
+
+    .cross-sell-bg .temp-disa-left-bdr {
+        margin-left: -15px;
+    }
+
+    .cross-sell-bg .pad-cont {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .cross-sell-bg .pad-mar-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .cross-sell-bg .temp-total-dis-text1 {
+        padding-top: 20px;
+    }
+
+   .cross-sell-bg .btn.qq-save-btn {
+        width: 100%!important;
+        font-size: 15px;
+    }
+
+    .cross-sell-bg #tenure-year-act-bdr1 {
+        padding-bottom: 39px;
+    }
+
+   .cross-sell-bg .quote-item-block {
+        padding-top: 20px;
+    }
+
+    .cross-sell-bg #inp-txt .son-daughter-input {
+        background-color: #f2f3f6!important;
+        border: solid 0.5px #e5e5e5!important;
+        font-family: 'PFEncoreSansPro-Medium';
+        font-size: 8px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #6c7174;
+    }
+
+    .cross-sell-bg #inp-txt .son-daughter-input-txt {
+        background-color: #f2f3f6!important;
+        border: solid 0.5px #e5e5e5!important;
+        font-family: 'PFEncoreSansPro-Medium';
+        font-size: 8px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #6c7174;
+    }
+
+    .cross-sell-bg .mar-r-15 {
+        margin-right: 0px;
+    }
+
+    .cross-sell-bg .mar-l-25 {
+        margin-left: 0px;
+    }
+
+    .cross-sell-bg .pad-tb-100 {
+        padding-bottom: 36px;
+    }
+
+    .cross-sell-bg #line-top-mar .pad-top-50 {
+        padding-top: 35px;
+    }
+
+    .cross-sell-bg .prem-small-txt {
+        font-size: 15px;
+    }
+
+    .cross-sell-bg .temp-total-dis-img {
+        width: 46.5px;
+        height: 40px;
+        margin-left: 32px;
+    }
+
+    .cross-sell-bg .temp-total-dis-text2 {
+        font-size: 12px;
+    }
+
+    .cross-sell-bg .btn-pad-box {
+        padding-left: 20px !important;
+        padding-right: 10px !important;
+    }
+    
+    .cross-sell-bg .mob-mar-toggle {
+        margin-top: 15px;
+    }
+
+    .cross-sell-bg .item-block-content-header-mob {
+        margin-top: 0px;
+    }
+
+    .cross-sell-bg .quote-item-block-content {
+      margin-left: -2%;
+    }
+
+    .cross-sell-bg .quote-item-block {
+      padding-left: 0px;
+    }
+
+    .cross-sell-bg .add-mem-radio-btn-pad1 {
+      padding-top: 34px;
+    }
+
+    .cross-sell-bg .add-memb-yrs-txt {
+      padding-top: 10px;
+    }
+
+    .cross-sell-bg .tool-tip-img {
+      position: absolute;
+      top: -5px;
+      right: -17px;
+    }
+
+    .cross-sell-bg .tooltip-top {
+      margin-left: 0px;
+    }
+
+    .cross-sell-bg .btn-modal .mar-l-15 {
+      margin-left: 0px;
+    }
+
+    .cross-sell-bg .btn-modal .mar-l-15 {
+      margin-left: 0px;
+    }
+
+    .cross-sell-bg .padding-boottom-value{
+      padding-bottom: 30px;
+    }
+
+    .cross-sell-bg .eligible-panel-group-pad-btm {
+        margin-bottom: 10px;
+    }
+    .cross-sell-bg .check-box-width .protecting .checkmark:after {
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        left: 6px;
+    }
+    .cross-sell-bg .eligible-member-width {
+        width: 50%;
+    }
+    .cross-sell-bg .red-premium-txt {
+        text-align: right;
+    }
+    .cross-sell-bg .eligible-mem-col-pad {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .cross-sell-bg .eligible-mem-col-pad-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .cross-sell-bg .eligible-mem-div .container-new {
+        font-size: 16px;
+        padding-bottom: 20.5px;
+    }
+    .cross-sell-bg .cross-sell-grey-box .panel {
+        margin-left: 0px;
+    }
+
+    .cross-sell-bg .cr-sell-box-grey-txt {
+        padding-bottom: 10px;
+        padding-left: 10.5px;
+        padding-right: 10.5px;
+    }
+
+    .cross-sell-bg .premium-pad-top {
+        padding-top: 0px;
+    }
+
+    .cross-sell-bg .cross-sell-gry-box-ttl-bg {
+        height: auto;
+    }
+
+    .cross-sell-bg .cr-sell-txt-pad {
+        padding: 5px 0px;
+    }
+
+    .cross-sell-bg .cr-sell-box-ttl {
+        font-size: 18px;
+    }
+
+    .cross-sell-bg .check-box-width .checkmark {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cross-sell-bg .check-box-img {
+        width: 42px;
+    }
+    
+    .cross-sell-bg .check-box-width {
+        width: 73px;
+        height: 73px;
+    }
+    .cross-sell-bg .mob-box-pad-l-r-0 {
+        padding-left: 30px;
+        padding-right: 15px;
+    }
+    .cross-sell-bg .cr-box-mar-left {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .cross-sell-bg .arrow-headingone [data-toggle="collapse"].collapsed:after,
+    .cross-sell-bg .arrow-headingone [data-toggle="collapse"]:after {
+        line-height: 2.5;
+    }
+    .cross-sell-bg .mob-accordion-pad-left {
+        padding-left: 6px;
+        padding-right: 0px;
+    }
+    .cross-sell-bg .accordion-grey-ttl {
+        padding-left: 22px;
+        padding-top: 10px;
+    }
+    .cross-sell-bg .cross-sell-ttl {
+        padding-left: 0px;
+    }
+    .cross-sell-bg .pad-top-50 {
+        padding-top: 0px;
+    }
+    .cross-sell-bg .plan-dropdown-menubox {
+        width: auto;
+    }
+    .cross-sell-bg .tooltip-btn {
+        padding-right: 0px;
+        padding: 0px;
+        line-height: 0.9;
+    }
+}
+
+@media (min-width: 320px) and (max-width:580px) {
+    .cross-sell-bg .tooltip-btn {
+        padding-right: 0px;
+        padding: 0px;
+        line-height: 0.9;
+    }
+    .cross-sell-bg .plan-dropdown-menubox {
+        width: auto;
+    }
+    .cross-sell-bg .eligible-panel-group-pad-btm {
+        margin-bottom: 10px;
+    }
+    .cross-sell-bg .check-box-width .protecting .checkmark:after {
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        left: 6px;
+    }
+    .cross-sell-bg .eligible-member-width {
+        width: auto;
+    }
+    .cross-sell-bg .eligible-mem-col-pad {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .cross-sell-bg .eligible-mem-col-pad-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .cross-sell-bg .eligible-mem-div .container-new {
+        font-size: 16px;
+        padding-bottom: 20.5px;
+    }
+    .cross-sell-bg .cross-sell-grey-box .panel {
+        margin-left: 0px;
+    }
+    .cross-sell-bg .cr-sell-box-grey-txt {
+        padding-bottom: 10px;
+        padding-left: 10.5px;
+        padding-right: 10.5px;
+    }
+    .cross-sell-bg .premium-pad-top {
+        padding-top: 0px;
+    }
+    .cross-sell-bg .cross-sell-gry-box-ttl-bg {
+        height: auto;
+    }
+    .cross-sell-bg .cr-sell-txt-pad {
+        padding: 5px 0px;
+    }
+    .cross-sell-bg .cr-sell-box-ttl {
+        font-size: 18px;
+    }
+    .cross-sell-bg .check-box-width .checkmark {
+        width: 20px;
+        height: 20px;
+    }
+    .cross-sell-bg .check-box-img {
+        width: 42px;
+    }
+    .cross-sell-bg .check-box-width {
+        width: 73px;
+        height: 73px;
+    }
+    .cross-sell-bg .mob-box-pad-l-r-0 {
+        padding-left: 30px;
+        padding-right: 15px;
+    }
+    .cross-sell-bg .cr-box-mar-left {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .cross-sell-bg .arrow-headingone [data-toggle="collapse"].collapsed:after,
+    .cross-sell-bg .arrow-headingone [data-toggle="collapse"]:after {
+        line-height: 2.5;
+    }
+    .cross-sell-bg .mob-accordion-pad-left {
+        padding-left: 6px;
+        padding-right: 0px;
+    }
+    .cross-sell-bg .accordion-grey-ttl {
+        padding-left: 22px;
+        padding-top: 10px;
+    }
+    .cross-sell-bg .cross-sell-ttl {
+        padding-left: 0px;
+    }
+}

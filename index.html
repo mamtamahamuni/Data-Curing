@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html ng-app="ABHI">
+
+<head>
+
+	<script>
+		if (window.location.href.indexOf("paymentProcess") != -1) { var pDData = JSON.parse(sessionStorage.getItem("responseData")); window.dataLayer = window.dataLayer || []; if (pDData.GtagObject.length) { var allProducts = []; for (var i = 0; i < pDData.GtagObject.length; i++) { allProducts.push(pDData.GtagObject[i].transactionProducts[0]); } dataLayer.push({ transactionId: pDData.GtagObject[0].transactionId, transactionAffiliation: pDData.GtagObject[0].transactionAffiliation, transactionTotal: pDData.GtagObject[0].transactionTotal, transactionTax: pDData.GtagObject[0].transactionTax, transactionShipping: pDData.GtagObject[0].transactionShipping, transactionProducts: allProducts }) } else { dataLayer.push({ transactionId: pDData.GtagObject.transactionId, transactionAffiliation: pDData.GtagObject.transactionAffiliation, transactionTotal: pDData.GtagObject.transactionTotal, transactionTax: pDData.GtagObject.transactionTax, transactionShipping: pDData.GtagObject.transactionShipping, transactionProducts: pDData.GtagObject.transactionProducts }) } }
+	</script>
+	<script>
+		if (window.location.href.indexOf("renewPaymentProcess") != -1) { var pDData = JSON.parse(sessionStorage.getItem("responseData")); window.dataLayer = window.dataLayer || []; if (pDData.GtagObject.length) { var allProducts = []; for (var i = 0; i < pDData.GtagObject.length; i++) { allProducts.push(pDData.GtagObject[i].transactionProducts[0]); } window.dataLayer.push({ transactionId: pDData.GtagObject[0].transactionId, transactionAffiliation: pDData.GtagObject[0].transactionAffiliation, transactionTotal: pDData.GtagObject[0].transactionTotal, transactionTax: pDData.GtagObject[0].transactionTax, transactionShipping: pDData.GtagObject[0].transactionShipping, transactionProducts: allProducts, businessType: 'renewal business' }) } else { window.dataLayer.push({ transactionId: pDData.GtagObject.transactionId, transactionAffiliation: pDData.GtagObject.transactionAffiliation, transactionTotal: pDData.GtagObject.transactionTotal, transactionTax: pDData.GtagObject.transactionTax, transactionShipping: pDData.GtagObject.transactionShipping, transactionProducts: pDData.GtagObject.transactionProducts, businessType: 'renewal business' }) } }
+	</script>
+	<!-- Commented on 28 March 2022 -- 
+		script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PHJDHFB');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PCGF393');</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87053058-4"></script>
+    <script>
+    	function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date);var pName,lId,wHref=window.location.href,gtagWithLead=!1;function leadParams(){var e=wHref.split("?")[1].split("&");return null!=wHref.match("leadId")?e[1].split("=")[1]:e[0].split("=")[1]}null!=wHref.match("portalLeadId")&&(null!=wHref.match("activ-health-pre-quote")?(pName="Activ Health",gtagWithLead=!0,lId=leadParams()):null!=wHref.match("activ-assure-pre-quote")?(pName="Activ Assure",gtagWithLead=!0,lId=leadParams()):null!=wHref.match("activ-secure-personal-accident-pre-quote")?(pName="Activ Secure Personal Accident",gtagWithLead=!0,lId=leadParams()):null!=wHref.match("activ-secure-critical-illness-pre-quote")?(pName="Activ Secure Critical Illness",gtagWithLead=!0,lId=leadParams()):null!=wHref.match("activ-secure-cancer-secure-pre-quote")&&(pName="Activ Secure Cancer Secure",gtagWithLead=!0,lId=leadParams())),sessionStorage.getItem("rid")&&(pName=sessionStorage.getItem("pName"),lId=sessionStorage.getItem("leadId"),gtagWithLead=!0),gtagWithLead?gtag("config","UA-87053058-4",{page_path:window.location.pathname+window.location.hash,crm_leadid:lId,crm_proposerid:pName,crm_product:sessionStorage.getItem("pName"),custom_map:{dimension1:"clientId",dimension3:"crm_leadid",dimension4:"crm_proposerid",dimension5:"crm_product"}}):gtag("config","UA-87053058-4",{page_path:window.location.pathname+window.location.hash,optimize_id:"GTM-WH37F9G",custom_map:{dimension1:"clientId"}});
+	</script-->
+	
+	<!-- Added on 28 March 2022 -->
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PBFJZFC');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-B8M00DW3HN"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-B8M00DW3HN');
+	</script>
+
+	<script type="text/javascript">
+		if (window.location.pathname == '/healthinsurance/abhi-buy-online/') { 
+			window.location.href = window.location.protocol + "//www.adityabirlacapital.com/healthinsurance/buy-insurance-online/" + window.location.hash; 
+		}
+	</script>
+	<script type="text/javascript">
+		if (!window._sokClient) {
+			(function () {
+				var a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+				a.src = ('https:' == document.location.protocol ? 'https://' : 'http://cdn.') + 'chuknu.sokrati.com/20307/tracker.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(a, s);
+			})();
+		}
+		var appno = 'L';
+		var cid = 55;
+		var pid = 2;
+		var m3_u = (location.protocol === 'https:' ? 'https:' : 'http:') + '//www.invincibleiq.com/details/bck';
+		var m3_r = Math.floor(Math.random() * 99999999999);
+		var sNew = document.createElement('script');
+		var m3_url = m3_u + '/cid:' + cid + '/pid:' + pid + '/aid:3' + '/cb:' + m3_r + '/appno:' + appno + (document.charset ? '/charset:' + document.charset : (document.characterSet ? '/charset:' + document.characterSet : ''));
+		sNew.src = m3_url;
+
+		var s0 = document.getElementsByTagName('script')[0];
+		s0.parentNode.insertBefore(sNew, s0);
+	</script>
+	<title ng-bind="pageTitle"></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="preload" href="assets/css/all.css?v=040520231530" as="style">
+	<link rel="preload" href="assets/js/all.js?v=040520231530" as="script">
+	<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="theme-color" content="#c7222a">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<meta name="keywords"
+		content="buy health insurance online, buy health insurance, health insurance, aditya birla capital health insurance online, aditya birla capital health insurance">
+	<meta name="description"
+		content="Aditya Birla Capital Health Insurance offers comprehensive individual & family floater health insurance plans to protect you & your family from various medical expenses arising due to illness or accidents.">
+	<!-- <base href="/"> -->
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-16x16-new.ico">
+	<link rel="stylesheet" type="text/css" href="assets/css/all.css?v=040520231530">
+	<!-- <script type="text/javascript" src="//cdn25.lemnisk.co/ssp/st/6033.js" ></script>  -->
+
+	<!-- Start Lemnisk -->
+	<script type="text/javascript">
+		window.lmSMTObj = window.lmSMTObj || [];
+		var methods = [
+			"init",
+			"page",
+			"track",
+			"identify"
+		]
+		for (var i = 0; i < methods.length; i++) {
+			lmSMTObj[methods[i]] = function (methodName) {
+				return function () {
+					lmSMTObj.push([methodName].concat(Array.prototype.slice.call(arguments)));
+				};
+			}(methods[i]);
+
+		}
+		lmSMTObj.init("9EbJ0IIVWteMSFno");
+
+		var a = document.createElement("script");
+		a.type = "text/javascript";
+		a.async = !0;
+		a.src = "//cdn25.lemnisk.co/ssp/st/6184.js";
+		var b = document.getElementsByTagName("script")[0];
+		b.parentNode.insertBefore(a, b);
+	</script>
+	<!-- End Lemnisk -->
+
+	<!-- Start Microsoft Clarity tool added on 30-12-2021  -->
+	<script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+		})(window, document, "clarity", "script", "7yds71vq3e");
+	</script>
+	<!-- End Microsoft Clarity tool added on 30-12-2021  -->
+
+	<!-- CleverTap -->
+	<link rel="manifest" href="assets/manifest.json">
+	<!-- End CleverTap-->
+</head>
+
+<body ng-class="{'ios': iOS}" ng-keydown="keydownEvent($event)" ng-keyup="keyupEvent($event)">
+	<!-- Added on 28 March 2022 -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBFJZFC"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCGF393" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHJDHFB" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<style> 
+        .marquee {
+            line-height: 1.2;
+        }
+        .marquee {
+            width: 100%;
+            padding: 3px 0;
+            background-color: #f7A500;;
+            color: #000;
+            font-size: 16px;
+        }
+        </style>
+        <div class="marquee" scrollamount="4"><marquee>From 1-Jan-23, IRDAI has made Customer KYC verification mandatory for all Insurers. For your ease Aditya Birla Health Insurance will assist you in instant digital KYC verification.</marquee></div> 
+	<div ng-include="'partials/header.html'" ng-hide="showhiliheader"></div>
+	<div ng-view></div>
+	<div class="abhi-loader" ng-class="{'show-loader': showLoader}"><img src="assets/images/abhi_loader.gif"></div>
+	<div class="abhi-loader" ng-class="{'show-loader': showLoader1}"><img src="assets/images/abhi_loader.gif"></div>
+	<div class="abhi-loader white-loader" ng-class="{'show-loader': showWhiteLoader}"><img
+			src="assets/images/abhi_loader.gif"></div>
+	<script defer type="text/javascript" src="assets/js/FileSaver.min.js"></script>
+	<script type="text/javascript" src="assets/js/all.js?v=040520231530"></script>
+	<script type="text/javascript" src="assets/app.js?v=040520231530"></script>
+	<!--Lemnisk feedback from css and js-->
+	<link rel="stylesheet" href="assets/css/li-web-v2.2.css">
+	<script type="text/javascript" src="assets/js/li-web-v2.2.js"></script>
+	<script>
+    //for localhost uncomment below staging url
+    //var feedbackRequestURL = 'https://staging.litmusworld.com/rateus/api/feedbackrequests/generate_customer_feedback_url';
+    
+    //for deployment comment above url and uncomment staging url
+   var feedbackRequestURL = 'https://app-india.litmusworld.com/rateus/api/feedbackrequests/generate_customer_feedback_url';
+    
+  </script>
+	<script defer="" src="assets/js/custom.js"></script>
+	<!--Lemnisk feedback from css and js-->
+
+	<!-- Clevertap start -->
+	<script type="text/javascript">
+    var isCTtouched = sessionStorage.getItem('isCTtouched');
+	if(isCTtouched == null){
+		var clevertap = {event:[], profile:[], account:[], region:'in1', onUserLogin:[], notifications:[], privacy:[]};
+		// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+		clevertap.account.push({"id": "TEST-7KK-WK4-695Z"});
+		clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+		clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+		(function () {
+				var wzrk = document.createElement('script');
+				wzrk.type = 'text/javascript';
+				wzrk.async = true; 
+				wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.appendChild(wzrk, s);
+		})();
+		clevertap.spa = true;
+	
+		setTimeout(function(){
+			let cancelButton = document.getElementById("wzrk-cancel");
+			let signupButton = document.getElementById("wzrk-confirm");
+			if(cancelButton != null)
+			{
+				cancelButton.addEventListener("click", function() {
+					sessionStorage.setItem('isCTtouched', 'CT-Cancel');
+				});
+			}
+			if(signupButton != null)
+			{
+				signupButton.addEventListener("click", function() {
+					sessionStorage.setItem('isCTtouched', 'CT-Signup');
+				});
+			}
+		}, 5000);
+	}
+	</script>
+	<!-- Clevertap ends -->
+
+	<alertcontainer alertData="alertData"></alertcontainer>
+	<div class="alert-swipe" id="alert" ng-class="{'success': showAlert.type == 'S','error': showAlert.type == 'E'}">
+		<div class="alert-swipe-container">
+			<div class="col-md-12 col-sm-12 col-xs-12 alert-pad-l-r-0 alert-border">
+				<div class="alert-img-bg">
+					<img class="alert-swipte-left-img alert-img" src="assets/images/set-filter.png">
+					<img class="alert-swipte-left-img alert-error-img" src="assets/images/alert-error.png">
+				</div>
+				<div class="alert-text-display">
+					<a href="javascript:void(0);" data-dismiss="modal">
+						<img class="alert-close-img yellow-close-img" src="assets/images/yellow-close.png"
+							ng-click="alertClose()">
+						<img class="alert-close-img red-close-img" src="assets/images/red-close.png"
+							ng-click="alertClose()">
+					</a>
+					<div class="member-success-text red blue" ng-bind-html="showAlert.message | trustAsHTML">
+						{{showAlert.message}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="send-sms-btn" ng-click="sendSMS()" ng-if="sendSmsBtn"><i class="fa fa-paper-plane"
+			aria-hidden="true"></i> <span>Send SMS</span></button>
+	<style type="text/css" rel="stylesheet">
+		.how-help,
+		.ng-cloak,
+		[ng-cloak],
+		[ng\:cloak] {
+			display: none
+		}
+
+		.jcs-indicator {
+			width: 16px !important;
+			height: 16px !important
+		}
+
+		#message-list-region #messages-list {
+			min-height: 92% !important;
+			display: none;
+		}
+
+		.acs {
+			height: 125px !important
+		}
+
+		.iframe-class {
+			width: 100%;
+			height: 100%;
+			overflow: auto
+		}
+
+		.config-show {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0, 0, 0, .5);
+			z-index: 999
+		}
+
+		.content-div {
+			position: relative;
+			top: 25%;
+			left: 0;
+			height: 50%;
+			width: 100%;
+			color: #fff;
+			text-align: center
+		}
+
+		.avm-blue .cls_sub_header {
+			top: 90px !important;
+			position: absolute !important;
+		}
+
+		.avaamo__chat__widget {
+			position: fixed;
+			bottom: 50px;
+			right: 5px;
+			z-index: 999999
+		}
+
+		.avaamo__popup {
+			bottom: 35px !important;
+			height: calc(93%) !important;
+			overflow: initial !important;
+			box-shadow: rgb(186, 186, 186) 0px 4px 8px 0px, rgb(136, 136, 136) 0px 6px 20px 0px !important;
+		}
+
+		.avaamo__icon {
+			width: 90px !important;
+			height: 90px !important;
+			bottom: 0 !important;
+			right: 16px !important;
+			padding: 0 !important;
+			background-image: url(assets/images/chatbot/basic.svg) !important
+		}
+
+		.avm-blue .minimizeState {
+			width: 190px !important;
+			height: 56px !important;
+			bottom: 20px !important;
+			right: 26px !important
+		}
+
+		.how-help {
+			position: fixed;
+			bottom: 140px;
+			right: 26px;
+			z-index: 9998;
+		}
+
+		.how-help .help-img {
+			transform: rotateX(-180deg);
+			width: 230px
+		}
+
+		.how-help .need-help {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #fff;
+			left: 22px;
+			padding: 0 10px
+		}
+
+		.how-help .need-help p {
+			margin: 0;
+			line-height: 1;
+			font-size: 16px;
+			letter-spacing: .5px;
+			text-align: justify;
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal
+		}
+
+		.avm-blue .minimize__btn {
+			width: 21px !important;
+			height: 19px !important;
+		}
+
+		.avaamo__popup .avaamo_popup__close {
+			width: 21px !important;
+			height: 19px !important
+		}
+
+		.how-help a {
+			display: inline-block;
+			position: absolute;
+			top: 19px;
+			right: 9px;
+			color: #fff;
+		}
+
+		.avaamo__icon-close-icon.animated.avmIconOut {
+			position: absolute;
+			top: 15px;
+			right: 5px;
+		}
+
+		@media(max-width:768px) {
+			.avaamo__chat__widget {
+				right: -2px;
+			}
+
+			.how-help {
+				right: 20px;
+			}
+		}
+
+		@media(max-width:767px) {
+			.avaamo__popup {
+				height: 100% !important;
+				bottom: 0 !important;
+			}
+		}
+	</style>
+
+	<div id="helptobuy" ng-cloak ng-controller="help-to-buy" ng-hide="citipresent">
+		<div class="help-us-online">
+			<div class="shadow_bg"></div>
+			<div class="shadow helpusslide" ng-if="showMail">
+				<div class="buytextbox">
+					<p class="helpheading helptxt" ng-bind-html="headerTextCall">
+					</p>
+					<div class="click-to-call">
+						<a href="javascript:void(0)" ng-click="closeBox()">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+					</div>
+					<form name="help_form" id="callUsForm" ng-class="{'form-error':showErrors}">
+						<div class="textbox leadformh">
+							<input class="helpinputbox help-email-icon" name="txtHelpName" id="txtHelpName"
+								ng-model="auth.FIRSTNAME" placeholder="Name" valid-name>
+
+						</div>
+						<div class="textbox leadformh">
+							<input class="helpinputbox help-mob-icon" name="txtHelpMobile" placeholder="Mobile Number"
+								valid-number maxlength="10" ng-model="auth.MOBILE" required minlength="10"
+								ng-pattern="/^[6789]\d{9}$/">
+							<span class="error-help-txt errorPhone"
+								ng-if="help_form.txtHelpMobile.$error.required">Please enter mobile no</span>
+							<span class="error-help-txt errorValidP"
+								ng-if="(!help_form.txtHelpMobile.$error.minlength && help_form.txtHelpMobile.$error.pattern) || help_form.txtHelpMobile.showError">Please
+								enter a valid mobile no.</span>
+							<span class="error-help-txt errorValidP"
+								ng-if="help_form.txtHelpMobile.$error.minlength">Please enter atleast 10 digits !</span>
+						</div>
+						<!-- <div class="textbox leadformh">
+								<select class="helpinputbox" ng-model="auth.CITY" name="txtHelpCity" required>
+									<option value="">City</option>
+									<option value="Mumbai">Mumbai</option>
+									<option value="Delhi">Delhi</option>
+									<option value="Hyderabad">Hyderabad</option>
+									<option value="Chennai">Chennai</option>
+									<option value="Kolkata">Kolkata</option>
+									<option value="Bangalore">Bangalore</option>
+									<option value="Pune">Pune</option>
+									<option value="Ahmedabad">Ahmedabad</option>
+									<option value="Chandigarh">Chandigarh</option>
+									<option value="Kochi">Kochi</option>
+									<option value="Kanpur">Kanpur</option>
+									<option value="Lucknow">Lucknow</option>
+									<option value="Indore">Indore</option>
+									<option value="Patna">Patna</option>
+									<option value="Bhopal">Bhopal</option>
+									<option value="Amritsar">Amritsar</option>
+									<option value="Shimla">Shimla</option>
+									<option value="Raipur">Raipur</option>
+									<option value="Allahabad">Allahabad</option>
+									<option value="Gandhinagar">Gandhinagar</option>
+									<option value="Ranchi">Ranchi</option>
+									<option value="Dehradun">Dehradun</option>
+									<option value="Cuttak">Cuttak</option>
+									<option value="Jamshedpur">Jamshedpur</option>
+									<option value="Gurugram">Gurugram</option>
+								</select>
+								<span class="error-help-txt errorEmail" ng-if="help_form.txtHelpCity.$error.required">Please select city</span>
+							</div> -->
+						<!-- <div class="textbox leadformh" ng-if="auth.CITY == 'Mumbai' || auth.CITY == 'Delhi' || auth.CITY == 'Hyderabad'">
+								<p style="font-size:13px">Preferred Call time to book an appointment</p>
+								<select class="helpinputbox" ng-model="auth.PREFERREDCONTACTIBLETIME" name="txtHelpPct" required>
+									<option value="">Preferred Contactible Time</option>
+									<option value="8 AM-10 AM">8 AM-10 AM</option>
+									<option value="10 AM-12 PM">10 AM-12 PM</option>
+									<option value="12 PM-2 PM">12 PM-2 PM</option>
+									<option value="2 PM-4 PM">2 PM-4 PM</option>
+									<option value="4 PM-6 PM">4 PM-6 PM</option>
+									<option value="6 PM-8 PM">6 PM-8 PM</option>
+								</select>
+								<span class="error-help-txt errorEmail" ng-if="help_form.txtHelpPct.$error.required">Please select Preferred Contactible Time</span>
+							</div> -->
+						<div class="textbox leadformh">
+							<div class="floatcheck">
+								<span class="error-help-txt errorTick" style="display:none">*</span>
+								<input type="checkbox" class="helpcheckbox" ng-model="chkAuth" name="txtHelpCheck"
+									id="txtHelpCheck" disabled="true">
+							</div>
+							<p class="desctxt">I authorize ABHICL and associate partners to contact me through me
+								email/call/SMS. This will override registry on the DNCR</p>
+						</div>
+						<div class="textbox sub-buttons text-center" style="min-height:auto">
+							<!-- <button type="button" class="cp-common-btn" name="txtSubmit" id="txtSubmit" ng-click="btnHelpBuy(auth,help_form.$invalid,'book')" ng-if="auth.CITY == 'Mumbai' || auth.CITY == 'Delhi' || auth.CITY == 'Hyderabad'">Book an Appointment</button> -->
+							<button type="button" class="cp-common-btn" name="txtSubmit" id="txtSubmit"
+								ng-click="btnHelpBuy(auth,help_form.$invalid,'request' , 'request-a-callback') ">Request
+								a Callback</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="shadow helpusslide" ng-if="showCall">
+				<div class="buytextbox">
+					<p class="helpheading helptxt" ng-bind-html="headerTextCall">
+					</p>
+					<div class="click-to-call">
+						<a href="javascript:void(0)" ng-click="closeBox()">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+					</div>
+					<form name="call_form" id="callUsForm" ng-class="{'form-error':showErrors}">
+						<div class="textbox leadformh">
+							<input class="helpinputbox help-email-icon" name="name" ng-model="authmob.FIRSTNAME"
+								placeholder="Name" valid-name>
+							<span class="error-help-txt errorEmail" ng-if="call_form.name.$error.required">Please enter
+								name</span>
+						</div>
+						<div class="textbox leadformh">
+							<input class="helpinputbox help-mob-icon" name="phone" placeholder="Mobile Number"
+								valid-number maxlength="10" ng-model="authmob.MOBILE" required minlength="10"
+								ng-pattern="/^[6789]\d{9}$/">
+							<span class="error-help-txt errorPhone" ng-if="call_form.phone.$error.required">Please enter
+								mobile no</span>
+							<span class="error-help-txt errorValidP"
+								ng-if="(!call_form.phone.$error.minlength && call_form.phone.$error.pattern) || call_form.phone.showError">Please
+								enter a valid mobile no.</span>
+							<span class="error-help-txt errorValidP" ng-if="call_form.phone.$error.minlength">Please
+								enter atleast 10 digits !</span>
+						</div>
+						<input type="hidden" name="key" value="s8KJBUKVV7rC6hun3+Ys3w==">
+						<input type="hidden" name="id" value="889">
+						<input type="hidden" name="ipaddress">
+						<input type="hidden" name="location">
+						<div class="textbox leadformh">
+							<div class="floatcheck">
+								<span class="error-help-txt errorTick" style="display:none">*</span>
+								<input type="checkbox" class="helpcheckbox" ng-model="chkAuth" name="txtHelpCheck"
+									id="txtHelpCheck" disabled="true">
+							</div>
+							<p class="desctxt">I authorize ABHICL and associate partners to contact me through me
+								email/call/SMS. This will override registry on the DNCR</p>
+						</div>
+						<div class="textbox leadformh textparaStyle">
+							<p>You will get a call immediately from us connecting our agent.</p>
+						</div>
+						<div class="textbox sub-buttons text-center" style="min-height:auto">
+							<button type="button" class="cp-common-btn" name="txtSubmit" id="txtSubmit"
+								ng-click="btnHelpBuy(authmob,call_form.$invalid,'call' ,'click-to-call')">Click to
+								Call</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div ng-click="gotoPageGAParam('click-icon' , 'enquire-now_icon')" class="helpus">
+				<img src="assets/images/help-us-icon.png" class="help-icon">
+			</div>
+		</div>
+		<style>
+			.help-us-online {
+				position: relative
+			}
+
+			.helpusslide {
+				height: auto;
+				margin-bottom: auto;
+				right: 10px
+			}
+
+			.leadformh {
+				margin-bottom: 0 !important
+			}
+		</style>
+	</div>
+	<!-- Updated on 14-01-2022 -->
+	<script type="text/javascript"
+		src="https://adityabirlacapital.allincall.in/static/EasyAssistApp/js/easy-assist-v6.js?key=9636857a-f9ac-40b4-b56d-f8221b9cdbd2"></script>
+	<!-- CleverTap -->
+	<!-- <script defer="" src='https://s3-eu-west-1.amazonaws.com/static.wizrocket.com/js/sw_webpush.js'></script> -->
+	<!-- <script>
+		var headers = new Headers();
+		headers.append('Service-Worker-Allowed', '/');
+		
+		if ('serviceWorker' in navigator) {
+			console.log('Start trying Registrating Scope');
+			navigator.serviceWorker.register('assets/js/sw_webpush.js', {scope: 'assets/js/'})
+			.then(function(reg) {		
+				// registration worked		
+				console.log('Registration succeeded. Scope is ' + reg.scope);
+			})		
+			.catch(function(error) {
+				// registration failed
+				console.log('Registration failed with ' + error);
+			});		
+			console.log('End trying Registrating Scope');
+		}
+
+		(function(p,u,s,h,x){p.pushpad=p.pushpad||function(){(p.pushpad.q=p.pushpad.q||[]).push(arguments)};h=u.getElementsByTagName('head')[0];x=u.createElement('script');x.async=1;x.src=s;h.appendChild(x);})(window,document,'assets/js/sw_webpush.js');
+		pushpad('init', 'TEST-7KK-WK4-695Z', { serviceWorkerPath: null });
+		pushpad('widget');
+	</script> -->
+	<script src="assets/clevertap_sw.js"></script>
+	<script src="assets/notification_prompt.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1868 @@
+/** 
+    VIL Raise Page Styles
+    Author: Pandurang Sarje
+	Date: 12-05-2021
+**/
+
+body {
+    background-color: #f1f3f6;
+}
+
+.requiredFieldStyle {
+    color: red
+}
+
+.cont-pad {
+    padding-top: 21.5px !important;
+    padding: 0px 50px;
+}
+
+.main-header-text1 {
+    height: 30px;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 30px;
+    text-align: left;
+    color: #000000;
+}
+
+.dis-in {
+    display: inline-block;
+}
+
+/* mail tip CSS */
+
+ul.mailtip {
+    zoom: 1;
+    /* for IE6 IE7 clear float */
+    background-color: #fff;
+    list-style: none;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    text-align: left;
+    font: italic 13px/1.5 Consolas, "Liberation Mono", Menlo, Courier, monospace, sans-serif;
+}
+
+ul.mailtip:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.mailtip li p {
+    height: 28px;
+    text-align: inherit;
+    line-height: 28px;
+    cursor: pointer;
+    margin: 0 9px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+ul.mailtip li.active {
+    color: #c7222a;
+    background: #eaeaea;
+}
+
+ul.mailtip li.hover {
+    background: #e7f6ff;
+}
+
+
+/* mail tip css ends */
+.redColorClass {
+    color: #c7222a;
+
+}
+
+
+.pancardtensform {
+    text-transform: uppercase;
+}
+
+.pad-btm-25 {
+    padding-bottom: 25.5px;
+}
+
+.dropdown-menu {
+    min-width: 100%;
+    width: 100%;
+}
+
+.btn.dropdown-toggle.focus {
+    outline: none;
+}
+
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:focus,
+.btn.dropdown-toggle:active,
+.btn.dropdown-toggle:visited {
+    outline: none;
+}
+
+.dropdown-toggle.brand-dropdown .caret {
+    float: right;
+    margin-top: 8px;
+    color: #C7222A;
+}
+
+.brand-dropdown {
+    width: 100%;
+}
+
+.breadcrumb-cust li a {
+    -webkit-user-drag: none;
+}
+
+.brand-dropdown.grey {
+    font-family: PF-Handbook-Pro-Regular;
+    border: 1px solid #cecece;
+    text-align: left;
+    font-size: 14px;
+    background-color: #ffffff;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 17px;
+}
+
+.btn-drop-down-width {
+    width: 100%;
+    text-align: left;
+    height: 44px;
+}
+
+.btn-default:active,
+.btn-default:hover {
+    color: #fff;
+    background-color: #fff;
+    border-color: #6c7174;
+}
+
+.btn-drop-down-width:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    background-color: #ffffff;
+    border: solid 1px #6c7174;
+}
+
+.btn-default:active:focus,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default:hover,
+.open>.dropdown-toggle.btn-default:focus {
+    background-color: #ffffff;
+}
+
+.dropdown-placeholder-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn.dropdown-toggle:focus {
+    outline: none !important;
+}
+
+input:checked+.slider {
+    background-color: #f85e66;
+}
+
+input:checked+.slider:before {
+    background-color: #c7222a;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+.input-text-box {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    height: 44px;
+    border-radius: 4px !important;
+    background-color: #ffffff;
+    border: solid 1px #cdcece;
+    color: #000000;
+    box-shadow: none;
+}
+
+.input-text-box:focus {
+    box-shadow: 0 0 6px 0 #cdcece;
+    border: solid 1px #6c7174;
+}
+
+.placeholder-searchtext {
+    border: solid 1px #cdcece;
+    color: #000000;
+    box-shadow: none;
+    border-left: 0px !important;
+    padding-left: 0px;
+}
+
+.input-group .input-text-box:focus {
+    border: solid 1px #cdcece;
+    box-shadow: none;
+}
+
+input[type='checkbox'] {
+    margin-left: -18px !important;
+    width: px;
+    height: 12px;
+}
+
+input[type=checkbox]:checked+label {
+    color: #c7222a;
+}
+
+input[type=checkbox] {
+    border: 0px;
+    width: 15%;
+    margin-left: -30px !important;
+    height: 2em;
+    font-size: 20px;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+input[type='checkbox']:checked {
+    border-color: #c7222a;
+}
+
+input[type='checkbox']:focus {
+    outline: none;
+}
+
+input[type='checkbox']:before {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 60%;
+    margin: 20% auto;
+    border-radius: 50%;
+}
+
+input[type='checkbox']:checked:before {
+    background: #d9534f !important;
+    width: 68%;
+    height: 68%;
+    margin-left: 2.999999999px;
+    margin-top: 2.8px;
+}
+
+.btn.qq-save-btn {
+    height: 40px;
+    border-radius: 2px;
+    font-size: 16px;
+    letter-spacing: .2px;
+    text-align: left;
+}
+
+.btn.qq-save-btn {
+    font-family: PF-Handbook-Pro-Regular;
+    color: #fff;
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12);
+    background-color: #694743;
+    border: transparent;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+    margin-bottom: 20px;
+}
+
+.btn.qq-save-btn:focus,
+.btn.qq-save-btn:hover {
+    outline: none;
+    color: #fff;
+    background-color: #694743;
+}
+
+.btn.qq-save-btn img {
+    float: right;
+    height: 50%;
+    position: relative;
+    top: 4px;
+}
+
+.label-text-gst {
+
+    opacity: 1 !important;
+}
+
+.name-text-width .input-group {
+    width: 100%;
+}
+
+.name-text-width .input-text-box {
+    min-width: 100%;
+}
+
+.pad-l-r-5 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.pad-r-5 {
+    padding-right: 5px;
+}
+
+.name-txt-padding {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.dob-text-width .input-group {
+    width: 25% !important;
+}
+
+.dob-text-width .input-text-box {
+    min-width: auto !important;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+
+.annual-income-rs-sym-txt {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #666666;
+    background-color: #ffffff;
+}
+
+.pad-btm-50 {
+    padding-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+    .main-header-text1 {
+        font-size: 21px;
+    }
+}
+
+.assigene-details .question-sec {
+    font-size: 20px;
+    opacity: 1;
+}
+
+
+/* New toggle button*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 15.5px;
+    vertical-align: text-bottom;
+    margin-bottom: -8px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    display: none;
+}
+
+
+/* Yes-No btn styling */
+
+.yes-no-btn {
+    border: 1px solid #6a4742;
+    padding: 3px 30px;
+    border-radius: 2px 0 0 2px;
+}
+
+.yes-no-btn.selected {
+    background: #6a4742;
+}
+
+.yes-no-btn.selected .yes-no-btn-txt {
+    color: #fff;
+}
+
+.yes-no-btn.no-answer {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+
+.yes-no-btn.yes-answer {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.yes-no-btn .yes-no-btn-txt {
+    color: #6a4742;
+    font-family: PF-Handbook-Pro-Regular;
+    letter-spacing: .2px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.yes-no-float {
+    float: right;
+}
+
+.assignee-text {
+    padding-top: 10px;
+    padding-left: 0px;
+}
+
+/* end of Yes No Btn styling */
+
+
+
+
+
+/*********Tab Structure**********/
+
+.wizard {
+    background: #fff;
+}
+
+.nav-tabs>li>a {
+    margin-right: 0px;
+    border: 0px !important;
+}
+
+.wizard .nav-tabs {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 0;
+    border-bottom: 0px;
+}
+
+.nav>li>a:hover {
+    background-color: transparent !important;
+    transition: none !important;
+    border: none;
+}
+
+.nav-tabs>li>a:hover {
+    border: none !important;
+    transition: none !important;
+}
+
+.wizard>div.wizard-inner {
+    position: relative;
+    background-color: #f1f3f6;
+}
+
+.wizard .nav-tabs>li.active>a,
+.wizard .nav-tabs>li.active>a:hover,
+.wizard .nav-tabs>li.active>a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+    background-color: #f1f3f6;
+}
+
+.wizard .nav-tabs>li {
+    width: 25%;
+}
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 10px;
+    background-color: #f1f3f6;
+}
+
+.tab-content {
+    background-color: #f1f3f6;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+.nav-tabs>li.active>a {
+    border: none;
+}
+
+.tab-pad-left {
+    padding-left: 100px;
+    padding-top: 17.5px;
+}
+
+.nav>li.disabled>a {
+    opacity: 0.3;
+}
+
+
+
+/*************Form Structure***************/
+
+.adhr-no .input-text-box {
+    min-width: 180px;
+}
+
+.dob-pad .pad-left-15 {
+    padding-left: 15px;
+}
+
+.form-background {
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.14);
+}
+
+.form-top-left-pad {
+    padding-top: 38px;
+    padding-left: 31.5px;
+    padding-right: 31.5px;
+}
+
+.form-heading {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 20.5px;
+    font-weight: bold;
+    text-align: left;
+    color: #585858;
+}
+
+.form-lbl {
+    opacity: 0.7;
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    padding-bottom: 5px;
+}
+
+.pad-r-0 {
+    padding-right: 0 !important;
+}
+
+.pad-l-r-0 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.btn-pad-l-r-0 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+form .errormsg {
+    display: none;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+form.form-errors .errormsg {
+    display: block;
+}
+
+.horizontal-pad {
+    padding-left: 31.5px;
+    padding-right: 31.5px;
+}
+
+.horizontal-width {
+    width: 100%;
+    border: solid 0.5px rgba(0, 0, 0, 0.12);
+    margin-top: 0px !important;
+}
+
+.select-cover-dropdown-txt {
+    font-family: PF-Handbook-Pro-Regular;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #000000;
+    float: left;
+}
+
+.insured-dob .pad-r-5 {
+    padding-right: 10px;
+}
+
+.pad-left-15 {
+    padding-left: 15px;
+    padding-right: 0px;
+}
+
+.pad-left-0 {
+    padding-left: 0px;
+}
+
+
+/**************Additional info tab***********/
+
+.pad-btm-30 {
+    padding-bottom: 30px;
+}
+
+.pad-btm-40 {
+    padding-bottom: 40px;
+}
+
+.pad-right-11 {
+    padding-right: 11px;
+}
+
+.pad-left-0 {
+    padding-left: 0px;
+}
+
+.btn-padding-top {
+    padding-top: 34px;
+}
+
+.btn-background-clr {
+    background-color: #f1f3f6;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.annual-income-input-txt .input-text-box {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.pin-code-pad-l {
+    padding-left: 0px;
+}
+
+
+/* #### Mobile Phones Portrait #### */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .adhr-no .input-text-box {
+        min-width: 143px;
+    }
+
+    .sm-desk-pad-l-15 {
+        padding-left: 15px !important;
+    }
+
+    .nav-tabs>li>a {
+        padding: 10px 13px;
+    }
+
+    .wizard .nav-tabs>li {
+        margin-right: 0px;
+    }
+
+    .tab-pad-left {
+        padding-left: 60px;
+    }
+
+    .form-lbl {
+        font-size: 13px;
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .date-tab-pad-l-0 {
+        padding-left: 0px !important;
+    }
+
+    .city-tab-pad-r-15 {
+        padding-right: 0px !important;
+    }
+
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .cont-pad {
+        padding: 0 21px;
+    }
+
+    .wizard .nav-tabs>li {
+        width: 25%;
+    }
+
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+
+    .wizard .tab-pane {
+        padding-top: 10px;
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+
+    .pad-l-r-0 {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+
+    .horizontal-pad {
+        padding-right: 31.5px;
+        padding-left: 31.5px;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .tab-pad-left {
+        padding-left: 70px;
+    }
+
+    .tab-pad-l-r-0 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .wizard .nav-tabs li a {
+        text-align: center;
+        margin-left: -50px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .input-text-box {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 335px) and (max-width:580px) {
+    .tab-pad-left {
+        padding-left: 20px !important;
+    }
+}
+
+@media (min-width: 581px) and (max-width:767px) {
+    .pad-btm-50 {
+        padding-bottom: 0px;
+    }
+
+    .adhr-no .input-text-box {
+        min-width: 100%;
+    }
+
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .btn.qq-save-btn {
+        font-size: 15px;
+    }
+
+    .prem-small-txt {
+        font-size: 20px;
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -17px;
+    }
+
+    .tooltip-top {
+        margin-left: 0px;
+    }
+
+    .pad-l-r-0 {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .horizontal-pad {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .form-top-left-pad {
+        padding-top: 22.5px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .wizard {
+        width: 100%;
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+
+    .cont-pad {
+        padding: 0px 0px;
+    }
+
+    .pad-btm-25 {
+        padding-bottom: 0px;
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+
+    .tab-pad-left {
+        padding-left: 45px;
+    }
+
+    .form-background {
+        padding-bottom: 40px;
+    }
+
+    .pre-pad {
+        padding-right: 18.5px;
+    }
+
+    .pad-r-5 {
+        padding-left: 5px;
+    }
+
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+
+    .btn.qq-save-btn {
+        font-size: 15px;
+    }
+
+    .textbox-bg-pad {
+        width: 100%;
+    }
+
+    .wizard .tab-pane {
+        padding-top: 0px;
+    }
+
+    .form-heading {
+        color: #818181;
+    }
+
+    .pad-right-11 {
+        padding-right: 15px;
+    }
+
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .pad-left-7 {
+        padding-left: 7.5px;
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+
+    /* Till Heere */
+    .any-claim-pad-btm {
+        padding-bottom: 20px;
+    }
+
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px;
+    }
+
+    .health-relative-add-more-top-pad {
+        margin-top: 15px;
+    }
+
+    .send-otp-btn {
+        float: right;
+    }
+
+    .otp-recv-btn {
+        float: right;
+    }
+
+    .pad-btm-25-mobile {
+        padding-bottom: 25px;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .form-heading {
+        font-size: 24px;
+    }
+
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px;
+    }
+
+    .health-pre-exist-pad-l-r {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px;
+    }
+
+    .health-pre-existing-txt {
+        padding-left: 10px;
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-left: 10px;
+    }
+
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px;
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px;
+    }
+
+    /*.grey-row-height {
+        height: 215px;
+    }*/
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0px;
+    }
+}
+
+@media(max-width: 585px) {
+    .wizard {
+        width: 100%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs>li a {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+
+    .wizard .nav-tabs>li {
+        margin-right: 0px;
+        width: 25%;
+    }
+
+    .form-lbl {
+        font-size: 12px;
+    }
+
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px;
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .form-top-left-pad {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .pad-top-18 {
+        padding-top: 18px;
+    }
+
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+
+    .cont-pad {
+        padding: 0px 0px;
+    }
+
+    /*.pad-btm-25 {
+        padding-bottom: 0px;
+    }*/
+}
+
+@media (min-width: 320px) and (max-width:580px) {
+    .pad-btm-50 {
+        padding-bottom: 0px;
+    }
+
+    #insured-member-details .nav-tabs>li.active>a,
+    #insured-member-details .nav-tabs>li.active>a:focus,
+    #insured-member-details .nav-tabs>li.active>a:hover {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-bottom: 0px;
+    }
+
+    .chronic-disease-blck-txt {
+        line-height: 1.2;
+        padding-bottom: 5px;
+    }
+
+    .health-pre-existing-txt {
+        padding-left: 10px;
+    }
+
+    .health-pre-exist-sml-txt {
+        padding-left: 10px;
+    }
+
+    .panel-body-top-btm {
+        padding-top: 6px;
+        padding-bottom: 32.5px;
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li.active>a,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:focus,
+    #health-lifestyle-member-details .nav-tabs>li.active>a:hover {
+        padding-bottom: 7px;
+    }
+
+    .grey-row-height {
+        bottom: -16px;
+        position: relative;
+    }
+
+    .health-pre-exist-pad-l-r {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .tracker-pad-l-top {
+        padding-left: 29px;
+        padding-top: 7px;
+    }
+
+    .popover {
+        top: -23.5px !important;
+    }
+
+    .mob-pad-l-r-5 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .annual-income-input-txt .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .sum-insured-txtbox-wid .input-text-box {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+    .annual-income-radius .input-text-box {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .checkbox-label {
+        font-size: 12px;
+    }
+
+    .checkbox {
+        margin-top: 0px;
+    }
+
+    .insured-member-form-top-left-pad {
+        padding-top: 24px;
+    }
+
+    .mob-pad-new-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .form-heading {
+        font-size: 24px;
+    }
+
+    .pad-btm-25-mobile {
+        padding-bottom: 25px;
+    }
+
+    .send-otp-btn {
+        float: right;
+    }
+
+    .otp-recv-btn {
+        float: right;
+        margin-top: 15px;
+    }
+
+    .health-relative-add-more-top-pad {
+        margin-top: 15px;
+    }
+
+    .any-claim-pad-btm {
+        padding-bottom: 20px;
+    }
+
+    .any-claim-bck-bdr-pad-mob {
+        padding-top: 30px;
+    }
+
+    .health-relative-padding {
+        padding: 0px 0px 10px 0px;
+    }
+
+    .declare-summary-text {
+        font-size: 12px;
+    }
+
+    .declare-summary-bold-text {
+        font-size: 12px;
+    }
+
+    .table-responsive {
+        border: none !important;
+    }
+
+    .earn-text-pad {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .item-block-number {
+        margin-right: 1px;
+    }
+
+    .select-box-width {
+        width: 180px !important;
+    }
+
+    .summary-pad-btm-50 {
+        padding-bottom: 0px;
+        padding-top: 0px !important;
+    }
+
+    .dob-pad .pad-left-15 {
+        padding-left: 0px;
+    }
+
+    #additional-info-details .form-background {
+        padding-bottom: 0px;
+    }
+
+    .health-father-form-txt-hd {
+        font-size: 14px;
+    }
+
+    .pad-btm-87 {
+        padding-bottom: 40px;
+    }
+
+    #health-lifestyle-member-details .form-background {
+        padding-bottom: 0px;
+    }
+
+    .health-remove-btn {
+        float: left;
+    }
+
+    .health-add-btn {
+        float: right;
+    }
+
+    .health-disease-glyphicon .glyphicon.glyphicon-chevron-down {
+        top: -14px;
+    }
+
+    .health-disease-dropdown {
+        /* padding-top: 0px;
+        padding-bottom: 0px;*/
+        padding-left: 0px;
+        padding-right: 6px;
+    }
+
+    #insured-member-details .nav-tabs>li {
+        margin-right: 0px;
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li {
+        margin-right: 0px;
+    }
+
+    .name-txt-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .pad-left-7 {
+        padding-left: 7.5px;
+    }
+
+    .pad-right-11 {
+        padding-right: 15px;
+    }
+
+    #gender-modal .select-cover-dropdown-txt {
+        color: #515151;
+    }
+
+    .input-text-box {
+        border-radius: 4px !important;
+    }
+
+    .form-heading {
+        color: #818181;
+    }
+
+    .pad-left-0 {
+        padding-left: 15px;
+    }
+
+    .imp-mob-pad-l-r-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .wizard .tab-pane {
+        padding-top: 0px;
+    }
+
+    .summary-product-btm-15 {
+        padding-bottom: 15px;
+    }
+
+    .declr-summary-btn {
+        width: 135px;
+    }
+
+    .pad-top-58 {
+        padding-top: 0px;
+    }
+
+    .decl-summ-pad-bottom {
+        padding-bottom: 0px;
+    }
+
+    .pad-top-39 {
+        padding-top: 20.5px;
+    }
+
+    .send-otp-btn {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .textbox-bg-pad {
+        width: 100%;
+        /*margin-top: 20px;*/
+    }
+
+    .btn.qq-save-btn {
+        font-size: 13px;
+    }
+
+    .add-another-btn-large {
+        padding: 9px 15px;
+    }
+
+    .add-another-btn-large-txt {
+        font-size: 15.5px;
+    }
+
+    .remove-btn-large {
+        padding: 10px 26px;
+    }
+
+    .add-info-text textarea {
+        margin-bottom: 42px;
+    }
+
+    .any-claim-section .pad-btm-80 {
+        padding-bottom: 20px;
+    }
+
+    .health-father-form-txt-hd {
+        padding-bottom: 26px !important;
+    }
+
+    .pad-btm-40 {
+        padding-bottom: 16px;
+    }
+
+    #insured-member-details .nav-tabs {
+        padding-left: 0px;
+    }
+
+    #insured-member-details .nav-tabs {
+        padding-left: 0px;
+        white-space: nowrap;
+        overflow-x: auto;
+        /*    padding-top: 10px;*/
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+
+    #insured-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+    }
+
+    #insured-member-details .nav-tabs>li {
+        width: 28% !important;
+    }
+
+    #insured-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto !important;
+        padding: 0px 0px;
+        text-align: center !important;
+    }
+
+    #health-lifestyle-member-details .nav-tabs {
+        padding-left: 0px;
+    }
+
+    #health-lifestyle-member-details .nav-tabs {
+        padding-left: 0px;
+        white-space: nowrap;
+        overflow-x: auto;
+        /*    padding-top: 10px;*/
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li {
+        display: inline-block;
+        float: none;
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li {
+        width: 30% !important;
+        padding-top: 15px;
+    }
+
+    #health-lifestyle-member-details .nav-tabs>li a {
+        width: auto !important;
+        line-height: auto !important;
+        padding: 0px 0px;
+        text-align: center !important;
+    }
+
+    .mar-btm-10 {
+        margin-bottom: 0px;
+    }
+
+    .health-father-form-pad-top {
+        padding-top: 5px;
+    }
+
+    .health-father-form-number {
+        margin-left: -14px;
+        font-size: 30px;
+        color: #3f3f3f;
+    }
+
+    .health-form-small-txt {
+        padding-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .health-form-small-txt-pad-top-btm {
+        padding-top: 0px;
+    }
+
+    .pad-left-15 {
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+
+    .pad-l-r-0-mob {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .dob-row-pad-btm .pad-btm-20 {
+        padding-bottom: 0px !important;
+    }
+
+    .insured-member-form-top-left-pad {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .insured-member-form-horizontal-pad {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .pre-pad {
+        padding-right: 18.5px;
+    }
+
+    .name-txt-padding {
+        padding-right: 12px;
+        padding-left: 15px;
+    }
+
+    .form-background {
+        padding-bottom: 40px;
+    }
+
+    .tab-pad-left {
+        padding-left: 6px;
+        margin-left: -3px;
+        /*margin-right: -57px;*/
+        padding-bottom: 10px;
+    }
+
+    .table-value {
+        font-size: 13px;
+    }
+
+    .btn.modal-save-btn {
+        width: 100%;
+    }
+
+    .state-mob-pad .pad-l-r-0 {
+        padding-right: 0px !important;
+        padding-left: 10px !important;
+    }
+
+    .pad-l-r-0 {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+
+    .pad-tb-100 {
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+
+    .pad-btm-25 {
+        padding-bottom: 0px;
+    }
+
+    .form-lbl {
+        font-size: 12px;
+    }
+
+    .emi-option-text {
+        font-size: 11.5px;
+        margin-right: -15px;
+    }
+
+    .pad-btm-14 {
+        padding-bottom: 14.5px;
+    }
+
+    .pad-r-5 {
+        padding-left: 5px;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .horizontal-pad {
+        margin-top: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .form-top-left-pad {
+        padding-top: 22.5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .dob-mob-pad-l-r-0 {
+        padding-left: 5px !important;
+    }
+
+    .dob-row-pad-btm .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+
+    .name-txt .pad-l-r-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .pad-l-r-5 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .wizard {
+        width: 100%;
+    }
+
+    .mob-pad-l-r-0 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .pad-top-18 {
+        padding-top: 18px;
+    }
+
+    .wizard .nav-tabs {
+        margin: 0px auto;
+    }
+
+    .cont-pad {
+        padding: 0px 0px;
+    }
+
+    .modal-hdr {
+        height: auto;
+    }
+
+    .proposal-btn {
+        font-size: 15px;
+    }
+
+    .summary-btn {
+        width: 100%;
+        display: block;
+        font-size: 9px;
+        padding: 12px 15px;
+    }
+
+    .back-btn1 {
+        width: 100%;
+        display: block;
+        width: 100% !important;
+    }
+
+    .done-btn1 {
+        width: 100%;
+        display: block;
+    }
+
+    .mar-l-14 {
+        margin-left: 5px;
+    }
+
+    .main-header-text1 {
+        font-size: 21px;
+    }
+
+    .mbr-sel-txt-big {
+        font-size: 15px;
+    }
+
+    .mbr-sel-txt-sml {
+        font-size: 15px;
+    }
+
+    .tenure-year {
+        font-size: 14px;
+    }
+
+    .pretty {
+        margin: 0px 0px 0px 0px !important;
+    }
+
+    .dup-bene-btn-new {
+        font-size: 16px;
+    }
+
+    .panel-default-mob-pad {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+
+    .item-block1 {
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+
+    .item-block-content {
+        padding-bottom: 0px;
+        padding-top: 21px;
+        margin-left: -2%;
+    }
+
+    .item-block {
+        padding-left: 0px !important;
+    }
+
+    .temp-disa-left-bdr {
+        margin-left: -15px;
+        height: 175px;
+    }
+
+    .pad-cont {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .pad-mar-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .temp-total-dis-text1 {
+        padding-top: 20px;
+    }
+
+    .btn.qq-save-btn {
+        width: 140px !important;
+    }
+
+    .quote-item-block {
+        padding-top: 0px;
+    }
+
+    .sum-tenure-topmost-row {
+        padding-left: 0px;
+        padding-top: 0px !important;
+    }
+
+    .btn.modal-save-btn {
+        width: 100%;
+    }
+
+    .prem-small-txt {
+        font-size: 20px;
+    }
+
+    .prem-rupee-symbol {
+        font-size: 20px;
+    }
+
+    .temp-total-dis-img {
+        width: 50px;
+        height: 50px;
+        margin-left: 11px;
+        margin-top: 0px;
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 12px;
+    }
+
+    .mar-l-15 {
+        margin-left: 0px;
+    }
+
+    .btn-pad-box {
+        padding-left: 20px !important;
+        padding-right: 10px !important;
+    }
+
+    .temp-total-dis-text2 {
+        font-size: 14px;
+    }
+
+    .earn-mem-bene-lbl-txt {
+        padding-left: 14px;
+    }
+
+    .tooltip-top {
+        top: -10px;
+        right: -10px;
+    }
+
+    .tooltip-bg {
+        background-color: transparent;
+    }
+
+    .sum-insured-members-block {
+        box-shadow: none;
+    }
+
+    .tool-tip-img {
+        position: absolute;
+        top: -5px;
+        right: -18.5px;
+    }
+
+    .tooltip.bottom .tooltip-inner {
+        margin-right: 30px;
+    }
+
+    .mob-mar-toggle {
+        margin-top: 15px;
+    }
+
+    .item-block-content-header-mob {
+        margin-top: 0px;
+    }
+
+    .get-cover-line-float {
+        text-align: left;
+        float: left;
+        margin-top: 17.5px;
+    }
+
+    .get-cover-line {
+        margin-right: 0px;
+        font-size: 14px;
+    }
+}

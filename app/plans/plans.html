@@ -1,0 +1,392 @@
+<!-- 
+
+    Page Name :- Plans Page
+    Author: Sunny Khattri
+    Date: 18-06-2018
+
+-->
+<section class="screen-full screen-plan-page plans-screen-full">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-5 col-md-3 col-md-offset-1 col-sm-4 text-left"><img
+                    src="assets/images/platinum-cover.svg" class="plans-image img-responsive"
+                    ng-if="pC.productName == 'Activ Health'"> <img src="assets/images/diamond-cover.svg"
+                    class="plans-image img-responsive" ng-if="pC.productName == 'Activ Assure'"> <img
+                    src="assets/images/personal-accident-cover.svg" class="plans-image img-responsive"
+                    ng-if="pC.productName == 'Activ Secure Personal Accident'"> <img
+                    src="assets/images/cancer-secure-cover.svg" class="plans-image img-responsive"
+                    ng-if="pC.productName == 'Activ Secure Cancer Secure'"> <img
+                    src="assets/images/critical-illness-cover.svg" class="plans-image img-responsive"
+                    ng-if="pC.productName == 'Activ Secure Critical Illness'"> <img
+                    src="assets/images/senior-citizen-cover.svg" style="max-height: 205px"
+                    class="plans-image img-responsive" ng-if="pC.productName == 'Activ Care'"></div>
+            <div class="col-xs-7 col-md-6 col-md-offset-2 col-sm-8 text-right padResetL">
+                <div class="plans-q-heading" ng-if="pC.productName == 'Activ Health'">Activ Health - Platinum</div>
+                <div class="plans-q-heading" ng-if="pC.productName != 'Activ Health'">{{pC.productName}}</div>
+                <div class="plans_q_sublines" ng-if="pC.productName == 'Activ Secure Personal Accident'">
+                    <ul>
+                        <li>Life is so much better when you know that you are protected.</li>
+                        <li>Activ Secure – Personal Accident is a specially designed plan to give you and your family
+                            the protection and financial backing required in case of an unfortunate accident.</li>
+                    </ul>
+                </div>
+                <div class="plans_q_sublines" ng-if="pC.productName == 'Activ Health'">
+                    <ul>
+                        <li>Today, lifestyles are synonymous with speed and in this constant race against tine, our
+                            health is losing out.</li>
+                        <li>Aditya Birla Health Insurance Aspires to create the much needed space for health in your
+                            busy schedules.</li>
+                    </ul>
+                </div>
+                <div class="plans_q_sublines" ng-if="pC.productName == 'Activ Fit'">
+                    <ul>
+                        <li>With Activ Fit, we give you multiple benefits and discounts. Also rewards you for being
+                            healthy.</li>
+                    </ul>
+                </div>
+                <div class="plans_q_sublines" ng-if="pC.productName == 'Activ Secure Critical Illness'">
+                    <ul>
+                        <li>A critical illness can affect not just your health, but your future as well.</li>
+                        <li>Activ Secure – Critical Illness is a plan that’s carefully designed to safeguard your
+                            tomorrow.</li>
+                        <li>So in case you fall critically ill, we provide you with a lump sum payment upfront, so that
+                            you needn’t worry about the future.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="select-plan text-right">Select a Plan</div>
+            </div>
+            <div class="covid-19-plan-style">
+                <!-- To know more about <b> Covid 19 </b>home treatment details.<br class="visible-xs"><strong><span style="cursor: pointer;" ng-click="rC.openCovidDetaislModel()"> Click here to read more</span></strong> -->
+                <!--  Cashless home treatment for Covid-19 Covered <span style="cursor: pointer; font-weight: 600;font-size: 15px;" ng-click="pC.openCovidDetaislModel()"> Read more.</span> -->
+            </div>
+        </div><!--  -->
+        <div id="plans-slider-section" class="swiper-container" ng-class="{'pa-center': pC.productName == 'Activ Secure Personal Accident'}">
+            <div class="slider">
+                <div class="col-md-2-plans text-center" ng-repeat="plans in pC.planDetails" ng-disabled="plans.disabled">
+                    <div ng-if="plans.disabled" style="color:red; position: absolute; top:-31px;">Note: This Plan is not applicable for individual please add one more family member</div>
+                    <div class="plans_price_panel" id="buy_{{plans.ProductCode}}_{{plans.PlanCode}}" 
+                        data-json="{{plans}}" ng-style="plans.disabledStyle">
+                        <h3 class="plans_price_names">{{plans.PlanName}} </h3>
+                        <div class="plans-innner">
+                            <div class="plans_purchase" ng-style="plans.disabledStyle">
+                                <h3>₹ {{plans.Premium | INR}}</h3>
+                            </div>
+                            <div class="plans_features">
+                                <div ng-show="plans.ProductCode == 'PL' || plans.ProductCode == 'AC'"
+                                    style="margin-bottom: 15px;">
+                                    <!--  <span style="color: #df8e88;"><strong class="bold">COVID-19 coverage waiting period reduced to 15 Days</span> -->
+                                </div>
+                                <p class="plans_feature">Features</p>
+                                <ul ng-if="plans.ProductCode == 'FIT' && plans.PlanName == 'Plus'">
+                                    <!-- <li>Flexibility in choice of room category</li> -->
+                                    <li>Get Upfront Good Health Discount at the time of policy purchase basis Good
+                                        Health Risk assessment</li>
+                                    <li>Get covered upto Sum Insured unlimited times for any illness/injury with Binge
+                                        Refill</li>
+                                    <li>Double your Sum Insured in 2 claim free years with Super No Claim Bonus
+                                        (optional cover)</li>
+                                    <li>Stay active and earn upto 50% of your premium as HealthReturns<sup>TM</sup></li>
+                                    <li>Get 1 year Premium Waiver in case of detection of listed critical illness or
+                                        injury due to an accident resulting in Permanent Total Disablement (optional
+                                        cover)</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'FIT' && plans.PlanName == 'prefered'">
+                                    <!-- <li>Flexibility in choice of room category</li> -->
+                                    <li>Get Upfront Good Health Discount at the time of policy purchase basis Good
+                                        Health Risk assessment</li>
+                                    <li>Get covered upto Sum Insured unlimited times for any illness/injury with Binge
+                                        Refill</li>
+                                    <li>Double your Sum Insured in 2 claim free years with Super No Claim Bonus
+                                        (optional cover)</li>
+                                    <li>Stay active and earn upto 50% of your premium as HealthReturns<sup>TM</sup></li>
+                                    <li>Get 1 year Premium Waiver in case of detection of listed critical illness or
+                                        injury due to an accident resulting in Permanent Total Disablement (optional
+                                        cover)</li>
+                                    <li>Get covered for Maternity Expenses with an optional cover of Reduction in
+                                        Maternity Waiting Period from 36 months to 24 months</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PL' && plans.PlanName == 'Essential'">
+                                    <!-- <li>Flexibility in choice of room category</li> -->
+                                    <li>586 day care procedures are covered</li>
+                                    <li>Cumulative bonus 10% every year up to 100% of SI, max upto 50L</li>
+                                    <li>Tax benefits under section 80D**.</li>
+                                    <li>HealthReturns<sup>TM</sup> – Earn upto 50% of your policy premium back by
+                                        staying healthy</li>
+                                    <li>Chronic Management Program for helping you manage chronic conditions such as
+                                        Asthma, Diabetes, High Cholesterol, High Blood Pressure</li>
+                                    <li>Covers Treatment Expenses for Obesity and AYUSH related treatments</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PL' && plans.PlanName == 'Enhanced'">
+                                    <li>All the features of Essential plus a lot more</li>
+                                    <li>Sum insured up to 2 crores</li>
+                                    <li>Pre and post hospitalization cover up to 60 &amp; 180 days respectively</li>
+                                    <li>Road ambulance cover on actuals in network hospitals and up to Rs.5000 per
+                                        hospitalization in non-network hospitals</li>
+                                    <li>HealthReturns<sup>TM</sup>- Earn up to 100% of your policy premium by staying
+                                        healthy</li>
+                                    <li>Covers modern treatment methods for listed procedures</li>
+                                    <li>Reload of Sum Insured is available upto 100% of SI</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PL' && plans.PlanName == 'Gold Enhanced'">
+                                    <li>All the features of Essential plus a lot more</li>
+                                    <li>Sum insured up to 2 crores</li>
+                                    <li>Pre and post hospitalization cover up to 60 &amp; 180 days respectively</li>
+                                    <li>Road ambulance cover on actuals in network hospitals and up to Rs.5000 per
+                                        hospitalization in non-network hospitals</li>
+                                    <li>Worldwide emergency assistance services</li>
+                                    <li>Cover for organ donor expenses</li>
+                                    <li>Reload of sum assured</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PL' && plans.PlanName == 'Premiere'">
+                                    <li>Sum insured up to 2 crores</li>
+                                    <li>Pre and post hospitalization cover up to 60 days & 180 days respectively</li>
+                                    <li>HealthReturns<sup>TM</sup>- Earn up to 100% of your policy premium by staying
+                                        healthy</li>
+                                    <li>100% unlimited reload, available for same and unrelated illness.</li>
+                                    <li>Post-hospitalization Physiotherapy cover</li>
+                                    <li>Cover for Dental Consultation & Investigations</li>
+                                    <li>Covers modern treatment methods for listed procedures</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'CI' && plans.PlanName == 'Plan 1'">
+                                    <li>Covers 20 Critical Illnesses with 100% of pay out sum insured.</li>
+                                    <li>Sum insured starts at 1 lakh and available up to 1 crore.</li>
+                                    <li>Option to buy second E opinion and Wellness Coach.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PA' && plans.PlanName == 'Plan 1'">
+                                    <li>PROTECTS you against Accidental Death.</li>
+                                    <li>Education Benefit.</li>
+                                    <li>5% Cumulative bonus per claim free year, max 50% of Sum Insured</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PA' && plans.PlanName == 'Plan 2'">
+                                    <li>All <b>Plan 1</b> Benefits</li>
+                                    <li>PROTECTS you permanent total Disability.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PA' && plans.PlanName == 'Plan 3'">
+                                    <li>All <b>Plan 2</b> Benefits</li>
+                                    <li>PROTECTS you permanent total Disability.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PA' && plans.PlanName == 'Plan 4'">
+                                    <li>All <b>Plan 3</b> Benefits</li>
+                                    <li>Emergency road Ambulance Cover.</li>
+                                    <li>Funeral Expenses.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'PA' && plans.PlanName == 'Plan 5'">
+                                    <li>All <b>Plan 4</b> Benefits</li>
+                                    <li>Repatriation of mortal remains.</li>
+                                    <li>Orpahn Benefit.</li>
+                                    <li>Modification of Residence Vehicle.</li>
+                                    <li>Compassionate Visit.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'CI' && plans.PlanName == 'Plan 2'">
+                                    <li>Covers 50 Critical Illnesses with 100% of pay out of sum insured.</li>
+                                    <li>Sum insured starts at 1 lakh and available up to 1 crore.</li>
+                                    <li>Option to buy second E opinion and Wellness Coach.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'CI' && plans.PlanName == 'Plan 3'">
+                                    <li>Covers 50 Critical Illnesses of<div class="dis-in-block list-a-b"><a
+                                                href="javascript:void(0)" data-list="1">List A</a></div>with 100% of pay
+                                        out of sum insured & 14 Critical Illnesses with 50% of pay out of sum insured
+                                        <div class="dis-in-block list-a-b"><a href="javascript:void(0)"
+                                                data-list="2">List B</a></div>.</li>
+                                    <li>Sum insured starts at 1 lakh and available up to 1 crore.</li>
+                                    <li>Option to buy second E opinion and Wellness Coach.</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'AC' && plans.PlanName == 'Standard'">
+                                    <li>Comprehensive range of cover for senior citizens across multiple sum insured
+                                        upto 10 lakhs</li>
+                                    <li>586 Day care procedures covered</li>
+                                    <li>50% reload of Sum Insured once a year for subsequent claims due to unrelated
+                                        illness</li>
+                                    <li>Cashless treatment at home for listed illnesses</li>
+                                    <li>No Claim Bonus(NCB) of 10% Sum insured for every claim-free year</li>
+                                    <li>Earn HealthReturns<sup>TM</sup> upto 21% of your premium by earning Active Dayz
+                                        and staying healthy.</li>
+                                    <li>International and Domestic Emergency assistance services including air ambulance
+                                    </li>
+                                    <li>Second E Opinion on major illnesses</li>
+                                    <li>Annual Health check-up</li>
+                                    <li style="visibility: hidden;">International and Domestic Emergency assistance
+                                        services including air ambulance</li>
+                                    <li style="visibility: hidden;">Second E Opinion on major illnesses</li>
+                                    <li style="visibility: hidden;">Annual Health check-up</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'AC' && plans.PlanName == 'Classic'">
+                                    <li>Comprehensive range of cover for senior citizens across multiple sum insured
+                                        upto 10 lakhs</li>
+                                    <li>586 Day care procedures covered</li>
+                                    <li>100% reload of Sum Insured once a year for subsequent claims due to unrelated
+                                        illness</li>
+                                    <li>Domiciliary hospitalisation, organ donor expenses and AYUSH inpatient
+                                        hospitalisation covered</li>
+                                    <li>Cashless treatment at home for listed illnesses</li>
+                                    <li>No Claim Bonus(NCB) of 10% Sum insured for every claim-free year</li>
+                                    <li>Earn HealthReturnsTM upto 21% of your premium by earning Active Dayz and staying
+                                        healthy.</li>
+                                    <li>International and Domestic Emergency assistance services including air ambulance
+                                    </li>
+                                    <li>Second E Opinion on major illnesses</li>
+                                    <li>Annual Health check-up</li>
+                                    <li style="visibility: hidden;">Second E Opinion on major illnesses</li>
+                                    <li style="visibility: hidden;">Annual Health check-up</li>
+                                </ul>
+                                <ul ng-if="plans.ProductCode == 'AC' && plans.PlanName == 'Premier'">
+                                    <li>Comprehensive range of cover for senior citizens across multiple sum insured
+                                        upto 25 lakhs</li>
+                                    <li>586 Day care procedures covered</li>
+                                    <li>100% reload of Sum Insured once a year for subsequent claims due to unrelated
+                                        illness</li>
+                                    <li>Domiciliary hospitalisation, organ donor expenses and AYUSH inpatient
+                                        hospitalisation covered</li>
+                                    <li>Cashless treatment at home for listed illnesses</li>
+                                    <li>In-patient Mental Health Cover</li>
+                                    <li>OPD treatment cover for medical consultation and diagnostics tests</li>
+                                    <li>No Claim Bonus(NCB) of 10% Sum insured for every claim-free year</li>
+                                    <li>Earn HealthReturnsTM upto 21% of your premium by earning Active Dayz and staying
+                                        healthy.</li>
+                                    <li>International and Domestic Emergency assistance services including air ambulance
+                                    </li>
+                                    <li>Second E Opinion on major illnesses</li>
+                                    <li>Annual Health check-up</li>
+                                </ul>
+                            </div>
+                            <div class="exp-plan" ng-if="plans.ProductCode != 'FIT'"><button
+                                    class="btn btn-primary white-btn" id="pa-{{plans.PlanName}}-explore"
+                                    ng-click="pA.pAQuoteSubmit($event)">EXPLORE AND COMPARE PLANS <img
+                                        src="assets/images/right-arrow-new.png"></button></div>
+                            <div class="exp-plan" ng-if="plans.ProductCode == 'FIT'"><button
+                                    class="btn btn-primary white-btn" id="pa-{{plans.PlanName}}-explore"
+                                    ng-click="pC.exploreFit()">EXPLORE AND COMPARE PLANS <img
+                                        src="assets/images/right-arrow-new.png"></button></div><button
+                                class="btn btn-primary brown-btn" id="pa-{{plans.PlanName}}-buy" ng-hide="plans.disabled">BUY PLAN<img
+                                    src="http://d33wubrfki0l68.cloudfront.net/480b8f26715697b0044b728e23d9e4f86ea0f998/e33c9/images/arrow.png"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="screen-full screen-plan-page reco_plans_section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 text-center">
+                <h2 ng-hide="pC.productName == 'Activ Care' || pC.productName == 'Activ Fit'">Features of
+                    {{pC.productName}}</h2><img src="assets/images/oneabc-banner-mobilenew-3.jpg"
+                    class="hidden-sm hidden-xs" width="360" ng-if="pC.productName == 'Activ Health'"> <img
+                    src="assets/images/personal_secure-mobile.jpg" class="hidden-sm hidden-xs" width="360"
+                    ng-if="pC.productName == 'Activ Secure Personal Accident'"> <img
+                    src="assets/images/critical_secure-mobile.webp" class="hidden-sm hidden-xs" width="360"
+                    ng-if="pC.productName == 'Activ Secure Critical Illness'">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 plans_footer_features">
+                <div class="text-left">
+                    <ul ng-if="pC.productName == 'Activ Secure Personal Accident'">
+                        <li>100 % payout for Permanent Disabilities due to accidents</li>
+                        <li>Upto 100% payout on Accidental Death</li>
+                        <li>Continous income during temporary total disability (TTD) due to accidents*</li>
+                        <li>Emergency ambulance cover.</li>
+                        <li>Protection for your Loans & EMI's.</li>
+                        <li>5% cumulative bonus for every claim free year.</li>
+                    </ul>
+                    <ul ng-if="pC.productName == 'Activ Secure Critical Illness'">
+                        <li>Flexibility to choose from 3 Critical Illness plans with varied benefits.</li>
+                        <li>Comprehensive coverage for all the major Critical illnesses.</li>
+                        <li>Enjoy continued coverage even after claiming a payout for one critical illness with our
+                            comprehensive plan.</li>
+                        <li>Get a payout of maximum 150% of the sum insured for more than one Critical Illness under the
+                            comprehensive plan.</li>
+                        <li>Option to choose a wellness coach and recover faster with personalized health advice.</li>
+                        <li>Health insurance tax benefits under section 80D of the Income Tax Act.</li>
+                        <li>A short Survival Period requirement of 15 days following the initial diagnosis of a critical
+                            illness.</li>
+                    </ul>
+                    <ul ng-if="pC.productName == 'Activ Health'">
+                        <li>Personalized wellness guidance from qualified wellness coaches.</li>
+                        <li>Day 1 cover for chronic illnesses such as asthma, diabetes, hypertension and high
+                            cholesterol. This covers the cost of medicines, doctor consultation, and tests.</li>
+                        <li>Earn rewards worth up to 30% of your premium in the form of HealthReturns™ for adopting a
+                            healthy lifestyle.</li>
+                        <li>24/7 access digital health records.</li>
+                        <li>Specialized app to track your health and insurance information.</li>
+                        <li>Find healthcare service providers on network.</li>
+                        <li>Freedom to opt for a shared or a private room.</li>
+                        <li>100% reload of sum insured in case of unrelated illnesses in the same year.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End of Plans Page -->
+<!-- Summry Modal Seciton -->
+<div class="modal" id="payment-model" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="selectGSTINModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-hdr">
+                <div class="col-md-12 col-sm-12 col-xs-12 modal-pad-left"><button type="button" class="close"
+                        data-dismiss="modal" ng-click="callGtag('click-icon', 'plans' ,'covid-model-close')"><img
+                            src="assets/images/close-white.svg"></button>
+                    <h4 class="modal-title summary-modal-title">Covid 19</h4><span
+                        style="font-size: 16px; color: white">Available with Activ Health ,Activ Assure ,Activ Care
+                        ,Super Health Plus Top Up</span>
+                    <!-- <div class="summary-grey-text">
+                  Choose your preferred payment mechanism
+               </div> -->
+                </div>
+            </div>
+            <div class="modal-body row modal-body-pad-top">
+                <div class="col-md-12 col-xs-12 modal-pad-left">
+                    <div class="col-md-12 col-xs-12 pad-l-r-0-mob">
+                        <div>
+                            <p class="paragraph-cocide-model">Extending the Home Treatment facility to the policyholders
+                                in respect of the below mentioned protocols otherwise requiring hospitalization and
+                                where policyholder have been advised Home Treatment by the treating Doctor in line with
+                                the ICMR Guidelines. This Home treatment facility would be provided on a cashless basis
+                                through our Network Providers and Empaneled Service Provider.</p>
+                            <div>
+                                <ul class="ul-li-style">
+                                    <li>a. COVID 19 symptoms (Active mild or medium cases)</li>
+                                    <li>b. Dengue</li>
+                                    <li>c. Gastroenteritis</li>
+                                    <li>d. Chemotherapy</li>
+                                    <li>e. Peritoneal dialysis and</li>
+                                    <li>f. Hepatitis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="pretty circle danger payment-modelStyle">
+                         <input type="radio" name="prRadio"  id="prRadio1" ng-model="dLC.pgPaymentMode" value="emandate">
+                                <label for="prRadio1"><i class="default"></i>&nbsp;<span class="pg-modelText"> Emandate </span>
+                                </label>
+                        </div>
+                        <div class="pretty circle danger payment-modelStyle" >
+                        <input type="radio" name="prRadio"  id="prRadio2" ng-model="dLC.pgPaymentMode" value="cards">
+                                <label for="prRadio2"><i class="default"></i>&nbsp;<span class="pg-modelText"> Cards </span>
+                                </label>
+                        </div>
+                        <div class="pretty circle danger payment-modelStyle">
+                        <input type="radio" name="prRadio"  id="prRadio3" ng-model="dLC.pgPaymentMode" value="normal">
+                                <label for="prRadio3"><i class="default"></i>&nbsp;<span class="pg-modelText"> Normal </span>
+                                </label>
+                        </div> -->
+                    </div>
+                    <div class="col-md-12 col-xs-12 pad-l-r-0-mob accordion-pad-top"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="col-md-12 col-xs-12 modal-btn-row-pad-top modal-pad-left-new">
+                        <div class="col-md-12 dis-in mob-pad-l-r-0"><button
+                                class="btn reco-lg-btn btn-buy pull-right buy-btn"
+                                ng-click="callGtag('click-button', 'reco' ,'close-covid-19_model') ; rC.closeCovidDetaislModel() ">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- <div class="payment-modelStyle"></div> -->
+</div><!-- End of summary modal section  -->

@@ -1,0 +1,82 @@
+<!--
+    Page: Policy Part Payment
+    Author: Ravikant Gaud
+	Date: 16-05-2022
+-->
+
+<div class="container-fluid mob-pad-l-r-0 tab-pad-l-r-0">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0">
+        <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs">
+            <img class="download-img-width new-illustration" src="assets/images/new-renew/renew-illustration-abc.svg">
+            <div class="renew-policy-bg">
+                <div class="renew-your-policy-txt">Policy - Payment</div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12 mob-pad-l-r-0 tab-pad-l-r-0 form-page">
+            <!-- <div class="hidden-xs help-us-header-txt">Help us find your policy by <span class="any-two-red-clr">entering ANY 2</span> from the below</div> -->
+            <div class="hidden-xs help-us-header-txt">Help us find your policy</div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12 mob-white-bg">
+                <div class="mob-renew-policy-txt">Policy Payment</div>
+                <div class="help-us-header-txt">Help us find your policy</div>
+                <!-- <div class="help-us-header-txt">Help us find your policy by <span class="any-two-red-clr">entering ANY 2</span> from the below</div> -->
+            </div>
+
+            <form name="renewForm" class="renew-form" ng-submit="checkLogin(auth,renewForm)" novalidate>
+                <div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Your Policy Number</label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="group-coi-number">(Use COI Number for making Payment) </label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control textbox-style text-uppercase phone-group"
+                                name="Policyno" id="policynum" ng-blur="checkPolicyNumber()"
+                                ng-model="auth.Policyno" minlength="9" maxlength="25"
+                                placeholder="00-00-0000000-00" ng-disabled="renewForm.MemberID.$viewValue">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt"><span class="any-two-red-clr">OR</span></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Customer ID</label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control textbox-style phone-group"
+                                ng-model="auth.MemberID" id="MemberID" name="MemberID"
+                                minlength="10" maxlength="10" ng-keyup="patternCheck('MemberID','^[a-zA-Z0-9_]*$', $event)"
+                                placeholder="Customer ID" ng-disabled="renewForm.Policyno.$viewValue">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right lbl-pad-btm">
+                        <div class="col-lg-12 col-md-12 pad-l-r-0">
+                            <label class="lbl-txt">Amount<span class="any-two-red-clr">*</span></label>
+                        </div>
+                        <div class="col-lg-9 col-md-9 pad-l-r-0 pull-right">
+                            <input type="text" class="form-control textbox-style phone-group"
+                                ng-model="auth.Amount" id="Amount" name="Amount"
+                                minlength="4" ng-keyup="formateAmount('Amount','^[0-9]*$', $event)"
+                                placeholder="Amount" ng-keyup="" >
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right proceed-btn-pad-btm">
+                        <a href="javascript:void(0);" ng-click="loginPartPeyment()">
+                            <button ng-disabled="(!renewForm.MemberID.$viewValue && !renewForm.Policyno.$viewValue) || !renewForm.Amount.$viewValue" type="submit" class="btn proceed-btn">Proceed to Policy</button>
+                        </a>
+                        
+                    </div>
+            </form>
+
+        </div>
+    </div>
+</div>

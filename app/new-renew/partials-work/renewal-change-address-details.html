@@ -1,0 +1,381 @@
+<!--
+    Page: Renewal Change Address Details Page
+	Author: Pandurang Sarje 
+    Date: 11-07-2020
+-->
+
+<div class="container-fluid view-member-landing pad-l-r-0">
+    <!-- Desktop View -->
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs view-member-padding">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pad-l-r-0">
+            <div class="member-name-ttl" style="margin-bottom: 33px;">{{policyDetails.NameOfTheProposer}},</div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">
+                    <div class="edit-member-details-txt">View Members</div>
+                    <div class="edit-add-sml-txt">Add Member</div>
+                </a>    
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-class="{'edit-member-pad-btm': upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured != 0}">
+                <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                    <div class="edit-member-details-txt">View or Edit Member details</div>
+                </a>   
+            </div>
+            <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0 && upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                    <div class="edit-member-details-txt">Increase Sum Insured</div>
+                </a>  
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="grey-horizontal-line"></div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="ModificationProduct !='Super Top Up' && ModificationProduct !='Arogya Sanjeevani Policy' && platinumPlan !='Platinum - Premiere' && AS_PAPlan">
+                <a ng-click="newRenewRouting('renewal-edit-optional-covers');gotoPageGAParam('click-button','option cover','renew')">
+                    <div class="edit-member-details-txt">Optional Covers</div>
+                </a>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="policyDetails.ProductName != 'Arogya Sanjeevani Policy'">
+                <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                    <div class="edit-member-details-txt">Tenure Change</div>
+                </a>     
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                    <div class="edit-member-details-txt">Edit Nominee Details</div>
+                </a>
+            </div>
+
+            <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 edit-member-pad-btm">
+                <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                    <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                </a>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 view-member-red-box">
+                <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                    <div class="view-members-bold-txt">Change Address Details</div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 pad-l-r-0">
+           
+            <header-details></header-details>
+        
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-21-0 group-member-section">
+                <form name="changeAddressDetailsForm" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                            <div class="group-members-bold-txt">Change Address Details</div>
+                        </div>
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="horizontal-border"></div>
+                        </div>
+                        
+                        <div class="co-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 edit-member-detail-tabs change-address-details">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pad-l-0 input-pad">
+                                    <div class="label-text">Address Line 1 <span class="requiredFieldStyle">*</span></div>
+                                    <input ng-model="insuredMemberDetails.addressDetails.AddressLine1" 
+                                    type="text" class="form-control placeholder-text" id="cobrowsing-input-23"
+                                    name = "address1" 
+                                    placeholder="Apartment, house number, society etc"
+                                    minlength="5" required="" maxlength="300"
+                                    >
+                                    
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.address1.$error.required">
+                                        Please enter Address Line 1.
+                                    </div>
+
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.address1.$error.minlength">
+                                        Please enter valid Address.
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pad-l-0 input-pad">
+                                    <div class="label-text">Address Line 2</div>
+                                    <input ng-model="insuredMemberDetails.addressDetails.AddressLine2" 
+                                    type="text" class="form-control placeholder-text"  id="cobrowsing-input-24"
+                                    name="address2"
+                                    placeholder="Locality name, area name, etc"
+                                    minlength="5" maxlength="300"
+                                    >
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.address2.$error.required">
+                                        Please enter Address Line 2.
+                                    </div>
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.address2.$error.minlength">
+                                        Please enter valid Address.
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pad-l-0 input-pad">
+                                    <div class="label-text">Pincode <span class="requiredFieldStyle">*</span></div>
+                                    <input ng-model="insuredMemberDetails.addressDetails.Pincode" 
+                                    type="text" class="form-control placeholder-text" 
+                                    name="pincode"
+                                    placeholder="Enter PIN"
+                                    minlength="6" required="" maxlength="6" valid-number
+                                    ng-model-options="{debounce:800}"
+                                    ng-change="updatePinCode(changeAddressDetailsForm.pincode.$valid)"
+                                    >
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.pincode.$error.required">
+                                        Please enter Pincode.
+                                    </div>
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.pincode.$error.minlength">
+                                        Please enter valid Pincode.
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 lbl-input-group pad-l-0 input-pad">
+                                    <div class="label-text">City</div>
+                                    <input ng-readonly="true" ng-model="insuredMemberDetails.addressDetails.City" type="text" class="form-control placeholder-text" placeholder="Placeholder text">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 lbl-input-group pad-l-0 input-pad">
+                                    <div class="label-text">State</div>
+                                    <input ng-readonly="true" ng-model="insuredMemberDetails.addressDetails.State" type="text" class="form-control placeholder-text" placeholder="Placeholder text">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 pad-l-r-0 input-pad">
+                                <div class="col-lg-4 col-md-4 col-sm-12 lbl-input-group pad-l-0">
+                                    <div class="label-text">Landmark</div>
+                                    <input ng-model="insuredMemberDetails.addressDetails.Landmark" 
+                                    type="text" class="form-control placeholder-text"  id="cobrowsing-input-25"
+                                    name="landmark"
+                                    placeholder="Enter Landmark"
+                                    maxlength="300"
+                                    >
+                                    <div class="errormsg redColorClass" ng-if="changeAddressDetailsForm.landmark.$error.required">
+                                        Please enter Landmark.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 text-right">
+                            <a ng-click="updateAddressDetails($event , changeAddressDetailsForm.$valid);gotoPageGAParam('click-button','change address details - save','renew')" class="proceed-btn">SAVE</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Desktop View -->
+
+    <!-- Mobile View -->
+    <div class="col-xs-12 hidden-lg hidden-md hidden-sm pad-l-r-0 change-address-details-mobile">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 view-member-padding">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 pad-l-r-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-name-bg pad-l-r-0">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 pad-l-r-0 ">
+                            <div class="plan-name-ttl">{{policyDetails.ProductName}}</div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Members -
+                                    <span class="years-txt">{{insuredMembers.length}}</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Tenure -
+                                    <span class="years-txt">{{policyDetails.Tenure}} <span ng-if="policyDetails.Tenure== '1'">yr</span><span ng-if="policyDetails.Tenure!= '1'">yrs</span></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-l-r-0">
+                                <div class="tenure-txt">Status -
+                                    <span class="years-txt">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 pad-l-r-0">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="premium-pa-txt">Premium</div>
+                        <div class="premium-amt-red-txt">₹ {{policyDetails.RenewalGrossPremium | INR}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Accordian-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
+                            <div class="currently-on-txt">Currently On:
+                                <span class="edit-member-details-bold">Change Address Details</span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-view-member-landing');gotoPageGAParam('click-button','view members','renew')">
+                                    <div class="edit-member-details-txt">View Members</div>
+                                    <div class="edit-add-sml-txt">Add Member</div>
+                                </a> 
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" ng-class="{'edit-member-pad-btm': upsellFlag=='Y' && insuredMembers[0].UpSellSumInsured != 0}">
+                                <a ng-click="newRenewRouting('renewal-edit-member-landing');gotoPageGAParam('click-button','edit member details','renew')">
+                                    <div class="edit-member-details-txt">View or Edit Member details</div>
+                                </a>                            
+                            </div>
+                            <div ng-if="upsellFlag=='Y' && parseIntString(insuredMembers[0].UpSellSumInsured) != 0 && upFF" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-increase-sum-insured-landing');gotoPageGAParam('click-button','increase sum insure','renew')">
+                                    <div class="edit-member-details-txt">Increase Sum Insured</div>
+                                </a>                         
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                                <div class="grey-horizontal-line"></div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0" ng-if="policyDetails.ProductName != 'Arogya Sanjeevani Policy'">
+                                <a ng-click="newRenewRouting('renewal-increase-policy-tenure-landing');gotoPageGAParam('click-button','increase policy tenure','renew')">
+                                    <div class="edit-member-details-txt">Tenure Change</div>
+                                </a>  
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-edit-nominee-details-landing');gotoPageGAParam('click-button','edit nominee detail','renew')">
+                                    <div class="edit-member-details-txt">Edit Nominee Details</div>
+                                </a>
+                            </div>
+                           
+                            <div ng-if="(diamondProduct && insuredMembers[0].SumInsured == 400000 && upsellFlag=='Y') || (diamondProduct && insuredMembers[0].SumInsured > 400000) || (platinumProduct)" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-pad-btm pad-l-r-0">
+                                <a ng-click="newRenewRouting('renewal-upgrade-zone-landing');gotoPageGAParam('click-button','upgrade zone and room','renew')">
+                                    <div class="edit-member-details-txt">Upgrade <span ng-if="diamondProduct">Room</span><span ng-if="platinumProduct">Zone</span></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 view-member-red-box">
+                                <a ng-click="newRenewRouting('renewal-change-address-details');gotoPageGAParam('click-button','change address details','renew')">
+                                    <div class="view-members-bold-txt">Change Address Details</div>
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-section">
+            <form name="changeAddressDetailsFormMob" novalidate="" ng-class="{'form-errors': showErrors}" autocomplete="nope">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 group-member-bg">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-l-r-0">
+                        <div class="group-members-bold-txt">Change Address Details</div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="horizontal-border"></div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-member-detail-tabs">
+                        <div class="col-xs-12 pad-l-r-0">
+                            <div class="col-xs-12 lbl-input-group pad-l-r-0 input-pad">
+                                <div class="label-text">Address Line 1 <span class="requiredFieldStyle">*</span></div>
+                                <input ng-model="insuredMemberDetails.addressDetails.AddressLine1"  id="cobrowsing-input-26"
+                                type="text" class="form-control placeholder-text"
+                                name = "address1" 
+                                placeholder="Apartment, house number, society etc"
+                                minlength="5" required="" maxlength="300"
+                                >
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.address1.$error.required">
+                                    Please enter Address Line 1.
+                                </div>
+
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.address1.$error.minlength">
+                                    Please enter valid Address.
+                                </div>
+                            </div>
+                            <div class="col-xs-12 lbl-input-group pad-l-r-0 input-pad">
+                                <div class="label-text">Address Line 2</div>
+                                <input ng-model="insuredMemberDetails.addressDetails.AddressLine2" 
+                                type="text" class="form-control placeholder-text"  id="cobrowsing-input-27"
+                                name="address2"
+                                placeholder="Locality name, area name, etc"
+                                minlength="5" maxlength="300"
+                                >
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.address2.$error.required">
+                                    Please enter Address Line 2.
+                                </div>
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.address2.$error.minlength">
+                                    Please enter valid Address.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 pad-l-r-0">
+                            <div class="col-xs-6 lbl-input-group pad-l-0 pad-input-r input-pad">
+                                <div class="label-text">Pincode <span class="requiredFieldStyle">*</span></div>
+                                <input ng-model="insuredMemberDetails.addressDetails.Pincode" 
+                                type="text" class="form-control placeholder-text" 
+                                name="pincode"
+                                placeholder="Enter PIN"
+                                minlength="6" required="" maxlength="6" valid-number
+                                ng-model-options="{debounce:800}"
+                                ng-change="updatePinCode(changeAddressDetailsFormMob.pincode.$valid)" 
+                                >
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.pincode.$error.required">
+                                    Please enter Pincode.
+                                </div>
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.pincode.$error.minlength">
+                                    Please enter valid Pincode.
+                                </div>
+                            </div>
+                            <div class="col-xs-6 lbl-input-group pad-input-l pad-r-0 input-pad">
+                                <div class="label-text">City</div>
+                                <input readonly ng-model="insuredMemberDetails.addressDetails.City" type="text" class="form-control placeholder-text" placeholder="Placeholder text">
+                            </div>
+                            <div class="col-xs-12 lbl-input-group pad-l-0 pad-input-r input-pad">
+                                <div class="label-text">State</div>
+                                <input readonly ng-model="insuredMemberDetails.addressDetails.State" type="text" class="form-control placeholder-text" placeholder="Placeholde text">
+                            </div>
+                            <div class="col-xs-12 lbl-input-group pad-l-0 pad-r-0 input-pad">
+                                <div class="label-text">Landmark</div>
+                                <input ng-model="insuredMemberDetails.addressDetails.Landmark" 
+                                type="text" class="form-control placeholder-text"  id="cobrowsing-input-28"
+                                name="landmark"
+                                placeholder="Enter Landmark"
+                                maxlength="300"
+                                >
+                                <div class="errormsg redColorClass" ng-if="changeAddressDetailsFormMob.landmark.$error.required">
+                                    Please enter Landmark.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plan-section-pad-lr btns-pad-top input-pad" style="margin-bottom: 40px;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 text-right">
+                        <a ng-click="updateAddressDetails($event , changeAddressDetailsFormMob.$valid);gotoPageGAParam('click-button','change address details - save','renew')" class="sav-btn">SAVE</a>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btns-pad-top btns-position btns-section">
+                <div ng-show="showHealthReturn" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0 helth-return-mobile-container">
+                    <label class="container-new" style="left: 0;">Use Health Returns of <span class="checkbox-green-txt">₹ {{heathReturnAmt | INR}}</span>
+                        <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" name="healthreturn" ng-model="applyHealthReturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                        <span class="checkmark"></span>
+                   </label> 
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-pad-l-r-0">
+                    <a href="javascript:void(0);" ng-click="requestPgURL();gotoPageGAParam('click-button','pay premium','renew')">
+                        <span class="btn btn proceed-btn">Pay Premium
+                            <span style="font-size: inherit; margin-left: 40px;">₹ {{policyDetails.RenewalGrossPremium | INR}}</span>
+                            <img class="pull-right" src="assets/images/new-renew/right-arrow.svg">
+                        </span>
+                    </a>
+                </div>
+                <div class="pre-btn-container pre-update-btn get-update-btn">
+                    <a href="javascript:void(0);" ng-click="alertRevert(); gotoPageGAParam('click-button','get quote','renew')" class="premuim-btn"><img src="assets/images/refresh.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Mobile View -->
+</div>

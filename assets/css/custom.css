@@ -1,0 +1,2397 @@
+/*
+  Custom css file
+  Auhtor: ABHI Digital;  
+  Date: 21-06-2018;
+*/
+
+
+/* Global Styling */
+
+    * {
+        outline: none;
+        font-family: PF-Handbook-Pro-Regular, PF-Encore-Sans-Pro-Regular;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after {
+        content: "";
+        content: none;
+    }
+
+    q:before,
+    q:after {
+        content: "";
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .padResetR {
+        padding-right: 0;
+    }
+
+    .pad-vert-10 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    body.overHide {
+        overflow-y: hidden;
+    }
+
+    body {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+               supported by Chrome and Opera */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    b {
+        font-family: "PF-Handbook-Pro-Regular", "PF-Encore-Sans-Pro-Bold";
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    *::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background: #ccc;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #f7a500;
+        outline: 1px solid slategrey;
+        height: 80px;
+    }
+
+    .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+        background-color: #f3f3f3;
+    }
+
+/* End of global Styling */
+
+
+/* Send SMS btn styling */
+
+    .send-sms-btn{
+        position: fixed;
+        top: 50%;
+        right: 0;
+        border: 1px solid #c7222a;
+        border-radius: 4px 0 0 4px;
+        padding: 15px;
+        background: #fff;
+        color: #c7222a;
+        -webkit-box-shadow: 0 0 5px -2px rgba(0,0,0,.75);
+        -moz-box-shadow: 0 0 5px -2px rgba(0,0,0,.75);
+        box-shadow: 0 0 5px -1px rgba(0,0,0,.75);
+        max-width: 50px;
+        z-index: 999999;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all .3s ease;
+    }
+
+    .send-sms-btn span{
+        opacity: 0;
+    }
+
+    .send-sms-btn:hover{
+        max-width: 200px;
+        transition: all 0.3s ease;
+    }
+
+    .send-sms-btn:hover span{
+        opacity: 1;
+        transition: all 0.01s ease;
+        transition-delay: 0.1s;
+    }
+
+
+/* End of send sms btn styling */
+
+    /* help to buy CSS */
+
+
+    #helptobuy {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 9999;
+        }
+
+        .helpus {
+            float: left;
+            cursor: pointer;
+            width: 59px;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+        }
+
+        .helpus img {
+            max-width: 100%;
+            display: inline-block;
+        }
+
+        .help-us-online {
+            position: relative;
+        }
+
+        .helpusslide {
+            display: none;
+            float: left;
+            width: 280px;
+            height: auto;
+            background: #fff;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            -moz-border-radius: 10px 10px 10px 10px;
+            -o-border-radius: 10px 10px 10px 10px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .shadow_bg {
+            display: none;
+            background: grey;
+            opacity: 0.8;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+        }
+
+        .helpheading {
+            font-family: 'PF-Handbook-Pro-Regular';
+            font-size: 15px;
+            color: #ffffff;
+            text-align: center;
+            margin: 0px;
+            padding: 25px 0 15px;
+            border-bottom: 1px solid #e9e9e9;
+            line-height: 1.4;
+        }
+
+        .helpusslide .helptxt {
+            border-bottom: none;
+        }
+
+        .buytextbox {
+            padding: 0px 15px;
+            background: #DA9089;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .buytextbox .textbox {
+            width: 100%;
+            float: left;
+            margin-bottom: 15px;
+            padding-top: 15px;
+        }
+
+        .hiliModel .hilitableView {
+           padding: 3px;
+        }       
+
+        .helpinputbox {
+            background: #f5f5f5;
+            width: 100%;
+            height: 40px;
+            padding: 0px 5px;
+            border-radius: 5px;
+            font-family: 'Lato-Light';
+            font-size: 15px;
+            color: #000;
+            border: none;
+            outline: 0;
+            transition: .3s ease;
+            text-decoration: none!important;
+            display: block;
+        }
+
+        .help-email-icon {
+            background: #f5f5f5 url(../images/help-email-icon.png) no-repeat 8px 8px;
+            padding-left: 35px;
+        }
+
+        .help-mob-icon {
+            background: #f5f5f5 url(../images/help-mobile-icon.png) no-repeat 8px 8px;
+            padding-left: 35px;
+        }
+
+        .helpcheckbox {
+            width: 16px !important;
+            height: 16px !important;
+            margin: 4px 0 0 0 !important;
+            line-height: normal !important;
+            box-sizing: border-box !important;
+            padding: 0 !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            background-color: initial !important;
+            cursor: default !important;
+            -webkit-appearance: checkbox !important;
+            
+        }
+        .helpcheckbox:checked:before{
+            display: none;
+        }
+        .floatcheck .helpcheckbox{
+            margin-left: 0px !important;
+        }
+        .floatcheck {
+            width: 25px;
+            float: left;
+        }
+
+        .buytextbox .desctxt {
+            width: 80%;
+            float: left;
+            font-family: 'Lato-Light';
+            font-size: 13px;
+            color: #808588;
+            margin: 0px;
+            padding: 0px;
+            padding-top: 3px;
+            text-align: left;
+                line-height: 18px;
+        }
+        .click-to-call {
+            position: absolute;
+            top: 10px;
+            right: 5px;
+        }
+        .click-to-call a {
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            padding: 3px 5px;
+        }
+        .helpcheck {
+            padding-left: 2px;
+        }
+
+        #helptobuy .buytextbox .leadformh {
+          min-height: initial;
+        }
+
+        #callUsForm .error-help-txt {
+          display: none;
+        }
+
+        #callUsForm.form-error .error-help-txt {
+          display: block;
+        }
+
+        #helptobuy .sub-buttons button {
+          width: 185px;
+          margin-bottom: 5px;
+        }
+        .error-help-txt{
+            font-size: 12px;
+            color: #C61C2C;
+            display: block;
+            text-align: center;
+        }
+
+        .textparaStyle{
+            text-align: center;
+            padding-top: 15px;
+            font-size: 14px;
+            color: #000;
+            line-height: 18px;
+             font-family: 'PF-Handbook-Pro-Regular';
+
+        }
+
+
+
+        .cp-common-btn
+        {
+             color: #000;
+    background-color: #f7A500;
+    padding: 8px 10px;
+    position: relative;
+    font-family: 'PF-Handbook-Pro-Regular';
+    font-size: 16px;
+    min-width: 150px;
+    transition: all 0.5s ease;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none !important;
+    text-transform: uppercase;
+    /*text-align: left !important;*/
+     padding: 5px 10px 5px 9px;
+    font-size: 14px;
+        }
+
+        .cp-common-btn:hover {
+            /*border:2px solid #c61c2c;*/
+            color: #fff;
+            background-color: #c31d2c;
+        }
+
+        .cp-common-btn.suppbtn-new:hover {
+            border: none;
+            color: #ffffff;
+            background-color: #c61c2c;
+        }
+
+        .cp-common-btn:focus {
+            outline: none;
+        }
+
+/* help to buy Css ends */
+
+
+    .btn-quote {
+        border-radius: 3px;
+        background-color: #f7a500;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+        width: 100px;
+        height: 24px;
+        color: #000;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
+        outline: none !important;
+        line-height: 12px;
+        margin-top: -4px;
+    }
+
+    .prev-step.qq-save-btn{
+        width: 90px !important;
+    }
+
+
+/* Useful reuasable classes */
+
+    .padding-btm-20 {
+        padding-bottom: 20px;
+    }
+
+    .width-100 {
+        width: 100%;
+    }
+
+/* End of reusable classes */
+
+
+/* Custom placeholder styling */
+
+    ::-webkit-input-placeholder {
+        color: #333;
+        opacity: 0.5;
+        font-family: 'PF-Handbook-Pro-Thin';
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #333;
+        opacity: 0.5;
+        font-family: 'PF-Handbook-Pro-Thin';
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #333;
+        opacity: 0.5;
+        font-family: 'PF-Handbook-Pro-Thin';
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: #333;
+        opacity: 0.5;
+        font-family: 'PF-Handbook-Pro-Thin';
+    }
+
+/* End of custom placeholder styling */
+
+
+/* Abhi Loader Styling */
+
+    .abhi-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 10000;
+        display: none;
+    }
+
+    .white-loader {
+        background: #fff;
+    }
+
+    .abhi-loader.show-loader {
+        display: block;
+    }
+
+    .abhi-loader img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 80px;
+    }
+
+/* End of abhi loader styling */
+
+
+/* Section related loader */
+
+    .section-loader {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        border: 2px solid #f7a500;
+        top: 50%;
+        animation: loader 2s infinite ease;
+    }
+
+    .section-loader .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #f7a500;
+        animation: loader-inner 2s infinite ease-in;
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(180deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        75% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader-inner {
+        0% {
+            height: 0%;
+        }
+        25% {
+            height: 0%;
+        }
+        50% {
+            height: 100%;
+        }
+        75% {
+            height: 100%;
+        }
+        100% {
+            height: 0%;
+        }
+    }
+
+/* End of section related loader */
+
+/* marquee Styling */
+
+.marq {
+             width: 100%;
+            padding: 8px 0;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1;
+
+        }
+
+
+/* Modal Styling */
+
+    .app-modal {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9999999;
+    }
+
+    .app-modal .modal-dialog {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        max-width: 95%;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .modal-content {
+        border: none;
+        border-radius: 0;
+    }
+
+    .custom-construct-overlay {
+        pointer-events: none;
+    }
+
+    .app-modal .modal-header {
+        background-color: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 12px 30px;
+        border: none;
+    }
+
+    .app-modal .add-member-btns .btn {
+        width: 100%;
+    }
+
+    .app-modal .add-member-btns {
+        display: inline-block;
+    }
+
+    .app-modal .modal-body {
+        max-height: calc(100vh - 191px);
+        overflow: auto;
+        padding: 15px;
+    }
+
+    .app-modal .modal-body p,
+    .app-modal .modal-body .modal-bind-text,
+    .app-modal .modal-body .modal-bind-text li {
+        font-size: 16px;
+        font-family: "PF-Encore-Sans-Pro-Regular";
+        line-height: 1.4;
+    }
+
+    .app-modal .modal-hdr-txt {
+        font-family: "PF-Handbook-Pro-Regular";
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #000;
+        font-size: 22px;
+        line-height: 1.17;
+    }
+
+    .app-modal .modal-save-btn {
+        cursor: pointer;
+        color: #fff;
+        width: auto;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .12);
+        background-color: #694743;
+        border: transparent;
+        padding: 6px 40px;
+        border-radius: 2px;
+        font-size: 16px;
+        letter-spacing: .2px;
+        text-align: center;
+        position: relative;
+        pointer-events: auto;
+    }
+
+    .app-modal .modal-footer .modal-save-btn {
+        margin: 0;
+    }
+
+    .app-modal .modal-footer .modal-save-btn:active,
+    .app-modal .modal-footer .modal-save-btn:focus {
+        background: #ccc;
+        color: #694743;
+        outline: none;
+    }
+
+    .bg-white {
+        color: #000000 !important;
+        background-color: #f2f3f6 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12) !important;
+        border: solid 0.5px #cfcfcf !important;
+    }
+
+    .app-input .radio-label-spacing {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 18px;
+        font-weight: 500;
+        color: #6c7174;
+        padding-left: 10px;
+        position: relative;
+        top: 1px;
+    }
+
+    .app-modal button.close {
+        background-color: #5a5a5a!important;
+        color: #fff;
+        float: right;
+        opacity: 2;
+        text-shadow: none;
+        font-size: 21px;
+        font-weight: 700;
+        margin: -13px -30px;
+        padding: 8px 11px;
+        pointer-events: auto;
+    }
+
+    .app-modal .delete-option {
+        border: none;
+        background: #c7222a;
+        padding: 1px 5px 0 5px;
+        border-radius: 2px;
+    }
+
+    .app-modal .delete-option img {
+        height: 10px;
+    }
+
+    .app-modal table td,
+    .app-modal table th {
+        border: 0 !important;
+    }
+
+    .app-modal table th label {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #777;
+        font-weight: normal;
+    }
+
+    .app-modal .app-close-modal {
+        height: 14px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    .app-input>input[type=radio]:checked+label>i.default:before,
+    .app-input>input[type=checkbox]:checked+label>i.default:before {
+        background-color: #c7222a !important;
+    }
+
+    .app-input>input[type=radio]:checked+label>i.default:after,
+    .app-input>input[type=checkbox]:checked+label>i.default:after {
+        border: 1px solid #c7222a !important;
+    }
+
+    .app-input>input[type=radio]:checked+.radio-label-spacing,
+    .app-input>input[type=checkbox]:checked+.radio-label-spacing {
+        color: #c7222a;
+    }
+
+    .app-modal table th,
+    .app-modal table td {
+        vertical-align: middle !important;
+    }
+
+    .app-modal .modal-close-btn {
+        height: 12px;
+        margin-top: 5px;
+    }
+
+    .sum-insured-members-block-dropdown input {
+        font-size: 14px;
+        background-color: #f2f3f6 !important;
+        padding: 5px 10px;
+        border: none !important;
+        border-left: solid 0.5px #e5e5e5 !important;
+        border-top: solid 0.5px #e5e5e5 !important;
+        border-bottom: solid 0.5px #e5e5e5 !important;
+        box-shadow: none !important;
+        border-radius: 0;
+    }
+
+    .sum-insured-members-block-dropdown input:focus,
+    .sum-insured-members-block-dropdown input:active,
+    .sum-insured-members-block-dropdown input:hover {
+        box-shadow: none !important;
+    }
+
+    .sum-insured-members-block-dropdown .input-group-addon {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 12px;
+        letter-spacing: 0.1px;
+        text-align: left;
+        color: #6c7174;
+        background-color: #f2f3f6 !important;
+        border: none !important;
+        border-right: solid 0.5px #e5e5e5 !important;
+        border-top: solid 0.5px #e5e5e5 !important;
+        border-bottom: solid 0.5px #e5e5e5 !important;
+        border-radius: 0;
+    }
+
+    .sum-insured-members-block-dropdown .input-group {
+        width: 130px;
+    }
+
+    .app-modal .modal-combo-txt-hcb {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #6c7174;
+    }
+
+    .app-modal .open>.dropdown-menu {
+        width: 200px;
+        min-width: initial;
+        position: fixed;
+        top: auto;
+        left: auto;
+        z-index: 100;
+    }
+
+    .app-modal .chk-modal-data {
+        padding-top: 10px;
+    }
+
+    .app-modal .earn-mem-bene-lbl-txt {
+        padding-top: 5px;
+    }
+
+    .app-modal .modal-footer {
+        border: none;
+    }
+
+/* End of modal Styling */
+
+
+/* Alert Box Modal Styling */
+
+    #alertBoxModal .modal-dialog {
+        width: 550px;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #alertBoxModal .hiliModel{
+        pointer-events: auto!important;
+    }
+
+    #alertBoxModal.information-modal .modal-dialog{
+        width: 80%;
+    }
+
+    #alertBoxModal .app-modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    #alertBoxModal.information-modal td,
+    #alertBoxModal.information-modal th{
+        border: 1px solid #ddd !important;
+    }
+
+    .modal-bind-text ul {
+        list-style: square;
+        padding-left: 40px;
+    }
+
+    .modal-bind-text ul li {
+        display: block;
+        padding-bottom: 5px;
+        position: relative;
+    }
+
+    .modal-bind-text ul li:before {
+        position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        left: -18px;
+        top: 4px;
+        border-radius: 1px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+/* End of alert box modal styling */
+
+
+/* Site breadcrumb styling */
+
+    .breadcrumb-item-cust-active {
+        color: #000000;
+        display: inline;
+        border-bottom: 4px solid;
+        padding-bottom: 10.5px;
+        line-height: 1.75em;
+    }
+
+    .breadcrumb-item-cust>a {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: #000000;
+        background-color: #f1f3f6;
+    }
+
+    .breadcrumb-row ul,
+    .breadcrumb-row li {
+        display: inline;
+        text-align: left;
+        margin: 0;
+    }
+
+    .breadcrumb-cust li {
+        padding: 0 2px
+    }
+
+    .breadcrumb-item-cust .unbold-fonts {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 15px;
+        font-weight: 300;
+        color: #000000;
+    }
+
+    .breadcrumb-cust li a:focus,
+    .breadcrumb-cust li a:hover {
+        outline: none;
+        text-decoration: none;
+    }
+
+    .breadcrumb-menu-right-font-size {
+        font-size: 11px;
+    }
+
+    .breadcrumb-row {
+        padding-top: 15.5px!important;
+        padding-bottom: 8.5px!important
+    }
+
+/* End of site breadcrumb styling */
+
+
+/* Add Member Modal Styling */
+
+    #add-new-member-web .modal-header .close {
+        margin: -15px -30px;
+        padding: 8px 11px 8px;
+    }
+
+    #add-new-member-web .close {
+        background-color: #5a5a5a !important;
+        color: #fff;
+        float: right;
+        opacity: 2;
+        text-shadow: none;
+        font-size: 21px;
+        font-weight: 700;
+    }
+
+    #add-new-member-web .modal-header {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    #add-new-member-web .modal-dialog {
+        width: 700px;
+    }
+
+    #add-new-member-web .input-text-box {
+        height: 35px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 22px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #6c7174;
+        text-align: right;
+        padding-right: 0px;
+    }
+
+    .placeholder-addon-left {
+        border: solid 1px #cdcece !important;
+        color: #000000;
+        box-shadow: none;
+        border-right: 0px !important;
+    }
+
+    .member-table {
+        max-height: calc(100vh - 260px);
+        overflow: auto;
+    }
+
+    .add-member-header {
+        opacity: 0.7;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 21.5px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        margin-top: 7px;
+    }
+
+    .change-mem-group-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: normal;
+        color: #000000;
+    }
+
+    .add-remove-group-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #6c7174;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .mem-grey-bdr-btn {
+        width: 150px;
+        height: 30px;
+        margin-right: 5px;
+        margin-bottom: 20.5px;
+        border-radius: 1px;
+        background-color: #ffffff;
+        border: solid 1px #979797;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 18px;
+        text-align: left;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #6c7174;
+        padding: 0 10px;
+    }
+
+    .mem-grey-bdr-btn:hover,
+    .mem-grey-bdr-btn:active:focus,
+    .mem-grey-bdr-btn:focus {
+        outline: none !important;
+    }
+
+    .plus-icon {
+        margin-top: 2px;
+    }
+
+    .row-bdr-btm {
+        border: solid 0.5px #979797;
+    }
+
+    .new-addition-text {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #c7222a;
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+
+    .existing-group-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #6c7174;
+        padding-top: 36px;
+    }
+
+    .modal-save-btn1 {
+        padding: 11px 36px;
+        border-radius: 2px;
+        background-color: #c7222a;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        border: none;
+    }
+
+    .modal-save-btn1:hover,
+    .modal-save-btn1:focus,
+    .modal-save-btn1:active:focus {
+        background-color: #c7222a;
+        color: #ffffff;
+        outline: none;
+    }
+
+    .modal-cancel-btn {
+        padding: 11px 36px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 0.5px #c7222a;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #c7222a;
+        margin-left: 10px;
+    }
+
+    .modal-cancel-btn:hover,
+    .modal-cancel-btn:focus,
+    .modal-cancel-btn:active:focus {
+        background-color: #ffffff;
+        border: solid 0.5px #c7222a;
+        color: #c7222a;
+        outline: none;
+    }
+
+    .modal-btn-pad-tb-row {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .grey-member-btn {
+        width: 150px;
+        height: 30px;
+        border-radius: 1px;
+        margin-right: 5px;
+        margin-bottom: 13.5px;
+        background-color: #6c7174;
+        border: solid 1px #979797;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: left;
+        padding: 0 10px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+    }
+
+    .add-member-to-group {
+        opacity: 0.7;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 15.5px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        text-align: center;
+        padding-bottom: 10.5px;
+    }
+
+    .add-mem-to-group-bg {
+        border-radius: 2px;
+        background-color: #f6f8fb;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .modal-pad-l-r-0 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .remove-div-btn {
+        width: 119px;
+        height: 30px;
+        padding-top: 4px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 1px #c7222a;
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #d0021b;
+        margin-top: 3px;
+    }
+
+    .remove-div-btn:hover,
+    .remove-div-btn:active:focus,
+    .remove-div-btn:focus {
+        outline: none;
+        background-color: #ffffff;
+        border: solid 1px #c7222a;
+        color: #d0021b;
+    }
+
+    .addon-yrs-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000000;
+        background-color: #ffffff;
+        border: solid 1px #cdcece;
+    }
+
+    .member-row-marign-top {
+        margin-top: 6.5px;
+    }
+
+    #add-new-member-web .modal-footer {
+        border: none;
+        padding-top: 0;
+    }
+
+    #add-new-member-web .modal-save-btn1{
+        padding: 8px 30px;
+    }
+
+    .add-member-errors h4 {
+        font-weight: 700;
+        padding-left: 10px;
+    }
+
+    .add-member-errors ul {
+        list-style: disc;
+        padding-left: 25px;
+        padding-top: 5px;
+    }
+
+/* End of add member modal styling */
+    
+    /* add remove member glyphicon */
+
+    .add-remove-glyphion{
+        font-size: 25px;
+        padding-left: 15px;
+        color: #d0021b;
+    }
+
+/* Circular rotation animation */
+
+    .showOpt-open .showOptChevron img {
+        display: none;
+    }
+
+    .showOptChevron .fa-spinner {
+        display: none;
+        position: relative;
+        bottom: 7px;
+        font-size: 24px;
+        color: #c7222a;
+    }
+
+    .showOpt-open .showOptChevron .fa-spinner {
+        display: block;
+    }
+
+    @-webkit-keyframes spinning-circle {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .fa-spinner {
+        animation-name: spinning-circle;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    .sum-insured-members-block-dropdown .input-group {
+        width: 100px !important
+    }
+
+/* End of circular rotation animation */
+
+
+/* Slick Slider custom styling */
+
+    .slider {
+        width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+
+    .slick-list {
+        padding-top: 30px !important;
+        padding-bottom: 40px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    #plans-slider-section .slick-list {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .slick-slide {
+        transform: scale(0.88);
+    }
+
+    .slick-slide.slick-current {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+
+    .reco_q_container {
+        padding-left: 90px;
+        border-left: 1px solid #ccc;
+    }
+
+    @media (max-width: 992px) {
+        .reco_q_container {
+            padding: 20px;
+            border-left: none;
+        }
+    }
+
+    .slick-track {
+        margin: initial !important;
+    }
+
+    .slick-slide {
+        transform: scale(1);
+        padding-right: 20px;
+    }
+
+    .slick-next.slick-disabled,
+    .slick-prev.slick-disabled {
+        opacity: 0.5;
+    }
+
+    .sum-insured-slick-slider {
+        margin-bottom: 0 !important;
+    }
+
+    .sum-insured-slick-slider .slick-list {
+        padding-top: 0 !important;
+        padding-bottom: 30px !important;
+    }
+
+    .buy-owl-carousel .dropdown-menu {
+        max-height: 115px;
+    }
+
+    .sum-insured-slick-slider .slick-dots {
+        bottom: 15px;
+    }
+
+/* End of slick slider custom styling */
+
+
+/* Cross sell styling */
+
+    .cross-sell-box {
+        padding: 25px !important;
+    }
+
+/* End of cros sell styling */
+
+
+/* Owl Carousel Styling */
+
+    .buy-owl-carousel .owl-prev:before,
+    .buy-owl-carousel .owl-next:before,
+    .reco-slider .slick-prev:before,
+    .reco-slider .slick-next:before,
+    #plans-slider-section .slick-next:before,
+    #plans-slider-section .slick-prev:before{
+        position: absolute;
+        content: "\f054" !important;
+        font-family: 'FontAwesome' !important;
+        opacity: 1 !important;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        transform: translate(-50%, -50%);
+    }
+
+    .buy-owl-carousel .owl-prev:before,
+    .reco-slider .slick-prev:before,
+    #plans-slider-section .slick-prev:before{
+        content: "\f053" !important;
+        font-family: 'FontAwesome' !important;
+        opacity: 1 !important;
+    }
+
+    .buy-owl-carousel .owl-prev,
+    .reco-slider .slick-prev,
+    #plans-slider-section .slick-prev{
+        left: -40px !important;
+    }
+
+    .buy-owl-carousel .owl-next,
+    .reco-slider .slick-next,
+    #plans-slider-section .slick-next{
+        right: -40px !important;
+    }
+
+    .buy-owl-carousel .owl-prev,
+    .buy-owl-carousel .owl-next,
+    .reco-slider .slick-prev,
+    .reco-slider .slick-next{
+        position: absolute;
+        height: 50px !important;
+        width: 30px !important;
+        top: 35% !important;
+        background: #f7a500 !important;
+        border-radius: 4px !important;
+    }
+
+    #plans-slider-section .slick-prev,
+    #plans-slider-section .slick-next {
+        position: absolute;
+        height: 50px !important;
+        width: 30px !important;
+        top: 50% !important;
+        background: #f7a500 !important;
+        border-radius: 4px !important;
+        transform: translateY(-50%);
+    }
+
+    .reco-slider .slick-prev,
+    .reco-slider .slick-next,
+    #plans-slider-section .slick-prev,
+    #plans-slider-section .slick-next {
+        color: transparent;
+        outline: 0;
+        border: 0;
+    }
+    #plans-slider-section .slick-next {
+        margin-right: 25px;
+    }
+
+    .buy-owl-carousel .owl-pagination {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .buy-owl-carousel .owl-pagination .owl-page {
+        display: inline-block;
+    }
+
+    .buy-owl-carousel .owl-pagination .owl-page span {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #f7a500;
+        display: inline-block;
+        opacity: 0.4;
+        margin: 0 2px;
+    }
+
+    .buy-owl-carousel .owl-pagination .owl-page.active span {
+        opacity: 1;
+    }
+
+    .buy-owl-carousel .owl-wrapper-outer {
+        padding-bottom: 40px;
+    }
+
+    #content-hospital-cash-benefit .owl-wrapper-outer {
+        padding-bottom: 75px;
+    }
+
+/* End of owl carousel styling */
+
+
+/* Custom tooltip styling */
+
+    .custom-popover {
+        position: absolute;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .custom-popover img{
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
+
+    .custom-popover .custom-tooltip-text {
+        position: absolute;
+        bottom: 35px;
+        left: -10px;
+        color: #151515;
+        z-index: 1060;
+        width: 276px;
+        padding: 1px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        line-break: auto;
+        padding: 15px;
+        display: none;
+    }
+    .owl-carousel .owl-wrapper-outer {
+        
+        position: relative;
+        width: 100%;
+    } 
+    
+    .owl-carousel-i-size{
+        width: 200px !important;
+    }
+
+    .custom-popover .custom-tooltip-text:after,
+    .custom-popover .custom-tooltip-text:before {
+        top: 100%;
+        left: 20px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-popover .custom-tooltip-text:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #fff;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+
+    .custom-popover .custom-tooltip-text:before {
+        border-color: rgba(204, 204, 204, 0);
+        border-top-color: #ccc;
+        border-width: 11px;
+        margin-left: -11px;
+    }
+
+    .custom-popover .custom-tooltip-text .pop-close {
+        position: absolute;
+        top: -5px;
+        right: 6px;
+        font-weight: bold;
+        font-size: 22px;
+        color: #694743;
+        cursor: pointer;
+    }
+
+    .custom-popover img:active~.custom-tooltip-text,
+    .custom-popover img:focus~.custom-tooltip-text{
+        display: block;
+    }
+
+/* End of custom tooltip styling */
+
+
+/* App UL styling */
+
+    .app-ul {
+        list-style: disc;
+        background: #f6f6f6;
+        padding: 10px 10px 10px 30px;
+    }
+
+    .app-ul li {
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+
+/* End of app UL styling */
+
+
+/* Animation for header */
+
+    @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-80px);
+      -ms-transform: translateY(-80px);
+      transform: translateY(-80px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+/* End of animation for header */
+
+
+/* Premium Panel Styling */
+
+    .prem-panel {
+        background-color: #fff;
+    }
+
+    .prem-panel.fixed{
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    .prem-panel .glyphi-drop-down-style {
+        font-size: initial;
+        margin-top: 13px;
+    }
+
+    .prem-big-txt {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 24px;
+        text-align: left;
+        color: #c7212a;
+        font-weight: bold;
+    }
+
+    .prem-small-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 26px;
+        color: #c7212a;
+        font-weight: 700;
+    }
+
+    .prem-panel .tooltip-grey-txt {
+        font-size: 15px;
+    }
+
+    .prem-panel .tooltip-text-hd {
+        margin-bottom: 0;
+    }
+
+    .prem-row {
+        padding: 0 50px 10px 50px;
+    }
+
+    .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        animation: fadeInDown 0.5s both;
+    }
+
+    .sticky {
+        z-index: 1000;
+    }
+
+    .plan-dropdown-menubox {
+        width: 269.5px;
+        height: auto;
+        background-color: #ffffff;
+        padding-top: 10px;
+        border: none;
+        box-shadow: 0 12.5px 20px 0 rgba(0, 0, 0, 0.13);
+        border-radius: 0px;
+    }
+
+    .plan-drop-web-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 10px;
+        line-height: 1.45;
+        text-align: left;
+        color: #6c7174;
+        margin-left: 22px;
+    }
+
+    .plan-dropdown-menubox>li>a:hover {
+        font-family: PF-Handbook-Pro-Regular;
+        font-weight: bold;
+        font-size: 17px;
+        text-align: left;
+        color: #c7222a;
+        background-color: transparent;
+    }
+
+    #glyphicon-plan-section {
+        top: 0px;
+    }
+
+    .plan-dropdown-menubox>li>a {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 15px;
+        text-align: left;
+        color: #6c7174;
+    }
+
+    .tooltip-text-hd {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 15px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #6c7174;
+        margin-left: 16.5px;
+        margin-bottom: 5px;
+    }
+
+    .tooltip-grey-txt {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 10px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.45;
+        letter-spacing: normal;
+        color: #6c7174;
+        margin-left: 16.5px;
+    }
+
+    .tooltip-second-pad-top {
+        padding-top: 10px;
+    }
+
+    .tooltip-btn {
+        font-family: PF-Handbook-Pro-Regular;
+        font-weight: bold;
+        color: #c7222a;
+        background-color: transparent;
+        font-size: 30px;
+        padding-bottom: 0px;
+    }
+
+    .tooltip-btn:hover,
+    .tooltip-btn:active,
+    .tooltip-btn:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    .prem-rupee-symbol {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .plan-dropdown-menubox {
+        width: 269.5px;
+        height: auto;
+        background-color: #ffffff;
+        border: none;
+        box-shadow: 0 12.5px 20px 0 rgba(0, 0, 0, 0.13);
+        border-radius: 0px;
+        padding-top: 10px;
+    }
+
+    .plan-dropdown-menubox>li>a:hover {
+        font-family: 'PF-Handbook-Pro-Regular';
+        font-weight: bold;
+        font-size: 15px;
+        text-align: left;
+        color: #c7222a;
+        background-color: transparent;
+    }
+
+    .plan-dropdown-menubox>li>a {
+        font-family: 'PF-Handbook-Pro-Regular';
+        font-size: 15px;
+        text-align: left;
+        color: #6c7174;
+    }
+
+    .incl-gst {
+        font-size: 13px;
+        padding-left: 5px;
+    }
+
+/* End of premium panel styling */
+
+
+/* Alert Popup */
+
+    .alert-swipe {
+        position: fixed;
+        z-index: 99999999;
+        bottom: 10px;
+        right: -300px;
+        width: 300px;
+        -webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+        -webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+       -moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+        -ms-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+         -o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);
+    }
+
+    .alert-swipe.success,
+    .alert-swipe.error {
+        right: 10px;
+        -webkit-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.3000);
+       -moz-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.3000);
+        -ms-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.3000);
+         -o-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.3000);
+            transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.3000);
+    }
+
+    .alert-border {
+        background-color: #f9c45b;
+        display: flex;
+    }
+
+    .alert-swipe.success .alert-border {
+        border: solid 0.5px #f7a500;
+        background-color: #fff;
+    }
+
+    .alert-swipe.error .alert-border {
+        border: solid 0.5px #c7222a;
+        background-color: #fff;
+    }
+
+    .alert-img-bg {
+        position: relative;
+        min-height: 55px;
+        width: 10%;
+        box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    .alert-swipe.success .alert-img-bg {
+        background-color: #f7a500;
+    }
+
+    .alert-swipe.error .alert-img-bg {
+        background-color: #c7222a;
+    }
+
+    .alert-swipte-left-img {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .alert-swipe.success .alert-img {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    .alert-swipe.error .alert-error-img {
+        display: block;
+    }
+
+    .member-success-text {
+        font-family: PF-Handbook-Pro-Regular;
+        font-size: 16.5px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #4b4b4b;
+        padding: 15px;
+    }
+
+    .member-success-text ul li {
+        display: block;
+    }
+
+    .alert-pad-l-r-0 {
+        padding: 0;
+    }
+
+    .alert-text-display{
+        width: 90%;
+    }
+
+    .alert-close-img {
+        float: right;
+        padding-right: 5px;
+        padding-top: 5px;
+        display: none;
+    }
+
+    .alert-swipe.success .yellow-close-img {
+        display: block;
+    }
+
+    .alert-swipe.error .red-close-img {
+        display: block;
+    }
+
+/* End of alert popup */
+
+
+/* Progressbar styling */
+
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 0;
+        border-bottom: 0px;
+    }
+
+    #progressbar {
+        overflow: hidden;
+        counter-reset: step;
+    }
+
+    #progressbar li {
+        list-style-type: none;
+        width: 24.33%;
+        float: left;
+        position: relative;
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #353535;
+        text-align: center;
+    }
+
+    #progressbar > li > a > span > div{
+        text-align: left;
+        padding-left: 20px;
+    }
+
+     #progressbar > li.disable > a > span > div{
+        opacity: 0.3;
+     }
+
+    .wizard .nav-tabs li.active {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #6a4742 !important;
+        cursor: pointer;
+    }
+
+    .wizard .nav-tabs li a {
+        font-family: "PF-Handbook-Pro-Regular";
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #353535 !important;
+    }
+
+    #progressbar li.active a {
+        color: #6a4742 !important;
+        opacity: 1;
+    }
+
+    #progressbar li:before {
+        content: '●';
+        width: 19px;
+        height: 30px;
+        line-height: 28px;
+        display: block;
+        font-size: 37px;
+        color: #a1a1a1;
+        margin: 0 auto 5px 61px;
+        z-index: 1;
+        position: relative;
+    }
+
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: #969090;
+        position: absolute;
+        left: -70%;
+        top: 12px;
+    }
+
+    #progressbar li:first-child:after {
+        content: none;
+    }
+
+    #progressbar li.active:before {
+        border: 3px solid #6a4742;
+        border-radius: 50%;
+        line-height: 24px;
+        color: #6a4742;
+        width: 30px;
+        font-size: 22px;
+        padding-top: 1px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    #progressbar li.active:after {
+        border: 2px solid #6a4742;
+        color: white;
+    }
+
+/* End of progressbar styling */
+
+
+/* Responsive Styling for add member modal */
+
+    @media(max-width: 991px){
+        #progressbar>li>a>span>div{
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+
+    @media(min-width: 768px) and (max-width: 991px){
+        #progressbar li:before {
+            margin-left: 38px;
+        }
+    }
+
+    @media(max-width: 768px){
+        .ios .app-modal .open>.dropdown-menu{
+            position: static;
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .send-sms-btn{
+            display: none;
+        }
+
+        .custom-popover .custom-tooltip-text:after,
+        .custom-popover .custom-tooltip-text:before {
+            top: 99%;
+        }
+
+        .prem-row {
+            padding: 0 15px;
+        }
+
+        #plans-slider-section .slick-prev {
+            margin-left: 25px;
+            z-index: 100;
+        }
+
+        .prem-big-txt {
+            font-size: 15px;
+        }
+        .prem-small-txt {
+            font-size: 15px;
+        }
+        .prem-update-btn-txt {
+            font-size: 16px;
+            padding-left: 10.8px;
+            padding-top: 9.5px;
+            padding-bottom: 9.5px;
+        }
+        .prem-panel .glyphi-drop-down-style{
+            margin-top: 16px;
+        }
+        .margin-top-mob{
+            margin-top: 10px;
+        }
+        .prem-row {
+            padding-left: 0px;
+        }
+        .dropdown-plan.plan-dropdown{
+            padding: 0;
+        }
+        .buy-owl-carousel .owl-prev,
+        .reco-slider .slick-prev {
+            left: -25px !important;
+        }
+        .buy-owl-carousel .owl-next,
+        .reco-slider .slick-next {
+            right: -25px !important;
+        }
+        .custom-popover .custom-tooltip-text {
+            width: 150px;
+            left: -60px;
+        }
+
+        .custom-popover .custom-tooltip-text:after, .custom-popover .custom-tooltip-text:before{
+            left: 65px;
+        }
+
+
+        .custom-popover.large-tooltip .custom-tooltip-text {
+            width: 245px;
+            left: -60px;
+        }
+        .critical-illness-ibtn{
+            width: 245px;
+            left: -210px !important;
+        }
+
+        .custom-popover.large-tooltip .custom-tooltip-text:after, .custom-popover.large-tooltip .custom-tooltip-text:before{
+            top: 100%;
+            left: 120px;
+            margin-left: -60px;
+        }
+        .owl-carousel-i-size {
+            width: 200px!important;
+            left: -20px !important;
+        }
+
+       .owl-carousel-i-size:after,  .owl-carousel-i-size:before {
+            top: 100%;
+            left: 80px !important;
+            margin-left: -60px;
+        }
+
+        .critical-illness-ibtn:after, .critical-illness-ibtn:before{
+            top: 100%;
+            left: 269px;
+            margin-left: 89px !important;
+        }
+    }
+
+    @media (min-width: 581px) and (max-width:767px) {
+        .prem-small-txt {
+            font-size: 15px;
+        }
+        .breadcrumb-menu-right-font-size {
+            font-size: 8px;
+            font-weight: 600;
+        }
+        #progressbar li:before {
+            margin-left: 17px;
+        }
+        #progressbar li.active:before {
+            line-height: 20px;
+            font-size: 33px;
+        }
+        #progressbar li:after {
+            left: -85%;
+        }
+    }
+
+    @media(max-width: 460px){
+        .custom-popover.hcb-popover .custom-tooltip-text{
+            left: -115px;
+        }
+
+        .custom-popover.hcb-popover .custom-tooltip-text:after, .custom-popover.hcb-popover .custom-tooltip-text:before{
+            left: initial;
+            right: 2px;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        #add-new-member-web .modal-header {
+            padding-bottom: 5px;
+        }
+        .hilitbody{
+            font-size: 12px;
+        }
+        .hilimodelBody{
+            height: 107vh!important;
+        }
+        .hilibtmstyle{
+            padding: 6px 36px!important;
+        }
+        .mobile-pad-l-r-10 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .add-member-to-group {
+            padding-top: 20px;
+            padding-bottom: 0px;
+        }
+        .remove-div-btn {
+            width: 75px;
+            float: right;
+        }
+        .addon-yrs-txt {
+            font-size: 17px;
+            padding: 6px 8px !important;
+        }
+        #add-new-member-web .modal-dialog {
+            width: auto;
+        }
+        .add-mem-mod-pad-top-30 {
+            padding-right: 0px;
+        }
+        .new-pad-left-15 {
+            padding-left: 15px !important;
+        }
+        .modal-mob-pad-l-r-0 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        #add-new-member-web .modal-header .close {
+            margin: -15px -15px;
+        }
+        .mem-grey-bdr-btn {
+            width: 47%;
+            font-size: 15px;
+            margin-bottom: 10.5px;
+        }
+        .grey-member-btn {
+            width: 47%;
+            font-size: 18px;
+        }
+        .add-remove-group-txt {
+            padding-bottom: 0px;
+        }
+        .member-row-pad-btm {
+            padding-bottom: 0px;
+        }
+        .existing-group-txt {
+            padding-top: 15px;
+        }
+        .add-member-header {
+            font-size: 16px;
+        }
+        .res-padding-0 {
+            padding: 0;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width:580px) {
+        .prem-small-txt {
+            font-size: 15px;
+        }
+        .prem-rupee-symbol {
+            font-size: 15px;
+        }
+        .breadcrumb-menu-right-font-size {
+            font-size: 8px;
+            font-weight: 600;
+        }
+        .breadcrumb-item-cust-active {
+            padding-bottom: 12px;
+        }
+        #progressbar li:before {
+            margin-left: 17px;
+        }
+    }
+
+    @media (min-width: 320px) and (max-width:379px) {
+        .breadcrumb-item-cust>a {
+            font-family: PF-Handbook-Pro-Regular;
+            font-size: 11px !important;
+            font-weight: bold;
+            text-align: left;
+            color: #000000;
+        }
+    }
+
+/* End of Responsive Styling for add member modal */
+.totalAmt{
+    border-top: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    font-weight: 600 !important;
+    margin-bottom: 5px;
+}
+
+/*
+  End of CSS file
+  Custom css file
+  Auhtor: ABHI Digital;  
+  Date: 21-06-2018;
+*/

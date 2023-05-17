@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="117px" viewBox="0 0 117 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>B15EF611-2436-4AD2-91AA-ADECDAB46B88</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-14.1%" y="-11.1%" width="128.3%" height="128.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.865167942   0 0 0 0 0.778852556   0 0 0 0 0.778852556  0 0 0 0.155712183 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Thankyou-Web_new" transform="translate(-173.000000, -581.000000)" stroke="#7ED321">
+            <g id="Group-2" filter="url(#filter-1)" transform="translate(182.000000, 587.000000)">
+                <circle id="Oval-6" stroke-width="2.55000007" fill="#FFFFFF" fill-rule="nonzero" cx="49.5" cy="49.5" r="49.5"></circle>
+                <g id="tick" transform="translate(28.769231, 30.461538)" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.50000024">
+                    <polyline id="Shape" points="0 16.9230769 16.9230769 33.8461538 42.3076923 0"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

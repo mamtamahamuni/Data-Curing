@@ -1,0 +1,677 @@
+<!-- 
+    Module Name :- Activ Assure Quote
+    Date: 17-08-2018
+    Author: Sunny Khattri
+-->
+    
+    <!-- Activ Assure Quote Heading Section -->
+
+        <div class="container-fluid ">
+            <div class="row cont-pad">
+                <div class="col-md-12 ">
+                    <span class="main-header-text1">
+                        Activ Assure - Diamond
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of Activ Assure Quote Heading Section -->
+
+
+    <!-- Activ Assure Quote Breadcrumb section -->
+
+        <div class="container-fluid"> 
+            <div class="row cont-pad breadcrumb-row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb-cust">
+                        <li class="breadcrumb-item-cust breadcrumb-item-cust-active">
+                            <a href="javascript:void(0)" ng-click="quoteNavigation()">Quotation</a>
+                        </li>
+                        <li class="breadcrumb-item-cust">
+                            <span class="clickable">
+                                <i class="glyphicon glyphicon-menu-right"></i>
+                            </span>
+                        </li>
+                        <li class="breadcrumb-item-cust">
+                            <a href="javascript:void(0)" class="unbold-fonts">
+                                Proposal
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item-cust">
+                            <span class="clickable">
+                                <i class="glyphicon glyphicon-menu-right"></i>
+                            </span>
+                        </li>
+                        <li class="breadcrumb-item-cust">
+                            <a href="javascript:void(0)" class="unbold-fonts" ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of activ assure quote breadcrumb section -->
+
+
+    <!-- Activ Assure quote sticky premium section -->
+
+        <div class="container-fluid prem-panel sticky" sticky>
+            <div class="row prem-row">
+                <div class="col-md-12 col-xs-11 col-sm-12 prem-text-panel text-right pad-l-r-0">
+                    <div class=" dropdown dis-in"> 
+                        <a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown" type="button" data-toggle="dropdown" id="" ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')">
+                            <span class="prem-small-txt">Premium:&nbsp;&nbsp;</span>
+                                <span class="prem-big-txt" ng-if="aA.PremiumDetail.TotalPremium"> 
+                                <span class="prem-rupee-symbol">&#8377;</span>                              
+                                <span count-up end-val="aA.PremiumDetail.TotalPremium"> </span>
+                                <span ng-show="aA.diamondQuoteDetails.DiamondQuote.Tenure == '1'"> pa </span> &nbsp; 
+                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+                                    <img src="assets/images/icon-chevron-down.png">
+                                </span>
+                            </span>
+                            <span class="prem-big-txt" ng-if="!aA.PremiumDetail.TotalPremium">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu plan-dropdown-menubox">
+                            <li ng-repeat="premium in aA.PremiumDetail.ProductPremium">
+                                <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">{{premium.ProductName | productFilter}}</p>
+                                <p class="tooltip-grey-txt mar-rght-15">Amount : ₹{{premium.Premium | INR}} <span class="incl-gst">(incl GST)</span> </p>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of Activ Assure quote sticky premium section -->
+
+
+    <!-- Sum Insured setion -->
+
+        <div class="container">
+            <div class="row quote-item-block"  >
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 number-cnt-col-mar-l mob-pad-l-r-0">
+                    <div class="item-block-number-border"><span class="item-block-number">1</span></div>
+                </div>
+          
+                <div class="col-lg-10 col-md-10 col-sm-10 col-lg-10 col-xs-11">
+                    <div class="quote-item-block-content" > 
+                        <div class="item-block-content-header">
+                            SUM INSURED OF MEMBERS
+                            <span class="custom-popover" custom-popover>
+                                <img class="img-responsive item-block-tool-tip-img" src="assets/images/tooltip_Premium.png" ng-click="callGtag('click-icon', 'quote' ,'diamond-quote_sum-insured-i')">
+                                <span class="custom-tooltip-text">
+                                   Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose a sum insured which covers your family adequately. 
+                                    <span class="pop-close">×</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="item-block-content-desc">Please select the value of money you’d like to insure your family with 
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 sum-insured-members-padding-initial"  ng-show="!aA.stProduct" >
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="dropdown sum-insured-members-block-dropdown">
+                            <button tabindex="10" class="btn btn-default dropdown-toggle brand-dropdown grey self-insured-btn" type="button" button-dropdown="aA.selectedPrenium" ng-click="callGtag('click-dropdown', 'quote' ,'diamond-quote_sum-insured_dropdown-open')">
+                                <span class="member-dropdown-text" ng-if="aA.diamondQuoteDetails.DiamondQuote.SI != 0 && aA.diamondQuoteDetails.DiamondQuote.SI != null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    {{aA.diamondQuoteDetails.DiamondQuote.SI | INR}}
+                                </span>
+                                <span class="self-insured-txt" class="select-cover-dropdown-txt"  ng-if="aA.diamondQuoteDetails.DiamondQuote.SI == 0 || aA.diamondQuoteDetails.DiamondQuote.SI == null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    Select Sum Insured 
+                                </span>
+                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img src="assets/images/icon-chevron-down.png"></span>
+                            </button> 
+                             <div ng-show="aA.showextraSumInsuredTag" class="heading-Sum-insured"> Paying just Rs: {{ aA.newPreminum - aA.PremiumDetail.TotalPremium }} additional amount & get {{aA.newSI}} covered Sum insured</div>
+                                    
+                            <ul class="dropdown-menu self-insured-menu" >
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.calculateDIPremium(option.amount , $index)" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.value}}</span></a></li>
+                            </ul>
+                            <!-- <ul class="dropdown-menu self-insured-menu" ng-if = "aA.membersDetails.length > 2">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND && aA.membersDetails.length > 2 " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.calculateDIPremium(option.amount)" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.value}}</span></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 sum-insured-members-padding-initial-suprTop-up" ng-show="aA.stProduct">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="dropdown sum-insured-members-block-dropdown">
+                            <div class="heading-Sum-insured"> Sum Insured Of Active Assure</div>
+                            <button tabindex="10" class="btn btn-default dropdown-toggle brand-dropdown grey supertop self-insured-btn" type="button" button-dropdown="aA.selectedPrenium" ng-click="callGtag('click-dropdown', 'quote' ,'diamond-quote_sum-insured_dropdown-open')">
+                                <span class="member-dropdown-text" ng-if="aA.diamondQuoteDetails.DiamondQuote.SI != 0 && aA.diamondQuoteDetails.DiamondQuote.SI != null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    {{aA.diamondQuoteDetails.DiamondQuote.SI | INR}}
+                                </span>
+                                <span class="self-insured-txt" class="select-cover-dropdown-txt"  ng-if="aA.diamondQuoteDetails.DiamondQuote.SI == 0 || aA.diamondQuoteDetails.DiamondQuote.SI == null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    Select Sum Insured 
+                                </span>
+                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img src="assets/images/icon-chevron-down.png"></span>
+                            </button>
+                                    
+                            <ul class="dropdown-menu self-insured-menu" >
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND && ( option.amount == '1000000' ) " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.updateSumInsuredDeductable('' , '' , option.amount , 'Plan B')" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.amount | INR}}</span></a></li>
+                            </ul>
+                            <!-- <ul class="dropdown-menu self-insured-menu" ng-if = "aA.membersDetails.length > 2">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND && aA.membersDetails.length > 2 " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.calculateDIPremium(option.amount)" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.value}}</span></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 sum-insured-members-padding-initial-suprTop-up" ng-show="aA.stProduct">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="dropdown sum-insured-members-block-dropdown">
+                            <div class="heading-Sum-insured"> Sum Insured Of Super Top UP</div>
+                            <button tabindex="10" class="btn btn-default dropdown-toggle brand-dropdown grey supertop self-insured-btn" type="button" button-dropdown="aA.selectedPrenium" ng-click="callGtag('click-dropdown', 'quote' ,'diamond-quote_sum-insured_dropdown-open')">
+                                <span class="member-dropdown-text" ng-if="aA.diamondQuoteDetails.DiamondQuote.SI != 0 && aA.diamondQuoteDetails.DiamondQuote.SI != null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    {{aA.diamondQuoteDetails.STQuote.SumInsured | INR}}
+                                </span>
+                                <span class="self-insured-txt" class="select-cover-dropdown-txt"  ng-if="aA.diamondQuoteDetails.DiamondQuote.SI == 0 || aA.diamondQuoteDetails.DiamondQuote.SI == null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    Select Sum Insured 
+                                </span>
+                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img src="assets/images/icon-chevron-down.png"></span>
+                            </button>
+                                    
+                            <ul class="dropdown-menu self-insured-menu" >
+                                <li class="li-item-text-change" ng-repeat ="option in aA.diamondQuoteDetails.DiamondQuote.superTopUpFlexible | unique : 'SumInsured'" ng-show="option.SumInsured == '4000000' || option.SumInsured == '9000000'" ><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.updateSumInsuredDeductable(option.SumInsured , option.Deductible , $index , 'Plan B')" ng-model="option.SumInsured" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.SumInsured | INR}}</span></a></li>
+                            </ul>
+                            <!-- <ul class="dropdown-menu self-insured-menu" ng-if = "aA.membersDetails.length > 2">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND && aA.membersDetails.length > 2 " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.calculateDIPremium(option.amount)" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.value}}</span></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 sum-insured-members-padding-initial-suprTop-up" ng-show="aA.stProduct">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="dropdown sum-insured-members-block-dropdown">
+                            <div class="heading-Sum-insured"> Deductible Of Super Top UP</div>
+                            <button tabindex="10" class="btn btn-default dropdown-toggle brand-dropdown grey supertop self-insured-btn" type="button" button-dropdown="aA.selectedPrenium" ng-click="callGtag('click-dropdown', 'quote' ,'diamond-quote_sum-insured_dropdown-open')">
+                                <span class="member-dropdown-text" ng-if="aA.diamondQuoteDetails.DiamondQuote.SI != 0 && aA.diamondQuoteDetails.DiamondQuote.SI != null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    {{aA.diamondQuoteDetails.STQuote.Deductible | INR}}
+                                </span>
+                                <span class="self-insured-txt" class="select-cover-dropdown-txt"  ng-if="aA.diamondQuoteDetails.DiamondQuote.SI == 0 || aA.diamondQuoteDetails.DiamondQuote.SI == null "> 
+                                    <span class="member-dropdown-text">&#8377;</span> 
+                                    Select Sum Insured 
+                                </span>
+                                <span class="glyphi-drop-down-style pull-right" aria-hidden="true"><img src="assets/images/icon-chevron-down.png"></span>
+                            </button>
+                                    
+                            <ul class="dropdown-menu self-insured-menu" ng-if="!(aA.diamondQuoteDetails.STQuote.SumInsured == '4000000')">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.diamondQuoteDetails.DiamondQuote.superTopUpFlexible "  data-val="{{option.Deductible}}" ng-show="option.SumInsured == aA.diamondQuoteDetails.STQuote.SumInsured "><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.updateSumInsuredDeductable(aA.diamondQuoteDetails.STQuote.SumInsured , option.Deductible , 'deduct' , 'Plan B')" ng-model="option.Deductible" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.Deductible | INR}}</span></a></li>
+                            </ul>
+                            <ul class="dropdown-menu self-insured-menu" ng-if="aA.diamondQuoteDetails.STQuote.SumInsured == '4000000'">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.diamondQuoteDetails.DiamondQuote.superTopUpFlexible "  data-val="{{option.Deductible}}" ng-if="option.SumInsured == aA.diamondQuoteDetails.STQuote.SumInsured  && aA.diamondQuoteDetails.STQuote.SumInsured == '4000000' && option.Deductible == '1000000' "><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.updateSumInsuredDeductable(aA.diamondQuoteDetails.STQuote.SumInsured , option.Deductible , 'deduct' , 'Plan B')" ng-model="option.Deductible" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.Deductible | INR}}</span></a></li>
+                            </ul>
+                            <!-- <ul class="dropdown-menu self-insured-menu" ng-if = "aA.membersDetails.length > 2">
+                                <li class="li-item-text-change" ng-repeat ="option in aA.SumInsuredList" ng-if="option.DIAMOND && aA.membersDetails.length > 2 " data-val="{{option.value}}"><a tabindex="1"   data-for="gstin" data-value="show" href="javascript:void(0)" ng-click="aA.calculateDIPremium(option.amount)" ng-model="option.value" class="li-item-text-change"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{option.value}}</span></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 member-selected">
+                    <span class="Members-Selected-Setext-style-1">Members Selected:</span> 
+                    <span class="mbr-sel-txt-big"> {{aA.membersSelected}}</span>
+                    <span data-target="#add-new-member-web" class="member-select-span" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="add-mbr-btn" ng-click="callGtag('quote','click-icon','diamond-quote_add-edit-members')">
+                        <img class="img-responsive edit-tip-img" src="assets/images/edit_assure.png">
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+    <!-- End of sum insured section -->
+
+
+
+
+        <!-- Tenure section -->
+
+        <div class="container"  ng-show="false">
+            <div class="row quote-item-block" >
+                <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                    <div class="item-block-number-border"><span class= "item-block-number"> 1</span></div>
+                </div>
+                <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                    <div class = "quote-item-block-content" >
+                        <div class="item-block-content-header">Fixed Sum Insured
+                            <span class="custom-popover" custom-popover>
+                                <img class="img-responsive item-block-tool-tip-img" src="assets/images/tooltip_Premium.png" ng-click="callGtag('click-icon','quote','Super-top-up-Plus-diamond_sum-insured-i')">
+                                <span class="custom-tooltip-text">
+                                   1 Crore Cover = Sum Insured under Activ Assure Base Plan +  Sum Insured with Super Health Plus Top-up. Ensures adequate coverage for you and your family.
+                                    <span class="pop-close">×</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="item-block-content-desc">Super top up
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 tenure-box-bg tenure-combo-container">
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr" ng-class="{'activ': aA.planAValue == '1'}">
+                        <div class = "pad-top-10">
+                            <div class="pretty circle danger margin-align-left-devices" >
+                                <input type="radio" name="stRadio" ng-change="aA.updateSumInsuredDeductable( aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].SumInsured , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].Deductible , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].DISumInsured , 'Plan A' )" id="stRadio" ng-model="aA.planAValue"  value="1">
+                                <label for="stRadio"><i class="default"></i>&nbsp;
+                                        <span class="table-value"> <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].DISumInsured  | INR  }} for Active Assure <br><span class="saving-tenure">+</span><br></span>
+                                            <div class="saving-tenure .saving-tenure-discount">
+                                                <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].SumInsured  | INR}} for Super TopUp</span> <br><!-- +<br> 
+                                                <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[0].Deductible  | INR }} is Deductible</span>
+                                                -->
+                                                <!-- <span class="rupee-symbol">&#8377;</span><span count-up end-val="aA.savingForTwoYears"></span>
+                                                <div class="saving-tenure-discount dis-in"> (7.5% Off)</div> -->
+                                            </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr1" ng-class="{'activ': aA.planAValue == '2'}">
+                        <div class="pad-top-10">
+                            <div class="pretty circle danger margin-align-left-devices">
+                                <input type="radio" name="stRadio"  ng-change="aA.updateSumInsuredDeductable( aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].SumInsured , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].Deductible , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].DISumInsured , 'Plan A' )"  id="stRadio1" ng-model="aA.planAValue"  value="2">
+                                <label for="stRadio1">
+                                    <i class="default"></i>&nbsp;
+                                    <span class="table-value"> <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].DISumInsured  | INR }} for Active Assure <br><span class="saving-tenure">+</span><br></span>
+                                    <div class="saving-tenure .saving-tenure-discount">
+                                        <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].SumInsured  | INR }} for Super TopUp </span><br><!-- +<br>
+                                        <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[1].Deductible  | INR }} is Deductible</span> -->
+                                       
+                                        <!-- <span class="rupee-symbol">&#8377;</span><span count-up end-val="aA.savingForTwoYears"></span>
+                                        <div class="saving-tenure-discount dis-in"> (7.5% Off)</div> -->
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr2" ng-class="{'activ': aA.planAValue == '3'}">
+                        <div class="pad-top-10">
+                            <!-- <div class="pretty circle danger margin-align-left-devices" >
+                                <input type="radio" name="stRadio" ng-change="aA.updateSumInsuredDeductable( aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].SumInsured , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].Deductible , aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].DISumInsured , 'Plan A' )" id="stRadio2" ng-model="aA.planAValue"  value="3">
+                                <label for="stRadio2">
+                                    <i class="default"></i>&nbsp;
+                                    <span class="table-value"> <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].DISumInsured  | INR }} for Active Assure <br><span class="saving-tenure">+</span><br></span>
+                                    <div class="saving-tenure .saving-tenure-discount">
+                                        <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].SumInsured  | INR }} for Super TopUp <br>+<br>
+                                        <span class="rupee-symbol"> &#8377; {{aA.diamondQuoteDetails.DiamondQuote.superTopUpFixed[2].Deductible  | INR }} is Deductible -->
+                                       
+                                        <!-- <span class="rupee-symbol">&#8377;</span><span count-up end-val="aA.savingForTwoYears"></span>
+                                        <div class="saving-tenure-discount dis-in"> (7.5% Off)</div> -->
+                                    <!-- </div>
+                                </label>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 member-selected">
+                    <span class="Members-Selected-Setext-style-1">Members Selected:</span> 
+                    <span class="mbr-sel-txt-big"> {{aA.membersSelected}}</span>
+                    <span data-target="#add-new-member-web" class="member-select-span" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="add-mbr-btn" ng-click="callGtag('quote','click-icon','diamond-quote_add-edit-members')">
+                        <img class="img-responsive edit-tip-img" src="assets/images/edit_assure.png">
+                    </span>
+                </div>
+        </div>
+
+    <!-- End of tenure section -->
+
+
+
+
+     <!-- Super top product -->
+
+        <div class="container aa-section" ng-show="aA.superTopUpPlan">
+            <div class = "row item-block1" style="padding-top: 40px;" >
+                <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                    <div class="item-block-number-border"><span class= "item-block-number"> 2 </span></div>
+                </div>
+                <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                    <div class="item-block-content">
+                        <span class="item-block-content-header">Super Top-Up Product </span>
+                        <div class="item-block-content-desc">Optional Covers are like riders on your core policy. Range of comprehensive covers to broaden your benefits.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="col-md-11 col-sm-12 col-xs-12 pad-cont setting-width-manualy padding-boottom-value">
+                            <div class="temp-total-dis-box box-white box">
+                                <div class="container-fluid">
+                                    <div class="row pad-btm-15 padding-bottom-for-line">
+                                        <div class="col-md-2 col-sm-2 col-xs-3">
+                                            <div class="temp-total-dis-img-container">
+                                                <div class="temp-disa-left-bdr">
+                                                    <img class="temp-total-dis-img" src="assets/images/room_upgrade.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-9 pad-mar-0">
+                                            <div class="temp-total-dis-text1">
+                                                <span class="temp-total-dis-text1">Any Room Upgrade</span>
+                                                <div class="dis-in mob-togg-btn">
+                                                    <div class="mar-0-auto text-right">
+                                                        <label class="switch" for="aru-chk">
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" class="slider-checkbox" id="aru-chk" ng-model="aA.diamondQuoteDetails.DiamondQuote.CoverARU" ng-change="aA.calculateDIPremium(aA.diamondQuoteDetails.DiamondQuote.SI);callGtag('click-radio', 'quote' ,'diamond-quote_any-room-upgrade_['+aA.diamondQuoteDetails.DiamondQuote.CoverARU+']')">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="temp-total-dis-text2">Choose any room in a hospital without any restriction.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of Super top product -->
+
+
+    <!-- After tenure breadcrumb section -->
+
+        <div class="container" ng-show="aA.stProduct">
+            <div class="row text-center">
+                <div id="line-top-mar" class="container">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="pad-top-15">
+                            <hr class="style2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of after tenure breadcrumb section -->
+
+
+
+
+    <!-- Tenure section -->
+
+        <div class="container">
+            <div class="row quote-item-block" >
+                <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                    <div class="item-block-number-border"><span class= "item-block-number"> 2</span></div>
+                </div>
+                <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                    <div class = "quote-item-block-content" >
+                        <div class="item-block-content-header">TENURE</div>
+                        <div class="item-block-content-desc">Tenure Definition goes here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 tenure-box-bg tenure-combo-container">
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr" ng-class="{'activ': aA.diamondQuoteDetails.DiamondQuote.Tenure == '1'}">
+                        <div class = "pad-top-10">
+                            <div class="pretty circle danger margin-align-left-devices" >
+                                <input type="radio" name="tenureRadio" ng-change="aA.changeTenure('1')" id="tenureRadio" ng-model="aA.diamondQuoteDetails.DiamondQuote.Tenure" value="1">
+                                <label for="tenureRadio"><i class="default"></i>&nbsp;<span class="table-value"> 1 Year </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr1" ng-class="{'activ': aA.diamondQuoteDetails.DiamondQuote.Tenure == '2'}">
+                        <div class="pad-top-10">
+                            <div class="pretty circle danger margin-align-left-devices">
+                                <input type="radio" name="tenureRadio"  ng-change="aA.changeTenure('2')"  id="tenureRadio1" ng-model="aA.diamondQuoteDetails.DiamondQuote.Tenure"  value="2">
+                                <label for="tenureRadio1">
+                                    <i class="default"></i>&nbsp;
+                                    <span class="table-value"> 2 Years </span>
+                                    <div class="saving-tenure">
+                                        You save: 
+                                       
+                                        <span class="rupee-symbol">&#8377;</span><span count-up end-val="aA.savingForTwoYears"></span>
+                                        <div class="saving-tenure-discount dis-in"> (7.5% Off)</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 tenure-box-pad " id="tenure-year-act-bdr2" ng-class="{'activ': aA.diamondQuoteDetails.DiamondQuote.Tenure == '3'}">
+                        <div class="pad-top-10">
+                            <div class="pretty circle danger margin-align-left-devices" >
+                                <input type="radio" name="tenureRadio" ng-change="aA.changeTenure('3')" id="tenureRadio2" ng-model="aA.diamondQuoteDetails.DiamondQuote.Tenure"  value="3">
+                                <label for="tenureRadio2">
+                                    <i class="default"></i>&nbsp;
+                                    <span class="table-value"> 3 Years </span>
+                                    <div class="saving-tenure">
+                                        You save: 
+                                       
+                                        <span class="rupee-symbol">&#8377;</span><span count-up end-val="aA.savingForThreeYears"></span>
+                                        <div class="saving-tenure-discount dis-in"> (10% Off)</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of tenure section -->
+
+
+    <!-- After tenure breadcrumb section -->
+
+        <div class="container" >
+            <div class="row text-center">
+                <div id="line-top-mar" class="container">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="pad-top-15">
+                            <hr class="style2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of after tenure breadcrumb section -->
+
+
+    <!-- Optional covers section -->
+
+        <div class="container aa-section" >
+            <div class = "row item-block1" >
+                <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+                    <div class="item-block-number-border"><span class= "item-block-number"> 3</span></div>
+                </div>
+                <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11">
+                    <div class="item-block-content">
+                        <span class="item-block-content-header">OPTIONAL COVERS</span>
+                        <div class="item-block-content-desc">Optional Covers are like riders on your core policy. Range of comprehensive covers to broaden your benefits.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container temp-total-dis-row pad-left-105">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="col-md-11 col-sm-12 col-xs-12 pad-cont setting-width-manualy padding-boottom-value" ng-show="aA.showARUForActivAssure && !stProduct">
+                            <div class="temp-total-dis-box box-white box">
+                                <div class="container-fluid">
+                                    <div class="row pad-btm-15 padding-bottom-for-line">
+                                        <div class="col-md-2 col-sm-2 col-xs-3">
+                                            <div class="temp-total-dis-img-container">
+                                                <div class="temp-disa-left-bdr">
+                                                    <img class="temp-total-dis-img" src="assets/images/room_upgrade.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-9 pad-mar-0">
+                                            <div class="temp-total-dis-text1">
+                                                <span class="temp-total-dis-text1">Any Room Upgrade</span>
+                                                <div class="dis-in mob-togg-btn">
+                                                    <div class="mar-0-auto text-right">
+                                                        <label class="switch" for="aru-chk">
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" class="slider-checkbox" id="aru-chk" ng-model="aA.diamondQuoteDetails.DiamondQuote.CoverARU" ng-change="aA.calculateDIPremium(aA.diamondQuoteDetails.DiamondQuote.SI);callGtag('click-radio', 'quote' ,'diamond-quote_any-room-upgrade_['+aA.diamondQuoteDetails.DiamondQuote.CoverARU+']')">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="temp-total-dis-text2">Choose any room in a hospital without any restriction.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-11 col-sm-12 col-xs-12 pad-cont setting-width-manualy" >
+                            <div class="temp-total-dis-box box-white box">
+                                <div class="container-fluid">
+                                    <div class="row pad-btm-15 padding-bottom-for-line">
+                                        <div class="col-md-2 col-sm-2 col-xs-3">
+                                            <div class="temp-total-dis-img-container">
+                                                <div class="temp-disa-left-bdr">
+                                                    <img class="temp-total-dis-img" src="assets/images/super_bonus.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-9 pad-mar-0">
+                                            <div class="temp-total-dis-text1">
+                                                <span class="temp-total-dis-text1">Super NCB</span>
+                                                <div class="dis-in mob-togg-btn">
+                                                    <div class="mar-0-auto text-right">
+                                                        <label class="switch" for="sncb-chk">
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" class="slider-checkbox" id="sncb-chk" ng-model="aA.diamondQuoteDetails.DiamondQuote.CoverSNCB" ng-change="aA.calculateDIPremium(aA.diamondQuoteDetails.DiamondQuote.SI);callGtag('click-radio', 'quote' ,'diamond-quote_super-ncb_['+aA.diamondQuoteDetails.DiamondQuote.CoverSNCB+']')" >
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="temp-total-dis-text2">Receive a Super NCB of 50% of your Sum Insured for every claim free year. Maximum up to 100%. This is an extension to no claim bonus
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-11 col-sm-12 col-xs-12 pad-cont setting-width-manualy" ng-show="!aA.stProduct" >
+                            <div class="temp-total-dis-box box-white box">
+                                <div class="container-fluid">
+                                    <div class="row pad-btm-15 padding-bottom-for-line">
+                                        <div class="col-md-2 col-sm-2 col-xs-3">
+                                            <div class="temp-total-dis-img-container">
+                                                <div class="temp-disa-left-bdr">
+                                                    <img class="temp-total-dis-img" src="assets/images/reload-si.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-9 pad-mar-0">
+                                            <div class="temp-total-dis-text1">
+                                                <span class="temp-total-dis-text1">Unlimited Reload of SI</span>
+                                                <div class="dis-in mob-togg-btn">
+                                                    <div class="mar-0-auto text-right">
+                                                        <label class="switch" for="ursi-chk">
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" class="slider-checkbox" id="ursi-chk" ng-model="aA.diamondQuoteDetails.DiamondQuote.CoverURSI" ng-change="aA.calculateDIPremium(aA.diamondQuoteDetails.DiamondQuote.SI);callGtag('click-radio', 'quote' ,'diamond-quote_unlimited-reload-SI_['+aA.diamondQuoteDetails.DiamondQuote.CoverURSI+']')">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="temp-total-dis-text2">Sum insured shall be reinstated unlimited times in a policy year if you run out cover due to claims. This benefit is an extension of Reload of Sum Insured. Terms and conditions of reload of sum insured will apply 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-11 col-sm-12 col-xs-12 pad-cont setting-width-manualy" ng-show="aA.RPEP">
+                            <div class="temp-total-dis-box box-white box">
+                                <div class="container-fluid">
+                                    <div class="row pad-btm-15 padding-bottom-for-line">
+                                        <div class="col-md-2 col-sm-2 col-xs-3">
+                                            <div class="temp-total-dis-img-container">
+                                                <div class="temp-disa-left-bdr">
+                                                    <img class="temp-total-dis-img" src="assets/images/reload-si.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-9 pad-mar-0">
+                                            <div class="temp-total-dis-text1">
+                                                <span class="temp-total-dis-text1">Reduction in PED waiting period</span>
+                                                <div class="dis-in mob-togg-btn">
+                                                    <div class="mar-0-auto text-right">
+                                                        <label class="switch" for="rpep-chk">
+                                                            <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" class="slider-checkbox" id="rpep-chk" ng-model="aA.diamondQuoteDetails.DiamondQuote.CoverRPEP" ng-change="aA.calculateDIPremium(aA.diamondQuoteDetails.DiamondQuote.SI);callGtag('click-radio', 'quote' ,'diamond-quote_unlimited-reload-SI_['+aA.diamondQuoteDetails.DiamondQuote.CoverRPEP+']')">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="temp-total-dis-text2">Sum insured shall be reinstated unlimited times in a policy year if you run out cover due to claims. This benefit is an extension of Reload of Sum Insured. Terms and conditions of reload of sum insured will apply 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of optional covers section -->
+
+
+    <!-- Cross selection section -->
+
+        <div class="container-fluid cross-sell-bg" ng-hide="citipresent">
+            <cross-sell-quote cross="aA" ng-if="aA.membersDetails.length > 0" ></cross-sell-quote>
+            <div class="row cross-sell-submit-btn">
+                <div class="col-md-12 pad-l-r-0">
+                    <hr class="last-btn-width">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+                    <button class="btn btn-primary qq-save-btn proceed-to-application" ng-show="aA.hideSubmitButton" id="diamond-quote-submit" ng-click="aA.submitDiamondQuote($event) ;callGtag('click-button', 'quote' ,'diamond_quote-submit')">
+                        Proceed
+                        <img src="assets/images/arrow.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of cross selection section -->
+
+    <!-- Cross selection section -->
+
+        <div class="container-fluid cross-sell-bg" ng-show="citipresent">
+            
+            <div class="row ">
+                <div class="col-md-12 pad-l-r-0">
+                    <hr class="last-btn-width">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+                    <button class="btn btn-primary qq-save-btn proceed-to-application" id="diamond-quote-submit" ng-click="aA.submitDiamondQuote($event) ;callGtag('click-button', 'quote' ,'diamond_quote-submit')">
+                        Proceed
+                        <img src="assets/images/arrow.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <!-- End of cross selection section -->
+<addMember addctrl="aA" childcount="4" ></addMember>

@@ -1,0 +1,679 @@
+<div  class="dv-new-ui-content">
+<!--
+    Page: New Renewal Landing
+	Author: Sunny Khatri & Pandurang Sarje 
+    Date: 07-07-2020
+-->
+
+<div class="container-fluid view-member-landing pad-l-r-0 dv-flex" ng-show="showPage">
+    <!-- Desktop View -->
+    <div class="col-lg-4 col-md-4 col-sm-12 pad-l-0">
+        <div class="dv-banner-content">
+            <div class="dv-page-quote-content">
+                <span class="arrow"></span>
+                Hi NameOfTheProposer,
+                welcome back!
+                let's renew your policy and get your family covered
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-12 renewal-level-main">
+        <div ng-show="selectedPolicyDetails.isSplitPolicy == 'Y'" class="alert alert-danger drm-alert text-center"
+            style="margin-bottom:20px;padding-top:10px;">
+            <h4><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Hi, your dependent child enrolled under
+                policy no. {{policySelected}} with Aditya Birla Health Insurance has crossed 25 yrs of age, as per
+                policy terms and conditions they can no longer be covered as a part of your policy as adult dependent.
+                You can now purchase an individual plan for them.</h4>
+        </div>
+        <div ng-show="productName == 'Activ Care' || productName == 'Activ Assure'" class="download-pdf-renewal">Your
+            existing plan has undergone key changes under the directives of IRDAI. We now bring you an enhanced plan to
+            suit your insurance needs. <br> <a ng-href="assets/new-renew-pdf/{{productName}}.pdf" target="_blank">Click
+                here</a> to know the new benefits and renew to a better version today</div>
+
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 renewal-level-left-section pad-l-0">
+            <h2 class="select-policy-txt">Select the Policy you would like to <span
+                    ng-if="selectedPolicyDetails.ProductName != 'Activ Secure'">alter</span><span
+                    ng-if="selectedPolicyDetails.ProductName == 'Activ Secure'">renew</span></h2>
+
+            <div ng-hide="selectedPolicyDetails.ProductName == 'Activ Secure'" class="select-policy-sub-txt">Once
+                selected, you can change further details on the right hand side</div>
+            <div class="active-secure-block col-lg-12 col-md-12 col-sm-12 p-0 dv-policy-details-holder" ng-repeat=" policy in policyDetails ">
+                <div class="dv-policy-details">
+                    <div class="dv-policy-head">
+                        <h2 class="policy-name">{{policy.ProductName}}</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="lblHead">Policy Number</label>
+                                <label class="lblVal">{{policy.PolicyNumber}}</label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="lblHead">Policy Start-End Date</label>
+                                <label class="lblVal">{{policy.PolicyStartDate}} - {{policy.PolicyExpiryDate}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-grey"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="lblHead">Proposer Name</label>
+                            <label class="lblVal">{{policy.NameOfTheProposer}}</label>
+                        </div>
+                        <div class="col-md-8">
+                            <label class="lblHead">Members</label>
+                            <label class="lblVal" ng-repeat="member in insuredMembers">{{member.Name}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="lblHead">Policy Start-End Date</label>
+                            <label class="lblVal">{{policy.PolicyStartDate}} - {{policy.PolicyExpiryDate}}</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="lblHead">Current Sum Insured</label>
+                            <label class="lblVal" ng-show="showSumInsure"><i class="fa fa-rupee rupee_icon"></i>{{ suminsured | INRALPHA }}</label>
+                            <label class="lblVal" class="sum-ins-text" ng-show="!showSumInsure" ng-click="openModal()">View Sum Insured</label>
+                        </div>
+                        <div class="col-md-4" ng-show="insuredMembers[0].CB > 0">
+                            <label class="lblHead">NCB Amount</label>
+                            <label class="lblVal"><i class="fa fa-rupee rupee_icon"></i>{{insuredMembers[0].CB | INR}}</label>
+                        </div>
+                    </div>
+                    <div class="hr-grey"></div>
+                    <div class="row">
+                        <div class="col-md-3 dv-premium">
+                            <label class="lblHead">Premium</label>
+                            <label class="lblVal"><i class="fa fa-rupee rupee_icon"></i>{{policy.RenewalGrossPremium | INR}}</label>
+                        </div>
+                        <div class="col-md-3">
+                            <div ng-show="" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 white-bg-box"> 
+                                <label style="left: 0;" class="container-new">Use Health Returns of <span
+                                        class="checkbox-pink-txt">₹ {{heathReturnAmt | INR}}</span>
+                                    <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="applyHealthReturn"
+                                        name="healthreturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 p-0">
+                            <div ng-if="policy.Autodebit == 'N'">
+                                <a href="javascript:void(0);" ng-click="opneMadateModel()" class="btn emandate-button">
+                                    <span>Cancel Emandate Payment</span>
+                                    <!-- <span style="font-size: 10px; margin-left: 6px;">Click here</span> -->
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">Please provide Good Health Declaration for the insured members.</p>
+                            <button
+                                ng-click="submitGHD('desktop');selectPaymentMode();gotoPageGAParam('click-button','save and renew','renew')"
+                                class="btn save-renew-btn"
+                                ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium04">Renew</button>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    
+                    <div class="active-secure-footer col-lg-12 col-md-12 col-sm-12" style="display:none;">
+                        <div class="col-lg-4 col-md-4 col-sm-4 p-0">
+                            <div class="active-secure-title"></div>
+                            <div class="active-secure-data mb-6" ng-show="showSumInsure"><i
+                                    class="fa fa-rupee rupee_icon"></i>{{ suminsured | INRALPHA }}</div>
+                            <div class="sum-ins-text" ng-show="!showSumInsure" ng-click="openModal()">
+                                View Sum Insured
+                            </div>
+                        </div>
+                        <div ng-show="insuredMembers[0].CB > 0" class="col-lg-4 col-md-4 col-sm-4 p-0">
+                            <div class="active-secure-title"> </div>
+                            <div class="active-secure-data mb-6"><i
+                                    class="fa fa-rupee rupee_icon"></i>{{insuredMembers[0].CB | INR}}</div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 p-0">
+                            <div class="active-secure-title"> Amount </div>
+                            <div class="active-secure-data mb-6"></div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 p-0">
+
+                        </div>
+                    </div>
+                </div>  
+            </div>          
+
+            <div ng-show="selectedPolicyDetails.ProductName == 'Activ Secure'" class="pad-l-r-0">
+                <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">Please provide Good Health Declaration for the insured members.</p>
+                <button
+                    ng-click="submitGHD('desktop');selectPaymentMode();gotoPageGAParam('click-button','save and renew','renew')"
+                    class="btn pay-premium-button"
+                    ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium01">
+                    Pay Premium <span style="font-size: 15px; margin-left: 70px;">₹
+                        {{selectedPolicyDetails.RenewalGrossPremium | INR}}</span><img style="float: right;"
+                        src="assets/images/new-renew/right-white-arrow.svg">
+                    </button>
+            </div>
+            
+            <!-- GHD --
+            <div class="dv-ghd" ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">
+                <h2 class="select-policy-txt">Good health declaration</h2>
+    
+                <div class="select-policy-sub-txt" style="margin-bottom: 20px;">Post commencement of your insurance policy with us<br />
+                    1. Did you / insured members suffer from or are currently suffering from or <br />
+                    2. Have developed or  <br />
+                    3. Investigated for or  <br />
+                    4. Advised or taken medical opinion or advised surgery <br />
+                    for any disease/ illness/ injury or accident/ medical /surgical condition other than common cold or viral fever?</div>
+    
+                <div class="active-secure-block col-lg-12 col-md-12 col-sm-12 p-0">
+                    <div class="active-secure-heading clearfix">
+                        <div class="active-secure-head-big-text" style="padding: 7px 0 7px 16px;">
+                            Good Health Declaration of insured members
+                        </div>
+                    </div>
+                    <div class="active-secure-body col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 dv-memberCard clearfix" ng-repeat="member in policyMembers" ng-if="member.RelationWithProposer != 'PROPOSER'">
+                            <div class="dv-member clearfix" id="member{{$index}}">
+                                <div class="active-secure-data pull-left lblMemberName">
+                                    {{member.Name}}
+                                </div>
+                                <label class="d-none lblMemberId">{{member.MemberId}}</label>
+                                <label class="d-none lblMiddleName">{{member.MiddleName}}</label>
+                                <label class="d-none lblLastName">{{member.LastName}}</label>
+                                <label class="d-none lblDOB">{{member.DOB}}</label>
+                                <label class="d-none lblEmail">{{member.Email}}</label>
+                                <label class="d-none lblRelation">{{member.Relation}}</label>
+                                <label class="d-none lblRelationWithProposer">{{member.RelationWithProposer}}</label>
+                                <div class="pull-right checkbox-action-block">
+                                    <label class="radio-btn">
+                                        <span class="lbl-txt">Yes</span>
+                                        <input type="radio" value="Y" name="ghdRadio{{$index}}" ng-click="radioChange($index, 'Y')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-btn">
+                                        <span class="lbl-txt">No</span>
+                                        <input type="radio" value="N" name="ghdRadio{{$index}}" ng-click="radioChange($index, 'N')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="dv-memberRemarks clearfix d-none" id="memberRemarks{{$index}}">
+                                <div class="active-secure-title">Details / Remarks</div>
+                                <textarea rows="3" class="form-control txtRemarks" id="txtRemarks{{$index}}" placeholder="Please provide details for medical/surgical condition and duration"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="active-secure-footer col-lg-12 col-md-12 col-sm-12 text-right d-none">
+                        <button class="btn btnGhd btn-ghdReset">Reset</button>
+                        <button class="btn btnGhd btn-ghdSubmit" ng-click="submitGHD()">Submit &nbsp;&nbsp;&nbsp; <img
+                            src="assets/images/new-renew/right-white-arrow.svg"></button>
+                    </div>
+                </div>
+            </div>
+                -- End of GHD -->
+
+            <!-- GHD -->
+            <div class="dv-ghd" ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">
+    
+    
+                <div class="active-secure-block col-lg-12 col-md-12 col-sm-12 p-0">
+                    <div class="active-secure-heading clearfix">
+                        <div class="active-secure-head-big-text" style="padding: 7px 0 7px 16px; font-size: 25px;">
+                            Good Health Declaration of insured members
+                        </div>
+                    </div>
+                        <div class="select-policy-sub-txt" style="margin-bottom: 20px; padding-left: 16px; padding-top: 10px;">Post commencement of your insurance policy with us<br />
+                            1. Did you / insured members suffer from or are currently suffering from or <br />
+                            2. Have developed or Investigated for or  <br />
+                            3. Advised or taken medical opinion or advised surgery <br />
+                            for any disease/ illness/ injury or accident/ medical /surgical condition other than common cold or viral fever?
+                        </div>
+                    <div class="active-secure-body col-lg-12 col-md-12 col-sm-12 p-0">
+                        <div class="active-secure-heading clearfix">
+                        <div class="active-secure-head-big-text" style="padding: 7px 0 7px 10px; font-size: 19px;">Insured Member(s)</div></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 dv-memberCard dv-memberCard-desktop clearfix" ng-repeat="member in policyMembers" ng-if="member.RelationWithProposer != 'PROPOSER'">
+                            <div class="dv-member clearfix" id="member{{$index}}">
+                                <div class="active-secure-data pull-left lblMemberName">
+                                    {{member.Name}}
+                                </div>
+                                <label class="d-none lblMemberId">{{member.MemberId}}</label>
+                                <label class="d-none lblMiddleName">{{member.MiddleName}}</label>
+                                <label class="d-none lblLastName">{{member.LastName}}</label>
+                                <label class="d-none lblDOB">{{member.DOB}}</label>
+                                <label class="d-none lblEmail">{{member.Email}}</label>
+                                <label class="d-none lblRelation">{{member.Relation}}</label>
+                                <label class="d-none lblRelationWithProposer">{{member.RelationWithProposer}}</label>
+                                <div class="pull-right checkbox-action-block">
+                                    <label class="radio-btn">
+                                        <span class="lbl-txt">Yes</span>
+                                        <input type="radio" value="Y" name="ghdRadio{{$index}}" ng-click="radioChange($index, 'Y')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-btn">
+                                        <span class="lbl-txt">No</span>
+                                        <input type="radio" value="N" name="ghdRadio{{$index}}" ng-click="radioChange($index, 'N')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="dv-memberRemarks clearfix d-none" id="memberRemarks{{$index}}">
+                                <div class="active-secure-title">Details / Remarks</div>
+                                <textarea rows="3" class="form-control txtRemarks" id="txtRemarks{{$index}}" placeholder="Please provide details for medical/surgical condition and duration"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="active-secure-footer col-lg-12 col-md-12 col-sm-12 text-right d-none">
+                        <button class="btn btnGhd btn-ghdReset">Reset</button>
+                        <button class="btn btnGhd btn-ghdSubmit" ng-click="submitGHD('desktop')">Submit &nbsp;&nbsp;&nbsp; <img
+                            src="assets/images/new-renew/right-white-arrow.svg"></button>
+                    </div>
+                </div>
+            </div>
+                <!-- End of GHD -->
+
+            <div ng-show="(selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy') && !showSumInsured && !showHealthReturn"
+                class="pad-l-r-0">
+                <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" style="margin-bottom: 10px;">Please provide Good Health Declaration for the insured members.</p>
+                <button
+                    ng-click="submitGHD('desktop');selectPaymentMode();gotoPageGAParam('click-button','save and renew','renew')"
+                    class="btn pay-premium-button"
+                    ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium02">
+                    Pay Premium <span style="font-size: 15px; margin-left: 70px;">₹
+                        {{selectedPolicyDetails.RenewalGrossPremium | INR}}</span><img style="float: right;"
+                        src="assets/images/new-renew/right-white-arrow.svg">
+                </button>
+            </div>
+        </div>
+
+        <div ng-hide="selectedPolicyDetails.ProductName == 'Activ Secure' || selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2'|| selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy'" 
+                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-r-0 right-side-pad-left">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="border-dot"></div>
+                <div class="left-large-bdr" ng-style="{height: showSumInsured ? '490px' : '354px'}"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 policy-tenure-bg">
+                <div class="policy-tenure-ttl">Quick Edit <span ng-show="showSumInsured">Sum Insured/ </span> Policy
+                    Tenure</div>
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 white-bg-box" ng-show="showSumInsured">
+                    <div class="question-txt">{{indexVal}}. Increase Sum Insured</div>
+
+                    <div
+                        ng-show="((selectedPolicyDetails.ProductName == 'Activ Assure' || selectedPolicyDetails.ProductName == 'Activ Assure V2' || selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy'|| selectedPolicyDetails.ProductName == 'Active Care V2' || selectedPolicyDetails.ProductName == 'Activ Care') && (selectedPolicyDetails.SumInsuredType == 'Family Floater'))">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <label class="container-new" style="left: 0;margin-bottom: 10px;">
+                                <span>Increase Sum Insured to ₹ {{upSellSumInsured | INRALPHA}}</span>
+                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="updateMembers"
+                                    name="suminsured" ng-change="updateSumInsured()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="current-group-txt">Current SI : ₹ {{suminsured | INRALPHA}}</div>
+                        </div>
+                    </div>
+
+                    <div class="slick-slider-new"
+                        ng-show="(selectedPolicyDetails.ProductName == 'Activ Secure' || ((selectedPolicyDetails.ProductName == 'Activ Assure' || selectedPolicyDetails.ProductName == 'Activ Assure V2' || selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy' || selectedPolicyDetails.ProductName == 'Active Care V2' || selectedPolicyDetails.ProductName == 'Activ Care') && (selectedPolicyDetails.SumInsuredType == 'Individual'))) && showSliderMenu">
+                        <div class="slick-member" ng-repeat="member in insuredMembers">
+                            <div class="member-sum-insured-text">{{member.RelationWithProposer}} Sum Insured ₹
+                                {{member.SumInsured | INRALPHA}}</div>
+                            <label class="container-new" style="left: 0;margin-bottom: 5px;">
+                                <span>Increase Sum Insured to ₹ {{member.UpSellSumInsured | INRALPHA}}</span>
+                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    ng-model="updateMember[member.RelationWithProposer]"
+                                    ng-change="updateSumInsured(member.RelationWithProposer,member)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div> -->
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 white-bg-box">
+                    <div class="question-txt question-txt-btm">{{indexVal}}. Select Policy Tenure</div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <label class="radio-btn tenure-radio">
+                            <span class="lbl-txt">1 Year</span>
+                            <input type="radio" ng-checked="tenureVal == '1'" name="year" ng-model="tenureVal"
+                                ng-change="updateTenure('1') ; tenureVal = '1'">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="radio-btn tenure-radio">
+                            <span class="lbl-txt">2 Years</span>
+                            <input type="radio" name="year" ng-checked="tenureVal == '2'" ng-model="tenureVal"
+                                ng-change="updateTenure('2') ; tenureVal = '2'">
+                            <span class="checkmark"></span>
+                            <span class="discount">(7.5% discount on premium)</span>
+                        </label>
+                        <label ng-hide="showThirdTenureVal" class="radio-btn tenure-radio">
+                            <span class="lbl-txt">3 Years</span>
+                            <input type="radio" name="year" ng-checked="tenureVal == '3'" ng-model="tenureVal"
+                                ng-change="updateTenure('3') ; tenureVal = '3'">
+                            <span class="checkmark"></span>
+                            <span class="discount">(10% discount on premium)</span>
+                        </label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="current-group-txt">Current Tenure : {{tenureVal}} <span
+                                ng-if="tenureVal== '1'">yr</span><span ng-if="tenureVal!= '1'">yrs</span></div>
+                    </div>
+                </div>
+
+                <div ng-show="showHealthReturn" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                    <label style="left: 0;" class="container-new">Use Health Returns of <span
+                            class="checkbox-pink-txt">₹ {{heathReturnAmt | INR}}</span>
+                        <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="applyHealthReturn"
+                            name="healthreturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                    <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">Please provide Good Health Declaration for the insured members.</p>
+                    <button 
+                        ng-click="submitGHD('desktop');selectPaymentMode();gotoPageGAParam('click-button','save and renew','renew')"
+                        class="btn save-renew-btn"
+                        ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium03">
+                        Pay Premium <span style="font-size: 15px;padding-left: 10px;">₹
+                            {{selectedPolicyDetails.RenewalGrossPremium | INR}}</span><img
+                            src="assets/images/new-renew/right-white-arrow.svg">
+                        </button>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <div class="horizontal-pink-bdr"></div>
+            </div>
+            <div class="border-dot-bottom"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 other-change-pink-bdr-box">
+                <div class="change-to-policy-txt">OR Make other changes to Policy</div>
+                <div class="remove-member-black-txt">Add/Remove members, change Nominee, change member details etc</div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">                    
+                    <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" style="margin-bottom: 10px;">Please provide Good Health Declaration for the insured members.</p>
+                    <button
+                        ng-click="submitGHD('desktop');procedToModifyDetails('renewal-view-member-landing');gotoPageGAParam('click-button','modify other policy details','renew')"
+                        class="btn modify-policy-details-btn" data-toggle="modal" data-target="#crosssalepopup"
+                        ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium06">
+                        Modify Other Policy Details <img src="assets/images/new-renew/right-red-arrow.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="(selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy') && (showSumInsured || showHealthReturn)"
+            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-r-0 right-side-pad-left"
+            ng-class="{'content-health-return' : (!showSumInsured && showHealthReturn)}">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 policy-tenure-bg">
+                <div class="policy-tenure-ttl" ng-show="showSumInsured">Quick Edit Sum Insured</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 white-bg-box" ng-show="showSumInsured">
+                    <div class="question-txt">1. Increase Sum Insured</div>
+
+                    <div
+                        ng-show="((selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy') && (selectedPolicyDetails.SumInsuredType == 'Family Floater'))">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <label class="container-new" style="left: 0;margin-bottom: 10px;">
+                                <span>Increase Sum Insured to ₹ {{upSellSumInsured | INRALPHA}}</span>
+                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="updateMembers"
+                                    name="suminsured" ng-change="updateSumInsured()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="current-group-txt">Current SI : ₹ {{suminsured | INRALPHA}}</div>
+                        </div>
+                    </div>
+
+                    <div
+                        ng-show="((selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2' || selectedPolicyDetails.ProductName == 'Activ Health v1.5' || selectedPolicyDetails.ProductName == 'POS Activ Secure' || selectedPolicyDetails.ProductName == 'Super Top Up'|| selectedPolicyDetails.ProductName == 'POS Activ Assure'|| selectedPolicyDetails.ProductName == 'Global Health Secure - Revised'|| selectedPolicyDetails.ProductName == 'Arogya Sanjeevani Policy') && (selectedPolicyDetails.SumInsuredType == 'Individual'))">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <label class="container-new" style="left: 0;margin-bottom: 10px;">
+                                <span>Increase Sum Insured of all members</span>
+                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    ng-model="updateHealthMiMembers" name="suminsuredhealth"
+                                    ng-change="updateSumInsured()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                            <div class="sum-ins-text" ng-click="showHealthMiModal=true;">
+                                View Current & Increased Sum Insured
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="slick-slider-new"
+                        ng-show="((selectedPolicyDetails.ProductName == 'Activ Health' || selectedPolicyDetails.ProductName == 'Activ Health V2') && (selectedPolicyDetails.SumInsuredType == 'Individual')) && showSliderMenu">
+                        <div class="slick-member" ng-repeat="member in insuredMembers">
+                            <div class="member-sum-insured-text">{{member.RelationWithProposer}} Sum Insured ₹
+                                {{member.SumInsured | INRALPHA}}</div>
+                            <label class="container-new" style="left: 0;margin-bottom: 5px;">
+                                <span>Increase Sum Insured to ₹ {{member.UpSellSumInsured | INRALPHA}}</span>
+                                <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'"
+                                    ng-model="updateMember[member.RelationWithProposer]"
+                                    ng-change="updateSumInsured(member.RelationWithProposer,member)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div ng-show="showHealthReturn" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 white-bg-box">
+                    <label style="left: 0;" class="container-new">Use Health Returns of <span
+                            class="checkbox-pink-txt">₹ {{heathReturnAmt | INR}}</span>
+                        <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" ng-model="applyHealthReturn"
+                            name="healthreturn" ng-change="applyForHealthReturn(applyHealthReturn)">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                    <p ng-if="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'">Please provide Good Health Declaration for the insured members.</p>
+                    <button
+                        ng-click="submitGHD('desktop');selectPaymentMode();gotoPageGAParam('click-button','save and renew','renew')"
+                        class="btn save-renew-btn"
+                        ng-disabled="selectedPolicyDetails.LapsedButIsInNewGracePeriod == 'Y'" id="btnPremium04">
+                        Pay Premium <span style="font-size: 15px;padding-left: 10px;">₹
+                            {{selectedPolicyDetails.RenewalGrossPremium | INR}}</span><img
+                            src="assets/images/new-renew/right-white-arrow.svg">
+                        </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End of Desktop View -->
+</div>
+
+<!-- View Sum Insured Modal -->
+<div class="modal fade" ng-show="showModal" ng-class="{'in':showModal}">
+    <div class="modal-dialog remove-user-modal">
+        <!-- Modal content-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 modal-content">
+            <button type="button" class="close close-grey-bg" ng-click="closeModal()">&times;</button>
+            <div ng-if="selectedPolicyDetails.ProductName != 'Activ Secure'" class="are-you-sure-ttl">
+                Sum Insured of Members
+            </div>
+            <div ng-if="selectedPolicyDetails.ProductName == 'Activ Secure'" class="are-you-sure-ttl">
+                Click on member to view Sum Insured
+            </div>
+            <div ng-if="selectedPolicyDetails.ProductName != 'Activ Secure'"
+                class=" col-lg-10 col-xs-12 pad-l-r-0 pad-top-bot-model content" ng-repeat="members in insuredMembers">
+                <div class="col-lg-5 col-xs-6 member-relation">{{members.RelationWithProposer }}</div>
+                <div class="col-lg-5 col-xs-6 member-suminsured">{{members.SumInsured | INRALPHA}}</div>
+            </div>
+            <div ng-if="selectedPolicyDetails.ProductName == 'Activ Secure'" class="member-panel-margin">
+                <div class="panel-group" id="parentaccordion">
+                    <div class="panel panel-default" ng-repeat="member in insuredMembers">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a data-toggle="collapse" data-parent="#parentaccordion"
+                                    data-target="{{'#collapse'+$index}}" href="">
+                                    <span style="display:block;">{{member.RelationWithProposer}}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="{{'collapse'+$index}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 pad-l-r-0"
+                                    ng-repeat="product in member.RFB_SumInsured">
+                                    <div class="col-lg-7 col-md-7 col-sm-7 pad-l-r-0 member-suminsured">
+                                        {{product.ProductName}}</div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 pad-l-r-0 member-suminsured">₹
+                                        {{product.SumInsured | INR}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a href="javascript:void(0);" class="btn cancel-red-bdr-btn" ng-click="closeModal()">Close</a>
+            </div>
+        </div>
+        <!-- End of Modal content-->
+    </div>
+</div>
+<!-- End of View Sum Insured Modal -->
+
+<!-- Health Mi Sum Insured Modal-->
+<div class="modal fade" ng-show="showHealthMiModal" ng-class="{'in':showHealthMiModal}">
+    <div class="modal-dialog remove-user-modal">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 modal-content">
+            <button type="button" class="close close-grey-bg" ng-click="showHealthMiModal=false;">&times;</button>
+            <div class="are-you-sure-ttl">
+                Current & Increased Sum Insured of Members
+            </div>
+            <div class=" col-lg-10 col-xs-12 pad-l-r-0 pad-top-bot-model content">
+                <div class="col-lg-4 col-xs-4 member-relation">Member</div>
+                <div class="col-lg-4 col-xs-4 member-suminsured">Current SI</div>
+                <div class="col-lg-4 col-xs-4 member-suminsured">Increased SI</div>
+            </div>
+            <div class=" col-lg-10 col-xs-12 pad-l-r-0 pad-top-bot-model content" ng-repeat="members in insuredMembers">
+                <div class="col-lg-4 col-xs-4 member-relation">{{members.RelationWithProposer}}</div>
+                <div class="col-lg-4 col-xs-4 member-suminsured">{{members.SumInsured | INRALPHA}}</div>
+                <div class="col-lg-4 col-xs-4 member-suminsured">{{members.UpSellSumInsured | INRALPHA}}</div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a href="javascript:void(0);" class="btn cancel-red-bdr-btn"
+                    ng-click="showHealthMiModal=false;">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Health Mi Sum Insured Modal-->
+
+
+
+<!--PAN CARD modal-->
+
+<div class="modal app-modal" id="mandate-model" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="pancard">
+                <div class="modal-header modal-hdr mandate-model-header">
+                    <button type="button" class="close close-class-alert" data-dismiss="modal"><img
+                            src="assets/images/close-white.svg"></button>
+                    <div class="modal-hdr-txt mandate-model-text">Cancel Auto debit for <br class="visible-xs">
+                        {{policySelected}} </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label class="madate-model-label">Reson For Cancelation <span
+                                class="requiredFieldStyle">*</span> </label>
+
+                        <input autocomplete="nope" type="text" class="form-control input-text-box pancardtensform"
+                            name="panNo" ng-model="reason" placeholder="Reson for cancelation" maxlength="100"
+                            minlength="5" required="">
+                        <div class="red-color-error" ng-if="pancard.panNo.$dirty && pancard.panNo.$error.required">
+                            Please enter valid reson.</div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <button class="btn btn-primary modal-save-btn text-center"
+                                ng-disabled="(pancard.panNo.$error.minlength || pancard.panNo.$error.required)"
+                                ng-click="submitMandateDetails()" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- End of PAN Card modal -->
+
+
+<!------------------------------ Select Payment Mode Modal ---------------------------------->
+<div class="modal fade" ng-show="showPaymentModeModal" ng-class="{'in':showPaymentModeModal}">
+    <div class="modal-dialog remove-user-modal dv-selectPayment">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 modal-content">
+            <button type="button" class="close close-grey-bg" ng-click="showPaymentModeModal=false">&times;</button>
+            <div class="are-you-sure-ttl">
+                Select Payment Mode
+            </div><br />
+            <div class=" col-lg-10 col-xs-12 pad-l-r-0 pad-top-bot-model">
+                <div>
+                    <label class="radio-btn tenure-radio">
+                        <span class="lbl-txt">Pay Now via Debit Card or Net Banking and Enrol on <span
+                                class="active">A</span>uto <span class="active">D</span>ebit <span
+                                class="active">M</span>ode for <span class="active">F</span>uture <span
+                                class="active">P</span>remiums </span>
+                        <!-- <span class="lbl-txt">Auto Payments through Netbanking/Cards</span> -->
+                        <span class="custom-popover large-tooltip" custom-popover>
+                            <img class="img-responsive question-tooltip-img" src="assets/images/tooltip.png">
+                            <span class="custom-tooltip-text">
+                                On selecting 'Pay Now via Debit Card or Net Banking and Enrol on <span
+                                    class="active">A</span>uto <span class="active">D</span>ebit <span
+                                    class="active">M</span>ode for <span class="active">F</span>uture <span
+                                    class="active">P</span>remiums' the mentioned premium amount will be auto-debited
+                                from your bank account via Netbanking/Card at the time of policy renewal. You need to
+                                complete an onetime transaction authorization after which all subsequent payments will
+                                not require any intervention.
+                                <br />
+                                Step 1 --> Enter Your Bank Details To Verify
+                                <br />
+                                Step 2 --> Make The Payment
+                                <span class="pop-close">×</span>
+                            </span>
+                        </span>
+                        <input name="pgpaymentmode" type="radio" ng-model="pgPaymentMode" value="emandate_normal">
+                        <span class="checkmark"></span>
+                    </label><br>
+                    <label class="radio-btn tenure-radio">
+                        <span class="lbl-txt">Pay Now via Debit Card/Credit Card/Net Banking/UPI </span>
+                        <span class="custom-popover large-tooltip usingCC" custom-popover>
+                            <img class="img-responsive question-tooltip-img" src="assets/images/tooltip.png">
+                            <span class="custom-tooltip-text">
+                                Pay premium manually every year at the time of renewal
+                                <span class="pop-close">×</span>
+                            </span>
+                        </span>
+                        <!-- <span class="lbl-txt">Make payment using Credit Card/Debit Card/Netbanking/UPI</span> -->
+                        <input name="pgpaymentmode" type="radio" ng-model="pgPaymentMode" value="normal">
+                        <span class="checkmark"></span>
+                    </label>
+                    <!-- <label ng-show="showThirdTenureVal" class="radio-btn tenure-radio">
+                        <span class="lbl-txt">Standing Instructions on credit card</span>
+                        <input name="pgpaymentmode" type="radio" ng-model="pgPaymentMode" value="cards">
+                        <span class="checkmark"></span>
+                    </label> -->
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                <a href="javascript:void(0);" class="btn cancel-red-bdr-btn"
+                    ng-click="showPaymentModeModal=false;requestPgURL();">Proceed To Payment</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------ End of Select Payment Mode Modal ---------------------------------->
+</div>
+
+

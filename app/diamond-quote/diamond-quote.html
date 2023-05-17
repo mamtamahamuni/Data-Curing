@@ -1,0 +1,1020 @@
+<div class="container-fluid">
+   <div class="row cont-pad">
+      <div class="col-md-12 col-xs-12">
+         <span class="main-header-text1">
+         Active Assure Diamond
+         </span>
+        <!--  <span class="main-header-text1">
+         &nbsp;|
+         </span> -->
+         <div class="dropdown dis-in hidden-xs">
+<!--             <button class="btn btn-plan" type="button" data-toggle="dropdown" id="">
+               <span class="main-header-text2">{{diA.planNameVal}} Plan &nbsp;</span>
+<div class="dis-in glyphicon glyphicon-chevron-down caret-pos" id="glyphicon-plan-section"></div> -->
+           
+            <!-- <ul class="dropdown-menu plan-dropdown-menubox" id="plan-drop-down-menu">
+               <li><a >Plan</a></li>
+               <li><a >Premier Plan</a></li>
+               </ul> -->        
+         </div>
+         <!-- <div class="dropdown dis-in hidden-md hidden-sm hidden-lg">
+            <button class="btn btn-plan dropdown-toggle dropdown-plan plan-dropdown" type="button" href="#plan-modal" data-toggle="modal" data-target="#plan-modal">
+               <span class="main-header-text2">{{diA.planNameVal}} Plan &nbsp;</span>
+               <div class="glyphicon glyphicon-chevron-down caret-pos" id="glyphicon-plan-section"></div>
+            </button>
+         </div> -->
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="row cont-pad breadcrumb-row">
+      <div class="col-md-12">
+         <ul class="breadcrumb-cust">
+            <li class="breadcrumb-item-cust breadcrumb-item-cust-active">
+               <a href="javascript:void(0)" ng-click="quoteNavigation()">Quotation</a>
+            </li>
+            <li class="breadcrumb-item-cust">
+               <span class="clickable">
+               <i class="glyphicon glyphicon-menu-right"></i>
+               </span>
+            </li>
+            <li class="breadcrumb-item-cust">
+               <a href="javascript:void(0)" class="unbold-fonts">
+               Proposal
+               </a>
+            </li>
+            <li class="breadcrumb-item-cust">
+               <span class="clickable">
+               <i class="glyphicon glyphicon-menu-right"></i>
+               </span>
+            </li>
+            <li class="breadcrumb-item-cust">
+               <a href="javascript:void(0)" class="unbold-fonts" ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_breadcrumbs-['+currentRoute[1]+'-Payment]')">Payment</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="container-fluid prem-panel sticky" sticky>
+   <div class="row prem-row">
+      <div class="col-md-12 col-xs-12 col-sm-12 prem-text-panel text-right pad-l-r-0">
+         <div class=" dropdown dis-in" ng-class="diA.PremiumDetail.AddonGSTPremium == '0' ? 'zeroAmt' : 'addonAmt'">
+            <a class="btn tooltip-btn dropdown-toggle dropdown-plan plan-dropdown" type="button" data-toggle="dropdown" id="" ng-click="callGtag('click-item', 'buy-universal' ,'buy-universal_premium-amount')">
+            <span class="prem-small-txt">Premium:&nbsp;&nbsp;</span>
+            <span class="prem-big-txt" ng-if="diA.diamondPreminumObj.TotalPremium"> 
+            <span class="prem-rupee-symbol">&#8377;</span>                              
+            <span count-up end-val="diA.diamondPreminumObj.TotalPremium"> </span>
+            <span ng-show="diA.diamondQuoteDetails.PolicyTenure == '1'">pa </span> &nbsp; 
+            <span class="glyphi-drop-down-style pull-right" aria-hidden="true">
+            <img src="assets/images/icon-chevron-down.png">
+            </span>
+            </span>
+            <span class="prem-big-txt" ng-if="!diA.diamondPreminumObj.TotalPremium">
+            <i class="fa fa-spinner" aria-hidden="true"></i>
+            </span>
+            <span class="span-addon">
+               <span class="tooltip-text-hd mar-rght-15">Health Add on premium: ₹{{diA.PremiumDetail.AddonGSTPremium | INR}}<span
+                  class="incl-gst">(incl GST)</span> </span></span>
+            </a>
+            <ul class="dropdown-menu plan-dropdown-menubox">
+               <li ng-repeat="premium in diA.diamondPreminumObj.ProductPremium">
+                  <p href="javascript:void(0)" class="tooltip-text-hd mar-rght-15">{{premium.ProductName | productFilter}}</p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.PolicyBasePremium != null && premium.PolicyBasePremium != '' && premium.PolicyBasePremium != '0'">Base Amount : ₹ {{premium.PolicyBasePremium | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.GSTValue != null && premium.GSTValue != '' && premium.GSTValue != '0'">GST Amount : ₹ {{premium.GSTValue | INR}}  </p>
+                  <p class="tooltip-grey-txt mar-rght-15" ng-If="premium.Discount != null && premium.Discount != '' && premium.Discount != '0'">Discount Amount: ₹ {{premium.Discount | INR}} </p>
+                  <p class="tooltip-grey-txt mar-rght-15 totalAmt">Total Amount : ₹ {{premium.Premium | INR}}  </p>
+               </li>
+               <li class="dv-Addon">
+                  <p class="tooltip-text-hd mar-rght-15">Health Add on premium: ₹{{diA.PremiumDetail.AddonGSTPremium | INR}}<span
+                        class="incl-gst">(incl GST)</span> </p>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+         <span class="emi-option-text">
+            <!-- EMI options available starting at ₹3,000 pm -->
+         </span>
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number"> 1</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span class="item-block-number">1</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">POLICY DETAILS AND SUM INSURED</div>
+            <div class="item-block-content-desc">
+               Please select your policy type, tenure and the details of the participating members.
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 sum-insured-members-padding-initial">
+         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 question">
+            <div ng-show="!diA.stProduct">
+            <div class="policy-type-txt">Policy type  
+               <span class="custom-popover large-tooltip" custom-popover>
+               <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+               <span class="custom-tooltip-text">
+               In a family floater plan, more than one member can be covered under the same plan,<br> Multi-individual is when the policy coverage is different for each member .
+               <span class="pop-close">×</span>
+               </span>
+               </span>
+            </div>
+            <a href="javascript:void(0);" class="btn show-answer" ng-class="diA.diamondQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn' : 'unselected-no-btn'">
+            <span ng-class="diA.diamondQuoteDetails.PolicyType == 'FF' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'">Family Floater&nbsp;<i class="fa fa-check-circle" ng-class="diA.diamondQuoteDetails.PolicyType == 'FF' ? 'show-i' : 'remove-i'"></i></span>
+            </a>
+            <a href="javascript:void(0);" class="btn hide-answer" ng-class="diA.diamondQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn' : 'unselected-no-btn'">
+            <span ng-class="diA.diamondQuoteDetails.PolicyType == 'MI' ? 'selected-yes-btn-txt' : 'unselected-no-btn-txt'">&nbsp; Multi-individual&nbsp;
+            &nbsp;&nbsp;<i class="fa fa-check-circle" ng-class="diA.diamondQuoteDetails.PolicyType == 'MI' ? 'show-i' : 'remove-i'"></i></span>
+            </a>
+            </div>
+            <div class="tab-content-mar-r " ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+               <div class="tab-grey-txt">
+                  <!-- In the Multi Individual Policy individual members have their separate Sum Insured. -->
+               </div>
+               <div class="dropdown-lbl-txt">Tenure
+                  <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                  Duration in which benefits are payable under the policy .
+                  <span class="pop-close">×</span>
+                  </span>
+                  </span>
+               </div>
+               <span ng-show="diA.diamondQuoteDetails.PolicyTenure == '1'" class="text-for-tenure "><b>(Get Discount of 7.5% on preminum for 2 year tenure )</b></span>
+               <div class="dropdown sum-insured-members-block-dropdown">
+                  <button class="btn dropdown-width-bdr" type="button" data-toggle="dropdown" aria-haspopup="true" ng-click="diA.setTenure()" aria-expanded="false">
+                     <span class="dropdown-txt">{{diA.diamondQuoteDetails.PolicyTenure}} years </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('1')">1 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('2')">2 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('3')">3 years</a></li>
+                  </ul>
+               </div>
+               <div class="text-right">
+                  <a href="javascript:void(0);" class="btn discount-btn-txt" ng-show="diA.diamondQuoteDetails.PolicyTenure == '2'">
+                  Discount : 7.5% &nbsp;<i class="fa fa-check-circle"></i>
+                  </a>
+               </div>
+               <div class="text-right">
+                  <a href="javascript:void(0);" class="btn discount-btn-txt" ng-show="diA.diamondQuoteDetails.PolicyTenure == '3'">
+                  Discount : 10% &nbsp;<i class="fa fa-check-circle"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="tab-content-mar-r" ng-if="diA.diamondQuoteDetails.PolicyType == 'FF'">
+               <div class="tab-grey-txt">
+                  <!-- The Family Floater policy has a joint Sum Insured meant for the both of them together -->
+                  <!--  Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+               </div>
+               <div class="dropdown-lbl-txt">Sum Insured
+                  <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                  Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose the sum insured which covers your family adequately .
+                  <span class="pop-close">×</span>
+                  </span>
+                  </span>
+               </div>
+               <div class="dropdown sum-insured-members-block-dropdown " ng-class="diA.stProduct ? 'group-insured-pad-btm-st' : 'group-insured-pad-btm'" ng-if="!diA.stProduct">
+                  <button ng-disabled="diA.isFederalPasa"  class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="diA.sumInusred">
+                     <span class="dropdown-txt">₹ {{diA.sumInusred | INR}}  </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li ng-repeat="sum in diA.sumAmounts" class="li-item-text-change" ng-if="sum.DIAMOND" ng-click="diA.updateSumInsured(sum.amount, '')" data-val="{{sum.amount}}"><a  href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{sum.value}}</span></a></li>
+
+                  </ul>
+               </div>
+
+
+
+
+               <div class="dropdown sum-insured-members-block-dropdown " ng-class="diA.stProduct ? 'group-insured-pad-btm-st' : 'group-insured-pad-btm'" ng-if="diA.stProduct">
+                  <button class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="diA.sumsInusred">
+                     <span class="dropdown-txt">₹ {{diA.sumInusred | INR}}  </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li  class="li-item-text-change"  ng-click="diA.updateSumInsuredDeductable('1000000', diA.stQuote.SumInsured ,diA.stQuote.Deductible)" ><a  href="javascript:void(0)" data-val="1000000"><span class="rupee-symbol">&#8377;</span> <span class="option-text">10 Lac</span></a></li>
+                     
+                  </ul>
+               </div>
+
+
+
+
+               <div class="dropdown-lbl-txt" ng-if="diA.stProduct">Sum Insured of Super Top up
+                  <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                  Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose the sum insured which covers your family adequately .
+                  <span class="pop-close">×</span>
+                  </span>
+                  </span>
+               </div>
+               <div class="dropdown sum-insured-members-block-dropdown " ng-class="diA.stProduct ? 'group-insured-pad-btm-st' : 'group-insured-pad-btm'" ng-if="diA.stProduct">
+                  <button class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="diA.sumInpousred">
+                     <span class="dropdown-txt">₹ {{diA.stQuote.SumInsured  | INR}}  </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li  class="li-item-text-change"  ng-click="diA.updateSumInsuredDeductable('1000000', '4000000' , diA.stQuote.Deductible)" ><a  href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span class="option-text">40 Lac</span></a></li>
+                     <li  class="li-item-text-change"  ng-click="diA.updateSumInsuredDeductable('1000000', '9000000' , diA.stQuote.Deductible)" ><a  href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span class="option-text">90 Lac</span></a></li>
+                  </ul>
+               </div>
+
+
+
+
+               <div class="dropdown-lbl-txt" ng-if="diA.stProduct">Deductible of Super Top up
+                  <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                  Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose the sum insured which covers your family adequately .
+                  <span class="pop-close">×</span>
+                  </span>
+                  </span>
+               </div>
+               <div class="dropdown sum-insured-members-block-dropdown " ng-class="diA.stProduct ? 'group-insured-pad-btm-st' : 'group-insured-pad-btm'" ng-if="diA.stProduct">
+                  <button class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="diA.sumInusred">
+                     <span class="dropdown-txt">₹ {{diA.stQuote.Deductible | INR}}  </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                    
+                     <li  class="li-item-text-change"  ng-click="diA.updateSumInsuredDeductable(diA.sumInusred , diA.stQuote.SumInsured , '1000000')" ><a  href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span class="option-text">10 Lac</span></a></li>
+                  </ul>
+               </div>
+               <div class="dropdown-lbl-txt">Tenure 
+                  <span class="custom-popover large-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                  Duration in which benefits are payable under the policy .
+                  <span class="pop-close">×</span>
+                  </span>
+                  </span>
+               </div>
+               <span ng-show="diA.diamondQuoteDetails.PolicyTenure == '1'" class="text-for-tenure "> <b>(Get Discount of 7.5% on preminum for 2 year tenure )</b> </span>
+               <div class="dropdown sum-insured-members-block-dropdown">
+                  <button class="btn dropdown-width-bdr" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <span class="dropdown-txt">{{diA.diamondQuoteDetails.PolicyTenure}} years </span>
+                     <div class="dis-in dropdown-red-drop-arrow">
+                        <i class="fa fa-angle-down"></i>
+                     </div>
+                  </button>
+                  <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('1')">1 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('2')">2 years</a></li>
+                     <li><a href="javascript:void(0)" ng-click="diA.updateTenure('3')">3 years</a></li>
+                  </ul>
+               </div>
+               <div class="text-right" ng-show="diA.diamondQuoteDetails.PolicyTenure == '2'">
+                  <a href="javascript:void(0);" class="btn discount-btn-txt">
+                  Discount : 7.5% &nbsp;<i class="fa fa-check-circle"></i>
+                  </a>
+               </div>
+               <div class="text-right" ng-show="diA.diamondQuoteDetails.PolicyTenure == '3'">
+                  <a href="javascript:void(0);" class="btn discount-btn-txt">
+                  Discount : 10% &nbsp;<i class="fa fa-check-circle"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- multi-individual Div start-->
+         <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+            <div class="border-verticle-line text-right"></div>
+         </div>
+         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+               <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">Select Members</div>
+               <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md"></div>
+               <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0">
+                  <a  class="btn edit-group-mem-btn" ng-click="diA.openAddMemberModel()">
+                  EDIT GROUP MEMBERS
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 diamond-overfollow">
+                <div id="ci-sum-isnured-slider" class="owl-carousel buy-owl-carousel di-carousel diamond-overfollow" ng-if="diA.initSlider">
+               <div class=" mem-grp-pad-r-5" ng-repeat="members in diA.selectedMember" >
+                  <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                     <div class="dis-in box-txt-hd">{{members.RelationWithProposer}}</div>
+                     <span class="pull-right" ng-if="diA.selectedMember.length > 1">
+                     <img  class="close-img-mar self-close-mark" src="assets/images/shape.png" ng-click="diA.updateDeleteMemebers('DeleteMember' , members , $index )">
+                     </span>
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">
+                           Sum Insured
+                           <span class="custom-popover large-tooltip" custom-popover >
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="owl-carousel-i-size custom-tooltip-text" id="infoBtn">
+                           Higher the Sum Insured opted, lower is the effective per lac premium and better coverage. Choose the sum insured which covers your family adequately .
+                           <span class="pop-close">×</span>
+                           </span>
+                           </span>
+                        </div>
+                        <div class="dropdown">
+                           <button ng-disabled="diA.isFederalPasa" class="btn dropdown-width-bdr dropdown-toggle" type="button" button-dropdown="members.SumInsured">
+                           <span class="dropdown-txt">₹ {{members.SumInsured | INR}} </span>
+                           <span class="dis-in dropdown-red-drop-arrow">
+                           <i class="fa fa-angle-down" aria-hidden="true"></i>
+                           </span>                     
+                           </button>       
+                           <ul class="dropdown-menu self-insured-menu" aria-labelledby="dropdownMenu1">
+                              <li ng-repeat="sum in diA.sumAmounts" class="li-item-text-change" ng-if="sum.DIAMOND" ng-click="diA.updateSumInsured(sum.amount, members)" data-val="{{sum.amount}}"><a  href="javascript:void(0)"><span class="rupee-symbol">&#8377;</span> <span class="option-text">{{sum.value}}</span></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">
+                           Age
+                        </div>
+                        <div class="age-input">
+                           <div class="input-group">
+                              <input type="text" class="form-control age-txt-box" ng-model="members.Age" ng-disabled="(members.Age !='' && diA.IMDCode == '2110895') || (diA.isIDFCPasa)" ng-change="diA.updateDeleteMemebers('UpdateMember' , members , $index )" ng-model-options="{debounce:2000}" valid-number>
+                              <span class="input-group-addon"> yrs </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+               <a  class="btn edit-group-mem-btn" ng-click="diA.openAddMemberModel()">
+               EDIT GROUP MEMBERS
+               </a>
+            </div>
+         </div>
+         <!-- multi-individual Div end-->
+         <!-- Family Floater Div start-->
+         <div class="col-md-1 col-sm-1 hidden-xs width-collapse vertical-line-hide pad-l-r-0 " ng-if="diA.diamondQuoteDetails.PolicyType == 'FF'">
+            <div class="border-verticle-line text-right"></div>
+         </div>
+         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 pad-l-r-0 " ng-if="diA.diamondQuoteDetails.PolicyType == 'FF'">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mem-grp-row-pad-btm">
+               <div class="col-lg-3 col-md-3 col-sm-5 col-xs-6 members-in-group-txt pad-l-r-0 hidden-xs hidden-md">Select Members</div>
+               <div class="col-lg-5 col-md-5 col-sm-3 col-xs-6 grey-horizontal-line pad-l-r-0 hidden-xs hidden-md"></div>
+               <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs pad-l-r-0">
+                  <a  class="btn edit-group-mem-btn" ng-click="diA.openAddMemberModel()">
+                  EDIT GROUP MEMBERS
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0" >
+                <div id="ci-sum-isnured-slider" class="owl-carousel buy-owl-carousel di-carousel" ng-if="diA.initSlider">
+               <div class=" mem-grp-pad-r-5" ng-repeat="members in diA.selectedMember" style="overflow: unset;">
+                  <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 sum-insured-members-block member-section">
+                     <div class="dis-in box-txt-hd">{{members.RelationWithProposer}}</div>
+                     <span class="pull-right" ng-if="diA.selectedMember.length > 1">
+                     <img ng-hide="members.RelationWithProposer == 'SELF'" class="close-img-mar self-close-mark" src="assets/images/shape.png" ng-click="diA.updateDeleteMemebers('DeleteMember' , members , $index )">
+                     </span> 
+                     <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0">
+                        <div class="box-txt">
+                           Age
+                        </div>
+                        <div class="age-input">
+                           <div class="input-group">
+                              <input type="text" class="form-control age-txt-box" valid-number maxlength="2" ng-change="diA.updateDeleteMemebers('UpdateMember' , members , $index )" ng-model-options="{debounce:2000}"  ng-model="members.Age" >
+                              <span class="input-group-addon"> yrs </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+            <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+               <a  class="btn edit-group-mem-btn" ng-click="diA.openAddMemberModel()">
+               EDIT GROUP MEMBERS
+               </a>
+            </div>
+         </div>
+         <!-- Family Floater Div end-->
+      </div>
+   </div>
+</div>
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number"> 2</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span class="item-block-number">2</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">
+               OPTIONAL COVERS
+               <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                     Optional Covers under family floater policies, if chosen, will be applicable to all members in the Policy. For Multi Individual policy, any optional cover may be selected for any member
+                     <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                     <span class="pop-close">×</span>
+                  </span>
+               </span>
+            </div>
+            <div class="item-block-content-desc">
+               Optional Covers are like riders on your core policy. Add these covers to broaden your benefits.
+               <!-- Optional Covers are like riders on your core policy. Range of comprehensive covers to broaden your benefits. -->
+               <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container sum-insured-members-padding-initial">
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0" ng-hide="diA.showRoomUpgrade || diA.sumInusred != '500000'" >
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.COVER_ARU_FLAG == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="ARU-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ARU-chk" ng-change="diA.oCBProductLevel(diA.COVER_ARU_FLAG , 'COVER_ARU_FLAG' , $event)"  ng-model="diA.COVER_ARU_FLAG">
+                              <span class="checkmark" ng-show="diA.diamondQuoteDetails.PolicyType == 'FF'"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox" >
+                        <div class="opt-cov-box-ttl">Room Upgrade 
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                <!--  For Mutli-Individual option this cover can be availed at member level offline.  -->
+                                 Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor 
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room -->
+                           During the time of illness being comfortable & having your privacy in the hospital room aid your recovery. You have the option to upgrade .
+                          <br> Note :- Only applicable for the Sum Insured of 5 Lakh
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember" ng-if="memb.SumInsured == '500000'">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ARU-{{memb.RelationType}}-chk" ng-model="memb.COVER_ARU_FLAG" ng-change="diA.oCBMemberLevel(memb , memb.COVER_ARU_FLAG , 'COVER_ARU_FLAG')"  >
+                              <span class="checkmark" ></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Unlimited Reload of SI covers */ -->
+
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.COVER_URSI_FLAG == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="PPN-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="PPN-chk" ng-change="diA.oCBProductLevel(diA.COVER_URSI_FLAG , 'COVER_URSI_FLAG' , $event)"  ng-model="diA.COVER_URSI_FLAG">
+                              <span class="checkmark"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Unlimited Reload of SI 
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                 For Mutli-Individual option this cover can be availed at member level offline. 
+                                 <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room -->
+                           Sum insured shall be reinstated unlimited times in a policy year if you run out cover due to claims. This benefit is an extension of Reload of Sum Insured. Terms and conditions of reload of sum insured will apply 
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="COVER_URSI_FLAG-{{memb.RelationType}}-chk" ng-model="memb.COVER_URSI_FLAG" ng-change="diA.oCBMemberLevel(memb , memb.COVER_URSI_FLAG , 'COVER_URSI_FLAG')">
+                              <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            
+         </div>
+      </div>
+   </div>
+
+   <div class="container sum-insured-members-padding-initial" ng-if="diA.showHDFCCovers">
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0" >
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.COVER_RPEP_FLAG == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="RPEP-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="RPEP-chk" ng-change="diA.oCBProductLevel(diA.COVER_RPEP_FLAG , 'COVER_RPEP_FLAG' , $event)"  ng-model="diA.COVER_RPEP_FLAG">
+                              <span class="checkmark"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Reduction in PED Waiting Period
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                  
+                                 <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room -->
+                           Receive a Super NCB of 50% of your Sum Insured for every claim free year. Maximum up to 100%. This is an extension to no claim bonus 
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ARU-{{memb.RelationType}}-chk" ng-model="memb.COVER_RPEP_FLAG" ng-change="diA.oCBMemberLevel(memb , memb.COVER_RPEP_FLAG , 'COVER_RPEP_FLAG')">
+                              <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+
+             <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0" >
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.COVER_CHB_FLAG == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="CHB-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="CHB-chk" ng-change="diA.oCBProductLevel(diA.COVER_CHB_FLAG , 'COVER_CHB_FLAG' , $event)"  ng-model="diA.COVER_CHB_FLAG">
+                              <span class="checkmark"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Cancer Hospitalization Booster
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                  
+                                 <!-- Lifestyle support equipment like ICU bed, wheelchair, walker, belts, collars etc as per written recommendation of your doctor  -->
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room -->
+                           Receive a Super NCB of 50% of your Sum Insured for every claim free year. Maximum up to 100%. This is an extension to no claim bonus 
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ARU-{{memb.RelationType}}-chk" ng-model="memb.COVER_CHB_FLAG" ng-change="diA.oCBMemberLevel(memb , memb.COVER_CHB_FLAG , 'COVER_CHB_FLAG')">
+                              <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+           
+
+           
+
+            
+         </div>
+      </div>
+   </div>
+
+   <div class="container sum-insured-members-padding-initial">
+      <div class="row">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.COVER_SNCB_FLAG == 'Y' }">
+                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                        <label class="container-new protecting" for="SNCB-chk">
+                           <img class="temp-total-dis-img" src="assets/images/ac_images/room-upgrade@2x.png">
+                           <div class="box-checkbox dis-in">
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="SNCB-chk" ng-change="diA.oCBProductLevel(diA.COVER_SNCB_FLAG , 'COVER_SNCB_FLAG' , $event)"  ng-model="diA.COVER_SNCB_FLAG">
+                              <span class="checkmark"></span>
+                           </div>
+                        </label>
+                     </div>
+                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                        <div class="opt-cov-box-ttl">Super NCB
+                            <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                              <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                              <span class="custom-tooltip-text" >
+                                  
+                                 Receive a Super NCB of 50% of your Sum Insured for every claim free year. Maximum up to 100%. This is an extension to no claim bonus
+                                 <span class="pop-close">×</span>
+                              </span>
+                           </span>
+                        </div>
+                        <div class="opt-cov-box-txt">
+                           <!-- Upgrade to Single Private A.C. Room -->
+                           Receive a Super NCB of 50% of your Sum Insured for every claim free year. Maximum up to 100%. This is an extension to no claim bonus 
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.diamondQuoteDetails.PolicyType == 'MI'">
+                           <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                              <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                              <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ARU-{{memb.RelationType}}-chk" ng-model="memb.COVER_SNCB_FLAG" ng-change="diA.oCBMemberLevel(memb , memb.COVER_SNCB_FLAG , 'COVER_SNCB_FLAG')">
+                              <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+
+             
+
+           
+
+           
+
+            
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- Health Add On Section -->
+
+<div class="container">
+   <div class="row quote-item-block">
+      <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1">
+         <div class="item-block-number-border hidden-xs"><span class="item-block-number"> 4</span></div>
+         <div class="item-block-number-border-mobile hidden-md hidden-lg hidden-sm"><span class="item-block-number">3</span></div>
+      </div>
+      <div class="col-md-10 col-sm-10 col-lg-10 col-xs-11">
+         <div class="quote-item-block-content">
+            <div class="item-block-content-header">
+               Health Add On
+               <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover>
+                  <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                  <span class="custom-tooltip-text">
+                     Health Add On under family floater policies, if chosen, will be applicable to all members in the Policy. For Multi Individual policy, any health add on may be selected for any member
+                     <span class="pop-close">×</span>
+                  </span>
+               </span>
+            </div>
+            <div class="item-block-content-desc">
+               Health Add On like riders on your core policy. Add these add on to broaden your benefits.
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container sum-insured-members-padding-initial">
+      <div class="row">
+
+         <!-- Future Secure -->
+
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.Future_Secure_YN == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="FS-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Future_Secure.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="FS-chk" ng-change="diA.oCBProductLevel(diA.Future_Secure_YN , 'Future_Secure_YN' , $event)"  ng-model="diA.Future_Secure_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Future Secure 
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        Secure you and your family's future with benefits like Non-Medical Expense waiver, Sum Insured Inflation protection and No Claim Bonus Protector. 
+                        <!-- <br />
+                        <span>a) Non- Medical Expense waiver</span> &nbsp; &nbsp; &nbsp;
+                             <span> b) Sum Insured Inflation protection</span><br />
+                              <span>c)  No Claim Bonus protector</span> -->
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="Future_Secure_YN-{{memb.RelationType}}-chk" ng-model="memb.Future_Secure_YN" ng-change="diA.oCBMemberLevel(memb , memb.Future_Secure_YN , 'Future_Secure_YN')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- ENd of Future Secure -->
+
+         <!-- Reduction in PED waiting period -- >
+
+         <div class="dv-healthAddOn col-md-6 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.ReductionInPEDWaitingPeriod == 'Y' }">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="RPEDWP-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Reduction_in_PED_waiting_period.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="RPEDWP-chk" ng-model="diA.ReductionInPEDWaitingPeriod">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Reduction in PED waiting period
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        Reduction in PED waiting period
+                     </div>
+
+                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        <div class="dropdown">
+                           <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                              button-dropdown="members.ReductionInPEDWaitingPeriod">
+                              <span class="dropdown-txt"> {{diA.ReductionInPEDWaitingPeriodText}} </span>
+                              <span class="dis-in dropdown-red-drop-arrow">
+                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
+                              </span>
+                           </button>
+                           <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">
+                              <li ng-repeat="option in diA.ReductionInPEDWaitingPeriodOptions" class="li-item-text-change"
+                                 ng-click="diA.oCBProductLevel(option.value, option.RPEDWPCoverName , $event)" data-val="{{option.RPEDWPText}}" ng-model="diA.ReductionInPEDWaitingPeriodText"
+                                 ><a href="javascript:void(0)"> <span
+                                       class="option-text">{{option.RPEDWPText}}</span></a></li>
+                           </ul>
+                        </div> 
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top" ng-if="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="ReductionInPEDWaitingPeriod-{{memb.RelationType}}-chk" ng-model="memb.ReductionInPEDWaitingPeriod" ng-change="diA.oCBMemberLevel(memb , memb.ReductionInPEDWaitingPeriod , 'ReductionInPEDWaitingPeriod')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+        < !-- ENd of Cancer Hospitalization Booster -->         
+      </div>
+      
+      <!-- Vaccine Cover -->
+      <div class="row">
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.Vaccine_Cover_YN == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="VC-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Vaccine_Cover.png">
+                       <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="VC-chk" ng-change="diA.vaccineCoverProductLevel(diA.Vaccine_Cover_YN , 'Vaccine_Cover_YN' , $event)"  ng-model="diA.Vaccine_Cover_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox pad-l-r-0">
+                     <div class="opt-cov-box-ttl">Vaccine Cover 
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for vaccination against any diseases(s) which has been declared as pandemic or epidemic.
+                        <br />
+                        Below Limit option is applicable on Individual Basis i.e. Rs.XXX / Insured Person / Per Policy Year
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 dv-vcCard" ng-repeat="memb in diA.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           </label>
+                           
+                           <div class="dropdown">
+                              <button class="btn dropdown-width-bdr dropdown-toggle" type="button"
+                                 button-dropdown="members.Vaccine_Cover_YN">
+                                 <span class="dropdown-txt"> {{(memb.Vaccine_Cover_SI == '' || memb.Vaccine_Cover_SI == '0') ? '--Select--' : memb.Vaccine_Cover_SI}}</span>
+                                 <span class="dis-in dropdown-red-drop-arrow">
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                 </span>
+                              </button>
+                              <ul class="dropdown-menu self-insured-menu coverdrop-Style" aria-labelledby="dropdownMenu1">
+                                 <li ng-repeat="amount in diA.vaccineAmount" class="li-item-text-change"
+                                    ng-click="diA.vaccineCoverMemberLevel(memb, memb.Vaccine_Cover_YN, amount, 'Vaccine_Cover_YN')" data-val="{{amount}}"
+                                    ><a href="javascript:void(0)"> <span
+                                          class="option-text">{{amount}}</span></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ENd of Vaccine Cover -->
+
+      <!-- Tele-OPD Consultation -->
+      <div class="row">
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.Tele_OPD_consultation_YN == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="TOPDC-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Tele_OPD_Consultation.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="TOPDC-chk" ng-change="diA.oCBProductLevel(diA.Tele_OPD_consultation_YN , 'Tele_OPD_consultation_YN' , $event)"  ng-model="diA.Tele_OPD_consultation_YN">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Tele-OPD Consultation
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for tele-consultation from medical practitioners within our network. 
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="Tele_OPD_consultation_YN-{{memb.RelationType}}-chk" ng-model="memb.Tele_OPD_consultation_YN" ng-change="diA.oCBMemberLevel(memb , memb.Tele_OPD_consultation_YN , 'Tele_OPD_consultation_YN')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ENd of Tele-OPD Consultation -->
+
+      <!-- Personal Accident -- >
+      <div class="row">
+         <div class="dv-healthAddOn col-md-12 col-sm-12 col-xs-12 pad-cont box-mar-btm mob-pad-l-r-0">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 optional-cover-box pad-l-r-0 cross-sell-grey-box">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 check-box-width pad-top-optional-cover" ng-class="{'selected-check-box-width' : diA.TeleOPDConsultation == 'Y' }">
+                  <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 optional-cover-box-ing-pad-top">
+                     <label class="container-new protecting" for="TOPDC-chk">
+                        <img class="temp-total-dis-img" src="assets/images/health_add_on/Personal_Accident_Cover.png">
+                        <div class="box-checkbox dis-in">
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="TOPDC-chk" ng-change="diA.oCBProductLevel(diA.TeleOPDConsultation , 'TeleOPDConsultation' , $event)"  ng-model="diA.TeleOPDConsultation">
+                           <span class="checkmark"></span>
+                        </div>
+                     </label>
+                  </div>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-9 optional-cover-box-ing-pad-top temp-disa-right-bdr nursing-home-checkbox">
+                     <div class="opt-cov-box-ttl">Personal Accident
+                           <span class="custom-popover large-tooltip margin-top-tooltip" custom-popover ng-show="diA.platinumQuoteDetails.PolicyType == 'MI'">
+                           <img class="img-responsive question-tooltip-img" src="assets/images/tooltip_Premium.png">
+                           <span class="custom-tooltip-text" >
+                              For Mutli-Individual option this cover can be availed at member level offline. 
+                              <span class="pop-close">×</span>
+                           </span>
+                        </span>
+                     </div>
+                     <div class="opt-cov-box-txt">
+                        To get cover for tele-consultation from medical practitioners within our network. 
+                     </div>
+
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-l-r-0 chk-row-pad-top">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pad-l-r-0" ng-repeat="memb in diA.selectedMember">
+                           <label class="container-new protecting">{{memb.RelationWithProposer | uppercase}}
+                           <input type="checkbox" ng-true-value="'Y'" ng-false-value="'N'" id="TeleOPDConsultation-{{memb.RelationType}}-chk" ng-model="memb.TeleOPDConsultation" ng-change="diA.oCBMemberLevel(memb , memb.TeleOPDConsultation , 'TeleOPDConsultation')">
+                           <span class="checkmark"></span>
+                           </label>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      < !-- ENd of Personal Accident -->
+
+   </div>
+</div>
+
+<!-- End of Health Add On Section -->
+
+<!-- Cross selection section -->
+<div class="container-fluid cross-sell-bg" >
+   <cross-sell-quote cross="diA" ng-if="!citipresent" ></cross-sell-quote>
+   <div class="row cross-sell-submit-btn">
+      <div class="col-md-12 pad-l-r-0">
+         <hr class="last-btn-width">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+         <button class="btn btn-primary qq-save-btn" tabindex="13" id="activ-care-quote-submit" ng-click="diA.submitActivCareQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[activCare]')">
+         Proceed
+         <img src="assets/images/arrow.png">
+         </button>
+      </div>
+   </div>
+</div>
+<div class="container-fluid " ng-show="false">
+   <div class="row ">
+      <div class="col-md-12 pad-l-r-0">
+         <hr class="last-btn-width">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12 pull-right show-button">
+         <button class="btn btn-primary qq-save-btn" tabindex="13" id="activ-care-quote-submit" ng-click="diA.submitActivCareQuote($event) ; callGtag('click-button', 'quote' ,'quote-submit_[activCare]')">
+         Proceed
+         <img src="assets/images/arrow.png">
+         </button>
+      </div>
+   </div>
+</div>
+<addMember addctrl="diA" childcount="4" ></addMember>
