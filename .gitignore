@@ -103,14 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
-gulpfile.js
 node_modules/
 partials/
 assets/css-min/
 assets/js/
-gulpfile.js
 package-lock.json
-package.json
 partials/ext-pre-quote.html
 assets/js/ext-pre-quote.controller.js
 assets/js/all.js

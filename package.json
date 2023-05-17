@@ -1,0 +1,47 @@
+{
+  "name": "buy-online-health",
+  "version": "1.0.0",
+  "description": "This site is online protal where customer can buy insurance policy",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "lite-server",
+    "start": "http-server -c-1 -p 8082",
+    "watch": "gulp watch",
+    "gulp": "gulp"
+  },
+  "keywords": [
+    "Buy",
+    "Online",
+    "Health",
+    "Health",
+    "Insurance",
+    "Aditya",
+    "Birla"
+  ],
+  "author": "ABHI Digital",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "angular-countup": "0.0.1",
+    "angular-route": "^1.7.2",
+    "angular-slick-carousel": "^3.1.7",
+    "bootstrap": "^3.3.7",
+    "countup": "^1.8.2",
+    "font-awesome": "^4.7.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "jquery": "^3.3.1",
+    "natives": "^1.1.6",
+    "oclazyload": "^1.1.0",
+    "owlcarousel": "^1.3.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
