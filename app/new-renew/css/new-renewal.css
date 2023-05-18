@@ -6245,3 +6245,35 @@ hr.header-border {
   bottom: -13px;
 }
 /*T&C Ends */
+
+.update-details-wrap{
+       background-color: #c7222a;
+       width: 100%;
+       margin-bottom: 35px;
+       padding: 10px;
+       text-align: center;
+}
+
+.update-details-wrap .head{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.update-details-wrap .btn{
+    height: 30px;
+    width: 80px;
+    font-family: PFEncoreSansPro-Book;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #424242;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 0px;
+}
+
+.mar-r-10{
+  margin-right: 10px;
+}
